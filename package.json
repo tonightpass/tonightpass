@@ -1,0 +1,10 @@
+{
+  "name": "@tonightpass/shared-types",
+  "version": "0.0.1",
+  "description": "Tonight Pass shared types",
+  "types": "./index.d.ts",
+  "repository": "https://github.com/tonightpass/shared-types.git",
+  "homepage": "https://tonightpass.com",
+  "author": "Tonight Pass <developers@tonightpass.com>",
+  "license": "MIT"
+}
