@@ -4,7 +4,6 @@ export type User = {
   identifier: UserIdentifier;
   password: string;
   identity: UserIdentity;
-  tokens: UserToken[];
   addresses: Address[];
   preferences: UserPreferences;
   connections: UserConnection[];
@@ -28,15 +27,16 @@ export type UserIdentity = {
 
 export type UserIdentityGender = "male" | "female" | "unknow" | string;
 
-export type UserToken = {
+export type Token = {
   id: string;
-  type: UserTokenType;
+  user: User;
+  type: TokenType;
   value: string;
   createdAt: Date;
   expiresAt: Date;
 }
 
-export type UserTokenType = "recovery" | "email" | "phone";
+export type TokenType = "recovery" | "email" | "phone" | "organization-invitiation";
 
 export type UserPreferences = unknown; // missing type
 
@@ -69,7 +69,7 @@ export type Organization = {
   id: string;
   name: string;
   socials: OrganizationSocial[];
-  members: OrganizationMember[];
+  members: User[];
   adress: Address;
   tickets: EventTicket[];
   events: Event[];
@@ -83,11 +83,6 @@ export type OrganizationSocial = {
 };
 
 export type OrganizationSocialType = "facebook" | "twitter" | "instagram" | "linkedin" | "youtube" | "website" | string;
-
-export type OrganizationMember = {
-  email: string;
-  role: OrganizationMemberRole;
-};
 
 export type OrganizationMemberRole = unknown; // missing type
 
