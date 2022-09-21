@@ -13,7 +13,7 @@ export type Event = {
   trailers: string[];
   location: Address;
   tickets: EventTicket[];
-  musicStyles: MusicStyle[];
+  styles: EventStyle[];
   startAt: Date;
   endAt: Date;
   updatedAt: Date;
@@ -43,7 +43,16 @@ export enum EventType {
   "membership"
 }
 
-export type MusicStyle = {
+export type EventStyle = {
+  type: EventStyleType;
   emoji: string;
   name: string;
+}
+
+export enum EventStyleType {
+  "music",
+  "dress",
+  "sport",
+  "food",
+  "art"
 }
