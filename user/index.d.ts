@@ -1,6 +1,5 @@
 import { Address, Currency, Language } from "..";
 
-// User
 export type User = {
   id: string;
   identifier: UserIdentifier;
@@ -24,7 +23,7 @@ export type UserIdentity = {
   gender: UserIdentityGender;
   profilePictureUrl?: string;
   birthDate: Date;
-  // idValid: boolean;
+  idValid: boolean;
 };
 
 export type UserIdentityGender = "male" | "female" | "non-binary" | string;
