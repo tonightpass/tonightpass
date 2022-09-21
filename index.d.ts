@@ -10,8 +10,8 @@ export type Location = {
   city: string;
   country: string;
   geometry?: {
-    lat: number;
-    lng: number
+    latitude: number;
+    longitude: number
   };
 };
 
