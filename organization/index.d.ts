@@ -1,4 +1,4 @@
-import { Address } from "..";
+import { Location } from "..";
 import { EventTicket } from "../event/ticket";
 import { User } from "../user";
 
@@ -7,7 +7,7 @@ export type Organization = {
   name: string;
   socials: OrganizationSocial[];
   members: OrganizationMember[];
-  address?: Address;
+  location?: Location;
   savedTickets: EventTicket[];
   events: Event[];
   updatedAt: Date;
