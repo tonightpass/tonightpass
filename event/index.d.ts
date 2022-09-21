@@ -1,4 +1,4 @@
-import { Address } from "..";
+import { Location } from "..";
 import { Organization } from "../organization";
 import { EventTicket } from "./ticket";
 
@@ -11,7 +11,7 @@ export type Event = {
   public: boolean;
   flyers: string[];
   trailers: string[];
-  location: Address;
+  location: Location;
   tickets: EventTicket[];
   musicStyles: MusicStyle[];
   startAt: Date;

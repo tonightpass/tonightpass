@@ -3,12 +3,16 @@ import "./organization";
 import "./tokens";
 import "./user";
 
-export type Address = {
-  id: string;
-  street: string;
+export type Location = {
+  name?: string;
+  address: string;
   zipCode: string;
   city: string;
   country: string;
+  geometry?: {
+    lat: number;
+    lng: number
+  };
 };
 
 // Currency
