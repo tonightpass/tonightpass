@@ -1,11 +1,11 @@
-import { Address, Currency, Language } from "..";
+import { Currency, Language, Location } from "..";
 
 export type User = {
   id: string;
   identifier: UserIdentifier;
   password: string;
   identity: UserIdentity;
-  addresses: Address[];
+  addresses: Location[];
   preferences: UserPreferences;
   connections: UserConnection[];
   updatedAt: Date;
