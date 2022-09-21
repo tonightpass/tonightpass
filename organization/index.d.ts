@@ -5,6 +5,7 @@ import { User } from "../user";
 export type Organization = {
   id: string;
   name: string;
+  slug: string;
   socials: OrganizationSocial[];
   members: OrganizationMember[];
   address?: Address;
