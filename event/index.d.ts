@@ -2,7 +2,7 @@ import { Address } from "..";
 import { Organization } from "../organization";
 import { EventTicket } from "./ticket";
 
-// Event
+
 export type Event = {
   title: string;
   description: string;

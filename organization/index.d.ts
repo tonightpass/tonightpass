@@ -2,7 +2,6 @@ import { Address } from "..";
 import { EventTicket } from "../event/ticket";
 import { User } from "../user";
 
-// Organization
 export type Organization = {
   id: string;
   name: string;
@@ -20,11 +19,22 @@ export type OrganizationSocial = {
   url: string;
 };
 
-export type OrganizationSocialType = "facebook" | "twitter" | "instagram" | "linkedin" | "youtube" | "website" | string;
+export enum OrganizationSocialType {
+  Facebook,
+  Twitter,
+  Instagram,
+  LinkedIn,
+  Youtube,
+  Website
+}
 
 export type OrganizationMember = {
   user: User;
   role: OrganizationMemberRole;
 };
 
-export type OrganizationMemberRole = unknown; // missing type
+export enum OrganizationMemberRole {
+  Owner,
+  Administrator,
+  Employee
+}

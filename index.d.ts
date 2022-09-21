@@ -1,14 +1,24 @@
-// Address
+import "./event";
+import "./organization";
+import "./tokens";
+import "./user";
+
 export type Address = {
   id: string;
   street: string;
   zipCode: string;
   city: string;
-  country: string; // was missing
+  country: string;
 };
 
 // Currency
-export type Currency = "eur" | "usd";
+export enum Currency {
+  EUR,
+  USD
+}
 
 // I18n
-export type Language = "fr" | "en";
+export enum Language {
+  FR,
+  EN
+}

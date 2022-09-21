@@ -6,4 +6,10 @@ export type UserToken = {
   expiresAt: Date;
 }
 
-export type UserTokenType = "recovery" | "email" | "phone";
+export enum UserTokenType {
+  Authentication,
+  Organization_Invite,
+  Password_Recovery,
+  Email_Validation,
+  Phone_Validation,
+}
