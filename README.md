@@ -33,6 +33,9 @@
   <a aria-label="LinkedIn" href="https://www.linkedin.com/company/tonightpass">
     <img alt="" src="https://img.shields.io/badge/LinkedIn-0e76a8.svg?style=for-the-badge&labelColor=000000&logo=linkedin&logoColor=white&logoWidth=20">
   </a>
+  <a aria-label="Instagram" href="https://www.instagram/tonightpass">
+    <img alt="" src="https://img.shields.io/badge/Instagram-C13584.svg?style=for-the-badge&labelColor=000000&logo=instagram&logoColor=white&logoWidth=20">
+  </a>
 </p>
 
 ## Getting Started
