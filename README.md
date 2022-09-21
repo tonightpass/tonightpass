@@ -48,11 +48,11 @@ The TonightPass community can be found on [GitHub Discussions](https://github.co
 
 To chat with other community members and see the live development you can join the [Discord](https://discord.gg/VvvAkPqQ98).
 
-Our [Code of Conduct](https://github.com/tonightpass/shared-types/blob/master/CODE_OF_CONDUCT.md) applies to all community channels.
+Our [Code of Conduct](https://docs.onruntime.com/contributing/code-of-conduct) applies to all community channels.
 
 ## Contributing
 
-Please see our [contributing.md](/CONTRIBUTING.md).
+Please see our [contributing rules](https://docs.onruntime.com/contributing/introduction).
 
 ## Authors
 
