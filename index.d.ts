@@ -1,7 +1,7 @@
-import "./event";
-import "./organization";
-import "./tokens";
-import "./user";
+/// <reference types="./event" />
+/// <reference types="./organization" />
+/// <reference types="./tokens" />
+/// <reference types="./user" />
 
 export type Location = {
   name?: string;
