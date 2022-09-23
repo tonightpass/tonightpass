@@ -1,7 +1,7 @@
-/// <reference types="./event" />
-/// <reference types="./organization" />
-/// <reference types="./tokens" />
-/// <reference types="./user" />
+export * from "./event";
+export * from "./organization";
+export * from "./token";
+export * from "./user";
 
 export type Location = {
   name?: string;
