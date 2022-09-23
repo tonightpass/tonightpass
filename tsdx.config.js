@@ -1,6 +1,6 @@
 const packageJson = require('./package.json');
 const generatePackageJson = require("rollup-plugin-generate-package-json");
-const copy = require("rollup-plugin-copy");
+const copy = require("rollup-plugin-copy-sync");
 
 
 module.exports = {

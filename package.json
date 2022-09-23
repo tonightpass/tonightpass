@@ -36,7 +36,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.1",
     "prettier": "^2.7.1",
-    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-copy-sync": "^1.0.0",
     "rollup-plugin-generate-package-json": "^3.2.0",
     "size-limit": "^8.1.0",
     "tsdx": "^0.14.1",
