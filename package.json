@@ -4,13 +4,50 @@
   "description": "Tonight Pass shared types",
   "author": "Tonight Pass <developers@tonightpass.com>",
   "license": "MIT",
+  "module": "dist/index.esm.js",
 
-  "main": "",
-  "types": "./index.d.ts",
-
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "engines": {
+    "node": ">=10"
+  },
   "homepage": "https://tonightpass.com",
   "repository": "https://github.com/tonightpass/shared-types.git",
   
-  "scripts": {},
-  "dependencies": {}
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^8.1.0",
+    "husky": "^8.0.1",
+    "size-limit": "^8.1.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.3"
+  },
+  "peerDependencies": {},
+
+  "size-limit": [
+    {
+      "path": "dist/test.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/test.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  }
 }
