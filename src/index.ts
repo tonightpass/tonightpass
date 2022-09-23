@@ -6,18 +6,18 @@ export type Location = {
   country: string;
   geometry?: {
     latitude: number;
-    longitude: number
+    longitude: number;
   };
 };
 
 // Currency
 export enum Currency {
   EUR,
-  USD
+  USD,
 }
 
 // I18n
 export enum Language {
   FR,
-  EN
+  EN,
 }
