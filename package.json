@@ -9,7 +9,7 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "engines": {
-    "node": ">=10"
+    "node": ">=14"
   },
   "homepage": "https://tonightpass.com",
   "repository": "https://github.com/tonightpass/shared-types.git",
