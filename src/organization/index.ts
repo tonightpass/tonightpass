@@ -26,7 +26,7 @@ export enum OrganizationSocialType {
   Instagram,
   LinkedIn,
   Youtube,
-  Website
+  Website,
 }
 
 export type OrganizationMember = {
@@ -37,5 +37,5 @@ export type OrganizationMember = {
 export enum OrganizationMemberRole {
   Owner,
   Administrator,
-  Employee
+  Employee,
 }
