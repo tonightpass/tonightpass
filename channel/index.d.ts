@@ -12,11 +12,11 @@ export type channel =
 
 export enum duration
 {
-    fifteenMinute = 15,
-    oneHour       = 1,
-    threeHour     = 3,
-    eightHour     = 8,
-    twentyFourHour= 24,
-    manualTurnOn  = 0,
-    manualTurnOff = 1
+    fifteenMinute = 0.25,
+    oneHour       = 60,
+    threeHour     = 180,
+    eightHour     = 480,
+    twentyFourHour= 1440,
+    manualTurnOn  = 1,
+    manualTurnOff = 0
 }
