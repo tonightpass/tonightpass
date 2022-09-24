@@ -4,7 +4,7 @@ export type UserToken = {
   value: string;
   createdAt: Date;
   expiresAt: Date;
-}
+};
 
 export enum UserTokenType {
   Authentication,
