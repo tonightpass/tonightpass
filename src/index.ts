@@ -1,8 +1,3 @@
-import "./event";
-import "./organization";
-import "./tokens";
-import "./user";
-
 export type Location = {
   name?: string;
   address: string;
@@ -11,18 +6,18 @@ export type Location = {
   country: string;
   geometry?: {
     latitude: number;
-    longitude: number
+    longitude: number;
   };
 };
 
 // Currency
 export enum Currency {
   EUR,
-  USD
+  USD,
 }
 
 // I18n
 export enum Language {
   FR,
-  EN
+  EN,
 }

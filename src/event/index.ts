@@ -40,19 +40,19 @@ export enum EventType {
   "workshop",
   "trade_fair",
   "consumer_show",
-  "membership"
+  "membership",
 }
 
 export type EventStyle = {
   type: EventStyleType;
   emoji: string;
   name: string;
-}
+};
 
 export enum EventStyleType {
   "music",
   "dress",
   "sport",
   "food",
-  "art"
+  "art",
 }
