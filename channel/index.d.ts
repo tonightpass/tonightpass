@@ -17,5 +17,5 @@ export enum duration
     threeHour     = 3,
     eightHour     = 8,
     twentyFourHour= 24,
-    manualTurnOn  = 1
+    manualTurnOn  = 0
 }
