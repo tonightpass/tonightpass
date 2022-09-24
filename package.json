@@ -1,6 +1,6 @@
 {
   "private": true,
-  "version": "0.0.2",
+  "version": "0.1.0",
   "name": "@tonightpass/shared-types",
   "description": "Tonight Pass shared types",
   "author": "Tonight Pass <developers@tonightpass.com>",
