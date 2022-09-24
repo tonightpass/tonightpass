@@ -6,7 +6,7 @@ export type channel =
     type       ?: "private"|"group";
     user        : User[];
     createdOn  ?: Date;
-    muteChannel : duration; //mute Channel which will accept number b
+    muteChannel : duration; //mute Channel which will accept number from enum (duration)
     invinteLink : string; //Channel invinte link
 }
 
