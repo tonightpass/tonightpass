@@ -1,16 +1,16 @@
 import {User} from "../user";
 
-export type channel =
+export type Channel =
 {
     id         ?: string;
     type       ?: "private"|"group";
     user        : User[];
     createdOn  ?: Date;
-    muteChannel : duration; //mute Channel which will accept number from enum (duration)
+    muteChannel : Duration; //mute Channel which will accept number from enum (duration)
     inviteLink  : string;  //Channel invite link
 }
 
-export enum duration
+export enum Duration
 {
     fifteenMinute = 0.25,
     oneHour       = 60,
