@@ -20,5 +20,5 @@ export type Attachement = {
 
 export type Reaction = {
   emojiCode: string; 
-  amount: number    //number of user used that particular emoji
+  amount: number;    //number of user used that particular emoji
 };
