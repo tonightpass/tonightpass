@@ -3,28 +3,28 @@
 // https://dev.mailjet.com/email/reference
 
 type EmailMessageContact = {
-  Email: string;
-  Name?: string;
+  email: string;
+  name?: string;
 };
 
 type Attachment = {
-  Filename: string;
-  ContentType: string;
-  Base46Content: string;
+  filename: string;
+  contentType: string;
+  base46Content: string;
 };
 
 export type MailjetEmailMessage<Payload> = {
-  From?: EmailMessageContact;
-  To: EmailMessageContact[];
-  Cc?: EmailMessageContact[];
-  Bcc?: EmailMessageContact[];
-  Variables?: Payload;
-  TemplateLanguage?: boolean;
-  Subject?: string;
-  TemplateID?: number;
-  TextPart?: string;
-  HTMLPart?: string;
-  Attachments?: Attachment[];
+  from?: EmailMessageContact;
+  to: EmailMessageContact[];
+  cc?: EmailMessageContact[];
+  bcc?: EmailMessageContact[];
+  variables?: Payload;
+  templateLanguage?: boolean;
+  subject?: string;
+  templateID?: number;
+  textPart?: string;
+  htmlPart?: string;
+  attachments?: Attachment[];
 };
 
 export * from "./contact";
