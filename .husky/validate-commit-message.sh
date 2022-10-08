@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-. "$(dirname -- "$0")/_/husky.sh"
+#!/bin/bash
 
 separator="|"
 gitmojis=(🎨 ⚡️ 🔥 🐛 🚑️ ✨ 📝 🚀 💄 🎉 ✅ 🔒️ 🔐 🔖 🚨 🚧 💚 ⬇️ ⬆️ 📌 👷 📈 ♻️ ➕ ➖ 🔧 🔨 🌐 ✏️ 💩 ⏪️ 🔀 📦️ 👽️ 🚚 📄 💥 🍱 ♿️ 💡 🍻 💬 🗃️ 🔊 🔇 👥 🚸 🏗️ 📱 🤡 🥚 🙈 📸 ⚗️ 🔍️ 🏷️ 🌱 🚩 🥅 💫 🗑️ 🛂 🩹 🧐 ⚰️ 🧪 👔 🩺 🧱 🧑‍💻 💸)
@@ -13,7 +12,6 @@ typesRegex="${typesRegex:${#separator}}"
 
 message="$(cat $1)"
 
-# Reference : https://docs.onruntime.com/contributing/commits
 regex="^(${emojiRegex}) (${typesRegex}) (.*[a-z0-9]{1,})$"
 
 if [[ ! $message =~ $regex ]];
@@ -36,4 +34,8 @@ then
   echo "For more information, check script in .husky/commit-msg"
   echo "-"
   exit 1
+else
+  echo " "
+  echo "✔️ Commit message validted!"
+  echo " "
 fi
