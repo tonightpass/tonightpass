@@ -23,7 +23,7 @@
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "prepare": "husky install && yarn build",
-    "format-staged": "pretty-quick --staged",
+    "format:staged": "pretty-quick --staged",
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
