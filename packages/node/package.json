@@ -1,6 +1,6 @@
 {
   "name": "@tonightpass/node",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0",
   "main": "dist/tonightpass-node.cjs.js",
   "module": "dist/tonightpass-node.esm.js",
   "devDependencies": {
