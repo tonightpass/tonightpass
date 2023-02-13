@@ -6,36 +6,39 @@ export type Organization = {
   id: string;
   name: string;
   slug: string;
-  socials: OrganizationSocial[];
   members: OrganizationMember[];
+  logoUrl: string;
+  socialLinks: OrganizationSocialLink[];
   location?: Location;
-  savedTickets: EventTicket[];
   events: Event[];
+  savedTickets: EventTicket[];
   updatedAt: Date;
   createdAt: Date;
 };
 
-export type OrganizationSocial = {
+export type OrganizationSocialLink = {
   type: OrganizationSocialType;
   url: string;
 };
 
 export enum OrganizationSocialType {
-  Facebook,
-  Twitter,
-  Instagram,
-  LinkedIn,
-  Youtube,
-  Website,
+  FACEBOOK,
+  TWITTER,
+  INSTAGRAM,
+  LINKEDIN,
+  YOUTUBE,
+  WEBSITE,
 }
 
 export type OrganizationMember = {
   user: User;
   role: OrganizationMemberRole;
+  createdAt: Date;
 };
 
 export enum OrganizationMemberRole {
-  Owner,
-  Administrator,
-  Employee,
+  EMPLOYEE = 0,
+  MANAGER = 1,
+  ADMINISTRATOR = 2,
+  OWNER = 3,
 }
