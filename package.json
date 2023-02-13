@@ -7,10 +7,8 @@
   "scripts": {
     "build": "turbo run build",
     "build:packages": "turbo run p:build",
-    "build:docs": "turbo run build --filter=docs...",
     "dev": "turbo run p:watch dev --parallel --no-cache",
     "dev:packages": "turbo run p:watch",
-    "dev:docs": "turbo run dev --filter=@tonightpass/kitchen-docs",
     "p:watch": "preconstruct watch",
     "p:dev": "preconstruct dev",
     "p:build": "preconstruct build",
@@ -20,8 +18,8 @@
     "version": "changeset version",
     "release": "changeset publish",
     "release:alpha": "pnpm changeset publish --tag alpha",
-    "lint": "eslint . --ext .ts,.tsx",
-    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
     "size": "size-limit",
     "size:why": "size-limit --why",
     "format:staged": "pretty-quick --staged"
