@@ -6,17 +6,16 @@ export type Organization = {
   id: string;
   name: string;
   slug: string;
+  socials: OrganizationSocial[];
   members: OrganizationMember[];
-  logoUrl: string;
-  socialLinks: OrganizationSocialLink[];
   location?: Location;
-  events: Event[];
   savedTickets: EventTicket[];
+  events: Event[];
   updatedAt: Date;
   createdAt: Date;
 };
 
-export type OrganizationSocialLink = {
+export type OrganizationSocial = {
   type: OrganizationSocialType;
   url: string;
 };
@@ -33,12 +32,10 @@ export enum OrganizationSocialType {
 export type OrganizationMember = {
   user: User;
   role: OrganizationMemberRole;
-  createdAt: Date;
 };
 
 export enum OrganizationMemberRole {
-  Employee = "employee",
-  Manager = "manager",
-  Administrator = "administrator",
-  Owner = "owner",
+  Owner,
+  Administrator,
+  Employee,
 }

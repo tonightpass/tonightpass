@@ -1,4 +1,10 @@
 *.log
 .DS_Store
-node_modules
-dist
+node_modules/
+dist/
+yarn-error.log
+.pnpm-debug.log
+.idea/
+.next/
+.store/
+.turbo/

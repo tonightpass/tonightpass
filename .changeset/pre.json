@@ -1,0 +1,8 @@
+{
+  "mode": "pre",
+  "tag": "alpha",
+  "initialVersions": {
+    "@tonightpass/shared-types": "1.0.0-alpha.0"
+  },
+  "changesets": []
+}
