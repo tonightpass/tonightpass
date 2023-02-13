@@ -52,6 +52,12 @@ importers:
       size-limit: 8.2.4
       turbo: 1.7.4
 
+  packages/node:
+    specifiers:
+      typescript: ^4.9.3
+    devDependencies:
+      typescript: 4.9.5
+
   packages/shared-types:
     specifiers:
       typescript: ^4.9.3

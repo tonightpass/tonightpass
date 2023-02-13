@@ -1,0 +1,14 @@
+{
+  "name": "@tonightpass/node",
+  "version": "1.0.0-alpha.0",
+  "main": "dist/tonightpass-node.cjs.js",
+  "module": "dist/tonightpass-node.esm.js",
+  "devDependencies": {
+    "typescript": "^4.9.3"
+  },
+  "preconstruct": {
+    "entrypoints": [
+      "index.ts"
+    ]
+  }
+}
