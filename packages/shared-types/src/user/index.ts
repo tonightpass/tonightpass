@@ -5,7 +5,6 @@ export type User = {
   identifier: UserIdentifier;
   password: string;
   identity: UserIdentity;
-  role: UserRole;
   addresses: Location[];
   preferences: UserPreferences;
   connections: UserConnection[];
@@ -26,12 +25,6 @@ export type UserIdentity = {
   birthDate: Date;
   idValid: boolean;
 };
-
-export enum UserRole {
-  USER = "user",
-  DEVELOPER = "developer",
-  ADMINISTRATOR = "administrator",
-}
 
 export type UserIdentityGender = "male" | "female" | "non-binary" | string;
 

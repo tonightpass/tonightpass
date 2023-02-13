@@ -1,0 +1,14 @@
+{
+  "name": "@tonightpass/shared-types",
+  "version": "1.0.0-alpha.0",
+  "main": "dist/tonightpass-shared-types.cjs.js",
+  "module": "dist/tonightpass-shared-types.esm.js",
+  "devDependencies": {
+    "typescript": "^4.9.3"
+  },
+  "preconstruct": {
+    "entrypoints": [
+      "index.ts"
+    ]
+  }
+}

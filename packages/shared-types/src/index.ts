@@ -1,5 +1,4 @@
 export * from "./event";
-export * from "./mailjet";
 export * from "./organization";
 export * from "./token";
 export * from "./user";
