@@ -1,6 +1,6 @@
 {
   "name": "@tonightpass/grafe",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "dist/tonightpass-grafe.cjs.js",
   "module": "dist/tonightpass-grafe.esm.js",
   "peerDependencies": {
