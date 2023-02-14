@@ -1,0 +1,22 @@
+{
+  "name": "@tonightpass/grafe",
+  "version": "0.0.1",
+  "main": "dist/tonightpass-grafe.cjs.js",
+  "module": "dist/tonightpass-grafe.esm.js",
+  "peerDependencies": {
+    "@apollo/client": ">=3.x.x",
+    "next": ">=13.x.x",
+    "react": ">=18.x.x"
+  },
+  "devDependencies": {
+    "@apollo/client": "^3.7.7",
+    "next": "^13.1.6",
+    "react": "^18.2.0",
+    "typescript": "^4.9.3"
+  },
+  "preconstruct": {
+    "entrypoints": [
+      "index.ts"
+    ]
+  }
+}
