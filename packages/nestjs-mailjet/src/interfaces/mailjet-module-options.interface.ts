@@ -1,4 +1,4 @@
-export interface IMailjetModuleOptions {
+export interface MailjetModuleOptions {
   /**
    *  public Mailjet API key
    */

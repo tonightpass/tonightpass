@@ -1,54 +1,61 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { HttpModule } from "@nestjs/axios";
-import { DynamicModule, Module, Provider } from "@nestjs/common";
+import { DynamicModule, Global, Module, Provider } from "@nestjs/common";
+
 import { MAILJET_MODULE_OPTIONS } from "./constants/mailjet.constants";
+import { MailjetModuleOptions } from "./interfaces";
 import {
-  IMailjetModuleAsyncOptions,
-  IMailjetOptionsFactory,
+  MailjetModuleAsyncOptions,
+  MailjetOptionsFactory,
 } from "./interfaces/mailjet-module-async-options.interface";
-import { IMailjetModuleOptions } from "./interfaces/mailjet-module-options.interface";
-import { createMailjetProvider } from "./mailjet.provider";
-import { MailjetService } from "./services/mailjet.service";
+import { createMailjetProviders } from "./mailjet.provider";
+import { MailjetService } from "./mailjet.service";
 
 @Module({
   imports: [HttpModule],
-  providers: [MailjetService],
+  providers: [
+    {
+      provide: MailjetService,
+      useExisting: MAILJET_MODULE_OPTIONS,
+    },
+  ],
   exports: [MailjetService],
 })
 export class MailjetModule {
-  static forRoot(options: IMailjetModuleOptions): DynamicModule {
+  static forRoot(options: MailjetModuleOptions): DynamicModule {
     return {
       module: MailjetModule,
-      providers: createMailjetProvider(options),
+      providers: createMailjetProviders(options),
     };
   }
 
-  static forRootAsync(options: IMailjetModuleAsyncOptions): DynamicModule {
+  static forRootAsync(options: MailjetModuleAsyncOptions): DynamicModule {
+    const providers = [...this.createAsyncProviders(options)];
+
     return {
       module: MailjetModule,
       imports: options.imports || [],
-      providers: this.createAsyncProvider(options),
+      providers,
     };
   }
 
-  private static createAsyncProvider(
-    options: IMailjetModuleAsyncOptions
+  private static createAsyncProviders(
+    options: MailjetModuleAsyncOptions
   ): Provider[] {
     if (options.useExisting || options.useFactory) {
-      return [this.createAsyncOptionsProvider(options)];
+      return [this.createAsyncOptionsProviders(options)];
     }
 
     return [
-      this.createAsyncOptionsProvider(options),
+      this.createAsyncOptionsProviders(options),
       {
-        provide: options.useClass!,
-        useClass: options.useClass!,
+        provide: options.useClass,
+        useClass: options.useClass,
       },
     ];
   }
 
-  private static createAsyncOptionsProvider(
-    options: IMailjetModuleAsyncOptions
+  private static createAsyncOptionsProviders(
+    options: MailjetModuleAsyncOptions
   ): Provider {
     if (options.useFactory) {
       return {
@@ -60,9 +67,9 @@ export class MailjetModule {
 
     return {
       provide: MAILJET_MODULE_OPTIONS,
-      useFactory: async (optionsFactory: IMailjetOptionsFactory) =>
+      useFactory: async (optionsFactory: MailjetOptionsFactory) =>
         await optionsFactory.createMailjetOptions(),
-      inject: [options.useExisting || options.useClass || ""],
+      inject: [options.useExisting || options.useClass],
     };
   }
 }

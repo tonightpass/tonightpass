@@ -1,3 +1,3 @@
-export * from "./interfaces";
 export * from "./mailjet.module";
-export * from "./services/mailjet.service";
+export * from "./mailjet.service";
+export * from "./interfaces";
