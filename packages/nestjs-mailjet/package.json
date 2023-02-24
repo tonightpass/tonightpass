@@ -3,8 +3,13 @@
   "version": "3.0.0",
   "main": "dist/tonightpass-nestjs-mailjet.cjs.js",
   "module": "dist/tonightpass-nestjs-mailjet.esm.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "rimraf dist",
+    "build": "nest build"
+  },
   "peerDependencies": {
-    "@nestjs/axios": "^0.1.0",
+    "@nestjs/axios": ">=1.x.x",
     "@nestjs/common": ">=8.x.x",
     "@nestjs/core": ">=8.x.x",
     "@nestjs/platform-fastify": ">=9.x.x",
@@ -12,7 +17,7 @@
     "node-mailjet": ">=6.x.x"
   },
   "devDependencies": {
-    "@nestjs/axios": "^0.1.0",
+    "@nestjs/axios": "^1.0.1",
     "@nestjs/common": "8.0.11",
     "@nestjs/core": "8.0.11",
     "@nestjs/platform-fastify": "^9.3.8",

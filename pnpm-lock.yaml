@@ -68,7 +68,7 @@ importers:
 
   packages/nestjs-mailjet:
     specifiers:
-      '@nestjs/axios': ^0.1.0
+      '@nestjs/axios': ^1.0.1
       '@nestjs/common': 8.0.11
       '@nestjs/core': 8.0.11
       '@nestjs/platform-fastify': ^9.3.8
@@ -78,7 +78,7 @@ importers:
       tslib: ^2.5.0
       typescript: ^4.9.3
     devDependencies:
-      '@nestjs/axios': 0.1.2_y5juboutdl6uqn72iqgbawi5oq
+      '@nestjs/axios': 1.0.1_y5juboutdl6uqn72iqgbawi5oq
       '@nestjs/common': 8.0.11_mnr6j2del53muneqly5h4y27ai
       '@nestjs/core': 8.0.11_y5juboutdl6uqn72iqgbawi5oq
       '@nestjs/platform-fastify': 9.3.8_dmr42xglh6ufbprcuqw6c2vlc4
@@ -1836,9 +1836,8 @@ packages:
       read-yaml-file: 1.1.0
     dev: false
 
-  /@nestjs/axios/0.1.2_y5juboutdl6uqn72iqgbawi5oq:
-    resolution: {integrity: sha512-KFW37K5ujSce3lukNp9Uym5T6/oKCDw8EQRYhAKdNiBveMtotkokJwKIHVKCc21qfXMyes4291eR2No1Sf/fow==}
-    deprecated: Deprecated
+  /@nestjs/axios/1.0.1_y5juboutdl6uqn72iqgbawi5oq:
+    resolution: {integrity: sha512-TpoZM/0ZJ9xiC04qkRDFod93LCZ12TQARRU3ejDvBK2E8emvzM4HThOs5ePklVxce4Q1ZsnrIWqnImvoDmJYnQ==}
     peerDependencies:
       '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0
       reflect-metadata: ^0.1.12
