@@ -1,5 +1,11 @@
 # @tonightpass/nestjs-mailjet
 
+## 3.0.1
+
+### Patch Changes
+
+- 8e9b87f: Update dependencies versions
+
 ## 3.0.0
 
 ### Major Changes
