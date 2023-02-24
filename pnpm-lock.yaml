@@ -72,7 +72,6 @@ importers:
       '@nestjs/common': 8.0.11
       '@nestjs/core': 8.0.11
       '@nestjs/platform-fastify': ^9.3.8
-      '@tonightpass/shared-types': ^0.3.0
       '@types/node': 16.10.3
       node-mailjet: 6.0.2
       tslib: ^2.5.0
@@ -82,7 +81,6 @@ importers:
       '@nestjs/common': 8.0.11_mnr6j2del53muneqly5h4y27ai
       '@nestjs/core': 8.0.11_y5juboutdl6uqn72iqgbawi5oq
       '@nestjs/platform-fastify': 9.3.8_dmr42xglh6ufbprcuqw6c2vlc4
-      '@tonightpass/shared-types': link:../shared-types
       '@types/node': 16.10.3
       node-mailjet: 6.0.2
       tslib: 2.5.0
