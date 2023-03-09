@@ -20,6 +20,7 @@ export type UserIdentifier = {
 export type UserIdentity = {
   firstName: string;
   lastName: string;
+  fullName: string;
   userName: string;
   gender: UserIdentityGender;
   profilePictureUrl?: string;
