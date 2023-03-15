@@ -34,7 +34,15 @@ export enum UserRole {
   ADMINISTRATOR = 10,
 }
 
-export type UserIdentityGender = "male" | "female" | "non-binary" | string;
+export type UserIdentityGender =
+  | "male"
+  | "female"
+  | "non-binary"
+  | "gender-fluid"
+  | "transgender"
+  | "neutral"
+  | "other"
+  | string;
 
 export type UserPreferences = {
   language: Language;
