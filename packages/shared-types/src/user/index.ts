@@ -40,7 +40,6 @@ export type UserIdentityGender =
   | "female"
   | "non-binary"
   | "gender-fluid"
-  | "transgender"
   | "neutral"
   | "other"
   | string;
