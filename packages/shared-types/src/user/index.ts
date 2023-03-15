@@ -22,6 +22,7 @@ export type UserIdentity = {
   lastName: string;
   fullName: string;
   userName: string;
+  displayName: string;
   gender: UserIdentityGender;
   profilePictureUrl?: string;
   birthDate: Date;
