@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 0.4.2
+
+### Patch Changes
+
+- 542195a: Add `displayName` to `UserIdentity`
+
 ## 0.4.1
 
 ### Patch Changes
