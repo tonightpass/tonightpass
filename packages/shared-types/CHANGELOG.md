@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 0.4.1
+
+### Patch Changes
+
+- 4e652c9: Update `UserIdentityGender` with more default options
+
 ## 0.4.0
 
 ### Minor Changes
