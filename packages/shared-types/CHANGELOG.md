@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 0.4.3
+
+### Patch Changes
+
+- 2800187: Remove `transgender` from `UserIdentityGender`
+
 ## 0.4.2
 
 ### Patch Changes
