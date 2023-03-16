@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 0.5.0
+
+### Minor Changes
+
+- f0a6df2: Add user DTOs
+
 ## 0.4.3
 
 ### Patch Changes
