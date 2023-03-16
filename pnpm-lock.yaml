@@ -57,14 +57,14 @@ importers:
   packages/grafe:
     specifiers:
       '@apollo/client': ^3.7.7
-      '@tonightpass/shared-types': ^0.4.0
+      '@tonightpass/shared-types': ^0.5.0
       '@types/react': ^18.0.28
       next: ^13.1.6
       react: ^18.2.0
       typescript: ^4.9.3
     devDependencies:
       '@apollo/client': 3.7.7_gdcq4dv6opitr3wbfwyjmanyra
-      '@tonightpass/shared-types': 0.4.3
+      '@tonightpass/shared-types': link:../shared-types
       '@types/react': 18.0.28
       next: 13.1.6_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
@@ -2333,10 +2333,6 @@ packages:
     dependencies:
       defer-to-connect: 1.1.3
     dev: false
-
-  /@tonightpass/shared-types/0.4.3:
-    resolution: {integrity: sha512-40nLPllWfYjCMj2rzsEkhrdhXdPsY/kPORrCafQI0EohC4RBVsKAN+KgDXm1chRDZz9t4GrYNvmnB3cYsP/uAA==}
-    dev: true
 
   /@types/eslint-scope/3.7.4:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
