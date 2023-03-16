@@ -1,5 +1,11 @@
 # @tonightpass/grafe
 
+## 2.1.0
+
+### Minor Changes
+
+- c8c6ea2: Add Identify User query
+
 ## 2.0.0
 
 ### Patch Changes
