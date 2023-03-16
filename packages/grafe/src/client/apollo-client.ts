@@ -8,24 +8,31 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import { isUri } from "../utils/is-uri";
 
-export const createApolloClient = (
-  initialState: NormalizedCacheObject,
-  ctx?: any
-): ApolloClient<NormalizedCacheObject> => {
-  if (
-    !process.env.NEXT_PUBLIC_GRAPH_URL ||
-    !isUri(process.env.NEXT_PUBLIC_GRAPH_URL)
-  ) {
-    throw new Error("NEXT_PUBLIC_GRAPH_URL is not set or is not an valid uri");
+interface CreateApolloClientOptions {
+  initialState?: NormalizedCacheObject;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ctx?: any;
+  graphqlUrl: string;
+  jwtHeaderPrefix?: string;
+}
+
+export const createApolloClient = ({
+  initialState,
+  ctx,
+  graphqlUrl,
+  jwtHeaderPrefix = "Bearer",
+}: CreateApolloClientOptions): ApolloClient<NormalizedCacheObject> => {
+  if (!isUri(graphqlUrl)) {
+    throw new Error("graphqlUrl is not set or is not an valid uri");
   }
 
   const httpLink = createHttpLink({
-    uri: process.env.NEXT_PUBLIC_GRAPH_URL,
+    uri: graphqlUrl,
     credentials: "same-origin",
   });
 
   const authLink = setContext((_, { headers }) => {
-    const headerPrefix = process.env.NEXT_PUBLIC_JWT_HEADER_PREFIX || "Bearer";
+    const headerPrefix = jwtHeaderPrefix;
 
     const token = localStorage.getItem("jwt_token");
 
