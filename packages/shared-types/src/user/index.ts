@@ -22,6 +22,7 @@ export type UserIdentity = {
   lastName: string;
   fullName: string;
   userName: string;
+  displayName: string;
   gender: UserIdentityGender;
   profilePictureUrl?: string;
   birthDate: Date;
@@ -34,7 +35,14 @@ export enum UserRole {
   ADMINISTRATOR = 10,
 }
 
-export type UserIdentityGender = "male" | "female" | "non-binary" | string;
+export type UserIdentityGender =
+  | "male"
+  | "female"
+  | "non-binary"
+  | "gender-fluid"
+  | "neutral"
+  | "other"
+  | string;
 
 export type UserPreferences = {
   language: Language;
