@@ -3,6 +3,9 @@ export * from "./organization";
 export * from "./token";
 export * from "./user";
 
+// - API
+export * from "./api";
+
 export type Location = {
   name?: string;
   address: string;
