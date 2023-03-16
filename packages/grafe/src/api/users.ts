@@ -12,9 +12,7 @@ export class UsersAPI {
     return await this.rest.query<User>(GET_USER, { userId });
   }
 
-  public async identify(
-    identifyUserDto: IdentifyUserDto
-  ): Promise<APIResponse<boolean>> {
+  public async identify(identifyUserDto: any): Promise<APIResponse<boolean>> {
     return await this.rest.query<boolean>(IDENTIFY_USER, {
       identifyUserInput: identifyUserDto,
     });
