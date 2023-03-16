@@ -1,2 +1,4 @@
-export * from "./client/apollo-client";
-export * from "./hoc/withApollo";
+export * from "./client";
+export * from "./hoc";
+export * from "./contexts";
+export * from "./hooks";
