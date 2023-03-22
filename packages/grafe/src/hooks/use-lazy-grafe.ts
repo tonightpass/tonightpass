@@ -23,7 +23,7 @@ export const useLazyGrafe = <TData = any>(
   action: (
     client: GrafeClient,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    variables: { [key: string]: any }
+    variables?: Variables
   ) => Promise<TData>
 ): [
   (variables: Variables) => void,
@@ -42,7 +42,7 @@ export const useLazyGrafe = <TData = any>(
     error: string | undefined;
   }>({ loading: false, success: false, data: undefined, error: undefined });
 
-  const handleAction = (variables: Variables) => {
+  const handleAction = (variables?: Variables) => {
     setState({
       ...state,
       loading: true,
