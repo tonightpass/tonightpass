@@ -5,16 +5,18 @@ import { UNSUBSCRIBE_FROM_NEWSLETTER } from "./store/notifications/unsubscribe-n
 export class NotificationsAPI {
   public constructor(private readonly rest: REST) {}
 
-  public async subscribeToNewsletter(email: string): Promise<boolean> {
-    return await this.rest.mutate<boolean>(SUBSCRIBE_TO_NEWSLETTER, { email });
+  public async subscribeToNewsletter(userEmail: string): Promise<boolean> {
+    return await this.rest.mutate<boolean>(SUBSCRIBE_TO_NEWSLETTER, {
+      userEmail,
+    });
   }
 
   public async unsubscribeFromNewsletter(
-    email: string,
+    userEmail: string,
     reason: string
   ): Promise<boolean> {
     return await this.rest.mutate<boolean>(UNSUBSCRIBE_FROM_NEWSLETTER, {
-      email,
+      userEmail,
       reason,
     });
   }
