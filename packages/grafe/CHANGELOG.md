@@ -1,5 +1,11 @@
 # @tonightpass/grafe
 
+## 3.1.1
+
+### Patch Changes
+
+- 0c23fa8: Fix subscribing to newsletter variables names
+
 ## 3.1.0
 
 ### Minor Changes
