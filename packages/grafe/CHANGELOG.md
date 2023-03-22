@@ -1,5 +1,11 @@
 # @tonightpass/grafe
 
+## 3.1.0
+
+### Minor Changes
+
+- fe51714: Add newsletter subscribing queries and fix useLazyGrafe parameters
+
 ## 3.0.0
 
 ### Major Changes
