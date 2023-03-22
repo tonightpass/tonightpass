@@ -1,5 +1,11 @@
 # @tonightpass/grafe
 
+## 3.0.0
+
+### Major Changes
+
+- 00b62d5: Add useGrafe and useLazyGrafe hooks and more API data
+
 ## 2.1.0
 
 ### Minor Changes
