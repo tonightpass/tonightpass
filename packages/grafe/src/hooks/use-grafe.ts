@@ -2,11 +2,20 @@ import React from "react";
 
 import { GrafeClient } from "../client/grafe-client";
 import { GrafeContext } from "../contexts/Grafe";
-import { APIResponse } from "../types/api-response";
 
+/**
+ * A hook that provides a GrafeClient instance and returns data as TData.
+ * You can use this hook to fetch data from Grafe.
+ *
+ * @example
+ * const [loading, success, data, error] = useGrafe((client) => client.users.get(`${id}`));
+ *
+ * @param action A function that provides a GrafeClient instance and returns data as TData.
+ * @returns A tuple of [loading, success, data, error]
+ */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const useGrafe = <TData = any>(
-  action: (client: GrafeClient) => Promise<APIResponse<TData>>
+  action: (client: GrafeClient) => Promise<TData>
 ): [boolean, boolean, TData | undefined, string | undefined] => {
   const { client } = React.useContext(GrafeContext);
 
@@ -14,27 +23,40 @@ export const useGrafe = <TData = any>(
     throw new Error("Grafe client not found");
   }
 
-  const [loading, setLoading] = React.useState<boolean>(false);
-  const [success, setSuccess] = React.useState<boolean>(false);
-  const [data, setData] = React.useState<TData | undefined>(undefined);
-  const [error, setError] = React.useState<string | undefined>(undefined);
+  const [state, setState] = React.useState<{
+    loading: boolean;
+    success: boolean;
+    data: TData | undefined;
+    error: string | undefined;
+  }>({ loading: false, success: false, data: undefined, error: undefined });
 
   React.useEffect(() => {
-    setLoading(true);
+    setState({
+      ...state,
+      loading: true,
+    });
 
     action(client)
       .then((result) => {
-        setSuccess(result.success);
-        setData(result.data);
-        setError(result.error);
+        setState({
+          ...state,
+          success: true,
+          data: result,
+        });
       })
       .catch((err) => {
-        setError(err);
+        setState({
+          ...state,
+          error: err,
+        });
       })
       .finally(() => {
-        setLoading(false);
+        setState({
+          ...state,
+          loading: false,
+        });
       });
-  }, [action, client]);
+  }, [action, client, state]);
 
-  return [loading, success, data, error];
+  return [state.loading, state.success, state.data, state.error];
 };

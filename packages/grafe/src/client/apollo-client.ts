@@ -29,17 +29,21 @@ export const createApolloClient = ({
   const httpLink = createHttpLink({
     uri: graphqlUrl,
     credentials: "same-origin",
+    fetch: (uri, options) => {
+      return fetch(uri, {
+        ...options,
+        credentials: "include",
+      });
+    },
   });
 
   const authLink = setContext((_, { headers }) => {
-    const headerPrefix = jwtHeaderPrefix;
-
     const token = localStorage.getItem("jwt_token");
 
     return {
       headers: {
         ...headers,
-        authorization: token ? `${headerPrefix} ${token}` : "",
+        authorization: token ? `${jwtHeaderPrefix} ${token}` : "",
       },
     };
   });
