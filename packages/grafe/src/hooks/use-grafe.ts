@@ -16,7 +16,7 @@ import { GrafeContext } from "../contexts/Grafe";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const useGrafe = <TData = any>(
   action: (client: GrafeClient) => Promise<TData>
-): [boolean, boolean, TData | undefined, string | undefined] => {
+): [boolean, boolean, TData | undefined, string | Error | undefined] => {
   const { client } = React.useContext(GrafeContext);
 
   if (!client) {
@@ -27,7 +27,7 @@ export const useGrafe = <TData = any>(
     loading: boolean;
     success: boolean;
     data: TData | undefined;
-    error: string | undefined;
+    error: string | Error | undefined;
   }>({ loading: false, success: false, data: undefined, error: undefined });
 
   React.useEffect(() => {
