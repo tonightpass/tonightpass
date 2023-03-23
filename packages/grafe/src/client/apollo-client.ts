@@ -5,6 +5,7 @@ import {
   HttpLink,
   InMemoryCache,
 } from "@apollo/client";
+import * as SecureStore from "expo-secure-store";
 import { setContext } from "@apollo/client/link/context";
 import { isUri } from "../utils/is-uri";
 
@@ -15,6 +16,14 @@ interface CreateApolloClientOptions {
   graphqlUrl: string;
   jwtHeaderPrefix?: string;
 }
+
+const getJwtToken = async (): Promise<string | null> => {
+  if (typeof window !== "undefined") {
+    return localStorage.getItem("jwt_token");
+  } else {
+    return await SecureStore.getItemAsync("jwt_token");
+  }
+};
 
 export const createApolloClient = ({
   initialState,
@@ -37,8 +46,8 @@ export const createApolloClient = ({
     },
   });
 
-  const authLink = setContext((_, { headers }) => {
-    const token = localStorage.getItem("jwt_token");
+  const authLink = setContext(async (_, { headers }) => {
+    const token = await getJwtToken();
 
     return {
       headers: {
