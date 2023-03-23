@@ -1,5 +1,11 @@
 # @tonightpass/grafe
 
+## 3.3.0
+
+### Minor Changes
+
+- 3b4ed12: Fix token retrieving and async createApolloClient
+
 ## 3.2.0
 
 ### Minor Changes
