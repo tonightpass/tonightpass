@@ -18,19 +18,19 @@ interface CreateApolloClientOptions {
 }
 
 const getJwtToken = async (): Promise<string | null> => {
-  if (typeof window !== "undefined") {
+  if (require("expo-secure-store") == undefined) {
     return localStorage.getItem("jwt_token");
   } else {
     return await SecureStore.getItemAsync("jwt_token");
   }
 };
 
-export const createApolloClient = ({
+export const createApolloClient = async ({
   initialState,
   ctx,
   graphqlUrl,
   jwtHeaderPrefix = "Bearer",
-}: CreateApolloClientOptions): ApolloClient<NormalizedCacheObject> => {
+}: CreateApolloClientOptions): Promise<ApolloClient<NormalizedCacheObject>> => {
   if (!isUri(graphqlUrl)) {
     throw new Error("graphqlUrl is not set or is not an valid uri");
   }
@@ -46,16 +46,19 @@ export const createApolloClient = ({
     },
   });
 
-  const authLink = setContext(async (_, { headers }) => {
+  const createAuthLink = async () => {
     const token = await getJwtToken();
 
-    return {
-      headers: {
-        ...headers,
-        authorization: token ? `${jwtHeaderPrefix} ${token}` : "",
-      },
-    };
-  });
+    return setContext((_, { headers }) => {
+      return {
+        headers: {
+          ...headers,
+          authorization: token ? `${jwtHeaderPrefix} ${token}` : "",
+        },
+      };
+    });
+  };
+  const authLink = await createAuthLink();
 
   const cache = new InMemoryCache().restore(initialState || {});
 
