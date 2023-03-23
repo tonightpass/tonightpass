@@ -1,5 +1,11 @@
 # @tonightpass/grafe
 
+## 3.2.0
+
+### Minor Changes
+
+- 5dc4803: Add SecureStore for React Native
+
 ## 3.1.1
 
 ### Patch Changes
