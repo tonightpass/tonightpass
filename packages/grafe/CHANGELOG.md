@@ -1,5 +1,11 @@
 # @tonightpass/grafe
 
+## 3.3.1
+
+### Patch Changes
+
+- 5456864: Fix dependency issues with expo secure store
+
 ## 3.3.0
 
 ### Minor Changes
