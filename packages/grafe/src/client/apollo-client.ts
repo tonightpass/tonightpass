@@ -5,23 +5,23 @@ import {
   HttpLink,
   InMemoryCache,
 } from "@apollo/client";
-import * as SecureStore from "expo-secure-store";
 import { setContext } from "@apollo/client/link/context";
 import { isUri } from "../utils/is-uri";
 
-interface CreateApolloClientOptions {
+type CreateApolloClientOptions = {
   initialState?: NormalizedCacheObject;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ctx?: any;
   graphqlUrl: string;
   jwtHeaderPrefix?: string;
-}
+};
 
 const getJwtToken = async (): Promise<string | null> => {
   if (require("expo-secure-store") == undefined) {
     return localStorage.getItem("jwt_token");
   } else {
-    return await SecureStore.getItemAsync("jwt_token");
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    return await require("expo-secure-store").getItemAsync("jwt_token");
   }
 };
 
