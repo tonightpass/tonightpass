@@ -46,6 +46,8 @@ export class REST {
       },
     });
 
+    console.log(result);
+
     if (result.errors) {
       return new Promise((_, reject) => {
         reject(result.errors);

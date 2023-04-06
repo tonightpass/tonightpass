@@ -1,4 +1,4 @@
-import { IdentifyUserDto, User } from "@tonightpass/shared-types";
+import { User, UserIdentifier } from "@tonightpass/shared-types";
 
 import { REST } from "../REST";
 import { GET_USER } from "./store/users/get-user.query";
@@ -13,9 +13,9 @@ export class UsersAPI {
     return data.getUser;
   }
 
-  public async identify(identifyUserDto: IdentifyUserDto): Promise<boolean> {
+  public async identify(identifier: string): Promise<UserIdentifier> {
     const data = await this.rest.query(IDENTIFY_USER, {
-      identifyUserInput: identifyUserDto,
+      identifier,
     });
 
     return data.identifyUser;
