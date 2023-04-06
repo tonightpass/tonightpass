@@ -1,5 +1,11 @@
 # @tonightpass/grafe
 
+## 3.5.0
+
+### Minor Changes
+
+- 49084d2: Add SignIn request
+
 ## 3.4.0
 
 ### Minor Changes
