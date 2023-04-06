@@ -1,5 +1,11 @@
 # @tonightpass/grafe
 
+## 3.5.1
+
+### Patch Changes
+
+- fcfa757: Fix IdentifyUser fonction
+
 ## 3.5.0
 
 ### Minor Changes
