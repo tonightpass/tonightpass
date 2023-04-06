@@ -8,12 +8,16 @@ export class UsersAPI {
   public constructor(private readonly rest: REST) {}
 
   public async get(userId: string): Promise<User> {
-    return await this.rest.query<User>(GET_USER, { userId });
+    const data = await this.rest.query<User>(GET_USER, { userId });
+
+    return data.getUser;
   }
 
   public async identify(identifyUserDto: IdentifyUserDto): Promise<boolean> {
-    return await this.rest.query<boolean>(IDENTIFY_USER, {
+    const data = await this.rest.query<boolean>(IDENTIFY_USER, {
       identifyUserInput: identifyUserDto,
     });
+
+    return data.identifyUser;
   }
 }

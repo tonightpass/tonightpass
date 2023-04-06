@@ -25,7 +25,7 @@ const REQUEST_DATA_DEFAULT: RequestData = { variables: {} };
 export const useLazyGrafe = <TData = any>(
   action: (client: GrafeClient, data: RequestData) => Promise<TData>
 ): [
-  (data: RequestData) => void,
+  (data: RequestData) => Promise<undefined | TData>,
   [boolean, boolean, TData | undefined, string | Error | undefined]
 ] => {
   const { client } = React.useContext(GrafeContext);
@@ -39,10 +39,10 @@ export const useLazyGrafe = <TData = any>(
   const [data, setData] = React.useState<TData | undefined>(undefined);
   const [error, setError] = React.useState<string | Error | undefined>();
 
-  const handleAction = (data?: RequestData) => {
+  const handleAction = (data?: RequestData): Promise<undefined | TData> => {
     setLoading(true);
 
-    action(client, data || REQUEST_DATA_DEFAULT)
+    const result = action(client, data || REQUEST_DATA_DEFAULT)
       .then((result) => {
         setData(result);
         setSuccess(true);
@@ -51,10 +51,14 @@ export const useLazyGrafe = <TData = any>(
       })
       .catch((err) => {
         setError(err);
+
+        return undefined;
       })
       .finally(() => {
         setLoading(false);
       });
+
+    return result;
   };
 
   return [handleAction, [loading, success, data, error]];
