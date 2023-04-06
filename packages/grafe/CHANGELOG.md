@@ -1,5 +1,11 @@
 # @tonightpass/grafe
 
+## 3.3.2
+
+### Patch Changes
+
+- 84fc6ea: Remove console logs
+
 ## 3.3.1
 
 ### Patch Changes
