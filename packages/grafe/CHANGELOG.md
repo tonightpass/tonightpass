@@ -1,5 +1,11 @@
 # @tonightpass/grafe
 
+## 3.4.0
+
+### Minor Changes
+
+- 31c4e3d: UseLazyGrafe action function returns data
+
 ## 3.3.2
 
 ### Patch Changes
