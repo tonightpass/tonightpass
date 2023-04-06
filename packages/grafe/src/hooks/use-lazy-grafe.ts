@@ -34,50 +34,28 @@ export const useLazyGrafe = <TData = any>(
     throw new Error("Grafe client not found");
   }
 
-  const [state, setState] = React.useState<{
-    loading: boolean;
-    success: boolean;
-    data: TData | undefined;
-    error: string | Error | undefined;
-  }>({ loading: false, success: false, data: undefined, error: undefined });
+  const [loading, setLoading] = React.useState<boolean>(false);
+  const [success, setSuccess] = React.useState<boolean>(false);
+  const [data, setData] = React.useState<TData | undefined>(undefined);
+  const [error, setError] = React.useState<string | Error | undefined>();
 
   const handleAction = (data?: RequestData) => {
-    setState({
-      ...state,
-      loading: true,
-    });
+    setLoading(true);
 
     action(client, data || REQUEST_DATA_DEFAULT)
       .then((result) => {
-        console.log("use-lazy-grafe then : ", result);
-        setState({
-          ...state,
-          success: true,
-          data: result,
-        });
+        setData(result);
+        setSuccess(true);
 
         return result;
       })
       .catch((err) => {
-        console.log("use-lazy-grafe error : ", err);
-        setState({
-          ...state,
-          error: err,
-        });
+        setError(err);
       })
       .finally(() => {
-        console.log("use-lazy-grafe finally");
-        setState({
-          ...state,
-          loading: false,
-        });
+        setLoading(false);
       });
   };
 
-  console.log("use-lazy-grafe state : ", state);
-
-  return [
-    handleAction,
-    [state.loading, state.success, state.data, state.error],
-  ];
+  return [handleAction, [loading, success, data, error]];
 };
