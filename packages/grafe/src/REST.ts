@@ -10,17 +10,14 @@ export class REST {
   constructor(protected readonly client: ApolloClient<NormalizedCacheObject>) {}
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  public async query<T = any>(
-    query: DocumentNode | TypedDocumentNode<T, OperationVariables>,
-    variables?: Record<string, unknown>
-  ): Promise<T> {
-    const result = await this.client.query<T>({
+  public async query(query: DocumentNode, variables?: Record<string, unknown>) {
+    const result = await this.client.query({
       query,
       variables,
     });
 
     if (result.errors) {
-      return new Promise<T>((_, reject) => {
+      return new Promise((_, reject) => {
         reject(result.errors);
       });
     }
@@ -29,11 +26,11 @@ export class REST {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  public async mutate<T = any>(
-    mutation: DocumentNode | TypedDocumentNode<T, OperationVariables>,
+  public async mutate(
+    mutation: DocumentNode,
     variables?: Record<string, unknown>
-  ): Promise<T> {
-    const result = await this.client.mutate<T>({
+  ) {
+    const result = await this.client.mutate({
       mutation,
       update(cache, { data }, { context }) {
         console.log(context);
@@ -50,11 +47,11 @@ export class REST {
     });
 
     if (result.errors) {
-      return new Promise<T>((_, reject) => {
+      return new Promise((_, reject) => {
         reject(result.errors);
       });
     }
 
-    return result.data as T;
+    return result.data;
   }
 }
