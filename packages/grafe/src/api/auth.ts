@@ -9,7 +9,7 @@ export class AuthAPI {
   public constructor(private readonly rest: REST) {}
 
   public async signIn(signInDto: SignInUserDto): Promise<APIResponse<User>> {
-    const result = await this.rest.mutate<User>(SIGN_IN, {
+    const result = await this.rest.mutate(SIGN_IN, {
       signInInput: signInDto,
     });
 
@@ -17,11 +17,11 @@ export class AuthAPI {
       return [null, result.error];
     }
 
-    return [result.data, null];
+    return [result.data.signIn, null];
   }
 
   public async signUp(signUpDto: CreateUserDto): Promise<APIResponse<User>> {
-    const result = await this.rest.mutate<User>(SIGN_UP, {
+    const result = await this.rest.mutate(SIGN_UP, {
       createUserInput: signUpDto,
     });
 
@@ -29,6 +29,6 @@ export class AuthAPI {
       return [null, result.error];
     }
 
-    return [result.data, null];
+    return [result.data.signUp, null];
   }
 }

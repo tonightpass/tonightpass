@@ -15,7 +15,7 @@ export class UsersAPI {
       return [null, result.error];
     }
 
-    return [result.data, null];
+    return [result.data.getUser, null];
   }
 
   public async identify(
@@ -29,6 +29,6 @@ export class UsersAPI {
       return [null, result.error];
     }
 
-    return [result.data, null];
+    return [result.data.identifyUser, null];
   }
 }
