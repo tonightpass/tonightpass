@@ -1,5 +1,11 @@
 # @tonightpass/grafe
 
+## 3.7.0
+
+### Minor Changes
+
+- 18647d7: Add token to storage
+
 ## 3.6.4
 
 ### Patch Changes
