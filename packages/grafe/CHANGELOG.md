@@ -1,5 +1,11 @@
 # @tonightpass/grafe
 
+## 3.6.2
+
+### Patch Changes
+
+- 02c0689: Change useLazyGrafe to return only APIResponse<T> type
+
 ## 3.6.1
 
 ### Patch Changes
