@@ -4,9 +4,20 @@ import { REST } from "../REST";
 import { GET_USER } from "./store/users/get-user.query";
 import { IDENTIFY_USER } from "./store/users/identify-user.query";
 import { APIResponse } from "../types/api-response";
+import { ME } from "./store/users/me.query";
 
 export class UsersAPI {
   public constructor(private readonly rest: REST) {}
+
+  public async me(): Promise<APIResponse<User>> {
+    const result = await this.rest.query(ME);
+
+    if (!result.success) {
+      return [null, result.error];
+    }
+
+    return [result.data.me, null];
+  }
 
   public async get(userId: string): Promise<APIResponse<User>> {
     const result = await this.rest.query(GET_USER, { userId });

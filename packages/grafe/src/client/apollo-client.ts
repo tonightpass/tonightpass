@@ -4,8 +4,11 @@ import {
   HttpOptions,
   HttpLink,
   InMemoryCache,
+  ApolloLink,
+  from,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import { onError } from "@apollo/client/link/error";
 
 import { isUri } from "../utils/is-uri";
 
@@ -54,25 +57,67 @@ export const createApolloClient = async ({
     },
   });
 
-  const createAuthLink = async () => {
-    const token = await storage.getStorageFunction("jwt_token");
-
-    return setContext((_, { headers }) => {
+  const authLink = setContext((_req, { headers }) =>
+    storage.getStorageFunction("access_token").then((token) => {
       return {
         headers: {
           ...headers,
-          authorization: token ? `${jwtHeaderPrefix} ${token}` : "",
+          authorization: token ? `${jwtHeaderPrefix} ${token}` : "caca",
         },
       };
+    })
+  );
+
+  const refreshLink = new ApolloLink((operation, forward) => {
+    return forward(operation).map((data) => {
+      const headers = operation.getContext().response.headers;
+      const cookies = headers.get("Set-Cookie");
+
+      // - If user is logged in, we will extract the access-token and refresh-token and set it to storage.
+      if (cookies) {
+        const accessToken = cookies.match(/access-token=([^;]*)/)[1];
+        const refreshToken = cookies.match(/refresh-token=([^;]*)/)[1];
+
+        storage.setStorageFunction("access_token", accessToken);
+        storage.setStorageFunction("refresh_token", refreshToken);
+      }
+
+      return data;
     });
-  };
-  const authLink = await createAuthLink();
+  });
+
+  const errorLink = onError(
+    ({ graphQLErrors, networkError, operation, forward }) => {
+      if (graphQLErrors) {
+        for (const err of graphQLErrors) {
+          if (err.extensions?.code === "Unauthenticated") {
+            // TODO: Rewrite the setContext with a new token
+            return forward(operation);
+          }
+        }
+
+        graphQLErrors.map(({ message, locations, path }) => {
+          console.error(
+            `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
+          );
+          throw new Error(message);
+        });
+      }
+
+      if (networkError) {
+        console.error(`[Network error]: ${networkError}`);
+        throw new Error(networkError.message);
+      }
+
+      return forward(operation);
+    }
+  );
 
   const cache = new InMemoryCache().restore(initialState || {});
 
   return new ApolloClient({
     ssrMode: Boolean(ctx),
-    link: authLink.concat(httpLink),
+    link: from([authLink, refreshLink, errorLink, httpLink]),
     cache,
   });
 };

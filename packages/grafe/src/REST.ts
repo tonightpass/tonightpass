@@ -33,7 +33,6 @@ export class REST {
         };
       })
       .catch((err) => {
-        console.log("error at query : " + err);
         throw err;
       });
   }
@@ -46,9 +45,6 @@ export class REST {
     return this.client
       .mutate<TData>({
         mutation,
-        update(_cache, { data }, { context }) {
-          console.log("context from mutate : ", context);
-        },
         variables,
         context: {
           fetchOptions: {
@@ -60,8 +56,6 @@ export class REST {
         },
       })
       .then((result) => {
-        console.log("result from mutate : " + result);
-
         if (result.errors) {
           return {
             success: false as const,
@@ -75,12 +69,7 @@ export class REST {
         };
       })
       .catch((err) => {
-        console.log("error at mutate : " + err);
         throw err;
       });
   }
 }
-
-//TODO: ici ça doit déjà récupérer l'erreur avec un then catch comme ici https://github.com/apollographql/apollo-client/blob/main/src/react/hooks/useMutation.ts
-// et ensuite les API retournent un tableau [data, error].
-// Et pour le hook, la fonction d'execution récupère ces valeurs `const [data, error] = await action(...)`

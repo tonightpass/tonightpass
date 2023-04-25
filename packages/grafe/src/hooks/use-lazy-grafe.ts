@@ -86,8 +86,6 @@ export const useLazyGrafe = <TData = any>(
           error: err,
         });
 
-        console.log("error at handleAction : " + err);
-
         return [null, err];
       });
   };
