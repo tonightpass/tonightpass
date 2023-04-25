@@ -1,5 +1,13 @@
 # @tonightpass/grafe
 
+## 3.6.3
+
+### Patch Changes
+
+- 7dabd33: Change storage modules
+- Updated dependencies [437cb7f]
+  - @tonightpass/shared-types@0.5.1
+
 ## 3.6.2
 
 ### Patch Changes
