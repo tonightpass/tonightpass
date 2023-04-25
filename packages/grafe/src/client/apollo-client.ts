@@ -117,7 +117,7 @@ export const createApolloClient = async ({
 
   return new ApolloClient({
     ssrMode: Boolean(ctx),
-    link: from([authLink, refreshLink, errorLink, httpLink]),
+    link: from([authLink, refreshLink, httpLink]),
     cache,
   });
 };
