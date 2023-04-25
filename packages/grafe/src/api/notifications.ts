@@ -9,7 +9,7 @@ export class NotificationsAPI {
   public async subscribeToNewsletter(
     userEmail: string
   ): Promise<APIResponse<boolean>> {
-    const result = await this.rest.mutate<boolean>(SUBSCRIBE_TO_NEWSLETTER, {
+    const result = await this.rest.mutate(SUBSCRIBE_TO_NEWSLETTER, {
       userEmail,
     });
 
@@ -17,25 +17,22 @@ export class NotificationsAPI {
       return [null, result.error];
     }
 
-    return [result.data, null];
+    return [result.data.subscribeToNewsletter, null];
   }
 
   public async unsubscribeFromNewsletter(
     userEmail: string,
     reason: string
   ): Promise<APIResponse<boolean>> {
-    const result = await this.rest.mutate<boolean>(
-      UNSUBSCRIBE_FROM_NEWSLETTER,
-      {
-        userEmail,
-        reason,
-      }
-    );
+    const result = await this.rest.mutate(UNSUBSCRIBE_FROM_NEWSLETTER, {
+      userEmail,
+      reason,
+    });
 
     if (!result.success) {
       return [null, result.error];
     }
 
-    return [result.data, null];
+    return [result.data.unsubscribeFromNewsletter, null];
   }
 }
