@@ -36,7 +36,7 @@ export const useLazyGrafe = <TData = any>(
     data: RequestData
   ) => Promise<APIResponse<TData>>
 ): [
-  (data: RequestData) => Promise<APIResponse<TData> | undefined>,
+  (data: RequestData) => Promise<APIResponse<TData>>,
   [boolean, boolean | undefined, TData | undefined, string | Error | undefined]
 ] => {
   const { client } = React.useContext(GrafeContext);
@@ -49,15 +49,15 @@ export const useLazyGrafe = <TData = any>(
     loading: false,
   });
 
-  const handleAction = (
+  const handleAction = async (
     data?: RequestData
-  ): Promise<APIResponse<TData> | undefined> => {
+  ): Promise<APIResponse<TData>> => {
     setResult((prev) => ({
       ...prev,
       loading: true,
     }));
 
-    const result = action(client, data || REQUEST_DATA_DEFAULT)
+    return action(client, data || REQUEST_DATA_DEFAULT)
       .then((result) => {
         const [data, error] = result;
 
@@ -68,7 +68,7 @@ export const useLazyGrafe = <TData = any>(
             error: error || "Unknown error",
           });
 
-          return undefined;
+          return result;
         }
 
         setResult({
@@ -86,16 +86,10 @@ export const useLazyGrafe = <TData = any>(
           error: err,
         });
 
-        return undefined;
-      })
-      .finally(() => {
-        setResult((prev) => ({
-          ...prev,
-          loading: false,
-        }));
-      });
+        console.log("error at handleAction : " + err);
 
-    return result;
+        return [null, err];
+      });
   };
 
   return [
