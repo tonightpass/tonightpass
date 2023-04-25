@@ -2,11 +2,19 @@ import React from "react";
 
 import { GrafeClient } from "../client";
 import { GrafeContext } from "../contexts";
+import { APIResponse } from "../types/api-response";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type RequestData = { variables: { [key: string]: any } };
 
 const REQUEST_DATA_DEFAULT: RequestData = { variables: {} };
+
+type ResultType<TData> = {
+  loading: boolean;
+  success?: boolean;
+  data?: TData;
+  error?: string | Error;
+};
 
 /**
  * A hook that provides a GrafeClient instance and returns data as TData.
@@ -23,10 +31,13 @@ const REQUEST_DATA_DEFAULT: RequestData = { variables: {} };
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const useLazyGrafe = <TData = any>(
-  action: (client: GrafeClient, data: RequestData) => Promise<TData>
+  action: (
+    client: GrafeClient,
+    data: RequestData
+  ) => Promise<APIResponse<TData>>
 ): [
-  (data: RequestData) => Promise<undefined | TData>,
-  [boolean, boolean, TData | undefined, string | Error | undefined]
+  (data: RequestData) => Promise<APIResponse<TData> | undefined>,
+  [boolean, boolean | undefined, TData | undefined, string | Error | undefined]
 ] => {
   const { client } = React.useContext(GrafeContext);
 
@@ -34,32 +45,61 @@ export const useLazyGrafe = <TData = any>(
     throw new Error("Grafe client not found");
   }
 
-  const [loading, setLoading] = React.useState<boolean>(false);
-  const [success, setSuccess] = React.useState<boolean>(false);
-  const [data, setData] = React.useState<TData | undefined>(undefined);
-  const [error, setError] = React.useState<string | Error | undefined>();
+  const [result, setResult] = React.useState<ResultType<TData>>({
+    loading: false,
+  });
 
-  const handleAction = (data?: RequestData): Promise<undefined | TData> => {
-    setLoading(true);
+  const handleAction = (
+    data?: RequestData
+  ): Promise<APIResponse<TData> | undefined> => {
+    setResult((prev) => ({
+      ...prev,
+      loading: true,
+    }));
 
     const result = action(client, data || REQUEST_DATA_DEFAULT)
       .then((result) => {
-        setData(result);
-        setSuccess(true);
+        const [data, error] = result;
+
+        if (!data || error) {
+          setResult({
+            loading: false,
+            success: false,
+            error: error || "Unknown error",
+          });
+
+          return undefined;
+        }
+
+        setResult({
+          loading: false,
+          success: true,
+          data: data,
+        });
 
         return result;
       })
       .catch((err) => {
-        setError(err);
+        setResult({
+          loading: false,
+          success: false,
+          error: err,
+        });
 
         return undefined;
       })
       .finally(() => {
-        setLoading(false);
+        setResult((prev) => ({
+          ...prev,
+          loading: false,
+        }));
       });
 
     return result;
   };
 
-  return [handleAction, [loading, success, data, error]];
+  return [
+    handleAction,
+    [result.loading, result.success, result.data, result.error],
+  ];
 };
