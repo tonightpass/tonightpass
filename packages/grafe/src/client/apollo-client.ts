@@ -6,23 +6,20 @@ import {
   InMemoryCache,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+
 import { isUri } from "../utils/is-uri";
 
-type CreateApolloClientOptions = {
+type GrafeClientOptions = {
   initialState?: NormalizedCacheObject;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ctx?: any;
   graphqlUrl: string;
   jwtHeaderPrefix?: string;
-};
-
-const getJwtToken = async (): Promise<string | null> => {
-  if (require("expo-secure-store") == undefined) {
-    return localStorage.getItem("jwt_token");
-  } else {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    return await require("expo-secure-store").getItemAsync("jwt_token");
-  }
+  storage?: {
+    setStorageFunction: (name: string, value: string) => void;
+    getStorageFunction: (name: string) => string | null;
+    isStorageFunction?: (name: string) => boolean;
+  };
 };
 
 export const createApolloClient = async ({
@@ -30,7 +27,18 @@ export const createApolloClient = async ({
   ctx,
   graphqlUrl,
   jwtHeaderPrefix = "Bearer",
-}: CreateApolloClientOptions): Promise<ApolloClient<NormalizedCacheObject>> => {
+  storage = {
+    setStorageFunction: (name: string, value: string) => {
+      localStorage.setItem(name, value);
+    },
+    getStorageFunction: (name: string) => {
+      return localStorage.getItem(name);
+    },
+    isStorageFunction: (name: string) => {
+      return localStorage.getItem(name) !== null;
+    },
+  },
+}: GrafeClientOptions): Promise<ApolloClient<NormalizedCacheObject>> => {
   if (!isUri(graphqlUrl)) {
     throw new Error("graphqlUrl is not set or is not an valid uri");
   }
@@ -47,7 +55,7 @@ export const createApolloClient = async ({
   });
 
   const createAuthLink = async () => {
-    const token = await getJwtToken();
+    const token = await storage.getStorageFunction("jwt_token");
 
     return setContext((_, { headers }) => {
       return {
@@ -75,3 +83,5 @@ const createHttpLink = (options: HttpOptions) => {
     fetch,
   });
 };
+
+export type { GrafeClientOptions };
