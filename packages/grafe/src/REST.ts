@@ -2,58 +2,85 @@ import {
   ApolloClient,
   DocumentNode,
   NormalizedCacheObject,
-  OperationVariables,
-  TypedDocumentNode,
 } from "@apollo/client";
+
+import type { RestQueryResponse } from "./types/rest-query-response";
 
 export class REST {
   constructor(protected readonly client: ApolloClient<NormalizedCacheObject>) {}
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  public async query(query: DocumentNode, variables?: Record<string, unknown>) {
-    const result = await this.client.query({
-      query,
-      variables,
-    });
+  public async query<TData = any>(
+    query: DocumentNode,
+    variables?: Record<string, unknown>
+  ): Promise<RestQueryResponse<TData>> {
+    return this.client
+      .query({
+        query,
+        variables,
+      })
+      .then((result) => {
+        if (result.errors) {
+          return {
+            success: false as const,
+            error: result.errors[0].message,
+          };
+        }
 
-    if (result.errors) {
-      return new Promise((_, reject) => {
-        reject(result.errors);
+        return {
+          success: true as const,
+          data: result.data as TData,
+        };
+      })
+      .catch((err) => {
+        console.log("error at query : " + err);
+        throw err;
       });
-    }
-
-    return result.data;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  public async mutate(
+  public mutate<TData = any>(
     mutation: DocumentNode,
     variables?: Record<string, unknown>
-  ) {
-    const result = await this.client.mutate({
-      mutation,
-      update(cache, { data }, { context }) {
-        console.log(context);
-      },
-      variables,
-      context: {
-        fetchOptions: {
-          credentials: "include",
+  ): Promise<RestQueryResponse<TData>> {
+    return this.client
+      .mutate<TData>({
+        mutation,
+        update(_cache, { data }, { context }) {
+          console.log("context from mutate : ", context);
         },
-        response: {
-          headers: true,
+        variables,
+        context: {
+          fetchOptions: {
+            credentials: "include",
+          },
+          response: {
+            headers: true,
+          },
         },
-      },
-    });
+      })
+      .then((result) => {
+        console.log("result from mutate : " + result);
 
-    console.log(result);
+        if (result.errors) {
+          return {
+            success: false as const,
+            error: result.errors[0].message,
+          };
+        }
 
-    if (result.errors) {
-      return new Promise((_, reject) => {
-        reject(result.errors);
+        return {
+          success: true as const,
+          data: result.data as TData,
+        };
+      })
+      .catch((err) => {
+        console.log("error at mutate : " + err);
+        throw err;
       });
-    }
-
-    return result.data;
   }
 }
+
+//TODO: ici ça doit déjà récupérer l'erreur avec un then catch comme ici https://github.com/apollographql/apollo-client/blob/main/src/react/hooks/useMutation.ts
+// et ensuite les API retournent un tableau [data, error].
+// Et pour le hook, la fonction d'execution récupère ces valeurs `const [data, error] = await action(...)`
