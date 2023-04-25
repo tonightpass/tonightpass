@@ -1,5 +1,11 @@
 # @tonightpass/grafe
 
+## 3.6.0
+
+### Minor Changes
+
+- 6a7e9ca: Fix query mutation issues and change types
+
 ## 3.5.1
 
 ### Patch Changes
