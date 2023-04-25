@@ -16,9 +16,9 @@ type GrafeClientOptions = {
   graphqlUrl: string;
   jwtHeaderPrefix?: string;
   storage?: {
-    setStorageFunction: (name: string, value: string) => void;
-    getStorageFunction: (name: string) => string | null;
-    isStorageFunction?: (name: string) => boolean;
+    getStorageFunction: (name: string) => Promise<string | null>;
+    setStorageFunction: (name: string, value: string) => Promise<void>;
+    isStorageFunction?: (name: string) => Promise<boolean>;
   };
 };
 
@@ -28,13 +28,13 @@ export const createApolloClient = async ({
   graphqlUrl,
   jwtHeaderPrefix = "Bearer",
   storage = {
-    setStorageFunction: (name: string, value: string) => {
+    setStorageFunction: async (name: string, value: string) => {
       localStorage.setItem(name, value);
     },
-    getStorageFunction: (name: string) => {
+    getStorageFunction: async (name: string) => {
       return localStorage.getItem(name);
     },
-    isStorageFunction: (name: string) => {
+    isStorageFunction: async (name: string) => {
       return localStorage.getItem(name) !== null;
     },
   },
