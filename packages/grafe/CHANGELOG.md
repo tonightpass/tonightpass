@@ -1,5 +1,11 @@
 # @tonightpass/grafe
 
+## 3.6.4
+
+### Patch Changes
+
+- 3f8e586: Fix storage functions
+
 ## 3.6.3
 
 ### Patch Changes
