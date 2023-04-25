@@ -1,5 +1,11 @@
 # @tonightpass/grafe
 
+## 3.6.1
+
+### Patch Changes
+
+- 8e51f5a: Fix data sending from result on queries and mutations
+
 ## 3.6.0
 
 ### Minor Changes
