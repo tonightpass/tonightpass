@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 0.5.1
+
+### Patch Changes
+
+- 437cb7f: Remove peer dependencies
+
 ## 0.5.0
 
 ### Minor Changes
