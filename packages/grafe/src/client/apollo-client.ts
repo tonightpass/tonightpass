@@ -90,7 +90,7 @@ export const createApolloClient = async ({
     ({ graphQLErrors, networkError, operation, forward }) => {
       if (graphQLErrors) {
         for (const err of graphQLErrors) {
-          if (err.extensions?.code === "Unauthenticated") {
+          if (err.extensions?.code === "UNAUTHENTICATED") {
             // TODO: Rewrite the setContext with a new token
             return forward(operation);
           }
@@ -100,13 +100,11 @@ export const createApolloClient = async ({
           console.error(
             `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
           );
-          throw new Error(message);
         });
       }
 
       if (networkError) {
         console.error(`[Network error]: ${networkError}`);
-        throw new Error(networkError.message);
       }
 
       return forward(operation);

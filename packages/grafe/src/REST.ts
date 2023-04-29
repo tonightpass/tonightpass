@@ -5,6 +5,7 @@ import {
 } from "@apollo/client";
 
 import type { RestQueryResponse } from "./types/rest-query-response";
+import { ApolloError, GraphQLErrors } from "@apollo/client/errors";
 
 export class REST {
   constructor(protected readonly client: ApolloClient<NormalizedCacheObject>) {}
@@ -32,8 +33,8 @@ export class REST {
           data: result.data as TData,
         };
       })
-      .catch((err) => {
-        throw err;
+      .catch((err: ApolloError) => {
+        throw err.message;
       });
   }
 
@@ -68,8 +69,8 @@ export class REST {
           data: result.data as TData,
         };
       })
-      .catch((err) => {
-        throw err;
+      .catch((err: ApolloError) => {
+        throw err.message;
       });
   }
 }
