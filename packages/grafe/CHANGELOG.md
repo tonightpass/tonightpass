@@ -1,5 +1,11 @@
 # @tonightpass/grafe
 
+## 3.7.2
+
+### Patch Changes
+
+- ca0b064: Fix error handling
+
 ## 3.7.1
 
 ### Patch Changes
