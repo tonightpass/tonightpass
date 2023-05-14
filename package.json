@@ -52,5 +52,10 @@
       "packages/*"
     ]
   },
+  "manypkg": {
+    "ignoredRules": [
+      "INTERNAL_MISMATCH"
+    ]
+  },
   "packageManager": "pnpm@7.26.0"
 }
