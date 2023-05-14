@@ -20,12 +20,13 @@ export type Location = {
 
 // Currency
 export enum Currency {
-  EUR,
-  USD,
+  EUR = "EUR",
+  USD = "USD",
+  GBP = "GBP",
 }
 
 // I18n
 export enum Language {
-  FR,
-  EN,
+  FR = "fr",
+  EN = "en",
 }
