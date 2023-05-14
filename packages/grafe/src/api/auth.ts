@@ -1,8 +1,8 @@
 import { CreateUserDto, SignInUserDto, User } from "@tonightpass/shared-types";
 
-import { REST } from "../REST";
-import { SIGN_UP } from "./store/auth/sign-up.query";
 import { SIGN_IN } from "./store/auth/sign-in.query";
+import { SIGN_UP } from "./store/auth/sign-up.query";
+import { REST } from "../REST";
 import { APIResponse } from "../types/api-response";
 
 export class AuthAPI {
