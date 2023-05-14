@@ -1,5 +1,12 @@
 # @tonightpass/shared-types
 
+## 0.5.2
+
+### Patch Changes
+
+- ed7ab48: Update event ticket types
+  Improve currency enum and language
+
 ## 0.5.1
 
 ### Patch Changes
