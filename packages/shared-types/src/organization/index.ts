@@ -22,12 +22,12 @@ export type OrganizationSocialLink = {
 };
 
 export enum OrganizationSocialType {
-  FACEBOOK,
-  TWITTER,
-  INSTAGRAM,
-  LINKEDIN,
-  YOUTUBE,
-  WEBSITE,
+  Facebook = "facebook",
+  Twitter = "twitter",
+  Instagram = "instagram",
+  Linkedin = "linkedin",
+  Youtube = "youtube",
+  Website = "website",
 }
 
 export type OrganizationMember = {
