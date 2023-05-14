@@ -76,6 +76,9 @@ importers:
 
   packages/grafe:
     dependencies:
+      '@tonightpass/shared-types':
+        specifier: workspace:*
+        version: link:../shared-types
       expo-secure-store:
         specifier: ^12.1.1
         version: 12.1.1(expo@48.0.9)
@@ -83,9 +86,6 @@ importers:
       '@apollo/client':
         specifier: ^3.7.7
         version: 3.7.7(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0)
-      '@tonightpass/shared-types':
-        specifier: ^0.5.1
-        version: link:../shared-types
       '@types/react':
         specifier: ^18.0.28
         version: 18.0.28
