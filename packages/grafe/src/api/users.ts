@@ -1,10 +1,10 @@
 import { User, UserIdentifier } from "@tonightpass/shared-types";
 
-import { REST } from "../REST";
 import { GET_USER } from "./store/users/get-user.query";
 import { IDENTIFY_USER } from "./store/users/identify-user.query";
-import { APIResponse } from "../types/api-response";
 import { ME } from "./store/users/me.query";
+import { REST } from "../REST";
+import { APIResponse } from "../types/api-response";
 
 export class UsersAPI {
   public constructor(private readonly rest: REST) {}

@@ -1,6 +1,8 @@
+import { EventTicket } from "./ticket";
 import { Location } from "..";
 import { Organization } from "../organization";
-import { EventTicket } from "./ticket";
+
+export * from "./ticket";
 
 export type Event = {
   title: string;

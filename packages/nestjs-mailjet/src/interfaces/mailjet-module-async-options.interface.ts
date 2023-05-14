@@ -1,4 +1,5 @@
 import { ModuleMetadata, Type } from "@nestjs/common";
+
 import { MailjetModuleOptions } from "./mailjet-module-options.interface";
 
 export interface MailjetOptionsFactory {
