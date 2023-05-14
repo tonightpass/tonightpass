@@ -7,9 +7,9 @@ export type UserToken = {
 };
 
 export enum UserTokenType {
-  Authentication,
-  Organization_Invite,
-  Password_Recovery,
-  Email_Validation,
-  Phone_Validation,
+  Authentication = "authentication",
+  OrganizationInvite = "organization_invite",
+  PasswordRecovery = "password_recovery",
+  EmailValidation = "email_validation",
+  PhoneValidation = "phone_validation",
 }
