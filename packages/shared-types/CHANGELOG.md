@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 0.5.4
+
+### Patch Changes
+
+- Update event ticket price with display price
+
 ## 0.5.3
 
 ### Patch Changes
