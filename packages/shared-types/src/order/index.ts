@@ -1,3 +1,4 @@
+import { Currency } from "..";
 import { EventTicket } from "../event";
 import { User } from "../user";
 
@@ -13,14 +14,21 @@ export enum OrderStatus {
   Expired = "expired",
 }
 
+export type OrderItem = {
+  id: string;
+  ticket: EventTicket;
+  createdAt: Date;
+};
+
 export type Order = {
   id: string;
-  user: User;
+  owner: User;
+  members: User[];
   status: OrderStatus;
-  items: EventTicket[];
+  items: OrderItem[];
   promoCode?: PromoCode;
   total: number;
-  currency: string;
+  currency: Currency;
   createdAt: Date;
 };
 
