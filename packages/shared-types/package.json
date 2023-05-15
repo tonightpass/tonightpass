@@ -1,6 +1,6 @@
 {
   "name": "@tonightpass/shared-types",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "main": "dist/tonightpass-shared-types.cjs.js",
   "module": "dist/tonightpass-shared-types.esm.js",
   "devDependencies": {
