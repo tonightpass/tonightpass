@@ -4,7 +4,8 @@ export type EventTicket = {
   id: string;
   name: string;
   description?: string;
-  unitPrice: number;
+  price: number;
+  displayPrice: number;
   quantity: number;
   type: EventTicketType;
   category: EventTicketCategory;
