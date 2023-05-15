@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 0.5.5
+
+### Patch Changes
+
+- cd7b76d: Add Order types
+
 ## 0.5.4
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @tonightpass/grafe
 
+## 3.7.6
+
+### Patch Changes
+
+- Updated dependencies [cd7b76d]
+  - @tonightpass/shared-types@0.5.5
+
 ## 3.7.5
 
 ### Patch Changes
