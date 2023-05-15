@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 0.5.3
+
+### Patch Changes
+
+- 6730a42: Update enums to output strings
+
 ## 0.5.2
 
 ### Patch Changes
