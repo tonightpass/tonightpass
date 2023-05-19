@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 0.5.7
+
+### Patch Changes
+
+- e1c4e8d: Add Event import in Organization type
+
 ## 0.5.6
 
 ### Patch Changes
