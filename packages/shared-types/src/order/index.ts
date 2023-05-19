@@ -17,6 +17,8 @@ export enum OrderStatus {
 export type OrderItem = {
   id: string;
   ticket: EventTicket;
+  isUsed: boolean;
+  updatedAt: Date;
   createdAt: Date;
 };
 
