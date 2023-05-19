@@ -1,4 +1,5 @@
 import { Location } from "..";
+import { Event } from "../event";
 import { EventTicket } from "../event/ticket";
 import { User } from "../user";
 
