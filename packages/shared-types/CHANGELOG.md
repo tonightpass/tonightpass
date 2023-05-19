@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 0.5.6
+
+### Patch Changes
+
+- a5d6842: Add isUsed and updatedAt fields to OrderItem type in order/index.ts
+
 ## 0.5.5
 
 ### Patch Changes
