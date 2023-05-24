@@ -12,15 +12,18 @@
   },
   "peerDependencies": {
     "@apollo/client": ">= 3.x.x",
+    "expo-secure-store": ">= 12.x.x",
     "@tonightpass/shared-types": ">=0.5.1",
     "react": ">= 18.x.x"
+  },
+  "peerDependenciesMeta": {
+    "expo-secure-store": {
+      "optional": true
+    }
   },
   "preconstruct": {
     "entrypoints": [
       "index.ts"
     ]
-  },
-  "dependencies": {
-    "expo-secure-store": "^12.1.1"
   }
 }
