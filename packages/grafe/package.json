@@ -1,6 +1,6 @@
 {
   "name": "@tonightpass/grafe",
-  "version": "3.7.8",
+  "version": "3.7.9",
   "main": "dist/tonightpass-grafe.cjs.js",
   "module": "dist/tonightpass-grafe.esm.js",
   "devDependencies": {

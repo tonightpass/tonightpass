@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 0.5.8
+
+### Patch Changes
+
+- 8c35355: Add `event` property to the `Order` type for associating orders with events
+
 ## 0.5.7
 
 ### Patch Changes
