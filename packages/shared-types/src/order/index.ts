@@ -1,5 +1,5 @@
 import { Currency } from "..";
-import { EventTicket } from "../event";
+import { Event, EventTicket } from "../event";
 import { User } from "../user";
 
 export enum OrderStatus {
