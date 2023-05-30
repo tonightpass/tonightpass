@@ -11,7 +11,7 @@
     "node-mailjet": ">=6.x.x"
   },
   "devDependencies": {
-    "@nestjs/axios": "^1.0.1",
+    "@nestjs/axios": "^2.0.0",
     "@nestjs/common": "9.4.2",
     "@nestjs/core": "9.4.2",
     "@nestjs/platform-fastify": "^9.3.8",
