@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 0.5.9
+
+### Patch Changes
+
+- d74e68a: Fix order event types
+
 ## 0.5.8
 
 ### Patch Changes
