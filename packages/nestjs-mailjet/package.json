@@ -18,7 +18,7 @@
     "@types/node": "18.16.16",
     "node-mailjet": "6.0.2",
     "tslib": "^2.5.0",
-    "typescript": "^4.9.3"
+    "typescript": "^5.0.0"
   },
   "preconstruct": {
     "entrypoints": [
