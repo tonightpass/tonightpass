@@ -27,6 +27,7 @@ export type Order = {
   owner: User;
   members: User[];
   status: OrderStatus;
+  event: Event;
   items: OrderItem[];
   promoCode?: PromoCode;
   total: number;
