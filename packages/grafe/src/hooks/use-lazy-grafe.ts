@@ -74,7 +74,7 @@ export const useLazyGrafe = <TData = any>(
         setResult({
           loading: false,
           success: true,
-          data: data,
+          data,
         });
 
         return result;
