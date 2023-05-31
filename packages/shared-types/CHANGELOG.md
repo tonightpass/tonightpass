@@ -1,5 +1,42 @@
 # @tonightpass/shared-types
 
+## 0.5.7
+
+### Patch Changes
+
+- e1c4e8d: Add Event import in Organization type
+
+## 0.5.6
+
+### Patch Changes
+
+- a5d6842: Add isUsed and updatedAt fields to OrderItem type in order/index.ts
+
+## 0.5.5
+
+### Patch Changes
+
+- cd7b76d: Add Order types
+
+## 0.5.4
+
+### Patch Changes
+
+- Update event ticket price with display price
+
+## 0.5.3
+
+### Patch Changes
+
+- 6730a42: Update enums to output strings
+
+## 0.5.2
+
+### Patch Changes
+
+- ed7ab48: Update event ticket types
+  Improve currency enum and language
+
 ## 0.5.1
 
 ### Patch Changes

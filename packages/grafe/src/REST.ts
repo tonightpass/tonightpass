@@ -3,9 +3,9 @@ import {
   DocumentNode,
   NormalizedCacheObject,
 } from "@apollo/client";
+import { ApolloError } from "@apollo/client/errors";
 
 import type { RestQueryResponse } from "./types/rest-query-response";
-import { ApolloError, GraphQLErrors } from "@apollo/client/errors";
 
 export class REST {
   constructor(protected readonly client: ApolloClient<NormalizedCacheObject>) {}

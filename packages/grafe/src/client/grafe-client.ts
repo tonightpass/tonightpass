@@ -1,9 +1,9 @@
 import { ApolloClient, NormalizedCacheObject } from "@apollo/client";
 
+import { REST } from "../REST";
 import { UsersAPI } from "../api";
 import { AuthAPI } from "../api/auth";
 import { NotificationsAPI } from "../api/notifications";
-import { REST } from "../REST";
 
 interface ClientOptions {
   apolloClient: ApolloClient<NormalizedCacheObject>;

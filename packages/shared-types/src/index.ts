@@ -2,6 +2,7 @@ export * from "./event";
 export * from "./organization";
 export * from "./token";
 export * from "./user";
+export * from "./order";
 
 // - API
 export * from "./api";
@@ -20,12 +21,13 @@ export type Location = {
 
 // Currency
 export enum Currency {
-  EUR,
-  USD,
+  EUR = "EUR",
+  USD = "USD",
+  GBP = "GBP",
 }
 
 // I18n
 export enum Language {
-  FR,
-  EN,
+  FR = "fr",
+  EN = "en",
 }

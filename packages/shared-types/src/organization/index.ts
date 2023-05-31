@@ -1,4 +1,5 @@
 import { Location } from "..";
+import { Event } from "../event";
 import { EventTicket } from "../event/ticket";
 import { User } from "../user";
 
@@ -22,12 +23,12 @@ export type OrganizationSocialLink = {
 };
 
 export enum OrganizationSocialType {
-  FACEBOOK,
-  TWITTER,
-  INSTAGRAM,
-  LINKEDIN,
-  YOUTUBE,
-  WEBSITE,
+  Facebook = "facebook",
+  Twitter = "twitter",
+  Instagram = "instagram",
+  Linkedin = "linkedin",
+  Youtube = "youtube",
+  Website = "website",
 }
 
 export type OrganizationMember = {

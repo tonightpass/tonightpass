@@ -1,7 +1,7 @@
-import { REST } from "../REST";
-import { APIResponse } from "../types/api-response";
 import { SUBSCRIBE_TO_NEWSLETTER } from "./store/notifications/subscribe-newsletter.query";
 import { UNSUBSCRIBE_FROM_NEWSLETTER } from "./store/notifications/unsubscribe-newsletter.query";
+import { REST } from "../REST";
+import { APIResponse } from "../types/api-response";
 
 export class NotificationsAPI {
   public constructor(private readonly rest: REST) {}

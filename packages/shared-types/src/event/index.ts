@@ -1,6 +1,8 @@
+import { EventTicket } from "./ticket";
 import { Location } from "..";
 import { Organization } from "../organization";
-import { EventTicket } from "./ticket";
+
+export * from "./ticket";
 
 export type Event = {
   title: string;
@@ -21,26 +23,26 @@ export type Event = {
 };
 
 export enum EventType {
-  "clubbing",
-  "concert",
-  "afterwork",
-  "dancing_lunch",
-  "diner",
-  "garden",
-  "after_beach",
-  "festival",
-  "spectacle",
-  "cruise",
-  "outside_animation",
-  "sport",
-  "match",
-  "seminar",
-  "conference",
-  "wellness_day",
-  "workshop",
-  "trade_fair",
-  "consumer_show",
-  "membership",
+  Clubbing = "clubbing",
+  Concert = "concert",
+  Afterwork = "afterwork",
+  DancingLunch = "dancing_lunch",
+  Diner = "diner",
+  Garden = "garden",
+  AfterBeach = "after_beach",
+  Festival = "festival",
+  Spectacle = "spectacle",
+  Cruise = "cruise",
+  OutsideAnimation = "outside_animation",
+  Sport = "sport",
+  Match = "match",
+  Seminar = "seminar",
+  Conference = "conference",
+  WellnessDay = "wellness_day",
+  Workshop = "workshop",
+  TradeFair = "trade_fair",
+  ConsumerShow = "consumer_show",
+  Membership = "membership",
 }
 
 export type EventStyle = {
@@ -50,9 +52,9 @@ export type EventStyle = {
 };
 
 export enum EventStyleType {
-  "music",
-  "dress",
-  "sport",
-  "food",
-  "art",
+  Music = "music",
+  Dress = "dress",
+  Sport = "sport",
+  Food = "food",
+  Art = "art",
 }
