@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 0.5.10
+
+### Patch Changes
+
+- 84d8a1f: Add description property to user identity
+
 ## 0.5.9
 
 ### Patch Changes
