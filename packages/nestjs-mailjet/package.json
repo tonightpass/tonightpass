@@ -12,8 +12,8 @@
   },
   "devDependencies": {
     "@nestjs/axios": "^2.0.0",
-    "@nestjs/common": "9.4.2",
-    "@nestjs/core": "9.4.2",
+    "@nestjs/common": "9.4.3",
+    "@nestjs/core": "9.4.3",
     "@nestjs/platform-fastify": "^9.3.8",
     "@types/node": "18.16.17",
     "node-mailjet": "6.0.2",
