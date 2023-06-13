@@ -1,25 +1,30 @@
 {
   "name": "@tonightpass/grafe",
-  "version": "3.7.10",
+  "version": "3.7.11",
   "main": "dist/tonightpass-grafe.cjs.js",
   "module": "dist/tonightpass-grafe.esm.js",
   "devDependencies": {
     "@apollo/client": "^3.7.7",
+    "@tonightpass/shared-types": "workspace:*",
     "@types/react": "^18.0.28",
+    "expo-secure-store": "^12.1.1",
     "react": "^18.2.0",
     "typescript": "^5.0.0"
   },
   "peerDependencies": {
     "@apollo/client": ">= 3.x.x",
+    "@tonightpass/shared-types": ">=0.5.10",
+    "expo-secure-store": ">= 12.x.x",
     "react": ">= 18.x.x"
+  },
+  "peerDependenciesMeta": {
+    "expo-secure-store": {
+      "optional": true
+    }
   },
   "preconstruct": {
     "entrypoints": [
       "index.ts"
     ]
-  },
-  "dependencies": {
-    "@tonightpass/shared-types": "workspace:*",
-    "expo-secure-store": "^12.1.1"
   }
 }

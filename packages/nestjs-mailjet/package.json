@@ -12,10 +12,10 @@
   },
   "devDependencies": {
     "@nestjs/axios": "^2.0.0",
-    "@nestjs/common": "9.4.2",
-    "@nestjs/core": "9.4.2",
+    "@nestjs/common": "9.4.3",
+    "@nestjs/core": "9.4.3",
     "@nestjs/platform-fastify": "^9.3.8",
-    "@types/node": "18.16.16",
+    "@types/node": "18.16.18",
     "node-mailjet": "6.0.2",
     "tslib": "^2.5.0",
     "typescript": "^5.0.0"
