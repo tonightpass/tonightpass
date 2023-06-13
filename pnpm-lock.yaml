@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -105,8 +105,8 @@ importers:
         specifier: ^9.3.8
         version: 9.3.8(@nestjs/common@9.4.2)(@nestjs/core@9.4.2)
       '@types/node':
-        specifier: 18.16.17
-        version: 18.16.17
+        specifier: 18.16.18
+        version: 18.16.18
       node-mailjet:
         specifier: 6.0.2
         version: 6.0.2
@@ -2067,7 +2067,7 @@ packages:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
-      '@types/node': 18.16.17
+      '@types/node': 18.16.18
       '@types/yargs': 15.0.15
       chalk: 4.1.2
     dev: true
@@ -2278,8 +2278,8 @@ packages:
       - supports-color
     dev: true
 
-  /@next/eslint-plugin-next@13.4.4:
-    resolution: {integrity: sha512-5jnh7q6I15efnjR/rR+/TGTc9hn53g3JTbEjAMjmeQiExKqEUgIXqrHI5zlTNlNyzCPkBB860/ctxXheZaF2Vw==}
+  /@next/eslint-plugin-next@13.4.5:
+    resolution: {integrity: sha512-/xD/kyJhXmBZq+0xGKOdjL22c9/4i3mBAXaU9aOGEHTXqqFeOz8scJbScWF13aMqigeoFCsDqngIB2MIatcn4g==}
     dependencies:
       glob: 7.1.7
     dev: false
@@ -2627,7 +2627,7 @@ packages:
   /@types/keyv@3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
-      '@types/node': 18.16.17
+      '@types/node': 18.16.18
     dev: false
 
   /@types/minimatch@3.0.5:
@@ -2642,8 +2642,8 @@ packages:
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
     dev: false
 
-  /@types/node@18.16.17:
-    resolution: {integrity: sha512-QAkjjRA1N7gPJeAP4WLXZtYv6+eMXFNviqktCDt4GLcmCugMr5BcRHfkOjCQzvCsnMp+L79a54zBkbw356xv9Q==}
+  /@types/node@18.16.18:
+    resolution: {integrity: sha512-/aNaQZD0+iSBAGnvvN2Cx92HqE5sZCPZtx2TsK+4nvV23fFe09jVDvpArXr2j9DnYlzuU9WuoykDDc6wqvpNcw==}
 
   /@types/normalize-package-data@2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -2664,13 +2664,13 @@ packages:
   /@types/resolve@1.17.1:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
     dependencies:
-      '@types/node': 18.16.17
+      '@types/node': 18.16.18
     dev: false
 
   /@types/responselike@1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
-      '@types/node': 18.16.17
+      '@types/node': 18.16.18
     dev: false
 
   /@types/scheduler@0.16.2:
@@ -2703,7 +2703,7 @@ packages:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
     requiresBuild: true
     dependencies:
-      '@types/node': 18.16.17
+      '@types/node': 18.16.18
     dev: false
     optional: true
 
@@ -4404,7 +4404,7 @@ packages:
     dependencies:
       '@typescript-eslint/eslint-plugin': 5.59.5(@typescript-eslint/parser@5.59.5)(eslint@8.34.0)(typescript@5.0.2)
       '@typescript-eslint/parser': 5.59.5(eslint@8.34.0)(typescript@5.0.2)
-      eslint-config-next: 13.4.4(eslint@8.34.0)(typescript@5.0.2)
+      eslint-config-next: 13.4.5(eslint@8.34.0)(typescript@5.0.2)
       eslint-config-prettier: 8.6.0(eslint@8.34.0)
       eslint-config-turbo: 1.10.3(eslint@8.34.0)
       eslint-config-universe: 11.2.0(eslint@8.34.0)(prettier@2.8.4)(typescript@5.0.2)
@@ -4419,8 +4419,8 @@ packages:
       - typescript
     dev: false
 
-  /eslint-config-next@13.4.4(eslint@8.34.0)(typescript@5.0.2):
-    resolution: {integrity: sha512-z/PMbm6L0iC/fwISULxe8IVy4DtNqZk2wQY711o35klenq70O6ns82A8yuMVCFjHC0DIyB2lyugesRtuk9u8dQ==}
+  /eslint-config-next@13.4.5(eslint@8.34.0)(typescript@5.0.2):
+    resolution: {integrity: sha512-7qgJmRp9ClRzPgkzEz7ahK+Rasiv4k2aU3eqkkORzseNUGdtImZVYomcXUhUheHwkxzdN2p//nbIA7zJrCxsCg==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0
       typescript: '>=3.3.1'
@@ -4428,7 +4428,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@next/eslint-plugin-next': 13.4.4
+      '@next/eslint-plugin-next': 13.4.5
       '@rushstack/eslint-patch': 1.2.0
       '@typescript-eslint/parser': 5.59.5(eslint@8.34.0)(typescript@5.0.2)
       eslint: 8.34.0
@@ -6185,7 +6185,7 @@ packages:
     resolution: {integrity: sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 18.16.17
+      '@types/node': 18.16.18
       merge-stream: 2.0.0
       supports-color: 7.2.0
     dev: false
@@ -6194,7 +6194,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 18.16.17
+      '@types/node': 18.16.18
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: false
