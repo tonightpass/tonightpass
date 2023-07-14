@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 0.6.0
+
+### Minor Changes
+
+- 52715c3: Update User type
+
 ## 0.5.10
 
 ### Patch Changes
