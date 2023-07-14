@@ -11,7 +11,6 @@ export class CreateUserDto {
 class CreateUserIdentituDto {
   firstName: string;
   lastName: string;
-  userName: string;
   gender: UserIdentityGender;
   profilePictureUrl?: string;
   birthDate: Date;

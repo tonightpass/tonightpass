@@ -14,14 +14,17 @@ export type User = {
 };
 
 export type UserIdentifier = {
-  [key: string]: string;
+  email?: string;
+  phoneNumber?: string;
+  username: string;
+
+  [key: string]: string | undefined;
 };
 
 export type UserIdentity = {
   firstName: string;
   lastName: string;
   fullName: string;
-  userName: string;
   displayName: string;
   description: string;
   gender: UserIdentityGender;
