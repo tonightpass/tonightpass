@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 0.7.1
+
+### Patch Changes
+
+- 329cbed: Add forgotten export of APIResponse type
+
 ## 0.7.0
 
 ### Minor Changes
