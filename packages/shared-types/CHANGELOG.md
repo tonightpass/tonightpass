@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 0.7.0
+
+### Minor Changes
+
+- daf6a27: Add APIResponse type
+
 ## 0.6.0
 
 ### Minor Changes
