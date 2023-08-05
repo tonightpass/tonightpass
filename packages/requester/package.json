@@ -1,0 +1,21 @@
+{
+  "name": "@tonightpass/requester",
+  "version": "0.0.1",
+  "main": "dist/tonightpass-requester.cjs.js",
+  "module": "dist/tonightpass-requester.esm.js",
+  "devDependencies": {
+    "@tonightpass/shared-types": "workspace:*",
+    "@types/react": "^18.0.28",
+    "axios": "^1.4.0",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "@tonightpass/shared-types": ">= 0.7.1",
+    "axios": ">= 1.3.x"
+  },
+  "preconstruct": {
+    "entrypoints": [
+      "index.ts"
+    ]
+  }
+}
