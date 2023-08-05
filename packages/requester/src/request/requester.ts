@@ -23,8 +23,8 @@ type RequestResponse = {
 const requester = (auth = true): RequestResponse => {
   let baseOptions: ApiRequestConfig = {};
 
-  // - If the app is under React Native, then we don't have access to cookies so we need to pass the JWT token in the Authorization header.
   if (auth) {
+    // eslint-disable-next-line no-unused-expressions
     createAuthHeaders; // - Waiting usage
 
     baseOptions = {
