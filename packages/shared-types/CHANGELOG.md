@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 0.7.2
+
+### Patch Changes
+
+- f311375: Update identifier field in SignInUserDto type
+
 ## 0.7.1
 
 ### Patch Changes
