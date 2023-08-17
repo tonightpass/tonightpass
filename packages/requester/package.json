@@ -1,6 +1,6 @@
 {
   "name": "@tonightpass/requester",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/tonightpass-requester.cjs.js",
   "module": "dist/tonightpass-requester.esm.js",
   "devDependencies": {
@@ -10,7 +10,7 @@
     "typescript": "^5.0.0"
   },
   "peerDependencies": {
-    "@tonightpass/shared-types": ">= 0.7.1",
+    "@tonightpass/shared-types": ">=0.7.2",
     "axios": ">= 1.3.x"
   },
   "preconstruct": {
