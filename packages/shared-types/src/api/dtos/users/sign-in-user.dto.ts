@@ -1,6 +1,4 @@
-import { UserIdentifier } from "../../../user";
-
 export class SignInUserDto {
-  identifier: UserIdentifier;
+  identifier: string;
   password: string;
 }
