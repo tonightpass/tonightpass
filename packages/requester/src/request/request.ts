@@ -1,5 +1,6 @@
-import { APIError, APIResponse } from "@tonightpass/shared-types";
 import axios, { AxiosRequestConfig } from "axios";
+
+import { APIError, APIResponse } from "../types/api-response";
 
 type ApiRequestConfig = Exclude<AxiosRequestConfig, "method">;
 
