@@ -1,6 +1,5 @@
-import { APIResponse } from "@tonightpass/shared-types";
-
 import request, { ApiRequestConfig } from "./request";
+import { APIResponse } from "../types/api-response";
 
 const createAuthHeaders = (jwtToken: string) => ({
   Authorization: `${
