@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 1.0.0
+
+### Major Changes
+
+- 3d15e92: Set APIResponse type to requester only
+
 ## 0.7.2
 
 ### Patch Changes
