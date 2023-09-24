@@ -1,5 +1,11 @@
 # @tonightpass/requester
 
+## 1.1.0
+
+### Minor Changes
+
+- 3d15e92: Set APIResponse type to requester only
+
 ## 1.0.1
 
 ### Patch Changes
