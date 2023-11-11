@@ -1,5 +1,11 @@
 # @tonightpass/requester
 
+## 1.1.1
+
+### Patch Changes
+
+- 567431d: Use redaxios instead of axios
+
 ## 1.1.0
 
 ### Minor Changes
