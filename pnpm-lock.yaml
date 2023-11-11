@@ -170,13 +170,14 @@ importers:
         version: 5.0.4
 
   packages/requester:
+    dependencies:
+      redaxios:
+        specifier: ^0.5.1
+        version: 0.5.1
     devDependencies:
       '@types/react':
         specifier: ^18.0.28
         version: 18.0.28
-      axios:
-        specifier: ^1.4.0
-        version: 1.4.0
       typescript:
         specifier: ^5.0.0
         version: 5.0.4
@@ -2579,8 +2580,8 @@ packages:
       - supports-color
     dev: true
 
-  /@next/eslint-plugin-next@14.0.1:
-    resolution: {integrity: sha512-bLjJMwXdzvhnQOnxvHoTTUh/+PYk6FF/DCgHi4BXwXCINer+o1ZYfL9aVeezj/oI7wqGJOqwGIXrlBvPbAId3w==}
+  /@next/eslint-plugin-next@14.0.2:
+    resolution: {integrity: sha512-APrYFsXfAhnysycqxHcpg6Y4i7Ukp30GzVSZQRKT3OczbzkqGjt33vNhScmgoOXYBU1CfkwgtXmNxdiwv1jKmg==}
     dependencies:
       glob: 7.1.7
     dev: false
@@ -5203,7 +5204,7 @@ packages:
     dependencies:
       '@typescript-eslint/eslint-plugin': 5.59.5(@typescript-eslint/parser@5.59.5)(eslint@8.34.0)(typescript@5.0.4)
       '@typescript-eslint/parser': 5.59.5(eslint@8.34.0)(typescript@5.0.4)
-      eslint-config-next: 14.0.1(eslint@8.34.0)(typescript@5.0.4)
+      eslint-config-next: 14.0.2(eslint@8.34.0)(typescript@5.0.4)
       eslint-config-prettier: 8.6.0(eslint@8.34.0)
       eslint-config-turbo: 1.10.16(eslint@8.34.0)
       eslint-config-universe: 11.2.0(eslint@8.34.0)(prettier@2.8.4)(typescript@5.0.4)
@@ -5218,8 +5219,8 @@ packages:
       - typescript
     dev: false
 
-  /eslint-config-next@14.0.1(eslint@8.34.0)(typescript@5.0.4):
-    resolution: {integrity: sha512-QfIFK2WD39H4WOespjgf6PLv9Bpsd7KGGelCtmq4l67nGvnlsGpuvj0hIT+aIy6p5gKH+lAChYILsyDlxP52yg==}
+  /eslint-config-next@14.0.2(eslint@8.34.0)(typescript@5.0.4):
+    resolution: {integrity: sha512-CasWThlsyIcg/a+clU6KVOMTieuDhTztsrqvniP6AsRki9v7FnojTa7vKQOYM8QSOsQdZ/aElLD1Y2Oc8/PsIg==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0
       typescript: '>=3.3.1'
@@ -5227,7 +5228,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@next/eslint-plugin-next': 14.0.1
+      '@next/eslint-plugin-next': 14.0.2
       '@rushstack/eslint-patch': 1.4.0
       '@typescript-eslint/parser': 5.59.5(eslint@8.34.0)(typescript@5.0.4)
       eslint: 8.34.0
@@ -9620,6 +9621,10 @@ packages:
       esprima: 4.0.1
       source-map: 0.6.1
       tslib: 2.6.2
+
+  /redaxios@0.5.1:
+    resolution: {integrity: sha512-FSD2AmfdbkYwl7KDExYQlVvIrFz6Yd83pGfaGjBzM9F6rpq8g652Q4Yq5QD4c+nf4g2AgeElv1y+8ajUPiOYMg==}
+    dev: false
 
   /redent@3.0.0:
     resolution: {integrity: sha512-6tDA8g98We0zd0GvVeMT9arEOnTw9qM03L9cJXaCjrip1OO764RDBLBfrB4cwzNGDj5OA5ioymC9GkizgWJDUg==}

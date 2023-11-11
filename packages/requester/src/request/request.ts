@@ -1,8 +1,8 @@
-import axios, { AxiosRequestConfig } from "axios";
+import axios, { Options } from "redaxios";
 
 import { APIError, APIResponse } from "../types/api-response";
 
-type ApiRequestConfig = Exclude<AxiosRequestConfig, "method">;
+type ApiRequestConfig = Exclude<Options, "method">;
 
 const instance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_PATH,
@@ -10,7 +10,7 @@ const instance = axios.create({
     "Content-Type": "application/json",
     Accept: "application/json",
   },
-  timeout: 6000,
+  responseType: "json",
   transformRequest: [
     function (data) {
       return JSON.stringify(data);

@@ -5,11 +5,10 @@
   "module": "dist/tonightpass-requester.esm.js",
   "devDependencies": {
     "@types/react": "^18.0.28",
-    "axios": "^1.4.0",
     "typescript": "^5.0.0"
   },
-  "peerDependencies": {
-    "axios": ">= 1.3.x"
+  "dependencies": {
+    "redaxios": "^0.5.1"
   },
   "preconstruct": {
     "entrypoints": [
