@@ -1,6 +1,5 @@
+import { APIError, APIResponse } from "@tonightpass/shared-types";
 import axios, { Options } from "redaxios";
-
-import { APIError, APIResponse } from "../types/api-response";
 
 type ApiRequestConfig = Exclude<Options, "method">;
 
@@ -17,6 +16,18 @@ const instance = axios.create({
     },
   ],
 });
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+instance.interceptors.response.use(
+  function (response: unknown) {
+    return response;
+  },
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  function (error: any) {
+    return Promise.reject(error.data);
+  }
+);
 
 const request = async <TData>(
   url: string,
