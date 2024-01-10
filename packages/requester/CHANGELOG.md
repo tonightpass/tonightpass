@@ -1,5 +1,11 @@
 # @tonightpass/requester
 
+## 2.0.2
+
+### Patch Changes
+
+- 7b153a1: Update requester error interceptor
+
 ## 2.0.1
 
 ### Patch Changes
