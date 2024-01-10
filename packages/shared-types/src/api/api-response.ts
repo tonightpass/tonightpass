@@ -1,10 +1,13 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-type APIResponse<TData = any> =
+type APIResponse<TData = any> = (
   | {
       success: true;
       data: TData;
     }
-  | APIError;
+  | APIError
+) & {
+  statusCode: number;
+};
 
 type APIError = {
   success: false;
