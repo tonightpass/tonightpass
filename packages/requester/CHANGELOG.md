@@ -1,5 +1,16 @@
 # @tonightpass/requester
 
+## 2.0.0
+
+### Major Changes
+
+- 765d0cf: Set APIResponse to shared-types
+
+### Patch Changes
+
+- Updated dependencies [765d0cf]
+  - @tonightpass/shared-types@2.0.0
+
 ## 1.1.1
 
 ### Patch Changes
