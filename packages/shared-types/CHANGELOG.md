@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 2.0.1
+
+### Patch Changes
+
+- 5b16e35: Add StatusCode property to APIResponse
+
 ## 2.0.0
 
 ### Major Changes
