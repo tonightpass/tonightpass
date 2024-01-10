@@ -17,18 +17,6 @@ const instance = axios.create({
   ],
 });
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-instance.interceptors.response.use(
-  function (response: unknown) {
-    return response;
-  },
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  function (error: any) {
-    return Promise.reject(error.data);
-  }
-);
-
 const request = async <TData>(
   url: string,
   options?: ApiRequestConfig
