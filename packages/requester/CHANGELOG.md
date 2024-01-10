@@ -1,5 +1,11 @@
 # @tonightpass/requester
 
+## 2.0.3
+
+### Patch Changes
+
+- 606450b: Remove interceptor :(
+
 ## 2.0.2
 
 ### Patch Changes
