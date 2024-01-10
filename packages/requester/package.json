@@ -1,6 +1,6 @@
 {
   "name": "@tonightpass/requester",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "main": "dist/tonightpass-requester.cjs.js",
   "module": "dist/tonightpass-requester.esm.js",
   "devDependencies": {
