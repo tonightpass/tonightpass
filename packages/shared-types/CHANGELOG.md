@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 2.0.0
+
+### Major Changes
+
+- 765d0cf: Set APIResponse to shared-types
+
 ## 1.0.0
 
 ### Major Changes
