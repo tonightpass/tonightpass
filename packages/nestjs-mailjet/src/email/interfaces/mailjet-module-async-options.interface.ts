@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ModuleMetadata, Type } from "@nestjs/common";
 
 import { MailjetModuleOptions } from "./mailjet-module-options.interface";
