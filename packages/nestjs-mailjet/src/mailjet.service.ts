@@ -1,4 +1,4 @@
-import { Inject, Injectable } from "@nestjs/common";
+import { HttpStatus, Inject, Injectable } from "@nestjs/common";
 import { Client, Contact, LibraryResponse, SendEmailV3_1 } from "node-mailjet";
 
 import { MAILJET_MODULE_OPTIONS } from "./constants/mailjet.constants";
@@ -103,7 +103,12 @@ export class MailjetService {
       .post("send", { version: "v3.1" })
       .request(messages);
 
-    if (result.response.status !== 201 || result.body.Messages.length === 0) {
+    if (
+      (result.response.status !== HttpStatus.CREATED ||
+        result.response.status !== HttpStatus.CREATED) &&
+      (result.body.Messages.length === 0 ||
+        result.body.Messages[0].Status !== "success")
+    ) {
       throw new Error("Email messages not sent");
     }
 

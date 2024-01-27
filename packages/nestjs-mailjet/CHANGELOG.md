@@ -1,5 +1,11 @@
 # @tonightpass/nestjs-mailjet
 
+## 3.0.2
+
+### Patch Changes
+
+- Update sendEmail error throwing conditions
+
 ## 3.0.1
 
 ### Patch Changes
