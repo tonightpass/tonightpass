@@ -1,5 +1,11 @@
 # @tonightpass/requester
 
+## 2.0.4
+
+### Patch Changes
+
+- 44ce11d: Update api url on requester
+
 ## 2.0.3
 
 ### Patch Changes
