@@ -4,7 +4,7 @@ import axios, { Options } from "redaxios";
 type ApiRequestConfig = Exclude<Options, "method">;
 
 const instance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_PATH,
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
