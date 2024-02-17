@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 2.0.2
+
+### Patch Changes
+
+- Add Profile type for organization and users and update UserIdentity type
+
 ## 2.0.1
 
 ### Patch Changes

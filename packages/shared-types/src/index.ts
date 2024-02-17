@@ -3,6 +3,7 @@ export * from "./organization";
 export * from "./token";
 export * from "./user";
 export * from "./order";
+export * from "./profile";
 
 // - API
 export * from "./api";

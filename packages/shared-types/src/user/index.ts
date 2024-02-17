@@ -1,4 +1,4 @@
-import { Currency, Language, Location } from "..";
+import { Currency, Language, Location, Profile } from "..";
 
 export type User = {
   id: string;
@@ -21,14 +21,11 @@ export type UserIdentifier = {
   [key: string]: string | undefined;
 };
 
-export type UserIdentity = {
+export type UserIdentity = Profile & {
   firstName: string;
   lastName: string;
   fullName: string;
-  displayName: string;
-  description: string;
   gender: UserIdentityGender;
-  profilePictureUrl?: string;
   birthDate: Date;
   idValid: boolean;
 };
