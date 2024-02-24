@@ -56,15 +56,16 @@ export class MailjetService {
 
   async subscribeContactToList(
     contactId: string | number,
-    listId: string | number
+    listId: string | number,
+    action: "addforce" | "addnoforce" = "addnoforce"
   ): Promise<Contact.Contact> {
     const result: LibraryResponse<Contact.PostContactResponse> =
       await this.client
         .post("contact", { version: "v3" })
         .id(contactId.toString())
-        .action("managecontactlist")
+        .action("managecontactslists")
         .request({
-          Action: "addforce",
+          Action: action,
           ListID: listId,
         });
 
@@ -83,7 +84,7 @@ export class MailjetService {
       await this.client
         .post("contact", { version: "v3" })
         .id(contactId.toString())
-        .action("managecontactlist")
+        .action("managecontactslists")
         .request({
           Action: "unsub",
           ListID: listId,
