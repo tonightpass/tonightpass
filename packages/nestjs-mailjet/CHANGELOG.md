@@ -1,5 +1,11 @@
 # @tonightpass/nestjs-mailjet
 
+## 3.0.3
+
+### Patch Changes
+
+- Fix Mailjet API breaking changes
+
 ## 3.0.2
 
 ### Patch Changes
