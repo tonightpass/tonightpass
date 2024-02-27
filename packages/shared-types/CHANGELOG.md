@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 2.0.3
+
+### Patch Changes
+
+- 040cc04: Add verified status and add profile props
+
 ## 2.0.2
 
 ### Patch Changes
