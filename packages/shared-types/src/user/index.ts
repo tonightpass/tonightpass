@@ -9,6 +9,7 @@ export type User = {
   addresses: Location[];
   preferences: UserPreferences;
   connections: UserConnection[];
+  verified: boolean;
   updatedAt: Date;
   createdAt: Date;
 };
