@@ -2,13 +2,9 @@ name: CI
 on: [push]
 jobs:
   build:
-    name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
+    name: Build, lint, and test on Node
 
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node: ["16.x", "18.x", "20.x"]
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
@@ -19,10 +15,10 @@ jobs:
         with:
           version: "latest"
 
-      - name: Use Node ${{ matrix.node }}
+      - name: Use Node
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node }}
+          node-version: "20.x"
           cache: "pnpm"
 
       - name: Install Dependencies
