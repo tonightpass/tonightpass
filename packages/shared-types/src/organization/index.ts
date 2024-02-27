@@ -13,6 +13,7 @@ export type Organization = {
   location?: Location;
   events: Event[];
   savedTickets: EventTicket[];
+  verified: boolean;
   updatedAt: Date;
   createdAt: Date;
 };
