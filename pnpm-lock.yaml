@@ -140,7 +140,7 @@ importers:
     devDependencies:
       '@nestjs/axios':
         specifier: ^3.0.0
-        version: 3.0.0(@nestjs/common@10.2.8)(axios@1.4.0)(reflect-metadata@0.1.13)(rxjs@7.8.0)
+        version: 3.0.0(@nestjs/common@10.2.8)(axios@1.6.2)(reflect-metadata@0.1.13)(rxjs@7.8.0)
       '@nestjs/common':
         specifier: 10.2.8
         version: 10.2.8(reflect-metadata@0.1.13)(rxjs@7.8.0)
@@ -151,8 +151,8 @@ importers:
         specifier: ^10.0.0
         version: 10.0.0(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)
       '@types/node':
-        specifier: 20.11.20
-        version: 20.11.20
+        specifier: 20.11.21
+        version: 20.11.21
       node-mailjet:
         specifier: 6.0.5
         version: 6.0.5
@@ -1883,7 +1883,7 @@ packages:
       debug: 4.3.4(supports-color@5.5.0)
       espree: 9.4.1
       globals: 13.20.0
-      ignore: 5.2.4
+      ignore: 5.3.0
       import-fresh: 3.3.0
       js-yaml: 4.1.0
       minimatch: 3.1.2
@@ -2459,7 +2459,7 @@ packages:
     dependencies:
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.11.20
+      '@types/node': 20.11.21
       jest-mock: 29.7.0
 
   /@jest/fake-timers@29.7.0:
@@ -2468,7 +2468,7 @@ packages:
     dependencies:
       '@jest/types': 29.6.3
       '@sinonjs/fake-timers': 10.1.0
-      '@types/node': 20.11.20
+      '@types/node': 20.11.21
       jest-message-util: 29.7.0
       jest-mock: 29.7.0
       jest-util: 29.7.0
@@ -2485,7 +2485,7 @@ packages:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
-      '@types/node': 20.11.20
+      '@types/node': 20.11.21
       '@types/yargs': 15.0.15
       chalk: 4.1.2
 
@@ -2496,7 +2496,7 @@ packages:
       '@jest/schemas': 29.6.3
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
-      '@types/node': 20.11.20
+      '@types/node': 20.11.21
       '@types/yargs': 17.0.24
       chalk: 4.1.2
 
@@ -2611,7 +2611,7 @@ packages:
       read-yaml-file: 1.1.0
     dev: false
 
-  /@nestjs/axios@3.0.0(@nestjs/common@10.2.8)(axios@1.4.0)(reflect-metadata@0.1.13)(rxjs@7.8.0):
+  /@nestjs/axios@3.0.0(@nestjs/common@10.2.8)(axios@1.6.2)(reflect-metadata@0.1.13)(rxjs@7.8.0):
     resolution: {integrity: sha512-ULdH03jDWkS5dy9X69XbUVbhC+0pVnrRcj7bIK/ytTZ76w7CgvTZDJqsIyisg3kNOiljRW/4NIjSf3j6YGvl+g==}
     peerDependencies:
       '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
@@ -2620,7 +2620,7 @@ packages:
       rxjs: ^6.0.0 || ^7.0.0
     dependencies:
       '@nestjs/common': 10.2.8(reflect-metadata@0.1.13)(rxjs@7.8.0)
-      axios: 1.4.0
+      axios: 1.6.2
       reflect-metadata: 0.1.13
       rxjs: 7.8.0
     dev: true
@@ -3406,7 +3406,7 @@ packages:
   /@types/keyv@3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
-      '@types/node': 20.11.20
+      '@types/node': 20.11.21
     dev: false
 
   /@types/minimist@1.2.2:
@@ -3417,8 +3417,8 @@ packages:
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
     dev: false
 
-  /@types/node@20.11.20:
-    resolution: {integrity: sha512-7/rR21OS+fq8IyHTgtLkDK949uzsa6n8BkziAKtPVpugIkO6D+/ooXMvzXxDnZrmtXVfjb1bKQafYpb8s89LOg==}
+  /@types/node@20.11.21:
+    resolution: {integrity: sha512-/ySDLGscFPNasfqStUuWWPfL78jompfIoVzLJPVVAHBh6rpG68+pI2Gk+fNLeI8/f1yPYL4s46EleVIc20F1Ow==}
     dependencies:
       undici-types: 5.26.5
 
@@ -3457,13 +3457,13 @@ packages:
   /@types/resolve@1.17.1:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
     dependencies:
-      '@types/node': 20.11.20
+      '@types/node': 20.11.21
     dev: false
 
   /@types/responselike@1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
-      '@types/node': 20.11.20
+      '@types/node': 20.11.21
     dev: false
 
   /@types/scheduler@0.16.2:
@@ -3502,7 +3502,7 @@ packages:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
     requiresBuild: true
     dependencies:
-      '@types/node': 20.11.20
+      '@types/node': 20.11.21
     dev: false
     optional: true
 
@@ -4248,16 +4248,6 @@ packages:
     engines: {node: '>=4'}
     dev: false
 
-  /axios@1.4.0:
-    resolution: {integrity: sha512-S4XCWMEmzvo64T9GfvQDOXgYRDJ/wsSZc7Jvdgx5u1sd0JwsuPLqb3SYmusag+edF6ziyMensPVqLTSc1PiSEA==}
-    dependencies:
-      follow-redirects: 1.15.2
-      form-data: 4.0.0
-      proxy-from-env: 1.1.0
-    transitivePeerDependencies:
-      - debug
-    dev: true
-
   /axios@1.6.2:
     resolution: {integrity: sha512-7i24Ri4pmDRfJTR7LDBhsOTtcm+9kjX5WiY1X3wIisx6G9So3pfMkEiU7emUBe46oceVImccTEM3k6C5dbVW8A==}
     dependencies:
@@ -4700,7 +4690,7 @@ packages:
     engines: {node: '>=12.13.0'}
     hasBin: true
     dependencies:
-      '@types/node': 20.11.20
+      '@types/node': 20.11.21
       escape-string-regexp: 4.0.0
       is-wsl: 2.2.0
       lighthouse-logger: 1.4.2
@@ -4715,7 +4705,7 @@ packages:
   /chromium-edge-launcher@1.0.0:
     resolution: {integrity: sha512-pgtgjNKZ7i5U++1g1PWv75umkHvhVTDOQIZ+sjeUX9483S7Y6MUvO0lrd7ShGlQlFHMN4SwKTCq/X8hWrbv2KA==}
     dependencies:
-      '@types/node': 20.11.20
+      '@types/node': 20.11.21
       escape-string-regexp: 4.0.0
       is-wsl: 2.2.0
       lighthouse-logger: 1.4.2
@@ -5770,7 +5760,7 @@ packages:
       eslint: 8.34.0
       eslint-plugin-es: 3.0.1(eslint@8.34.0)
       eslint-utils: 2.1.0
-      ignore: 5.2.4
+      ignore: 5.3.0
       minimatch: 3.1.2
       resolve: 1.22.1
       semver: 6.3.1
@@ -6493,6 +6483,7 @@ packages:
       glob-parent: 5.1.2
       merge2: 1.4.1
       micromatch: 4.0.5
+    dev: false
 
   /fast-glob@3.3.2:
     resolution: {integrity: sha512-oX2ruAFQwf/Orj8m737Y5adxDQO0LAB7/S5MnxCdTNDd4p6BsyIVsv9JQsATbTSq8KHRpLwIHbVlUNatxd+1Ow==}
@@ -7026,8 +7017,8 @@ packages:
     dependencies:
       array-union: 2.1.0
       dir-glob: 3.0.1
-      fast-glob: 3.2.12
-      ignore: 5.2.4
+      fast-glob: 3.3.2
+      ignore: 5.3.0
       merge2: 1.4.1
       slash: 3.0.0
 
@@ -7037,7 +7028,7 @@ packages:
     dependencies:
       dir-glob: 3.0.1
       fast-glob: 3.3.2
-      ignore: 5.2.4
+      ignore: 5.3.0
       merge2: 1.4.1
       slash: 4.0.0
     dev: false
@@ -7048,7 +7039,7 @@ packages:
     dependencies:
       '@sindresorhus/merge-streams': 1.0.0
       fast-glob: 3.3.2
-      ignore: 5.2.4
+      ignore: 5.3.0
       path-type: 5.0.0
       slash: 5.1.0
       unicorn-magic: 0.1.0
@@ -7254,11 +7245,11 @@ packages:
   /ignore@5.2.4:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
     engines: {node: '>= 4'}
+    dev: false
 
   /ignore@5.3.0:
     resolution: {integrity: sha512-g7dmpshy+gD7mh88OC9NwSGTKoc3kyLAZQRU1mt53Aw/vnvfXnbC+F/7F7QoYVKbV+KNvJx8wArewKy1vXMtlg==}
     engines: {node: '>= 4'}
-    dev: false
 
   /image-size@1.0.2:
     resolution: {integrity: sha512-xfOoWjceHntRb3qFCrh5ZFORYH8XCdYpASltMhZ/Q0KZiOwjdE/Yl2QCiWdwD+lygV5bMCvauzgu5PxBX/Yerg==}
@@ -7681,7 +7672,7 @@ packages:
       '@jest/environment': 29.7.0
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.11.20
+      '@types/node': 20.11.21
       jest-mock: 29.7.0
       jest-util: 29.7.0
 
@@ -7708,7 +7699,7 @@ packages:
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 20.11.20
+      '@types/node': 20.11.21
       jest-util: 29.7.0
 
   /jest-util@29.7.0:
@@ -7716,7 +7707,7 @@ packages:
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 20.11.20
+      '@types/node': 20.11.21
       chalk: 4.1.2
       ci-info: 3.8.0
       graceful-fs: 4.2.10
@@ -7737,7 +7728,7 @@ packages:
     resolution: {integrity: sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 20.11.20
+      '@types/node': 20.11.21
       merge-stream: 2.0.0
       supports-color: 7.2.0
     dev: false
@@ -7746,7 +7737,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 20.11.20
+      '@types/node': 20.11.21
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: false
@@ -7755,7 +7746,7 @@ packages:
     resolution: {integrity: sha512-eIz2msL/EzL9UFTFFx7jBTkeZfku0yUAyZZZmJ93H2TYEiroIx2PQjEXcwYtYl8zXCxb+PAmA2hLIt/6ZEkPHw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
-      '@types/node': 20.11.20
+      '@types/node': 20.11.21
       jest-util: 29.7.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
