@@ -1,19 +1,21 @@
 export interface Profile {
   type: "user" | "organization";
 
-  name: string;
-  username: string;
+  displayName: string;
   description: string;
-  verified: boolean;
 
   profilePictureUrl?: string;
   bannerUrl?: string;
 
-  followers: number;
-  following: number;
-  views: number;
-  events: number;
+  metadata: ProfileMetadata;
 
-  createdAt: string;
-  updatedAt: string;
+  createdAt: Date;
+}
+
+export interface ProfileMetadata {
+  followersCount: number;
+
+  isBlocked: boolean;
+  hasBlocked: boolean;
+  canDM: boolean;
 }

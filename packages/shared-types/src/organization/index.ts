@@ -1,4 +1,4 @@
-import { Location } from "..";
+import { Location, Profile, ProfileMetadata } from "..";
 import { Event } from "../event";
 import { EventTicket } from "../event/ticket";
 import { User } from "../user";
@@ -7,15 +7,24 @@ export type Organization = {
   id: string;
   name: string;
   slug: string;
+  identity: OrganizationIdentity;
   members: OrganizationMember[];
-  logoUrl: string;
-  socialLinks: OrganizationSocialLink[];
   location?: Location;
   events: Event[];
   savedTickets: EventTicket[];
   verified: boolean;
   updatedAt: Date;
   createdAt: Date;
+};
+
+export type OrganizationIdentity = Profile & {
+  socialLinks: OrganizationSocialLink[];
+
+  metadata: ProfileMetadata & {
+    eventsCount: number;
+    viewsCount: number;
+    membersCount: number;
+  };
 };
 
 export type OrganizationSocialLink = {
