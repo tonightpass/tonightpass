@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 2.0.4
+
+### Patch Changes
+
+- 01acd59: Update Profile types
+
 ## 2.0.3
 
 ### Patch Changes
