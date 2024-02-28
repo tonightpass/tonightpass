@@ -15,7 +15,7 @@ import { GrafeContext } from "../contexts/Grafe";
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const useGrafe = <TData = any>(
-  action: (client: GrafeClient) => Promise<TData>
+  action: (client: GrafeClient) => Promise<TData>,
 ): [boolean, boolean, TData | undefined, string | Error | undefined] => {
   const { client } = React.useContext(GrafeContext);
 

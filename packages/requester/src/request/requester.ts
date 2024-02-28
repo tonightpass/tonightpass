@@ -10,7 +10,7 @@ const createAuthHeaders = (jwtToken: string) => ({
 
 type BaseRequest = <TData>(
   url: string,
-  options?: ApiRequestConfig
+  options?: ApiRequestConfig,
 ) => Promise<APIResponse<TData>>;
 
 type RequestResponse = {
@@ -36,28 +36,28 @@ const requester = (auth = true): RequestResponse => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const get: BaseRequest = async <TData = any>(
     url: string,
-    options?: ApiRequestConfig
+    options?: ApiRequestConfig,
   ): Promise<APIResponse<TData>> =>
     request<TData>(url, { ...baseOptions, ...options, method: "GET" });
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const post: BaseRequest = async <TData = any>(
     url: string,
-    options?: ApiRequestConfig
+    options?: ApiRequestConfig,
   ): Promise<APIResponse<TData>> =>
     request<TData>(url, { ...baseOptions, ...options, method: "POST" });
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const put: BaseRequest = async <TData = any>(
     url: string,
-    options?: ApiRequestConfig
+    options?: ApiRequestConfig,
   ): Promise<APIResponse<TData>> =>
     request<TData>(url, { ...baseOptions, ...options, method: "PUT" });
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const del: BaseRequest = async <TData = any>(
     url: string,
-    options?: ApiRequestConfig
+    options?: ApiRequestConfig,
   ): Promise<APIResponse<TData>> =>
     request<TData>(url, { ...baseOptions, ...options, method: "DELETE" });
 

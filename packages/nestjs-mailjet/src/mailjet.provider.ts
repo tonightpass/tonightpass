@@ -4,7 +4,7 @@ import { MAILJET_MODULE_OPTIONS } from "./constants/mailjet.constants";
 import { MailjetModuleOptions } from "./interfaces/mailjet-module-options.interface";
 
 export function createMailjetProviders(
-  options: MailjetModuleOptions
+  options: MailjetModuleOptions,
 ): Provider[] {
   return [
     {

@@ -13,7 +13,7 @@ export class REST {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public async query<TData = any>(
     query: DocumentNode,
-    variables?: Record<string, unknown>
+    variables?: Record<string, unknown>,
   ): Promise<RestQueryResponse<TData>> {
     return this.client
       .query({
@@ -41,7 +41,7 @@ export class REST {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public mutate<TData = any>(
     mutation: DocumentNode,
-    variables?: Record<string, unknown>
+    variables?: Record<string, unknown>,
   ): Promise<RestQueryResponse<TData>> {
     return this.client
       .mutate<TData>({

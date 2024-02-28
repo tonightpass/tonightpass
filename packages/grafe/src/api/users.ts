@@ -30,7 +30,7 @@ export class UsersAPI {
   }
 
   public async identify(
-    identifier: string
+    identifier: string,
   ): Promise<APIResponse<UserIdentifier>> {
     const result = await this.rest.query(IDENTIFY_USER, {
       identifier,

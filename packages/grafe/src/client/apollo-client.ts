@@ -65,7 +65,7 @@ export const createApolloClient = async ({
           authorization: token ? `${jwtHeaderPrefix} ${token}` : "caca",
         },
       };
-    })
+    }),
   );
 
   const refreshLink = new ApolloLink((operation, forward) => {
@@ -86,7 +86,7 @@ export const createApolloClient = async ({
     });
   });
 
-  const errorLink = onError(
+  const _errorLink = onError(
     ({ graphQLErrors, networkError, operation, forward }) => {
       if (graphQLErrors) {
         for (const err of graphQLErrors) {
@@ -98,7 +98,7 @@ export const createApolloClient = async ({
 
         graphQLErrors.map(({ message, locations, path }) => {
           console.error(
-            `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
+            `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,
           );
         });
       }
@@ -108,7 +108,7 @@ export const createApolloClient = async ({
       }
 
       return forward(operation);
-    }
+    },
   );
 
   const cache = new InMemoryCache().restore(initialState || {});

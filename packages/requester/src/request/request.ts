@@ -19,7 +19,7 @@ const instance = axios.create({
 
 const request = async <TData>(
   url: string,
-  options?: ApiRequestConfig
+  options?: ApiRequestConfig,
 ): Promise<APIResponse<TData>> => {
   const response = instance<APIResponse<TData>>(url, { ...options })
     .then((response) => response.data)

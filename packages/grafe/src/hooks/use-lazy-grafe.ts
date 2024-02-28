@@ -33,11 +33,11 @@ type ResultType<TData> = {
 export const useLazyGrafe = <TData = any>(
   action: (
     client: GrafeClient,
-    data: RequestData
-  ) => Promise<APIResponse<TData>>
+    data: RequestData,
+  ) => Promise<APIResponse<TData>>,
 ): [
   (data: RequestData) => Promise<APIResponse<TData>>,
-  [boolean, boolean | undefined, TData | undefined, string | Error | undefined]
+  [boolean, boolean | undefined, TData | undefined, string | Error | undefined],
 ] => {
   const { client } = React.useContext(GrafeContext);
 
@@ -50,7 +50,7 @@ export const useLazyGrafe = <TData = any>(
   });
 
   const handleAction = async (
-    data?: RequestData
+    data?: RequestData,
   ): Promise<APIResponse<TData>> => {
     setResult((prev) => ({
       ...prev,
