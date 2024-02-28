@@ -36,9 +36,12 @@
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
     "babel-plugin-styled-components": "^2.0.7",
+    "eslint": "^8.57.0",
+    "eslint-config-antoine": "^1.0.14",
     "eslint-plugin-import": "^2.27.5",
     "husky": "^9.0.0",
     "path-browserify": "^1.0.1",
+    "prettier": "^3.2.5",
     "pretty-quick": "^4.0.0",
     "turbo": "^1.6.3"
   },
@@ -52,10 +55,5 @@
       "INTERNAL_MISMATCH"
     ]
   },
-  "packageManager": "pnpm@8.15.4",
-  "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-antoine": "^1.0.14",
-    "prettier": "^3.2.5"
-  }
+  "packageManager": "pnpm@8.15.4"
 }
