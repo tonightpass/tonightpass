@@ -1,4 +1,4 @@
-import { Currency, Language, Location, Profile } from "..";
+import { Currency, Language, Location, Profile, ProfileMetadata } from "..";
 
 export type User = {
   id: string;
@@ -28,7 +28,12 @@ export type UserIdentity = Profile & {
   fullName: string;
   gender: UserIdentityGender;
   birthDate: Date;
-  idValid: boolean;
+
+  metadata: ProfileMetadata & {
+    followingCount: number;
+    hasPassPlus: boolean;
+    idValid: boolean;
+  };
 };
 
 export enum UserRole {
