@@ -10,7 +10,7 @@ export class MailjetService {
 
   constructor(
     @Inject(MAILJET_MODULE_OPTIONS)
-    private readonly options: MailjetModuleOptions
+    private readonly options: MailjetModuleOptions,
   ) {
     this.client = new Client({
       apiKey: options.apiKey,
@@ -57,7 +57,7 @@ export class MailjetService {
   async subscribeContactToList(
     contactId: string | number,
     listId: string | number,
-    action: "addforce" | "addnoforce" = "addnoforce"
+    action: "addforce" | "addnoforce" = "addnoforce",
   ): Promise<Contact.Contact> {
     const result: LibraryResponse<Contact.PostContactResponse> =
       await this.client
@@ -78,7 +78,7 @@ export class MailjetService {
 
   async unsubscribeContactFromList(
     contactId: string | number,
-    listId: string | number
+    listId: string | number,
   ): Promise<Contact.Contact> {
     const result: LibraryResponse<Contact.PostContactResponse> =
       await this.client
@@ -98,7 +98,7 @@ export class MailjetService {
   }
 
   async sendEmail<TVars>(
-    messages: SendEmailV3_1.Body<undefined, TVars>
+    messages: SendEmailV3_1.Body<undefined, TVars>,
   ): Promise<SendEmailV3_1.ResponseMessage[]> {
     const result: LibraryResponse<SendEmailV3_1.Response> = await this.client
       .post("send", { version: "v3.1" })

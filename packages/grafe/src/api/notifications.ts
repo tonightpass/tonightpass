@@ -7,7 +7,7 @@ export class NotificationsAPI {
   public constructor(private readonly rest: REST) {}
 
   public async subscribeToNewsletter(
-    userEmail: string
+    userEmail: string,
   ): Promise<APIResponse<boolean>> {
     const result = await this.rest.mutate(SUBSCRIBE_TO_NEWSLETTER, {
       userEmail,
@@ -22,7 +22,7 @@ export class NotificationsAPI {
 
   public async unsubscribeFromNewsletter(
     userEmail: string,
-    reason: string
+    reason: string,
   ): Promise<APIResponse<boolean>> {
     const result = await this.rest.mutate(UNSUBSCRIBE_FROM_NEWSLETTER, {
       userEmail,

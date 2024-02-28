@@ -34,7 +34,7 @@ export class MailjetModule {
   }
 
   private static createAsyncProviders(
-    options: MailjetModuleAsyncOptions
+    options: MailjetModuleAsyncOptions,
   ): Provider[] {
     if (options.useExisting || options.useFactory) {
       return [this.createAsyncOptionsProviders(options)];
@@ -50,7 +50,7 @@ export class MailjetModule {
   }
 
   private static createAsyncOptionsProviders(
-    options: MailjetModuleAsyncOptions
+    options: MailjetModuleAsyncOptions,
   ): Provider {
     if (options.useFactory) {
       return {
