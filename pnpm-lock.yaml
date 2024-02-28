@@ -158,7 +158,7 @@ importers:
         version: 6.0.5
       tslib:
         specifier: ^2.5.0
-        version: 2.5.0
+        version: 2.6.2
       typescript:
         specifier: ^5.0.0
         version: 5.3.3
@@ -5988,21 +5988,21 @@ packages:
     resolution: {integrity: sha512-LcDAiYWRtwAoSOArfk7cuYvFXytxfVrdX7yxoUmK7pPITLk5jYh2F8knCwS7LjgYL8u1eidPlKKV6Ikqq0ODqQ==}
     engines: {node: '>=8'}
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.5.0
     dev: true
 
   /@wry/equality@0.5.3:
     resolution: {integrity: sha512-avR+UXdSrsF2v8vIqIgmeTY0UR91UT+IyablCyKe/uk22uOJ8fusKZnH9JH9e1/EtLeNJBtagNmL3eJdnOV53g==}
     engines: {node: '>=8'}
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.5.0
     dev: true
 
   /@wry/trie@0.3.2:
     resolution: {integrity: sha512-yRTyhWSls2OY/pYLfwff867r8ekooZ4UI+/gxot5Wj8EFwSf2rG+n+Mo/6LoLQm1TKA4GRj2+LCpbfS937dClQ==}
     engines: {node: '>=8'}
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.5.0
     dev: true
 
   /@xmldom/xmldom@0.7.9:
@@ -9203,7 +9203,7 @@ packages:
       graphql: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       graphql: 16.8.1
-      tslib: 2.6.2
+      tslib: 2.5.0
     dev: true
 
   /graphql@15.8.0:
@@ -12996,7 +12996,7 @@ packages:
     resolution: {integrity: sha512-uivwYcQaxAucv1CzRp2n/QdYPo4ILf9VXgH19zEIjFx2EJufV16P0JtJVpYHy89DItG6Kwj2oIUjrcK5au+4tQ==}
     engines: {node: '>=8'}
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.5.0
     dev: true
 
   /tsconfig-paths@3.14.1:
