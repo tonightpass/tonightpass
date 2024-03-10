@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 2.0.8
+
+### Patch Changes
+
+- Update description chars limit
+
 ## 2.0.7
 
 ### Patch Changes
