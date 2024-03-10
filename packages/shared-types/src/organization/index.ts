@@ -5,7 +5,6 @@ import { User } from "../user";
 
 export type Organization = {
   id: string;
-  name: string;
   slug: string;
   identity: OrganizationIdentity;
   members: OrganizationMember[];
