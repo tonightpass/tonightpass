@@ -1,5 +1,12 @@
 # @tonightpass/requester
 
+## 2.0.9
+
+### Patch Changes
+
+- Updated dependencies
+  - @tonightpass/shared-types@2.0.6
+
 ## 2.0.8
 
 ### Patch Changes

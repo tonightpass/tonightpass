@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 2.0.6
+
+### Patch Changes
+
+- Update validation on UpdateUserDto type
+
 ## 2.0.5
 
 ### Patch Changes
