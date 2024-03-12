@@ -1,5 +1,11 @@
 # @tonightpass/shared-types
 
+## 2.0.9
+
+### Patch Changes
+
+- 0332944: Update length validation for displayName in UpdateIdentityDto
+
 ## 2.0.8
 
 ### Patch Changes
