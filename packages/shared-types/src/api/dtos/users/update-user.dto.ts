@@ -91,7 +91,7 @@ class UpdateIdentityDto
 
   @IsOptional()
   @IsString()
-  @Length(4, 100)
+  @Length(1, 32)
   displayName?: string;
 
   @IsOptional()
