@@ -1,6 +1,6 @@
 {
   "name": "@tonightpass/grafe",
-  "version": "7.0.8",
+  "version": "7.0.9",
   "main": "dist/tonightpass-grafe.cjs.js",
   "module": "dist/tonightpass-grafe.esm.js",
   "devDependencies": {
@@ -13,7 +13,7 @@
   },
   "peerDependencies": {
     "@apollo/client": ">= 3.x.x",
-    "@tonightpass/shared-types": ">=2.0.8",
+    "@tonightpass/shared-types": ">=2.0.9",
     "expo-secure-store": ">= 12.x.x",
     "react": ">= 18.x.x"
   },
