@@ -104,7 +104,7 @@ importers:
         version: 7.24.0
       '@types/react':
         specifier: ^18.0.28
-        version: 18.2.60
+        version: 18.2.61
       '@types/react-dom':
         specifier: ^18.0.11
         version: 18.2.19
@@ -119,13 +119,13 @@ importers:
     devDependencies:
       '@apollo/client':
         specifier: ^3.7.7
-        version: 3.9.5(@types/react@18.2.60)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 3.9.5(@types/react@18.2.61)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
       '@tonightpass/shared-types':
         specifier: workspace:*
         version: link:../shared-types
       '@types/react':
         specifier: ^18.0.28
-        version: 18.2.60
+        version: 18.2.61
       expo-secure-store:
         specifier: ^12.1.1
         version: 12.8.1(expo@50.0.7)
@@ -180,7 +180,7 @@ importers:
     devDependencies:
       '@types/react':
         specifier: ^18.0.28
-        version: 18.2.60
+        version: 18.2.61
       typescript:
         specifier: ^5.0.0
         version: 5.3.3
@@ -211,7 +211,7 @@ packages:
       '@jridgewell/gen-mapping': 0.3.4
       '@jridgewell/trace-mapping': 0.3.23
 
-  /@apollo/client@3.9.5(@types/react@18.2.60)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
+  /@apollo/client@3.9.5(@types/react@18.2.61)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-7y+c8MTPU+hhTwvcGVtMMGIgWduzrvG1mz5yJMRyqYbheBkkky3Lki6ADWVSBXG1lZoOtPYvB2zDgVfKb2HSsw==}
     peerDependencies:
       graphql: ^15.0.0 || ^16.0.0
@@ -240,7 +240,7 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      rehackt: 0.0.5(@types/react@18.2.60)(react@18.2.0)
+      rehackt: 0.0.5(@types/react@18.2.61)(react@18.2.0)
       response-iterator: 0.2.6
       symbol-observable: 4.0.0
       ts-invariant: 0.10.3
@@ -4223,20 +4223,20 @@ packages:
   /@types/react-dom@18.2.19:
     resolution: {integrity: sha512-aZvQL6uUbIJpjZk4U8JZGbau9KDeAwMfmhyWorxgBkqDIEf6ROjRozcmPIicqsUwPUjbkDfHKgGee1Lq65APcA==}
     dependencies:
-      '@types/react': 18.2.60
+      '@types/react': 18.2.61
     dev: true
 
   /@types/react-native@0.72.8(react-native@0.73.5):
     resolution: {integrity: sha512-St6xA7+EoHN5mEYfdWnfYt0e8u6k2FR0P9s2arYgakQGFgU1f9FlPrIEcj0X24pLCF5c5i3WVuLCUdiCYHmOoA==}
     dependencies:
       '@react-native/virtualized-lists': 0.72.8(react-native@0.73.5)
-      '@types/react': 18.2.60
+      '@types/react': 18.2.61
     transitivePeerDependencies:
       - react-native
     dev: true
 
-  /@types/react@18.2.60:
-    resolution: {integrity: sha512-dfiPj9+k20jJrLGOu9Nf6eqxm2EyJRrq2NvwOFsfbb7sFExZ9WELPs67UImHj3Ayxg8ruTtKtNnbjaF8olPq0A==}
+  /@types/react@18.2.61:
+    resolution: {integrity: sha512-NURTN0qNnJa7O/k4XUkEW2yfygA+NxS0V5h1+kp9jPwhzZy95q3ADoGMP0+JypMhrZBTTgjKAUlTctde1zzeQA==}
     dependencies:
       '@types/prop-types': 15.7.11
       '@types/scheduler': 0.16.8
@@ -10712,7 +10712,7 @@ packages:
     dependencies:
       jsesc: 0.5.0
 
-  /rehackt@0.0.5(@types/react@18.2.60)(react@18.2.0):
+  /rehackt@0.0.5(@types/react@18.2.61)(react@18.2.0):
     resolution: {integrity: sha512-BI1rV+miEkaHj8zd2n+gaMgzu/fKz7BGlb4zZ6HAiY9adDmJMkaDcmuXlJFv0eyKUob+oszs3/2gdnXUrzx2Tg==}
     peerDependencies:
       '@types/react': '*'
@@ -10723,7 +10723,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@types/react': 18.2.60
+      '@types/react': 18.2.61
       react: 18.2.0
     dev: true
 
