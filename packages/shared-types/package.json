@@ -11,10 +11,5 @@
   "peerDependencies": {
     "class-transformer": ">= 0.5.x",
     "class-validator": ">= 0.14.x"
-  },
-  "preconstruct": {
-    "entrypoints": [
-      "index.ts"
-    ]
   }
 }
