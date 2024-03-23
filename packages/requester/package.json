@@ -10,10 +10,5 @@
   "dependencies": {
     "@tonightpass/shared-types": "workspace:^",
     "redaxios": "^0.5.1"
-  },
-  "preconstruct": {
-    "entrypoints": [
-      "index.ts"
-    ]
   }
 }

@@ -1,14 +1,25 @@
 {
-  "name": "@tonightpass/node",
-  "version": "1.0.0",
-  "main": "dist/tonightpass-node.cjs.js",
-  "module": "dist/tonightpass-node.esm.js",
-  "devDependencies": {
-    "typescript": "^5.0.0"
+  "name": "tonightpass",
+  "version": "0.0.0",
+  "description": "@tonightpass sdk and tools.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tonightpass/tonightpass.git",
+    "directory": "packages/node"
   },
-  "preconstruct": {
-    "entrypoints": [
-      "index.ts"
-    ]
+  "bugs": "https://github.com/tonightpass/tonightpass/issues",
+  "homepage": "https://github.com/tonightpass/tonightpass",
+  "license": "MIT",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "react-native": "dist/native/index.cjs.js",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
+  "devDependencies": {
+    "@types/node": "20.11.26",
+    "typescript": "^5.0.0"
   }
 }
