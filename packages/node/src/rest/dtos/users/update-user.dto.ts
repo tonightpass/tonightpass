@@ -15,7 +15,7 @@ import {
   ValidateNested,
 } from "class-validator";
 
-import { NAME_REGEX } from "../../constants";
+import { NAME_REGEX } from "../../../constants";
 
 export class UpdateUserDto {
   @IsOptional()
