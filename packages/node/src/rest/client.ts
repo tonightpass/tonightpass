@@ -4,7 +4,7 @@ import { ApiRequestConfig, requester } from "./request";
 import { DEFAULT_API_URL } from "../constants";
 
 export interface ClientOptions {
-  readonly baseUrl: string;
+  readonly baseURL: string;
 }
 
 export class Client {
@@ -15,24 +15,24 @@ export class Client {
   constructor(options: ClientOptions) {
     this.options = options;
     this.url = (path: string, params: Record<string, ParamValue>) => {
-      const baseUrl = DEFAULT_API_URL || this.options.baseUrl;
-      return pathcat(baseUrl, path, params);
+      const baseURL = DEFAULT_API_URL || this.options.baseURL;
+      return pathcat(baseURL, path, params);
     };
   }
 
   async get<T>(url: string, options?: ApiRequestConfig) {
-    return this.request.get<T>(url, options);
+    return this.request.get<T>(url, { ...this.options, ...options });
   }
 
   async post<T>(url: string, options?: ApiRequestConfig) {
-    return this.request.post<T>(url, options);
+    return this.request.post<T>(url, { ...this.options, ...options });
   }
 
   async put<T>(url: string, options?: ApiRequestConfig) {
-    return this.request.put<T>(url, options);
+    return this.request.put<T>(url, { ...this.options, ...options });
   }
 
   async delete<T>(url: string, options?: ApiRequestConfig) {
-    return this.request.delete<T>(url, options);
+    return this.request.delete<T>(url, { ...this.options, ...options });
   }
 }
