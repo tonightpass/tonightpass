@@ -1,7 +1,7 @@
 import { Provider } from "@nestjs/common";
 
-import { MAILJET_MODULE_OPTIONS } from "./constants/mailjet.constants";
-import { MailjetModuleOptions } from "./interfaces/mailjet-module-options.interface";
+import { MailjetModuleOptions } from "./interfaces";
+import { MAILJET_MODULE_OPTIONS } from "../constants/mailjet.constants";
 
 export function createMailjetProviders(
   options: MailjetModuleOptions,
