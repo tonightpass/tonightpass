@@ -1,7 +1,6 @@
-import { User } from "@tonightpass/shared-types";
-
 import { sdk } from "./builder";
 import { UpdateUserDto } from "../rest";
+import { User } from "../rest/types";
 
 export const users = sdk((client) => ({
   me: {
