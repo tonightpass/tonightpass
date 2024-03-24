@@ -1,7 +1,7 @@
 import { HttpStatus, Inject, Injectable } from "@nestjs/common";
 import { Client, Contact, LibraryResponse, SendEmailV3_1 } from "node-mailjet";
 
-import { MailjetModuleOptions } from "./interfaces";
+import type { MailjetModuleOptions } from "./interfaces";
 import { MAILJET_MODULE_OPTIONS } from "../constants/mailjet.constants";
 
 @Injectable()
