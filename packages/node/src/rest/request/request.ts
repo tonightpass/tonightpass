@@ -1,5 +1,6 @@
-import { APIError, APIResponse } from "@tonightpass/shared-types";
 import axios, { Options } from "redaxios";
+
+import { APIError, APIResponse } from "../types";
 
 type ApiRequestConfig = Exclude<Options, "method">;
 
@@ -17,7 +18,7 @@ const instance = axios.create({
   ],
 });
 
-const request = async <TData>(
+export const request = async <TData>(
   url: string,
   options?: ApiRequestConfig,
 ): Promise<APIResponse<TData>> => {
@@ -31,4 +32,3 @@ const request = async <TData>(
 };
 
 export type { ApiRequestConfig };
-export default request;

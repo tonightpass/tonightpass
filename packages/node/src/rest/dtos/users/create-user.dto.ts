@@ -1,4 +1,4 @@
-import { UserIdentifier, UserIdentityGender } from "@tonightpass/shared-types";
+import { UserIdentifier, UserIdentityGender } from "../../types";
 
 export class CreateUserDto {
   identifier: UserIdentifier;
