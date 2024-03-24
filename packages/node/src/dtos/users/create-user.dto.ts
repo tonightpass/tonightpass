@@ -1,5 +1,4 @@
-import { Location } from "../../..";
-import { UserIdentifier, UserIdentityGender } from "../../../user";
+import { UserIdentifier, UserIdentityGender } from "@tonightpass/shared-types";
 
 export class CreateUserDto {
   identifier: UserIdentifier;

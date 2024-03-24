@@ -1,3 +1,4 @@
+import { UserIdentifier, UserIdentity } from "@tonightpass/shared-types";
 import { Type } from "class-transformer";
 import {
   IsDateString,
@@ -14,8 +15,7 @@ import {
   ValidateNested,
 } from "class-validator";
 
-import { NAME_REGEX } from "../../../const.constants";
-import { UserIdentifier, UserIdentity } from "../../../user";
+import { NAME_REGEX } from "../../constants";
 
 export class UpdateUserDto {
   @IsOptional()
