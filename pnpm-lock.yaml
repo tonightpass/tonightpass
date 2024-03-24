@@ -149,6 +149,10 @@ importers:
         version: 5.4.3
 
   packages/node:
+    dependencies:
+      '@tonightpass/shared-types':
+        specifier: workspace:*
+        version: link:../shared-types
     devDependencies:
       '@types/node':
         specifier: 20.11.26

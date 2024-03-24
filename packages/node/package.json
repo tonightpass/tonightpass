@@ -17,6 +17,9 @@
     "build": "tsup",
     "dev": "tsup --watch"
   },
+  "dependencies": {
+    "@tonightpass/shared-types": "workspace:*"
+  },
   "devDependencies": {
     "@types/node": "20.11.26",
     "typescript": "^5.0.0"
