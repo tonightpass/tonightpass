@@ -1,8 +1,8 @@
 import { HttpStatus, Inject, Injectable } from "@nestjs/common";
 import { Client, Contact, LibraryResponse, SendEmailV3_1 } from "node-mailjet";
 
-import { MAILJET_MODULE_OPTIONS } from "./constants/mailjet.constants";
 import { MailjetModuleOptions } from "./interfaces";
+import { MAILJET_MODULE_OPTIONS } from "../constants/mailjet.constants";
 
 @Injectable()
 export class MailjetService {
@@ -10,7 +10,7 @@ export class MailjetService {
 
   constructor(
     @Inject(MAILJET_MODULE_OPTIONS)
-    private readonly options: MailjetModuleOptions,
+    options: MailjetModuleOptions,
   ) {
     this.client = new Client({
       apiKey: options.apiKey,
@@ -36,7 +36,7 @@ export class MailjetService {
         .id(id.toString())
         .request({}, queryData);
 
-    if (result.response.status !== 201 || result.body.Count === 0) {
+    if (result.response.status !== 200 || result.body.Count === 0) {
       throw new Error(`Contact with id ${id} not found`);
     }
 
@@ -57,7 +57,6 @@ export class MailjetService {
   async subscribeContactToList(
     contactId: string | number,
     listId: string | number,
-    action: "addforce" | "addnoforce" = "addnoforce",
   ): Promise<Contact.Contact> {
     const result: LibraryResponse<Contact.PostContactResponse> =
       await this.client
@@ -65,8 +64,12 @@ export class MailjetService {
         .id(contactId.toString())
         .action("managecontactslists")
         .request({
-          Action: action,
-          ListID: listId,
+          ContactsLists: [
+            {
+              Action: "addforce",
+              ListID: listId,
+            },
+          ],
         });
 
     if (result.response.status !== 201 || result.body.Count === 0) {
@@ -86,8 +89,12 @@ export class MailjetService {
         .id(contactId.toString())
         .action("managecontactslists")
         .request({
-          Action: "unsub",
-          ListID: listId,
+          ContactsLists: [
+            {
+              Action: "unsub",
+              ListID: listId,
+            },
+          ],
         });
 
     if (result.response.status !== 201 || result.body.Count === 0) {

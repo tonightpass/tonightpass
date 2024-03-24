@@ -1,14 +1,20 @@
 {
   "name": "@tonightpass/requester",
   "version": "2.0.12",
-  "main": "dist/tonightpass-requester.cjs.js",
-  "module": "dist/tonightpass-requester.esm.js",
+  "license": "MIT",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
   "devDependencies": {
     "@types/react": "^18.0.28",
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@tonightpass/shared-types": "workspace:^",
+    "@tonightpass/shared-types": "workspace:*",
     "redaxios": "^0.5.1"
   }
 }

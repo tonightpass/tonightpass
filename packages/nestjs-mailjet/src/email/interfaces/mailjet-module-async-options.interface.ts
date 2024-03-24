@@ -1,6 +1,6 @@
 import { ModuleMetadata, Type } from "@nestjs/common";
 
-import { MailjetModuleOptions } from "./mailjet-module-options.interface";
+import { MailjetModuleOptions } from "../..";
 
 export interface MailjetOptionsFactory {
   createMailjetOptions(): Promise<MailjetModuleOptions> | MailjetModuleOptions;
