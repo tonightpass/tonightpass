@@ -3,7 +3,10 @@
 import assert from "node:assert";
 import test from "node:test";
 
+import { careersTests } from "./careers";
 import { TonightPass } from "../src/tonightpass";
+
+const sdkTests = [careersTests];
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
@@ -14,7 +17,7 @@ const API_URL =
   "https://api.staging.tonightpass.com";
 
 const tnp = new TonightPass({
-  baseUrl: API_URL,
+  baseURL: API_URL,
 });
 
 test("The HTTP client correctly forms URLs", () => {
@@ -44,3 +47,11 @@ test("The HTTP client correctly forms URLs", () => {
     API_URL + "/path/to/my-resource/param2?limit=20",
   );
 });
+
+test("The HTTP client can make a request", async () => {
+  await assert.doesNotReject(() => tnp.client.get("/health/http"));
+});
+
+for (const sdkTest of sdkTests) {
+  sdkTest(tnp);
+}
