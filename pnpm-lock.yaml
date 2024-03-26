@@ -40,10 +40,10 @@ importers:
         version: 11.1.2(esbuild@0.19.12)(size-limit@11.1.2)
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.0.0
-        version: 7.3.1(@typescript-eslint/parser@7.3.1)(eslint@8.57.0)(typescript@5.4.3)
+        version: 7.4.0(@typescript-eslint/parser@7.4.0)(eslint@8.57.0)(typescript@5.4.3)
       '@typescript-eslint/parser':
         specifier: ^7.0.0
-        version: 7.3.1(eslint@8.57.0)(typescript@5.4.3)
+        version: 7.4.0(eslint@8.57.0)(typescript@5.4.3)
       babel-plugin-styled-components:
         specifier: ^2.0.7
         version: 2.1.4(@babel/core@7.24.3)(styled-components@6.1.8)
@@ -55,7 +55,7 @@ importers:
         version: 1.0.14(eslint@8.57.0)(prettier@3.2.5)(typescript@5.4.3)
       eslint-plugin-import:
         specifier: ^2.27.5
-        version: 2.29.1(@typescript-eslint/parser@7.3.1)(eslint@8.57.0)
+        version: 2.29.1(@typescript-eslint/parser@7.4.0)(eslint@8.57.0)
       husky:
         specifier: ^9.0.0
         version: 9.0.11
@@ -79,7 +79,7 @@ importers:
     dependencies:
       expo:
         specifier: ^50.0.0
-        version: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.73.21)
+        version: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.75.0-main)
       expo-dev-client:
         specifier: ^3.0.0
         version: 3.3.11(expo@50.0.14)
@@ -523,6 +523,18 @@ packages:
       '@babel/core': 7.24.3
       '@babel/helper-plugin-utils': 7.24.0
       '@babel/plugin-syntax-export-default-from': 7.24.1(@babel/core@7.24.3)
+
+  /@babel/plugin-proposal-logical-assignment-operators@7.20.7(@babel/core@7.24.3):
+    resolution: {integrity: sha512-y7C7cZgpMIjWlKE5T7eJwp+tnRYM89HmRvWM5EQuB5BoHEONjmQ8lSNmBUwOyy/GFRsohJED51YBF79hE1djug==}
+    engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-logical-assignment-operators instead.
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.24.3
+      '@babel/helper-plugin-utils': 7.24.0
+      '@babel/plugin-syntax-logical-assignment-operators': 7.10.4(@babel/core@7.24.3)
+    dev: false
 
   /@babel/plugin-proposal-nullish-coalescing-operator@7.18.6(@babel/core@7.24.3):
     resolution: {integrity: sha512-wQxQzxYeJqHcfppzBDnm1yAY0jSRkUXR2z8RePZYrKwMKgMlE8+Z6LUno+bd6LvbGh8Gltvy74+9pIYkr+XkKA==}
@@ -2030,7 +2042,7 @@ packages:
       safe-json-stringify: 1.2.0
     dev: false
 
-  /@expo/cli@0.17.8(@react-native/babel-preset@0.73.21)(expo-modules-autolinking@1.10.3):
+  /@expo/cli@0.17.8(@react-native/babel-preset@0.75.0-main)(expo-modules-autolinking@1.10.3):
     resolution: {integrity: sha512-yfkoghCltbGPDbRI71Qu3puInjXx4wO82+uhW82qbWLvosfIN7ep5Gr0Lq54liJpvlUG6M0IXM1GiGqcCyP12w==}
     hasBin: true
     dependencies:
@@ -2042,7 +2054,7 @@ packages:
       '@expo/env': 0.2.2
       '@expo/image-utils': 0.4.1
       '@expo/json-file': 8.3.0
-      '@expo/metro-config': 0.17.6(@react-native/babel-preset@0.73.21)
+      '@expo/metro-config': 0.17.6(@react-native/babel-preset@0.75.0-main)
       '@expo/osascript': 2.1.0
       '@expo/package-manager': 1.4.2
       '@expo/plist': 0.1.0
@@ -2245,7 +2257,7 @@ packages:
       write-file-atomic: 2.4.3
     dev: false
 
-  /@expo/metro-config@0.17.6(@react-native/babel-preset@0.73.21):
+  /@expo/metro-config@0.17.6(@react-native/babel-preset@0.75.0-main):
     resolution: {integrity: sha512-WaC1C+sLX/Wa7irwUigLhng3ckmXIEQefZczB8DfYmleV6uhfWWo2kz/HijFBpV7FKs2cW6u8J/aBQpFkxlcqg==}
     peerDependencies:
       '@react-native/babel-preset': '*'
@@ -2258,7 +2270,7 @@ packages:
       '@expo/env': 0.2.2
       '@expo/json-file': 8.3.0
       '@expo/spawn-async': 1.7.2
-      '@react-native/babel-preset': 0.73.21(@babel/core@7.24.3)(@babel/preset-env@7.24.3)
+      '@react-native/babel-preset': 0.75.0-main(@babel/core@7.24.3)(@babel/preset-env@7.24.3)
       babel-preset-fbjs: 3.4.0(@babel/core@7.24.3)
       chalk: 4.1.2
       debug: 4.3.4
@@ -3014,6 +3026,16 @@ packages:
       - '@babel/preset-env'
       - supports-color
 
+  /@react-native/babel-plugin-codegen@0.75.0-main(@babel/preset-env@7.24.3):
+    resolution: {integrity: sha512-gEl+bl+orntqNA3yGETGeHLNzDnZuQfO074BreX/l80WnZbx00/BJ57IkZ372j6I+gjki+3dYeRQOp82m/sUWQ==}
+    engines: {node: '>=18'}
+    dependencies:
+      '@react-native/codegen': 0.75.0-main(@babel/preset-env@7.24.3)
+    transitivePeerDependencies:
+      - '@babel/preset-env'
+      - supports-color
+    dev: false
+
   /@react-native/babel-preset@0.73.21(@babel/core@7.24.3)(@babel/preset-env@7.24.3):
     resolution: {integrity: sha512-WlFttNnySKQMeujN09fRmrdWqh46QyJluM5jdtDNrkl/2Hx6N4XeDUGhABvConeK95OidVO7sFFf7sNebVXogA==}
     engines: {node: '>=18'}
@@ -3066,6 +3088,60 @@ packages:
       - '@babel/preset-env'
       - supports-color
 
+  /@react-native/babel-preset@0.75.0-main(@babel/core@7.24.3)(@babel/preset-env@7.24.3):
+    resolution: {integrity: sha512-yTyft0jSbTEfTfDUUfllJqKWLl3rNMiVMFjuWzMigikKAlSwKKUC/DxTEUfMwekFU05TjDyEOtigOTrm2yuoRQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@babel/core': '*'
+    dependencies:
+      '@babel/core': 7.24.3
+      '@babel/plugin-proposal-async-generator-functions': 7.20.7(@babel/core@7.24.3)
+      '@babel/plugin-proposal-class-properties': 7.18.6(@babel/core@7.24.3)
+      '@babel/plugin-proposal-export-default-from': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-proposal-logical-assignment-operators': 7.20.7(@babel/core@7.24.3)
+      '@babel/plugin-proposal-nullish-coalescing-operator': 7.18.6(@babel/core@7.24.3)
+      '@babel/plugin-proposal-numeric-separator': 7.18.6(@babel/core@7.24.3)
+      '@babel/plugin-proposal-object-rest-spread': 7.20.7(@babel/core@7.24.3)
+      '@babel/plugin-proposal-optional-catch-binding': 7.18.6(@babel/core@7.24.3)
+      '@babel/plugin-proposal-optional-chaining': 7.21.0(@babel/core@7.24.3)
+      '@babel/plugin-syntax-dynamic-import': 7.8.3(@babel/core@7.24.3)
+      '@babel/plugin-syntax-export-default-from': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-syntax-flow': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-syntax-nullish-coalescing-operator': 7.8.3(@babel/core@7.24.3)
+      '@babel/plugin-syntax-optional-chaining': 7.8.3(@babel/core@7.24.3)
+      '@babel/plugin-transform-arrow-functions': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-async-to-generator': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-block-scoping': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-classes': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-computed-properties': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-destructuring': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-flow-strip-types': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-function-name': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-literals': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-modules-commonjs': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-named-capturing-groups-regex': 7.22.5(@babel/core@7.24.3)
+      '@babel/plugin-transform-parameters': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-private-methods': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-private-property-in-object': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-react-display-name': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-react-jsx': 7.23.4(@babel/core@7.24.3)
+      '@babel/plugin-transform-react-jsx-self': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-react-jsx-source': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-runtime': 7.24.3(@babel/core@7.24.3)
+      '@babel/plugin-transform-shorthand-properties': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-spread': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-sticky-regex': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-typescript': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-unicode-regex': 7.24.1(@babel/core@7.24.3)
+      '@babel/template': 7.24.0
+      '@react-native/babel-plugin-codegen': 0.75.0-main(@babel/preset-env@7.24.3)
+      babel-plugin-transform-flow-enums: 0.0.2(@babel/core@7.24.3)
+      react-refresh: 0.14.0
+    transitivePeerDependencies:
+      - '@babel/preset-env'
+      - supports-color
+    dev: false
+
   /@react-native/codegen@0.73.3(@babel/preset-env@7.24.3):
     resolution: {integrity: sha512-sxslCAAb8kM06vGy9Jyh4TtvjhcP36k/rvj2QE2Jdhdm61KvfafCATSIsOfc0QvnduWFcpXUPvAVyYwuv7PYDg==}
     engines: {node: '>=18'}
@@ -3082,6 +3158,24 @@ packages:
       nullthrows: 1.1.1
     transitivePeerDependencies:
       - supports-color
+
+  /@react-native/codegen@0.75.0-main(@babel/preset-env@7.24.3):
+    resolution: {integrity: sha512-vcIu7x7o/3xn9UQdOPqA6B/jtxDHB+xTIDlVe7nym+0ua/OIOwYoVscTb0NtHuEjGKO1G5CTWNhl34BFhIs0+g==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@babel/preset-env': ^7.1.6
+    dependencies:
+      '@babel/parser': 7.24.1
+      '@babel/preset-env': 7.24.3(@babel/core@7.24.3)
+      glob: 7.2.3
+      hermes-parser: 0.20.1
+      invariant: 2.2.4
+      jscodeshift: 0.14.0(@babel/preset-env@7.24.3)
+      mkdirp: 0.5.6
+      nullthrows: 1.1.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
 
   /@react-native/community-cli-plugin@0.73.17(@babel/core@7.24.3)(@babel/preset-env@7.24.3):
     resolution: {integrity: sha512-F3PXZkcHg+1ARIr6FRQCQiB7ZAA+MQXGmq051metRscoLvgYJwj7dgC8pvgy0kexzUkHu5BNKrZeySzUft3xuQ==}
@@ -3694,8 +3788,8 @@ packages:
       - supports-color
     dev: false
 
-  /@typescript-eslint/eslint-plugin@7.3.1(@typescript-eslint/parser@7.3.1)(eslint@8.57.0)(typescript@5.4.3):
-    resolution: {integrity: sha512-STEDMVQGww5lhCuNXVSQfbfuNII5E08QWkvAw5Qwf+bj2WT+JkG1uc+5/vXA3AOYMDHVOSpL+9rcbEUiHIm2dw==}
+  /@typescript-eslint/eslint-plugin@7.4.0(@typescript-eslint/parser@7.4.0)(eslint@8.57.0)(typescript@5.4.3):
+    resolution: {integrity: sha512-yHMQ/oFaM7HZdVrVm/M2WHaNPgyuJH4WelkSVEWSSsir34kxW2kDJCxlXRhhGWEsMN0WAW/vLpKfKVcm8k+MPw==}
     engines: {node: ^18.18.0 || >=20.0.0}
     peerDependencies:
       '@typescript-eslint/parser': ^7.0.0
@@ -3706,11 +3800,11 @@ packages:
         optional: true
     dependencies:
       '@eslint-community/regexpp': 4.10.0
-      '@typescript-eslint/parser': 7.3.1(eslint@8.57.0)(typescript@5.4.3)
-      '@typescript-eslint/scope-manager': 7.3.1
-      '@typescript-eslint/type-utils': 7.3.1(eslint@8.57.0)(typescript@5.4.3)
-      '@typescript-eslint/utils': 7.3.1(eslint@8.57.0)(typescript@5.4.3)
-      '@typescript-eslint/visitor-keys': 7.3.1
+      '@typescript-eslint/parser': 7.4.0(eslint@8.57.0)(typescript@5.4.3)
+      '@typescript-eslint/scope-manager': 7.4.0
+      '@typescript-eslint/type-utils': 7.4.0(eslint@8.57.0)(typescript@5.4.3)
+      '@typescript-eslint/utils': 7.4.0(eslint@8.57.0)(typescript@5.4.3)
+      '@typescript-eslint/visitor-keys': 7.4.0
       debug: 4.3.4
       eslint: 8.57.0
       graphemer: 1.4.0
@@ -3744,8 +3838,8 @@ packages:
       - supports-color
     dev: false
 
-  /@typescript-eslint/parser@7.3.1(eslint@8.57.0)(typescript@5.4.3):
-    resolution: {integrity: sha512-Rq49+pq7viTRCH48XAbTA+wdLRrB/3sRq4Lpk0oGDm0VmnjBrAOVXH/Laalmwsv2VpekiEfVFwJYVk6/e8uvQw==}
+  /@typescript-eslint/parser@7.4.0(eslint@8.57.0)(typescript@5.4.3):
+    resolution: {integrity: sha512-ZvKHxHLusweEUVwrGRXXUVzFgnWhigo4JurEj0dGF1tbcGh6buL+ejDdjxOQxv6ytcY1uhun1p2sm8iWStlgLQ==}
     engines: {node: ^18.18.0 || >=20.0.0}
     peerDependencies:
       eslint: ^8.56.0
@@ -3754,10 +3848,10 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/scope-manager': 7.3.1
-      '@typescript-eslint/types': 7.3.1
-      '@typescript-eslint/typescript-estree': 7.3.1(typescript@5.4.3)
-      '@typescript-eslint/visitor-keys': 7.3.1
+      '@typescript-eslint/scope-manager': 7.4.0
+      '@typescript-eslint/types': 7.4.0
+      '@typescript-eslint/typescript-estree': 7.4.0(typescript@5.4.3)
+      '@typescript-eslint/visitor-keys': 7.4.0
       debug: 4.3.4
       eslint: 8.57.0
       typescript: 5.4.3
@@ -3773,12 +3867,12 @@ packages:
       '@typescript-eslint/visitor-keys': 6.21.0
     dev: false
 
-  /@typescript-eslint/scope-manager@7.3.1:
-    resolution: {integrity: sha512-fVS6fPxldsKY2nFvyT7IP78UO1/I2huG+AYu5AMjCT9wtl6JFiDnsv4uad4jQ0GTFzcUV5HShVeN96/17bTBag==}
+  /@typescript-eslint/scope-manager@7.4.0:
+    resolution: {integrity: sha512-68VqENG5HK27ypafqLVs8qO+RkNc7TezCduYrx8YJpXq2QGZ30vmNZGJJJC48+MVn4G2dCV8m5ZTVnzRexTVtw==}
     engines: {node: ^18.18.0 || >=20.0.0}
     dependencies:
-      '@typescript-eslint/types': 7.3.1
-      '@typescript-eslint/visitor-keys': 7.3.1
+      '@typescript-eslint/types': 7.4.0
+      '@typescript-eslint/visitor-keys': 7.4.0
     dev: false
 
   /@typescript-eslint/type-utils@6.21.0(eslint@8.57.0)(typescript@5.4.3):
@@ -3801,8 +3895,8 @@ packages:
       - supports-color
     dev: false
 
-  /@typescript-eslint/type-utils@7.3.1(eslint@8.57.0)(typescript@5.4.3):
-    resolution: {integrity: sha512-iFhaysxFsMDQlzJn+vr3OrxN8NmdQkHks4WaqD4QBnt5hsq234wcYdyQ9uquzJJIDAj5W4wQne3yEsYA6OmXGw==}
+  /@typescript-eslint/type-utils@7.4.0(eslint@8.57.0)(typescript@5.4.3):
+    resolution: {integrity: sha512-247ETeHgr9WTRMqHbbQdzwzhuyaJ8dPTuyuUEMANqzMRB1rj/9qFIuIXK7l0FX9i9FXbHeBQl/4uz6mYuCE7Aw==}
     engines: {node: ^18.18.0 || >=20.0.0}
     peerDependencies:
       eslint: ^8.56.0
@@ -3811,8 +3905,8 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/typescript-estree': 7.3.1(typescript@5.4.3)
-      '@typescript-eslint/utils': 7.3.1(eslint@8.57.0)(typescript@5.4.3)
+      '@typescript-eslint/typescript-estree': 7.4.0(typescript@5.4.3)
+      '@typescript-eslint/utils': 7.4.0(eslint@8.57.0)(typescript@5.4.3)
       debug: 4.3.4
       eslint: 8.57.0
       ts-api-utils: 1.3.0(typescript@5.4.3)
@@ -3826,8 +3920,8 @@ packages:
     engines: {node: ^16.0.0 || >=18.0.0}
     dev: false
 
-  /@typescript-eslint/types@7.3.1:
-    resolution: {integrity: sha512-2tUf3uWggBDl4S4183nivWQ2HqceOZh1U4hhu4p1tPiIJoRRXrab7Y+Y0p+dozYwZVvLPRI6r5wKe9kToF9FIw==}
+  /@typescript-eslint/types@7.4.0:
+    resolution: {integrity: sha512-mjQopsbffzJskos5B4HmbsadSJQWaRK0UxqQ7GuNA9Ga4bEKeiO6b2DnB6cM6bpc8lemaPseh0H9B/wyg+J7rw==}
     engines: {node: ^18.18.0 || >=20.0.0}
     dev: false
 
@@ -3853,8 +3947,8 @@ packages:
       - supports-color
     dev: false
 
-  /@typescript-eslint/typescript-estree@7.3.1(typescript@5.4.3):
-    resolution: {integrity: sha512-tLpuqM46LVkduWP7JO7yVoWshpJuJzxDOPYIVWUUZbW+4dBpgGeUdl/fQkhuV0A8eGnphYw3pp8d2EnvPOfxmQ==}
+  /@typescript-eslint/typescript-estree@7.4.0(typescript@5.4.3):
+    resolution: {integrity: sha512-A99j5AYoME/UBQ1ucEbbMEmGkN7SE0BvZFreSnTd1luq7yulcHdyGamZKizU7canpGDWGJ+Q6ZA9SyQobipePg==}
     engines: {node: ^18.18.0 || >=20.0.0}
     peerDependencies:
       typescript: '*'
@@ -3862,8 +3956,8 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/types': 7.3.1
-      '@typescript-eslint/visitor-keys': 7.3.1
+      '@typescript-eslint/types': 7.4.0
+      '@typescript-eslint/visitor-keys': 7.4.0
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
@@ -3894,8 +3988,8 @@ packages:
       - typescript
     dev: false
 
-  /@typescript-eslint/utils@7.3.1(eslint@8.57.0)(typescript@5.4.3):
-    resolution: {integrity: sha512-jIERm/6bYQ9HkynYlNZvXpzmXWZGhMbrOvq3jJzOSOlKXsVjrrolzWBjDW6/TvT5Q3WqaN4EkmcfdQwi9tDjBQ==}
+  /@typescript-eslint/utils@7.4.0(eslint@8.57.0)(typescript@5.4.3):
+    resolution: {integrity: sha512-NQt9QLM4Tt8qrlBVY9lkMYzfYtNz8/6qwZg8pI3cMGlPnj6mOpRxxAm7BMJN9K0AiY+1BwJ5lVC650YJqYOuNg==}
     engines: {node: ^18.18.0 || >=20.0.0}
     peerDependencies:
       eslint: ^8.56.0
@@ -3903,9 +3997,9 @@ packages:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.0)
       '@types/json-schema': 7.0.15
       '@types/semver': 7.5.8
-      '@typescript-eslint/scope-manager': 7.3.1
-      '@typescript-eslint/types': 7.3.1
-      '@typescript-eslint/typescript-estree': 7.3.1(typescript@5.4.3)
+      '@typescript-eslint/scope-manager': 7.4.0
+      '@typescript-eslint/types': 7.4.0
+      '@typescript-eslint/typescript-estree': 7.4.0(typescript@5.4.3)
       eslint: 8.57.0
       semver: 7.6.0
     transitivePeerDependencies:
@@ -3921,11 +4015,11 @@ packages:
       eslint-visitor-keys: 3.4.3
     dev: false
 
-  /@typescript-eslint/visitor-keys@7.3.1:
-    resolution: {integrity: sha512-9RMXwQF8knsZvfv9tdi+4D/j7dMG28X/wMJ8Jj6eOHyHWwDW4ngQJcqEczSsqIKKjFiLFr40Mnr7a5ulDD3vmw==}
+  /@typescript-eslint/visitor-keys@7.4.0:
+    resolution: {integrity: sha512-0zkC7YM0iX5Y41homUUeW1CHtZR01K3ybjM1l6QczoMuay0XKtrb93kv95AxUGwdjGr64nNqnOCwmEl616N8CA==}
     engines: {node: ^18.18.0 || >=20.0.0}
     dependencies:
-      '@typescript-eslint/types': 7.3.1
+      '@typescript-eslint/types': 7.4.0
       eslint-visitor-keys: 3.4.3
     dev: false
 
@@ -5788,8 +5882,8 @@ packages:
       eslint: '>=7.0.0'
       prettier: '>=3.0.0'
     dependencies:
-      '@typescript-eslint/eslint-plugin': 7.3.1(@typescript-eslint/parser@7.3.1)(eslint@8.57.0)(typescript@5.4.3)
-      '@typescript-eslint/parser': 7.3.1(eslint@8.57.0)(typescript@5.4.3)
+      '@typescript-eslint/eslint-plugin': 7.4.0(@typescript-eslint/parser@7.4.0)(eslint@8.57.0)(typescript@5.4.3)
+      '@typescript-eslint/parser': 7.4.0(eslint@8.57.0)(typescript@5.4.3)
       eslint: 8.57.0
       eslint-config-next: 14.1.4(eslint@8.57.0)(typescript@5.4.3)
       eslint-config-prettier: 9.1.0(eslint@8.57.0)
@@ -5977,7 +6071,7 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-module-utils@2.8.1(@typescript-eslint/parser@7.3.1)(eslint-import-resolver-node@0.3.9)(eslint@8.57.0):
+  /eslint-module-utils@2.8.1(@typescript-eslint/parser@7.4.0)(eslint-import-resolver-node@0.3.9)(eslint@8.57.0):
     resolution: {integrity: sha512-rXDXR3h7cs7dy9RNpUlQf80nX31XWJEyGq1tRMo+6GsO5VmTe4UTwtmonAD4ZkAsrfMVDA2wlGJ3790Ys+D49Q==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -5998,7 +6092,7 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 7.3.1(eslint@8.57.0)(typescript@5.4.3)
+      '@typescript-eslint/parser': 7.4.0(eslint@8.57.0)(typescript@5.4.3)
       debug: 3.2.7
       eslint: 8.57.0
       eslint-import-resolver-node: 0.3.9
@@ -6087,7 +6181,7 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.3.1)(eslint@8.57.0):
+  /eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.4.0)(eslint@8.57.0):
     resolution: {integrity: sha512-BbPC0cuExzhiMo4Ff1BTVwHpjjv28C5R+btTOGaCRC7UEz801up0JadwkeSk5Ued6TG34uaczuVuH6qyy5YUxw==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -6097,7 +6191,7 @@ packages:
       '@typescript-eslint/parser':
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 7.3.1(eslint@8.57.0)(typescript@5.4.3)
+      '@typescript-eslint/parser': 7.4.0(eslint@8.57.0)(typescript@5.4.3)
       array-includes: 3.1.8
       array.prototype.findlastindex: 1.2.5
       array.prototype.flat: 1.3.2
@@ -6106,7 +6200,7 @@ packages:
       doctrine: 2.1.0
       eslint: 8.57.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.3.1)(eslint-import-resolver-node@0.3.9)(eslint@8.57.0)
+      eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.4.0)(eslint-import-resolver-node@0.3.9)(eslint@8.57.0)
       hasown: 2.0.2
       is-core-module: 2.13.1
       is-glob: 4.0.3
@@ -6449,7 +6543,7 @@ packages:
       expo: '*'
     dependencies:
       '@expo/config': 8.5.4
-      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.73.21)
+      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.75.0-main)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -6459,7 +6553,7 @@ packages:
     peerDependencies:
       expo: '*'
     dependencies:
-      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.73.21)
+      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.75.0-main)
       expo-dev-launcher: 3.6.9(expo@50.0.14)
       expo-dev-menu: 4.5.8(expo@50.0.14)
       expo-dev-menu-interface: 1.7.2(expo@50.0.14)
@@ -6475,7 +6569,7 @@ packages:
       expo: '*'
     dependencies:
       ajv: 8.11.0
-      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.73.21)
+      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.75.0-main)
       expo-dev-menu: 4.5.8(expo@50.0.14)
       expo-manifests: 0.13.2(expo@50.0.14)
       resolve-from: 5.0.0
@@ -6489,7 +6583,7 @@ packages:
     peerDependencies:
       expo: '*'
     dependencies:
-      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.73.21)
+      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.75.0-main)
     dev: false
 
   /expo-dev-menu@4.5.8(expo@50.0.14):
@@ -6497,7 +6591,7 @@ packages:
     peerDependencies:
       expo: '*'
     dependencies:
-      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.73.21)
+      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.75.0-main)
       expo-dev-menu-interface: 1.7.2(expo@50.0.14)
       semver: 7.6.0
     dev: false
@@ -6511,7 +6605,7 @@ packages:
     peerDependencies:
       expo: '*'
     dependencies:
-      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.73.21)
+      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.75.0-main)
     dev: false
 
   /expo-font@11.10.3(expo@50.0.14):
@@ -6519,7 +6613,7 @@ packages:
     peerDependencies:
       expo: '*'
     dependencies:
-      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.73.21)
+      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.75.0-main)
       fontfaceobserver: 2.3.0
     dev: false
 
@@ -6532,7 +6626,7 @@ packages:
     peerDependencies:
       expo: '*'
     dependencies:
-      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.73.21)
+      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.75.0-main)
     dev: false
 
   /expo-manifests@0.13.2(expo@50.0.14):
@@ -6541,7 +6635,7 @@ packages:
       expo: '*'
     dependencies:
       '@expo/config': 8.5.4
-      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.73.21)
+      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.75.0-main)
       expo-json-utils: 0.12.3
     transitivePeerDependencies:
       - supports-color
@@ -6580,7 +6674,7 @@ packages:
     peerDependencies:
       expo: '*'
     dependencies:
-      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.73.21)
+      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.75.0-main)
     dev: false
 
   /expo-updates@0.24.12(expo@50.0.14):
@@ -6594,7 +6688,7 @@ packages:
       '@expo/config-plugins': 7.8.4
       arg: 4.1.0
       chalk: 4.1.2
-      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.73.21)
+      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.75.0-main)
       expo-eas-client: 0.11.2
       expo-manifests: 0.13.2(expo@50.0.14)
       expo-structured-headers: 3.7.2
@@ -6606,15 +6700,15 @@ packages:
       - supports-color
     dev: false
 
-  /expo@50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.73.21):
+  /expo@50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.75.0-main):
     resolution: {integrity: sha512-yLPdxCMVAbmeEIpzzyAuJ79wvr6ToDDtQmuLDMAgWtjqP8x3CGddXxUe07PpKEQgzwJabdHvCLP5Bv94wMFIjQ==}
     hasBin: true
     dependencies:
       '@babel/runtime': 7.24.1
-      '@expo/cli': 0.17.8(@react-native/babel-preset@0.73.21)(expo-modules-autolinking@1.10.3)
+      '@expo/cli': 0.17.8(@react-native/babel-preset@0.75.0-main)(expo-modules-autolinking@1.10.3)
       '@expo/config': 8.5.4
       '@expo/config-plugins': 7.8.4
-      '@expo/metro-config': 0.17.6(@react-native/babel-preset@0.73.21)
+      '@expo/metro-config': 0.17.6(@react-native/babel-preset@0.75.0-main)
       '@expo/vector-icons': 14.0.0
       babel-preset-expo: 10.0.1(@babel/core@7.24.3)
       expo-asset: 9.0.2(expo@50.0.14)
