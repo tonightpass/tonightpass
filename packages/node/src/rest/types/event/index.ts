@@ -1,6 +1,6 @@
 import { EventTicket } from "./ticket";
 import { Location } from "..";
-import { Organization } from "../organization";
+import { Organization } from "../organizations";
 
 export * from "./ticket";
 

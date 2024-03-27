@@ -1,13 +1,13 @@
 import axios, { Options } from "redaxios";
 
-import { APIError, APIResponse } from "../types";
-
-type ApiRequestConfig = Exclude<Options, "method">;
+import { isBrowser } from "../../utils";
+import { APIResponse } from "../endpoints";
 
 const instance = axios.create({
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
+    ...(!isBrowser && { "User-Agent": "tonightpass-api-client" }),
   },
   responseType: "json",
   transformRequest: [
@@ -17,17 +17,14 @@ const instance = axios.create({
   ],
 });
 
-export const request = async <TData>(
-  url: string,
-  options?: ApiRequestConfig,
-): Promise<APIResponse<TData>> => {
-  const response = instance<APIResponse<TData>>(url, { ...options })
-    .then((response) => response.data)
-    .catch((error: APIError) => {
+export interface APIRequestOptions extends Options {}
+
+export const request = async <T>(url: string, options?: Options) => {
+  const response = instance<APIResponse<T>>(url, { ...options })
+    .then((response) => response)
+    .catch((error: Error) => {
       throw error;
     });
 
   return response;
 };
-
-export type { ApiRequestConfig };

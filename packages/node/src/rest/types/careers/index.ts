@@ -1,3 +1,5 @@
+import { Endpoint } from "../../endpoints";
+
 export type CareersOffice = {
   id: number | null;
   isDefault: boolean | null;
@@ -35,3 +37,9 @@ export type CareersEmploymentType = {
   name: string;
   slug: string;
 };
+
+export type CareersEndpoints =
+  | Endpoint<"GET", "/careers/categories", CareersCategory[]>
+  | Endpoint<"GET", "/careers/employment-types", CareersEmploymentType[]>
+  | Endpoint<"GET", "/careers/jobs", CareersJob[]>
+  | Endpoint<"GET", "/careers/offices", CareersOffice[]>;
