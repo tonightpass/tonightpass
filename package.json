@@ -8,6 +8,7 @@
     "build": "turbo run build",
     "build:packages": "turbo run build --filter='./packages/*'",
     "dev": "turbo run dev",
+    "test": "turbo run test",
     "dev:packages": "turbo run dev --filter='./packages/*'",
     "version": "changeset version",
     "release": "changeset publish",
