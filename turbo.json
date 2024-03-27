@@ -21,6 +21,6 @@
     "start": {
       "cache": false
     },
-    "test": {},
+    "test": {}
   }
 }
