@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "swr": "^2.2.5",
-    "tonightpass": "workspace:*"
+    "tonightpass": "workspace:^"
   },
   "peerDependencies": {
     "react": "*"
