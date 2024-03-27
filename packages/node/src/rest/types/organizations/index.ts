@@ -1,7 +1,7 @@
 import { Location, Profile, ProfileMetadata } from "..";
 import { Event } from "../event";
 import { EventTicket } from "../event/ticket";
-import { User } from "../user";
+import { User } from "../users";
 
 export type Organization = {
   id: string;

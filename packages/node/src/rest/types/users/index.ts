@@ -1,4 +1,5 @@
 import { Currency, Language, Location, Profile, ProfileMetadata } from "..";
+import { Endpoint } from "../../endpoints";
 
 export type User = {
   id: string;
@@ -88,3 +89,5 @@ export type UserConnectionClient = {
   name: string;
   version: string;
 };
+
+export type UserEndpoints = Endpoint<"GET", "/users/me", User>;

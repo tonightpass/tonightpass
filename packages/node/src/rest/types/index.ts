@@ -1,13 +1,11 @@
 export * from "./careers";
 export * from "./event";
-export * from "./organization";
+export * from "./health";
+export * from "./organizations";
 export * from "./token";
-export * from "./user";
+export * from "./users";
 export * from "./order";
-export * from "./profile";
-
-// - API
-export * from "./api";
+export * from "./profiles";
 
 export type Location = {
   name?: string;

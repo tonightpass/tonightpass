@@ -1,6 +1,6 @@
 import { Currency } from "..";
 import { Event, EventTicket } from "../event";
-import { User } from "../user";
+import { User } from "../users";
 
 export enum OrderStatus {
   Created = "created",
