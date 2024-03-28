@@ -20,6 +20,7 @@
     },
     "start": {
       "cache": false
-    }
+    },
+    "test": {}
   }
 }
