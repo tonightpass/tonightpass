@@ -5,7 +5,7 @@ const config: Options = {
   entry: ["src/index.ts"],
   splitting: true,
   sourcemap: true,
-  clean: true,
+  clean: false,
   platform: "node",
   minify: true,
   treeshake: true,
