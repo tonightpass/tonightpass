@@ -1,4 +1,3 @@
-import { Method } from "axios";
 import { ParamValue, pathcat } from "pathcat";
 import { Options, Response } from "redaxios";
 
@@ -27,7 +26,7 @@ export type ExtractEndpoint<
   Path extends string,
 > = Extract<Endpoints, { path: Path; method: Method }>;
 
-export type PathsFor<M extends Method> = Extract<
+export type PathsFor<M extends Options["method"]> = Extract<
   Endpoints,
   { method: M }
 >["path"];
