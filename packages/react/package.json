@@ -10,8 +10,8 @@
   "bugs": "https://github.com/tonightpass/tonightpass/issues",
   "homepage": "https://tonightpass.com",
   "license": "MIT",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsup",
