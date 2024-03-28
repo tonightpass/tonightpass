@@ -121,8 +121,8 @@ importers:
         specifier: ^1.4.8
         version: 1.4.8
       '@types/node':
-        specifier: 20.11.26
-        version: 20.11.26
+        specifier: 20.11.30
+        version: 20.11.30
       node-mailjet:
         specifier: 6.0.5
         version: 6.0.5
@@ -152,8 +152,8 @@ importers:
         version: 0.2.1
     devDependencies:
       '@types/node':
-        specifier: 20.11.26
-        version: 20.11.26
+        specifier: 20.11.30
+        version: 20.11.30
       tsx:
         specifier: ^4.7.1
         version: 4.7.1
@@ -2777,12 +2777,6 @@ packages:
   /@types/node@12.20.55:
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
     dev: false
-
-  /@types/node@20.11.26:
-    resolution: {integrity: sha512-YwOMmyhNnAWijOBQweOJnQPl068Oqd4K3OFbTc6AHJwzweUwwWG3GIFY74OKks2PJUDkQPeddOQES9mLn1CTEQ==}
-    dependencies:
-      undici-types: 5.26.5
-    dev: true
 
   /@types/node@20.11.30:
     resolution: {integrity: sha512-dHM6ZxwlmuZaRmUPfv1p+KrdD1Dci04FbdEm/9wEMouFqxYoFl5aMkt0VMAUtYRQDyYvD41WJLukhq/ha3YuTw==}
