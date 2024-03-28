@@ -17,9 +17,8 @@ export const useAPI = <Path extends PathsFor<"GET">>(
     return await client.get(path, query, options);
   };
 
-  const swr = useSWR<Extract<Endpoints, { path: Path; method: "GET" }>["res"]>(
+  return useSWR<Extract<Endpoints, { path: Path; method: "GET" }>["res"]>(
     path,
     fetcher,
   );
-  return swr;
 };
