@@ -1,4 +1,4 @@
-import useSWR from "swr";
+import useSWR, { Fetcher } from "swr";
 import {
   Endpoints,
   APIRequestOptions,
@@ -15,7 +15,7 @@ export const useAPI = <Path extends PathsFor<"GET">>(
   query?: Query<Path>,
   options?: APIRequestOptions,
 ) => {
-  const fetcher = (key: Path) => client.get(key, query, options);
+  const fetcher: Fetcher<any> = (key: Path) => client.get(key, query, options);
 
   return useSWR<Extract<Endpoints, { path: Path; method: "GET" }>["res"]>(
     path,
