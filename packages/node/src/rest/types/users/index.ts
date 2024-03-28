@@ -1,4 +1,5 @@
 import { Currency, Language, Location, Profile, ProfileMetadata } from "..";
+import { UpdateUserDto } from "../../dtos";
 import { Endpoint } from "../../endpoints";
 
 export type User = {
@@ -90,4 +91,14 @@ export type UserConnectionClient = {
   version: string;
 };
 
-export type UserEndpoints = Endpoint<"GET", "/users/me", User>;
+export type UserEndpoints =
+  | Endpoint<"GET", "/users", User[]>
+  | Endpoint<"GET", "/users/:id", User, { id: string }>
+  | Endpoint<"GET", "/users/me", User>
+  | Endpoint<
+      "GET",
+      "/check/:identifier",
+      UserIdentifier,
+      { identifier: string }
+    >
+  | Endpoint<"PUT", "/users/:id", User, UpdateUserDto>;

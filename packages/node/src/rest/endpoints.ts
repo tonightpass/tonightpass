@@ -1,6 +1,11 @@
 import { Options } from "redaxios";
 
-import { CareersEndpoints, HealthEndpoints, UserEndpoints } from "./types";
+import {
+  CareersEndpoints,
+  HealthEndpoints,
+  ProfileEndpoints,
+  UserEndpoints,
+} from "./types";
 
 export type SuccessfulAPIResponse<T> = {
   success: true;
@@ -29,4 +34,8 @@ export type Endpoint<
   body: Body;
 };
 
-export type Endpoints = CareersEndpoints | HealthEndpoints | UserEndpoints;
+export type Endpoints =
+  | CareersEndpoints
+  | HealthEndpoints
+  | ProfileEndpoints
+  | UserEndpoints;

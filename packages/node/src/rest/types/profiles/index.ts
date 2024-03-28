@@ -1,3 +1,6 @@
+import { Endpoint } from "../../endpoints";
+import { UserIdentity } from "../users";
+
 export interface Profile {
   type: "user" | "organization";
 
@@ -19,3 +22,9 @@ export interface ProfileMetadata {
   hasBlocked: boolean;
   canDM: boolean;
 }
+
+export type ProfileEndpoints = Endpoint<
+  "GET",
+  "/profiles/:username",
+  UserIdentity
+>;
