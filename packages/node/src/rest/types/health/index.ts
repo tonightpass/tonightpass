@@ -1,9 +1,9 @@
 import { Endpoint } from "../../endpoints";
 
-export type HealthHttp = {
+export type Health<Key extends string> = {
   status: string;
   details: {
-    app: {
+    [key in Key]: {
       status: string;
       details: {
         status: string;
@@ -12,4 +12,6 @@ export type HealthHttp = {
   };
 };
 
-export type HealthEndpoints = Endpoint<"GET", "/health/http", HealthHttp>;
+export type HealthEndpoints =
+  | Endpoint<"GET", "/health/database", Health<"database">>
+  | Endpoint<"GET", "/health/http", Health<"app">>;

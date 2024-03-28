@@ -1,10 +1,26 @@
 import { Method } from "axios";
-import { ExtractRouteParams, ParamValue, pathcat } from "pathcat";
+import { ParamValue, pathcat } from "pathcat";
 import { Options, Response } from "redaxios";
 
 import { APIResponse, Endpoints, ErroredAPIResponse } from "./endpoints";
 import { APIRequestOptions, request } from "./request";
 import { DEFAULT_API_URL } from "../constants";
+
+// type ExtractRouteParams<T extends string> = string extends T
+//   ? string
+//   : T extends `${string}:${infer Param}/${infer Rest}`
+//     ? Param | ExtractRouteParams<Rest>
+//     : T extends `${string}:${infer Param}`
+//       ? Param
+//       : never;
+
+export type ExtractRouteParams<T extends string> = string extends T
+  ? Record<string, string | number | undefined>
+  : T extends `${string}:${infer Param}/${infer Rest}`
+    ? { [k in Param | keyof ExtractRouteParams<Rest>]: string | number }
+    : T extends `${string}:${infer Param}`
+      ? { [k in Param]: string | number }
+      : object;
 
 export type ExtractEndpoint<
   Method extends string,
