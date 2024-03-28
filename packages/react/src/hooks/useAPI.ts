@@ -5,13 +5,15 @@ import {
   Client,
   PathsFor,
   Query,
+  DEFAULT_API_URL,
 } from "tonightpass";
+
+export const client = new Client({ baseURL: DEFAULT_API_URL });
 
 export const useAPI = <Path extends PathsFor<"GET">>(
   path: Path,
   query?: Query<Path>,
   options?: APIRequestOptions,
-  client = new Client({ baseURL: "https://api.tonightpass.com" }),
 ) => {
   const fetcher = (key: Path) => client.get(key, query, options);
 
