@@ -39,7 +39,49 @@ export type CareersEmploymentType = {
 };
 
 export type CareersEndpoints =
-  | Endpoint<"GET", "/careers/categories", CareersCategory[]>
-  | Endpoint<"GET", "/careers/employment-types", CareersEmploymentType[]>
-  | Endpoint<"GET", "/careers/jobs", CareersJob[]>
-  | Endpoint<"GET", "/careers/offices", CareersOffice[]>;
+  | Endpoint<
+      "GET",
+      "/careers/categories",
+      CareersCategory[],
+      {
+        language?: string;
+      }
+    >
+  | Endpoint<
+      "GET",
+      "/careers/employmentTypes",
+      CareersEmploymentType[],
+      {
+        language?: string;
+      }
+    >
+  | Endpoint<
+      "GET",
+      "/careers/jobs",
+      CareersJob[],
+      {
+        page?: number;
+        pageSize?: number;
+        createdAtGte: string;
+        createdAtLt?: string;
+        updatedAtGte?: string;
+        updatedAtLt?: string;
+        status?: "ALL" | "ONLINE" | "ARCHIVED";
+        content?: boolean;
+        titleLike?: string;
+        countryCode?: string;
+        externalId?: string;
+      }
+    >
+  | Endpoint<"GET", "/careers/jobs/:id", CareersJob, { id: number }>
+  | Endpoint<
+      "GET",
+      "/careers/offices",
+      CareersOffice[],
+      {
+        page?: number;
+        pageSize?: number;
+        countryCode?: string;
+        cityNameLike?: string;
+      }
+    >;
