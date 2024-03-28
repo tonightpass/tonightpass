@@ -37,16 +37,19 @@ export interface ClientOptions {
 }
 
 export class Client {
-  private readonly options;
-  private agent: import("node:https").Agent | null;
+  private options;
   public readonly url;
 
   constructor(options: ClientOptions) {
     this.options = options;
     this.url = (path: string, params: Record<string, ParamValue>) => {
-      const baseURL = DEFAULT_API_URL || this.options.baseURL;
+      const baseURL = this.options.baseURL || DEFAULT_API_URL;
       return pathcat(baseURL, path, params);
     };
+  }
+
+  setOptions(options: ClientOptions) {
+    this.options = options;
   }
 
   async get<Path extends PathsFor<"GET">>(
