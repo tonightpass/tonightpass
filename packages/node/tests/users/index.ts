@@ -1,0 +1,31 @@
+import assert from "assert";
+import test from "node:test";
+
+import { ErroredAPIResponse } from "../../src";
+import { TonightPass } from "../../src/tonightpass";
+
+export function usersTests(tnp: TonightPass) {
+  test("It will fail to get user 'me'", async () => {
+    try {
+      await tnp.users.me();
+      assert.fail("Expected the 'me' function to throw an error but it didn't");
+    } catch (error) {
+      const typedError = error as ErroredAPIResponse;
+      assert.strictEqual(
+        typedError.success,
+        false,
+        "Expected error response to indicate failure",
+      );
+      assert.strictEqual(
+        typeof typedError.message,
+        "string",
+        "Expected error message to be a string",
+      );
+      assert.strictEqual(
+        typedError.message,
+        "Unauthorized",
+        "Expected error message to be 'Unauthorized'",
+      );
+    }
+  });
+}

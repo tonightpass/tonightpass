@@ -1,7 +1,7 @@
-import axios, { Options } from "redaxios";
+import axios, { Options, Response } from "redaxios";
 
 import { isBrowser } from "../../utils";
-import { APIResponse } from "../endpoints";
+import { APIResponse, ErroredAPIResponse } from "../endpoints";
 
 const instance = axios.create({
   headers: {
@@ -15,6 +15,7 @@ const instance = axios.create({
       return JSON.stringify(data);
     },
   ],
+  withCredentials: isBrowser,
 });
 
 export interface APIRequestOptions extends Options {}
@@ -22,8 +23,8 @@ export interface APIRequestOptions extends Options {}
 export const request = async <T>(url: string, options?: Options) => {
   const response = instance<APIResponse<T>>(url, { ...options })
     .then((response) => response)
-    .catch((error: Error) => {
-      throw error;
+    .catch((error: Response<ErroredAPIResponse>) => {
+      throw error.data;
     });
 
   return response;
