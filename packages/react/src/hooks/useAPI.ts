@@ -11,7 +11,7 @@ import {
 export const client = new Client({ baseURL: DEFAULT_API_URL });
 
 export const useAPI = <Path extends PathsFor<"GET">>(
-  path: Path,
+  path?: Path | null,
   query?: Query<Path>,
   options?: APIRequestOptions,
 ) => {
