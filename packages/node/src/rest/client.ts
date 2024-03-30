@@ -6,11 +6,16 @@ import { APIRequestOptions, request } from "./request";
 import { DEFAULT_API_URL } from "../constants";
 
 export type ExtractRouteParams<T extends string> = string extends T
-  ? Record<string, string | number | undefined>
+  ? Record<string, string | number | boolean | undefined>
   : T extends `${string}:${infer Param}/${infer Rest}`
-    ? { [k in Param | keyof ExtractRouteParams<Rest>]: string | number }
+    ? {
+        [k in Param | keyof ExtractRouteParams<Rest>]:
+          | string
+          | number
+          | boolean;
+      }
     : T extends `${string}:${infer Param}`
-      ? { [k in Param]: string | number }
+      ? { [k in Param]: string | number | boolean }
       : object;
 
 export type ExtractEndpoint<
@@ -24,7 +29,7 @@ export type PathsFor<M extends Options["method"]> = Extract<
 >["path"];
 
 export type Query<Path extends string> = ExtractRouteParams<Path> &
-  Record<string, string | number | undefined>;
+  Record<string, string | number | boolean | undefined>;
 
 export class TonightPassAPIError<T> extends Error {
   public readonly status: number;
@@ -116,7 +121,7 @@ export class Client {
     method: Options["method"],
     path: string,
     body: unknown,
-    query: Record<string, string | number | undefined> = {},
+    query: Record<string, string | number | boolean | undefined> = {},
     options: APIRequestOptions = {},
   ) {
     const url = this.url(path, query);

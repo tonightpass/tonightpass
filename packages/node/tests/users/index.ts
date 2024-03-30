@@ -28,4 +28,11 @@ export function usersTests(tnp: TonightPass) {
       );
     }
   });
+
+  test("It check 'tonightpass' username availability with suggestions", async () => {
+    const response = await tnp.users.check("tonightpass", true);
+    assert.strictEqual(response.exists, true);
+    assert.strictEqual(response.identifier?.username, "tonightpass");
+    assert.strictEqual(response.suggestions?.length, 3);
+  });
 }
