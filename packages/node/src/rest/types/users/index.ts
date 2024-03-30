@@ -97,8 +97,12 @@ export type UserEndpoints =
   | Endpoint<"GET", "/users/me", User>
   | Endpoint<
       "GET",
-      "/check/:identifier",
-      UserIdentifier,
-      { identifier: string }
+      "/users/check/:identifier",
+      {
+        exists: boolean;
+        identifier: UserIdentifier;
+        suggestions?: string[];
+      },
+      { identifier: boolean; suggestions?: boolean }
     >
   | Endpoint<"PUT", "/users/:id", User, UpdateUserDto>;
