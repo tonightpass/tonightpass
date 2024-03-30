@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.3
+
+### Patch Changes
+
+- [`2166d44`](https://github.com/tonightpass/tonightpass/commit/2166d44417e5af6e1da86681330b4aa2892775e5) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add error handler
+
 ## 0.0.2
 
 ### Patch Changes
