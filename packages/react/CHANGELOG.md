@@ -1,5 +1,11 @@
 # @tonightpass/react
 
+## 0.0.4
+
+### Patch Changes
+
+- [`ef3cb97`](https://github.com/tonightpass/tonightpass/commit/ef3cb9700747e815bd9ec1757003e4eb1774865a) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update api hook path types
+
 ## 0.0.3
 
 ### Patch Changes
