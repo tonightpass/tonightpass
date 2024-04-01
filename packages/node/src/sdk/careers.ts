@@ -1,5 +1,6 @@
+import { Query } from "pathcat";
+
 import { sdk } from "./builder";
-import { Query } from "../rest";
 
 export const careers = sdk((client) => ({
   categories: {
