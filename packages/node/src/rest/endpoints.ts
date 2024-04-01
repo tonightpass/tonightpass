@@ -1,6 +1,7 @@
 import { Options } from "redaxios";
 
 import {
+  AuthEndpoints,
   CareersEndpoints,
   HealthEndpoints,
   ProfileEndpoints,
@@ -35,6 +36,7 @@ export type Endpoint<
 };
 
 export type Endpoints =
+  | AuthEndpoints
   | CareersEndpoints
   | HealthEndpoints
   | ProfileEndpoints
