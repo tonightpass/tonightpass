@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.5
+
+### Patch Changes
+
+- [`8f7a766`](https://github.com/tonightpass/tonightpass/commit/8f7a7661541f3927f4a4f31c119f8a866abd7133) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix query types by using pathcat types
+
 ## 0.0.4
 
 ### Patch Changes
