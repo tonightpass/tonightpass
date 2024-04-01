@@ -1,35 +1,14 @@
-import { ParamValue, pathcat } from "pathcat";
+import { ParamValue, Query, pathcat } from "pathcat";
 import { Options, Response } from "redaxios";
 
 import { APIResponse, Endpoints, ErroredAPIResponse } from "./endpoints";
 import { APIRequestOptions, request } from "./request";
 import { DEFAULT_API_URL } from "../constants";
 
-export type ExtractRouteParams<T extends string> = string extends T
-  ? Record<string, string | number | boolean | undefined>
-  : T extends `${string}:${infer Param}/${infer Rest}`
-    ? {
-        [k in Param | keyof ExtractRouteParams<Rest>]:
-          | string
-          | number
-          | boolean;
-      }
-    : T extends `${string}:${infer Param}`
-      ? { [k in Param]: string | number | boolean }
-      : object;
-
-export type ExtractEndpoint<
-  Method extends string,
-  Path extends string,
-> = Extract<Endpoints, { path: Path; method: Method }>;
-
 export type PathsFor<M extends Options["method"]> = Extract<
   Endpoints,
   { method: M }
 >["path"];
-
-export type Query<Path extends string> = ExtractRouteParams<Path> &
-  Record<string, string | number | boolean | undefined>;
 
 export class TonightPassAPIError<T> extends Error {
   public readonly status: number;
@@ -121,7 +100,7 @@ export class Client {
     method: Options["method"],
     path: string,
     body: unknown,
-    query: Record<string, string | number | boolean | undefined> = {},
+    query: Query<string> = {},
     options: APIRequestOptions = {},
   ) {
     const url = this.url(path, query);

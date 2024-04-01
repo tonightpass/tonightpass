@@ -1,7 +1,8 @@
 import { Client, ClientOptions } from "./rest";
-import { health, users } from "./sdk";
 import { careers } from "./sdk/careers";
+import { health } from "./sdk/health";
 import { profiles } from "./sdk/profiles";
+import { users } from "./sdk/users";
 
 export class TonightPass {
   public readonly client: Client;
