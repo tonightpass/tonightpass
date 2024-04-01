@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.6
+
+### Patch Changes
+
+- [`24d1f03`](https://github.com/tonightpass/tonightpass/commit/24d1f0323507b176c8b5b19f64f1b63c874e9a31) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add auth sdk
+
 ## 0.0.5
 
 ### Patch Changes
