@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.7
+
+### Patch Changes
+
+- [`e84816c`](https://github.com/tonightpass/tonightpass/commit/e84816ce49b8602f6fd98c9148ed184b5060c35a) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix auth export in tonightpass and location in dtos
+
 ## 0.0.6
 
 ### Patch Changes
