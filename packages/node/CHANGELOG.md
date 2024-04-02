@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.9
+
+### Patch Changes
+
+- [`8f8bd1b`](https://github.com/tonightpass/tonightpass/commit/8f8bd1b21c684389c44c7b9ef4be3452061260e1) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add organizations sdk
+
 ## 0.0.8
 
 ### Patch Changes
