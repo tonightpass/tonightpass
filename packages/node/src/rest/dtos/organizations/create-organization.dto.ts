@@ -1,10 +1,4 @@
-import {
-  IsArray,
-  IsNotEmpty,
-  IsObject,
-  IsString,
-  IsUrl,
-} from "class-validator";
+import { IsArray, IsNotEmpty, IsObject, IsString } from "class-validator";
 
 import {
   Location,
@@ -19,12 +13,6 @@ export class CreateOrganizationDto {
 
   @IsArray()
   members?: OrganizationMember[];
-
-  @IsString()
-  @IsUrl({
-    protocols: ["http", "https"],
-  })
-  logoUrl?: string;
 
   @IsArray()
   socialLinks?: OrganizationSocialLink[];
