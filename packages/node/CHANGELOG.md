@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.8
+
+### Patch Changes
+
+- [`d009e78`](https://github.com/tonightpass/tonightpass/commit/d009e7808d5874915dc7a40e244330a8c164cdff) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix empty auth post requests
+
 ## 0.0.7
 
 ### Patch Changes
