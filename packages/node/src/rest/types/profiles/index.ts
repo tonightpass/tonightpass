@@ -7,7 +7,7 @@ export interface Profile {
   displayName: string;
   description: string;
 
-  profilePictureUrl?: string;
+  avatarUrl?: string;
   bannerUrl?: string;
 
   metadata: ProfileMetadata;

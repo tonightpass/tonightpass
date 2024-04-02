@@ -11,6 +11,6 @@ class CreateUserIdentituDto {
   firstName: string;
   lastName: string;
   gender: UserIdentityGender;
-  profilePictureUrl?: string;
+  avatarUrl?: string;
   birthDate: Date;
 }

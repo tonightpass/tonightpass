@@ -1,4 +1,6 @@
 import { Location, Profile, ProfileMetadata } from "..";
+import { CreateOrganizationDto, UpdateOrganizationDto } from "../../dtos";
+import { Endpoint } from "../../endpoints";
 import { Event } from "../event";
 import { EventTicket } from "../event/ticket";
 import { User } from "../users";
@@ -52,3 +54,10 @@ export enum OrganizationMemberRole {
   ADMINISTRATOR = 2,
   OWNER = 3,
 }
+
+export type OrganizationEndpoints =
+  | Endpoint<"GET", "/organizations", Organization[]>
+  | Endpoint<"GET", "/organizations/:id", Organization>
+  | Endpoint<"POST", "/organizations", Organization, CreateOrganizationDto>
+  | Endpoint<"PUT", "/organizations/:id", Organization, UpdateOrganizationDto>
+  | Endpoint<"DELETE", "/organizations/:id", boolean>;
