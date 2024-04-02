@@ -1,9 +1,5 @@
 import { Client, ClientOptions } from "./rest";
-import { auth } from "./sdk/auth";
-import { careers } from "./sdk/careers";
-import { health } from "./sdk/health";
-import { profiles } from "./sdk/profiles";
-import { users } from "./sdk/users";
+import { auth, careers, health, organizations, profiles, users } from "./sdk";
 
 export class TonightPass {
   public readonly client: Client;
@@ -11,6 +7,7 @@ export class TonightPass {
   public readonly auth;
   public readonly careers;
   public readonly health;
+  public readonly organizations;
   public readonly profiles;
   public readonly users;
 
@@ -20,6 +17,7 @@ export class TonightPass {
     this.auth = auth(this.client);
     this.careers = careers(this.client);
     this.health = health(this.client);
+    this.organizations = organizations(this.client);
     this.profiles = profiles(this.client);
     this.users = users(this.client);
   }
