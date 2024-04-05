@@ -45,14 +45,22 @@ export enum OrganizationSocialType {
 export type OrganizationMember = {
   user: User;
   role: OrganizationMemberRole;
+  status: OrganizationMemberStatus;
+  updatedAt: Date;
   createdAt: Date;
 };
 
+export enum OrganizationMemberStatus {
+  PENDING = "pending",
+  ACCEPTED = "accepted",
+  REJECTED = "rejected",
+}
+
 export enum OrganizationMemberRole {
-  EMPLOYEE = 0,
-  MANAGER = 1,
-  ADMINISTRATOR = 2,
-  OWNER = 3,
+  MEMBER = "member",
+  MANAGER = "manager",
+  ADMINISTRATOR = "admin",
+  OWNER = "owner",
 }
 
 export type OrganizationEndpoints =
