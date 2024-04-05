@@ -1,27 +1,31 @@
 import {
+  ArrayMinSize,
   IsArray,
+  IsEnum,
   IsNotEmpty,
   IsObject,
   IsString,
   IsUrl,
+  Length,
 } from "class-validator";
 
 import {
   Location,
-  OrganizationMember,
+  OrganizationMemberRole,
   OrganizationSocialLink,
 } from "../../types";
 
 export class CreateOrganizationDto {
   @IsString()
-  @IsNotEmpty()
-  slug: string;
+  @Length(1, 128)
+  slug?: string;
 
   @IsObject()
   identity: CreateOrganizationIdentityDto;
 
   @IsArray()
-  members: OrganizationMember[];
+  @ArrayMinSize(1)
+  members: OrganizationMemberDto[];
 
   @IsObject()
   location?: Location;
@@ -30,10 +34,12 @@ export class CreateOrganizationDto {
 class CreateOrganizationIdentityDto {
   @IsString()
   @IsNotEmpty()
+  @Length(1, 32)
   displayName: string;
 
   @IsString()
   @IsNotEmpty()
+  @Length(16, 1024)
   description: string;
 
   @IsUrl({
@@ -47,5 +53,15 @@ class CreateOrganizationIdentityDto {
   bannerUrl?: string;
 
   @IsArray()
-  socialLinks: OrganizationSocialLink[];
+  socialLinks?: OrganizationSocialLink[];
+}
+
+class OrganizationMemberDto {
+  @IsString()
+  @IsNotEmpty()
+  user: string;
+
+  @IsEnum(OrganizationMemberRole)
+  @IsNotEmpty()
+  role: OrganizationMemberRole;
 }
