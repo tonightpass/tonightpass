@@ -1,4 +1,5 @@
 import { Endpoint } from "../../endpoints";
+import { OrganizationIdentity } from "../organizations";
 import { UserIdentity } from "../users";
 
 export interface Profile {
@@ -26,5 +27,5 @@ export interface ProfileMetadata {
 export type ProfileEndpoints = Endpoint<
   "GET",
   "/profiles/:username",
-  UserIdentity
+  UserIdentity | OrganizationIdentity
 >;
