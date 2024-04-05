@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.11
+
+### Patch Changes
+
+- [`e05e50e`](https://github.com/tonightpass/tonightpass/commit/e05e50eb071f55b46686f14f25ba01c1402cf84b) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix optional fields in CreateOrganizationDto
+
 ## 0.0.10
 
 ### Patch Changes
