@@ -1,9 +1,9 @@
 import {
-  ArrayMinSize,
   IsArray,
   IsEnum,
   IsNotEmpty,
   IsObject,
+  IsOptional,
   IsString,
   IsUrl,
   Length,
@@ -16,6 +16,7 @@ import {
 } from "../../types";
 
 export class CreateOrganizationDto {
+  @IsOptional()
   @IsString()
   @Length(1, 128)
   slug?: string;
@@ -24,9 +25,9 @@ export class CreateOrganizationDto {
   identity: CreateOrganizationIdentityDto;
 
   @IsArray()
-  @ArrayMinSize(1)
   members: OrganizationMemberDto[];
 
+  @IsOptional()
   @IsObject()
   location?: Location;
 }
@@ -47,11 +48,13 @@ class CreateOrganizationIdentityDto {
   })
   avatarUrl?: string;
 
+  @IsOptional()
   @IsUrl({
     protocols: ["http", "https"],
   })
   bannerUrl?: string;
 
+  @IsOptional()
   @IsArray()
   socialLinks?: OrganizationSocialLink[];
 }
