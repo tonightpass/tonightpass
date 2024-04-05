@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.12
+
+### Patch Changes
+
+- [`2c5b552`](https://github.com/tonightpass/tonightpass/commit/2c5b55231112404a705a1b822c67fdcd72cd467c) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update profiles types with Organization identity
+
 ## 0.0.11
 
 ### Patch Changes
