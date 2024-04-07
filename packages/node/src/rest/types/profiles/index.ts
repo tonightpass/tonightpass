@@ -6,7 +6,7 @@ export interface Profile {
   type: "user" | "organization";
 
   displayName: string;
-  description: string;
+  description?: string;
 
   avatarUrl?: string;
   bannerUrl?: string;
