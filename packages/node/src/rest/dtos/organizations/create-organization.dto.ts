@@ -10,9 +10,9 @@ import {
 } from "class-validator";
 
 import {
-  Location,
   OrganizationMemberRole,
-  OrganizationSocialLink,
+  type Location,
+  type OrganizationSocialLink,
 } from "../../types";
 
 export class CreateOrganizationDto {
