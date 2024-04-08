@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.14
+
+### Patch Changes
+
+- [`79c52a5`](https://github.com/tonightpass/tonightpass/commit/79c52a50ec141a6e817b29377d3facde337c5c9e) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add decorators support
+
 ## 0.0.13
 
 ### Patch Changes
