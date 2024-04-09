@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.15
+
+### Patch Changes
+
+- [#232](https://github.com/tonightpass/tonightpass/pull/232) [`7c2353a`](https://github.com/tonightpass/tonightpass/commit/7c2353a308119eef0cb5515ad0140e8e8fd1093b) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add organization members sdk
+
 ## 0.0.14
 
 ### Patch Changes
