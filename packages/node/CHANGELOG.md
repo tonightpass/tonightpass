@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.16
+
+### Patch Changes
+
+- [`bc0b252`](https://github.com/tonightpass/tonightpass/commit/bc0b2527533944a433abc10e69a8dceeec773da2) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update enums names
+
 ## 0.0.15
 
 ### Patch Changes
