@@ -1,6 +1,6 @@
 {
   "name": "tonightpass",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "@tonightpass sdk and tools.",
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@anatine/esbuild-decorators": "^0.2.19",
-    "@types/node": "20.12.5",
+    "@types/node": "20.12.6",
     "tsx": "^4.7.1",
     "typescript": "^5.0.0"
   }
