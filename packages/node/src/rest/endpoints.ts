@@ -4,6 +4,7 @@ import {
   AuthEndpoints,
   CareersEndpoints,
   HealthEndpoints,
+  OrganizationEndpoints,
   ProfileEndpoints,
   UserEndpoints,
 } from "./types";
@@ -39,5 +40,6 @@ export type Endpoints =
   | AuthEndpoints
   | CareersEndpoints
   | HealthEndpoints
+  | OrganizationEndpoints
   | ProfileEndpoints
   | UserEndpoints;

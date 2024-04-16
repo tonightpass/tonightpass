@@ -39,9 +39,9 @@ export type UserIdentity = Profile & {
 };
 
 export enum UserRole {
-  USER = 0,
-  DEVELOPER = 8,
-  ADMINISTRATOR = 10,
+  User = "user",
+  Developer = "developer",
+  Admin = "admin",
 }
 
 export type UserIdentityGender =

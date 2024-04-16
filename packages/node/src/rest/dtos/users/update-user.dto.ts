@@ -66,7 +66,7 @@ class UpdateIdentityDto
         | "lastName"
         | "displayName"
         | "description"
-        | "profilePictureUrl"
+        | "avatarUrl"
         | "bannerUrl"
         | "gender"
         | "birthDate"
@@ -101,7 +101,7 @@ class UpdateIdentityDto
 
   @IsOptional()
   @IsUrl()
-  profilePictureUrl?: string | undefined;
+  avatarUrl?: string | undefined;
 
   @IsOptional()
   @IsUrl()
