@@ -1,0 +1,33 @@
+{
+  "name": "@tonightpass/nest",
+  "version": "0.0.0",
+  "description": "@tonightpass nest sdk.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tonightpass/tonightpass.git",
+    "directory": "packages/nest"
+  },
+  "bugs": "https://github.com/tonightpass/tonightpass/issues",
+  "homepage": "https://tonightpass.com",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
+  "dependencies": {
+    "pathcat": "^1.2.2",
+    "redaxios": "^0.5.1",
+    "tonightpass": "workspace:^"
+  },
+  "peerDependencies": {
+    "@nestjs/common": ">=8.x.x"
+  },
+  "devDependencies": {
+    "@nestjs/common": "10.3.7",
+    "@types/node": "20.12.7",
+    "typescript": "^5.0.0"
+  }
+}
