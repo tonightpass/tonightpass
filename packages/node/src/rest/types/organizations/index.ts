@@ -1,5 +1,10 @@
-import { Location, Profile, ProfileMetadata } from "..";
-import { CreateOrganizationDto, UpdateOrganizationDto } from "../../dtos";
+import { Location, Profile, ProfileMetadata, UserToken } from "..";
+import {
+  CreateOrganizationDto,
+  OrganizationMemberDto,
+  UpdateOrganizationDto,
+} from "../../dtos";
+import { UpdateOrganizationMemberDto } from "../../dtos/organizations/members/update-organization-member.dto";
 import { Endpoint } from "../../endpoints";
 import { Event } from "../event";
 import { EventTicket } from "../event/ticket";
@@ -43,13 +48,19 @@ export enum OrganizationSocialType {
 }
 
 export type OrganizationMember = {
-  user: User;
   organization: Organization;
   role: OrganizationMemberRole;
   status: OrganizationMemberStatus;
   updatedAt: Date;
   createdAt: Date;
-};
+} & (
+  | {
+      user: User;
+    }
+  | {
+      token: UserToken;
+    }
+);
 
 export enum OrganizationMemberStatus {
   Pending = "pending",
@@ -71,5 +82,22 @@ export type OrganizationEndpoints =
   | Endpoint<"PUT", "/organizations/:id", Organization, UpdateOrganizationDto>
   | Endpoint<"DELETE", "/organizations/:id", boolean>
   | Endpoint<"GET", "/organizations/members", OrganizationMember[]>
-  | Endpoint<"PUT", "/organizations/members/:id", OrganizationMember>
-  | Endpoint<"DELETE", "/organizations/members/:id", boolean>;
+  | Endpoint<"DELETE", "/organizations/members/:id", OrganizationMember[]>
+  | Endpoint<"GET", "/organizations/:id/members", OrganizationMember[]>
+  | Endpoint<
+      "POST",
+      "/organizations/:id/members",
+      OrganizationMember,
+      OrganizationMemberDto
+    >
+  | Endpoint<
+      "PUT",
+      "/organizations/:organizationId/members/:userId",
+      OrganizationMember,
+      UpdateOrganizationMemberDto
+    >
+  | Endpoint<
+      "DELETE",
+      "/organizations/:organizationId/members/:userId",
+      OrganizationMember[]
+    >;
