@@ -1,13 +1,14 @@
 import { Endpoint } from "../../endpoints";
+import { OrganizationIdentity } from "../organizations";
 import { UserIdentity } from "../users";
 
 export interface Profile {
   type: "user" | "organization";
 
   displayName: string;
-  description: string;
+  description?: string;
 
-  profilePictureUrl?: string;
+  avatarUrl?: string;
   bannerUrl?: string;
 
   metadata: ProfileMetadata;
@@ -26,5 +27,5 @@ export interface ProfileMetadata {
 export type ProfileEndpoints = Endpoint<
   "GET",
   "/profiles/:username",
-  UserIdentity
+  UserIdentity | OrganizationIdentity
 >;

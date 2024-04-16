@@ -23,14 +23,14 @@ export type EventTicket = {
 export type EventTicketType = "e-ticket" | "other";
 
 export enum EventTicketCategory {
-  ENTRY = "entry",
-  PACKAGE = "package",
-  MEAL = "meal",
-  DRINK = "drink",
-  PARKING = "parking",
-  ACCOMMODATION = "accommodation",
-  CAMPING = "camping",
-  LOCKER = "locker",
-  SHUTTLE = "shuttle",
-  OTHER = "other",
+  Entry = "entry",
+  Package = "package",
+  Meal = "meal",
+  Drink = "drink",
+  Parking = "parking",
+  Accommodation = "accommodation",
+  Camping = "camping",
+  Locker = "locker",
+  Shuttle = "shuttle",
+  Other = "other",
 }
