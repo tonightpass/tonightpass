@@ -32,7 +32,7 @@ export class CreateOrganizationDto {
   location?: Location;
 }
 
-class CreateOrganizationIdentityDto {
+export class CreateOrganizationIdentityDto {
   @IsString()
   @IsNotEmpty()
   @Length(1, 32)
@@ -59,7 +59,7 @@ class CreateOrganizationIdentityDto {
   socialLinks?: OrganizationSocialLink[];
 }
 
-class OrganizationMemberDto {
+export class OrganizationMemberDto {
   @IsString()
   @IsNotEmpty()
   user: string;
