@@ -2,12 +2,18 @@ import { User } from "../users";
 
 export type UserToken = {
   id: string;
-  user: User;
   type: UserTokenType;
   value: string;
   createdAt: Date;
   expiresAt: Date;
-};
+} & (
+  | {
+      user: User;
+    }
+  | {
+      identifier: string;
+    }
+);
 
 export enum UserTokenType {
   Authentication = "authentication",
