@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.17
+
+### Patch Changes
+
+- [#248](https://github.com/tonightpass/tonightpass/pull/248) [`4f58bb8`](https://github.com/tonightpass/tonightpass/commit/4f58bb85cc530bed87ace1fb13e4afe34fb09d9e) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Improve organization members structure for invites
+
 ## 0.0.16
 
 ### Patch Changes
