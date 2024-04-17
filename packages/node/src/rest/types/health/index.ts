@@ -13,5 +13,6 @@ export type Health<Key extends string> = {
 };
 
 export type HealthEndpoints =
+  | Endpoint<"GET", "/health", [Health<"app">, Health<"database">]>
   | Endpoint<"GET", "/health/database", Health<"database">>
   | Endpoint<"GET", "/health/http", Health<"app">>;

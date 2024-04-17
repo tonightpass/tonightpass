@@ -6,14 +6,9 @@ export type UserToken = {
   value: string;
   createdAt: Date;
   expiresAt: Date;
-} & (
-  | {
-      user: User;
-    }
-  | {
-      identifier: string;
-    }
-);
+  user?: User;
+  identifier?: string;
+};
 
 export enum UserTokenType {
   Authentication = "authentication",
