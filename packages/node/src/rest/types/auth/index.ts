@@ -6,4 +6,8 @@ export type AuthEndpoints =
   | Endpoint<"POST", "/auth/sign-up", User, CreateUserDto>
   | Endpoint<"POST", "/auth/sign-in", User, SignInUserDto>
   | Endpoint<"POST", "/auth/sign-out", null, null>
-  | Endpoint<"POST", "/auth/refresh-token", null, null>;
+  | Endpoint<"POST", "/auth/refresh-token", null, null>
+  | Endpoint<"GET", "/oauth2/google", void>
+  | Endpoint<"GET", "/oauth2/google/callback", void>
+  | Endpoint<"GET", "/oauth2/twitter", void>
+  | Endpoint<"GET", "/oauth2/twitter/callback", void>;

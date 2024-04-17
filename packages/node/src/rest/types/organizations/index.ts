@@ -53,14 +53,9 @@ export type OrganizationMember = {
   status: OrganizationMemberStatus;
   updatedAt: Date;
   createdAt: Date;
-} & (
-  | {
-      user: User;
-    }
-  | {
-      token: UserToken;
-    }
-);
+  user?: User;
+  token?: UserToken;
+};
 
 export enum OrganizationMemberStatus {
   Pending = "pending",
