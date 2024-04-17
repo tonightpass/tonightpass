@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.18
+
+### Patch Changes
+
+- [`9b2d618`](https://github.com/tonightpass/tonightpass/commit/9b2d61837809607233152c69dadc7861f5eed469) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add missing endpoints
+
 ## 0.0.17
 
 ### Patch Changes
