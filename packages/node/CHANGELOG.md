@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.20
+
+### Patch Changes
+
+- [`526dfe4`](https://github.com/tonightpass/tonightpass/commit/526dfe4fb6169bbadee2864ca6c17a9a04e61446) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update organization endpoints to use slug instead of id
+
 ## 0.0.19
 
 ### Patch Changes
