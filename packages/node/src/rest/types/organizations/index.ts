@@ -72,28 +72,27 @@ export enum OrganizationMemberRole {
 
 export type OrganizationEndpoints =
   | Endpoint<"GET", "/organizations", Organization[]>
-  | Endpoint<"GET", "/organizations/:id", Organization>
   | Endpoint<"GET", "/organizations/:slug", Organization>
   | Endpoint<"POST", "/organizations", Organization, CreateOrganizationDto>
-  | Endpoint<"PUT", "/organizations/:id", Organization, UpdateOrganizationDto>
-  | Endpoint<"DELETE", "/organizations/:id", boolean>
+  | Endpoint<"PUT", "/organizations/:slug", Organization, UpdateOrganizationDto>
+  | Endpoint<"DELETE", "/organizations/:slug", boolean>
   | Endpoint<"GET", "/organizations/members", OrganizationMember[]>
   | Endpoint<"DELETE", "/organizations/members/:id", OrganizationMember[]>
-  | Endpoint<"GET", "/organizations/:id/members", OrganizationMember[]>
+  | Endpoint<"GET", "/organizations/:slug/members", OrganizationMember[]>
   | Endpoint<
       "POST",
-      "/organizations/:id/members",
+      "/organizations/:slug/members",
       OrganizationMember,
       OrganizationMemberDto
     >
   | Endpoint<
       "PUT",
-      "/organizations/:organizationId/members/:userId",
+      "/organizations/:organizationSlug/members/:userId",
       OrganizationMember,
       UpdateOrganizationMemberDto
     >
   | Endpoint<
       "DELETE",
-      "/organizations/:organizationId/members/:userId",
+      "/organizations/:organizationSlug/members/:userId",
       OrganizationMember[]
     >;
