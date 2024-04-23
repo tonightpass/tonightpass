@@ -88,12 +88,13 @@ export class Client {
 
   async delete<Path extends Extract<Endpoints, { method: "DELETE" }>["path"]>(
     path: Path,
+    body: Extract<Endpoints, { path: Path; method: "DELETE" }>["body"],
     query?: Query<Path>,
     options?: APIRequestOptions,
   ) {
     return this.requester<
       Extract<Endpoints, { path: Path; method: "DELETE" }>["res"]
-    >("DELETE", path, undefined, query, options);
+    >("DELETE", path, body, query, options);
   }
 
   private async requester<T>(

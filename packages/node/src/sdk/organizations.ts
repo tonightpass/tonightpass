@@ -9,10 +9,10 @@ export const organizations = sdk((client) => ({
   update: async (slug: string, data: UpdateOrganizationDto) =>
     client.put("/organizations/:slug", data, { slug }),
   delete: async (slug: string) =>
-    client.delete("/organizations/:slug", { slug }),
+    client.delete("/organizations/:slug", null, { slug }),
   members: {
     getAll: async () => client.get("/organizations/members"),
     delete: async (id: string) =>
-      client.delete("/organizations/members/:id", { id }),
+      client.delete("/organizations/members/:id", null, { id }),
   },
 }));
