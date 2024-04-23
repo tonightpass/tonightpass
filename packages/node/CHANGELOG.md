@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.21
+
+### Patch Changes
+
+- [`04366e1`](https://github.com/tonightpass/tonightpass/commit/04366e12d773fe5538079874c0cfafbcd7149f70) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update delete method in client class to include a body parameter
+
 ## 0.0.20
 
 ### Patch Changes
