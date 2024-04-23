@@ -75,9 +75,9 @@ export type OrganizationEndpoints =
   | Endpoint<"GET", "/organizations/:slug", Organization>
   | Endpoint<"POST", "/organizations", Organization, CreateOrganizationDto>
   | Endpoint<"PUT", "/organizations/:slug", Organization, UpdateOrganizationDto>
-  | Endpoint<"DELETE", "/organizations/:slug", boolean>
+  | Endpoint<"DELETE", "/organizations/:slug", boolean, null>
   | Endpoint<"GET", "/organizations/members", OrganizationMember[]>
-  | Endpoint<"DELETE", "/organizations/members/:id", OrganizationMember[]>
+  | Endpoint<"DELETE", "/organizations/members/:id", OrganizationMember[], null>
   | Endpoint<"GET", "/organizations/:slug/members", OrganizationMember[]>
   | Endpoint<
       "POST",
@@ -94,5 +94,6 @@ export type OrganizationEndpoints =
   | Endpoint<
       "DELETE",
       "/organizations/:organizationSlug/members/:userId",
-      OrganizationMember[]
+      OrganizationMember[],
+      null
     >;
