@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.19
+
+### Patch Changes
+
+- [`5c24d62`](https://github.com/tonightpass/tonightpass/commit/5c24d621c8452de1885ab92e1588322828159ec2) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add new endpoint for getting organization by slug
+
 ## 0.0.18
 
 ### Patch Changes
