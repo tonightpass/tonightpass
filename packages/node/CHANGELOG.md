@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.22
+
+### Patch Changes
+
+- [#261](https://github.com/tonightpass/tonightpass/pull/261) [`e24d1ba`](https://github.com/tonightpass/tonightpass/commit/e24d1ba39a9d1fa311b480d11515819b20b0ce54) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add OrganizationBilling type to Organization interface
+
 ## 0.0.21
 
 ### Patch Changes
