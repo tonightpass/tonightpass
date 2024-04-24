@@ -19,8 +19,13 @@ export type Organization = {
   events: Event[];
   savedTickets: EventTicket[];
   verified: boolean;
+  billing: OrganizationBilling;
   updatedAt: Date;
   createdAt: Date;
+};
+
+export type OrganizationBilling = {
+  account: string;
 };
 
 export type OrganizationIdentity = Profile & {
@@ -96,4 +101,5 @@ export type OrganizationEndpoints =
       "/organizations/:organizationSlug/members/:userId",
       OrganizationMember[],
       null
-    >;
+    >
+  | Endpoint<"GET", "/organizations/:slug/billing/link", void>;
