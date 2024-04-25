@@ -1,5 +1,6 @@
 import { sdk } from "./builder";
 import { CreateOrganizationDto, UpdateOrganizationDto } from "../rest";
+import { isBrowser } from "../utils";
 
 export const organizations = sdk((client) => ({
   getAll: async () => client.get("/organizations"),
@@ -14,5 +15,16 @@ export const organizations = sdk((client) => ({
     getAll: async () => client.get("/organizations/members"),
     delete: async (id: string) =>
       client.delete("/organizations/members/:id", null, { id }),
+  },
+  billing: {
+    link: (slug: string) => {
+      if (isBrowser) {
+        window.location.href = client.url("/organizations/:slug/billing/link", {
+          slug,
+        });
+      } else {
+        throw new Error("Billing link is only available in the browser");
+      }
+    },
   },
 }));
