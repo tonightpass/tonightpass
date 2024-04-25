@@ -102,4 +102,5 @@ export type OrganizationEndpoints =
       OrganizationMember[],
       null
     >
-  | Endpoint<"GET", "/organizations/:slug/billing/link", void>;
+  | Endpoint<"GET", "/organizations/:slug/billing/link", void>
+  | Endpoint<"GET", "/organizations/:slug/billing/dashboard", void>;

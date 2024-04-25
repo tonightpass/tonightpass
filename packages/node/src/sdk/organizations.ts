@@ -26,5 +26,17 @@ export const organizations = sdk((client) => ({
         throw new Error("Billing link is only available in the browser");
       }
     },
+    dashboard: (slug: string) => {
+      if (isBrowser) {
+        window.location.href = client.url(
+          "/organizations/:slug/billing/dashboard",
+          {
+            slug,
+          },
+        );
+      } else {
+        throw new Error("Billing dashboard is only available in the browser");
+      }
+    },
   },
 }));
