@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.24
+
+### Patch Changes
+
+- [`6da4940`](https://github.com/tonightpass/tonightpass/commit/6da4940b7272bfbf2d4e1d9c309f7dfdd5542ddc) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add organization billing dashboard
+
 ## 0.0.23
 
 ### Patch Changes
