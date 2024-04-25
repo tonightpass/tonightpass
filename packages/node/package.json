@@ -23,7 +23,8 @@
     "class-validator": "^0.14.0",
     "pathcat": "^1.2.2",
     "redaxios": "^0.5.1",
-    "reflect-metadata": "^0.2.1"
+    "reflect-metadata": "^0.2.1",
+    "stripe": "^15.3.0"
   },
   "devDependencies": {
     "@anatine/esbuild-decorators": "^0.2.19",
