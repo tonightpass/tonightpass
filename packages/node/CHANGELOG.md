@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.23
+
+### Patch Changes
+
+- [`994066c`](https://github.com/tonightpass/tonightpass/commit/994066c83c282d9645894366557bcaa276b23904) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add oauth2 and organization billing to sdk
+
 ## 0.0.22
 
 ### Patch Changes
