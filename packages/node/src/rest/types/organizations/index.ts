@@ -1,3 +1,5 @@
+import type Stripe from "stripe";
+
 import { Location, Profile, ProfileMetadata, UserToken } from "..";
 import {
   CreateOrganizationDto,
@@ -27,6 +29,8 @@ export type Organization = {
 export type OrganizationBilling = {
   account: string;
 };
+
+export type OrganizationBillingAccount = Stripe.Account;
 
 export type OrganizationIdentity = Profile & {
   socialLinks: OrganizationSocialLink[];
@@ -101,6 +105,11 @@ export type OrganizationEndpoints =
       "/organizations/:organizationSlug/members/:userId",
       OrganizationMember[],
       null
+    >
+  | Endpoint<
+      "GET",
+      "/organizations/:slug/billing/account",
+      OrganizationBillingAccount
     >
   | Endpoint<"GET", "/organizations/:slug/billing/link", void>
   | Endpoint<"GET", "/organizations/:slug/billing/dashboard", void>;
