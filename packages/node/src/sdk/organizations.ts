@@ -17,6 +17,8 @@ export const organizations = sdk((client) => ({
       client.delete("/organizations/members/:id", null, { id }),
   },
   billing: {
+    account: async (slug: string) =>
+      client.get("/organizations/:slug/billing/account", { slug }),
     link: (slug: string) => {
       if (isBrowser) {
         window.location.href = client.url("/organizations/:slug/billing/link", {
