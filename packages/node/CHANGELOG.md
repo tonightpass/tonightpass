@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.25
+
+### Patch Changes
+
+- [`3e3e46a`](https://github.com/tonightpass/tonightpass/commit/3e3e46aca54e867b6b88d7a57c2515fd3c0bf6f5) Thanks [@jerembdn](https://github.com/jerembdn)! - Add PromisedAPIResponse
+
 ## 0.0.24
 
 ### Patch Changes
