@@ -1,6 +1,6 @@
 export * from "./auth";
 export * from "./careers";
-export * from "./event";
+export * from "./organizations/events";
 export * from "./health";
 export * from "./organizations";
 export * from "./token";

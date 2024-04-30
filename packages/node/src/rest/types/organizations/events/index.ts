@@ -1,8 +1,8 @@
-import { EventTicket } from "./ticket";
-import { Location } from "..";
-import { Organization } from "../organizations";
+import { EventTicket } from "./tickets";
+import { Organization } from "..";
+import { Location } from "../..";
 
-export * from "./ticket";
+export * from "./tickets";
 
 export type Event = {
   title: string;

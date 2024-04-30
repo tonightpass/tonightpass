@@ -8,8 +8,8 @@ import {
 } from "../../dtos";
 import { UpdateOrganizationMemberDto } from "../../dtos/organizations/members/update-organization-member.dto";
 import { Endpoint } from "../../endpoints";
-import { Event } from "../event";
-import { EventTicket } from "../event/ticket";
+import { Event } from "./events";
+import { EventTicket } from "./events/tickets";
 import { User } from "../users";
 
 export type Organization = {
