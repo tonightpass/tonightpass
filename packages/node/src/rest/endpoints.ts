@@ -24,6 +24,8 @@ export type ErroredAPIResponse = {
 
 export type APIResponse<T> = SuccessfulAPIResponse<T> | ErroredAPIResponse;
 
+export type PromisedAPIResponse<T> = Promise<APIResponse<T>>;
+
 export type Endpoint<
   M extends Options["method"],
   Path extends string,
