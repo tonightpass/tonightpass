@@ -1,4 +1,8 @@
 import {
+  OrganizationEventStyle,
+  OrganizationEventStyleEndpoints,
+} from "./styles";
+import {
   OrganizationEventTicket,
   Organization,
   OrganizationEventTicketEndpoints,
@@ -11,6 +15,7 @@ import {
 import { Endpoint } from "../../../endpoints";
 
 export * from "./tickets";
+export * from "./styles";
 
 export type OrganizationEvent = {
   title: string;
@@ -53,20 +58,6 @@ export enum OrganizationEventType {
   Membership = "membership",
 }
 
-export type OrganizationEventStyle = {
-  type: OrganizationEventStyleType;
-  emoji: string;
-  name: string;
-};
-
-export enum OrganizationEventStyleType {
-  Music = "music",
-  Dress = "dress",
-  Sport = "sport",
-  Food = "food",
-  Art = "art",
-}
-
 export type OrganizationEventEndpoints =
   | Endpoint<"GET", "/organizations/:organizationSlug/events", Event[]>
   | Endpoint<"GET", "/organizations/:organizationSlug/events/:eventSlug", Event>
@@ -88,4 +79,5 @@ export type OrganizationEventEndpoints =
       Event,
       null
     >
+  | OrganizationEventStyleEndpoints
   | OrganizationEventTicketEndpoints;

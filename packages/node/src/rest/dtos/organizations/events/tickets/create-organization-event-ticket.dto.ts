@@ -5,7 +5,6 @@ import {
 } from "../../../../types";
 
 export class CreateOrganizationEventTicketDto {
-  id: string;
   name: string;
   description?: string;
   price: number;
