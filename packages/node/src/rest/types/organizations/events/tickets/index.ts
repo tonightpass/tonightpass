@@ -1,14 +1,19 @@
 import { Currency } from "../../..";
+import {
+  CreateOrganizationEventTicketDto,
+  UpdateOrganizationEventTicketDto,
+} from "../../../../dtos";
+import { Endpoint } from "../../../../endpoints";
 
-export type EventTicket = {
+export type OrganizationEventTicket = {
   id: string;
   name: string;
   description?: string;
   price: number;
   displayPrice: number;
   quantity: number;
-  type: EventTicketType;
-  category: EventTicketCategory;
+  type: OrganizationEventTicketType;
+  category: OrganizationEventTicketCategory;
   currency: Currency;
   vatRate: number;
   externalId?: string;
@@ -20,9 +25,9 @@ export type EventTicket = {
   createdAt: Date;
 };
 
-export type EventTicketType = "e-ticket" | "other";
+export type OrganizationEventTicketType = "e-ticket" | "other";
 
-export enum EventTicketCategory {
+export enum OrganizationEventTicketCategory {
   Entry = "entry",
   Package = "package",
   Meal = "meal",
@@ -34,3 +39,33 @@ export enum EventTicketCategory {
   Shuttle = "shuttle",
   Other = "other",
 }
+
+export type OrganizationEventTicketEndpoints =
+  | Endpoint<
+      "GET",
+      "/organizations/:slug/events/:eventSlug/tickets",
+      OrganizationEventTicket[]
+    >
+  | Endpoint<
+      "GET",
+      "/organizations/:slug/events/:eventSlug/tickets/:ticketId",
+      OrganizationEventTicket
+    >
+  | Endpoint<
+      "POST",
+      "/organizations/:slug/events/:eventSlug/tickets",
+      OrganizationEventTicket,
+      CreateOrganizationEventTicketDto
+    >
+  | Endpoint<
+      "PUT",
+      "/organizations/:slug/events/:eventSlug/tickets/:ticketId",
+      OrganizationEventTicket,
+      UpdateOrganizationEventTicketDto
+    >
+  | Endpoint<
+      "DELETE",
+      "/organizations/:slug/events/:eventSlug/tickets/:ticketId",
+      OrganizationEventTicket[],
+      null
+    >;

@@ -1,5 +1,5 @@
 import { Currency } from "..";
-import { Event, EventTicket } from "../organizations/events";
+import { OrganizationEvent, OrganizationEventTicket } from "../organizations";
 import { User } from "../users";
 
 export enum OrderStatus {
@@ -16,7 +16,7 @@ export enum OrderStatus {
 
 export type OrderItem = {
   id: string;
-  ticket: EventTicket;
+  ticket: OrganizationEventTicket;
   isUsed: boolean;
   updatedAt: Date;
   createdAt: Date;
@@ -27,7 +27,7 @@ export type Order = {
   owner: User;
   members: User[];
   status: OrderStatus;
-  event: Event;
+  event: OrganizationEvent;
   items: OrderItem[];
   promoCode?: PromoCode;
   total: number;
