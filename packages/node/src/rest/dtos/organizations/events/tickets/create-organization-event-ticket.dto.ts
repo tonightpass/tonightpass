@@ -1,21 +1,20 @@
 import {
   Currency,
-  EventTicketCategory,
-  EventTicketType,
+  OrganizationEventTicketCategory,
+  OrganizationEventTicketType,
 } from "../../../../types";
 
-export type CreateTicketDto = {
+export class CreateOrganizationEventTicketDto {
   id: string;
   name: string;
   description?: string;
   price: number;
   quantity: number;
-  type: EventTicketType;
-  category: EventTicketCategory;
+  type: OrganizationEventTicketType;
+  category: OrganizationEventTicketCategory;
   currency: Currency;
-  vatRate: number;
   isVisible: boolean;
   isFeesIncluded: boolean;
   startAt: Date;
   endAt: Date;
-};
+}

@@ -1,28 +1,36 @@
-import { EventTicket } from "./tickets";
-import { Organization } from "..";
+import {
+  OrganizationEventTicket,
+  Organization,
+  OrganizationEventTicketEndpoints,
+} from "..";
 import { Location } from "../..";
+import {
+  CreateOrganizationEventDto,
+  UpdateOrganizationEventDto,
+} from "../../../dtos";
+import { Endpoint } from "../../../endpoints";
 
 export * from "./tickets";
 
-export type Event = {
+export type OrganizationEvent = {
   title: string;
   description: string;
   slug: string;
   organization: Organization;
-  type: EventType;
+  type: OrganizationEventType;
   public: boolean;
   flyers: string[];
   trailers: string[];
   location: Location;
-  tickets: EventTicket[];
-  styles: EventStyle[];
+  tickets: OrganizationEventTicket[];
+  styles: OrganizationEventStyle[];
   startAt: Date;
   endAt: Date;
   updatedAt: Date;
   createdAt: Date;
 };
 
-export enum EventType {
+export enum OrganizationEventType {
   Clubbing = "clubbing",
   Concert = "concert",
   Afterwork = "afterwork",
@@ -45,16 +53,39 @@ export enum EventType {
   Membership = "membership",
 }
 
-export type EventStyle = {
-  type: EventStyleType;
+export type OrganizationEventStyle = {
+  type: OrganizationEventStyleType;
   emoji: string;
   name: string;
 };
 
-export enum EventStyleType {
+export enum OrganizationEventStyleType {
   Music = "music",
   Dress = "dress",
   Sport = "sport",
   Food = "food",
   Art = "art",
 }
+
+export type OrganizationEventEndpoints =
+  | Endpoint<"GET", "/organizations/:organizationSlug/events", Event[]>
+  | Endpoint<"GET", "/organizations/:organizationSlug/events/:eventSlug", Event>
+  | Endpoint<
+      "POST",
+      "/organizations/:organizationSlug/events",
+      Event,
+      CreateOrganizationEventDto
+    >
+  | Endpoint<
+      "PUT",
+      "/organizations/:organizationSlug/events/:eventSlug",
+      Event,
+      UpdateOrganizationEventDto
+    >
+  | Endpoint<
+      "DELETE",
+      "/organizations/:organizationSlug/events/:eventSlug",
+      Event,
+      null
+    >
+  | OrganizationEventTicketEndpoints;
