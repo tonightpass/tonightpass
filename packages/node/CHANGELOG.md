@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.29
+
+### Patch Changes
+
+- [`f463152`](https://github.com/tonightpass/tonightpass/commit/f463152a13441ebd6ea4006ce971203eb17c9b85) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix location import in create organization event dtos
+
 ## 0.0.28
 
 ### Patch Changes
