@@ -1,5 +1,9 @@
 import { CreateOrganizationEventTicketDto } from "./tickets";
-import { OrganizationEventStyle, OrganizationEventType } from "../../../types";
+import {
+  Location,
+  OrganizationEventStyle,
+  OrganizationEventType,
+} from "../../../types";
 
 export class CreateOrganizationEventDto {
   title: string;
