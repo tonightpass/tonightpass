@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.28
+
+### Patch Changes
+
+- [`2b069df`](https://github.com/tonightpass/tonightpass/commit/2b069df59fcd5a51e4acf4ebd71826e878da7b31) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix create organization event dtos
+
 ## 0.0.27
 
 ### Patch Changes
