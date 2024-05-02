@@ -2,7 +2,9 @@ import { CreateOrganizationEventTicketDto } from "./tickets";
 import { OrganizationEventStyle, OrganizationEventType } from "../../../types";
 
 export class CreateOrganizationEventDto {
-  slug: string;
+  title: string;
+  description: string;
+  organization: string;
   type: OrganizationEventType;
   public: boolean;
   flyers: string[];
