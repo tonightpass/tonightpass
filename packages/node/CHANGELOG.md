@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.27
+
+### Patch Changes
+
+- [#281](https://github.com/tonightpass/tonightpass/pull/281) [`d3ef400`](https://github.com/tonightpass/tonightpass/commit/d3ef400d824daf8f4506a753a8b3b1abb80df068) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add organization event style types, dtos, endpoints and sdk
+
 ## 0.0.26
 
 ### Patch Changes
