@@ -1,12 +1,11 @@
-import { Currency } from "../../..";
+import { Base, Currency } from "../../..";
 import {
   CreateOrganizationEventTicketDto,
   UpdateOrganizationEventTicketDto,
 } from "../../../../dtos";
 import { Endpoint } from "../../../../endpoints";
 
-export type OrganizationEventTicket = {
-  id: string;
+export type OrganizationEventTicket = Base & {
   name: string;
   description?: string;
   price: number;
@@ -21,8 +20,6 @@ export type OrganizationEventTicket = {
   isFeesIncluded: boolean;
   startAt: Date;
   endAt: Date;
-  updatedAt: Date;
-  createdAt: Date;
 };
 
 export type OrganizationEventTicketType = "e-ticket" | "other";

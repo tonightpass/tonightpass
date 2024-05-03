@@ -1,9 +1,15 @@
-import { Currency, Language, Location, Profile, ProfileMetadata } from "..";
+import {
+  Base,
+  Currency,
+  Language,
+  Location,
+  Profile,
+  ProfileMetadata,
+} from "..";
 import { UpdateUserDto } from "../../dtos";
 import { Endpoint } from "../../endpoints";
 
-export type User = {
-  id: string;
+export type User = Base & {
   identifier: UserIdentifier;
   password: string;
   identity: UserIdentity;
@@ -12,8 +18,6 @@ export type User = {
   preferences: UserPreferences;
   connections: UserConnection[];
   verified: boolean;
-  updatedAt: Date;
-  createdAt: Date;
 };
 
 export type UserIdentifier = {

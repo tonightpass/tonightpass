@@ -1,10 +1,11 @@
+import { Base } from "../../..";
 import {
   CreateOrganizationEventStyleDto,
   UpdateOrganizationEventStyleDto,
 } from "../../../../dtos/organizations/events/events";
 import { Endpoint } from "../../../../endpoints";
 
-export type OrganizationEventStyle = {
+export type OrganizationEventStyle = Base & {
   type: OrganizationEventStyleType;
   emoji: string;
   name: string;

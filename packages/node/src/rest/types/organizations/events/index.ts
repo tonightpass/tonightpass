@@ -7,7 +7,7 @@ import {
   Organization,
   OrganizationEventTicketEndpoints,
 } from "..";
-import { Location } from "../..";
+import { Base, Location } from "../..";
 import {
   CreateOrganizationEventDto,
   UpdateOrganizationEventDto,
@@ -17,7 +17,7 @@ import { Endpoint } from "../../../endpoints";
 export * from "./tickets";
 export * from "./styles";
 
-export type OrganizationEvent = {
+export type OrganizationEvent = Base & {
   title: string;
   description: string;
   slug: string;
@@ -31,8 +31,6 @@ export type OrganizationEvent = {
   styles: OrganizationEventStyle[];
   startAt: Date;
   endAt: Date;
-  updatedAt: Date;
-  createdAt: Date;
 };
 
 export enum OrganizationEventType {

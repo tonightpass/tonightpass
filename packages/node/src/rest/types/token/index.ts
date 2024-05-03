@@ -1,10 +1,9 @@
+import { Base } from "..";
 import { User } from "../users";
 
-export type UserToken = {
-  id: string;
+export type UserToken = Base & {
   type: UserTokenType;
   value: string;
-  createdAt: Date;
   expiresAt: Date;
   user?: User;
   identifier?: string;
