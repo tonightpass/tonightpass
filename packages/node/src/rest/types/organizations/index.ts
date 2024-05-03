@@ -3,15 +3,14 @@ import type Stripe from "stripe";
 import { OrganizationEvent, OrganizationEventEndpoints } from "./events";
 import { OrganizationEventTicket } from "./events/tickets";
 import { OrganizationMember, OrganizationMembersEndpoints } from "./members";
-import { Location, Profile, ProfileMetadata } from "..";
+import { Base, Location, Profile, ProfileMetadata } from "..";
 import { CreateOrganizationDto, UpdateOrganizationDto } from "../../dtos";
 import { Endpoint } from "../../endpoints";
 
 export * from "./events";
 export * from "./members";
 
-export type Organization = {
-  id: string;
+export type Organization = Base & {
   slug: string;
   identity: OrganizationIdentity;
   members: OrganizationMember[];
@@ -20,8 +19,6 @@ export type Organization = {
   savedTickets: OrganizationEventTicket[];
   verified: boolean;
   billing: OrganizationBilling;
-  updatedAt: Date;
-  createdAt: Date;
 };
 
 export type OrganizationBilling = {

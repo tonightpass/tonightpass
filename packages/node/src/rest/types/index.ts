@@ -7,6 +7,14 @@ export * from "./users";
 export * from "./order";
 export * from "./profiles";
 
+export type Base = {
+  id: string;
+  createdAt: Date;
+  updatedAt: Date;
+};
+
+export type WithoutBase<T> = Omit<T, keyof Base>;
+
 export type Location = {
   name?: string;
   address: string;

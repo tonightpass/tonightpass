@@ -1,16 +1,15 @@
 import { Organization } from "..";
+import { Base } from "../..";
 import { OrganizationMemberDto } from "../../../dtos";
 import { UpdateOrganizationMemberDto } from "../../../dtos/organizations/members/update-organization-member.dto";
 import { Endpoint } from "../../../endpoints";
 import { UserToken } from "../../token";
 import { User } from "../../users";
 
-export type OrganizationMember = {
+export type OrganizationMember = Base & {
   organization: Organization;
   role: OrganizationMemberRole;
   status: OrganizationMemberStatus;
-  updatedAt: Date;
-  createdAt: Date;
   user?: User;
   token?: UserToken;
 };
