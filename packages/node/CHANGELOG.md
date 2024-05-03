@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.31
+
+### Patch Changes
+
+- [`24a64ea`](https://github.com/tonightpass/tonightpass/commit/24a64ea7451fe03b7f04d760c821dabba3e96443) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add base type
+
 ## 0.0.30
 
 ### Patch Changes
