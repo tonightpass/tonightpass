@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.32
+
+### Patch Changes
+
+- [`eaaef01`](https://github.com/tonightpass/tonightpass/commit/eaaef0116082deac3d6a0c1ed68730a0ab738d4e) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix token type
+
 ## 0.0.31
 
 ### Patch Changes
