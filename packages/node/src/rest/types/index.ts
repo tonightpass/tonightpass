@@ -13,7 +13,7 @@ export type Base = {
   updatedAt: Date;
 };
 
-export type WithoutBase<T> = Omit<T, keyof Base>;
+export type ExcludeBase<T> = Omit<T, keyof Base>;
 
 export type Location = {
   name?: string;
