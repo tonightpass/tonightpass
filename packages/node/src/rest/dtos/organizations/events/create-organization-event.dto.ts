@@ -1,9 +1,5 @@
 import { CreateOrganizationEventTicketDto } from "./tickets";
-import {
-  Location,
-  OrganizationEventStyle,
-  OrganizationEventType,
-} from "../../../types";
+import { Location, OrganizationEventType } from "../../../types";
 
 export class CreateOrganizationEventDto {
   title: string;
@@ -15,7 +11,7 @@ export class CreateOrganizationEventDto {
   trailers: string[];
   location: Location;
   tickets: CreateOrganizationEventTicketDto[];
-  styles: OrganizationEventStyle[];
+  styles: string[];
   startAt: Date;
   endAt: Date;
 }
