@@ -1,12 +1,12 @@
 import { organizationsEventsStyles } from "./styles";
 import { organizationsEventsTickets } from "./tickets";
 import {
+  Client,
   CreateOrganizationEventDto,
   UpdateOrganizationEventDto,
 } from "../../../rest";
-import { sdk } from "../../builder";
 
-export const organizationsEvents = sdk((client) => ({
+export const organizationsEvents = (client: Client) => ({
   getAll: async (organizationSlug: string) =>
     client.get("/organizations/:organizationSlug/events", {
       organizationSlug,
@@ -34,6 +34,6 @@ export const organizationsEvents = sdk((client) => ({
       organizationSlug,
       eventSlug,
     }),
-  styles: organizationsEventsStyles,
-  tickets: organizationsEventsTickets,
-}));
+  styles: organizationsEventsStyles(client),
+  tickets: organizationsEventsTickets(client),
+});

@@ -1,7 +1,7 @@
+import { Client } from "../../../rest";
 import { isBrowser } from "../../../utils";
-import { sdk } from "../../builder";
 
-export const organizationsBilling = sdk((client) => ({
+export const organizationsBilling = (client: Client) => ({
   account: async (slug: string) =>
     client.get("/organizations/:slug/billing/account", { slug }),
   link: (slug: string) => {
@@ -25,4 +25,4 @@ export const organizationsBilling = sdk((client) => ({
       throw new Error("Billing dashboard is only available in the browser");
     }
   },
-}));
+});
