@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.33
+
+### Patch Changes
+
+- [`b88f3c9`](https://github.com/tonightpass/tonightpass/commit/b88f3c9fe88f6c6a97ade72e8e645f0cc34fc8dc) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix sdk sub modules
+
 ## 0.0.32
 
 ### Patch Changes
