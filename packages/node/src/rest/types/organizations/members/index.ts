@@ -1,6 +1,6 @@
 import { Organization } from "..";
 import { Base } from "../..";
-import { OrganizationMemberDto } from "../../../dtos";
+import { CreateOrganizationMemberDto } from "../../../dtos";
 import { UpdateOrganizationMemberDto } from "../../../dtos/organizations/members/update-organization-member.dto";
 import { Endpoint } from "../../../endpoints";
 import { UserToken } from "../../token";
@@ -35,7 +35,7 @@ export type OrganizationMembersEndpoints =
       "POST",
       "/organizations/:slug/members",
       OrganizationMember,
-      OrganizationMemberDto
+      CreateOrganizationMemberDto
     >
   | Endpoint<
       "PUT",

@@ -1,6 +1,6 @@
 import {
   IsArray,
-  IsEnum,
+  IsLowercase,
   IsNotEmpty,
   IsObject,
   IsOptional,
@@ -9,23 +9,21 @@ import {
   Length,
 } from "class-validator";
 
-import {
-  OrganizationMemberRole,
-  type Location,
-  type OrganizationSocialLink,
-} from "../../types";
+import { CreateOrganizationMemberDto } from "./members/create-organization-member.dto";
+import { type Location, type OrganizationSocialLink } from "../../types";
 
 export class CreateOrganizationDto {
   @IsOptional()
   @IsString()
-  @Length(1, 128)
+  @IsLowercase()
+  @Length(1, 48)
   slug?: string;
 
   @IsObject()
   identity: CreateOrganizationIdentityDto;
 
   @IsArray()
-  members: OrganizationMemberDto[];
+  members: CreateOrganizationMemberDto[];
 
   @IsOptional()
   @IsObject()
@@ -57,14 +55,4 @@ export class CreateOrganizationIdentityDto {
   @IsOptional()
   @IsArray()
   socialLinks?: OrganizationSocialLink[];
-}
-
-export class OrganizationMemberDto {
-  @IsString()
-  @IsNotEmpty()
-  user: string;
-
-  @IsEnum(OrganizationMemberRole)
-  @IsNotEmpty()
-  role: OrganizationMemberRole;
 }

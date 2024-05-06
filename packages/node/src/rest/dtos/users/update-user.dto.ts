@@ -32,8 +32,8 @@ export class UpdateUserDto {
 
   @IsOptional()
   @IsString()
-  @MinLength(6)
-  @MaxLength(130)
+  @MinLength(8)
+  @MaxLength(128)
   password?: string;
 }
 
@@ -75,7 +75,7 @@ class UpdateIdentityDto
 {
   @IsOptional()
   @IsString()
-  @Length(2, 50)
+  @Length(2, 32)
   @Matches(NAME_REGEX, {
     message: "First name must be composed of letters only",
   })
@@ -83,7 +83,7 @@ class UpdateIdentityDto
 
   @IsOptional()
   @IsString()
-  @Length(2, 50)
+  @Length(2, 32)
   @Matches(NAME_REGEX, {
     message: "Last name must be composed of letters only",
   })
@@ -96,7 +96,7 @@ class UpdateIdentityDto
 
   @IsOptional()
   @IsString()
-  @Length(15, 500)
+  @Length(1, 128)
   description?: string;
 
   @IsOptional()
