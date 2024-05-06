@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.34
+
+### Patch Changes
+
+- [`8bdbbc9`](https://github.com/tonightpass/tonightpass/commit/8bdbbc9236b978cc1cb5683e2e063431c018875d) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update dtos with class-validator
+
 ## 0.0.33
 
 ### Patch Changes
