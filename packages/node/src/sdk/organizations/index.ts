@@ -13,7 +13,7 @@ export const organizations = sdk((client) => ({
     client.put("/organizations/:slug", data, { slug }),
   delete: async (slug: string) =>
     client.delete("/organizations/:slug", null, { slug }),
-  billing: organizationsBilling,
-  events: organizationsEvents,
-  members: organizationsMembers,
+  billing: organizationsBilling(client),
+  events: organizationsEvents(client),
+  members: organizationsMembers(client),
 }));

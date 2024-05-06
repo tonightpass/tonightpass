@@ -1,10 +1,10 @@
 import {
+  Client,
   CreateOrganizationEventTicketDto,
   UpdateOrganizationEventTicketDto,
 } from "../../../../rest";
-import { sdk } from "../../../builder";
 
-export const organizationsEventsTickets = sdk((client) => ({
+export const organizationsEventsTickets = (client: Client) => ({
   getAll: async (slug: string, eventSlug: string) =>
     client.get("/organizations/:slug/events/:eventSlug/tickets", {
       slug,
@@ -50,4 +50,4 @@ export const organizationsEventsTickets = sdk((client) => ({
         ticketId,
       },
     ),
-}));
+});
