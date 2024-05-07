@@ -21,11 +21,11 @@ export class UpdateOrganizationDto {
 
   @IsObject()
   @IsOptional()
-  identity: UpdateOrganizationIdentityDto;
+  identity?: UpdateOrganizationIdentityDto;
 
   @IsOptional()
   @IsArray()
-  members: UpdateOrganizationEventDto[];
+  members?: UpdateOrganizationEventDto[];
 
   @IsOptional()
   @IsObject()
@@ -37,13 +37,13 @@ export class UpdateOrganizationIdentityDto {
   @IsNotEmpty()
   @Length(1, 32)
   @IsOptional()
-  displayName: string;
+  displayName?: string;
 
   @IsString()
   @IsNotEmpty()
   @Length(16, 1024)
   @IsOptional()
-  description: string;
+  description?: string;
 
   @IsUrl({
     protocols: ["http", "https"],
