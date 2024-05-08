@@ -4,7 +4,6 @@ import { Location, OrganizationEventType } from "../../../types";
 export class CreateOrganizationEventDto {
   title: string;
   description: string;
-  organization: string;
   type: OrganizationEventType;
   public: boolean;
   flyers: string[];
