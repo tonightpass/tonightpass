@@ -57,11 +57,11 @@ export enum OrganizationEventType {
 }
 
 export type OrganizationEventEndpoints =
-  | Endpoint<"GET", "/organizations/:organizationSlug/events", Event[]>
+  | Endpoint<"GET", "/organizations/:slug/events", Event[]>
   | Endpoint<"GET", "/organizations/:organizationSlug/events/:eventSlug", Event>
   | Endpoint<
       "POST",
-      "/organizations/:organizationSlug/events",
+      "/organizations/:slug/events",
       Event,
       CreateOrganizationEventDto
     >

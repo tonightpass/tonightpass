@@ -7,18 +7,18 @@ import {
 } from "../../../rest";
 
 export const organizationsEvents = (client: Client) => ({
-  getAll: async (organizationSlug: string) =>
-    client.get("/organizations/:organizationSlug/events", {
-      organizationSlug,
+  getAll: async (slug: string) =>
+    client.get("/organizations/:slug/events", {
+      slug,
     }),
   get: async (organizationSlug: string, eventSlug: string) =>
     client.get("/organizations/:organizationSlug/events/:eventSlug", {
       organizationSlug,
       eventSlug,
     }),
-  create: async (organizationSlug: string, data: CreateOrganizationEventDto) =>
-    client.post("/organizations/:organizationSlug/events", data, {
-      organizationSlug,
+  create: async (slug: string, data: CreateOrganizationEventDto) =>
+    client.post("/organizations/:slug/events", data, {
+      slug,
     }),
   update: async (
     organizationSlug: string,
