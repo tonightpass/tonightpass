@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.35
+
+### Patch Changes
+
+- [`0fcfd58`](https://github.com/tonightpass/tonightpass/commit/0fcfd5891ff1e010a8fb5d8e19b06d6565f3aecc) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update organization dtos types
+
 ## 0.0.34
 
 ### Patch Changes
