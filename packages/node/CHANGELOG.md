@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.37
+
+### Patch Changes
+
+- [`c81da9c`](https://github.com/tonightpass/tonightpass/commit/c81da9c934b567b821d6154875b70e38f12a7b27) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Remove organization prop from create organization event dto
+
 ## 0.0.36
 
 ### Patch Changes
