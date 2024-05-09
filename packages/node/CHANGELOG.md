@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.38
+
+### Patch Changes
+
+- [`370779f`](https://github.com/tonightpass/tonightpass/commit/370779fe1a778b113c5974dd0479ed541698f0f4) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update organization event dtos with class validator
+
 ## 0.0.37
 
 ### Patch Changes
