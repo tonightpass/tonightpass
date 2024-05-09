@@ -1,5 +1,5 @@
 import {
-  IsDate,
+  IsDateString,
   IsEnum,
   IsLowercase,
   IsOptional,
@@ -41,9 +41,9 @@ export class CreateOrganizationEventDto {
   tickets: CreateOrganizationEventTicketDto[];
   styles: string[];
 
-  @IsDate()
+  @IsDateString()
   startAt: Date;
 
-  @IsDate()
+  @IsDateString()
   endAt: Date;
 }
