@@ -23,7 +23,7 @@ export type OrganizationEvent = Base & {
   slug: string;
   organization: Organization;
   type: OrganizationEventType;
-  public: boolean;
+  visibility: OrganizationEventVisibilityType;
   flyers: string[];
   trailers: string[];
   location: Location;
@@ -54,6 +54,12 @@ export enum OrganizationEventType {
   TradeFair = "trade_fair",
   ConsumerShow = "consumer_show",
   Membership = "membership",
+}
+
+export enum OrganizationEventVisibilityType {
+  Public = "public",
+  Unlisted = "unlisted",
+  Private = "private",
 }
 
 export type OrganizationEventEndpoints =
