@@ -1,6 +1,6 @@
 {
   "name": "@tonightpass/nest",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "@tonightpass nest sdk.",
   "repository": {
     "type": "git",
