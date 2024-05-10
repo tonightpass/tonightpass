@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.40
+
+### Patch Changes
+
+- [`6376cfd`](https://github.com/tonightpass/tonightpass/commit/6376cfd580fb4f2dd5e68564eb96e19a4925de26) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update create organization dto description
+
 ## 0.0.39
 
 ### Patch Changes
