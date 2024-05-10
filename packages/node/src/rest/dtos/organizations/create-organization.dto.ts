@@ -37,9 +37,9 @@ export class CreateOrganizationIdentityDto {
   displayName: string;
 
   @IsString()
-  @IsNotEmpty()
   @Length(16, 1024)
-  description: string;
+  @IsOptional()
+  description?: string;
 
   @IsUrl({
     protocols: ["http", "https"],
