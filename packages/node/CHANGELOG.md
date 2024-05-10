@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.39
+
+### Patch Changes
+
+- [`01dceec`](https://github.com/tonightpass/tonightpass/commit/01dceecae7ef96360eae417ec6a61c91f50656b5) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix create organization dto dates
+
 ## 0.0.38
 
 ### Patch Changes
