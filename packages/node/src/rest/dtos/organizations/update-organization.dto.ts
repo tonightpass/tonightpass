@@ -40,7 +40,6 @@ export class UpdateOrganizationIdentityDto {
   displayName?: string;
 
   @IsString()
-  @IsNotEmpty()
   @Length(16, 1024)
   @IsOptional()
   description?: string;
