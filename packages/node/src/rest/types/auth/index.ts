@@ -9,5 +9,7 @@ export type AuthEndpoints =
   | Endpoint<"POST", "/auth/refresh-token", null, null>
   | Endpoint<"GET", "/oauth2/google", void>
   | Endpoint<"GET", "/oauth2/google/callback", void>
+  | Endpoint<"GET", "/oauth2/facebook", void>
+  | Endpoint<"GET", "/oauth2/facebook/callback", void>
   | Endpoint<"GET", "/oauth2/twitter", void>
   | Endpoint<"GET", "/oauth2/twitter/callback", void>;

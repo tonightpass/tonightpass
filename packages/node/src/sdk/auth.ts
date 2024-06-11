@@ -29,5 +29,14 @@ export const auth = sdk((client) => ({
         }
       },
     },
+    facebook: {
+      connect: (params?: Record<string, ParamValue>) => {
+        if (isBrowser) {
+          window.location.href = client.url("/oauth2/facebook", params || {});
+        } else {
+          throw new Error("Facebook OAuth2 is only available in the browser");
+        }
+      },
+    },
   },
 }));
