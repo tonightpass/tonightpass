@@ -40,7 +40,7 @@
     "prettier": "^3.2.5",
     "pretty-quick": "^4.0.0",
     "tsup": "^8.0.2",
-    "turbo": "^1.6.3"
+    "turbo": "^2.0.0"
   },
   "manypkg": {
     "ignoredRules": [
