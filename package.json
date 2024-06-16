@@ -40,12 +40,12 @@
     "prettier": "^3.2.5",
     "pretty-quick": "^4.0.0",
     "tsup": "^8.0.2",
-    "turbo": "^2.0.0"
+    "turbo": "^2.0.4"
   },
   "manypkg": {
     "ignoredRules": [
       "INTERNAL_MISMATCH"
     ]
   },
-  "packageManager": "pnpm@9.3.0"
+  "packageManager": "pnpm@8.7.6"
 }
