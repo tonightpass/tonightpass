@@ -244,7 +244,7 @@ importers:
         version: 0.2.2
       stripe:
         specifier: ^15.3.0
-        version: 15.7.0
+        version: 15.11.0
     devDependencies:
       '@anatine/esbuild-decorators':
         specifier: ^0.2.19
@@ -5447,8 +5447,8 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  stripe@15.7.0:
-    resolution: {integrity: sha512-hTJhh0Gc+l+hj2vuzaFCh0T46l7793W3wg4J9Oyy3Wu+Ofswd0OgTS4XNt7G9XHJAyHpTmNRNbWgGwn73P4j7g==}
+  stripe@15.11.0:
+    resolution: {integrity: sha512-qmZF0PN1jRVpiQrXL8eTb9Jy/6S+aUlcDquKBFT2h3PkaD7RZ444FIojVXUg67FK2zFIUNXgMv02c7csdL5qHg==}
     engines: {node: '>=12.*'}
 
   styled-components@6.1.8:
@@ -12346,7 +12346,7 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  stripe@15.7.0:
+  stripe@15.11.0:
     dependencies:
       '@types/node': 20.12.7
       qs: 6.12.1
