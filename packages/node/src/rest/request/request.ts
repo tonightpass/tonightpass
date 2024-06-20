@@ -24,6 +24,9 @@ export const request = async <T>(url: string, options?: Options) => {
   const response = instance<APIResponse<T>>(url, { ...options })
     .then((response) => response)
     .catch((error: Response<ErroredAPIResponse>) => {
+      if (!error.data) {
+        console.error(error);
+      }
       throw error.data;
     });
 
