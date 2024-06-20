@@ -18,11 +18,14 @@ export type OrganizationEventTicket = Base & {
   externalId?: string;
   isVisible: boolean;
   isFeesIncluded: boolean;
-  startAt: Date;
-  endAt: Date;
+  startAt?: Date;
+  endAt?: Date;
 };
 
-export type OrganizationEventTicketType = "e-ticket" | "other";
+export enum OrganizationEventTicketType {
+  ETicket = "e-ticket",
+  Other = "other",
+}
 
 export enum OrganizationEventTicketCategory {
   Entry = "entry",
