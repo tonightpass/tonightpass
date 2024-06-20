@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.42
+
+### Patch Changes
+
+- [`10b03df`](https://github.com/tonightpass/tonightpass/commit/10b03df81cb07b237fa54f1201231945ca89eac4) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add error logging for API requests without data
+
 ## 0.0.41
 
 ### Patch Changes
