@@ -189,8 +189,8 @@ importers:
         specifier: 10.3.9
         version: 10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@types/node':
-        specifier: 20.14.6
-        version: 20.14.6
+        specifier: 20.14.7
+        version: 20.14.7
       typescript:
         specifier: ^5.0.0
         version: 5.5.2
@@ -213,8 +213,8 @@ importers:
         specifier: ^1.4.8
         version: 1.6.3(@swc/helpers@0.5.5)
       '@types/node':
-        specifier: 20.14.6
-        version: 20.14.6
+        specifier: 20.14.7
+        version: 20.14.7
       node-mailjet:
         specifier: 6.0.5
         version: 6.0.5
@@ -250,8 +250,8 @@ importers:
         specifier: ^0.2.19
         version: 0.2.19(esbuild@0.21.5)
       '@types/node':
-        specifier: 20.14.6
-        version: 20.14.6
+        specifier: 20.14.7
+        version: 20.14.7
       tsx:
         specifier: ^4.7.1
         version: 4.15.6
@@ -1856,9 +1856,6 @@ packages:
 
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
-
-  '@types/node@20.14.6':
-    resolution: {integrity: sha512-JbA0XIJPL1IiNnU7PFxDXyfAwcwVVrOoqyzzyQTyMeVhBzkJVMSkC1LlVsRQ2lpqiY4n6Bb9oCS6lzDKVQxbZw==}
 
   '@types/node@20.14.7':
     resolution: {integrity: sha512-uTr2m2IbJJucF3KUxgnGOZvYbN0QgkGyWxG6973HCpMYFy2KfcgYuIwkJQMQkt1VbBMlvWRbpshFTLxnxCZjKQ==}
@@ -7877,10 +7874,6 @@ snapshots:
 
   '@types/node@12.20.55': {}
 
-  '@types/node@20.14.6':
-    dependencies:
-      undici-types: 5.26.5
-
   '@types/node@20.14.7':
     dependencies:
       undici-types: 5.26.5
@@ -12058,7 +12051,7 @@ snapshots:
 
   stripe@15.12.0:
     dependencies:
-      '@types/node': 20.14.6
+      '@types/node': 20.14.7
       qs: 6.12.1
 
   styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
