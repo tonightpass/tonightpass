@@ -63,24 +63,28 @@ export enum OrganizationEventVisibilityType {
 }
 
 export type OrganizationEventEndpoints =
-  | Endpoint<"GET", "/organizations/:slug/events", Event[]>
-  | Endpoint<"GET", "/organizations/:organizationSlug/events/:eventSlug", Event>
+  | Endpoint<"GET", "/organizations/:slug/events", OrganizationEvent[]>
+  | Endpoint<
+      "GET",
+      "/organizations/:organizationSlug/events/:eventSlug",
+      OrganizationEvent
+    >
   | Endpoint<
       "POST",
       "/organizations/:slug/events",
-      Event,
+      OrganizationEvent,
       CreateOrganizationEventDto
     >
   | Endpoint<
       "PUT",
       "/organizations/:organizationSlug/events/:eventSlug",
-      Event,
+      OrganizationEvent,
       UpdateOrganizationEventDto
     >
   | Endpoint<
       "DELETE",
       "/organizations/:organizationSlug/events/:eventSlug",
-      Event,
+      OrganizationEvent,
       null
     >
   | OrganizationEventStyleEndpoints
