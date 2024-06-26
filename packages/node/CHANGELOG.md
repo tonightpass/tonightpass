@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.43
+
+### Patch Changes
+
+- [`667bfd2`](https://github.com/tonightpass/tonightpass/commit/667bfd22d3267bd147f8878947d52ee2a4344281) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add class validation to Organization Event Ticket
+
 ## 0.0.42
 
 ### Patch Changes
