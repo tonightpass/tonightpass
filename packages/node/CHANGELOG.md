@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.44
+
+### Patch Changes
+
+- [`d534d9d`](https://github.com/tonightpass/tonightpass/commit/d534d9dce38aa1dba286342323f5e3822ed80802) Thanks [@AntoineKM](https://github.com/AntoineKM)! - uUpdate Create Organization Event Ticket dto description lenght
+
+- [`d534d9d`](https://github.com/tonightpass/tonightpass/commit/d534d9dce38aa1dba286342323f5e3822ed80802) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update Organization Event types
+
 ## 0.0.43
 
 ### Patch Changes
