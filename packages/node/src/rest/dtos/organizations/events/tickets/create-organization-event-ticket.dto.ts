@@ -21,7 +21,7 @@ export class CreateOrganizationEventTicketDto {
   name: string;
 
   @IsString()
-  @Length(1, 512)
+  @Length(1, 1024)
   description?: string;
 
   @IsNumber()
@@ -32,6 +32,7 @@ export class CreateOrganizationEventTicketDto {
   @Min(0)
   quantity: number;
 
+  @IsEnum(OrganizationEventTicketType)
   type: OrganizationEventTicketType;
 
   @IsEnum(OrganizationEventTicketCategory)
