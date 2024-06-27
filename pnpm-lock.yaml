@@ -177,7 +177,7 @@ importers:
     dependencies:
       pathcat:
         specifier: ^1.2.2
-        version: 1.2.3
+        version: 1.3.0
       redaxios:
         specifier: ^0.5.1
         version: 0.5.1
@@ -235,7 +235,7 @@ importers:
         version: 0.14.1
       pathcat:
         specifier: ^1.2.2
-        version: 1.2.3
+        version: 1.3.0
       redaxios:
         specifier: ^0.5.1
         version: 0.5.1
@@ -4485,8 +4485,8 @@ packages:
     resolution: {integrity: sha512-5HviZNaZcfqP95rwpv+1HDgUamezbqdSYTyzjTvwtJSnIH+3vnbmWsItli8OFEndS984VT55M3jduxZbX351gg==}
     engines: {node: '>=12'}
 
-  pathcat@1.2.3:
-    resolution: {integrity: sha512-HR7Y+IJthpkXi/AZtMr2aFVfxQo5kyTnqKjA5qJRMzAuaKMndJG5qxpMkJv4T6MI1XdRM5eBDnZNhY+cz06XRQ==}
+  pathcat@1.3.0:
+    resolution: {integrity: sha512-ZLnR5RsKTablynw9qqv+gNkHLKbq04fXiYB7gFKUGzGW8Xjhnd928t9cNrM/s2JHWEE+2WmM5mzVkA3Cnmy0fA==}
 
   pend@1.2.0:
     resolution: {integrity: sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg==}
@@ -11019,7 +11019,7 @@ snapshots:
 
   path-type@5.0.0: {}
 
-  pathcat@1.2.3: {}
+  pathcat@1.3.0: {}
 
   pend@1.2.0: {}
 
