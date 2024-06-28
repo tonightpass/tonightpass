@@ -1,5 +1,5 @@
 import { Organization } from "..";
-import { Base } from "../..";
+import { ArrayOptions, ArrayResult, Base } from "../..";
 import { CreateOrganizationMemberDto } from "../../../dtos";
 import { UpdateOrganizationMemberDto } from "../../../dtos/organizations/members/update-organization-member.dto";
 import { Endpoint } from "../../../endpoints";
@@ -28,9 +28,19 @@ export enum OrganizationMemberRole {
 }
 
 export type OrganizationMembersEndpoints =
-  | Endpoint<"GET", "/organizations/members", OrganizationMember[]>
+  | Endpoint<
+      "GET",
+      "/organizations/members",
+      ArrayResult<OrganizationMember>,
+      ArrayOptions<OrganizationMember>
+    >
   | Endpoint<"DELETE", "/organizations/members/:id", OrganizationMember[], null>
-  | Endpoint<"GET", "/organizations/:slug/members", OrganizationMember[]>
+  | Endpoint<
+      "GET",
+      "/organizations/:slug/members",
+      ArrayResult<OrganizationMember>,
+      ArrayOptions<OrganizationMember>
+    >
   | Endpoint<
       "POST",
       "/organizations/:slug/members",

@@ -1,6 +1,7 @@
 import { organizationsEventsStyles } from "./styles";
 import { organizationsEventsTickets } from "./tickets";
 import {
+  ArrayOptions,
   Client,
   CreateOrganizationEventDto,
   UpdateOrganizationEventDto,
@@ -11,6 +12,8 @@ export const organizationsEvents = (client: Client) => ({
     client.get("/organizations/:slug/events", {
       slug,
     }),
+  getSuggestions: async (options?: ArrayOptions) =>
+    client.get("/organizations/events/suggestions", options),
   get: async (organizationSlug: string, eventSlug: string) =>
     client.get("/organizations/:organizationSlug/events/:eventSlug", {
       organizationSlug,
