@@ -7,7 +7,7 @@ import {
   Organization,
   OrganizationEventTicketEndpoints,
 } from "..";
-import { Base, Location } from "../..";
+import { ArrayOptions, ArrayResult, Base, Location } from "../..";
 import {
   CreateOrganizationEventDto,
   UpdateOrganizationEventDto,
@@ -63,7 +63,34 @@ export enum OrganizationEventVisibilityType {
 }
 
 export type OrganizationEventEndpoints =
-  | Endpoint<"GET", "/organizations/:slug/events", OrganizationEvent[]>
+  | Endpoint<
+      "GET",
+      "/organizations/events",
+      ArrayResult<OrganizationEvent>,
+      ArrayOptions<OrganizationEvent>
+    >
+  | Endpoint<
+      "GET",
+      "/organizations/events/suggestions",
+      ArrayResult<OrganizationEvent>,
+      ArrayOptions<OrganizationEvent>
+    >
+  | Endpoint<
+      "GET",
+      "/organizations/events/nearby",
+      ArrayResult<OrganizationEvent>,
+      ArrayOptions<OrganizationEvent> & {
+        latitude: number;
+        longitude: number;
+        radius?: number;
+      }
+    >
+  | Endpoint<
+      "GET",
+      "/organizations/:slug/events",
+      ArrayResult<OrganizationEvent>,
+      ArrayOptions<OrganizationEvent>
+    >
   | Endpoint<
       "GET",
       "/organizations/:organizationSlug/events/:eventSlug",
