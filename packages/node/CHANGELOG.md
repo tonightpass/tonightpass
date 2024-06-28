@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.45
+
+### Patch Changes
+
+- [`f4b07ea`](https://github.com/tonightpass/tonightpass/commit/f4b07ea8c8c47f48eda65ec7aef06e3e7e532b4b) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add array options and event listing
+
 ## 0.0.44
 
 ### Patch Changes
