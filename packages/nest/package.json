@@ -1,6 +1,6 @@
 {
   "name": "@tonightpass/nest",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "description": "@tonightpass nest sdk.",
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@nestjs/common": "10.3.9",
-    "@types/node": "20.14.8",
+    "@types/node": "20.14.9",
     "typescript": "^5.0.0"
   }
 }
