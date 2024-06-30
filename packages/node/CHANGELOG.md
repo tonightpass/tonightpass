@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.47
+
+### Patch Changes
+
+- [`284e987`](https://github.com/tonightpass/tonightpass/commit/284e987bd20b892a9f6444955379d21d68d21a72) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update array options types with pagination
+
 ## 0.0.46
 
 ### Patch Changes
