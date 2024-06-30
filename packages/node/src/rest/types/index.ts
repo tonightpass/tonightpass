@@ -105,7 +105,7 @@ export type ArrayOptions<T> = {
 // & ArrayPaginationOptions;
 
 export type ArrayResult<T> = {
-  data: T[];
+  items: T[];
   total: number;
   page: number;
   limit: number;
