@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.46
+
+### Patch Changes
+
+- [`6a67f86`](https://github.com/tonightpass/tonightpass/commit/6a67f8664fd3d0ca019e88825102add5a9e43e35) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Rename data property to items in ArrayResult type
+
 ## 0.0.45
 
 ### Patch Changes
