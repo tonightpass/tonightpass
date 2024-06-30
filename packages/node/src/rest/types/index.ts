@@ -100,9 +100,8 @@ export type ArrayOptions<T> = {
    * Select only specific fields to display
    */
   // fields?: string[];
-};
-// & ArraySortOptions
-// & ArrayPaginationOptions;
+} & ArrayPaginationOptions;
+// & ArraySortOptions;
 
 export type ArrayResult<T> = {
   items: T[];
