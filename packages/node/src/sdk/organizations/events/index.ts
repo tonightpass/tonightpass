@@ -4,6 +4,7 @@ import {
   ArrayOptions,
   Client,
   CreateOrganizationEventDto,
+  OrganizationEvent,
   UpdateOrganizationEventDto,
 } from "../../../rest";
 
@@ -12,8 +13,15 @@ export const organizationsEvents = (client: Client) => ({
     client.get("/organizations/:slug/events", {
       slug,
     }),
-  getSuggestions: async (options?: ArrayOptions) =>
+  getSuggestions: async (options?: ArrayOptions<OrganizationEvent>) =>
     client.get("/organizations/events/suggestions", options),
+  getNearby: async (
+    options: ArrayOptions<OrganizationEvent> & {
+      latitude: number;
+      longitude: number;
+      radius?: number;
+    },
+  ) => client.get("/organizations/events/nearby", options),
   get: async (organizationSlug: string, eventSlug: string) =>
     client.get("/organizations/:organizationSlug/events/:eventSlug", {
       organizationSlug,
