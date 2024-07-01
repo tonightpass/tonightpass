@@ -1,5 +1,3 @@
-import { Populate } from "@mikro-orm/core";
-
 export * from "./auth";
 export * from "./careers";
 export * from "./health";
@@ -91,6 +89,7 @@ export type ArrayFilterOptions = {
     | "nin"; // Not in
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export type ArrayOptions<T> = {
   /**
    * Populate relations
