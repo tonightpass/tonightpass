@@ -189,8 +189,8 @@ importers:
         specifier: 10.3.10
         version: 10.3.10(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@types/node':
-        specifier: 20.14.9
-        version: 20.14.9
+        specifier: 20.14.10
+        version: 20.14.10
       typescript:
         specifier: ^5.0.0
         version: 5.5.3
@@ -213,8 +213,8 @@ importers:
         specifier: ^1.4.8
         version: 1.6.7(@swc/helpers@0.5.5)
       '@types/node':
-        specifier: 20.14.9
-        version: 20.14.9
+        specifier: 20.14.10
+        version: 20.14.10
       node-mailjet:
         specifier: 6.0.5
         version: 6.0.5
@@ -253,8 +253,8 @@ importers:
         specifier: ^0.2.19
         version: 0.2.19(esbuild@0.21.5)
       '@types/node':
-        specifier: 20.14.9
-        version: 20.14.9
+        specifier: 20.14.10
+        version: 20.14.10
       tsx:
         specifier: ^4.7.1
         version: 4.16.2
@@ -1867,9 +1867,6 @@ packages:
 
   '@types/node@20.14.10':
     resolution: {integrity: sha512-MdiXf+nDuMvY0gJKxyfZ7/6UFsETO7mGKF54MVD/ekJS6HdFtpZFBgrh6Pseu64XTb2MLyFPlbW6hj8HYRQNOQ==}
-
-  '@types/node@20.14.9':
-    resolution: {integrity: sha512-06OCtnTXtWOZBJlRApleWndH4JsRVs1pDCc8dLSQp+7PpUpX3ePdHyeNSFTeSe7FtKyQkrlPvHwJOW3SLd8Oyg==}
 
   '@types/prop-types@15.7.12':
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
@@ -7693,10 +7690,6 @@ snapshots:
     dependencies:
       undici-types: 5.26.5
 
-  '@types/node@20.14.9':
-    dependencies:
-      undici-types: 5.26.5
-
   '@types/prop-types@15.7.12': {}
 
   '@types/qs@6.9.15': {}
@@ -8073,7 +8066,7 @@ snapshots:
 
   agent-base@7.1.1:
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.5
     transitivePeerDependencies:
       - supports-color
 
@@ -9485,7 +9478,7 @@ snapshots:
 
   extract-zip@2.0.1:
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.5
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:
@@ -9749,7 +9742,7 @@ snapshots:
     dependencies:
       basic-ftp: 5.0.5
       data-uri-to-buffer: 6.0.2
-      debug: 4.3.4
+      debug: 4.3.5
       fs-extra: 11.2.0
     transitivePeerDependencies:
       - supports-color
@@ -9884,7 +9877,7 @@ snapshots:
   http-proxy-agent@7.0.2:
     dependencies:
       agent-base: 7.1.1
-      debug: 4.3.4
+      debug: 4.3.5
     transitivePeerDependencies:
       - supports-color
 
@@ -9896,7 +9889,7 @@ snapshots:
   https-proxy-agent@7.0.4:
     dependencies:
       agent-base: 7.1.1
-      debug: 4.3.4
+      debug: 4.3.5
     transitivePeerDependencies:
       - supports-color
 
@@ -10947,7 +10940,7 @@ snapshots:
     dependencies:
       '@tootallnate/quickjs-emscripten': 0.23.0
       agent-base: 7.1.1
-      debug: 4.3.4
+      debug: 4.3.5
       get-uri: 6.0.3
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.4
@@ -11140,7 +11133,7 @@ snapshots:
   proxy-agent@6.4.0:
     dependencies:
       agent-base: 7.1.1
-      debug: 4.3.4
+      debug: 4.3.5
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.4
       lru-cache: 7.18.3
@@ -11554,7 +11547,7 @@ snapshots:
   socks-proxy-agent@8.0.3:
     dependencies:
       agent-base: 7.1.1
-      debug: 4.3.4
+      debug: 4.3.5
       socks: 2.8.3
     transitivePeerDependencies:
       - supports-color
@@ -11703,7 +11696,7 @@ snapshots:
 
   stripe@16.2.0:
     dependencies:
-      '@types/node': 20.14.9
+      '@types/node': 20.14.10
       qs: 6.12.2
 
   styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
