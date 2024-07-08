@@ -9,10 +9,16 @@ import {
 } from "../../../rest";
 
 export const organizationsEvents = (client: Client) => ({
-  getAll: async (slug: string) =>
-    client.get("/organizations/:slug/events", {
-      slug,
-    }),
+  getAll: async (slug?: string, options?: ArrayOptions<OrganizationEvent>) => {
+    if (slug) {
+      return client.get("/organizations/:slug/events", {
+        slug,
+        ...options,
+      });
+    } else {
+      return client.get("/organizations/events", options);
+    }
+  },
   getSuggestions: async (options?: ArrayOptions<OrganizationEvent>) =>
     client.get("/organizations/events/suggestions", options),
   getNearby: async (
