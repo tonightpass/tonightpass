@@ -34,16 +34,21 @@ export type OrganizationMembersEndpoints =
       ArrayResult<OrganizationMember>,
       ArrayOptions<OrganizationMember>
     >
-  | Endpoint<"DELETE", "/organizations/members/:id", OrganizationMember[], null>
+  | Endpoint<
+      "DELETE",
+      "/organizations/members/:memberId",
+      OrganizationMember[],
+      null
+    >
   | Endpoint<
       "GET",
-      "/organizations/:slug/members",
+      "/organizations/:organizationSlug/members",
       ArrayResult<OrganizationMember>,
       ArrayOptions<OrganizationMember>
     >
   | Endpoint<
       "POST",
-      "/organizations/:slug/members",
+      "/organizations/:organizationSlug/members",
       OrganizationMember,
       CreateOrganizationMemberDto
     >

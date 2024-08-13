@@ -53,16 +53,21 @@ export enum OrganizationSocialType {
 
 export type OrganizationEndpoints =
   | Endpoint<"GET", "/organizations", Organization[]>
-  | Endpoint<"GET", "/organizations/:slug", Organization>
+  | Endpoint<"GET", "/organizations/:organizationSlug", Organization>
   | Endpoint<"POST", "/organizations", Organization, CreateOrganizationDto>
-  | Endpoint<"PUT", "/organizations/:slug", Organization, UpdateOrganizationDto>
-  | Endpoint<"DELETE", "/organizations/:slug", Organization, null>
+  | Endpoint<
+      "PUT",
+      "/organizations/:organizationSlug",
+      Organization,
+      UpdateOrganizationDto
+    >
+  | Endpoint<"DELETE", "/organizations/:organizationSlug", Organization, null>
   | Endpoint<
       "GET",
-      "/organizations/:slug/billing/account",
+      "/organizations/:organizationSlug/billing/account",
       OrganizationBillingAccount
     >
-  | Endpoint<"GET", "/organizations/:slug/billing/link", void>
-  | Endpoint<"GET", "/organizations/:slug/billing/dashboard", void>
+  | Endpoint<"GET", "/organizations/:organizationSlug/billing/link", void>
+  | Endpoint<"GET", "/organizations/:organizationSlug/billing/dashboard", void>
   | OrganizationEventEndpoints
   | OrganizationMembersEndpoints;

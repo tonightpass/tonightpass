@@ -1,3 +1,4 @@
+import { OrganizationEventCartEndpoints } from "./carts";
 import {
   OrganizationEventStyle,
   OrganizationEventStyleEndpoints,
@@ -87,7 +88,7 @@ export type OrganizationEventEndpoints =
     >
   | Endpoint<
       "GET",
-      "/organizations/:slug/events",
+      "/organizations/:organizationSlug/events",
       ArrayResult<OrganizationEvent>,
       ArrayOptions<OrganizationEvent>
     >
@@ -98,7 +99,7 @@ export type OrganizationEventEndpoints =
     >
   | Endpoint<
       "POST",
-      "/organizations/:slug/events",
+      "/organizations/:organizationSlug/events",
       OrganizationEvent,
       CreateOrganizationEventDto
     >
@@ -114,5 +115,6 @@ export type OrganizationEventEndpoints =
       OrganizationEvent,
       null
     >
+  | OrganizationEventCartEndpoints
   | OrganizationEventStyleEndpoints
   | OrganizationEventTicketEndpoints;

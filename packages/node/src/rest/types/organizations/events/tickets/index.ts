@@ -43,29 +43,29 @@ export enum OrganizationEventTicketCategory {
 export type OrganizationEventTicketEndpoints =
   | Endpoint<
       "GET",
-      "/organizations/:slug/events/:eventSlug/tickets",
+      "/organizations/:organizationSlug/events/:eventSlug/tickets",
       OrganizationEventTicket[]
     >
   | Endpoint<
       "GET",
-      "/organizations/:slug/events/:eventSlug/tickets/:ticketId",
+      "/organizations/:organizationSlug/events/:eventSlug/tickets/:ticketId",
       OrganizationEventTicket
     >
   | Endpoint<
       "POST",
-      "/organizations/:slug/events/:eventSlug/tickets",
+      "/organizations/:organizationSlug/events/:eventSlug/tickets",
       OrganizationEventTicket,
       CreateOrganizationEventTicketDto
     >
   | Endpoint<
       "PUT",
-      "/organizations/:slug/events/:eventSlug/tickets/:ticketId",
+      "/organizations/:organizationSlug/events/:eventSlug/tickets/:ticketId",
       OrganizationEventTicket,
       UpdateOrganizationEventTicketDto
     >
   | Endpoint<
       "DELETE",
-      "/organizations/:slug/events/:eventSlug/tickets/:ticketId",
+      "/organizations/:organizationSlug/events/:eventSlug/tickets/:ticketId",
       OrganizationEventTicket[],
       null
     >;
