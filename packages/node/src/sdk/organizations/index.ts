@@ -6,13 +6,16 @@ import { sdk } from "../builder";
 
 export const organizations = sdk((client) => ({
   getAll: async () => client.get("/organizations"),
-  get: async (slug: string) => client.get("/organizations/:slug", { slug }),
+  get: async (organizationSlug: string) =>
+    client.get("/organizations/:organizationSlug", { organizationSlug }),
   create: async (data: CreateOrganizationDto) =>
     client.post("/organizations", data),
-  update: async (slug: string, data: UpdateOrganizationDto) =>
-    client.put("/organizations/:slug", data, { slug }),
-  delete: async (slug: string) =>
-    client.delete("/organizations/:slug", null, { slug }),
+  update: async (organizationSlug: string, data: UpdateOrganizationDto) =>
+    client.put("/organizations/:organizationSlug", data, { organizationSlug }),
+  delete: async (organizationSlug: string) =>
+    client.delete("/organizations/:organizationSlug", null, {
+      organizationSlug,
+    }),
   billing: organizationsBilling(client),
   events: organizationsEvents(client),
   members: organizationsMembers(client),

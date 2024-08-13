@@ -2,7 +2,7 @@ import { Base } from "../../..";
 import {
   CreateOrganizationEventStyleDto,
   UpdateOrganizationEventStyleDto,
-} from "../../../../dtos/organizations/events/events";
+} from "../../../../dtos/organizations/events/styles";
 import { Endpoint } from "../../../../endpoints";
 
 export type OrganizationEventStyle = Base & {
@@ -24,7 +24,7 @@ export type OrganizationEventStyleEndpoints =
   | Endpoint<"GET", "/organizations/events/styles", OrganizationEventStyle[]>
   | Endpoint<
       "GET",
-      "/organizations/events/styles/:slug",
+      "/organizations/events/styles/:styleSlug",
       OrganizationEventStyle
     >
   | Endpoint<
@@ -35,13 +35,13 @@ export type OrganizationEventStyleEndpoints =
     >
   | Endpoint<
       "PUT",
-      "/organizations/events/styles/:slug",
+      "/organizations/events/styles/:styleSlug",
       OrganizationEventStyle,
       UpdateOrganizationEventStyleDto
     >
   | Endpoint<
       "DELETE",
-      "/organizations/events/styles/:slug",
+      "/organizations/events/styles/:styleSlug",
       OrganizationEventStyle[],
       null
     >;

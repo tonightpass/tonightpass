@@ -5,47 +5,58 @@ import {
 } from "../../../../rest";
 
 export const organizationsEventsTickets = (client: Client) => ({
-  getAll: async (slug: string, eventSlug: string) =>
-    client.get("/organizations/:slug/events/:eventSlug/tickets", {
-      slug,
+  getAll: async (organizationSlug: string, eventSlug: string) =>
+    client.get("/organizations/:organizationSlug/events/:eventSlug/tickets", {
+      organizationSlug,
       eventSlug,
     }),
-  get: async (slug: string, eventSlug: string, ticketId: string) =>
-    client.get("/organizations/:slug/events/:eventSlug/tickets/:ticketId", {
-      slug,
-      eventSlug,
-      ticketId,
-    }),
+  get: async (organizationSlug: string, eventSlug: string, ticketId: string) =>
+    client.get(
+      "/organizations/:organizationSlug/events/:eventSlug/tickets/:ticketId",
+      {
+        organizationSlug,
+        eventSlug,
+        ticketId,
+      },
+    ),
   create: async (
-    slug: string,
+    organizationSlug: string,
     eventSlug: string,
     data: CreateOrganizationEventTicketDto,
   ) =>
-    client.post("/organizations/:slug/events/:eventSlug/tickets", data, {
-      slug,
-      eventSlug,
-    }),
+    client.post(
+      "/organizations/:organizationSlug/events/:eventSlug/tickets",
+      data,
+      {
+        organizationSlug,
+        eventSlug,
+      },
+    ),
   update: async (
-    slug: string,
+    organizationSlug: string,
     eventSlug: string,
     ticketId: string,
     data: UpdateOrganizationEventTicketDto,
   ) =>
     client.put(
-      "/organizations/:slug/events/:eventSlug/tickets/:ticketId",
+      "/organizations/:organizationSlug/events/:eventSlug/tickets/:ticketId",
       data,
       {
-        slug,
+        organizationSlug,
         eventSlug,
         ticketId,
       },
     ),
-  delete: async (slug: string, eventSlug: string, ticketId: string) =>
+  delete: async (
+    organizationSlug: string,
+    eventSlug: string,
+    ticketId: string,
+  ) =>
     client.delete(
-      "/organizations/:slug/events/:eventSlug/tickets/:ticketId",
+      "/organizations/:organizationSlug/events/:eventSlug/tickets/:ticketId",
       null,
       {
-        slug,
+        organizationSlug,
         eventSlug,
         ticketId,
       },

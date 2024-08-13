@@ -17,7 +17,7 @@ export class CreateOrganizationDto {
   @IsString()
   @IsLowercase()
   @Length(1, 48)
-  slug?: string;
+  organizationSlug?: string;
 
   @IsObject()
   identity: CreateOrganizationIdentityDto;

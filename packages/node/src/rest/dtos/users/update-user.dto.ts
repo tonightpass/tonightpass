@@ -14,7 +14,7 @@ import {
   ValidateNested,
 } from "class-validator";
 
-import { NAME_REGEX } from "../../../constants/regex";
+import { REGEX } from "../../../constants/regex";
 import { UserIdentifier, UserIdentity } from "../../types";
 
 export class UpdateUserDto {
@@ -76,7 +76,7 @@ class UpdateIdentityDto
   @IsOptional()
   @IsString()
   @Length(2, 32)
-  @Matches(NAME_REGEX, {
+  @Matches(REGEX.NAME, {
     message: "First name must be composed of letters only",
   })
   firstName?: string;
@@ -84,7 +84,7 @@ class UpdateIdentityDto
   @IsOptional()
   @IsString()
   @Length(2, 32)
-  @Matches(NAME_REGEX, {
+  @Matches(REGEX.NAME, {
     message: "Last name must be composed of letters only",
   })
   lastName?: string;

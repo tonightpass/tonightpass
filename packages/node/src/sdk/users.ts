@@ -7,6 +7,6 @@ export const users = sdk((client) => ({
   me: async () => client.get("/users/me"),
   check: async (identifier: string, suggestions?: boolean) =>
     client.get("/users/check/:identifier", { identifier, suggestions }),
-  update: async (id: string, data: UpdateUserDto) =>
-    client.put("/users/:id", data, { id }),
+  update: async (userId: string, data: UpdateUserDto) =>
+    client.put("/users/:userId", data, { userId }),
 }));

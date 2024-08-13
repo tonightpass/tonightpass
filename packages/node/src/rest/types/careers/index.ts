@@ -73,7 +73,7 @@ export type CareersEndpoints =
         externalId?: string;
       }
     >
-  | Endpoint<"GET", "/careers/jobs/:id", CareersJob, { id: number }>
+  | Endpoint<"GET", "/careers/jobs/:jobId", CareersJob, { jobId: number }>
   | Endpoint<
       "GET",
       "/careers/offices",

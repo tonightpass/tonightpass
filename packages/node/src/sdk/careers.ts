@@ -14,7 +14,7 @@ export const careers = sdk((client) => ({
   jobs: {
     getAll: async (query?: Query<"/careers/jobs">) =>
       client.get("/careers/jobs", query),
-    get: async (id: number) => client.get("/careers/jobs/:id", { id }),
+    get: async (jobId: number) => client.get("/careers/jobs/:jobId", { jobId }),
   },
   offices: {
     getAll: async (query?: Query<"/careers/offices">) =>

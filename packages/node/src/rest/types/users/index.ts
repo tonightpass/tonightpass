@@ -97,7 +97,7 @@ export type UserConnectionClient = {
 
 export type UserEndpoints =
   | Endpoint<"GET", "/users", User[]>
-  | Endpoint<"GET", "/users/:id", User, { id: string }>
+  | Endpoint<"GET", "/users/:userId", User, { id: string }>
   | Endpoint<"GET", "/users/me", User>
   | Endpoint<
       "GET",
@@ -109,4 +109,4 @@ export type UserEndpoints =
       },
       { identifier: boolean; suggestions?: boolean }
     >
-  | Endpoint<"PUT", "/users/:id", User, UpdateUserDto>;
+  | Endpoint<"PUT", "/users/:userId", User, UpdateUserDto>;

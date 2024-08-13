@@ -1,3 +1,4 @@
+import { organizationsEventCarts } from "./carts";
 import { organizationsEventsStyles } from "./styles";
 import { organizationsEventsTickets } from "./tickets";
 import {
@@ -9,10 +10,13 @@ import {
 } from "../../../rest";
 
 export const organizationsEvents = (client: Client) => ({
-  getAll: async (slug?: string, options?: ArrayOptions<OrganizationEvent>) => {
-    if (slug) {
-      return client.get("/organizations/:slug/events", {
-        slug,
+  getAll: async (
+    organizationSlug?: string,
+    options?: ArrayOptions<OrganizationEvent>,
+  ) => {
+    if (organizationSlug) {
+      return client.get("/organizations/:organizationSlug/events", {
+        organizationSlug,
         ...options,
       });
     } else {
@@ -33,9 +37,9 @@ export const organizationsEvents = (client: Client) => ({
       organizationSlug,
       eventSlug,
     }),
-  create: async (slug: string, data: CreateOrganizationEventDto) =>
-    client.post("/organizations/:slug/events", data, {
-      slug,
+  create: async (organizationSlug: string, data: CreateOrganizationEventDto) =>
+    client.post("/organizations/:organizationSlug/events", data, {
+      organizationSlug,
     }),
   update: async (
     organizationSlug: string,
@@ -51,6 +55,7 @@ export const organizationsEvents = (client: Client) => ({
       organizationSlug,
       eventSlug,
     }),
+  carts: organizationsEventCarts(client),
   styles: organizationsEventsStyles(client),
   tickets: organizationsEventsTickets(client),
 });
