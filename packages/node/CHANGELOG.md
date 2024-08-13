@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.50
+
+### Patch Changes
+
+- [`f873bef`](https://github.com/tonightpass/tonightpass/commit/f873befebed537f3982d63d0436bc4eaaa186aa1) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add missing organization event cart exports
+
 ## 0.0.49
 
 ### Patch Changes
