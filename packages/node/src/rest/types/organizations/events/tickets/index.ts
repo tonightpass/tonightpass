@@ -9,6 +9,7 @@ export type OrganizationEventTicket = Base & {
   name: string;
   description?: string;
   price: number;
+  fee: number;
   displayPrice: number;
   quantity: number;
   type: OrganizationEventTicketType;
