@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.50
+
+### Patch Changes
+
+- [`f873bef`](https://github.com/tonightpass/tonightpass/commit/f873befebed537f3982d63d0436bc4eaaa186aa1) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add missing organization event cart exports
+
+- [`8284b48`](https://github.com/tonightpass/tonightpass/commit/8284b484515c18b016e0a3aa816cf8d9e80cc4e4) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add fee to organization event ticket type
+
 ## 0.0.49
 
 ### Patch Changes
