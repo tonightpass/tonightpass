@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.51
+
+### Patch Changes
+
+- [`01c0806`](https://github.com/tonightpass/tonightpass/commit/01c0806ee7bd7a03a975be4345419b6c6b800778) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix discarded changes of 0.0.50
+
 ## 0.0.50
 
 ### Patch Changes
