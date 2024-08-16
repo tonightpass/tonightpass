@@ -247,7 +247,7 @@ importers:
         version: 0.2.2
       stripe:
         specifier: ^16.0.0
-        version: 16.7.0
+        version: 16.8.0
     devDependencies:
       '@anatine/esbuild-decorators':
         specifier: ^0.2.19
@@ -1866,6 +1866,9 @@ packages:
   '@types/node@20.14.15':
     resolution: {integrity: sha512-Fz1xDMCF/B00/tYSVMlmK7hVeLh7jE5f3B7X1/hmV0MJBwE27KlS7EvD/Yp+z1lm8mVhwV5w+n8jOZG8AfTlKw==}
 
+  '@types/node@22.3.0':
+    resolution: {integrity: sha512-nrWpWVaDZuaVc5X84xJ0vNrLvomM205oQyLsRt7OHNZbSHslcWsvgFR7O7hire2ZonjLrWBbedmotmIlJDVd6g==}
+
   '@types/prop-types@15.7.12':
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
 
@@ -2989,8 +2992,8 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-config-turbo@2.0.13:
-    resolution: {integrity: sha512-GdWQa8OAnX7SnrUK49U4zEv6rglLogQs1HQZ56Y7jn87ohkaBQAUFtxjyTNNgcDlYqzT/6deRlEGsJ/maRU2Wg==}
+  eslint-config-turbo@2.0.14:
+    resolution: {integrity: sha512-VkzAH/AR1/fjMsqzuurfWkEgyGVTTzfZQB1umDB8dMWzFhqo8p/2KEWbvRQLEvSFxjVfeJl5ErQAJ7h7DYglxg==}
     peerDependencies:
       eslint: '>6.6.0'
 
@@ -3088,8 +3091,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
 
-  eslint-plugin-turbo@2.0.13:
-    resolution: {integrity: sha512-hpHRtQVETm07OBvj8kFy/+sgts+i36wFM8xd4yr9Wt3TWtmC4mealtgSvSEx61vdkqbDhKMP4CftgpHj2DI4yw==}
+  eslint-plugin-turbo@2.0.14:
+    resolution: {integrity: sha512-E++MSAEeWZTU0FYARrfakMPq+7XeltqeY4JBDQTzbGEWG3kgYJPeYBMWsypcvBujVihQLlMu0S6ImnfV692mHg==}
     peerDependencies:
       eslint: '>6.6.0'
 
@@ -5128,8 +5131,8 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  stripe@16.7.0:
-    resolution: {integrity: sha512-BJCSEtqN8LJsPuPkjQmB/LlBl00uxi9FIPa6LNcF80ofMKqfnuervDhwWSZqCs6xJk/i9vx1D9lRoDnqSmym2w==}
+  stripe@16.8.0:
+    resolution: {integrity: sha512-6rOIcGOkxcc29jvhEyOYmpPFilekOBV+7vpemAoIAfbtCRW1yxzdDGM0/0vyekHglLL+wqGpP5ldrhO3dJ2JEQ==}
     engines: {node: '>=12.*'}
 
   styled-components@6.1.12:
@@ -5481,6 +5484,9 @@ packages:
 
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+
+  undici-types@6.18.2:
+    resolution: {integrity: sha512-5ruQbENj95yDYJNS3TvcaxPMshV7aizdv/hWYjGIKoANWKjhWNBsr2YEuYZKodQulB1b8l7ILOuDQep3afowQQ==}
 
   unicode-canonical-property-names-ecmascript@2.0.0:
     resolution: {integrity: sha512-yY5PpDlfVIU5+y/BSCxAJRBIS1Zc2dDG3Ujq+sR0U+JjUevW2JhocOF+soROYDSaAezOzOKuyyixhD6mBknSmQ==}
@@ -7695,6 +7701,11 @@ snapshots:
     dependencies:
       undici-types: 5.26.5
 
+  '@types/node@22.3.0':
+    dependencies:
+      undici-types: 6.18.2
+    optional: true
+
   '@types/prop-types@15.7.12': {}
 
   '@types/qs@6.9.15': {}
@@ -7751,7 +7762,7 @@ snapshots:
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 20.14.15
+      '@types/node': 22.3.0
     optional: true
 
   '@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4)':
@@ -9027,7 +9038,7 @@ snapshots:
       eslint: 8.57.0
       eslint-config-next: 14.2.5(eslint@8.57.0)(typescript@5.5.4)
       eslint-config-prettier: 9.1.0(eslint@8.57.0)
-      eslint-config-turbo: 2.0.13(eslint@8.57.0)
+      eslint-config-turbo: 2.0.14(eslint@8.57.0)
       eslint-config-universe: 12.1.0(@types/eslint@9.6.0)(eslint@8.57.0)(prettier@3.3.3)(typescript@5.5.4)
       eslint-plugin-prettier: 5.2.1(@types/eslint@9.6.0)(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.3.3)
       eslint-plugin-react: 7.33.2(eslint@8.57.0)
@@ -9065,10 +9076,10 @@ snapshots:
     dependencies:
       eslint: 8.57.0
 
-  eslint-config-turbo@2.0.13(eslint@8.57.0):
+  eslint-config-turbo@2.0.14(eslint@8.57.0):
     dependencies:
       eslint: 8.57.0
-      eslint-plugin-turbo: 2.0.13(eslint@8.57.0)
+      eslint-plugin-turbo: 2.0.14(eslint@8.57.0)
 
   eslint-config-universe@12.1.0(@types/eslint@9.6.0)(eslint@8.57.0)(prettier@3.3.3)(typescript@5.5.4):
     dependencies:
@@ -9307,7 +9318,7 @@ snapshots:
       semver: 6.3.1
       string.prototype.matchall: 4.0.11
 
-  eslint-plugin-turbo@2.0.13(eslint@8.57.0):
+  eslint-plugin-turbo@2.0.14(eslint@8.57.0):
     dependencies:
       dotenv: 16.0.3
       eslint: 8.57.0
@@ -11715,7 +11726,7 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  stripe@16.7.0:
+  stripe@16.8.0:
     dependencies:
       '@types/node': 20.14.15
       qs: 6.13.0
@@ -12107,6 +12118,9 @@ snapshots:
       through: 2.3.8
 
   undici-types@5.26.5: {}
+
+  undici-types@6.18.2:
+    optional: true
 
   unicode-canonical-property-names-ecmascript@2.0.0: {}
 

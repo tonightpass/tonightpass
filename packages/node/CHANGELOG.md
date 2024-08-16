@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.52
+
+### Patch Changes
+
+- [`484ff42`](https://github.com/tonightpass/tonightpass/commit/484ff42a47a84b8c06e1523dcf7f8f3ae3919255) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Move cart into checkout
+
 ## 0.0.51
 
 ### Patch Changes
