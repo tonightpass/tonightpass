@@ -1,5 +1,5 @@
-import { CreateOrganizationEventTicketDto } from "../tickets";
+import { OrganizationEventTicket } from "../../../../types";
 
 export class CreateOrganizationEventCheckoutDto {
-  cart: CreateOrganizationEventTicketDto[];
+  cart: OrganizationEventTicket[];
 }
