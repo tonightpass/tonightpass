@@ -1,4 +1,4 @@
-import { OrganizationEventCheckoutEndpoints } from "./checkouts";
+import { OrganizationEventOrderEndpoints } from "./orders";
 import {
   OrganizationEventStyle,
   OrganizationEventStyleEndpoints,
@@ -15,7 +15,7 @@ import {
 } from "../../../dtos";
 import { Endpoint } from "../../../endpoints";
 
-export * from "./checkouts";
+export * from "./orders";
 export * from "./tickets";
 export * from "./styles";
 
@@ -116,6 +116,6 @@ export type OrganizationEventEndpoints =
       OrganizationEvent,
       null
     >
-  | OrganizationEventCheckoutEndpoints
+  | OrganizationEventOrderEndpoints
   | OrganizationEventStyleEndpoints
   | OrganizationEventTicketEndpoints;

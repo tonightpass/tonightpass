@@ -1,4 +1,4 @@
-import { organizationsEventCheckouts } from "./checkouts";
+import { organizationsEventsOrders } from "./orders";
 import { organizationsEventsStyles } from "./styles";
 import { organizationsEventsTickets } from "./tickets";
 import {
@@ -55,7 +55,7 @@ export const organizationsEvents = (client: Client) => ({
       organizationSlug,
       eventSlug,
     }),
-  checkouts: organizationsEventCheckouts(client),
+  checkouts: organizationsEventsOrders(client),
   styles: organizationsEventsStyles(client),
   tickets: organizationsEventsTickets(client),
 });

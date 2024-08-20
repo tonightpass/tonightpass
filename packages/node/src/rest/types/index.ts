@@ -4,7 +4,7 @@ export * from "./health";
 export * from "./organizations";
 export * from "./token";
 export * from "./users";
-export * from "./order";
+export * from "./orders";
 export * from "./profiles";
 
 export type Base = {
