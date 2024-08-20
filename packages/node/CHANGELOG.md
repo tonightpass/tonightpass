@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.54
+
+### Patch Changes
+
+- [`498a172`](https://github.com/tonightpass/tonightpass/commit/498a1727c460cd810138a1f879c000bccc793f16) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update order types
+
 ## 0.0.53
 
 ### Patch Changes
