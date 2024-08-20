@@ -1,4 +1,4 @@
-export * from "./checkouts";
+export * from "./orders";
 export * from "./styles";
 export * from "./tickets";
 
