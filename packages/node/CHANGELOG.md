@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.53
+
+### Patch Changes
+
+- [`5f99503`](https://github.com/tonightpass/tonightpass/commit/5f995038b67779c45a1c8397c6c33f7cdfcea542) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix CreateOrganizationEventCheckoutDto types
+
 ## 0.0.52
 
 ### Patch Changes
