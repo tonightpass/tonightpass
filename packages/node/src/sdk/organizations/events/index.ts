@@ -55,7 +55,7 @@ export const organizationsEvents = (client: Client) => ({
       organizationSlug,
       eventSlug,
     }),
-  checkouts: organizationsEventsOrders(client),
+  orders: organizationsEventsOrders(client),
   styles: organizationsEventsStyles(client),
   tickets: organizationsEventsTickets(client),
 });
