@@ -4,6 +4,7 @@ import {
   AuthEndpoints,
   CareersEndpoints,
   HealthEndpoints,
+  OrderEndpoints,
   OrganizationEndpoints,
   ProfileEndpoints,
   UserEndpoints,
@@ -42,6 +43,7 @@ export type Endpoints =
   | AuthEndpoints
   | CareersEndpoints
   | HealthEndpoints
+  | OrderEndpoints
   | OrganizationEndpoints
   | ProfileEndpoints
   | UserEndpoints;
