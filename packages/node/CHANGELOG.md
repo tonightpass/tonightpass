@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.56
+
+### Patch Changes
+
+- [`3e62e99`](https://github.com/tonightpass/tonightpass/commit/3e62e99623675b3bf16abf0beb8d63b26efddf88) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add orders sdk
+
 ## 0.0.55
 
 ### Patch Changes
