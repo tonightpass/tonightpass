@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.55
+
+### Patch Changes
+
+- [`dd3b572`](https://github.com/tonightpass/tonightpass/commit/dd3b572af8f7657cf03bec655d4aed6d6fb3d821) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix event orders typo in sdk
+
 ## 0.0.54
 
 ### Patch Changes
