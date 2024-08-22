@@ -11,4 +11,4 @@ export type Order = Base & {
 
 export type OrderEndpoints =
   | Endpoint<"GET", "/orders", ArrayResult<Order>, ArrayOptions<Order>>
-  | Endpoint<"GET", "/orders/:sessionId", Order>;
+  | Endpoint<"GET", "/orders/:invoiceId", Order>;
