@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.58
+
+### Patch Changes
+
+- [`18e50a2`](https://github.com/tonightpass/tonightpass/commit/18e50a2789af421008fd6715eb326dec3b67a912) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Replace sessionId by invoiceId
+
 ## 0.0.57
 
 ### Patch Changes
