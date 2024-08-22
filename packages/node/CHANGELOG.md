@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.57
+
+### Patch Changes
+
+- [`d0a5007`](https://github.com/tonightpass/tonightpass/commit/d0a5007ff18f4b51c460a7a0b3c0b5322a4db004) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update order and organization event ticket to comply with stripe types
+
 ## 0.0.56
 
 ### Patch Changes
