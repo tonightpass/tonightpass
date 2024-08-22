@@ -1,3 +1,5 @@
+import Stripe from "stripe";
+
 import { Base, Currency } from "../../..";
 import {
   CreateOrganizationEventTicketDto,
@@ -8,7 +10,8 @@ import { Endpoint } from "../../../../endpoints";
 export type OrganizationEventTicket = Base & {
   name: string;
   description?: string;
-  price: number;
+  price: Stripe.Price;
+  product: Stripe.Product;
   fee: number;
   displayPrice: number;
   quantity: number;
