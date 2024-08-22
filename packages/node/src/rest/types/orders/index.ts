@@ -5,7 +5,7 @@ import { Endpoint } from "../../endpoints";
 import { User } from "../users";
 
 export type Order = Base & {
-  session: Stripe.Checkout.Session;
+  invoice: Stripe.Invoice;
   user: User;
 };
 
