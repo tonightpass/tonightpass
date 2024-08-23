@@ -5,9 +5,9 @@ export const orders = sdk((client) => ({
   getAll: async (options?: ArrayOptions<Order>) => {
     return client.get("/orders", options);
   },
-  get: async (invoiceId: string) => {
-    return client.get("/orders/:invoiceId", {
-      invoiceId,
+  get: async (orderId: string) => {
+    return client.get("/orders/:orderId", {
+      orderId,
     });
   },
 }));
