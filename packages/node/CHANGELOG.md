@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.59
+
+### Patch Changes
+
+- [`fc6c475`](https://github.com/tonightpass/tonightpass/commit/fc6c47522df170de38a13c814e4cfc8cf55f08b5) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update order sdk by replacing invoiceId by orderId
+
 ## 0.0.58
 
 ### Patch Changes
