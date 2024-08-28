@@ -6,6 +6,7 @@ export * from "./token";
 export * from "./users";
 export * from "./orders";
 export * from "./profiles";
+export * from "./webhooks";
 
 export type Base = {
   id: string;

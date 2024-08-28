@@ -8,6 +8,7 @@ import {
   OrganizationEndpoints,
   ProfileEndpoints,
   UserEndpoints,
+  WebhookEndpoints,
 } from "./types";
 
 export type SuccessfulAPIResponse<T> = {
@@ -46,4 +47,5 @@ export type Endpoints =
   | OrderEndpoints
   | OrganizationEndpoints
   | ProfileEndpoints
-  | UserEndpoints;
+  | UserEndpoints
+  | WebhookEndpoints;
