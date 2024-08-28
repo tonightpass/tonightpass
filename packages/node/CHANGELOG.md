@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.60
+
+### Patch Changes
+
+- [`168315c`](https://github.com/tonightpass/tonightpass/commit/168315c1c8266d3707692ae4d385282e1034b6f3) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update create organization event order dto cart types
+
 ## 0.0.59
 
 ### Patch Changes
