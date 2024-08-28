@@ -1,6 +1,6 @@
 import Stripe from "stripe";
 
-import { Base, Currency } from "../../..";
+import { Base } from "../../..";
 import {
   CreateOrganizationEventTicketDto,
   UpdateOrganizationEventTicketDto,
@@ -13,11 +13,9 @@ export type OrganizationEventTicket = Base & {
   price: Stripe.Price;
   product: Stripe.Product;
   fee: number;
-  displayPrice: number;
   quantity: number;
   type: OrganizationEventTicketType;
   category: OrganizationEventTicketCategory;
-  currency: Currency;
   vatRate: number;
   externalId?: string;
   isVisible: boolean;
