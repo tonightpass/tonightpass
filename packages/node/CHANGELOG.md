@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.61
+
+### Patch Changes
+
+- [`333df8c`](https://github.com/tonightpass/tonightpass/commit/333df8ce2ac3bd365536863394e55b88a182e93b) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add webhooks endpoints
+
 ## 0.0.60
 
 ### Patch Changes
