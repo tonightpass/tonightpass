@@ -189,8 +189,8 @@ importers:
         specifier: 10.4.1
         version: 10.4.1(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@types/node':
-        specifier: 20.16.1
-        version: 20.16.1
+        specifier: 20.16.2
+        version: 20.16.2
       typescript:
         specifier: ^5.0.0
         version: 5.5.4
@@ -213,8 +213,8 @@ importers:
         specifier: ^1.4.8
         version: 1.7.22(@swc/helpers@0.5.5)
       '@types/node':
-        specifier: 20.16.1
-        version: 20.16.1
+        specifier: 20.16.2
+        version: 20.16.2
       node-mailjet:
         specifier: 6.0.5
         version: 6.0.5
@@ -253,8 +253,8 @@ importers:
         specifier: ^0.2.19
         version: 0.2.19(esbuild@0.23.1)
       '@types/node':
-        specifier: 20.16.1
-        version: 20.16.1
+        specifier: 20.16.2
+        version: 20.16.2
       tsx:
         specifier: ^4.7.1
         version: 4.18.0
@@ -2035,14 +2035,8 @@ packages:
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
 
-  '@types/node@20.16.1':
-    resolution: {integrity: sha512-zJDo7wEadFtSyNz5QITDfRcrhqDvQI1xQNQ0VoizPjM/dVAODqqIUWbJPkvsxmTI0MYRGRikcdjMPhOssnPejQ==}
-
   '@types/node@20.16.2':
     resolution: {integrity: sha512-91s/n4qUPV/wg8eE9KHYW1kouTfDk2FPGjXbBMfRWP/2vg1rCXNQL1OCabwGs0XSdukuK+MwCDXE30QpSeMUhQ==}
-
-  '@types/node@22.5.1':
-    resolution: {integrity: sha512-KkHsxej0j9IW1KKOOAA/XBA0z08UFSrRQHErzEfA3Vgq57eXIMYboIlHJuYIfd+lwCQjtKqUu3UnmKbtUc9yRw==}
 
   '@types/prop-types@15.7.12':
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
@@ -8033,18 +8027,9 @@ snapshots:
 
   '@types/node@12.20.55': {}
 
-  '@types/node@20.16.1':
-    dependencies:
-      undici-types: 6.19.8
-
   '@types/node@20.16.2':
     dependencies:
       undici-types: 6.19.8
-
-  '@types/node@22.5.1':
-    dependencies:
-      undici-types: 6.19.8
-    optional: true
 
   '@types/prop-types@15.7.12': {}
 
@@ -8102,7 +8087,7 @@ snapshots:
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 22.5.1
+      '@types/node': 20.16.2
     optional: true
 
   '@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4)':
@@ -12122,7 +12107,7 @@ snapshots:
 
   stripe@16.8.0:
     dependencies:
-      '@types/node': 20.16.1
+      '@types/node': 20.16.2
       qs: 6.13.0
 
   styled-components@6.1.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
