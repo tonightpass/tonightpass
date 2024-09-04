@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.65
+
+### Patch Changes
+
+- [`336b84e`](https://github.com/tonightpass/tonightpass/commit/336b84e188174b009ef8e8537fdfd52c2b09f2e5) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update CreateUserDto types
+
 ## 0.0.64
 
 ### Patch Changes
