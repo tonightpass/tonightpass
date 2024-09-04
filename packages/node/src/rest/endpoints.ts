@@ -4,6 +4,7 @@ import {
   AuthEndpoints,
   CareersEndpoints,
   HealthEndpoints,
+  NotificationsEndpoints,
   OrderEndpoints,
   OrganizationEndpoints,
   ProfileEndpoints,
@@ -48,4 +49,5 @@ export type Endpoints =
   | OrganizationEndpoints
   | ProfileEndpoints
   | UserEndpoints
-  | WebhookEndpoints;
+  | WebhookEndpoints
+  | NotificationsEndpoints;

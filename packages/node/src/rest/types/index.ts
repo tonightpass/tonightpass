@@ -7,6 +7,7 @@ export * from "./users";
 export * from "./orders";
 export * from "./profiles";
 export * from "./webhooks";
+export * from "./notifications";
 
 export type Base = {
   id: string;
