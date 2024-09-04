@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.64
+
+### Patch Changes
+
+- [`7f101a4`](https://github.com/tonightpass/tonightpass/commit/7f101a46dbe4698a62af7c5815a002890484368f) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update user identity gender types
+
 ## 0.0.63
 
 ### Patch Changes
