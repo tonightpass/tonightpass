@@ -1,3 +1,5 @@
+import { IsEnum } from "class-validator";
+
 import { Location, UserIdentifier, UserIdentityGender } from "../../types";
 
 export class CreateUserDto {
@@ -10,7 +12,10 @@ export class CreateUserDto {
 class CreateUserIdentituDto {
   firstName: string;
   lastName: string;
+
+  @IsEnum(UserIdentityGender)
   gender: UserIdentityGender;
+
   avatarUrl?: string;
   birthDate: Date;
 }

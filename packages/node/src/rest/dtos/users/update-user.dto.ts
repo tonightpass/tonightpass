@@ -2,6 +2,7 @@ import { Type } from "class-transformer";
 import {
   IsDateString,
   IsEmail,
+  IsEnum,
   IsObject,
   IsOptional,
   IsPhoneNumber,
@@ -15,7 +16,7 @@ import {
 } from "class-validator";
 
 import { REGEX } from "../../../constants/regex";
-import { UserIdentifier, UserIdentity } from "../../types";
+import { UserIdentifier, UserIdentity, UserIdentityGender } from "../../types";
 
 export class UpdateUserDto {
   @IsOptional()
@@ -108,7 +109,8 @@ class UpdateIdentityDto
   bannerUrl?: string | undefined;
 
   @IsOptional()
-  gender?: string;
+  @IsEnum(UserIdentityGender)
+  gender?: UserIdentityGender;
 
   @IsOptional()
   @IsDateString()
