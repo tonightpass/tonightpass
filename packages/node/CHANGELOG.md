@@ -1,5 +1,17 @@
 # tonightpass
 
+## 0.0.63
+
+### Patch Changes
+
+- [`790ae8e`](https://github.com/tonightpass/tonightpass/commit/790ae8eecfab6bd1818902f02a4c93e587462c89) Thanks [@jerembdn](https://github.com/jerembdn)! - Add notifications in SDK
+
+## 0.0.62
+
+### Patch Changes
+
+- [`6730d29`](https://github.com/tonightpass/tonightpass/commit/6730d29f2f73043a8c717acfe69d1dc95f1f9f1f) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update organization event ticket types
+
 ## 0.0.61
 
 ### Patch Changes

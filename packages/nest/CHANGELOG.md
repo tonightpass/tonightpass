@@ -1,5 +1,25 @@
 # @tonightpass/nest
 
+## 0.0.48
+
+### Patch Changes
+
+- Updated dependencies [[`790ae8e`](https://github.com/tonightpass/tonightpass/commit/790ae8eecfab6bd1818902f02a4c93e587462c89)]:
+  - tonightpass@0.0.63
+
+## 0.0.47
+
+### Patch Changes
+
+- [`d1d7fe0`](https://github.com/tonightpass/tonightpass/commit/d1d7fe00cb7fee6e9c4c1b777ee48cfbd9be59b4) Thanks [@jerembdn](https://github.com/jerembdn)! - Add notifications in SDK
+
+## 0.0.46
+
+### Patch Changes
+
+- Updated dependencies [[`6730d29`](https://github.com/tonightpass/tonightpass/commit/6730d29f2f73043a8c717acfe69d1dc95f1f9f1f)]:
+  - tonightpass@0.0.62
+
 ## 0.0.45
 
 ### Patch Changes
