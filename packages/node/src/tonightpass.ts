@@ -3,6 +3,7 @@ import {
   auth,
   careers,
   health,
+  notifications,
   orders,
   organizations,
   profiles,
@@ -19,6 +20,7 @@ export class TonightPass {
   public readonly organizations;
   public readonly profiles;
   public readonly users;
+  public readonly notifications;
 
   constructor(options: ClientOptions) {
     this.client = new Client(options);
@@ -30,5 +32,6 @@ export class TonightPass {
     this.organizations = organizations(this.client);
     this.profiles = profiles(this.client);
     this.users = users(this.client);
+    this.notifications = notifications(this.client);
   }
 }
