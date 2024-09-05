@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.67
+
+### Patch Changes
+
+- [`6922f46`](https://github.com/tonightpass/tonightpass/commit/6922f46fdfe419e658c0ac9f1cec5237dc86ea0f) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update create and update user dtos
+
 ## 0.0.66
 
 ### Patch Changes
