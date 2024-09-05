@@ -101,7 +101,7 @@ export type UserEndpoints =
       "/users/check/:identifier",
       {
         exists: boolean;
-        identifier: UserIdentifier;
+        identifier: Partial<UserIdentifier>;
         suggestions?: string[];
       },
       { identifier: boolean; suggestions?: boolean }
