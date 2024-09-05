@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.66
+
+### Patch Changes
+
+- [`f8d4e42`](https://github.com/tonightpass/tonightpass/commit/f8d4e422d24d540d566ff356fb7733def762fbd8) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update user check identifier response types
+
 ## 0.0.65
 
 ### Patch Changes
