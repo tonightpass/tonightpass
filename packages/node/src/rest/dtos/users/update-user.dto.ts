@@ -22,14 +22,14 @@ export class UpdateUserDto {
   @IsOptional()
   @IsObject()
   @ValidateNested()
-  @Type(() => UpdateIdentifierDto)
-  identifier?: UpdateIdentifierDto;
+  @Type(() => UpdateUserIdentifierDto)
+  identifier?: UpdateUserIdentifierDto;
 
   @IsOptional()
   @IsObject()
   @ValidateNested()
-  @Type(() => UpdateIdentityDto)
-  identity?: UpdateIdentityDto;
+  @Type(() => UpdateUserIdentityDto)
+  identity?: UpdateUserIdentityDto;
 
   @IsOptional()
   @IsString()
@@ -38,7 +38,7 @@ export class UpdateUserDto {
   password?: string;
 }
 
-class UpdateIdentifierDto
+class UpdateUserIdentifierDto
   implements
     Partial<Pick<UserIdentifier, "email" | "phoneNumber" | "username">>
 {
@@ -58,7 +58,7 @@ class UpdateIdentifierDto
   username?: string;
 }
 
-class UpdateIdentityDto
+class UpdateUserIdentityDto
   implements
     Partial<
       Pick<
