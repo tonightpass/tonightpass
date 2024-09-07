@@ -23,7 +23,7 @@
     "@nestjs/platform-fastify": "^10.0.0",
     "@swc/core": "^1.4.8",
     "@types/node": "20.16.5",
-    "node-mailjet": "6.0.5",
+    "node-mailjet": "6.0.6",
     "tslib": "^2.5.0",
     "typescript": "^5.0.0"
   }
