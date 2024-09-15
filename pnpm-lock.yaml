@@ -229,7 +229,7 @@ importers:
     dependencies:
       '@mikro-orm/core':
         specifier: ^6.2.9
-        version: 6.3.9
+        version: 6.3.10
       class-transformer:
         specifier: ^0.5.1
         version: 0.5.1
@@ -1540,8 +1540,8 @@ packages:
     resolution: {integrity: sha512-3lBouSuF7CqlseLB+FKES0K4FQ02JrbEoRtJhxnsyB1s5v4AP03gsoohN8jp7DcOImhaR9scYdztq3/sLfk/qQ==}
     engines: {node: '>=14.18.0'}
 
-  '@mikro-orm/core@6.3.9':
-    resolution: {integrity: sha512-RKJ8jQWd+xOaUq02zhNbw/yhguFDopMayefsirOBPAXBhRyndqZOB86ZBetDWYcOhJDI9VCqufZldrvC59r6eQ==}
+  '@mikro-orm/core@6.3.10':
+    resolution: {integrity: sha512-Z41EbAYY3eESvJEV8V6jpFevGiy95qLUmII6iXGsQ3aU6yu3JLKilQ1xoP86q7raMXODWui1lhumdbCHD7KrRQ==}
     engines: {node: '>= 18.12.0'}
 
   '@nestjs/axios@3.0.3':
@@ -4378,8 +4378,8 @@ packages:
     resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
     engines: {node: '>=8.6'}
 
-  mikro-orm@6.3.9:
-    resolution: {integrity: sha512-xI8pbOTEBbvnnqdrA+PwcEgB4kixdxUs4zh3mw432aJhoF7+yI65vV9ANKjeZDXoROYT3U3UH+jzAbYb051KPg==}
+  mikro-orm@6.3.10:
+    resolution: {integrity: sha512-IgVZ2HElW6hgG9P7IT5jvR7PE4CKk/PAQPlNV+mwf9j+m1OdpllW7sSBXgY5ZA8VMGoYAags2Jkvw/pXj5bspA==}
     engines: {node: '>= 18.12.0'}
 
   mime-db@1.52.0:
@@ -7533,14 +7533,14 @@ snapshots:
       jju: 1.4.0
       js-yaml: 4.1.0
 
-  '@mikro-orm/core@6.3.9':
+  '@mikro-orm/core@6.3.10':
     dependencies:
       dataloader: 2.2.2
       dotenv: 16.4.5
       esprima: 4.0.1
       fs-extra: 11.2.0
       globby: 11.1.0
-      mikro-orm: 6.3.9
+      mikro-orm: 6.3.10
       reflect-metadata: 0.2.2
 
   '@nestjs/axios@3.0.3(@nestjs/common@10.4.1(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(axios@1.7.4)(rxjs@7.8.1)':
@@ -11119,7 +11119,7 @@ snapshots:
       braces: 3.0.3
       picomatch: 2.3.1
 
-  mikro-orm@6.3.9: {}
+  mikro-orm@6.3.10: {}
 
   mime-db@1.52.0: {}
 
