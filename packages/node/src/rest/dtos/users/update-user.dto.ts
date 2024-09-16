@@ -3,6 +3,7 @@ import {
   IsDateString,
   IsEmail,
   IsEnum,
+  IsLowercase,
   IsObject,
   IsOptional,
   IsPhoneNumber,
@@ -54,7 +55,9 @@ class UpdateUserIdentifierDto
 
   @IsOptional()
   @IsString()
-  @MinLength(3)
+  @IsLowercase()
+  @Length(3, 48)
+  @Matches(REGEX.USERNAME)
   username?: string;
 }
 

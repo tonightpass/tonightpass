@@ -2,13 +2,13 @@ import {
   IsDateString,
   IsEmail,
   IsEnum,
+  IsLowercase,
   IsOptional,
   IsPhoneNumber,
   IsString,
   IsUrl,
   Length,
   Matches,
-  MinLength,
 } from "class-validator";
 
 import { REGEX } from "../../../constants";
@@ -40,10 +40,12 @@ class CreateUserIdentifierDto
   @IsPhoneNumber()
   phoneNumber?: string;
 
-  @IsOptional()
   @IsString()
-  @MinLength(3)
-  username?: string;
+  @IsString()
+  @IsLowercase()
+  @Length(3, 48)
+  @Matches(REGEX.USERNAME)
+  username: string;
 }
 
 export class CreateUserIdentityDto {
