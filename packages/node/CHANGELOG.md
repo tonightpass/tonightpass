@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.70
+
+### Patch Changes
+
+- [`3d9d8dc`](https://github.com/tonightpass/tonightpass/commit/3d9d8dce18d8bdde58ab30e38a5b70f0da9857ab) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix missing types and body for profiles
+
 ## 0.0.69
 
 ### Patch Changes
