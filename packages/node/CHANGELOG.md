@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.68
+
+### Patch Changes
+
+- [`ed0996d`](https://github.com/tonightpass/tonightpass/commit/ed0996da66461a2d92dff32d9d50a2a04a840e4d) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add profiles relationships types
+
 ## 0.0.67
 
 ### Patch Changes
