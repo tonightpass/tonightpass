@@ -2,8 +2,10 @@ import { Endpoint } from "../../endpoints";
 import { OrganizationIdentity } from "../organizations";
 import { UserIdentity } from "../users";
 
+export type ProfileType = "user" | "organization";
+
 export interface Profile {
-  type: "user" | "organization";
+  type: ProfileType;
 
   displayName: string;
   description?: string;
@@ -26,5 +28,5 @@ export interface ProfileMetadata {
 
 export type ProfileEndpoints =
   | Endpoint<"GET", "/profiles/:username", UserIdentity | OrganizationIdentity>
-  | Endpoint<"POST", "/profiles/:username/relationships/follow", void>
-  | Endpoint<"POST", "/profiles/:username/relationships/unfollow", void>;
+  | Endpoint<"POST", "/profiles/:username/relationships/follow", void, null>
+  | Endpoint<"POST", "/profiles/:username/relationships/unfollow", void, null>;
