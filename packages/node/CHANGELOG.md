@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.69
+
+### Patch Changes
+
+- [`c16e05f`](https://github.com/tonightpass/tonightpass/commit/c16e05fb1eba23d7b4668a670ce232ebb0fc1877) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix username regex
+
 ## 0.0.68
 
 ### Patch Changes
