@@ -20,12 +20,17 @@ export function regexTests() {
     assert.ok(!REGEX.NAME.test("JohnDoe!"));
   });
 
-  test("SLUG regex", () => {
-    assert.ok(REGEX.SLUG.test("slug_123"));
-    assert.ok(REGEX.SLUG.test("slug.123"));
-    assert.ok(!REGEX.SLUG.test("slug-123"));
-    assert.ok(!REGEX.SLUG.test("Slug123"));
-    assert.ok(!REGEX.SLUG.test("slug#123"));
+  test("USERNAME regex", () => {
+    assert.ok(REGEX.USERNAME.test("slug_123"));
+    assert.ok(REGEX.USERNAME.test("slug.123"));
+    assert.ok(!REGEX.USERNAME.test("slug-123"));
+    assert.ok(!REGEX.USERNAME.test("Slug123"));
+    assert.ok(!REGEX.USERNAME.test("slug#123"));
+    assert.ok(!REGEX.USERNAME.test("!slug123"));
+    assert.ok(!REGEX.USERNAME.test("slug123😀"));
+    assert.ok(!REGEX.USERNAME.test(".slug123"));
+    assert.ok(!REGEX.USERNAME.test("slug123."));
+    assert.ok(!REGEX.USERNAME.test("SLUG123"));
   });
 
   test("PHONE regex", () => {

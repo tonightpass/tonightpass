@@ -7,16 +7,19 @@ import {
   IsString,
   IsUrl,
   Length,
+  Matches,
 } from "class-validator";
 
 import { UpdateOrganizationEventDto } from "./events";
+import { REGEX } from "../../../constants";
 import { OrganizationSocialLink } from "../../types";
 
 export class UpdateOrganizationDto {
   @IsOptional()
   @IsString()
   @IsLowercase()
-  @Length(1, 48)
+  @Length(3, 48)
+  @Matches(REGEX.USERNAME)
   slug?: string;
 
   @IsObject()

@@ -5,9 +5,11 @@ import {
   IsOptional,
   IsString,
   Length,
+  Matches,
 } from "class-validator";
 
 import { CreateOrganizationEventTicketDto } from "./tickets";
+import { REGEX } from "../../../../constants";
 import {
   Location,
   OrganizationEventType,
@@ -22,7 +24,8 @@ export class CreateOrganizationEventDto {
   @IsOptional()
   @IsString()
   @IsLowercase()
-  @Length(1, 48)
+  @Length(3, 48)
+  @Matches(REGEX.SLUG)
   slug?: string;
 
   @IsString()

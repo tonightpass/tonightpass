@@ -5,6 +5,11 @@ export const REGEX = {
   NAME: /^[a-zA-Z0-9 ]+$/,
   // matches a slug with only lowercase letters, numbers, dots and underscores
   SLUG: /^[a-z0-9_.]+$/,
+  // matches a username with lowercase letters, numbers, underscores, and dots
+  //  - must be 3 to 48 characters long
+  //  - cannot have consecutive dots
+  //  - cannot start or end with a dot
+  USERNAME: /^(?!\.)(?!.*\.\.)(?!.*\.$)[a-z0-9_.]{3,48}$/,
   // matches an international phone number
   PHONE: /^\+(?:[0-9] ?){6,14}[0-9]$/,
   // matches a password with at least 8 characters, one uppercase letter, one lowercase letter and one number or special character
