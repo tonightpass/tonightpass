@@ -24,8 +24,7 @@ export interface ProfileMetadata {
   canDM: boolean;
 }
 
-export type ProfileEndpoints = Endpoint<
-  "GET",
-  "/profiles/:username",
-  UserIdentity | OrganizationIdentity
->;
+export type ProfileEndpoints =
+  | Endpoint<"GET", "/profiles/:username", UserIdentity | OrganizationIdentity>
+  | Endpoint<"POST", "/profiles/:username/relationships/follow", void>
+  | Endpoint<"POST", "/profiles/:username/relationships/unfollow", void>;
