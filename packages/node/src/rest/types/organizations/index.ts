@@ -1,9 +1,9 @@
 import type Stripe from "stripe";
 
+import { Base, Location, OrganizationProfile } from "..";
 import { OrganizationEvent, OrganizationEventEndpoints } from "./events";
 import { OrganizationEventTicket } from "./events/tickets";
 import { OrganizationMember, OrganizationMembersEndpoints } from "./members";
-import { Base, Location, Profile, ProfileMetadata } from "..";
 import { CreateOrganizationDto, UpdateOrganizationDto } from "../../dtos";
 import { Endpoint } from "../../endpoints";
 
@@ -27,14 +27,8 @@ export type OrganizationBilling = {
 
 export type OrganizationBillingAccount = Stripe.Account;
 
-export type OrganizationIdentity = Profile & {
+export type OrganizationIdentity = OrganizationProfile & {
   socialLinks: OrganizationSocialLink[];
-
-  metadata: ProfileMetadata & {
-    eventsCount: number;
-    viewsCount: number;
-    membersCount: number;
-  };
 };
 
 export type OrganizationSocialLink = {

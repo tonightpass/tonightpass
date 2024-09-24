@@ -2,9 +2,12 @@ import { Endpoint } from "../../endpoints";
 import { OrganizationIdentity } from "../organizations";
 import { UserIdentity } from "../users";
 
-export type ProfileType = "user" | "organization";
+export enum ProfileType {
+  User = "user",
+  Organization = "organization",
+}
 
-export interface Profile {
+export type BaseProfile = {
   type: ProfileType;
 
   displayName: string;
@@ -16,9 +19,21 @@ export interface Profile {
   metadata: ProfileMetadata;
 
   createdAt: Date;
-}
+};
 
-export interface ProfileMetadata {
+export type UserProfile = BaseProfile & {
+  type: ProfileType.User;
+  metadata: UserProfileMetadata;
+};
+
+export type OrganizationProfile = BaseProfile & {
+  type: ProfileType.Organization;
+  metadata: OrganizationProfileMetadata;
+};
+
+export type Profile = UserProfile | OrganizationProfile;
+
+export type BaseProfileMetadata = {
   followersCount: number;
   followingsCount: number;
 
@@ -28,7 +43,20 @@ export interface ProfileMetadata {
   isBlocked: boolean;
   hasBlocked: boolean;
   canDM: boolean;
-}
+};
+
+export type UserProfileMetadata = BaseProfileMetadata & {
+  hasPassPlus: boolean;
+  idValid: boolean;
+};
+
+export type OrganizationProfileMetadata = BaseProfileMetadata & {
+  eventsCount: number;
+  viewsCount: number;
+  membersCount: number;
+};
+
+export type ProfileMetadata = UserProfileMetadata | OrganizationProfileMetadata;
 
 export type ProfileEndpoints =
   | Endpoint<"GET", "/profiles/:username", UserIdentity | OrganizationIdentity>
