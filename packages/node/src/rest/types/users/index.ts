@@ -1,4 +1,4 @@
-import { Base, Currency, Language, Location, UserProfileMetadata } from "..";
+import { Base, Currency, Language, Location, UserProfile } from "..";
 import { UpdateUserDto } from "../../dtos";
 import { Endpoint } from "../../endpoints";
 
@@ -21,7 +21,7 @@ export type UserIdentifier = {
   [key: string]: string | undefined;
 };
 
-export type UserIdentity = UserProfileMetadata & {
+export type UserIdentity = UserProfile & {
   firstName: string;
   lastName: string;
   fullName: string;
