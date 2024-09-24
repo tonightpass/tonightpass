@@ -1,11 +1,4 @@
-import {
-  Base,
-  Currency,
-  Language,
-  Location,
-  Profile,
-  ProfileMetadata,
-} from "..";
+import { Base, Currency, Language, Location, UserProfileMetadata } from "..";
 import { UpdateUserDto } from "../../dtos";
 import { Endpoint } from "../../endpoints";
 
@@ -28,18 +21,12 @@ export type UserIdentifier = {
   [key: string]: string | undefined;
 };
 
-export type UserIdentity = Profile & {
+export type UserIdentity = UserProfileMetadata & {
   firstName: string;
   lastName: string;
   fullName: string;
   gender: UserIdentityGender;
   birthDate: Date;
-
-  metadata: ProfileMetadata & {
-    followingCount: number;
-    hasPassPlus: boolean;
-    idValid: boolean;
-  };
 };
 
 export enum UserRole {
