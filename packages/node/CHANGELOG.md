@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.73
+
+### Patch Changes
+
+- [`9550cbc`](https://github.com/tonightpass/tonightpass/commit/9550cbc9f34fa89551778480f2e4f09125fb36a2) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Remove following count from profiles
+
+- [`6022352`](https://github.com/tonightpass/tonightpass/commit/6022352a59ff05fa06657453bd5d532dceb166e9) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix return type of profiles relationshops follow/unfollow which are not redirections
+
 ## 0.0.72
 
 ### Patch Changes
