@@ -35,7 +35,6 @@ export type Profile = UserProfile | OrganizationProfile;
 
 export type BaseProfileMetadata = {
   followersCount: number;
-  followingsCount: number;
 
   isFollower: boolean;
   isFollowing: boolean;
