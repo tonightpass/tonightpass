@@ -20,6 +20,10 @@ export interface Profile {
 
 export interface ProfileMetadata {
   followersCount: number;
+  followingsCount: number;
+
+  isFollower: boolean;
+  isFollowing: boolean;
 
   isBlocked: boolean;
   hasBlocked: boolean;
