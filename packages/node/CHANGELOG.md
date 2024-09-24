@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.71
+
+### Patch Changes
+
+- [`fc82c2e`](https://github.com/tonightpass/tonightpass/commit/fc82c2ed21e563cd60b0e3f6e5c550eac2a865a0) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update profile metadata types
+
 ## 0.0.70
 
 ### Patch Changes
