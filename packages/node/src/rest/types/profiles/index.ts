@@ -59,5 +59,10 @@ export type ProfileMetadata = UserProfileMetadata | OrganizationProfileMetadata;
 
 export type ProfileEndpoints =
   | Endpoint<"GET", "/profiles/:username", UserIdentity | OrganizationIdentity>
-  | Endpoint<"POST", "/profiles/:username/relationships/follow", void, null>
-  | Endpoint<"POST", "/profiles/:username/relationships/unfollow", void, null>;
+  | Endpoint<"POST", "/profiles/:username/relationships/follow", boolean, null>
+  | Endpoint<
+      "POST",
+      "/profiles/:username/relationships/unfollow",
+      boolean,
+      null
+    >;
