@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.74
+
+### Patch Changes
+
+- [`56c3c06`](https://github.com/tonightpass/tonightpass/commit/56c3c06e61e60a22367f799b8475f577fee53357) Thanks [@jerembdn](https://github.com/jerembdn)! - Update SubscribeToBeta
+
 ## 0.0.73
 
 ### Patch Changes

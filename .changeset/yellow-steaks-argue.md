@@ -1,5 +1,0 @@
----
-"tonightpass": patch
----
-
-Update SubscribeToBeta
