@@ -1,5 +1,14 @@
 # @tonightpass/react
 
+## 0.0.76
+
+### Patch Changes
+
+- [`4606121`](https://github.com/tonightpass/tonightpass/commit/46061214a2877c105ca9a2f6f1f2a2a6bd222df8) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add swr config to api hook
+
+- Updated dependencies [[`4606121`](https://github.com/tonightpass/tonightpass/commit/46061214a2877c105ca9a2f6f1f2a2a6bd222df8)]:
+  - tonightpass@0.0.75
+
 ## 0.0.75
 
 ### Patch Changes
