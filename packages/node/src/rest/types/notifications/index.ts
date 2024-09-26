@@ -1,7 +1,8 @@
 import { Endpoint } from "../../endpoints";
 
 export type NotificationsEndpoints = Endpoint<
-  "GET",
+  "POST",
   "/notifications/subscribe/beta",
-  null
+  null,
+  { email: string }
 >;
