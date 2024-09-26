@@ -1,6 +1,7 @@
-import { ParamValue, Query, pathcat } from "pathcat";
+import { pathcat } from "pathcat";
 import { Options, Response } from "redaxios";
 
+import { ParamValue, Query } from "../..";
 import { APIResponse, Endpoints, ErroredAPIResponse } from "./endpoints";
 import { APIRequestOptions, request } from "./request";
 import { DEFAULT_API_URL } from "../constants";

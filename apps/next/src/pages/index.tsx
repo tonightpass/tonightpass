@@ -8,8 +8,19 @@ import styles from "@/styles/Home.module.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const careersJobs = useAPI("/careers/jobs");
-  console.log(careersJobs);
+  const profile = useAPI(
+    "/profiles/:username",
+    {
+      username: "tonightpass",
+    },
+    {
+      onSuccess: (data) => {
+        console.log("data", data);
+      },
+    },
+  );
+  console.log("profile", profile);
+
   return (
     <>
       <Head>

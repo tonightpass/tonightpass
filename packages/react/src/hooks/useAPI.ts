@@ -1,24 +1,51 @@
-import useSWR, { Fetcher } from "swr";
+import useSWR, { SWRConfiguration, SWRResponse } from "swr";
 import {
   Endpoints,
   APIRequestOptions,
   Client,
   PathsFor,
-  Query,
   DEFAULT_API_URL,
+  TonightPassAPIError,
+  Query,
 } from "tonightpass";
 
 export const client = new Client({ baseURL: DEFAULT_API_URL });
 
-export const useAPI = <Path extends PathsFor<"GET">>(
-  path?: Path | null,
-  query?: Query<Path>,
-  options?: APIRequestOptions,
-) => {
-  const fetcher: Fetcher<any> = (key: Path) => client.get(key, query, options);
+type AnyEndpoint = Endpoints extends infer T ? T : never;
 
-  return useSWR<Extract<Endpoints, { path: Path; method: "GET" }>["res"]>(
-    path,
-    fetcher,
-  );
-};
+type ForceAccept<T> = T extends never ? any : T;
+
+export type ResponseType<Path extends PathsFor<"GET">> = ForceAccept<
+  Extract<AnyEndpoint, { path: Path; method: "GET" }>["res"]
+>;
+
+export type ErrorType<Path extends PathsFor<"GET">> = TonightPassAPIError<
+  ResponseType<Path>
+>;
+
+export interface UseAPIConfig<Path extends PathsFor<"GET">>
+  extends SWRConfiguration<ResponseType<Path>, ErrorType<Path>> {
+  requestOptions?: APIRequestOptions;
+}
+
+export function useAPI<Path extends PathsFor<"GET">>(
+  path: Path | null | undefined,
+  query?: Query<Path>,
+  config?: UseAPIConfig<Path>,
+): SWRResponse<ResponseType<Path>, ErrorType<Path>> {
+  const { requestOptions, ...swrConfig } = config || {};
+
+  const fetcher = async ([fetchPath, fetchQuery]: [
+    Path,
+    Query<Path> | undefined,
+  ]) => {
+    const response = await client.get(fetchPath, fetchQuery, requestOptions);
+    return response as unknown as ResponseType<Path>;
+  };
+
+  return useSWR<
+    ResponseType<Path>,
+    ErrorType<Path>,
+    [Path, Query<Path> | undefined] | null
+  >(path ? [path, query] : null, fetcher, swrConfig);
+}
