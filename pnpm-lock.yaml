@@ -189,8 +189,8 @@ importers:
         specifier: 10.4.4
         version: 10.4.4(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@types/node':
-        specifier: 20.16.5
-        version: 20.16.5
+        specifier: 20.16.10
+        version: 20.16.10
       typescript:
         specifier: ^5.0.0
         version: 5.6.2
@@ -213,8 +213,8 @@ importers:
         specifier: ^1.4.8
         version: 1.7.26(@swc/helpers@0.5.5)
       '@types/node':
-        specifier: 20.16.5
-        version: 20.16.5
+        specifier: 20.16.10
+        version: 20.16.10
       node-mailjet:
         specifier: 6.0.6
         version: 6.0.6
@@ -253,8 +253,8 @@ importers:
         specifier: ^0.2.19
         version: 0.2.19(esbuild@0.23.1)
       '@types/node':
-        specifier: 20.16.5
-        version: 20.16.5
+        specifier: 20.16.10
+        version: 20.16.10
       tsx:
         specifier: ^4.7.1
         version: 4.19.1
@@ -1899,12 +1899,6 @@ packages:
 
   '@types/node@20.16.10':
     resolution: {integrity: sha512-vQUKgWTjEIRFCvK6CyriPH3MZYiYlNy0fKiEYHWbcoWLEgs4opurGGKlebrTLqdSMIbXImH6XExNiIyNUv3WpA==}
-
-  '@types/node@20.16.5':
-    resolution: {integrity: sha512-VwYCweNo3ERajwy0IUlqqcyZ8/A7Zwa9ZP3MnENWcB11AejO+tLy3pu850goUW2FC/IJMdZUfKpX/yxL1gymCA==}
-
-  '@types/node@22.7.4':
-    resolution: {integrity: sha512-y+NPi1rFzDs1NdQHHToqeiX2TIS79SWEAw9GYhkkx8bD0ChpfqC+n2j5OXOCpzfojBEBt6DnEnnG9MY0zk1XLg==}
 
   '@types/prop-types@15.7.13':
     resolution: {integrity: sha512-hCZTSvwbzWGvhqxp/RqVqwU999pBf2vp7hzIjiYOsl8wqOmUxkQ6ddw1cV3l8811+kdUFus/q4d1Y3E3SyEifA==}
@@ -7800,15 +7794,6 @@ snapshots:
     dependencies:
       undici-types: 6.19.8
 
-  '@types/node@20.16.5':
-    dependencies:
-      undici-types: 6.19.8
-
-  '@types/node@22.7.4':
-    dependencies:
-      undici-types: 6.19.8
-    optional: true
-
   '@types/prop-types@15.7.13': {}
 
   '@types/qs@6.9.15': {}
@@ -7865,7 +7850,7 @@ snapshots:
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 22.7.4
+      '@types/node': 20.16.10
     optional: true
 
   '@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)(typescript@5.6.2)':
@@ -11819,7 +11804,7 @@ snapshots:
 
   stripe@16.12.0:
     dependencies:
-      '@types/node': 20.16.5
+      '@types/node': 20.16.10
       qs: 6.13.0
 
   styled-components@6.1.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
