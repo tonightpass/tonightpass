@@ -1,9 +1,9 @@
-import { sdk } from "./builder";
-import { UpdateUserDto } from "../rest";
+import { UpdateUserDto } from "../../rest";
+import { sdk } from "../builder";
 
 export const users = sdk((client) => ({
   getAll: async () => client.get("/users"),
-  get: async (id: string) => client.get("/users", { id }),
+  get: async (userId: string) => client.get("/users/:userId", { userId }),
   me: async () => client.get("/users/me"),
   check: async (identifier: string, suggestions?: boolean) =>
     client.get("/users/check/:identifier", { identifier, suggestions }),
