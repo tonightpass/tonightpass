@@ -1,6 +1,12 @@
 import type Stripe from "stripe";
 
-import { Base, Location, OrganizationProfile } from "..";
+import {
+  ArrayOptions,
+  ArrayResult,
+  Base,
+  Location,
+  OrganizationProfile,
+} from "..";
 import { OrganizationEvent, OrganizationEventEndpoints } from "./events";
 import { OrganizationEventTicket } from "./events/tickets";
 import { OrganizationMember, OrganizationMembersEndpoints } from "./members";
@@ -46,7 +52,18 @@ export enum OrganizationSocialType {
 }
 
 export type OrganizationEndpoints =
-  | Endpoint<"GET", "/organizations", Organization[]>
+  | Endpoint<
+      "GET",
+      "/organizations",
+      ArrayResult<Organization>,
+      ArrayOptions<Organization>
+    >
+  | Endpoint<
+      "GET",
+      "/organizations/me",
+      ArrayResult<Organization>,
+      ArrayOptions<Organization>
+    >
   | Endpoint<"GET", "/organizations/:organizationSlug", Organization>
   | Endpoint<"POST", "/organizations", Organization, CreateOrganizationDto>
   | Endpoint<
