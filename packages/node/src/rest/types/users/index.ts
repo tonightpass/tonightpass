@@ -1,6 +1,15 @@
-import { Base, Currency, Language, Location, UserProfile } from "..";
+import {
+  Base,
+  Currency,
+  Language,
+  Location,
+  UserBookingEndpoints,
+  UserProfile,
+} from "..";
 import { UpdateUserDto } from "../../dtos";
 import { Endpoint } from "../../endpoints";
+
+export * from "./bookings";
 
 export type User = Base & {
   identifier: UserIdentifier;
@@ -81,7 +90,7 @@ export type UserConnectionClient = {
 
 export type UserEndpoints =
   | Endpoint<"GET", "/users", User[]>
-  | Endpoint<"GET", "/users/:userId", User, { id: string }>
+  | Endpoint<"GET", "/users/:userId", User>
   | Endpoint<"GET", "/users/me", User>
   | Endpoint<
       "GET",
@@ -93,4 +102,5 @@ export type UserEndpoints =
       },
       { identifier: boolean; suggestions?: boolean }
     >
-  | Endpoint<"PUT", "/users/:userId", User, UpdateUserDto>;
+  | Endpoint<"PUT", "/users/:userId", User, UpdateUserDto>
+  | UserBookingEndpoints;
