@@ -19,4 +19,10 @@ export type UserBookingEndpoints =
       ArrayResult<UserBooking>,
       ArrayOptions<UserBooking>
     >
+  | Endpoint<
+      "GET",
+      "/users/bookings/me",
+      ArrayResult<UserBooking>,
+      ArrayOptions<UserBooking>
+    >
   | Endpoint<"GET", "/users/bookings/:bookingId", UserBooking>;
