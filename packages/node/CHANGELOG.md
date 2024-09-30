@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.76
+
+### Patch Changes
+
+- [`46ce556`](https://github.com/tonightpass/tonightpass/commit/46ce5567a37b62e3f4d9501fcdda07a99e329067) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add user booking types
+
 ## 0.0.75
 
 ### Patch Changes
