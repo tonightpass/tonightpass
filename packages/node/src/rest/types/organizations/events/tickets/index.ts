@@ -16,7 +16,6 @@ export type OrganizationEventTicket = Base & {
   quantity: number;
   type: OrganizationEventTicketType;
   category: OrganizationEventTicketCategory;
-  vatRate: number;
   externalId?: string;
   isVisible: boolean;
   isFeesIncluded: boolean;
