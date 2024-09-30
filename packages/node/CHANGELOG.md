@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.77
+
+### Patch Changes
+
+- [`9bbacf5`](https://github.com/tonightpass/tonightpass/commit/9bbacf5c7e50ff2477c4bd163a678a1dd3096c38) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Remove vatRate from OrganizationEvent
+
 ## 0.0.76
 
 ### Patch Changes
