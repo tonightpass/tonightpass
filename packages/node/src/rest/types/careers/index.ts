@@ -17,8 +17,8 @@ export type CareersJob = {
   status: "ALL" | "ONLINE" | "ARCHIVED";
   remote: boolean;
   office: CareersOffice;
-  workplaceType: string;
-  remoteType?: string;
+  workplaceType: "ONSITE" | "REMOTE" | "HYBRID";
+  remoteType?: "ANYWHERE" | "COUNTRY";
   description?: string;
   categoryId?: number;
   employmentTypeId?: number;
