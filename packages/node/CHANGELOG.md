@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.79
+
+### Patch Changes
+
+- [`969a10d`](https://github.com/tonightpass/tonightpass/commit/969a10df15f0fa15980e0dfc5a25ed8ba7f56991) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update workplace type and remote type in careers types
+
 ## 0.0.78
 
 ### Patch Changes
