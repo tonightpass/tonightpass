@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.78
+
+### Patch Changes
+
+- [`1f42eb0`](https://github.com/tonightpass/tonightpass/commit/1f42eb0c66981c3f2b3374e1e0c86b6101319d0b) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add endpoint for retrieving user's own bookings
+
 ## 0.0.77
 
 ### Patch Changes
