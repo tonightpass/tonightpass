@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.80
+
+### Patch Changes
+
+- [`b75f934`](https://github.com/tonightpass/tonightpass/commit/b75f934693020428df387d0ce79fe55669bd0e94) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update typo of me into @me routes to avoid confusions with username
+
 ## 0.0.79
 
 ### Patch Changes
