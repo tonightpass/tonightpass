@@ -36,7 +36,7 @@ export type OrganizationMembersEndpoints =
     >
   | Endpoint<
       "GET",
-      "/organizations/members/me",
+      "/organizations/@me/members",
       ArrayResult<OrganizationMember>,
       ArrayOptions<OrganizationMember>
     >

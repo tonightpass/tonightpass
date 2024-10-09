@@ -21,7 +21,7 @@ export type UserBookingEndpoints =
     >
   | Endpoint<
       "GET",
-      "/users/bookings/me",
+      "/users/@me/bookings",
       ArrayResult<UserBooking>,
       ArrayOptions<UserBooking>
     >

@@ -91,7 +91,7 @@ export type UserConnectionClient = {
 export type UserEndpoints =
   | Endpoint<"GET", "/users", User[]>
   | Endpoint<"GET", "/users/:userId", User>
-  | Endpoint<"GET", "/users/me", User>
+  | Endpoint<"GET", "/users/@me", User>
   | Endpoint<
       "GET",
       "/users/check/:identifier",
