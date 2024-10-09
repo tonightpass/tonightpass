@@ -58,12 +58,6 @@ export type OrganizationEndpoints =
       ArrayResult<Organization>,
       ArrayOptions<Organization>
     >
-  | Endpoint<
-      "GET",
-      "/organizations/me",
-      ArrayResult<Organization>,
-      ArrayOptions<Organization>
-    >
   | Endpoint<"GET", "/organizations/:organizationSlug", Organization>
   | Endpoint<"POST", "/organizations", Organization, CreateOrganizationDto>
   | Endpoint<
