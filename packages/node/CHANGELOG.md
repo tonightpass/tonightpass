@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.81
+
+### Patch Changes
+
+- [`8b24471`](https://github.com/tonightpass/tonightpass/commit/8b244717d0f57ae5d6687587eb0d3d7c57e6ef35) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update organization event ticket types with event
+
 ## 0.0.80
 
 ### Patch Changes
