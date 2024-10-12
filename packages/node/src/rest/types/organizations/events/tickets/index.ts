@@ -1,6 +1,6 @@
 import Stripe from "stripe";
 
-import { Base } from "../../..";
+import { Base, OrganizationEvent } from "../../..";
 import {
   CreateOrganizationEventTicketDto,
   UpdateOrganizationEventTicketDto,
@@ -21,6 +21,7 @@ export type OrganizationEventTicket = Base & {
   isFeesIncluded: boolean;
   startAt?: Date;
   endAt?: Date;
+  event: OrganizationEvent;
 };
 
 export enum OrganizationEventTicketType {
