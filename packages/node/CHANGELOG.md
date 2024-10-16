@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.85
+
+### Patch Changes
+
+- [`069a9ad`](https://github.com/tonightpass/tonightpass/commit/069a9ad614f07767b68f380e3fd3b524d2ada55d) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update array options by removing populate options temporaly
+
 ## 0.0.84
 
 ### Patch Changes
