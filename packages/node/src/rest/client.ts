@@ -1,8 +1,8 @@
 import { pathcat } from "pathcat";
-import { Options, Response } from "redaxios";
+import { Options, Response as RedaxiosResponse } from "redaxios";
 
 import { ParamValue, Query } from "..";
-import { APIResponse, Endpoints, ErroredAPIResponse } from "./endpoints";
+import { Endpoints } from "./endpoints";
 import { APIRequestOptions, request } from "./request";
 import { DEFAULT_API_URL } from "../constants";
 
@@ -11,11 +11,43 @@ export type PathsFor<M extends Options["method"]> = Extract<
   { method: M }
 >["path"];
 
+export type SuccessfulAPIResponse<T> = {
+  success: true;
+  data: T;
+};
+
+export type ErroredAPIResponse = {
+  success: false;
+  message: string;
+  errors?: {
+    [key: string]: string;
+  };
+};
+
+export type APIResponse<T> = SuccessfulAPIResponse<T> | ErroredAPIResponse;
+
+export type PromisedAPIResponse<T> = Promise<APIResponse<T>>;
+
+export type Response<
+  M extends Options["method"],
+  P extends PathsFor<M>,
+> = APIResponse<Extract<Endpoints, { method: M; path: P }>["res"]>;
+
+export type PromisedResponse<
+  M extends Options["method"],
+  P extends PathsFor<M>,
+> = PromisedAPIResponse<Extract<Endpoints, { method: M; path: P }>["res"]>;
+
+export type Body<M extends Options["method"], P extends PathsFor<M>> = Extract<
+  Endpoints,
+  { method: M; path: P }
+>["body"];
+
 export class TonightPassAPIError<T> extends Error {
   public readonly status: number;
 
   constructor(
-    public readonly response: Response<APIResponse<T>>,
+    public readonly response: RedaxiosResponse<APIResponse<T>>,
     public readonly data: ErroredAPIResponse,
   ) {
     super(data.message);
@@ -49,53 +81,73 @@ export class Client {
     query?: Query<Path>,
     options?: APIRequestOptions,
   ) {
-    return this.requester<
-      Extract<Endpoints, { path: Path; method: "GET" }>["res"]
-    >("GET", path, undefined, query, options);
+    return this.requester<Response<"GET", Path>>(
+      "GET",
+      path,
+      undefined,
+      query,
+      options,
+    );
   }
 
-  async post<Path extends Extract<Endpoints, { method: "POST" }>["path"]>(
+  async post<Path extends PathsFor<"POST">>(
     path: Path,
-    body: Extract<Endpoints, { path: Path; method: "POST" }>["body"],
+    body: Body<"POST", Path>,
     query?: Query<Path>,
     options?: APIRequestOptions,
   ) {
-    return this.requester<
-      Extract<Endpoints, { path: Path; method: "POST" }>["res"]
-    >("POST", path, body, query, options);
+    return this.requester<Response<"POST", Path>>(
+      "POST",
+      path,
+      body,
+      query,
+      options,
+    );
   }
 
-  async put<Path extends Extract<Endpoints, { method: "PUT" }>["path"]>(
+  async put<Path extends PathsFor<"PUT">>(
     path: Path,
-    body: Extract<Endpoints, { path: Path; method: "PUT" }>["body"],
+    body: Body<"PUT", Path>,
     query?: Query<Path>,
     options?: APIRequestOptions,
   ) {
-    return this.requester<
-      Extract<Endpoints, { path: Path; method: "PUT" }>["res"]
-    >("PUT", path, body, query, options);
+    return this.requester<Response<"PUT", Path>>(
+      "PUT",
+      path,
+      body,
+      query,
+      options,
+    );
   }
 
-  async patch<Path extends Extract<Endpoints, { method: "PATCH" }>["path"]>(
+  async patch<Path extends PathsFor<"PATCH">>(
     path: Path,
-    body: Extract<Endpoints, { path: Path; method: "PATCH" }>["body"],
+    body: Body<"PATCH", Path>,
     query?: Query<Path>,
     options?: APIRequestOptions,
   ) {
-    return this.requester<
-      Extract<Endpoints, { path: Path; method: "PATCH" }>["res"]
-    >("PATCH", path, body, query, options);
+    return this.requester<Response<"PATCH", Path>>(
+      "PATCH",
+      path,
+      body,
+      query,
+      options,
+    );
   }
 
-  async delete<Path extends Extract<Endpoints, { method: "DELETE" }>["path"]>(
+  async delete<Path extends PathsFor<"DELETE">>(
     path: Path,
-    body: Extract<Endpoints, { path: Path; method: "DELETE" }>["body"],
+    body: Body<"DELETE", Path>,
     query?: Query<Path>,
     options?: APIRequestOptions,
   ) {
-    return this.requester<
-      Extract<Endpoints, { path: Path; method: "DELETE" }>["res"]
-    >("DELETE", path, body, query, options);
+    return this.requester<Response<"DELETE", Path>>(
+      "DELETE",
+      path,
+      body,
+      query,
+      options,
+    );
   }
 
   private async requester<T>(
@@ -113,7 +165,7 @@ export class Client {
       }
     }
 
-    const response: Response<APIResponse<T>> = await request<T>(url, {
+    const response: RedaxiosResponse<APIResponse<T>> = await request<T>(url, {
       method,
       data: body,
       ...options,
