@@ -96,7 +96,7 @@ export type ArrayOptions<T> = {
   /**
    * Populate relations
    */
-  populate?: string[];
+  // populate?: string[];
   /**
    * Select only specific fields to display
    */
