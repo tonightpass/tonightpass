@@ -25,7 +25,7 @@
     "pathcat": "^1.2.2",
     "redaxios": "^0.5.1",
     "reflect-metadata": "^0.2.1",
-    "stripe": "^16.0.0"
+    "stripe": "^17.0.0"
   },
   "devDependencies": {
     "@anatine/esbuild-decorators": "^0.2.19",
