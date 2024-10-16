@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.82
+
+### Patch Changes
+
+- [`09a7e5f`](https://github.com/tonightpass/tonightpass/commit/09a7e5f9b7580f2b63b8ec07e6bf4dbdcde0f58f) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix organization member @me route in types
+
+- [#522](https://github.com/tonightpass/tonightpass/pull/522) [`b14490c`](https://github.com/tonightpass/tonightpass/commit/b14490c403be4623dde4228a90c9008246004342) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Improve client types with full response and body
+
 ## 0.0.81
 
 ### Patch Changes
