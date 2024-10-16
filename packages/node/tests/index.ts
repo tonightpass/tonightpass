@@ -52,7 +52,7 @@ test("The HTTP client correctly forms URLs", () => {
 });
 
 test("The HTTP client can make a request", async () => {
-  await assert.doesNotReject(() => tnp.client.get("/health/http"));
+  await assert.doesNotReject(() => tnp.client.get("/health/api"));
 });
 
 for (const sdkTest of sdkTests) {
