@@ -1,7 +1,7 @@
 import axios, { Options, Response } from "redaxios";
 
 import { isBrowser } from "../../utils";
-import { APIResponse, ErroredAPIResponse } from "../endpoints";
+import { APIResponse, ErroredAPIResponse } from "../client";
 
 const instance = axios.create({
   headers: {
