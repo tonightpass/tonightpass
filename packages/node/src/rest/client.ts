@@ -2,7 +2,7 @@ import { pathcat } from "pathcat";
 import { Options, Response as RedaxiosResponse } from "redaxios";
 
 import { ParamValue, Query } from "..";
-import { APIResponse, Endpoints, ErroredAPIResponse } from "./endpoints";
+import { Endpoints } from "./endpoints";
 import { APIRequestOptions, request } from "./request";
 import { DEFAULT_API_URL } from "../constants";
 
@@ -11,10 +11,32 @@ export type PathsFor<M extends Options["method"]> = Extract<
   { method: M }
 >["path"];
 
+export type SuccessfulAPIResponse<T> = {
+  success: true;
+  data: T;
+};
+
+export type ErroredAPIResponse = {
+  success: false;
+  message: string;
+  errors?: {
+    [key: string]: string;
+  };
+};
+
+export type APIResponse<T> = SuccessfulAPIResponse<T> | ErroredAPIResponse;
+
+export type PromisedAPIResponse<T> = Promise<APIResponse<T>>;
+
 export type Response<
   M extends Options["method"],
   P extends PathsFor<M>,
 > = APIResponse<Extract<Endpoints, { method: M; path: P }>["res"]>;
+
+export type PromisedResponse<
+  M extends Options["method"],
+  P extends PathsFor<M>,
+> = PromisedAPIResponse<Extract<Endpoints, { method: M; path: P }>["res"]>;
 
 export type Body<M extends Options["method"], P extends PathsFor<M>> = Extract<
   Endpoints,
