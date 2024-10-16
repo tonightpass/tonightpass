@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.84
+
+### Patch Changes
+
+- [`32071ba`](https://github.com/tonightpass/tonightpass/commit/32071ba491f76e5fa985e0772b2092708e900685) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update health types and routes
+
 ## 0.0.83
 
 ### Patch Changes
