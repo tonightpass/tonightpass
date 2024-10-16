@@ -43,6 +43,17 @@ export type Body<M extends Options["method"], P extends PathsFor<M>> = Extract<
   { method: M; path: P }
 >["body"];
 
+export type StringifiedQueryValue = string | string[];
+
+export type StringifiedQuery<T> = {
+  [K in keyof T]: StringifiedQueryValue;
+};
+
+export type QueryParams<
+  M extends Options["method"],
+  P extends PathsFor<M>,
+> = StringifiedQuery<Extract<Endpoints, { method: M; path: P }>["body"]>;
+
 export class TonightPassAPIError<T> extends Error {
   public readonly status: number;
 
