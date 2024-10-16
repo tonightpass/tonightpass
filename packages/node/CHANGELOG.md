@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.83
+
+### Patch Changes
+
+- [`ee737eb`](https://github.com/tonightpass/tonightpass/commit/ee737eb18eb43534d3807b6523be13f5e9c1e244) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add stringified types for api types
+
 ## 0.0.82
 
 ### Patch Changes
