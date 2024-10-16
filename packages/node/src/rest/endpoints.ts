@@ -12,23 +12,6 @@ import {
   WebhookEndpoints,
 } from "./types";
 
-export type SuccessfulAPIResponse<T> = {
-  success: true;
-  data: T;
-};
-
-export type ErroredAPIResponse = {
-  success: false;
-  message: string;
-  errors?: {
-    [key: string]: string;
-  };
-};
-
-export type APIResponse<T> = SuccessfulAPIResponse<T> | ErroredAPIResponse;
-
-export type PromisedAPIResponse<T> = Promise<APIResponse<T>>;
-
 export type Endpoint<
   M extends Options["method"],
   Path extends string,
