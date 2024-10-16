@@ -6,11 +6,6 @@ import { Endpoints } from "./endpoints";
 import { APIRequestOptions, request } from "./request";
 import { DEFAULT_API_URL } from "../constants";
 
-export type PathsFor<M extends Options["method"]> = Extract<
-  Endpoints,
-  { method: M }
->["path"];
-
 export type SuccessfulAPIResponse<T> = {
   success: true;
   data: T;
@@ -27,6 +22,16 @@ export type ErroredAPIResponse = {
 export type APIResponse<T> = SuccessfulAPIResponse<T> | ErroredAPIResponse;
 
 export type PromisedAPIResponse<T> = Promise<APIResponse<T>>;
+
+export type PathsFor<M extends Options["method"]> = Extract<
+  Endpoints,
+  { method: M }
+>["path"];
+
+export type ResponseFor<
+  M extends Options["method"],
+  P extends PathsFor<M>,
+> = Extract<Endpoints, { method: M; path: P }>["res"];
 
 export type Response<
   M extends Options["method"],
@@ -92,7 +97,7 @@ export class Client {
     query?: Query<Path>,
     options?: APIRequestOptions,
   ) {
-    return this.requester<Response<"GET", Path>>(
+    return this.requester<ResponseFor<"GET", Path>>(
       "GET",
       path,
       undefined,
@@ -107,7 +112,7 @@ export class Client {
     query?: Query<Path>,
     options?: APIRequestOptions,
   ) {
-    return this.requester<Response<"POST", Path>>(
+    return this.requester<ResponseFor<"POST", Path>>(
       "POST",
       path,
       body,
@@ -122,7 +127,7 @@ export class Client {
     query?: Query<Path>,
     options?: APIRequestOptions,
   ) {
-    return this.requester<Response<"PUT", Path>>(
+    return this.requester<ResponseFor<"PUT", Path>>(
       "PUT",
       path,
       body,
@@ -137,7 +142,7 @@ export class Client {
     query?: Query<Path>,
     options?: APIRequestOptions,
   ) {
-    return this.requester<Response<"PATCH", Path>>(
+    return this.requester<ResponseFor<"PATCH", Path>>(
       "PATCH",
       path,
       body,
@@ -152,7 +157,7 @@ export class Client {
     query?: Query<Path>,
     options?: APIRequestOptions,
   ) {
-    return this.requester<Response<"DELETE", Path>>(
+    return this.requester<ResponseFor<"DELETE", Path>>(
       "DELETE",
       path,
       body,
