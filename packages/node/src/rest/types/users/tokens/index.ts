@@ -1,4 +1,4 @@
-import { User } from "../users";
+import { User } from "..";
 
 export type UserToken = {
   type: UserTokenType;
