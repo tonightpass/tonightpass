@@ -2,7 +2,6 @@ export * from "./auth";
 export * from "./careers";
 export * from "./health";
 export * from "./organizations";
-export * from "./token";
 export * from "./users";
 export * from "./orders";
 export * from "./profiles";

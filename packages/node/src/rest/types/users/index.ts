@@ -10,6 +10,7 @@ import { UpdateUserDto } from "../../dtos";
 import { Endpoint } from "../../endpoints";
 
 export * from "./bookings";
+export * from "./tokens";
 
 export type User = Base & {
   identifier: UserIdentifier;

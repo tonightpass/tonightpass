@@ -3,8 +3,8 @@ import { ArrayOptions, ArrayResult, Base } from "../..";
 import { CreateOrganizationMemberDto } from "../../../dtos";
 import { UpdateOrganizationMemberDto } from "../../../dtos/organizations/members/update-organization-member.dto";
 import { Endpoint } from "../../../endpoints";
-import { UserToken } from "../../token";
 import { User } from "../../users";
+import { UserToken } from "../../users/tokens";
 
 export type OrganizationMember = Base & {
   organization: Organization;
