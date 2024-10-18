@@ -17,7 +17,7 @@ export type UserBookingTicket = Base & {
 };
 
 export type UserBooking = Base & {
-  tickets: OrganizationEventTicket;
+  tickets: UserBookingTicket;
   order: Order;
   user: User;
 };
