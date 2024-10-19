@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.89
+
+### Patch Changes
+
+- [`38ab30d`](https://github.com/tonightpass/tonightpass/commit/38ab30d4a31931ec29b44def02edce2d6fb67ebb) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix incorrect types for tickets in user booking
+
 ## 0.0.88
 
 ### Patch Changes
