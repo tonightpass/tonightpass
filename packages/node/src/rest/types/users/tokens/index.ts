@@ -11,6 +11,7 @@ export type UserToken = {
 
 export enum UserTokenType {
   Authentication = "authentication",
+  BookingTicket = "booking_ticket",
   OrganizationInvite = "organization_invite",
   PasswordRecovery = "password_recovery",
   EmailValidation = "email_validation",
