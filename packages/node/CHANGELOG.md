@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.90
+
+### Patch Changes
+
+- [`6832c70`](https://github.com/tonightpass/tonightpass/commit/6832c70a6c93373c8784faaf8b47635b32958bf4) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add UserTokenType for BookingTicket
+
+- [`fedecd3`](https://github.com/tonightpass/tonightpass/commit/fedecd33cba5c371d558b0b15e2e9e9452134750) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add OrganizationEvent to UserBooking type
+
 ## 0.0.89
 
 ### Patch Changes
