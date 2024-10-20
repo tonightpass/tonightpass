@@ -2,6 +2,7 @@ import {
   ArrayOptions,
   ArrayResult,
   Base,
+  OrganizationEvent,
   OrganizationEventTicket,
   User,
   UserToken,
@@ -20,6 +21,7 @@ export type UserBooking = Base & {
   tickets: UserBookingTicket[];
   order: Order;
   user: User;
+  event: OrganizationEvent;
 };
 
 export type UserBookingEndpoints =
