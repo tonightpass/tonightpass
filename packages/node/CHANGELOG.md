@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.91
+
+### Patch Changes
+
+- [`fdadaae`](https://github.com/tonightpass/tonightpass/commit/fdadaae14650f9b81477b33fdfd1fb06ed5ecfa9) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update user booking endpoint types
+
 ## 0.0.90
 
 ### Patch Changes
