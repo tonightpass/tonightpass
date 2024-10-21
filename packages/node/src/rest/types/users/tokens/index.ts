@@ -1,9 +1,9 @@
 import { User } from "..";
+import { Base } from "../..";
 
-export type UserToken = {
+export type UserToken = Omit<Base, "updatedAt"> & {
   type: UserTokenType;
   value: string;
-  createdAt: Date;
   expiresAt: Date;
   user?: User;
   identifier?: string;
