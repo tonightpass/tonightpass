@@ -1,6 +1,4 @@
 import {
-  ArrayOptions,
-  ArrayResult,
   Base,
   Currency,
   Language,
@@ -94,7 +92,6 @@ export type UserConnectionClient = {
 export type UserEndpoints =
   | Endpoint<"GET", "/users", User[]>
   | Endpoint<"GET", "/users/:userId", User>
-  | Endpoint<"GET", "/users/suggestions", ArrayResult<User>, ArrayOptions<User>>
   | Endpoint<"GET", "/users/@me", User>
   | Endpoint<
       "GET",

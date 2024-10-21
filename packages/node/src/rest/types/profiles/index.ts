@@ -1,3 +1,4 @@
+import { ArrayOptions, ArrayResult } from "..";
 import { Endpoint } from "../../endpoints";
 import { OrganizationIdentity } from "../organizations";
 import { UserIdentity } from "../users";
@@ -59,6 +60,12 @@ export type ProfileMetadata = UserProfileMetadata | OrganizationProfileMetadata;
 
 export type ProfileEndpoints =
   | Endpoint<"GET", "/profiles/:username", UserIdentity | OrganizationIdentity>
+  | Endpoint<
+      "GET",
+      "/profiles/suggestions",
+      ArrayResult<UserIdentity | OrganizationIdentity>,
+      ArrayOptions<UserIdentity | OrganizationIdentity>
+    >
   | Endpoint<"POST", "/profiles/:username/relationships/follow", boolean, null>
   | Endpoint<
       "POST",
