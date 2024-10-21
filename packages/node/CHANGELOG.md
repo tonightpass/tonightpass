@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.94
+
+### Patch Changes
+
+- [`eb08d5d`](https://github.com/tonightpass/tonightpass/commit/eb08d5d1b59fb1878d513daf4bffb1d7836f12b8) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Refactor users suggestions into profiles suggestions
+
 ## 0.0.93
 
 ### Patch Changes
