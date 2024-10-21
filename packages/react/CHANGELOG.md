@@ -1,5 +1,12 @@
 # @tonightpass/react
 
+## 0.0.94
+
+### Patch Changes
+
+- Updated dependencies [[`9296b99`](https://github.com/tonightpass/tonightpass/commit/9296b99ad02acd42ee9e16df1341e845c9d1f531)]:
+  - tonightpass@0.0.93
+
 ## 0.0.93
 
 ### Patch Changes
