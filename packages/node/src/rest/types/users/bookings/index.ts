@@ -44,4 +44,13 @@ export type UserBookingEndpoints =
       ArrayOptions<UserBooking>
     >
   | Endpoint<"GET", "/users/bookings/:bookingId", UserBooking>
-  | Endpoint<"GET", "/users/@me/bookings/:bookingId", UserBooking>;
+  | Endpoint<"GET", "/users/@me/bookings/:bookingId", UserBooking>
+  | Endpoint<
+      "GET",
+      "/users/bookings/tickets/:ticketId",
+      UserBookingTicket,
+      {
+        tokenId: string;
+        tokenValue: string;
+      }
+    >;
