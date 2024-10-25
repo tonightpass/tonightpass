@@ -1,4 +1,4 @@
-import { AutoPath, PopulatePath } from "@mikro-orm/core";
+import { AutoPath } from "@mikro-orm/core";
 
 export * from "./auth";
 export * from "./careers";
