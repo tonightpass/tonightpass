@@ -1,3 +1,5 @@
+import { AutoPath, PopulatePath } from "@mikro-orm/core";
+
 export * from "./auth";
 export * from "./careers";
 export * from "./health";
@@ -91,7 +93,12 @@ export type ArrayFilterOptions = {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export type ArrayOptions<T> = {
+export type ArrayOptions<
+  T,
+  _Hint extends string = never,
+  Fields extends string = PopulatePath.ALL,
+  Excludes extends string = never,
+> = {
   /**
    * Populate relations
    */
@@ -99,7 +106,11 @@ export type ArrayOptions<T> = {
   /**
    * Select only specific fields to display
    */
-  // fields?: string[];
+  fields?: readonly AutoPath<T, Fields, `${PopulatePath.ALL}`>[];
+  /**
+   * Exclude specific fields from the result
+   */
+  exclude?: readonly AutoPath<T, Excludes>[];
 } & ArrayPaginationOptions;
 // & ArraySortOptions;
 
