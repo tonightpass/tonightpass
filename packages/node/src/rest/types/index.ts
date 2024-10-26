@@ -1,5 +1,3 @@
-import { AutoPath } from "@mikro-orm/core";
-
 export * from "./auth";
 export * from "./careers";
 export * from "./health";
@@ -104,8 +102,8 @@ export type ArrayOptions<T> = {
   // fields?: readonly AutoPath<T, Fields, `${PopulatePath.ALL}`>[];
   /**
    * Exclude specific fields from the result
-   */
-  exclude?: readonly AutoPath<T, string>[];
+  //  */
+  // exclude?: readonly AutoPath<T, string>[];
 } & ArrayPaginationOptions;
 // & ArraySortOptions;
 

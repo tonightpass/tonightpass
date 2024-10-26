@@ -62,7 +62,7 @@ export type ProfileEndpoints =
   | Endpoint<"GET", "/profiles/:username", UserIdentity | OrganizationIdentity>
   | Endpoint<
       "GET",
-      "/profiles/suggestions",
+      "/profiles/@me/relationships/suggestions",
       ArrayResult<UserIdentity | OrganizationIdentity>,
       ArrayOptions<UserIdentity | OrganizationIdentity>
     >
