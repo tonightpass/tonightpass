@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.96
+
+### Patch Changes
+
+- [`d7f9e6c`](https://github.com/tonightpass/tonightpass/commit/d7f9e6cbd5d44fe0ac9edf09772cc4dd17d95702) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add slug property to base profile
+
 ## 0.0.95
 
 ### Patch Changes
