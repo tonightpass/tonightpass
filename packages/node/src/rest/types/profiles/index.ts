@@ -1,7 +1,7 @@
 import { ArrayOptions, ArrayResult } from "..";
 import { Endpoint } from "../../endpoints";
-import { OrganizationIdentity } from "../organizations";
-import { UserIdentity } from "../users";
+import { Organization } from "../organizations";
+import { User } from "../users";
 
 export enum ProfileType {
   User = "user",
@@ -10,6 +10,7 @@ export enum ProfileType {
 
 export type BaseProfile = {
   type: ProfileType;
+  slug: string;
 
   displayName: string;
   description?: string;
@@ -59,12 +60,12 @@ export type OrganizationProfileMetadata = BaseProfileMetadata & {
 export type ProfileMetadata = UserProfileMetadata | OrganizationProfileMetadata;
 
 export type ProfileEndpoints =
-  | Endpoint<"GET", "/profiles/:username", UserIdentity | OrganizationIdentity>
+  | Endpoint<"GET", "/profiles/:username", Profile>
   | Endpoint<
       "GET",
       "/profiles/@me/relationships/suggestions",
-      ArrayResult<UserIdentity | OrganizationIdentity>,
-      ArrayOptions<UserIdentity | OrganizationIdentity>
+      ArrayResult<Profile>,
+      ArrayOptions<Organization | User>
     >
   | Endpoint<"POST", "/profiles/:username/relationships/follow", boolean, null>
   | Endpoint<
