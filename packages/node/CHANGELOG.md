@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.95
+
+### Patch Changes
+
+- [`f3fcf23`](https://github.com/tonightpass/tonightpass/commit/f3fcf23fc3b88a3cd6d45c42e89c34b54d02a7b8) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update profile suggestions endpoint path
+
 ## 0.0.94
 
 ### Patch Changes
