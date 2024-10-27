@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.97
+
+### Patch Changes
+
+- [`a9c46b5`](https://github.com/tonightpass/tonightpass/commit/a9c46b5b0efeb73afcc3ab1ae9a5c8ca9deec8c3) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix header type check for Content-Type handling
+
 ## 0.0.96
 
 ### Patch Changes
