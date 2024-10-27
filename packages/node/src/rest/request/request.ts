@@ -11,7 +11,22 @@ const instance = axios.create({
   },
   responseType: "json",
   transformRequest: [
-    function (data) {
+    function (data, headers) {
+      // Check if headers is a plain object with a string key type
+      if (
+        typeof headers === "object" &&
+        headers !== null &&
+        !("append" in headers)
+      ) {
+        // If data is FormData, remove Content-Type and let Axios set it
+        if (data instanceof FormData) {
+          delete headers["Content-Type"];
+          return data;
+        }
+        // Otherwise, set Content-Type for JSON
+        headers["Content-Type"] = "application/json";
+      }
+      // Return JSON string for non-FormData
       return JSON.stringify(data);
     },
   ],
