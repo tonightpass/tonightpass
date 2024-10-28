@@ -43,12 +43,14 @@ export class CreateOrganizationIdentityDto {
 
   @IsUrl({
     protocols: ["http", "https"],
+    host_whitelist: ["cdn.tonightpass.com", "cdn.staging.tonightpass.com"],
   })
   avatarUrl?: string;
 
   @IsOptional()
   @IsUrl({
     protocols: ["http", "https"],
+    host_whitelist: ["cdn.tonightpass.com", "cdn.staging.tonightpass.com"],
   })
   bannerUrl?: string;
 
