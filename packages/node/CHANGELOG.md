@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.100
+
+### Patch Changes
+
+- [`f1a5956`](https://github.com/tonightpass/tonightpass/commit/f1a5956c1c10af1da6d7cf875b4e25c43727eb50) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix content type header in request
+
 ## 0.0.99
 
 ### Patch Changes
