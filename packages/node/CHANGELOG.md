@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.98
+
+### Patch Changes
+
+- [`6fecd47`](https://github.com/tonightpass/tonightpass/commit/6fecd470fbc999bc72afba00b09ed58056cfdf44) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix header type check for content-type handling in request.ts
+
 ## 0.0.97
 
 ### Patch Changes
