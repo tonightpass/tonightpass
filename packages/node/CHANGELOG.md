@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.101
+
+### Patch Changes
+
+- [`869de31`](https://github.com/tonightpass/tonightpass/commit/869de31f840fa93d763e5ad4c275c5cc867b91fd) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add content type header in request once it's deleted
+
 ## 0.0.100
 
 ### Patch Changes
