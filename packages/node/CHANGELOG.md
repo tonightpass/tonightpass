@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.99
+
+### Patch Changes
+
+- [`d574763`](https://github.com/tonightpass/tonightpass/commit/d5747632e44521a283110dc15542e0e161b0ab08) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add user file upload handling endpoints and sdk
+
 ## 0.0.98
 
 ### Patch Changes
