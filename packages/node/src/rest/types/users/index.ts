@@ -89,6 +89,11 @@ export type UserConnectionClient = {
   version: string;
 };
 
+export enum UserFileType {
+  Avatar = "avatar",
+  Banner = "banner",
+}
+
 export type UserEndpoints =
   | Endpoint<"GET", "/users", User[]>
   | Endpoint<"GET", "/users/:userId", User>
@@ -104,4 +109,5 @@ export type UserEndpoints =
       { identifier: boolean; suggestions?: boolean }
     >
   | Endpoint<"PUT", "/users/:userId", User, UpdateUserDto>
+  | Endpoint<"POST", "/users/:userId/files/:userFileType", string>
   | UserBookingEndpoints;
