@@ -1,6 +1,6 @@
 import { Endpoint } from "../../endpoints";
 
-export type NotificationsEndpoints = Endpoint<
+export type NotificationEndpoints = Endpoint<
   "POST",
   "/notifications/subscribe/beta",
   null,

@@ -38,7 +38,7 @@ export type CareersEmploymentType = {
   slug: string;
 };
 
-export type CareersEndpoints =
+export type CareerEndpoints =
   | Endpoint<
       "GET",
       "/careers/categories",

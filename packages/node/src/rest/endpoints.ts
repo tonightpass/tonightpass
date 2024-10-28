@@ -2,9 +2,9 @@ import { Options } from "redaxios";
 
 import {
   AuthEndpoints,
-  CareersEndpoints,
+  CareerEndpoints,
   HealthEndpoints,
-  NotificationsEndpoints,
+  NotificationEndpoints,
   OrderEndpoints,
   OrganizationEndpoints,
   ProfileEndpoints,
@@ -26,11 +26,11 @@ export type Endpoint<
 
 export type Endpoints =
   | AuthEndpoints
-  | CareersEndpoints
+  | CareerEndpoints
   | HealthEndpoints
   | OrderEndpoints
   | OrganizationEndpoints
   | ProfileEndpoints
   | UserEndpoints
   | WebhookEndpoints
-  | NotificationsEndpoints;
+  | NotificationEndpoints;
