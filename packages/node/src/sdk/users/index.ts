@@ -10,21 +10,13 @@ export const users = sdk((client) => ({
     client.get("/users/check/:identifier", { identifier, suggestions }),
   update: async (userId: string, data: UpdateUserDto) =>
     client.put("/users/:userId", data, { userId }),
-  uploadFile: async (
-    userId: string,
-    userFileType: UserFileType,
-    file: File,
-  ) => {
-    return client.post(
+  uploadFile: async (userId: string, userFileType: UserFileType, file: File) =>
+    client.post(
       "/users/:userId/files/:userFileType",
-      undefined,
+      buildFileFormData("file", file),
       {
         userId,
         userFileType,
       },
-      {
-        data: buildFileFormData("file", file),
-      },
-    );
-  },
+    ),
 }));
