@@ -23,6 +23,9 @@ const instance = axios.create({
         return data;
       }
 
+      if (headers && typeof headers === "object" && "Content-Type" in headers) {
+        headers["Content-Type"] = "application/json";
+      }
       return JSON.stringify(data);
     },
   ],
