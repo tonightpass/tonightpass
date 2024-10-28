@@ -109,5 +109,5 @@ export type UserEndpoints =
       { identifier: boolean; suggestions?: boolean }
     >
   | Endpoint<"PUT", "/users/:userId", User, UpdateUserDto>
-  | Endpoint<"POST", "/users/:userId/files/:userFileType", string>
+  | Endpoint<"POST", "/users/:userId/files/:userFileType", string, FormData>
   | UserBookingEndpoints;
