@@ -250,7 +250,7 @@ importers:
         version: 0.2.2
       stripe:
         specifier: ^17.0.0
-        version: 17.2.1
+        version: 17.3.1
     devDependencies:
       '@anatine/esbuild-decorators':
         specifier: ^0.2.19
@@ -2184,6 +2184,9 @@ packages:
 
   '@types/node@20.17.1':
     resolution: {integrity: sha512-j2VlPv1NnwPJbaCNv69FO/1z4lId0QmGvpT41YxitRtWlg96g/j8qcv2RKsLKe2F6OJgyXhupN1Xo17b2m139Q==}
+
+  '@types/node@22.8.6':
+    resolution: {integrity: sha512-tosuJYKrIqjQIlVCM4PEGxOmyg3FCPa/fViuJChnGeEIhjA46oy8FMVoF9su1/v8PNs2a8Q0iFNyOx0uOF91nw==}
 
   '@types/prop-types@15.7.13':
     resolution: {integrity: sha512-hCZTSvwbzWGvhqxp/RqVqwU999pBf2vp7hzIjiYOsl8wqOmUxkQ6ddw1cV3l8811+kdUFus/q4d1Y3E3SyEifA==}
@@ -5449,8 +5452,8 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  stripe@17.2.1:
-    resolution: {integrity: sha512-Mwb0SitV/UjxTLSUiTlUQ0VDE/gfyQ7OHDGdvDdvKIH4CNNqobPKlzlWhoZHFFU0OA/YsZyBtPULK4JG86BAAg==}
+  stripe@17.3.1:
+    resolution: {integrity: sha512-E9/u+GFBPkYnTmfFCoKX3+gP4R3SkZoGunHe4cw9J+sqkj5uxpLFf1LscuI9BuEyIQ0PFAgPTHavgQwRtOvnag==}
     engines: {node: '>=12.*'}
 
   styled-components@6.1.12:
@@ -8191,6 +8194,11 @@ snapshots:
     dependencies:
       undici-types: 6.19.8
 
+  '@types/node@22.8.6':
+    dependencies:
+      undici-types: 6.19.8
+    optional: true
+
   '@types/prop-types@15.7.13': {}
 
   '@types/qs@6.9.15': {}
@@ -8245,7 +8253,7 @@ snapshots:
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 20.17.1
+      '@types/node': 22.8.6
     optional: true
 
   '@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3)':
@@ -12241,7 +12249,7 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  stripe@17.2.1:
+  stripe@17.3.1:
     dependencies:
       '@types/node': 20.17.1
       qs: 6.13.0
