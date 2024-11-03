@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@anatine/esbuild-decorators": "^0.2.19",
-    "@types/node": "22.8.6",
+    "@types/node": "22.8.7",
     "tsx": "^4.7.1",
     "typescript": "^5.0.0"
   }
