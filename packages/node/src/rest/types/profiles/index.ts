@@ -70,8 +70,8 @@ export type ProfileEndpoints =
   | Endpoint<
       "GET",
       "/profiles/:username/relationships/followers",
-      ArrayResult<Profile>,
-      ArrayOptions<Organization | User>
+      ArrayResult<UserProfile>,
+      ArrayOptions<User>
     >
   | Endpoint<"POST", "/profiles/:username/relationships/follow", boolean, null>
   | Endpoint<
