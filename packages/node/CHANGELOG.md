@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.102
+
+### Patch Changes
+
+- [`b01ddf4`](https://github.com/tonightpass/tonightpass/commit/b01ddf4de1244a51f8d9a1deb6d0c2ee73d4a623) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add `getFollowers` endpoint to retrieve profile followers
+
 ## 0.0.101
 
 ### Patch Changes
