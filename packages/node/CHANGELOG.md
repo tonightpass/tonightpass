@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.103
+
+### Patch Changes
+
+- [`3d3f728`](https://github.com/tonightpass/tonightpass/commit/3d3f728c1a0ec29e9503037e56e6028220abb9a6) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update `ProfileEndpoints` to use `UserProfile` and `User` types for followers endpoint
+
 ## 0.0.102
 
 ### Patch Changes
