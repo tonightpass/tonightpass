@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.104
+
+### Patch Changes
+
+- [`b6e5f77`](https://github.com/tonightpass/tonightpass/commit/b6e5f7764cc7abc1843c1fa28e2b2da2daa5f2b8) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add user notifications endpoints and integrate into user sdk
+
 ## 0.0.103
 
 ### Patch Changes
