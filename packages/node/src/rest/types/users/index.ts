@@ -6,6 +6,7 @@ import {
   UserBookingEndpoints,
   UserProfile,
 } from "..";
+import { UserNotificationEndpoints } from "./notifications";
 import { UpdateUserDto } from "../../dtos";
 import { Endpoint } from "../../endpoints";
 
@@ -110,4 +111,5 @@ export type UserEndpoints =
     >
   | Endpoint<"PUT", "/users/:userId", User, UpdateUserDto>
   | Endpoint<"POST", "/users/:userId/files/:userFileType", string, FormData>
-  | UserBookingEndpoints;
+  | UserBookingEndpoints
+  | UserNotificationEndpoints;

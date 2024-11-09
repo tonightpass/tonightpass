@@ -1,6 +1,8 @@
 import { UpdateUserDto, UserFileType } from "../../rest";
 import { buildFileFormData } from "../../utils";
 import { sdk } from "../builder";
+import { usersBookings } from "./bookings";
+import { usersNotifications } from "./notifications";
 
 export const users = sdk((client) => ({
   getAll: async () => client.get("/users"),
@@ -19,4 +21,6 @@ export const users = sdk((client) => ({
         userFileType,
       },
     ),
+  bookings: usersBookings(client),
+  notifications: usersNotifications(client),
 }));
