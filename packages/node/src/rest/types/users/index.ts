@@ -11,6 +11,7 @@ import { UpdateUserDto } from "../../dtos";
 import { Endpoint } from "../../endpoints";
 
 export * from "./bookings";
+export * from "./notifications";
 export * from "./tokens";
 
 export type User = Base & {
