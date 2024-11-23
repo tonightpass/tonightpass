@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@nestjs/common": "10.4.8",
-    "@types/node": "22.9.0",
+    "@types/node": "22.9.3",
     "typescript": "^5.0.0"
   }
 }
