@@ -1,5 +1,12 @@
 # @tonightpass/nest
 
+## 0.0.92
+
+### Patch Changes
+
+- Updated dependencies [[`5c172ad`](https://github.com/tonightpass/tonightpass/commit/5c172ad4e7152f4ebd3567a8cc8693683120cc5b)]:
+  - tonightpass@0.0.107
+
 ## 0.0.91
 
 ### Patch Changes
