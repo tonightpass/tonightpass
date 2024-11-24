@@ -16,3 +16,7 @@ export interface GeoSearchAggregation<T> {
   metadata: { total: number }[];
   data: T[];
 }
+
+export type Distance<T> = T & {
+  distance: number;
+};
