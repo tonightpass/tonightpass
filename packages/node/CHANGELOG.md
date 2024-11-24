@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.108
+
+### Patch Changes
+
+- [`4c5beb1`](https://github.com/tonightpass/tonightpass/commit/4c5beb171610e943692dec16ca1f60e9704a4409) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add Distance type to include distance property in GeoSearchAggregation
+
 ## 0.0.107
 
 ### Patch Changes
