@@ -1,13 +1,13 @@
-import { OrganizationEventOrderEndpoints } from "./orders";
-import {
-  OrganizationEventStyle,
-  OrganizationEventStyleEndpoints,
-} from "./styles";
 import {
   OrganizationEventTicket,
   Organization,
   OrganizationEventTicketEndpoints,
 } from "..";
+import { OrganizationEventOrderEndpoints } from "./orders";
+import {
+  OrganizationEventStyle,
+  OrganizationEventStyleEndpoints,
+} from "./styles";
 import { ArrayOptions, ArrayResult, Base, Location } from "../..";
 import {
   CreateOrganizationEventDto,

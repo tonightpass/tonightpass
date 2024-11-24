@@ -16,16 +16,18 @@ export type Base = {
 
 export type ExcludeBase<T> = Omit<T, keyof Base>;
 
+export type GeoPoint = {
+  type: "Point";
+  coordinates: [number, number];
+};
+
 export type Location = {
   name?: string;
   address: string;
   zipCode: string;
   city: string;
   country: string;
-  geometry?: {
-    latitude: number;
-    longitude: number;
-  };
+  geometry: GeoPoint;
 };
 
 // Currency
