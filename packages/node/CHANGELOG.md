@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.106
+
+### Patch Changes
+
+- [`704be44`](https://github.com/tonightpass/tonightpass/commit/704be441b4bea857e2781a6058c6bae3a5dd50dd) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add GeoPoint type and update Location geometry to use GeoPoint
+
 ## 0.0.105
 
 ### Patch Changes
