@@ -35,10 +35,6 @@ export type OrganizationEvent = Base & {
   endAt: Date;
 };
 
-export type OrganizationEventWithDistance = OrganizationEvent & {
-  distance: number;
-};
-
 export enum OrganizationEventType {
   Clubbing = "clubbing",
   Concert = "concert",
