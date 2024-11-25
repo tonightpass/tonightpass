@@ -1,3 +1,4 @@
+import { Type } from "class-transformer";
 import {
   IsDateString,
   IsEmail,
@@ -9,14 +10,19 @@ import {
   IsUrl,
   Length,
   Matches,
+  ValidateNested,
 } from "class-validator";
 
 import { REGEX } from "../../../constants";
 import { UserIdentifier, UserIdentityGender } from "../../types";
 
 export class CreateUserDto {
+  @ValidateNested()
+  @Type(() => CreateUserIdentifierDto)
   identifier: CreateUserIdentifierDto;
 
+  @ValidateNested()
+  @Type(() => CreateUserIdentityDto)
   identity: CreateUserIdentityDto;
 
   @IsString()

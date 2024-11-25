@@ -5,11 +5,12 @@ import test from "node:test";
 
 import { authTests } from "./auth";
 import { careersTests } from "./careers";
+import { dtoTests } from "./dtos";
 import { regexTests } from "./regex";
 import { usersTests } from "./users";
 import { TonightPass } from "../src/tonightpass";
 
-const sdkTests = [authTests, careersTests, regexTests, usersTests];
+const sdkTests = [authTests, careersTests, dtoTests, regexTests, usersTests];
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
