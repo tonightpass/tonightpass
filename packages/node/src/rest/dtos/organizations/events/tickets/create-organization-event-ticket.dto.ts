@@ -13,9 +13,20 @@ import {
   Currency,
   OrganizationEventTicketCategory,
   OrganizationEventTicketType,
+  OrganizationEventTicket,
+  ExcludeBase,
 } from "../../../../types";
 
-export class CreateOrganizationEventTicketDto {
+export type CreateOrganizationEventTicketInput = Omit<
+  ExcludeBase<OrganizationEventTicket>,
+  "price" | "product" | "event" | "fee"
+> & {
+  price: number;
+};
+
+export class CreateOrganizationEventTicketDto
+  implements CreateOrganizationEventTicketInput
+{
   @IsString()
   @Length(1, 128)
   name: string;
