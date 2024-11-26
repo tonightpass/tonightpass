@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.109
+
+### Patch Changes
+
+- [`e28d776`](https://github.com/tonightpass/tonightpass/commit/e28d776f24a1a30a1e40dd7bf256e4c647c973c2) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update OrganizationEvent DTOs with strict rules
+
 ## 0.0.108
 
 ### Patch Changes
