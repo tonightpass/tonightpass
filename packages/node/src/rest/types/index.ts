@@ -17,6 +17,10 @@ export type Base = {
 
 export type ExcludeBase<T> = Omit<T, keyof Base>;
 
+export type DeepPartial<T> = {
+  [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
+};
+
 // Currency
 export enum Currency {
   EUR = "EUR",
