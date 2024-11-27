@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.112
+
+### Patch Changes
+
+- [`f3c79e2`](https://github.com/tonightpass/tonightpass/commit/f3c79e2757290a037f6344cff0af4ac3d3e819ee) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add organization event views endpoints and SDK methods
+
 ## 0.0.111
 
 ### Patch Changes
