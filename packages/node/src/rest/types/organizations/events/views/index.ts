@@ -5,7 +5,7 @@ export type OrganizationEventViewEndpoints =
       "POST",
       "/organizations/:organizationSlug/events/:eventSlug/views",
       boolean,
-      null
+      string
     >
   | Endpoint<
       "PUT",
