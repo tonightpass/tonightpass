@@ -105,6 +105,12 @@ export type OrganizationEventEndpoints =
       CreateOrganizationEventDto
     >
   | Endpoint<
+      "POST",
+      "/organizations/:organizationSlug/events/:eventSlug/views",
+      boolean,
+      null
+    >
+  | Endpoint<
       "PUT",
       "/organizations/:organizationSlug/events/:eventSlug",
       OrganizationEvent,
