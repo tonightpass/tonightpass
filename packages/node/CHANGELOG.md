@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.116
+
+### Patch Changes
+
+- [`29c2acb`](https://github.com/tonightpass/tonightpass/commit/29c2acbbac9ceb4bb0ba6f55b3bbec061a81f329) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add viewsCount property to OrganizationEvent type
+
 ## 0.0.115
 
 ### Patch Changes
