@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.114
+
+### Patch Changes
+
+- [`c67af31`](https://github.com/tonightpass/tonightpass/commit/c67af316e99afa56392704c802e5eb037d1b2e0e) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update OrganizationEventViewEndpoints to use null type for response
+
 ## 0.0.113
 
 ### Patch Changes
