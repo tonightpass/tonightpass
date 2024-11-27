@@ -55,6 +55,15 @@ export const organizationsEvents = (client: Client) => ({
       organizationSlug,
       eventSlug,
     }),
+  recordView: async (organizationSlug: string, eventSlug: string) =>
+    client.post(
+      "/organizations/:organizationSlug/events/:eventSlug/views",
+      null,
+      {
+        organizationSlug,
+        eventSlug,
+      },
+    ),
   orders: organizationsEventsOrders(client),
   styles: organizationsEventsStyles(client),
   tickets: organizationsEventsTickets(client),
