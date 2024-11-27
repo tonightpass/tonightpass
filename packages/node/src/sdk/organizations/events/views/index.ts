@@ -10,18 +10,4 @@ export const organizationsEventsViews = (client: Client) => ({
         eventSlug,
       },
     ),
-  heartbeat: async (
-    organizationSlug: string,
-    eventSlug: string,
-    viewId: string,
-  ) =>
-    client.put(
-      "/organizations/:organizationSlug/events/:eventSlug/views/:viewId",
-      undefined,
-      {
-        organizationSlug,
-        eventSlug,
-        viewId,
-      },
-    ),
 });
