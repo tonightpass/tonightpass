@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.111
+
+### Patch Changes
+
+- [`3f68f6d`](https://github.com/tonightpass/tonightpass/commit/3f68f6d98f1aa4924eb81848cf4fd3ddfef92934) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add recordView method to track event views for organizations
+
 ## 0.0.110
 
 ### Patch Changes
