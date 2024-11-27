@@ -32,6 +32,7 @@ export type OrganizationEvent = Base & {
   location: Location;
   tickets: OrganizationEventTicket[];
   styles: OrganizationEventStyle[];
+  viewsCount: number;
   startAt: Date;
   endAt: Date;
 };
