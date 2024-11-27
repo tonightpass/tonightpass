@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.115
+
+### Patch Changes
+
+- [`7a18ad3`](https://github.com/tonightpass/tonightpass/commit/7a18ad39bb7f7a1df9440d71afef688f2dcdf520) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Simplify OrganizationEventViewEndpoints and remove unused heartbeat function
+
 ## 0.0.114
 
 ### Patch Changes
