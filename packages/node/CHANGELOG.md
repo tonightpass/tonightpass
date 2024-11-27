@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.113
+
+### Patch Changes
+
+- [`21e2771`](https://github.com/tonightpass/tonightpass/commit/21e2771ffc99fa394e5eb605e0d2c6ec05bf8d34) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update OrganizationEventViewEndpoints to use string type for views
+
 ## 0.0.112
 
 ### Patch Changes
