@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.110
+
+### Patch Changes
+
+- [`cf17374`](https://github.com/tonightpass/tonightpass/commit/cf17374cb712c828fcbcba223b554a97bd786ff1) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add new endpoint for recording event views in organization events
+
 ## 0.0.109
 
 ### Patch Changes
