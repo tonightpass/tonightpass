@@ -1,6 +1,7 @@
 import { organizationsEventsOrders } from "./orders";
 import { organizationsEventsStyles } from "./styles";
 import { organizationsEventsTickets } from "./tickets";
+import { organizationsEventsViews } from "./views";
 import {
   ArrayOptions,
   Client,
@@ -55,16 +56,8 @@ export const organizationsEvents = (client: Client) => ({
       organizationSlug,
       eventSlug,
     }),
-  recordView: async (organizationSlug: string, eventSlug: string) =>
-    client.post(
-      "/organizations/:organizationSlug/events/:eventSlug/views",
-      null,
-      {
-        organizationSlug,
-        eventSlug,
-      },
-    ),
   orders: organizationsEventsOrders(client),
   styles: organizationsEventsStyles(client),
   tickets: organizationsEventsTickets(client),
+  views: organizationsEventsViews(client),
 });

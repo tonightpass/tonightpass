@@ -9,6 +9,7 @@ import {
   OrganizationEventStyleEndpoints,
 } from "./styles";
 import { ArrayOptions, ArrayResult, Base, Location } from "../..";
+import { OrganizationEventViewEndpoints } from "./views";
 import {
   CreateOrganizationEventDto,
   UpdateOrganizationEventDto,
@@ -105,12 +106,6 @@ export type OrganizationEventEndpoints =
       CreateOrganizationEventDto
     >
   | Endpoint<
-      "POST",
-      "/organizations/:organizationSlug/events/:eventSlug/views",
-      boolean,
-      null
-    >
-  | Endpoint<
       "PUT",
       "/organizations/:organizationSlug/events/:eventSlug",
       OrganizationEvent,
@@ -124,4 +119,5 @@ export type OrganizationEventEndpoints =
     >
   | OrganizationEventOrderEndpoints
   | OrganizationEventStyleEndpoints
-  | OrganizationEventTicketEndpoints;
+  | OrganizationEventTicketEndpoints
+  | OrganizationEventViewEndpoints;
