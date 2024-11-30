@@ -1,5 +1,14 @@
 # @tonightpass/react
 
+## 0.0.119
+
+### Patch Changes
+
+- [`8f2ab17`](https://github.com/tonightpass/tonightpass/commit/8f2ab1741dacc6721484bce7629cca2c3c89a8bf) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Enhance package.json
+
+- Updated dependencies [[`8f2ab17`](https://github.com/tonightpass/tonightpass/commit/8f2ab1741dacc6721484bce7629cca2c3c89a8bf)]:
+  - tonightpass@0.0.118
+
 ## 0.0.118
 
 ### Patch Changes
