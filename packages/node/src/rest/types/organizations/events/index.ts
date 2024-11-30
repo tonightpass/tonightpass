@@ -97,6 +97,18 @@ export type OrganizationEventEndpoints =
     >
   | Endpoint<
       "GET",
+      "/organizations/:organizationSlug/events/past",
+      ArrayResult<OrganizationEvent>,
+      ArrayOptions<OrganizationEvent>
+    >
+  | Endpoint<
+      "GET",
+      "/organizations/:organizationSlug/events/upcoming",
+      ArrayResult<OrganizationEvent>,
+      ArrayOptions<OrganizationEvent>
+    >
+  | Endpoint<
+      "GET",
       "/organizations/:organizationSlug/events/:eventSlug",
       OrganizationEvent
     >

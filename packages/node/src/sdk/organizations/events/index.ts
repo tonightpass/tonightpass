@@ -33,6 +33,22 @@ export const organizationsEvents = (client: Client) => ({
       radius?: number;
     },
   ) => client.get("/organizations/events/nearby", options),
+  getPast: async (
+    organizationSlug: string,
+    options?: ArrayOptions<OrganizationEvent>,
+  ) =>
+    client.get("/organizations/:organizationSlug/events/past", {
+      organizationSlug,
+      ...options,
+    }),
+  getUpcoming: async (
+    organizationSlug: string,
+    options?: ArrayOptions<OrganizationEvent>,
+  ) =>
+    client.get("/organizations/:organizationSlug/events/upcoming", {
+      organizationSlug,
+      ...options,
+    }),
   get: async (organizationSlug: string, eventSlug: string) =>
     client.get("/organizations/:organizationSlug/events/:eventSlug", {
       organizationSlug,
