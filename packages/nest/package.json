@@ -10,6 +10,19 @@
   "bugs": "https://github.com/tonightpass/tonightpass/issues",
   "homepage": "https://tonightpass.com",
   "license": "MIT",
+  "keywords": [
+    "tonightpass",
+    "nestjs",
+    "typescript",
+    "backend",
+    "server",
+    "api",
+    "sdk"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
