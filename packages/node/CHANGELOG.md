@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.117
+
+### Patch Changes
+
+- [`92a0b47`](https://github.com/tonightpass/tonightpass/commit/92a0b47c202e21aeaa3bf2dc19be4a413703b833) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add endpoints for retrieving past and upcoming organization events
+
 ## 0.0.116
 
 ### Patch Changes
