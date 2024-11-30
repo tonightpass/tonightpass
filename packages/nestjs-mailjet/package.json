@@ -1,10 +1,37 @@
 {
   "name": "@tonightpass/nestjs-mailjet",
-  "version": "3.0.3",
+  "version": "4.0.5",
+  "description": "NestJS module for integrating Mailjet email service with your NestJS applications",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tonightpass/tonightpass.git",
+    "directory": "packages/nestjs-mailjet"
+  },
+  "bugs": "https://github.com/tonightpass/tonightpass/issues",
+  "homepage": "https://tonightpass.com",
   "license": "MIT",
+  "keywords": [
+    "nestjs",
+    "mailjet",
+    "email",
+    "typescript",
+    "mail-service",
+    "email-templates",
+    "nodejs",
+    "smtp"
+  ],
+  "author": {
+    "name": "Tonight Pass",
+    "email": "developers@tonightpass.com",
+    "url": "https://tonightpass.com"
+  },
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch"
@@ -26,5 +53,8 @@
     "node-mailjet": "6.0.6",
     "tslib": "^2.5.0",
     "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
