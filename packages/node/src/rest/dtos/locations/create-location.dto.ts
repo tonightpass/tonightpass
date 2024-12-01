@@ -9,7 +9,7 @@ import {
   ValidateNested,
 } from "class-validator";
 
-import { GeoPoint, Location } from "../../types";
+import { GeoPoint, Location } from "../../types/locations";
 
 export class GeoPointDto implements GeoPoint {
   @IsString()

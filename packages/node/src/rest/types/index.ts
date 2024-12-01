@@ -1,3 +1,5 @@
+import { QueryValue } from "pathcat";
+
 export * from "./auth";
 export * from "./careers";
 export * from "./health";
@@ -34,75 +36,59 @@ export enum Language {
   EN = "en",
 }
 
-export type ArraySortOptions = {
-  /**
-   * Field to sort
-   */
-  field: string;
-  /**
-   * Order to sort
-   */
-  order: "asc" | "desc";
-};
-
-export type ArrayPaginationOptions = {
+/**
+ * Options for array responses with pagination
+ */
+export interface ArrayPaginationOptions extends Record<string, QueryValue> {
   /**
    * Page number
+   * @default 1
    */
   page?: number;
   /**
    * Number of items per page
+   * @default 10
    */
   limit?: number;
   /**
    * Offset to start from
    */
   offset?: number;
-};
+}
 
-export type ArrayFilterOptions = {
+/**
+ * Options for sorting array responses
+ */
+export interface ArraySortOptions extends Record<string, QueryValue> {
   /**
-   * Field to filter
+   * Field to sort by
    */
-  field: string;
+  sortBy?: string;
   /**
-   * Value to filter
+   * Sort direction
    */
-  value: string;
-  /**
-   * Operator to use
-   */
-  operator:
-    | "eq" // Equal
-    | "ne" // Not equal
-    | "gt" // Greater than
-    | "lt" // Less than
-    | "gte" // Greater than or equal
-    | "lte" // Less than or equal
-    | "in" // In
-    | "nin"; // Not in
-};
+  sortDirection?: "asc" | "desc";
+}
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export type ArrayOptions<T> = {
-  /**
-   * Populate relations
-   */
-  // populate?: string[];
-  /**
-   * Select only specific fields to display
-   */
-  // fields?: readonly AutoPath<T, Fields, `${PopulatePath.ALL}`>[];
-  /**
-   * Exclude specific fields from the result
-  //  */
-  // exclude?: readonly AutoPath<T, string>[];
-} & ArrayPaginationOptions;
-// & ArraySortOptions;
+/**
+ * Generic options for array responses
+ * @template TData The type of data being paginated
+ */
+export interface ArrayOptions<_TData>
+  extends ArrayPaginationOptions,
+    ArraySortOptions,
+    Record<string, QueryValue> {
+  // Additional type-specific options can be added here
+  // The Record<string, QueryValue> ensures compatibility with Query types
+}
 
-export type ArrayResult<T> = {
+/**
+ * Generic result type for paginated arrays
+ * @template T The type of items in the array
+ */
+export interface ArrayResult<T> {
   items: T[];
   total: number;
   page: number;
   limit: number;
-};
+}

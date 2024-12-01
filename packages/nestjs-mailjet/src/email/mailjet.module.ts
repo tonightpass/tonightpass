@@ -40,6 +40,13 @@ export class MailjetModule {
       return [this.createAsyncOptionsProviders(options)];
     }
 
+    if (!options.useClass) {
+      throw new Error(
+        // eslint-disable-next-line prettier/prettier
+        "Missing \"useClass\" option for async Mailjet module configuration",
+      );
+    }
+
     return [
       this.createAsyncOptionsProviders(options),
       {
@@ -60,11 +67,20 @@ export class MailjetModule {
       };
     }
 
+    // Make sure either useExisting or useClass is provided
+    const injectToken = options.useExisting || options.useClass;
+    if (!injectToken) {
+      throw new Error(
+        // eslint-disable-next-line prettier/prettier
+        "Missing \"useExisting\" or \"useClass\" option for async Mailjet module configuration",
+      );
+    }
+
     return {
       provide: MAILJET_MODULE_OPTIONS,
       useFactory: async (optionsFactory: MailjetOptionsFactory) =>
         await optionsFactory.createMailjetOptions(),
-      inject: [options.useExisting || options.useClass],
+      inject: [injectToken],
     };
   }
 }
