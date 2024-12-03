@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.119
+
+### Patch Changes
+
+- [`c2f7c66`](https://github.com/tonightpass/tonightpass/commit/c2f7c6621c6c639db82e29f59c662d4102eb15b1) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Update build strategy
+
 ## 0.0.118
 
 ### Patch Changes

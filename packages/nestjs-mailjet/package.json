@@ -1,6 +1,6 @@
 {
   "name": "@tonightpass/nestjs-mailjet",
-  "version": "4.0.6",
+  "version": "4.0.7",
   "description": "NestJS module for integrating Mailjet email service with your NestJS applications",
   "repository": {
     "type": "git",
