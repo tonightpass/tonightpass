@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.121
+
+### Patch Changes
+
+- [`ffce706`](https://github.com/tonightpass/tonightpass/commit/ffce706b72073d8ec4c35912b6bedff3d7790b2f) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Fix update organization dto
+
 ## 0.0.120
 
 ### Patch Changes
