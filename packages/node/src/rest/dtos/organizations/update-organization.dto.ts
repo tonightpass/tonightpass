@@ -10,7 +10,7 @@ import {
   Matches,
 } from "class-validator";
 
-import { UpdateOrganizationEventDto } from "./events";
+import { UpdateOrganizationMemberDto } from "./members";
 import { REGEX } from "../../../constants";
 import { OrganizationSocialLink } from "../../types";
 
@@ -28,7 +28,7 @@ export class UpdateOrganizationDto {
 
   @IsOptional()
   @IsArray()
-  members?: UpdateOrganizationEventDto[];
+  members?: UpdateOrganizationMemberDto[];
 
   @IsOptional()
   @IsObject()
