@@ -1,0 +1,76 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPointStrategy": "packages",
+  "entryPoints": ["packages/*"],
+  "out": "apps/docs/content/docs/api",
+  "publicPath": "/docs/api/",
+  "plugin": [
+    "typedoc-plugin-markdown",
+    "typedoc-plugin-frontmatter",
+    "./devtools/typedoc-plugins/frontmatter-title.mjs"
+  ],
+  "tsconfig": "./typedoc.tsconfig.json",
+  "theme": "markdown",
+  "exclude": [
+    "**/__tests__/**",
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "**/*.e2e-spec.ts",
+    "**/tests/**"
+  ],
+  "sort": ["source-order"],
+  "kindSortOrder": [
+    "Project",
+    "Module",
+    "Namespace",
+    "Class",
+    "Interface",
+    "TypeAlias",
+    "Enum",
+    "EnumMember",
+    "Function",
+    "Variable",
+    "Constructor",
+    "Method",
+    "Property",
+    "Accessor"
+  ],
+  "validation": {
+    "invalidLink": true,
+    "notDocumented": false
+  },
+  "readme": "none",
+
+  "packageOptions": {
+    "entryPoints": ["src/index.ts"],
+    "includeVersion": false,
+    "excludePrivate": false,
+    "readme": "none",
+    "sortEntryPoints": false,
+    "sort": "source-order",
+    "excludeExternals": true,
+    "gitRevision": "main"
+  },
+
+  // typedoc-plugin-markdown options
+  "pageTitleTemplates": {
+    "index": "API Reference"
+  },
+  "mergeReadme": false,
+  "parametersFormat": "table",
+  "entryFileName": "index",
+  "enumMembersFormat": "table",
+  "typeDeclarationFormat": "table",
+  "indexFormat": "table",
+  "excludeScopesInPaths": true,
+  "hideBreadcrumbs": true,
+  "hidePageHeader": true,
+  "hideGroupHeadings": true,
+  "tableColumnSettings": { "hideSources": true },
+  "sanitizeComments": true,
+  "expandObjects": false,
+  "useCodeBlocks": false,
+
+  // typedoc-plugin-frontmatter options
+  "frontmatterCommentTags": ["author", "description"]
+}
