@@ -16,6 +16,7 @@ export const REGEX = {
   PASSWORD: /^(?=.*[A-Z])(?=.*[a-z])(?=.*[\d\W]).{8,}$/,
   // matches a password with at least 8 characters
   PASSWORD_MIN_LENGTH: /^.{8,}$/,
+  PASSWORD_MAX_LENGTH: /^.{0,255}$/,
   // matches a password with one uppercase letter
   PASSWORD_UPPERCASE: /^(?=.*[A-Z])/,
   // matches a password with one lowercase letter
