@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.120
+
+### Patch Changes
+
+- [`d88e72a`](https://github.com/tonightpass/tonightpass/commit/d88e72a108603604924ed9a7a438b05a4d5c0537) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add password length validation and enhance security requirements
+
 ## 0.0.119
 
 ### Patch Changes
