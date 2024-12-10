@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.122
+
+### Patch Changes
+
+- [`7932ff2`](https://github.com/tonightpass/tonightpass/commit/7932ff219f3b2626c4c6672040455d2e576220bb) Thanks [@AntoineKM](https://github.com/AntoineKM)! - Add a comprehensive ErrorType enum to standardize error handling across the API.
+
 ## 0.0.121
 
 ### Patch Changes
