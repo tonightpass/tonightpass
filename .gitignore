@@ -9,3 +9,4 @@ yarn-error.log
 .store/
 .turbo/
 .claude-files/
+.env
