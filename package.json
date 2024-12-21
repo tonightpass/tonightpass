@@ -18,7 +18,7 @@
     "postinstall": "manypkg check",
     "format:staged": "pretty-quick --staged"
   },
-  "packageManager": "pnpm@9.15.0",
+  "packageManager": "pnpm@9.15.1",
   "devDependencies": {
     "@babel/core": "^7.19.6",
     "@babel/plugin-proposal-decorators": "^7.20.13",
