@@ -40,7 +40,8 @@ export class UpdateUserDto {
 }
 
 class UpdateUserIdentifierDto
-  implements Partial<Pick<UserIdentifier, "email" | "phoneNumber" | "username">>
+  implements
+    Partial<Pick<UserIdentifier, "email" | "phoneNumber" | "username">>
 {
   @IsOptional()
   @IsString()

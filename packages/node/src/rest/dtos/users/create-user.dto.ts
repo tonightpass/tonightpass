@@ -29,7 +29,7 @@ export class CreateUserDto {
   @Matches(REGEX.PASSWORD_MIN_LENGTH, {
     message: "Password must be at least 8 characters long.",
   })
-  @Matches(REGEX.PASSWORD_MAX_LENGTH, {
+  @Matches(REGEX.PASSWORD_MIN_LENGTH, {
     message: "Password must be at most 255 characters long.",
   })
   @Matches(REGEX.PASSWORD_UPPERCASE, {
@@ -45,7 +45,8 @@ export class CreateUserDto {
 }
 
 class CreateUserIdentifierDto
-  implements Partial<Pick<UserIdentifier, "email" | "phoneNumber" | "username">>
+  implements
+    Partial<Pick<UserIdentifier, "email" | "phoneNumber" | "username">>
 {
   @IsOptional()
   @IsString()
