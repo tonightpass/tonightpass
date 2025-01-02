@@ -45,8 +45,7 @@ export class CreateUserDto {
 }
 
 class CreateUserIdentifierDto
-  implements
-    Partial<Pick<UserIdentifier, "email" | "phoneNumber" | "username">>
+  implements Partial<Pick<UserIdentifier, "email" | "phoneNumber" | "username">>
 {
   @IsOptional()
   @IsString()
