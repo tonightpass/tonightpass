@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.123
+
+### Patch Changes
+
+- [#649](https://github.com/tonightpass/tonightpass/pull/649) [`d168892`](https://github.com/tonightpass/tonightpass/commit/d168892c5bac0d6bbf97a398b167291e43a76ff6) Thanks [@jerembdn](https://github.com/jerembdn)! - Update user identifier regex validation
+
 ## 0.0.122
 
 ### Patch Changes
