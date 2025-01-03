@@ -29,9 +29,6 @@ export class CreateUserDto {
   @Matches(REGEX.PASSWORD_MIN_LENGTH, {
     message: "Password must be at least 8 characters long.",
   })
-  @Matches(REGEX.PASSWORD_MAX_LENGTH, {
-    message: "Password must be at most 255 characters long.",
-  })
   @Matches(REGEX.PASSWORD_UPPERCASE, {
     message: "Password must contain at least one uppercase letter.",
   })
