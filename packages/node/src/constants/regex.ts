@@ -2,7 +2,7 @@ export const REGEX = {
   // matches a valid email address
   EMAIL: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i,
   // matches a name with only letters, numbers, spaces
-  NAME: /^[a-zA-Z0-9 ]+$/,
+  NAME: /^[a-zA-ZÀ-ÿ0-9-\s]+$/,
   // matches a slug with only lowercase letters, numbers, dots and underscores
   SLUG: /^[a-z0-9_.]+$/,
   // matches a username with lowercase letters, numbers, underscores, and dots
@@ -16,7 +16,6 @@ export const REGEX = {
   PASSWORD: /^(?=.*[A-Z])(?=.*[a-z])(?=.*[\d\W]).{8,}$/,
   // matches a password with at least 8 characters
   PASSWORD_MIN_LENGTH: /^.{8,}$/,
-  PASSWORD_MAX_LENGTH: /^.{0,255}$/,
   // matches a password with one uppercase letter
   PASSWORD_UPPERCASE: /^(?=.*[A-Z])/,
   // matches a password with one lowercase letter
