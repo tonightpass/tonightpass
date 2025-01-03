@@ -15,6 +15,7 @@ export function regexTests() {
   test("NAME regex", () => {
     assert.ok(REGEX.NAME.test("John Doe"));
     assert.ok(REGEX.NAME.test("JohnDoe123"));
+    assert.ok(REGEX.NAME.test("Jöhn Döé"));
     assert.ok(!REGEX.NAME.test("John_Doe"));
     assert.ok(!REGEX.NAME.test("John-Doe"));
     assert.ok(!REGEX.NAME.test("JohnDoe!"));
