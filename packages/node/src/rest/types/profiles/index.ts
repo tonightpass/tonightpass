@@ -1,7 +1,7 @@
 import { ArrayOptions, ArrayResult } from "..";
 import { Endpoint } from "../../endpoints";
 import { Organization } from "../organizations";
-import { PublicUser, User } from "../users";
+import { User } from "../users";
 
 export enum ProfileType {
   User = "user",
@@ -73,7 +73,6 @@ export type ProfileEndpoints =
       ArrayResult<UserProfile>,
       ArrayOptions<User>
     >
-  | Endpoint<"GET", "/profiles/search", PublicUser[]>
   | Endpoint<"POST", "/profiles/:username/relationships/follow", boolean, null>
   | Endpoint<
       "POST",

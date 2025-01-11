@@ -5,6 +5,8 @@ import { CreateOrganizationDto, UpdateOrganizationDto } from "../../rest";
 import { sdk } from "../builder";
 
 export const organizations = sdk((client) => ({
+  search: async (query: string, limit?: number) =>
+    client.get("/organizations/search", { q: query, limit }),
   getAll: async () => client.get("/organizations"),
   get: async (organizationSlug: string) =>
     client.get("/organizations/:organizationSlug", { organizationSlug }),

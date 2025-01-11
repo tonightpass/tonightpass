@@ -54,6 +54,12 @@ export enum OrganizationSocialType {
 export type OrganizationEndpoints =
   | Endpoint<
       "GET",
+      "/organizations/search",
+      Organization[],
+      { q: string; limit?: number }
+    >
+  | Endpoint<
+      "GET",
       "/organizations",
       ArrayResult<Organization>,
       ArrayOptions<Organization>

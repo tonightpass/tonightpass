@@ -11,6 +11,8 @@ import {
 } from "../../../rest";
 
 export const organizationsEvents = (client: Client) => ({
+  search: async (query: string, limit?: number) =>
+    client.get("/organizations/events/search", { q: query, limit }),
   getAll: async (
     organizationSlug?: string,
     options?: ArrayOptions<OrganizationEvent>,
