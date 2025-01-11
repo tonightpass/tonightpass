@@ -3,8 +3,10 @@ import {
   Currency,
   Language,
   Location,
+  ProfileType,
   UserBookingEndpoints,
   UserProfile,
+  UserProfileMetadata,
 } from "..";
 import { UserNotificationEndpoints } from "./notifications";
 import { UpdateUserDto } from "../../dtos";
@@ -13,6 +15,18 @@ import { Endpoint } from "../../endpoints";
 export * from "./bookings";
 export * from "./notifications";
 export * from "./tokens";
+
+export type PublicUser = {
+  identifier: Pick<UserIdentifier, "username">;
+
+  identity: {
+    displayName: string;
+    avatarUrl: string;
+    slug: string;
+    type: ProfileType;
+    metadata: UserProfileMetadata;
+  };
+};
 
 export type User = Base & {
   identifier: UserIdentifier;
