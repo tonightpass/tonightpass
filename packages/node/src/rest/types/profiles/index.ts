@@ -73,7 +73,7 @@ export type ProfileEndpoints =
       ArrayResult<UserProfile>,
       ArrayOptions<User>
     >
-  | Endpoint<"GET", "/profiles/search?q=:query", PublicUser[]>
+  | Endpoint<"GET", "/profiles/search", PublicUser[]>
   | Endpoint<"POST", "/profiles/:username/relationships/follow", boolean, null>
   | Endpoint<
       "POST",

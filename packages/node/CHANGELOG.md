@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.125
+
+### Patch Changes
+
+- Update query params on endpoint
+
 ## 0.0.124
 
 ### Patch Changes
