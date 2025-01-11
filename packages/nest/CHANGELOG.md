@@ -1,5 +1,12 @@
 # @tonightpass/nest
 
+## 0.0.110
+
+### Patch Changes
+
+- Updated dependencies []:
+  - tonightpass@0.0.125
+
 ## 0.0.109
 
 ### Patch Changes
