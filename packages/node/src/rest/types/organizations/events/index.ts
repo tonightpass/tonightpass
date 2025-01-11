@@ -69,6 +69,12 @@ export enum OrganizationEventVisibilityType {
 export type OrganizationEventEndpoints =
   | Endpoint<
       "GET",
+      "/organizations/events/search",
+      OrganizationEvent[],
+      { q: string; limit?: number }
+    >
+  | Endpoint<
+      "GET",
       "/organizations/events",
       ArrayResult<OrganizationEvent>,
       ArrayOptions<OrganizationEvent>

@@ -111,6 +111,12 @@ export enum UserFileType {
 }
 
 export type UserEndpoints =
+  | Endpoint<
+      "GET",
+      "/users/search",
+      PublicUser[],
+      { q: string; limit?: number }
+    >
   | Endpoint<"GET", "/users", User[]>
   | Endpoint<"GET", "/users/:userId", User>
   | Endpoint<"GET", "/users/@me", User>
