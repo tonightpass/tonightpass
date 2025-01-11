@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.124
+
+### Patch Changes
+
+- [`0eb1598`](https://github.com/tonightpass/tonightpass/commit/0eb15981db1e5144871041885a917a7ff1346741) Thanks [@jerembdn](https://github.com/jerembdn)! - Add Search query to profiles client
+
 ## 0.0.123
 
 ### Patch Changes
