@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.126
+
+### Patch Changes
+
+- [`f13a06b`](https://github.com/tonightpass/tonightpass/commit/f13a06bc9d2aac7355ce58be4001c4bbfb3d417e) Thanks [@jerembdn](https://github.com/jerembdn)! - Add Search support on Organizations and Events
+
 ## 0.0.125
 
 ### Patch Changes
