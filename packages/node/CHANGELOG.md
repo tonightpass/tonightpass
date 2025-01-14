@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.128
+
+### Patch Changes
+
+- Fix GeoPointDto coordinates validation to simplify array check
+
 ## 0.0.127
 
 ### Patch Changes

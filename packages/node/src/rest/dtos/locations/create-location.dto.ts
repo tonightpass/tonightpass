@@ -15,9 +15,7 @@ export class GeoPointDto implements GeoPoint {
   @IsNotEmpty()
   type: "Point";
 
-  @IsArray({
-    each: true,
-  })
+  @IsArray()
   @IsNotEmpty()
   coordinates: [number, number];
 

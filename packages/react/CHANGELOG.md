@@ -1,5 +1,12 @@
 # @tonightpass/react
 
+## 0.0.129
+
+### Patch Changes
+
+- Updated dependencies []:
+  - tonightpass@0.0.128
+
 ## 0.0.128
 
 ### Patch Changes
