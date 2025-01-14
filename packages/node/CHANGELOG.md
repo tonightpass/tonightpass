@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.127
+
+### Patch Changes
+
+- [#664](https://github.com/tonightpass/tonightpass/pull/664) [`27f20af`](https://github.com/tonightpass/tonightpass/commit/27f20afe8b21ed1ffef23ce12259d9bc61ec48ca) Thanks [@jerembdn](https://github.com/jerembdn)! - Fix DTO validation for location and organization event ticket
+
 ## 0.0.126
 
 ### Patch Changes
