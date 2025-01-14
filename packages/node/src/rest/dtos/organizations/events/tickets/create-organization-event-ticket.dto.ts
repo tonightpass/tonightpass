@@ -33,6 +33,7 @@ export class CreateOrganizationEventTicketDto
 
   @IsString()
   @Length(1, 1024)
+  @IsOptional()
   description?: string;
 
   @IsNumber()

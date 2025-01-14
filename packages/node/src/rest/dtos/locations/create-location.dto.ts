@@ -2,7 +2,6 @@ import { Type } from "class-transformer";
 import {
   IsArray,
   IsNotEmpty,
-  IsNumber,
   IsOptional,
   IsString,
   Length,
@@ -16,10 +15,10 @@ export class GeoPointDto implements GeoPoint {
   @IsNotEmpty()
   type: "Point";
 
-  @IsArray()
+  @IsArray({
+    each: true,
+  })
   @IsNotEmpty()
-  @Length(2, 2)
-  @IsNumber({}, { each: true })
   coordinates: [number, number];
 
   constructor() {
