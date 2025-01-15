@@ -2,7 +2,7 @@
   <a href="https://tonightpass.com">
     <img src="https://tonightpass.com/static/images/favicon/android-chrome-512x512.png" alt="Tonight Pass" height="128" />
   </a>
-  <h1>tonightpass</h1>
+  <h1>Tonight Pass</h1>
   <a aria-label="onRuntime Studio" href="https://onruntime.com">
     <img src="https://img.shields.io/badge/MADE%20BY%20ONRUNTIME-000.svg?style=for-the-badge&labelColor=000" alt="Made by onRuntime Studio">
   </a>
