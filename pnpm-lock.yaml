@@ -189,8 +189,8 @@ importers:
         specifier: 10.4.15
         version: 10.4.15(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@types/node':
-        specifier: 22.13.4
-        version: 22.13.4
+        specifier: 22.13.5
+        version: 22.13.5
       typescript:
         specifier: ^5.0.0
         version: 5.7.3
@@ -216,8 +216,8 @@ importers:
         specifier: ^1.4.8
         version: 1.10.18(@swc/helpers@0.5.15)
       '@types/node':
-        specifier: 22.13.4
-        version: 22.13.4
+        specifier: 22.13.5
+        version: 22.13.5
       dotenv:
         specifier: ^16.4.7
         version: 16.4.7
@@ -262,8 +262,8 @@ importers:
         specifier: ^0.2.19
         version: 0.2.19(esbuild@0.24.2)
       '@types/node':
-        specifier: 22.13.4
-        version: 22.13.4
+        specifier: 22.13.5
+        version: 22.13.5
       tsx:
         specifier: ^4.7.1
         version: 4.19.2
@@ -2199,9 +2199,6 @@ packages:
 
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
-
-  '@types/node@22.13.4':
-    resolution: {integrity: sha512-ywP2X0DYtX3y08eFVx5fNIw7/uIv8hYUKgXoK8oayJlLnKcRfEYCxWMVE1XagUdVtCJlZT1AU4LXEABW+L1Peg==}
 
   '@types/node@22.13.5':
     resolution: {integrity: sha512-+lTU0PxZXn0Dr1NBtC7Y8cR21AJr87dLLU953CWA6pMxxv/UDc7jYAY90upcrie1nRcD6XNG5HOYEDtgW5TxAg==}
@@ -8464,10 +8461,6 @@ snapshots:
 
   '@types/node@12.20.55': {}
 
-  '@types/node@22.13.4':
-    dependencies:
-      undici-types: 6.20.0
-
   '@types/node@22.13.5':
     dependencies:
       undici-types: 6.20.0
@@ -11017,7 +11010,7 @@ snapshots:
 
   is-boolean-object@1.1.2:
     dependencies:
-      call-bind: 1.0.7
+      call-bind: 1.0.8
       has-tostringtag: 1.0.2
 
   is-boolean-object@1.2.2:
@@ -11062,7 +11055,7 @@ snapshots:
 
   is-finalizationregistry@1.0.2:
     dependencies:
-      call-bind: 1.0.7
+      call-bind: 1.0.8
 
   is-finalizationregistry@1.1.1:
     dependencies:
@@ -11145,7 +11138,7 @@ snapshots:
 
   is-symbol@1.0.4:
     dependencies:
-      has-symbols: 1.0.3
+      has-symbols: 1.1.0
 
   is-symbol@1.1.1:
     dependencies:
@@ -12918,7 +12911,7 @@ snapshots:
 
   stripe@17.6.0:
     dependencies:
-      '@types/node': 22.13.4
+      '@types/node': 22.13.5
       qs: 6.14.0
 
   styled-components@6.1.13(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
