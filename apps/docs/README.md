@@ -1,26 +1,60 @@
-# docs
+# TonightPass Documentation
 
-This is a Next.js application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+This is the official documentation for the TonightPass platform and SDK.
 
-Run development server:
+## Table of Contents
+
+- [TonightPass Documentation](#tonightpass-documentation)
+  - [Table of Contents](#table-of-contents)
+  - [Development](#development)
+  - [Structure](#structure)
+  - [API Reference Generation](#api-reference-generation)
+  - [Deployment](#deployment)
+
+## Development
+
+To run the documentation site locally:
 
 ```bash
-npm run dev
-# or
+# Install dependencies
+pnpm install
+
+# Generate API reference documentation and start the development server
 pnpm dev
-# or
-yarn dev
 ```
 
-Open http://localhost:3000 with your browser to see the result.
+The documentation will be available at [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+## Structure
 
-To learn more about Next.js and Fumadocs, take a look at the following
-resources:
+- `content/docs/`: Contains the main documentation content in MDX format
+- `content/api-reference/`: Contains the auto-generated API reference documentation
+- `src/`: Contains the Next.js application code
+- `scripts/`: Contains utility scripts, including the API reference documentation generator
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Fumadocs](https://fumadocs.vercel.app) - learn about Fumadocs
+## API Reference Generation
+
+The API reference documentation is automatically generated from the TypeScript source code using TypeDoc. This happens automatically when you run `pnpm dev` or `pnpm build`.
+
+If you want to generate the API reference documentation manually, you can run:
+
+```bash
+pnpm generate-api-docs
+```
+
+This will:
+1. Run TypeDoc on the source code in the `packages/` directory
+2. Output the generated documentation to `content/api-reference/`
+3. Apply necessary transformations to make the generated content compatible with Fumadocs
+
+## Deployment
+
+The documentation site is built using Next.js and can be deployed to any platform that supports Next.js applications, such as Vercel or Netlify.
+
+To build the documentation for production:
+
+```bash
+pnpm build
+```
+
+The output will be in the `.next/` directory.
