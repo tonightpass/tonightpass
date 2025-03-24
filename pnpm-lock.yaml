@@ -78,14 +78,14 @@ importers:
   apps/docs:
     dependencies:
       fumadocs-core:
-        specifier: 15.0.18
-        version: 15.0.18(@types/react@19.0.12)(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 15.1.2
+        version: 15.1.2(@types/react@19.0.12)(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       fumadocs-mdx:
         specifier: 11.5.7
-        version: 11.5.7(acorn@8.14.0)(fumadocs-core@15.0.18(@types/react@19.0.12)(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
+        version: 11.5.7(acorn@8.14.0)(fumadocs-core@15.1.2(@types/react@19.0.12)(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
       fumadocs-ui:
         specifier: 15.0.18
-        version: 15.0.18(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(fumadocs-core@15.0.18(@types/react@19.0.12)(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@4.0.15)
+        version: 15.0.18(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(fumadocs-core@15.1.2(@types/react@19.0.12)(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@4.0.15)
       next:
         specifier: 15.2.3
         version: 15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -4714,8 +4714,8 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
-  fumadocs-core@15.0.18:
-    resolution: {integrity: sha512-rIr2GHrYIxZ0mLkylBUegqH8rUc3pCb17D6a8u7vspSNDly7x0Qd0/7nkrhEljZrCUqfKt5tSSLp9blpG4Vevg==}
+  fumadocs-core@15.1.2:
+    resolution: {integrity: sha512-KbDZ2euvyXQ0M+ch6p4ZlrQzw6MqRBp7Z/2LbQC8fW+FYJUI9zKy/ThS04p2tTiz+6DN1Pi4nIuoOn7F2iCpbQ==}
     peerDependencies:
       '@oramacloud/client': 1.x.x || 2.x.x
       algoliasearch: 4.24.0
@@ -13099,7 +13099,7 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  fumadocs-core@15.0.18(@types/react@19.0.12)(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  fumadocs-core@15.1.2(@types/react@19.0.12)(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       '@formatjs/intl-localematcher': 0.6.0
       '@orama/orama': 3.1.3
@@ -13124,7 +13124,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  fumadocs-mdx@11.5.7(acorn@8.14.0)(fumadocs-core@15.0.18(@types/react@19.0.12)(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)):
+  fumadocs-mdx@11.5.7(acorn@8.14.0)(fumadocs-core@15.1.2(@types/react@19.0.12)(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)):
     dependencies:
       '@mdx-js/mdx': 3.1.0(acorn@8.14.0)
       '@standard-schema/spec': 1.0.0
@@ -13133,7 +13133,7 @@ snapshots:
       esbuild: 0.25.1
       estree-util-value-to-estree: 3.3.2
       fast-glob: 3.3.3
-      fumadocs-core: 15.0.18(@types/react@19.0.12)(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      fumadocs-core: 15.1.2(@types/react@19.0.12)(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       gray-matter: 4.0.3
       next: 15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       unist-util-visit: 5.0.0
@@ -13142,7 +13142,7 @@ snapshots:
       - acorn
       - supports-color
 
-  fumadocs-ui@15.0.18(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(fumadocs-core@15.0.18(@types/react@19.0.12)(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@4.0.15):
+  fumadocs-ui@15.0.18(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(fumadocs-core@15.1.2(@types/react@19.0.12)(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@4.0.15):
     dependencies:
       '@radix-ui/react-accordion': 1.2.3(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@radix-ui/react-collapsible': 1.1.3(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -13154,7 +13154,7 @@ snapshots:
       '@radix-ui/react-slot': 1.1.2(@types/react@19.0.12)(react@19.0.0)
       '@radix-ui/react-tabs': 1.1.3(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       class-variance-authority: 0.7.1
-      fumadocs-core: 15.0.18(@types/react@19.0.12)(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      fumadocs-core: 15.1.2(@types/react@19.0.12)(next@15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       lodash.merge: 4.6.2
       lucide-react: 0.479.0(react@19.0.0)
       next: 15.2.3(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -13579,7 +13579,7 @@ snapshots:
 
   is-boolean-object@1.1.2:
     dependencies:
-      call-bind: 1.0.7
+      call-bind: 1.0.8
       has-tostringtag: 1.0.2
 
   is-boolean-object@1.2.2:
@@ -13628,7 +13628,7 @@ snapshots:
 
   is-finalizationregistry@1.0.2:
     dependencies:
-      call-bind: 1.0.7
+      call-bind: 1.0.8
 
   is-finalizationregistry@1.1.1:
     dependencies:
@@ -15370,7 +15370,7 @@ snapshots:
   proxy-agent@6.4.0:
     dependencies:
       agent-base: 7.1.3
-      debug: 4.3.4
+      debug: 4.4.0
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
       lru-cache: 7.18.3
@@ -15572,9 +15572,9 @@ snapshots:
 
   reflect.getprototypeof@1.0.6:
     dependencies:
-      call-bind: 1.0.7
+      call-bind: 1.0.8
       define-properties: 1.2.1
-      es-abstract: 1.23.3
+      es-abstract: 1.23.9
       es-errors: 1.3.0
       get-intrinsic: 1.2.4
       globalthis: 1.0.4
