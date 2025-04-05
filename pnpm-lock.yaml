@@ -1917,8 +1917,8 @@ packages:
     resolution: {integrity: sha512-FCXWpRwcLOjjc1/1gigqWLSeJpSlMOOO9TQMUT5JP5/NEpisLfDyblwMOklRfAidrFRRTSVL9DGa9OcdZC5ACg==}
     engines: {node: '>= 18.12.0'}
 
-  '@napi-rs/wasm-runtime@0.2.7':
-    resolution: {integrity: sha512-5yximcFK5FNompXfJFoWanu5l8v1hNGqNHh9du1xETp9HWk/B/PzvchX55WYOPaIeNglG8++68AAiauBAtbnzw==}
+  '@napi-rs/wasm-runtime@0.2.8':
+    resolution: {integrity: sha512-OBlgKdX7gin7OIq4fadsjpg+cp2ZphvAIKucHsNfTdJiqdOmOEwQd/bHi0VwNrcw5xpBJyUw6cK/QilCqy1BSg==}
 
   '@nestjs/axios@4.0.0':
     resolution: {integrity: sha512-1cB+Jyltu/uUPNQrpUimRHEQHrnQrpLzVj6dU3dgn6iDDDdahr10TgHFGTmw5VuJ9GzKZsCLDL78VSwJAs/9JQ==}
@@ -4309,8 +4309,8 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-config-turbo@2.4.4:
-    resolution: {integrity: sha512-4w/heWywWkFw09a5MY5lCvb9suJlhBSkzNtGTwM5+zRif4rksubaMYy1pD0++5rqoDVcQax25jCrtii9ptsNDw==}
+  eslint-config-turbo@2.5.0:
+    resolution: {integrity: sha512-QJvZBEWDWQx1JyQCr0uwf4aQYhDSAGoHBdx+cPtpPzNEjZw16Ig8BglXxHZBh3I8/fI1U53cLgXwvb28BUZhPA==}
     peerDependencies:
       eslint: '>6.6.0'
       turbo: '>2.0.0'
@@ -4421,14 +4421,14 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
 
-  eslint-plugin-react@7.37.4:
-    resolution: {integrity: sha512-BGP0jRmfYyvOyvMoRX/uoUeW+GqNj9y16bPQzqAHf3AYII/tDs+jMN0dBVkl88/OZwNGwrVFxE7riHsXVfy/LQ==}
+  eslint-plugin-react@7.37.5:
+    resolution: {integrity: sha512-Qteup0SqU15kdocexFNAJMvCJEfa2xUKNV4CC1xsVMrIIqEy3SQ/rqyxCWNzfrd3/ldy6HMlD2e0JDVpDg2qIA==}
     engines: {node: '>=4'}
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
 
-  eslint-plugin-turbo@2.4.4:
-    resolution: {integrity: sha512-myEnQTjr3FkI0j1Fu0Mqnv1z8n0JW5iFTOUNzHaEevjzl+1uzMSsFwks/x8i3rGmI3EYtC1BY8K2B2pS0Vfx6w==}
+  eslint-plugin-turbo@2.5.0:
+    resolution: {integrity: sha512-qQk54MrUZv0gnpxV23sccTc+FL3UJ8q7vG7HmXuS2RP8gdjWDwI1CCJTJD8EdRIDjsMxF0xi0AKcMY0CwIlXVg==}
     peerDependencies:
       eslint: '>6.6.0'
       turbo: '>2.0.0'
@@ -9820,7 +9820,7 @@ snapshots:
       mikro-orm: 6.4.11
       reflect-metadata: 0.2.2
 
-  '@napi-rs/wasm-runtime@0.2.7':
+  '@napi-rs/wasm-runtime@0.2.8':
     dependencies:
       '@emnapi/core': 1.4.0
       '@emnapi/runtime': 1.4.0
@@ -11082,7 +11082,7 @@ snapshots:
 
   '@unrs/resolver-binding-wasm32-wasi@1.3.3':
     dependencies:
-      '@napi-rs/wasm-runtime': 0.2.7
+      '@napi-rs/wasm-runtime': 0.2.8
     optional: true
 
   '@unrs/resolver-binding-win32-arm64-msvc@1.3.3':
@@ -12401,7 +12401,7 @@ snapshots:
       eslint: 8.57.1
       eslint-config-next: 15.2.4(eslint@8.57.1)(typescript@5.8.2)
       eslint-config-prettier: 9.1.0(eslint@8.57.1)
-      eslint-config-turbo: 2.4.4(eslint@8.57.1)(turbo@2.4.4)
+      eslint-config-turbo: 2.5.0(eslint@8.57.1)(turbo@2.4.4)
       eslint-config-universe: 12.1.0(@types/eslint@9.6.1)(eslint@8.57.1)(prettier@3.5.3)(typescript@5.8.2)
       eslint-plugin-prettier: 5.2.1(@types/eslint@9.6.1)(eslint-config-prettier@9.1.0(eslint@8.57.1))(eslint@8.57.1)(prettier@3.5.3)
       eslint-plugin-react: 7.33.2(eslint@8.57.1)
@@ -12426,7 +12426,7 @@ snapshots:
       eslint-import-resolver-typescript: 3.10.0(eslint-plugin-import@2.31.0)(eslint@8.57.1)
       eslint-plugin-import: 2.31.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-typescript@3.10.0)(eslint@8.57.1)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.57.1)
-      eslint-plugin-react: 7.37.4(eslint@8.57.1)
+      eslint-plugin-react: 7.37.5(eslint@8.57.1)
       eslint-plugin-react-hooks: 5.2.0(eslint@8.57.1)
     optionalDependencies:
       typescript: 5.8.2
@@ -12443,10 +12443,10 @@ snapshots:
     dependencies:
       eslint: 8.57.1
 
-  eslint-config-turbo@2.4.4(eslint@8.57.1)(turbo@2.4.4):
+  eslint-config-turbo@2.5.0(eslint@8.57.1)(turbo@2.4.4):
     dependencies:
       eslint: 8.57.1
-      eslint-plugin-turbo: 2.4.4(eslint@8.57.1)(turbo@2.4.4)
+      eslint-plugin-turbo: 2.5.0(eslint@8.57.1)(turbo@2.4.4)
       turbo: 2.4.4
 
   eslint-config-universe@12.1.0(@types/eslint@9.6.1)(eslint@8.57.1)(prettier@3.5.3)(typescript@5.8.2):
@@ -12693,7 +12693,7 @@ snapshots:
       semver: 6.3.1
       string.prototype.matchall: 4.0.11
 
-  eslint-plugin-react@7.37.4(eslint@8.57.1):
+  eslint-plugin-react@7.37.5(eslint@8.57.1):
     dependencies:
       array-includes: 3.1.8
       array.prototype.findlast: 1.2.5
@@ -12715,7 +12715,7 @@ snapshots:
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-turbo@2.4.4(eslint@8.57.1)(turbo@2.4.4):
+  eslint-plugin-turbo@2.5.0(eslint@8.57.1)(turbo@2.4.4):
     dependencies:
       dotenv: 16.0.3
       eslint: 8.57.1
