@@ -18,7 +18,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@fumadocs/cli": "^0.0.8",
+    "@fumadocs/cli": "^0.1.0",
     "@tailwindcss/postcss": "^4.0.7",
     "@types/mdx": "^2.0.13",
     "@types/node": "22.13.10",
