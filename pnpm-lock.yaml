@@ -97,8 +97,8 @@ importers:
         version: 19.1.0(react@19.1.0)
     devDependencies:
       '@fumadocs/cli':
-        specifier: ^0.0.8
-        version: 0.0.8
+        specifier: ^0.1.0
+        version: 0.1.1
       '@tailwindcss/postcss':
         specifier: ^4.0.7
         version: 4.0.17
@@ -1529,8 +1529,8 @@ packages:
   '@formatjs/intl-localematcher@0.6.1':
     resolution: {integrity: sha512-ePEgLgVCqi2BBFnTMWPfIghu6FkbZnnBVhO2sSxvLfrdFw7wCHAHiDoM2h4NRgjbaY7+B7HgOLZGkK187pZTZg==}
 
-  '@fumadocs/cli@0.0.8':
-    resolution: {integrity: sha512-Cykk6jVDt1wHVOfas9S64TrF1uLgtV0ESLsXV5dgm1K5S9kyX+Nycogy/YTBqq05wuG7SI20byuUvX2QrUozSg==}
+  '@fumadocs/cli@0.1.1':
+    resolution: {integrity: sha512-QKbvlIFD7ErVLYr0ZmmrKNADEMZdZB9vt+w73DTEDYck7ky+DGT/8z42OvgseYCy+zLfC5q8mmuyQoMwQDGChQ==}
     hasBin: true
 
   '@gerrit0/mini-shiki@3.2.1':
@@ -6363,6 +6363,9 @@ packages:
   package-manager-detector@0.2.9:
     resolution: {integrity: sha512-+vYvA/Y31l8Zk8dwxHhL3JfTuHPm6tlxM2A3GeQyl7ovYnSp1+mzAxClxaOr0qO1TtPxbQxetI7v5XqKLJZk7Q==}
 
+  package-manager-detector@1.1.0:
+    resolution: {integrity: sha512-Y8f9qUlBzW8qauJjd/eu6jlpJZsuPJm2ZAV0cDVd420o4EdpH5RPdoCv+60/TdJflGatr4sDfpAL6ArWZbM5tA==}
+
   parent-module@1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
     engines: {node: '>=6'}
@@ -9324,12 +9327,12 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@fumadocs/cli@0.0.8':
+  '@fumadocs/cli@0.1.1':
     dependencies:
       '@clack/prompts': 0.10.0
       commander: 13.1.0
       execa: 9.5.2
-      package-manager-detector: 0.2.9
+      package-manager-detector: 1.1.0
       picocolors: 1.1.1
       ts-morph: 25.0.1
 
@@ -15353,6 +15356,8 @@ snapshots:
       semver: 7.6.3
 
   package-manager-detector@0.2.9: {}
+
+  package-manager-detector@1.1.0: {}
 
   parent-module@1.0.1:
     dependencies:
