@@ -46,8 +46,8 @@
   },
   "devDependencies": {
     "@nestjs/axios": "^4.0.0",
-    "@nestjs/common": "11.0.13",
-    "@nestjs/core": "11.0.13",
+    "@nestjs/common": "11.0.16",
+    "@nestjs/core": "11.0.16",
     "@nestjs/platform-fastify": "^11.0.0",
     "@nestjs/testing": "^11.0.0",
     "@swc/core": "^1.4.8",
