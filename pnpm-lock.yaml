@@ -81,8 +81,8 @@ importers:
         specifier: 15.2.8
         version: 15.2.8(@types/react@19.1.2)(next@15.3.1(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       fumadocs-mdx:
-        specifier: 11.6.0
-        version: 11.6.0(acorn@8.14.1)(fumadocs-core@15.2.8(@types/react@19.1.2)(next@15.3.1(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(next@15.3.1(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
+        specifier: 11.6.1
+        version: 11.6.1(acorn@8.14.1)(fumadocs-core@15.2.8(@types/react@19.1.2)(next@15.3.1(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(next@15.3.1(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
       fumadocs-ui:
         specifier: 15.2.8
         version: 15.2.8(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(next@15.3.1(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwindcss@4.1.4)
@@ -4083,8 +4083,8 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-config-turbo@2.5.1:
-    resolution: {integrity: sha512-p1K3KxDMdkhcbVsvFvWoB7WK8oFaR0+Bf1eTmT+B1rQp4b2GmRk48r2w2HHhtbmmpfUsXFRpBZV5ZvGtE8+jmQ==}
+  eslint-config-turbo@2.5.2:
+    resolution: {integrity: sha512-aZdMUCJE5sC9UHZPOu6GiqCijw0HzlcxTbGZeESMFanYShhxrO6mAZy02zYOYK+y184HnxAngcfmtgDt8cIUxw==}
     peerDependencies:
       eslint: '>6.6.0'
       turbo: '>2.0.0'
@@ -4201,8 +4201,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
 
-  eslint-plugin-turbo@2.5.1:
-    resolution: {integrity: sha512-liyy40BXnlQP37EX9Z03gqUeH8X8GetqDcOG6EhNqnFktJT3fq+XTLvWzhU+s62JFS5/Njcpm3QTOY9VjD4yAQ==}
+  eslint-plugin-turbo@2.5.2:
+    resolution: {integrity: sha512-B+vdgOtBuDbRI3sIRayV3HZK1XcwlNuksmJJIgggkXTsNehMEbreJBkIda4qvA/STHnGAl2bUGev0Jx8Rijiwg==}
     peerDependencies:
       eslint: '>6.6.0'
       turbo: '>2.0.0'
@@ -4547,8 +4547,8 @@ packages:
       react-dom:
         optional: true
 
-  fumadocs-mdx@11.6.0:
-    resolution: {integrity: sha512-g0mArgliPBcZgi4691lwTCIw52y2BbxwIila7a6fQ6AEcu236uiBsDHWT4dm+xyjR3S84MlYkty9z2BWVTTNhg==}
+  fumadocs-mdx@11.6.1:
+    resolution: {integrity: sha512-z+H/eOJC4II0VW7rgf6btqeEkD9DEG1SNToNCYKMklCJAc9Y6l+NuQozKuknP2Ey6NK+Qqhvwhi2MOq38YLSeQ==}
     hasBin: true
     peerDependencies:
       '@fumadocs/mdx-remote': ^1.2.0
@@ -11693,7 +11693,7 @@ snapshots:
       eslint: 8.57.1
       eslint-config-next: 15.3.1(eslint@8.57.1)(typescript@5.8.3)
       eslint-config-prettier: 9.1.0(eslint@8.57.1)
-      eslint-config-turbo: 2.5.1(eslint@8.57.1)(turbo@2.5.0)
+      eslint-config-turbo: 2.5.2(eslint@8.57.1)(turbo@2.5.0)
       eslint-config-universe: 12.1.0(@types/eslint@9.6.1)(eslint@8.57.1)(prettier@3.5.3)(typescript@5.8.3)
       eslint-plugin-prettier: 5.2.6(@types/eslint@9.6.1)(eslint-config-prettier@9.1.0(eslint@8.57.1))(eslint@8.57.1)(prettier@3.5.3)
       eslint-plugin-react: 7.33.2(eslint@8.57.1)
@@ -11735,10 +11735,10 @@ snapshots:
     dependencies:
       eslint: 8.57.1
 
-  eslint-config-turbo@2.5.1(eslint@8.57.1)(turbo@2.5.0):
+  eslint-config-turbo@2.5.2(eslint@8.57.1)(turbo@2.5.0):
     dependencies:
       eslint: 8.57.1
-      eslint-plugin-turbo: 2.5.1(eslint@8.57.1)(turbo@2.5.0)
+      eslint-plugin-turbo: 2.5.2(eslint@8.57.1)(turbo@2.5.0)
       turbo: 2.5.0
 
   eslint-config-universe@12.1.0(@types/eslint@9.6.1)(eslint@8.57.1)(prettier@3.5.3)(typescript@5.8.3):
@@ -12007,7 +12007,7 @@ snapshots:
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-turbo@2.5.1(eslint@8.57.1)(turbo@2.5.0):
+  eslint-plugin-turbo@2.5.2(eslint@8.57.1)(turbo@2.5.0):
     dependencies:
       dotenv: 16.0.3
       eslint: 8.57.1
@@ -12500,7 +12500,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  fumadocs-mdx@11.6.0(acorn@8.14.1)(fumadocs-core@15.2.8(@types/react@19.1.2)(next@15.3.1(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(next@15.3.1(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)):
+  fumadocs-mdx@11.6.1(acorn@8.14.1)(fumadocs-core@15.2.8(@types/react@19.1.2)(next@15.3.1(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(next@15.3.1(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)):
     dependencies:
       '@mdx-js/mdx': 3.1.0(acorn@8.14.1)
       '@standard-schema/spec': 1.0.0
