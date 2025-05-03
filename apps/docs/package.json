@@ -10,7 +10,7 @@
     "generate-api-docs": "node scripts/generate-api-docs.js"
   },
   "dependencies": {
-    "fumadocs-core": "15.2.12",
+    "fumadocs-core": "15.2.13",
     "fumadocs-mdx": "11.6.1",
     "fumadocs-ui": "15.2.11",
     "next": "15.3.1",
