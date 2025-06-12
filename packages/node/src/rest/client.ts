@@ -14,8 +14,9 @@ export type SuccessfulAPIResponse<T> = {
 export type ErroredAPIResponse = {
   success: false;
   message: string;
+  statusCode: number;
   errors?: {
-    [key: string]: string;
+    [key: string]: string[];
   };
 };
 
