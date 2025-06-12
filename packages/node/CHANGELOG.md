@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.129
+
+### Patch Changes
+
+- [`c1f7ca6`](https://github.com/tonightpass/tonightpass/commit/c1f7ca668bbae4fcd41e38c5ed035af16f3be9ef) Thanks [@jerembdn](https://github.com/jerembdn)! - update errored api response type and improve create user dto validation
+
 ## 0.0.128
 
 ### Patch Changes
