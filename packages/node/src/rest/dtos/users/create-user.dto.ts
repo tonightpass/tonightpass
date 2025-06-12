@@ -1,8 +1,8 @@
-import { Type } from "class-transformer";
+import { Transform, Type } from "class-transformer";
 import {
-  IsDateString,
   IsEmail,
   IsEnum,
+  IsISO8601,
   IsLowercase,
   IsOptional,
   IsPhoneNumber,
@@ -89,6 +89,7 @@ export class CreateUserIdentityDto {
   avatarUrl?: string;
 
   @IsOptional()
-  @IsDateString()
+  @IsISO8601()
+  @Transform(({ value }) => new Date(value))
   birthDate: Date;
 }
