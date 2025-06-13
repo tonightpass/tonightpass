@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.130
+
+### Patch Changes
+
+- [`9aae9c1`](https://github.com/tonightpass/tonightpass/commit/9aae9c12e4ef3619536d5d99208b3089b86e8417) Thanks [@jerembdn](https://github.com/jerembdn)! - Update CreateUserIdentityDto validation
+
 ## 0.0.129
 
 ### Patch Changes
