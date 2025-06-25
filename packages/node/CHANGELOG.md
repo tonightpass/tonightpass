@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.132
+
+### Patch Changes
+
+- [`0272845`](https://github.com/tonightpass/tonightpass/commit/027284513b279261a5364e78845e694377547edd) Thanks [@antoinekm](https://github.com/antoinekm)! - Remove organization-event-metrics type and integrate metrics directly into organization-event
+
 ## 0.0.131
 
 ### Patch Changes
