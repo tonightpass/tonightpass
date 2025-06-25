@@ -29,7 +29,14 @@ import { CreateLocationDto } from "../../locations/create-location.dto";
 
 export type CreateOrganizationEventInput = Omit<
   ExcludeBase<OrganizationEvent>,
-  "slug" | "styles" | "tickets" | "organization" | "metrics"
+  | "slug"
+  | "styles"
+  | "tickets"
+  | "organization"
+  | "viewsCount"
+  | "sessionsCount"
+  | "totalViewsCount"
+  | "averageViewsPerSessionCount"
 > & {
   slug?: string;
   styles: string[];
