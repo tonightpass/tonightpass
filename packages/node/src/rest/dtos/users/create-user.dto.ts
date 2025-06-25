@@ -1,6 +1,6 @@
-import { Type } from "class-transformer";
+import { Transform, Type } from "class-transformer";
 import {
-  IsDateString,
+  IsDate,
   IsEmail,
   IsEnum,
   IsLowercase,
@@ -89,6 +89,11 @@ export class CreateUserIdentityDto {
   avatarUrl?: string;
 
   @IsOptional()
-  @IsDateString()
+  @Transform(({ value }) => {
+    if (!value) return undefined;
+    const date = new Date(value);
+    return isNaN(date.getTime()) ? value : date;
+  })
+  @IsDate()
   birthDate: Date;
 }
