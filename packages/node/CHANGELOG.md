@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.131
+
+### Patch Changes
+
+- [`80c71a6`](https://github.com/tonightpass/tonightpass/commit/80c71a6297dbab23b92cc32aabdab01e40ead1e3) Thanks [@antoinekm](https://github.com/antoinekm)! - Improve OrganizationEvent to use OrganizationEventMetrics for improved metrics tracking
+
 ## 0.0.130
 
 ### Patch Changes
