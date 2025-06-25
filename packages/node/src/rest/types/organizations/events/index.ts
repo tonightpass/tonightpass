@@ -20,6 +20,13 @@ export * from "./orders";
 export * from "./tickets";
 export * from "./styles";
 
+export type OrganizationEventMetrics = {
+  views: number;
+  sessions: number;
+  totalViews: number;
+  averageViewsPerSession: number;
+};
+
 export type OrganizationEvent = Base & {
   title: string;
   description: string;
@@ -32,7 +39,7 @@ export type OrganizationEvent = Base & {
   location: Location;
   tickets: OrganizationEventTicket[];
   styles: OrganizationEventStyle[];
-  viewsCount: number;
+  metrics: OrganizationEventMetrics;
   startAt: Date;
   endAt: Date;
 };
