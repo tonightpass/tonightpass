@@ -52,7 +52,7 @@
     "@nestjs/testing": "^11.0.0",
     "@swc/core": "^1.4.8",
     "@types/node": "22.13.10",
-    "dotenv": "^16.4.7",
+    "dotenv": "^17.0.0",
     "node-mailjet": "6.0.8",
     "tslib": "^2.5.0",
     "typescript": "^5.0.0"
