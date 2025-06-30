@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.133
+
+### Patch Changes
+
+- [`d334775`](https://github.com/tonightpass/tonightpass/commit/d334775121e1a251db2f5028046ec4148a6b60cf) Thanks [@antoinekm](https://github.com/antoinekm)! - Add password recovery functionality with forgot password and reset password DTOs and endpoints
+
 ## 0.0.132
 
 ### Patch Changes
