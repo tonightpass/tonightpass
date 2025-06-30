@@ -1,5 +1,20 @@
 # tonightpass
 
+## 0.0.137
+
+### Patch Changes
+
+- [`2a2990d`](https://github.com/tonightpass/tonightpass/commit/2a2990d4972065944a9ad1080ab8a9f95284c540) Thanks [@antoinekm](https://github.com/antoinekm)! - Add chat system with channels and messages
+  - Add Channel and ChannelMessage types with full TypeScript support
+  - Support for private (2 participants) and group channels (up to 50 participants)
+  - **Profile-based participants**: Both users and organizations can participate as ChannelParticipant = Profile
+  - Rich messaging features: attachments, mentions, replies, reactions, read receipts
+  - Comprehensive DTOs with validation for all operations (AddParticipantDto, AddReactionDto, etc.)
+  - Complete SDK client methods for channels and messages CRUD operations
+  - Channel member management with role-based permissions
+  - Message editing, deletion, and reaction capabilities
+  - Type-safe endpoint definitions and proper validation schemas
+
 ## 0.0.136
 
 ### Patch Changes
