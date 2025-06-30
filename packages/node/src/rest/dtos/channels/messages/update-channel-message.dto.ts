@@ -3,7 +3,6 @@ import {
   IsArray,
   IsOptional,
   IsString,
-  IsUUID,
   Length,
   ValidateNested,
   ArrayMaxSize,
@@ -23,10 +22,4 @@ export class UpdateChannelMessageDto {
   @ValidateNested({ each: true })
   @Type(() => CreateAttachmentDto)
   attachments?: CreateAttachmentDto[];
-
-  @IsOptional()
-  @IsArray()
-  @ArrayMaxSize(20)
-  @IsUUID("4", { each: true })
-  mentionIds?: string[];
 }

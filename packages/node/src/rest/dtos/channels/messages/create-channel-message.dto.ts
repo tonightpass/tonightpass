@@ -45,10 +45,4 @@ export class CreateChannelMessageDto {
   @IsOptional()
   @IsUUID("4")
   replyToId?: string;
-
-  @IsOptional()
-  @IsArray()
-  @ArrayMaxSize(20)
-  @IsUUID("4", { each: true })
-  mentionIds?: string[];
 }

@@ -1,5 +1,9 @@
-import { Base, User } from "..";
-import { CreateChannelDto, UpdateChannelDto } from "../../dtos";
+import { Base, Profile } from "..";
+import {
+  CreateChannelDto,
+  UpdateChannelDto,
+  AddParticipantDto,
+} from "../../dtos";
 import { Endpoint } from "../../endpoints";
 
 export * from "./messages";
@@ -9,20 +13,21 @@ export enum ChannelType {
   Group = "group",
 }
 
+export type ChannelParticipant = Profile;
+
 export type Channel = Base & {
   type: ChannelType;
-  users: User[];
-  name?: string; // Optional name for group channels
-  description?: string; // Optional description for group channels
-  lastMessageAt?: Date; // Last message timestamp
-  unreadCount?: number; // Unread messages count per user
+  participants: ChannelParticipant[];
+  name?: string;
+  lastMessageAt?: Date;
+  unreadCount?: number;
 };
 
 export type ChannelMember = {
-  user: User;
+  participant: ChannelParticipant;
   joinedAt: Date;
-  role?: "admin" | "member"; // For group channels
-  lastReadAt?: Date; // Last read message timestamp
+  role?: "admin" | "member";
+  lastReadAt?: Date;
 };
 
 export type ChannelEndpoints =
@@ -31,6 +36,16 @@ export type ChannelEndpoints =
   | Endpoint<"POST", "/channels", Channel, CreateChannelDto>
   | Endpoint<"PUT", "/channels/:channelId", Channel, UpdateChannelDto>
   | Endpoint<"DELETE", "/channels/:channelId", void, undefined>
-  | Endpoint<"POST", "/channels/:channelId/members/:userId", void, null>
-  | Endpoint<"DELETE", "/channels/:channelId/members/:userId", void, undefined>
+  | Endpoint<
+      "POST",
+      "/channels/:channelId/participants",
+      void,
+      AddParticipantDto
+    >
+  | Endpoint<
+      "DELETE",
+      "/channels/:channelId/participants/:username",
+      void,
+      undefined
+    >
   | Endpoint<"GET", "/channels/:channelId/members", ChannelMember[]>;
