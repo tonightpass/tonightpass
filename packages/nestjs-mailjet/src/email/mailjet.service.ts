@@ -1,5 +1,6 @@
 import { HttpStatus, Inject, Injectable } from "@nestjs/common";
 import { Client, Contact, LibraryResponse, SendEmailV3_1 } from "node-mailjet";
+import type { ClientParams } from "node-mailjet/declarations/client/Client";
 
 import type { MailjetModuleOptions } from "./interfaces";
 import { MAILJET_MODULE_OPTIONS } from "../constants/mailjet.constants";
@@ -12,13 +13,20 @@ export class MailjetService {
     @Inject(MAILJET_MODULE_OPTIONS)
     options: MailjetModuleOptions,
   ) {
-    this.client = new Client({
+    const clientConfig: ClientParams = {
       apiKey: options.apiKey,
       apiSecret: options.apiSecret,
-      ...(!!options.sandboxMode && {
-        perform_api_call: options.sandboxMode,
-      }),
-    });
+    };
+
+    if (options.sandboxMode === true) {
+      clientConfig.config = {
+        version: "v3.1",
+        host: "api.mailjet.com",
+        output: "json",
+      };
+    }
+
+    this.client = new Client(clientConfig);
 
     if (!this.client) {
       throw new Error("Mailjet client is not initialized");
@@ -112,12 +120,13 @@ export class MailjetService {
       .request(messages);
 
     if (
-      (result.response.status !== HttpStatus.CREATED ||
-        result.response.status !== HttpStatus.CREATED) &&
-      (result.body.Messages.length === 0 ||
-        result.body.Messages[0].Status !== "success")
+      result.response.status !== HttpStatus.OK ||
+      result.body.Messages.length === 0 ||
+      result.body.Messages[0].Status !== "success"
     ) {
-      throw new Error("Email messages not sent");
+      throw new Error(
+        `Email messages not sent: ${JSON.stringify(result.body.Messages?.[0] || result.body)}`,
+      );
     }
 
     return result.body.Messages;
