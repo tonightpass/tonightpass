@@ -1,5 +1,14 @@
 # tonightpass
 
+## 0.0.135
+
+### Patch Changes
+
+- [`15f5f65`](https://github.com/tonightpass/tonightpass/commit/15f5f658a68708f2cbc733bbc4edd8e68fa02969) Thanks [@antoinekm](https://github.com/antoinekm)! - Update password recovery token structure to use tokenId and tokenValue fields
+  - Changed RecoveryResetDto to use `tokenId` and `tokenValue` instead of `token` and `tokenId`
+  - Updated URL parameters to use `id` and `value` for better semantic naming
+  - Improved token validation security by requiring both token ID and value
+
 ## 0.0.134
 
 ### Patch Changes
