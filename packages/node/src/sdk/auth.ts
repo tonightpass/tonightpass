@@ -1,7 +1,12 @@
 import { ParamValue } from "pathcat";
 
 import { sdk } from "./builder";
-import { CreateUserDto, SignInUserDto } from "../rest";
+import {
+  CreateUserDto,
+  SignInUserDto,
+  RecoveryDto,
+  RecoveryResetDto,
+} from "../rest";
 import { isBrowser } from "../utils";
 
 export const auth = sdk((client) => ({
@@ -9,6 +14,10 @@ export const auth = sdk((client) => ({
   signUp: async (data: CreateUserDto) => client.post("/auth/sign-up", data),
   signOut: async () => client.post("/auth/sign-out", null),
   refreshToken: async () => client.post("/auth/refresh-token", null),
+
+  recovery: async (data: RecoveryDto) => client.post("/auth/recovery", data),
+  recoveryReset: async (data: RecoveryResetDto) =>
+    client.post("/auth/recovery/reset", data),
 
   oauth2: {
     google: {
