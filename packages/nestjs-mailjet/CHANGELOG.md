@@ -1,5 +1,16 @@
 # @tonightpass/nestjs-mailjet
 
+## 4.0.8
+
+### Patch Changes
+
+- [#1002](https://github.com/tonightpass/tonightpass/pull/1002) [`41470b3`](https://github.com/tonightpass/tonightpass/commit/41470b3d6f569f70dde8bdc769166d386a6cd8a1) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix Mailjet client configuration and improve TypeScript types
+  - Fix client initialization to properly handle sandbox mode configuration
+  - Replace `any` type with proper `ClientParams` type from node-mailjet
+  - Remove problematic `perform_api_call` configuration that was causing email delivery issues
+  - Simplify client configuration to use Mailjet defaults for better compatibility
+  - Fix sender validation issues by using proper API configuration
+
 ## 4.0.7
 
 ### Patch Changes
