@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.134
+
+### Patch Changes
+
+- [`1571d78`](https://github.com/tonightpass/tonightpass/commit/1571d7800d39ab3742c04c5551514d8608414077) Thanks [@antoinekm](https://github.com/antoinekm)! - Add RecoveryResponse type for password recovery endpoint
+
+  Added new `RecoveryResponse` interface to provide feedback about where the recovery email/SMS was sent. The response includes a `to` field that contains the masked destination (e.g., "joh**\*@gmail.com" or "+33 6 ** \*\* 99 99") to inform users where their recovery message was delivered while maintaining privacy.
+
 ## 0.0.133
 
 ### Patch Changes
