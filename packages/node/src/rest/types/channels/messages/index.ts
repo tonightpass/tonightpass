@@ -1,8 +1,9 @@
-import { Channel } from "..";
-import { Base, User, ArrayResult, ArrayOptions } from "../..";
+import { Channel, ChannelParticipant } from "..";
+import { Base, ArrayResult, ArrayOptions } from "../..";
 import {
   CreateChannelMessageDto,
   UpdateChannelMessageDto,
+  AddReactionDto,
 } from "../../../dtos";
 import { Endpoint } from "../../../endpoints";
 
@@ -24,18 +25,17 @@ export type Attachment = {
 
 export type ChannelMessage = Base & {
   channel: Channel;
-  sender: User;
+  sender: ChannelParticipant;
   content: string;
   attachments: Attachment[];
   sent: boolean;
   delivered: boolean;
   read: boolean;
-  readBy?: { user: User; readAt: Date }[]; // For group channels
+  readBy?: { participant: ChannelParticipant; readAt: Date }[];
   edited: boolean;
   editedAt?: Date;
-  replyTo?: ChannelMessage; // For replies
-  mentions?: User[]; // Mentioned users
-  reactions?: { emoji: string; users: User[] }[]; // Message reactions
+  replyTo?: ChannelMessage;
+  reactions?: { emoji: string; participants: ChannelParticipant[] }[];
 };
 
 export type ChannelMessageEndpoints =
@@ -68,7 +68,7 @@ export type ChannelMessageEndpoints =
       "POST",
       "/channels/:channelId/messages/:messageId/reactions",
       void,
-      { emoji: string }
+      AddReactionDto
     >
   | Endpoint<
       "DELETE",

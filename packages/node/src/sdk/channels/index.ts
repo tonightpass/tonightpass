@@ -11,15 +11,16 @@ export const channels = sdk((client) => ({
     client.put("/channels/:channelId", data, { channelId }),
   delete: async (channelId: string) =>
     client.delete("/channels/:channelId", undefined, { channelId }),
-  addMember: async (channelId: string, userId: string) =>
-    client.post("/channels/:channelId/members/:userId", null, {
+  addParticipant: async (channelId: string, username: string) =>
+    client.post(
+      "/channels/:channelId/participants",
+      { username },
+      { channelId },
+    ),
+  removeParticipant: async (channelId: string, username: string) =>
+    client.delete("/channels/:channelId/participants/:username", undefined, {
       channelId,
-      userId,
-    }),
-  removeMember: async (channelId: string, userId: string) =>
-    client.delete("/channels/:channelId/members/:userId", undefined, {
-      channelId,
-      userId,
+      username,
     }),
   getMembers: async (channelId: string) =>
     client.get("/channels/:channelId/members", { channelId }),

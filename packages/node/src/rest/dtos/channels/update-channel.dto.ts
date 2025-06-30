@@ -5,9 +5,4 @@ export class UpdateChannelDto {
   @IsString()
   @Length(1, 100)
   name?: string;
-
-  @IsOptional()
-  @IsString()
-  @Length(1, 500)
-  description?: string;
 }
