@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.138
+
+### Patch Changes
+
+- [`fc65f7d`](https://github.com/tonightpass/tonightpass/commit/fc65f7da07c0ef4f7fb638a322a2852f4130fe16) Thanks [@antoinekm](https://github.com/antoinekm)! - Add specific types for channel message reactions and read status tracking. Created `ChannelMessageReaction` and `ChannelMessageReadByEntry` types to replace inline object types in `ChannelMessage` for better type safety and maintainability.
+
 ## 0.0.137
 
 ### Patch Changes
