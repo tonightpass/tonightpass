@@ -1,5 +1,5 @@
 ---
-"@tonightpass/node": minor
+"tonightpass": minor
 ---
 
 Add organization-specific channel endpoints and update channel API structure
