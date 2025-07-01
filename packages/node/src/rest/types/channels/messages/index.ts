@@ -23,6 +23,16 @@ export type Attachment = {
   mimeType?: string;
 };
 
+export type ChannelMessageReadByEntry = {
+  participant: ChannelParticipant;
+  readAt: Date;
+};
+
+export type ChannelMessageReaction = {
+  emoji: string;
+  participants: ChannelParticipant[];
+};
+
 export type ChannelMessage = Base & {
   channel: Channel;
   sender: ChannelParticipant;
@@ -31,11 +41,11 @@ export type ChannelMessage = Base & {
   sent: boolean;
   delivered: boolean;
   read: boolean;
-  readBy?: { participant: ChannelParticipant; readAt: Date }[];
+  readBy?: ChannelMessageReadByEntry[];
   edited: boolean;
   editedAt?: Date;
   replyTo?: ChannelMessage;
-  reactions?: { emoji: string; participants: ChannelParticipant[] }[];
+  reactions?: ChannelMessageReaction[];
 };
 
 export type ChannelMessageEndpoints =
