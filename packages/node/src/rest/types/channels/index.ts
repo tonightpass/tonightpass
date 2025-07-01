@@ -1,4 +1,4 @@
-import { Base, Profile } from "..";
+import { Base, Profile, ArrayResult, ArrayOptions } from "..";
 import {
   CreateChannelDto,
   UpdateChannelDto,
@@ -30,22 +30,75 @@ export type ChannelMember = {
   lastReadAt?: Date;
 };
 
+export type UserChannelCountOptions = {
+  unseen?: boolean;
+};
+
 export type ChannelEndpoints =
-  | Endpoint<"GET", "/channels", Channel[]>
-  | Endpoint<"GET", "/channels/:channelId", Channel>
-  | Endpoint<"POST", "/channels", Channel, CreateChannelDto>
-  | Endpoint<"PUT", "/channels/:channelId", Channel, UpdateChannelDto>
-  | Endpoint<"DELETE", "/channels/:channelId", void, undefined>
+  | Endpoint<
+      "GET",
+      "/channels/@me",
+      ArrayResult<Channel>,
+      ArrayOptions<Channel>
+    >
+  | Endpoint<
+      "GET",
+      "/channels/:organizationSlug",
+      ArrayResult<Channel>,
+      ArrayOptions<Channel>
+    >
+  | Endpoint<
+      "GET",
+      "/users/@me/channels/count",
+      number,
+      UserChannelCountOptions
+    >
+  | Endpoint<
+      "GET",
+      "/users/:organizationSlug/channels/count",
+      number,
+      UserChannelCountOptions
+    >
+  | Endpoint<"GET", "/channels/@me/:channelId", Channel>
+  | Endpoint<"GET", "/channels/:organizationSlug/:channelId", Channel>
+  | Endpoint<"POST", "/channels/@me", Channel, CreateChannelDto>
+  | Endpoint<"POST", "/channels/:organizationSlug", Channel, CreateChannelDto>
+  | Endpoint<"PUT", "/channels/@me/:channelId", Channel, UpdateChannelDto>
+  | Endpoint<
+      "PUT",
+      "/channels/:organizationSlug/:channelId",
+      Channel,
+      UpdateChannelDto
+    >
+  | Endpoint<"DELETE", "/channels/@me/:channelId", void>
+  | Endpoint<"DELETE", "/channels/:organizationSlug/:channelId", void>
   | Endpoint<
       "POST",
-      "/channels/:channelId/participants",
+      "/channels/@me/:channelId/participants",
       void,
       AddParticipantDto
     >
   | Endpoint<
-      "DELETE",
-      "/channels/:channelId/participants/:username",
+      "POST",
+      "/channels/:organizationSlug/:channelId/participants",
       void,
-      undefined
+      AddParticipantDto
     >
-  | Endpoint<"GET", "/channels/:channelId/members", ChannelMember[]>;
+  | Endpoint<"DELETE", "/channels/@me/:channelId/participants/:username", void>
+  | Endpoint<
+      "DELETE",
+      "/channels/:organizationSlug/:channelId/participants/:username",
+      void
+    >
+  | Endpoint<
+      "GET",
+      "/channels/@me/:channelId/members",
+      ArrayResult<ChannelMember>,
+      ArrayOptions<ChannelMember>
+    >
+  | Endpoint<
+      "GET",
+      "/channels/:organizationSlug/:channelId/members",
+      ArrayResult<ChannelMember>,
+      ArrayOptions<ChannelMember>
+    >;

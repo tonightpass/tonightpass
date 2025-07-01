@@ -51,44 +51,87 @@ export type ChannelMessage = Base & {
 export type ChannelMessageEndpoints =
   | Endpoint<
       "GET",
-      "/channels/:channelId/messages",
+      "/channels/@me/:channelId/messages",
       ArrayResult<ChannelMessage>,
       ArrayOptions<ChannelMessage>
     >
-  | Endpoint<"GET", "/channels/:channelId/messages/:messageId", ChannelMessage>
+  | Endpoint<
+      "GET",
+      "/channels/:organizationSlug/:channelId/messages",
+      ArrayResult<ChannelMessage>,
+      ArrayOptions<ChannelMessage>
+    >
+  | Endpoint<
+      "GET",
+      "/channels/@me/:channelId/messages/:messageId",
+      ChannelMessage
+    >
+  | Endpoint<
+      "GET",
+      "/channels/:organizationSlug/:channelId/messages/:messageId",
+      ChannelMessage
+    >
   | Endpoint<
       "POST",
-      "/channels/:channelId/messages",
+      "/channels/@me/:channelId/messages",
+      ChannelMessage,
+      CreateChannelMessageDto
+    >
+  | Endpoint<
+      "POST",
+      "/channels/:organizationSlug/:channelId/messages",
       ChannelMessage,
       CreateChannelMessageDto
     >
   | Endpoint<
       "PUT",
-      "/channels/:channelId/messages/:messageId",
+      "/channels/@me/:channelId/messages/:messageId",
       ChannelMessage,
       UpdateChannelMessageDto
     >
   | Endpoint<
+      "PUT",
+      "/channels/:organizationSlug/:channelId/messages/:messageId",
+      ChannelMessage,
+      UpdateChannelMessageDto
+    >
+  | Endpoint<"DELETE", "/channels/@me/:channelId/messages/:messageId", void>
+  | Endpoint<
       "DELETE",
-      "/channels/:channelId/messages/:messageId",
-      void,
-      undefined
+      "/channels/:organizationSlug/:channelId/messages/:messageId",
+      void
     >
   | Endpoint<
       "POST",
-      "/channels/:channelId/messages/:messageId/reactions",
+      "/channels/@me/:channelId/messages/:messageId/reactions",
+      void,
+      AddReactionDto
+    >
+  | Endpoint<
+      "POST",
+      "/channels/:organizationSlug/:channelId/messages/:messageId/reactions",
       void,
       AddReactionDto
     >
   | Endpoint<
       "DELETE",
-      "/channels/:channelId/messages/:messageId/reactions/:emoji",
-      void,
-      undefined
+      "/channels/@me/:channelId/messages/:messageId/reactions/:emoji",
+      void
+    >
+  | Endpoint<
+      "DELETE",
+      "/channels/:organizationSlug/:channelId/messages/:messageId/reactions/:emoji",
+      void
     >
   | Endpoint<
       "POST",
-      "/channels/:channelId/messages/:messageId/read",
+      "/channels/@me/:channelId/messages/:messageId/read",
+      void,
+      null
+    >
+  | Endpoint<
+      "POST",
+      "/channels/:organizationSlug/:channelId/messages/:messageId/read",
       void,
       null
     >;
