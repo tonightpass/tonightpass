@@ -15,11 +15,20 @@ export enum ChannelType {
 
 export type ChannelParticipant = Profile;
 
+export enum ChannelStatus {
+  Sent = "sent",
+  Delivered = "delivered",
+  Read = "read",
+  Received = "received",
+  Opened = "opened",
+}
+
 export type Channel = Base & {
   type: ChannelType;
   participants: ChannelParticipant[];
   name?: string;
   lastMessageAt?: Date;
+  status?: ChannelStatus;
   unreadCount?: number;
 };
 
