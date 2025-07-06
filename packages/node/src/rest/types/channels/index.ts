@@ -13,6 +13,11 @@ export enum ChannelType {
   Group = "group",
 }
 
+export enum ChannelMemberRole {
+  Member = "member",
+  Admin = "admin",
+}
+
 export type ChannelParticipant = Profile;
 
 export enum ChannelStatus {
@@ -35,7 +40,7 @@ export type Channel = Base & {
 export type ChannelMember = {
   participant: ChannelParticipant;
   joinedAt: Date;
-  role?: "admin" | "member";
+  role?: ChannelMemberRole;
   lastReadAt?: Date;
 };
 
