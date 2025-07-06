@@ -1,5 +1,12 @@
 # tonightpass
 
+## 0.0.141
+
+### Patch Changes
+
+- [`e0b94fd`](https://github.com/tonightpass/tonightpass/commit/e0b94fd4f0826fbcefd67a096c26f229f3854d59) Thanks [@antoinekm](https://github.com/antoinekm)! - Add ChannelMemberRole enum
+  - Add ChannelMemberRole enum with Member and Admin values
+
 ## 0.0.140
 
 ### Patch Changes
