@@ -12,6 +12,7 @@ import { OrganizationEventTicket } from "./events/tickets";
 import { OrganizationMember, OrganizationMembersEndpoints } from "./members";
 import { CreateOrganizationDto, UpdateOrganizationDto } from "../../dtos";
 import { Endpoint } from "../../endpoints";
+import { OrganizationBilling } from "./billing";
 
 export * from "./events";
 export * from "./members";
@@ -25,10 +26,6 @@ export type Organization = Base & {
   savedTickets: OrganizationEventTicket[];
   verified: boolean;
   billing: OrganizationBilling;
-};
-
-export type OrganizationBilling = {
-  account: string;
 };
 
 export type OrganizationBillingAccount = Stripe.Account;
