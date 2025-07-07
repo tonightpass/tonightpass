@@ -7,12 +7,12 @@ import {
   Location,
   OrganizationProfile,
 } from "..";
+import { OrganizationBilling } from "./billing";
 import { OrganizationEvent, OrganizationEventEndpoints } from "./events";
 import { OrganizationEventTicket } from "./events/tickets";
 import { OrganizationMember, OrganizationMembersEndpoints } from "./members";
 import { CreateOrganizationDto, UpdateOrganizationDto } from "../../dtos";
 import { Endpoint } from "../../endpoints";
-import { OrganizationBilling } from "./billing";
 
 export * from "./events";
 export * from "./members";

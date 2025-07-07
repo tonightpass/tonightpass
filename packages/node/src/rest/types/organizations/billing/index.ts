@@ -42,5 +42,5 @@ export type OrganizationBilling = {
   dashboardSettings?: {
     displayName?: string;
     timezone?: string;
-  }
-}
+  };
+};
