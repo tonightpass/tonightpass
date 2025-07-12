@@ -13,6 +13,11 @@ import {
   Matches,
   MinDate,
   ValidateNested,
+  ValidatorConstraint,
+  ValidatorConstraintInterface,
+  ValidationArguments,
+  registerDecorator,
+  ValidationOptions,
 } from "class-validator";
 
 import {
@@ -27,6 +32,33 @@ import {
   ExcludeBase,
 } from "../../../types";
 import { CreateLocationDto } from "../../locations/create-location.dto";
+
+@ValidatorConstraint({ name: "atLeastOneMedia", async: false })
+export class AtLeastOneMediaConstraint implements ValidatorConstraintInterface {
+  validate(_value: unknown, args: ValidationArguments) {
+    const object = args.object as CreateOrganizationEventDto;
+    const flyers = object.flyers || [];
+    const trailers = object.trailers || [];
+
+    return flyers.length > 0 || trailers.length > 0;
+  }
+
+  defaultMessage() {
+    return "At least one flyer or trailer must be provided";
+  }
+}
+
+export function AtLeastOneMedia(validationOptions?: ValidationOptions) {
+  return function (object: object, propertyName: string) {
+    registerDecorator({
+      target: object.constructor,
+      propertyName,
+      options: validationOptions,
+      constraints: [],
+      validator: AtLeastOneMediaConstraint,
+    });
+  };
+}
 
 export type CreateOrganizationEventInput = Omit<
   ExcludeBase<OrganizationEvent>,
@@ -74,6 +106,7 @@ export class CreateOrganizationEventDto
 
   @IsArray()
   @IsUrl({}, { each: true })
+  @AtLeastOneMedia()
   flyers: string[];
 
   @IsArray()
