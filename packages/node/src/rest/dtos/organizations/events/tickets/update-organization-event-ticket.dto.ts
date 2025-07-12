@@ -27,7 +27,7 @@ export class UpdateOrganizationEventTicketDto
   name?: string;
 
   @IsString()
-  @Length(1, 1024)
+  @Length(0, 1024)
   @IsOptional()
   description?: string;
 
