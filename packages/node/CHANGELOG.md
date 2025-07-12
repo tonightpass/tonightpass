@@ -1,5 +1,14 @@
 # tonightpass
 
+## 0.0.148
+
+### Patch Changes
+
+- [`6772d65`](https://github.com/tonightpass/tonightpass/commit/6772d65ceca69cac2a8ea57c6d6a767daa4a1747) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix ticket description validation to be truly optional
+  - Changed `@Length(1, 1024)` to `@Length(0, 1024)` in CreateOrganizationEventTicketDto
+  - Changed `@Length(1, 1024)` to `@Length(0, 1024)` in UpdateOrganizationEventTicketDto
+  - This allows ticket descriptions to be empty strings, making them truly optional
+
 ## 0.0.147
 
 ### Patch Changes
