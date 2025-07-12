@@ -1,5 +1,16 @@
 # tonightpass
 
+## 0.0.145
+
+### Patch Changes
+
+- [`2b39067`](https://github.com/tonightpass/tonightpass/commit/2b3906788adbf0666042bd5d96bab79eb96fc55c) Thanks [@antoinekm](https://github.com/antoinekm)! - Standardize date field handling across all DTOs
+  - Ensure consistent `@Transform()` decorator for automatic string-to-Date conversion
+  - Replace mixed `@IsDateString()` and `@IsDate()` usage with standardized `@IsDate()`
+  - Add proper `@MinDate()` validation for future date requirements
+  - Apply consistent pattern: `@Transform(({ value }) => (value instanceof Date ? value : new Date(value)))`
+  - Fix date validation issues in event creation and user management forms
+
 ## 0.0.144
 
 ### Patch Changes
