@@ -1,5 +1,5 @@
 ---
-"tonightpass": minor
+"tonightpass": patch
 ---
 
 Add event media upload functionality with support for flyers and trailers
