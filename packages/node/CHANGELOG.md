@@ -1,5 +1,16 @@
 # tonightpass
 
+## 0.0.143
+
+### Patch Changes
+
+- [`01d9a87`](https://github.com/tonightpass/tonightpass/commit/01d9a87e82eaa4fb17be4920aedea9f36ddf7f9a) Thanks [@antoinekm](https://github.com/antoinekm)! - Add temporary media upload endpoint for event creation
+  - Add new `/events/files/:eventFileType` endpoint type definition
+  - Rename `uploadFile` to `uploadOrganizationFile` for organization-specific uploads
+  - Add new `uploadFile` method for temporary uploads without organization context
+  - Support uploading media files to temporary storage before event creation
+  - Enables media upload for non-authenticated users during event creation flow
+
 ## 0.0.142
 
 ### Patch Changes
