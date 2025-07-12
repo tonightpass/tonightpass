@@ -1,5 +1,15 @@
 # tonightpass
 
+## 0.0.142
+
+### Patch Changes
+
+- [`c4713de`](https://github.com/tonightpass/tonightpass/commit/c4713deb15f0767396403ab43f4db46b5b1a547e) Thanks [@antoinekm](https://github.com/antoinekm)! - Add event media upload functionality with support for flyers and trailers
+  - Add `OrganizationEventFileType` enum with Flyer and Trailer types
+  - Add file upload endpoint type definition for events
+  - Add `uploadFile` method to events SDK for uploading media files
+  - Support for both image and video file uploads with proper validation
+
 ## 0.0.141
 
 ### Patch Changes
