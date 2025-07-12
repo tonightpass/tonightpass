@@ -150,6 +150,7 @@ export type OrganizationEventEndpoints =
       string,
       FormData
     >
+  | Endpoint<"POST", "/events/files/:eventFileType", string, FormData>
   | OrganizationEventOrderEndpoints
   | OrganizationEventStyleEndpoints
   | OrganizationEventTicketEndpoints
