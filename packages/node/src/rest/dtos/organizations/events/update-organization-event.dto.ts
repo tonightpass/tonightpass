@@ -10,6 +10,7 @@ import {
   IsUrl,
   Length,
   Matches,
+  MinDate,
   ValidateNested,
 } from "class-validator";
 
@@ -80,9 +81,11 @@ export class UpdateOrganizationEventDto
 
   @IsOptional()
   @IsDateString()
+  @MinDate(new Date())
   startAt?: Date;
 
   @IsOptional()
   @IsDateString()
+  @MinDate(new Date())
   endAt?: Date;
 }

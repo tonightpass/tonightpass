@@ -11,6 +11,7 @@ import {
   IsUrl,
   Length,
   Matches,
+  MinDate,
   ValidateNested,
 } from "class-validator";
 
@@ -98,9 +99,11 @@ export class CreateOrganizationEventDto
 
   @IsDateString()
   @IsNotEmpty()
+  @MinDate(new Date())
   startAt: Date;
 
   @IsDateString()
   @IsNotEmpty()
+  @MinDate(new Date())
   endAt: Date;
 }
