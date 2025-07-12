@@ -1,5 +1,15 @@
 # tonightpass
 
+## 0.0.144
+
+### Patch Changes
+
+- [`3cff712`](https://github.com/tonightpass/tonightpass/commit/3cff712584bb067c158ac0ad41f66cf6ae71e516) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix GeoPointDto validation decorators
+  - Replace invalid @ValidateNested() on method with proper @Validate() custom validator
+  - Create CoordinatesRangeConstraint for geographic coordinate validation
+  - Ensure coordinates are within valid latitude (-90 to 90) and longitude (-180 to 180) ranges
+  - Fix class-validator compatibility issues with geometry validation
+
 ## 0.0.143
 
 ### Patch Changes
