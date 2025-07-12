@@ -1,5 +1,14 @@
 # tonightpass
 
+## 0.0.147
+
+### Patch Changes
+
+- [`fc382f7`](https://github.com/tonightpass/tonightpass/commit/fc382f79b741c476e539a40ba6c80e771c7044c1) Thanks [@antoinekm](https://github.com/antoinekm)! - Add validation to require at least one style for organization events
+  - Replace `@IsNotEmpty()` with `@ArrayMinSize(1)` for styles field in CreateOrganizationEventDto
+  - Ensures events must have at least one style selected before creation
+  - Prevents creation of events with empty styles array
+
 ## 0.0.146
 
 ### Patch Changes
