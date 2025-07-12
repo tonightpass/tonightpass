@@ -1,6 +1,6 @@
-import { Type } from "class-transformer";
+import { Type, Transform } from "class-transformer";
 import {
-  IsDateString,
+  IsDate,
   IsEmail,
   IsEnum,
   IsLowercase,
@@ -115,6 +115,7 @@ class UpdateUserIdentityDto
   gender?: UserIdentityGender;
 
   @IsOptional()
-  @IsDateString()
+  @Transform(({ value }) => (value instanceof Date ? value : new Date(value)))
+  @IsDate()
   birthDate?: Date;
 }

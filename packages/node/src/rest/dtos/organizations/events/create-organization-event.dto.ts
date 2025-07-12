@@ -1,7 +1,7 @@
-import { Type } from "class-transformer";
+import { Type, Transform } from "class-transformer";
 import {
   IsArray,
-  IsDateString,
+  IsDate,
   IsEnum,
   IsLowercase,
   IsNotEmpty,
@@ -97,12 +97,14 @@ export class CreateOrganizationEventDto
   @IsNotEmpty()
   styles: string[]; // Array of style IDs
 
-  @IsDateString()
+  @Transform(({ value }) => (value instanceof Date ? value : new Date(value)))
+  @IsDate()
   @IsNotEmpty()
   @MinDate(new Date())
   startAt: Date;
 
-  @IsDateString()
+  @Transform(({ value }) => (value instanceof Date ? value : new Date(value)))
+  @IsDate()
   @IsNotEmpty()
   @MinDate(new Date())
   endAt: Date;
