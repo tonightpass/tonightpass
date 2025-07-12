@@ -7,8 +7,10 @@ import {
   Client,
   CreateOrganizationEventDto,
   OrganizationEvent,
+  OrganizationEventFileType,
   UpdateOrganizationEventDto,
 } from "../../../rest";
+import { buildFileFormData } from "../../../utils";
 
 export const organizationsEvents = (client: Client) => ({
   search: async (query: string, limit?: number) =>
@@ -74,6 +76,17 @@ export const organizationsEvents = (client: Client) => ({
       organizationSlug,
       eventSlug,
     }),
+  uploadFile: async (
+    organizationSlug: string,
+    eventSlug: string,
+    eventFileType: OrganizationEventFileType,
+    file: File,
+  ) =>
+    client.post(
+      "/organizations/:organizationSlug/events/:eventSlug/files/:eventFileType",
+      buildFileFormData("file", file),
+      { organizationSlug, eventSlug, eventFileType },
+    ),
   orders: organizationsEventsOrders(client),
   styles: organizationsEventsStyles(client),
   tickets: organizationsEventsTickets(client),

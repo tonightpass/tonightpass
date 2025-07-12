@@ -69,6 +69,11 @@ export enum OrganizationEventVisibilityType {
   Private = "private",
 }
 
+export enum OrganizationEventFileType {
+  Flyer = "flyer",
+  Trailer = "trailer",
+}
+
 export type OrganizationEventEndpoints =
   | Endpoint<
       "GET",
@@ -138,6 +143,12 @@ export type OrganizationEventEndpoints =
       "/organizations/:organizationSlug/events/:eventSlug",
       OrganizationEvent,
       null
+    >
+  | Endpoint<
+      "POST",
+      "/organizations/:organizationSlug/events/:eventSlug/files/:eventFileType",
+      string,
+      FormData
     >
   | OrganizationEventOrderEndpoints
   | OrganizationEventStyleEndpoints
