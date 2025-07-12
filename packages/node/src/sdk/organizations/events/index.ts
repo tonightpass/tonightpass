@@ -76,7 +76,13 @@ export const organizationsEvents = (client: Client) => ({
       organizationSlug,
       eventSlug,
     }),
-  uploadFile: async (
+  uploadFile: async (eventFileType: OrganizationEventFileType, file: File) =>
+    client.post(
+      "/events/files/:eventFileType",
+      buildFileFormData("file", file),
+      { eventFileType },
+    ),
+  uploadOrganizationFile: async (
     organizationSlug: string,
     eventSlug: string,
     eventFileType: OrganizationEventFileType,
