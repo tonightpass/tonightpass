@@ -1,6 +1,7 @@
+import { Transform } from "class-transformer";
 import {
   IsBoolean,
-  IsDateString,
+  IsDate,
   IsEnum,
   IsNumber,
   IsOptional,
@@ -60,11 +61,13 @@ export class UpdateOrganizationEventTicketDto
   @IsOptional()
   isFeesIncluded?: boolean;
 
-  @IsDateString()
   @IsOptional()
+  @Transform(({ value }) => (value instanceof Date ? value : new Date(value)))
+  @IsDate()
   startAt?: Date;
 
-  @IsDateString()
   @IsOptional()
+  @Transform(({ value }) => (value instanceof Date ? value : new Date(value)))
+  @IsDate()
   endAt?: Date;
 }
