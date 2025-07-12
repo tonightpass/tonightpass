@@ -1,5 +1,16 @@
 # tonightpass
 
+## 0.0.146
+
+### Patch Changes
+
+- [`27efae1`](https://github.com/tonightpass/tonightpass/commit/27efae181a03c3952589b3f42e47af2539feff9e) Thanks [@antoinekm](https://github.com/antoinekm)! - Add validation to ensure at least one media (flyer or trailer) is required for organization events
+  - Add `@AtLeastOneMedia()` validator to CreateOrganizationEventDto
+  - Add `@AtLeastOneMediaOnUpdate()` validator to UpdateOrganizationEventDto
+  - Add backend validation in organization-event.service.ts
+  - Frontend validation with disabled button and toast error message
+  - Prevents creation/update of events without any media files
+
 ## 0.0.145
 
 ### Patch Changes
