@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.149
+
+### Patch Changes
+
+- [`b2ed9ab`](https://github.com/tonightpass/tonightpass/commit/b2ed9ab055b6bd8c652f793b37f343363484da7f) Thanks [@antoinekm](https://github.com/antoinekm)! - Add missing validation decorators to CreateOrganizationEventOrderDto
+  - Added @IsArray() and @IsString({ each: true }) decorators to cart field
+  - Fixes validation error when creating orders due to missing property validation
+
 ## 0.0.148
 
 ### Patch Changes
