@@ -281,7 +281,7 @@ importers:
         version: 22.13.10
       dotenv:
         specifier: ^17.0.0
-        version: 17.0.1
+        version: 17.2.0
       node-mailjet:
         specifier: 6.0.8
         version: 6.0.8
@@ -4360,8 +4360,8 @@ packages:
     resolution: {integrity: sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==}
     engines: {node: '>=12'}
 
-  dotenv@17.0.1:
-    resolution: {integrity: sha512-GLjkduuAL7IMJg/ZnOPm9AnWKJ82mSE2tzXLaJ/6hD6DhwGfZaXG77oB8qbReyiczNxnbxQKyh0OE5mXq0bAHA==}
+  dotenv@17.2.0:
+    resolution: {integrity: sha512-Q4sgBT60gzd0BB0lSyYD3xM4YxrXA9y4uBDof1JNYGzOXrQdQ6yX+7XIAqoFOGQFOTK1D3Hts5OllpxMDZFONQ==}
     engines: {node: '>=12'}
 
   dotenv@8.6.0:
@@ -12288,7 +12288,7 @@ snapshots:
 
   dotenv@16.5.0: {}
 
-  dotenv@17.0.1: {}
+  dotenv@17.2.0: {}
 
   dotenv@8.6.0: {}
 
