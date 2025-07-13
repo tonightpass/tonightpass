@@ -1,5 +1,5 @@
 ---
-"@tonightpass/node": patch
+"tonightpass": patch
 ---
 
 Add missing validation decorators to CreateOrganizationEventOrderDto
