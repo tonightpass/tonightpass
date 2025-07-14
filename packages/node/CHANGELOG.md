@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.152
+
+### Patch Changes
+
+- [`be81c06`](https://github.com/tonightpass/tonightpass/commit/be81c06c3af7e9a07138e65972b985d1e01730e7) Thanks [@antoinekm](https://github.com/antoinekm)! - Remove fallback source option from ExchangeRates interface
+  - Change ExchangeRates.source from "ecb" | "fallback" to "ecb" only
+  - Enforce ECB as the sole exchange rate source without fallback options
+
 ## 0.0.151
 
 ### Patch Changes
