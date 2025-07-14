@@ -1,6 +1,7 @@
 export * from "./auth";
 export * from "./careers";
 export * from "./channels";
+export * from "./currency";
 export * from "./errors";
 export * from "./health";
 export * from "./locations";
@@ -25,9 +26,34 @@ export type DeepPartial<T> = {
 
 // Currency
 export enum Currency {
+  // Major currencies
   EUR = "EUR",
   USD = "USD",
   GBP = "GBP",
+
+  // European currencies (EU member states)
+  BGN = "BGN",
+  CZK = "CZK",
+  DKK = "DKK",
+  HUF = "HUF",
+  PLN = "PLN",
+  RON = "RON",
+  SEK = "SEK",
+
+  // European currencies (non-EU but European)
+  CHF = "CHF",
+  NOK = "NOK",
+  ISK = "ISK",
+  TRY = "TRY",
+  RUB = "RUB",
+  UAH = "UAH",
+  BAM = "BAM",
+  MKD = "MKD",
+  ALL = "ALL",
+  RSD = "RSD",
+  MDL = "MDL",
+  GEL = "GEL",
+  BYN = "BYN",
 }
 
 // I18n
