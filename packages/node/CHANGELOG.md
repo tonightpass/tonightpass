@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.153
+
+### Patch Changes
+
+- [`e199aad`](https://github.com/tonightpass/tonightpass/commit/e199aade682a26930cf48a1154b8132de4f30634) Thanks [@antoinekm](https://github.com/antoinekm)! - Remove redundant source field from ExchangeRates interface
+  - Remove source field from ExchangeRates interface since we only support ECB
+  - Simplify the interface by removing unnecessary information
+
 ## 0.0.152
 
 ### Patch Changes
