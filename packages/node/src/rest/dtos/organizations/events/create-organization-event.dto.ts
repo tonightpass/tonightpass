@@ -37,7 +37,7 @@ import { CreateLocationDto } from "../../locations/create-location.dto";
 @ValidatorConstraint({ name: "atLeastOneMedia", async: false })
 export class AtLeastOneMediaConstraint implements ValidatorConstraintInterface {
   validate(_value: unknown, args: ValidationArguments) {
-    const object = args.object as CreateOrganizationEventDto;
+    const object = args.object as BaseOrganizationEventDto;
     const flyers = object.flyers || [];
     const trailers = object.trailers || [];
 
@@ -77,9 +77,8 @@ export type CreateOrganizationEventInput = Omit<
   tickets: CreateOrganizationEventTicketInput[];
 };
 
-export class CreateOrganizationEventDto
-  implements CreateOrganizationEventInput
-{
+// Base class for event details (without tickets)
+export abstract class BaseOrganizationEventDto {
   @IsString()
   @IsNotEmpty()
   @Length(1, 64)
@@ -121,12 +120,6 @@ export class CreateOrganizationEventDto
   location: CreateLocationDto;
 
   @IsArray()
-  @ValidateNested({ each: true })
-  @Type(() => CreateOrganizationEventTicketDto)
-  @IsNotEmpty()
-  tickets: CreateOrganizationEventTicketDto[];
-
-  @IsArray()
   @IsString({ each: true })
   @ArrayMinSize(1)
   styles: string[]; // Array of style IDs
@@ -142,4 +135,15 @@ export class CreateOrganizationEventDto
   @IsNotEmpty()
   @MinDate(new Date())
   endAt: Date;
+}
+
+export class CreateOrganizationEventDto
+  extends BaseOrganizationEventDto
+  implements CreateOrganizationEventInput
+{
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => CreateOrganizationEventTicketDto)
+  @IsNotEmpty()
+  tickets: CreateOrganizationEventTicketDto[];
 }
