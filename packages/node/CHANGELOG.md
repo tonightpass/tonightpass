@@ -1,5 +1,15 @@
 # tonightpass
 
+## 0.0.150
+
+### Patch Changes
+
+- [`006ca4d`](https://github.com/tonightpass/tonightpass/commit/006ca4d07e45d071aa9ed3e672b970dc4a272db1) Thanks [@antoinekm](https://github.com/antoinekm)! - Add BaseOrganizationEventDto for step-by-step validation
+  - Add BaseOrganizationEventDto abstract class for event details validation (without tickets)
+  - Refactor CreateOrganizationEventDto to extend BaseOrganizationEventDto
+  - Enable separate validation for step 1 (event details) and step 2 (complete event with tickets)
+  - Fix AtLeastOneMediaConstraint to use BaseOrganizationEventDto type
+
 ## 0.0.149
 
 ### Patch Changes
