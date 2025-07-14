@@ -1,5 +1,16 @@
 # tonightpass
 
+## 0.0.151
+
+### Patch Changes
+
+- [`7e20601`](https://github.com/tonightpass/tonightpass/commit/7e20601ee0a92e85ad67c4a84de544650fc8385f) Thanks [@antoinekm](https://github.com/antoinekm)! - Add currency exchange rates support and expand Currency enum
+  - Add ExchangeRates, CurrencyConversion, and CurrencyConversionResult types
+  - Add CurrencyEndpoints with GET /currency/rates and POST /currency/convert
+  - Expand Currency enum with all European currencies (20+ currencies including BGN, CZK, DKK, HUF, PLN, RON, SEK, CHF, NOK, ISK, TRY, RUB, UAH, etc.)
+  - Support for real-time currency conversion with ECB rates
+  - Enable frontend currency switching with backend API integration
+
 ## 0.0.150
 
 ### Patch Changes
