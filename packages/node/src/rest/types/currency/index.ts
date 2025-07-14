@@ -5,7 +5,6 @@ export interface ExchangeRates {
   base: Currency.EUR;
   rates: Record<Currency, number>;
   updatedAt: Date;
-  source: "ecb";
 }
 
 export interface CurrencyConversion {
