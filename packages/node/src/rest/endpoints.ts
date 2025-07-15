@@ -5,7 +5,7 @@ import {
   CareerEndpoints,
   ChannelEndpoints,
   ChannelMessageEndpoints,
-  CurrencyEndpoints,
+  CurrenciesEndpoints,
   HealthEndpoints,
   NotificationEndpoints,
   OrderEndpoints,
@@ -32,7 +32,7 @@ export type Endpoints =
   | CareerEndpoints
   | ChannelEndpoints
   | ChannelMessageEndpoints
-  | CurrencyEndpoints
+  | CurrenciesEndpoints
   | HealthEndpoints
   | OrderEndpoints
   | OrganizationEndpoints

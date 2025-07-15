@@ -1,7 +1,7 @@
 export * from "./auth";
 export * from "./careers";
 export * from "./channels";
-export * from "./currency";
+export * from "./currencies";
 export * from "./errors";
 export * from "./health";
 export * from "./locations";
@@ -23,38 +23,6 @@ export type ExcludeBase<T> = Omit<T, keyof Base>;
 export type DeepPartial<T> = {
   [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
 };
-
-// Currency
-export enum Currency {
-  // Major currencies
-  EUR = "EUR",
-  USD = "USD",
-  GBP = "GBP",
-
-  // European currencies (EU member states)
-  BGN = "BGN",
-  CZK = "CZK",
-  DKK = "DKK",
-  HUF = "HUF",
-  PLN = "PLN",
-  RON = "RON",
-  SEK = "SEK",
-
-  // European currencies (non-EU but European)
-  CHF = "CHF",
-  NOK = "NOK",
-  ISK = "ISK",
-  TRY = "TRY",
-  RUB = "RUB",
-  UAH = "UAH",
-  BAM = "BAM",
-  MKD = "MKD",
-  ALL = "ALL",
-  RSD = "RSD",
-  MDL = "MDL",
-  GEL = "GEL",
-  BYN = "BYN",
-}
 
 // I18n
 export enum Language {
