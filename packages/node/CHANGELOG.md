@@ -1,5 +1,26 @@
 # tonightpass
 
+## 0.0.154
+
+### Patch Changes
+
+- [`a32937e`](https://github.com/tonightpass/tonightpass/commit/a32937e1ff15e31d4084a00fe7aab61586e4ecba) Thanks [@antoinekm](https://github.com/antoinekm)! - Add currencies SDK methods
+  - Add currencies.getRates() method for fetching exchange rates
+  - Add currencies.convert() method for currency conversion
+  - Add currencies.convertAmount() helper method
+  - Enable easy client-side integration with currencies API
+
+- [`a32937e`](https://github.com/tonightpass/tonightpass/commit/a32937e1ff15e31d4084a00fe7aab61586e4ecba) Thanks [@antoinekm](https://github.com/antoinekm)! - Rename currency endpoints to currencies for better consistency
+  - Rename CurrencyEndpoints to CurrenciesEndpoints
+  - Change endpoint paths from /currency/_ to /currencies/_
+  - Update directory structure from currency/ to currencies/
+  - Improve API naming consistency
+
+- [`a32937e`](https://github.com/tonightpass/tonightpass/commit/a32937e1ff15e31d4084a00fe7aab61586e4ecba) Thanks [@antoinekm](https://github.com/antoinekm)! - Reorganize Currency enum to currency module
+  - Move Currency enum from main types to currency/index.ts
+  - Keep Currency enum co-located with currency-related interfaces
+  - Improve module organization and type structure
+
 ## 0.0.153
 
 ### Patch Changes
