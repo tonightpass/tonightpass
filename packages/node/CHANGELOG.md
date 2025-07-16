@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.155
+
+### Patch Changes
+
+- [`47b1872`](https://github.com/tonightpass/tonightpass/commit/47b1872cf9a247455e2ef8a071439546f8e04d2b) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix CreateOrganizationEventDto inheritance to use concrete class instead of abstract BaseOrganizationEventDto for form validation compatibility
+
 ## 0.0.154
 
 ### Patch Changes
