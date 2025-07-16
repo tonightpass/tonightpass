@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.157
+
+### Patch Changes
+
+- [`649db82`](https://github.com/tonightpass/tonightpass/commit/649db82d726ed028f4e7ee59a3ad835601b62091) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix reply validation in CreateChannelMessageDto
+
+  Changed replyToId validation from @IsUUID("4") to @IsMongoId() to match MongoDB ObjectId format used in the database. This fixes the "Validation failed" error when sending reply messages.
+
 ## 0.0.156
 
 ### Patch Changes
