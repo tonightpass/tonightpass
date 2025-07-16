@@ -5,10 +5,10 @@ import {
   IsOptional,
   IsString,
   IsUrl,
-  IsUUID,
   Length,
   ValidateNested,
   ArrayMaxSize,
+  IsMongoId,
 } from "class-validator";
 
 import { AttachmentType } from "../../../types";
@@ -43,6 +43,6 @@ export class CreateChannelMessageDto {
   attachments?: CreateAttachmentDto[];
 
   @IsOptional()
-  @IsUUID("4")
+  @IsMongoId()
   replyToId?: string;
 }
