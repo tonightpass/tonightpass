@@ -78,7 +78,7 @@ export type CreateOrganizationEventInput = Omit<
 };
 
 // Base class for event details (without tickets)
-export abstract class BaseOrganizationEventDto {
+export class BaseOrganizationEventDto {
   @IsString()
   @IsNotEmpty()
   @Length(1, 64)
