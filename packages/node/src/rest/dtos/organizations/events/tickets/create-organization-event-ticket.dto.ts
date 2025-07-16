@@ -37,10 +37,12 @@ export class CreateOrganizationEventTicketDto
   @IsOptional()
   description?: string;
 
+  @Transform(({ value }) => Number(value))
   @IsNumber()
   @Min(0)
   price: number;
 
+  @Transform(({ value }) => Number(value))
   @IsNumber()
   @Min(0)
   quantity: number;

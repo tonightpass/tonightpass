@@ -31,11 +31,13 @@ export class UpdateOrganizationEventTicketDto
   @IsOptional()
   description?: string;
 
+  @Transform(({ value }) => Number(value))
   @IsNumber()
   @Min(0)
   @IsOptional()
   price?: number;
 
+  @Transform(({ value }) => Number(value))
   @IsNumber()
   @Min(0)
   @IsOptional()
