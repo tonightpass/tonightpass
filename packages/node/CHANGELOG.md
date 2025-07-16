@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.156
+
+### Patch Changes
+
+- [`5780152`](https://github.com/tonightpass/tonightpass/commit/57801524b9bb37a2831fe14a62e0ef3c8e38f67a) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix number transformation in ticket DTOs
+
+  Add @Transform decorators to price and quantity fields in CreateOrganizationEventTicketDto and UpdateOrganizationEventTicketDto to properly convert string values to numbers during validation.
+
 ## 0.0.155
 
 ### Patch Changes
