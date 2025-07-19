@@ -1,4 +1,4 @@
-import { ArrayOptions, ArrayResult, Base, User } from "../..";
+import { ArrayOptions, ArrayResult, Base, UserProfile } from "../..";
 import { Endpoint } from "../../../endpoints";
 
 export enum UserNotificationType {
@@ -28,7 +28,7 @@ export type UserNotificationBase = Base & {
 
 export type UserNotificationFollow = UserNotificationBase & {
   type: UserNotificationType.Follow;
-  follower: User;
+  follower: UserProfile;
 };
 
 export type UserNotification = UserNotificationFollow;

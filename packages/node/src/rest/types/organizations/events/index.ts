@@ -1,14 +1,16 @@
-import {
-  OrganizationEventTicket,
-  Organization,
-  OrganizationEventTicketEndpoints,
-} from "..";
+import { OrganizationEventTicket, OrganizationEventTicketEndpoints } from "..";
 import { OrganizationEventOrderEndpoints } from "./orders";
 import {
   OrganizationEventStyle,
   OrganizationEventStyleEndpoints,
 } from "./styles";
-import { ArrayOptions, ArrayResult, Base, Location } from "../..";
+import {
+  ArrayOptions,
+  ArrayResult,
+  Base,
+  Location,
+  OrganizationProfile,
+} from "../..";
 import { OrganizationEventViewEndpoints } from "./views";
 import {
   CreateOrganizationEventDto,
@@ -24,7 +26,7 @@ export type OrganizationEvent = Base & {
   title: string;
   description: string;
   slug: string;
-  organization: Organization;
+  organization: OrganizationProfile;
   type: OrganizationEventType;
   visibility: OrganizationEventVisibilityType;
   flyers: string[];

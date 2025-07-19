@@ -1,7 +1,5 @@
 import { ArrayOptions, ArrayResult } from "..";
 import { Endpoint } from "../../endpoints";
-import { Organization } from "../organizations";
-import { User } from "../users";
 
 export enum ProfileType {
   User = "user",
@@ -65,13 +63,13 @@ export type ProfileEndpoints =
       "GET",
       "/profiles/@me/relationships/suggestions",
       ArrayResult<Profile>,
-      ArrayOptions<Organization | User>
+      ArrayOptions<OrganizationProfile | UserProfile>
     >
   | Endpoint<
       "GET",
       "/profiles/:username/relationships/followers",
       ArrayResult<UserProfile>,
-      ArrayOptions<User>
+      ArrayOptions<UserProfile>
     >
   | Endpoint<"POST", "/profiles/:username/relationships/follow", boolean, null>
   | Endpoint<
