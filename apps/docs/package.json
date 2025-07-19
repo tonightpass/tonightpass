@@ -10,9 +10,9 @@
     "generate-api-docs": "node scripts/generate-api-docs.js"
   },
   "dependencies": {
-    "fumadocs-core": "15.6.3",
+    "fumadocs-core": "15.6.4",
     "fumadocs-mdx": "11.6.11",
-    "fumadocs-ui": "15.6.3",
+    "fumadocs-ui": "15.6.4",
     "next": "15.3.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
