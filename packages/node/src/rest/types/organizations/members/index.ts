@@ -1,16 +1,15 @@
-import { Organization } from "..";
-import { ArrayOptions, ArrayResult, Base } from "../..";
+import { OrganizationProfile } from "..";
+import { ArrayOptions, ArrayResult, Base, UserProfile } from "../..";
 import { CreateOrganizationMemberDto } from "../../../dtos";
 import { UpdateOrganizationMemberDto } from "../../../dtos/organizations/members/update-organization-member.dto";
 import { Endpoint } from "../../../endpoints";
-import { User } from "../../users";
 import { UserToken } from "../../users/tokens";
 
 export type OrganizationMember = Base & {
-  organization: Organization;
+  organization: OrganizationProfile;
   role: OrganizationMemberRole;
   status: OrganizationMemberStatus;
-  user?: User;
+  user?: UserProfile;
   token?: UserToken;
 };
 
