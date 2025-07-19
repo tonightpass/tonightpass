@@ -1,5 +1,10 @@
-import { OrganizationProfile } from "..";
-import { ArrayOptions, ArrayResult, Base, UserProfile } from "../..";
+import {
+  ArrayOptions,
+  ArrayResult,
+  Base,
+  OrganizationProfile,
+  UserProfile,
+} from "../..";
 import { CreateOrganizationMemberDto } from "../../../dtos";
 import { UpdateOrganizationMemberDto } from "../../../dtos/organizations/members/update-organization-member.dto";
 import { Endpoint } from "../../../endpoints";
