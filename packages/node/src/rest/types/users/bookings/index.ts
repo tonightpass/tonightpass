@@ -10,8 +10,10 @@ import {
 import { Endpoint } from "../../../endpoints";
 import { Order } from "../../orders";
 
+export type UserBookingWithoutTickets = Omit<UserBooking, "tickets">;
+
 export type UserBookingTicket = Base & {
-  booking: UserBooking;
+  booking: UserBookingWithoutTickets;
   ticket: OrganizationEventTicket;
   token: UserToken;
   useCount: number;
