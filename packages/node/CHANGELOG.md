@@ -1,5 +1,15 @@
 # tonightpass
 
+## 0.0.159
+
+### Patch Changes
+
+- [`18d6b13`](https://github.com/tonightpass/tonightpass/commit/18d6b13b5992b77feb067f93113e925673c96a51) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix circular type reference in UserBookingTicket
+  - Added `UserBookingWithoutTickets` type to break circular reference between `UserBooking` and `UserBookingTicket`
+  - Updated `UserBookingTicket.booking` to use `UserBookingWithoutTickets` instead of full `UserBooking`
+  - This prevents "Maximum call stack size exceeded" errors in entity serialization
+  - Maintains type safety while eliminating circular dependencies
+
 ## 0.0.158
 
 ### Patch Changes
