@@ -4,24 +4,35 @@ import {
   CreateChannelMessageDto,
   UpdateChannelMessageDto,
   AddReactionDto,
+  ReportChannelMessageDto,
 } from "../../../dtos";
 import { Endpoint } from "../../../endpoints";
 
-export enum AttachmentType {
-  Image = "image",
-  Video = "video",
-  Audio = "audio",
-  Document = "document",
-  File = "file",
-}
+export enum ChannelMessageReportReason {
+  Dislike = "dislike",
 
-export type Attachment = {
-  type: AttachmentType;
-  url: string;
-  filename?: string;
-  size?: number;
-  mimeType?: string;
-};
+  HarassmentSelf = "harassment_self",
+  HarassmentOther = "harassment_other",
+  SexualHarassmentSelf = "sexual_harassment_self",
+
+  NudesSelf = "nudes_self",
+  SexualContent = "sexual_content",
+  ChildInvolved = "child_involved",
+
+  ThreatTarget = "threat_target",
+  ViolentContent = "violent_content",
+
+  HateSpeech = "hate_speech",
+  Terrorism = "terrorism",
+
+  DrugSale = "drug_sale",
+  WeaponSale = "weapon_sale",
+
+  SelfHarmConcern = "self_harm_concern",
+  SelfHarmPromotion = "self_harm_promotion",
+
+  Other = "other",
+}
 
 export type ChannelMessageReadByEntry = {
   participant: ChannelParticipant;
@@ -37,7 +48,7 @@ export type ChannelMessage = Base & {
   channel: Channel;
   sender: ChannelParticipant;
   content: string;
-  attachments: Attachment[];
+  attachments: string[];
   isSent: boolean;
   isDelivered: boolean;
   isRead: boolean;
@@ -141,4 +152,16 @@ export type ChannelMessageEndpoints =
       "/channels/:organizationSlug/:channelId/files",
       string,
       FormData
+    >
+  | Endpoint<
+      "POST",
+      "/channels/@me/:channelId/messages/:messageId/report",
+      void,
+      ReportChannelMessageDto
+    >
+  | Endpoint<
+      "POST",
+      "/channels/:organizationSlug/:channelId/messages/:messageId/report",
+      void,
+      ReportChannelMessageDto
     >;
