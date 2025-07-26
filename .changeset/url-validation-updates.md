@@ -1,5 +1,5 @@
 ---
-"tonightpass": minor
+"tonightpass": patch
 ---
 
 Update URL validation patterns, add file upload endpoints and message reporting
