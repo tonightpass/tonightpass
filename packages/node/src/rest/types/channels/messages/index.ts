@@ -134,4 +134,11 @@ export type ChannelMessageEndpoints =
       "/channels/:organizationSlug/:channelId/messages/:messageId/read",
       void,
       null
+    >
+  | Endpoint<"POST", "/channels/@me/:channelId/files", string, FormData>
+  | Endpoint<
+      "POST",
+      "/channels/:organizationSlug/:channelId/files",
+      string,
+      FormData
     >;

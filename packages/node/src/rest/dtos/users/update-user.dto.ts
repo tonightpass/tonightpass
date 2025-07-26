@@ -8,7 +8,6 @@ import {
   IsOptional,
   IsPhoneNumber,
   IsString,
-  IsUrl,
   Length,
   Matches,
   MaxLength,
@@ -103,11 +102,15 @@ class UpdateUserIdentityDto
   description?: string;
 
   @IsOptional()
-  @IsUrl()
+  @Matches(
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/users\/[\w-]+\/avatars\//,
+  )
   avatarUrl?: string | undefined;
 
   @IsOptional()
-  @IsUrl()
+  @Matches(
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/users\/[\w-]+\/banners\//,
+  )
   bannerUrl?: string | undefined;
 
   @IsOptional()

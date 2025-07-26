@@ -9,7 +9,6 @@ import {
   IsObject,
   IsOptional,
   IsString,
-  IsUrl,
   Length,
   Matches,
   MinDate,
@@ -105,12 +104,18 @@ export class BaseOrganizationEventDto {
   visibility: OrganizationEventVisibilityType;
 
   @IsArray()
-  @IsUrl({}, { each: true })
+  @Matches(
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(temp\/events\/flyers\/|organizations\/[\w-]+\/events\/[\w-]+\/flyers\/)/,
+    { each: true },
+  )
   @AtLeastOneMedia()
   flyers: string[];
 
   @IsArray()
-  @IsUrl({}, { each: true })
+  @Matches(
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(temp\/events\/trailers\/|organizations\/[\w-]+\/events\/[\w-]+\/trailers\/)/,
+    { each: true },
+  )
   trailers: string[];
 
   @IsObject()
