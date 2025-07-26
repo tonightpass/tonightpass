@@ -17,10 +17,9 @@ export class CreateChannelMessageDto {
   @IsOptional()
   @IsArray()
   @ArrayMaxSize(10)
-  @Matches(
-    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(temp\/channels\/attachments\/|channels\/[\w-]+\/messages\/[\w-]+\/attachments\/)/,
-    { each: true },
-  )
+  @Matches(/^channels\/[\w-]+\/messages\/[\w-]+\/private\/[\w-]+$/, {
+    each: true,
+  })
   attachments?: string[];
 
   @IsOptional()
