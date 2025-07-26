@@ -1,5 +1,5 @@
 ---
-"@tonightpass/node": patch
+"tonightpass": patch
 ---
 
 Update channel message attachment validation regex
