@@ -1,5 +1,5 @@
 ---
-"@tonightpass/node": patch
+"tonightpass": patch
 ---
 
 Rename ChannelMessage boolean properties to follow naming convention
