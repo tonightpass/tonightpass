@@ -38,11 +38,11 @@ export type ChannelMessage = Base & {
   sender: ChannelParticipant;
   content: string;
   attachments: Attachment[];
-  sent: boolean;
-  delivered: boolean;
-  read: boolean;
+  isSent: boolean;
+  isDelivered: boolean;
+  isRead: boolean;
   readBy?: ChannelMessageReadByEntry[];
-  edited: boolean;
+  isEdited: boolean;
   editedAt?: Date;
   replyTo?: ChannelMessage;
   reactions?: ChannelMessageReaction[];
