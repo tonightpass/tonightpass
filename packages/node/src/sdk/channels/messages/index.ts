@@ -4,6 +4,7 @@ import {
   ArrayOptions,
   ChannelMessage,
   AddReactionDto,
+  ReportChannelMessageDto,
 } from "../../../rest";
 import { sdk } from "../../builder";
 
@@ -157,5 +158,36 @@ export const channelsMessages = sdk((client) => ({
         channelId,
         messageId,
       },
+    ),
+  uploadFile: async (channelId: string, file: FormData) =>
+    client.post("/channels/@me/:channelId/files", file, { channelId }),
+  uploadFileByOrganization: async (
+    organizationSlug: string,
+    channelId: string,
+    file: FormData,
+  ) =>
+    client.post("/channels/:organizationSlug/:channelId/files", file, {
+      organizationSlug,
+      channelId,
+    }),
+  report: async (
+    channelId: string,
+    messageId: string,
+    data: ReportChannelMessageDto,
+  ) =>
+    client.post("/channels/@me/:channelId/messages/:messageId/report", data, {
+      channelId,
+      messageId,
+    }),
+  reportByOrganization: async (
+    organizationSlug: string,
+    channelId: string,
+    messageId: string,
+    data: ReportChannelMessageDto,
+  ) =>
+    client.post(
+      "/channels/:organizationSlug/:channelId/messages/:messageId/report",
+      data,
+      { organizationSlug, channelId, messageId },
     ),
 }));
