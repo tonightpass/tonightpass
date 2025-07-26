@@ -5,7 +5,6 @@ import {
   IsObject,
   IsOptional,
   IsString,
-  IsUrl,
   Length,
   Matches,
 } from "class-validator";
@@ -47,16 +46,16 @@ export class UpdateOrganizationIdentityDto {
   @IsOptional()
   description?: string;
 
-  @IsUrl({
-    protocols: ["http", "https"],
-  })
   @IsOptional()
+  @Matches(
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/organizations\/[\w-]+\/avatars\//,
+  )
   avatarUrl?: string;
 
   @IsOptional()
-  @IsUrl({
-    protocols: ["http", "https"],
-  })
+  @Matches(
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/organizations\/[\w-]+\/banners\//,
+  )
   bannerUrl?: string;
 
   @IsOptional()

@@ -5,8 +5,8 @@ import {
   IsObject,
   IsOptional,
   IsString,
-  IsUrl,
   Length,
+  Matches,
 } from "class-validator";
 
 import { CreateOrganizationMemberDto } from "./members/create-organization-member.dto";
@@ -41,17 +41,15 @@ export class CreateOrganizationIdentityDto {
   @IsOptional()
   description?: string;
 
-  @IsUrl({
-    protocols: ["http", "https"],
-    host_whitelist: ["cdn.tonightpass.com", "cdn.staging.tonightpass.com"],
-  })
+  @Matches(
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/organizations\/[\w-]+\/avatars\//,
+  )
   avatarUrl?: string;
 
   @IsOptional()
-  @IsUrl({
-    protocols: ["http", "https"],
-    host_whitelist: ["cdn.tonightpass.com", "cdn.staging.tonightpass.com"],
-  })
+  @Matches(
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/organizations\/[\w-]+\/banners\//,
+  )
   bannerUrl?: string;
 
   @IsOptional()

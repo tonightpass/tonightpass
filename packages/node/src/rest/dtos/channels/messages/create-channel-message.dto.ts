@@ -1,46 +1,27 @@
-import { Type } from "class-transformer";
 import {
   IsArray,
-  IsEnum,
   IsOptional,
   IsString,
-  IsUrl,
   Length,
-  ValidateNested,
   ArrayMaxSize,
   IsMongoId,
+  Matches,
 } from "class-validator";
 
-import { AttachmentType } from "../../../types";
-
-export class CreateAttachmentDto {
-  @IsEnum(AttachmentType)
-  type: AttachmentType;
-
-  @IsUrl()
-  url: string;
-
-  @IsOptional()
-  @IsString()
-  @Length(1, 255)
-  filename?: string;
-
-  @IsOptional()
-  @IsString()
-  mimeType?: string;
-}
-
 export class CreateChannelMessageDto {
+  @IsOptional()
   @IsString()
   @Length(1, 4000)
-  content: string;
+  content?: string;
 
   @IsOptional()
   @IsArray()
   @ArrayMaxSize(10)
-  @ValidateNested({ each: true })
-  @Type(() => CreateAttachmentDto)
-  attachments?: CreateAttachmentDto[];
+  @Matches(
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(temp\/channels\/attachments\/|channels\/[\w-]+\/messages\/[\w-]+\/attachments\/)/,
+    { each: true },
+  )
+  attachments?: string[];
 
   @IsOptional()
   @IsMongoId()

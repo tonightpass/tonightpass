@@ -1,14 +1,11 @@
-import { Type } from "class-transformer";
 import {
   IsArray,
   IsOptional,
   IsString,
   Length,
-  ValidateNested,
   ArrayMaxSize,
+  Matches,
 } from "class-validator";
-
-import { CreateAttachmentDto } from "./create-channel-message.dto";
 
 export class UpdateChannelMessageDto {
   @IsOptional()
@@ -19,7 +16,9 @@ export class UpdateChannelMessageDto {
   @IsOptional()
   @IsArray()
   @ArrayMaxSize(10)
-  @ValidateNested({ each: true })
-  @Type(() => CreateAttachmentDto)
-  attachments?: CreateAttachmentDto[];
+  @Matches(
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(temp\/channels\/attachments\/|channels\/[\w-]+\/messages\/[\w-]+\/attachments\/)/,
+    { each: true },
+  )
+  attachments?: string[];
 }

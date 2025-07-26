@@ -7,7 +7,6 @@ import {
   IsOptional,
   IsPhoneNumber,
   IsString,
-  IsUrl,
   Length,
   Matches,
   ValidateNested,
@@ -83,9 +82,9 @@ export class CreateUserIdentityDto {
   gender: UserIdentityGender;
 
   @IsOptional()
-  @IsUrl({
-    protocols: ["http", "https"],
-  })
+  @Matches(
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/users\/[\w-]+\/avatars\//,
+  )
   avatarUrl?: string;
 
   @IsOptional()
