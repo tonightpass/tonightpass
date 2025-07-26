@@ -1,5 +1,15 @@
 # tonightpass
 
+## 0.0.160
+
+### Patch Changes
+
+- [`7f32ce5`](https://github.com/tonightpass/tonightpass/commit/7f32ce5cceda9245c015e0ce91e0fb95d4bb9d38) Thanks [@antoinekm](https://github.com/antoinekm)! - Rename ChannelMessage boolean properties to follow naming convention
+  - Renamed `sent` to `isSent`
+  - Renamed `delivered` to `isDelivered`
+  - Renamed `read` to `isRead`
+  - Renamed `edited` to `isEdited`
+
 ## 0.0.159
 
 ### Patch Changes
