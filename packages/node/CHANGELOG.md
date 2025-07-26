@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.162
+
+### Patch Changes
+
+- [`52cc7c1`](https://github.com/tonightpass/tonightpass/commit/52cc7c16abfd42608e81724e3bea708aca40dc2b) Thanks [@antoinekm](https://github.com/antoinekm)! - Update channel message attachment validation regex
+  - Update attachment validation regex to only accept private channel attachment paths
+  - Restrict to pattern: `channels/[channelId]/messages/[messageId]/private/[uniqueHash]`
+
 ## 0.0.161
 
 ### Patch Changes
