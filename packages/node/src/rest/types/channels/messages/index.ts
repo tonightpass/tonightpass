@@ -47,7 +47,7 @@ export type ChannelMessageReaction = {
 export type ChannelMessage = Base & {
   channel: Channel;
   sender: ChannelParticipant;
-  content: string;
+  content?: string;
   attachments: string[];
   isSent: boolean;
   isDelivered: boolean;
