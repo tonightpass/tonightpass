@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.164
+
+### Patch Changes
+
+- [`f29e1a1`](https://github.com/tonightpass/tonightpass/commit/f29e1a1a2ed5974cab9fcca1a038fbc21cdb889b) Thanks [@antoinekm](https://github.com/antoinekm)! - Make content field optional in ChannelMessage entity and types. The content field is now nullable in the database entity and optional in TypeScript types, allowing messages to be created with only attachments and no text content.
+
 ## 0.0.163
 
 ### Patch Changes
