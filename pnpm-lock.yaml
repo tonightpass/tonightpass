@@ -283,8 +283,8 @@ importers:
         specifier: ^17.0.0
         version: 17.2.1
       node-mailjet:
-        specifier: 6.0.8
-        version: 6.0.8
+        specifier: 6.0.9
+        version: 6.0.9
       tslib:
         specifier: ^2.5.0
         version: 2.8.1
@@ -6206,8 +6206,8 @@ packages:
   node-int64@0.4.0:
     resolution: {integrity: sha512-O5lz91xSOeoXP6DulyHfllpq+Eg00MWitZIbtPfoSEvqIHdl5gfcY6hYzDWnj0qD5tz52PI08u9qUvSVeUBeHw==}
 
-  node-mailjet@6.0.8:
-    resolution: {integrity: sha512-VyB2+SeD1zuxpuJLePC4bk10UN0G294CsVlF8YBxb+1tlH0Tw4wECGlTYlQOaRMtPgckdObpcfEbhUWu3UuFIQ==}
+  node-mailjet@6.0.9:
+    resolution: {integrity: sha512-WGovS3g+2R/02IkD9/EWNvItRVhei7ltmh40JN53cozna41Ug/T3oKOAehBnV0B6Egx1H6L565HbeffUE7DYWg==}
     engines: {node: '>= 12.0.0', npm: '>= 6.9.0'}
 
   node-releases@2.0.19:
@@ -11488,7 +11488,7 @@ snapshots:
   axios@1.8.4:
     dependencies:
       follow-redirects: 1.15.9
-      form-data: 4.0.2
+      form-data: 4.0.3
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
@@ -14986,7 +14986,7 @@ snapshots:
 
   node-int64@0.4.0: {}
 
-  node-mailjet@6.0.8:
+  node-mailjet@6.0.9:
     dependencies:
       axios: 1.8.4
       json-bigint: 1.0.0
