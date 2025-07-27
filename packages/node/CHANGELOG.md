@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.163
+
+### Patch Changes
+
+- [`7ecfcb1`](https://github.com/tonightpass/tonightpass/commit/7ecfcb1254d0fbb134a7a790a98023c3b280bf74) Thanks [@antoinekm](https://github.com/antoinekm)! - Allow sending messages with only attachments (no text content). Updated validation to accept messages with either content or attachments, and fixed frontend to not send empty content field when there's no text.
+
 ## 0.0.162
 
 ### Patch Changes
