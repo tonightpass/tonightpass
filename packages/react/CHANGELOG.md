@@ -1,5 +1,11 @@
 # @tonightpass/react
 
+## 0.0.169
+
+### Patch Changes
+
+- [`ccc8740`](https://github.com/tonightpass/tonightpass/commit/ccc87408e4b784c4a54d4c50e7d0d024400da252) Thanks [@antoinekm](https://github.com/antoinekm)! - Add useAPIInfinite hook for infinite scrolling with TonightPass API
+
 ## 0.0.168
 
 ### Patch Changes
