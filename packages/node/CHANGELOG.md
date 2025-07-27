@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.167
+
+### Patch Changes
+
+- [`c57e549`](https://github.com/tonightpass/tonightpass/commit/c57e549fa402f7d9d148522843319f4429759f16) Thanks [@antoinekm](https://github.com/antoinekm)! - Add isOfficial to BaseProfileMetadata and remove unused idValid field from UserProfileMetadata
+
 ## 0.0.166
 
 ### Patch Changes
