@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.166
+
+### Patch Changes
+
+- [`d024501`](https://github.com/tonightpass/tonightpass/commit/d0245011294169b421c2838ccda92e7a20c088e1) Thanks [@antoinekm](https://github.com/antoinekm)! - Add isVerified and isOfficial boolean fields to user types
+
 ## 0.0.165
 
 ### Patch Changes
