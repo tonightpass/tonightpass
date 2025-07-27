@@ -1,4 +1,10 @@
-import { IsEnum, IsOptional, IsString, Length } from "class-validator";
+import {
+  IsEnum,
+  IsOptional,
+  IsString,
+  Length,
+  ValidateIf,
+} from "class-validator";
 
 import { ChannelMessageReportReason } from "../../../types";
 
@@ -8,6 +14,7 @@ export class ReportChannelMessageDto {
 
   @IsOptional()
   @IsString()
+  @ValidateIf((o) => o.description && o.description.trim().length > 0)
   @Length(1, 500)
   description?: string;
 }
