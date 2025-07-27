@@ -1,24 +1,8 @@
-import {
-  IsArray,
-  IsOptional,
-  IsString,
-  Length,
-  ArrayMaxSize,
-  Matches,
-} from "class-validator";
+import { IsOptional, IsString, Length } from "class-validator";
 
 export class UpdateChannelMessageDto {
   @IsOptional()
   @IsString()
-  @Length(1, 4000)
+  @Length(1, 1024)
   content?: string;
-
-  @IsOptional()
-  @IsArray()
-  @ArrayMaxSize(10)
-  @Matches(
-    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(temp\/channels\/attachments\/|channels\/[\w-]+\/messages\/[\w-]+\/attachments\/)/,
-    { each: true },
-  )
-  attachments?: string[];
 }

@@ -37,7 +37,7 @@ export class CreateChannelMessageDto {
   @IsOptional()
   @IsString()
   @ValidateIf((o) => o.content !== undefined)
-  @Length(1, 4000)
+  @Length(1, 1024)
   content?: string;
 
   @IsOptional()
