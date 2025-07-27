@@ -36,7 +36,8 @@ export type User = Base & {
   addresses: Location[];
   preferences: UserPreferences;
   connections: UserConnection[];
-  verified: boolean;
+  isVerified: boolean;
+  isOfficial: boolean;
 };
 
 export type UserIdentifier = {
