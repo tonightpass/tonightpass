@@ -1,5 +1,15 @@
 # tonightpass
 
+## 0.0.165
+
+### Patch Changes
+
+- [`601f2f1`](https://github.com/tonightpass/tonightpass/commit/601f2f1c69b5826885b1efc1a5669843ec2a3685) Thanks [@antoinekm](https://github.com/antoinekm)! - Reduce message content length limit from 4000 to 1024 characters and remove attachment updates
+  - Update CreateChannelMessageDto content length validation from 4000 to 1024 characters
+  - Update UpdateChannelMessageDto content length validation from 4000 to 1024 characters
+  - Remove attachments field from UpdateChannelMessageDto to prevent attachment modifications after message creation
+  - Improve message length consistency across the platform
+
 ## 0.0.164
 
 ### Patch Changes
