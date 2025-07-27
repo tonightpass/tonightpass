@@ -42,11 +42,12 @@ export type BaseProfileMetadata = {
   isBlocked: boolean;
   hasBlocked: boolean;
   canDM: boolean;
+
+  isOfficial: boolean;
 };
 
 export type UserProfileMetadata = BaseProfileMetadata & {
   hasPassPlus: boolean;
-  idValid: boolean;
 };
 
 export type OrganizationProfileMetadata = BaseProfileMetadata & {
