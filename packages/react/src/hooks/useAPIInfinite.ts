@@ -15,12 +15,12 @@ export function useAPIInfinite<Path extends PathsFor<"GET">>(
   getKey: (
     pageIndex: number,
     previousPageData: ResponseType<Path> | null,
-  ) => [Path, Query<Path>] | null,
+  ) => [Path, Query<Path> | undefined] | null,
   config?: UseAPIInfiniteConfig<Path>,
 ): SWRInfiniteResponse<ResponseType<Path>, ErrorType<Path>> {
   const { requestOptions, ...swrConfig } = config || {};
 
-  const fetcher = async ([fetchPath, fetchQuery]: [Path, Query<Path>]) => {
+  const fetcher = async ([fetchPath, fetchQuery]: [Path, Query<Path> | undefined]) => {
     const response = await client.get(fetchPath, fetchQuery, requestOptions);
     return response as unknown as ResponseType<Path>;
   };
