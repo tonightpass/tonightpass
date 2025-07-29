@@ -1,5 +1,12 @@
 # @tonightpass/react
 
+## 0.0.171
+
+### Patch Changes
+
+- [`b52883e`](https://github.com/tonightpass/tonightpass/commit/b52883ed8b043d8627c3139f1621ddd9ef9def13) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix useAPIInfinite hook return statement
+  - Improved useSWRInfinite return statement to properly handle type constraints
+
 ## 0.0.170
 
 ### Patch Changes
