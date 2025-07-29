@@ -1,5 +1,15 @@
 # @tonightpass/react
 
+## 0.0.170
+
+### Patch Changes
+
+- [`f51544d`](https://github.com/tonightpass/tonightpass/commit/f51544d5e660416e44ddc060e5252e91256d10e0) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix useAPIInfinite hook type issues and improve data handling
+  - Fixed fetcher function parameter types to handle undefined query parameters
+  - Updated getKey function signature to properly type query parameters
+  - Improved data concatenation in components to filter out undefined pages
+  - Removed @ts-expect-error comment as types are now properly handled
+
 ## 0.0.169
 
 ### Patch Changes
