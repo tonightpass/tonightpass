@@ -20,7 +20,10 @@ export function useAPIInfinite<Path extends PathsFor<"GET">>(
 ): SWRInfiniteResponse<ResponseType<Path>, ErrorType<Path>> {
   const { requestOptions, ...swrConfig } = config || {};
 
-  const fetcher = async ([fetchPath, fetchQuery]: [Path, Query<Path> | undefined]) => {
+  const fetcher = async ([fetchPath, fetchQuery]: [
+    Path,
+    Query<Path> | undefined,
+  ]) => {
     const response = await client.get(fetchPath, fetchQuery, requestOptions);
     return response as unknown as ResponseType<Path>;
   };
