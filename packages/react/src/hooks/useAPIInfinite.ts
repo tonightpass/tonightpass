@@ -28,9 +28,5 @@ export function useAPIInfinite<Path extends PathsFor<"GET">>(
     return response as unknown as ResponseType<Path>;
   };
 
-  return useSWRInfinite<ResponseType<Path>, ErrorType<Path>>(
-    getKey,
-    fetcher,
-    swrConfig,
-  );
+  return useSWRInfinite(getKey, fetcher, swrConfig);
 }
