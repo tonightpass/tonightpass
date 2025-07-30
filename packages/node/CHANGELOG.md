@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.169
+
+### Patch Changes
+
+- [`d0c4ccc`](https://github.com/tonightpass/tonightpass/commit/d0c4ccce623993d6c25b282e168eb4afc0984c3a) Thanks [@antoinekm](https://github.com/antoinekm)! - fix: make password field optional in User to support OAuth authentication
+
+  The password field is now optional (`password?: string`) as users can authenticate via OAuth providers (Google, Facebook, Twitter) without having a password stored in the database.
+
 ## 0.0.168
 
 ### Patch Changes
