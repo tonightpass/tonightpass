@@ -34,21 +34,9 @@ export enum OrganizationMemberRole {
 export type OrganizationMembersEndpoints =
   | Endpoint<
       "GET",
-      "/organizations/members",
-      ArrayResult<OrganizationMember>,
-      ArrayOptions<OrganizationMember>
-    >
-  | Endpoint<
-      "GET",
       "/organizations/members/@me",
       ArrayResult<OrganizationMember>,
       ArrayOptions<OrganizationMember>
-    >
-  | Endpoint<
-      "DELETE",
-      "/organizations/members/:memberId",
-      OrganizationMember[],
-      null
     >
   | Endpoint<
       "GET",
