@@ -30,7 +30,7 @@ export type PublicUser = {
 
 export type User = Base & {
   identifier: UserIdentifier;
-  password: string;
+  password?: string;
   identity: UserIdentity;
   role: UserRole;
   addresses: Location[];
