@@ -1,5 +1,19 @@
 # tonightpass
 
+## 0.0.168
+
+### Patch Changes
+
+- [`200a5f3`](https://github.com/tonightpass/tonightpass/commit/200a5f3c9729b3824fe90266f081ebb6eb813804) Thanks [@antoinekm](https://github.com/antoinekm)! - Add complete organization members management SDK methods
+  - Add missing SDK methods for organization members management
+  - Remove unsafe global endpoints (GET /organizations/members, DELETE /organizations/members/:memberId)
+  - Implement secure organization-scoped member operations:
+    - `me()` - Get user's organization memberships
+    - `get(organizationSlug)` - Get organization members
+    - `create(organizationSlug, data)` - Add member to organization
+    - `update(organizationSlug, userId, data)` - Update member role
+    - `delete(organizationSlug, userId)` - Remove member from organization
+
 ## 0.0.167
 
 ### Patch Changes
