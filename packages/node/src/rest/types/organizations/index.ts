@@ -15,6 +15,7 @@ import { Endpoint } from "../../endpoints";
 
 export * from "./events";
 export * from "./members";
+export * from "./tokens";
 
 export type Organization = Base & {
   slug: string;

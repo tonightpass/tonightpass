@@ -2,6 +2,8 @@ import { Client } from "../../../rest";
 import {
   CreateOrganizationMemberDto,
   UpdateOrganizationMemberDto,
+  AcceptOrganizationMemberInvitationDto,
+  CreateOrganizationMemberInvitationLinkDto,
 } from "../../../rest/dtos";
 
 export const organizationsMembers = (client: Client) => ({
@@ -28,4 +30,26 @@ export const organizationsMembers = (client: Client) => ({
       organizationSlug,
       userId,
     }),
+  createInvitationLink: async (
+    organizationSlug: string,
+    data: CreateOrganizationMemberInvitationLinkDto = {},
+  ) =>
+    client.post(
+      "/organizations/:organizationSlug/members/invitations/links",
+      data,
+      {
+        organizationSlug,
+      },
+    ),
+  acceptInvitation: async (
+    organizationSlug: string,
+    data: AcceptOrganizationMemberInvitationDto,
+  ) =>
+    client.post(
+      "/organizations/:organizationSlug/members/invitations/accept",
+      data,
+      {
+        organizationSlug,
+      },
+    ),
 });
