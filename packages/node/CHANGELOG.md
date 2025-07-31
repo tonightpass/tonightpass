@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.171
+
+### Patch Changes
+
+- [`898fb5b`](https://github.com/tonightpass/tonightpass/commit/898fb5b575bc7b8190d976cf3bea19b8a06337d6) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix OrganizationToken role type from string to OrganizationMemberRole
+  - Changed `OrganizationToken.role` type from `string` to `OrganizationMemberRole`
+  - Improves type safety for organization invitation tokens
+
 ## 0.0.170
 
 ### Patch Changes
