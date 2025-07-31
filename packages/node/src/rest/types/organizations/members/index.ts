@@ -6,9 +6,12 @@ import {
   UserProfile,
 } from "../..";
 import { CreateOrganizationMemberDto } from "../../../dtos";
+import { AcceptOrganizationMemberInvitationDto } from "../../../dtos/organizations/members/accept-organization-member-invitation.dto";
+import { CreateOrganizationMemberInvitationLinkDto } from "../../../dtos/organizations/members/create-organization-member-invitation-link.dto";
 import { UpdateOrganizationMemberDto } from "../../../dtos/organizations/members/update-organization-member.dto";
 import { Endpoint } from "../../../endpoints";
 import { UserToken } from "../../users/tokens";
+import { OrganizationToken } from "../tokens";
 
 export type OrganizationMember = Base & {
   organization: OrganizationProfile;
@@ -61,4 +64,16 @@ export type OrganizationMembersEndpoints =
       "/organizations/:organizationSlug/members/:userId",
       OrganizationMember[],
       null
+    >
+  | Endpoint<
+      "POST",
+      "/organizations/:organizationSlug/members/invitations/links",
+      OrganizationToken,
+      CreateOrganizationMemberInvitationLinkDto
+    >
+  | Endpoint<
+      "POST",
+      "/organizations/:organizationSlug/members/invitations/accept",
+      OrganizationMember,
+      AcceptOrganizationMemberInvitationDto
     >;
