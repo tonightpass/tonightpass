@@ -1,4 +1,4 @@
-import { Organization } from "..";
+import { Organization, OrganizationMemberRole } from "..";
 import { Base } from "../..";
 
 export type OrganizationToken = Omit<Base, "updatedAt"> & {
@@ -6,7 +6,7 @@ export type OrganizationToken = Omit<Base, "updatedAt"> & {
   value: string;
   expiresAt: Date;
   organization?: Organization;
-  role?: string;
+  role?: OrganizationMemberRole;
 };
 
 export enum OrganizationTokenType {
