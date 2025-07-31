@@ -1,5 +1,5 @@
 ---
-"tonightpass": minor
+"tonightpass": patch
 ---
 
 Add organization invitation system with links and acceptance endpoints
