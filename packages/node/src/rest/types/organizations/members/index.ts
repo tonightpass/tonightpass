@@ -28,10 +28,10 @@ export enum OrganizationMemberStatus {
 }
 
 export enum OrganizationMemberRole {
-  Member = "member",
-  Manager = "manager",
-  Admin = "admin",
   Owner = "owner",
+  Admin = "admin",
+  Manager = "manager",
+  Member = "member",
 }
 
 export type OrganizationMembersEndpoints =
@@ -66,6 +66,12 @@ export type OrganizationMembersEndpoints =
       null
     >
   | Endpoint<
+      "GET",
+      "/organizations/:organizationSlug/members/invitations/links",
+      ArrayResult<OrganizationToken>,
+      ArrayOptions<OrganizationToken>
+    >
+  | Endpoint<
       "POST",
       "/organizations/:organizationSlug/members/invitations/links",
       OrganizationToken,
@@ -76,4 +82,16 @@ export type OrganizationMembersEndpoints =
       "/organizations/:organizationSlug/members/invitations/accept",
       OrganizationMember,
       AcceptOrganizationMemberInvitationDto
+    >
+  | Endpoint<
+      "PUT",
+      "/organizations/:organizationSlug/members/@me/accept",
+      OrganizationMember,
+      null
+    >
+  | Endpoint<
+      "DELETE",
+      "/organizations/:organizationSlug/members/@me/reject",
+      null,
+      null
     >;

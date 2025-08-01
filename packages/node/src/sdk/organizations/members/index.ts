@@ -2,9 +2,8 @@ import { Client } from "../../../rest";
 import {
   CreateOrganizationMemberDto,
   UpdateOrganizationMemberDto,
-  AcceptOrganizationMemberInvitationDto,
-  CreateOrganizationMemberInvitationLinkDto,
 } from "../../../rest/dtos";
+import { invitations } from "./invitations";
 
 export const organizationsMembers = (client: Client) => ({
   me: async () => client.get("/organizations/members/@me"),
@@ -30,26 +29,13 @@ export const organizationsMembers = (client: Client) => ({
       organizationSlug,
       userId,
     }),
-  createInvitationLink: async (
-    organizationSlug: string,
-    data: CreateOrganizationMemberInvitationLinkDto = {},
-  ) =>
-    client.post(
-      "/organizations/:organizationSlug/members/invitations/links",
-      data,
-      {
-        organizationSlug,
-      },
-    ),
-  acceptInvitation: async (
-    organizationSlug: string,
-    data: AcceptOrganizationMemberInvitationDto,
-  ) =>
-    client.post(
-      "/organizations/:organizationSlug/members/invitations/accept",
-      data,
-      {
-        organizationSlug,
-      },
-    ),
+  invitations: invitations(client),
+  accept: async (organizationSlug: string) =>
+    client.put("/organizations/:organizationSlug/members/@me/accept", null, {
+      organizationSlug,
+    }),
+  reject: async (organizationSlug: string) =>
+    client.delete("/organizations/:organizationSlug/members/@me/reject", null, {
+      organizationSlug,
+    }),
 });
