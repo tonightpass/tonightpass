@@ -55,13 +55,13 @@ export type OrganizationMembersEndpoints =
     >
   | Endpoint<
       "PUT",
-      "/organizations/:organizationSlug/members/:userId",
+      "/organizations/:organizationSlug/members/:username",
       OrganizationMember,
       UpdateOrganizationMemberDto
     >
   | Endpoint<
       "DELETE",
-      "/organizations/:organizationSlug/members/:userId",
+      "/organizations/:organizationSlug/members/:username",
       OrganizationMember[],
       null
     >
@@ -92,6 +92,12 @@ export type OrganizationMembersEndpoints =
   | Endpoint<
       "DELETE",
       "/organizations/:organizationSlug/members/@me/reject",
+      null,
+      null
+    >
+  | Endpoint<
+      "DELETE",
+      "/organizations/:organizationSlug/members/@me",
       null,
       null
     >;
