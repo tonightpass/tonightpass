@@ -1,5 +1,14 @@
 # tonightpass
 
+## 0.0.173
+
+### Patch Changes
+
+- [`632a90b`](https://github.com/tonightpass/tonightpass/commit/632a90b02dfbe6dfd1d8b45dd358ad3fe5ed752f) Thanks [@antoinekm](https://github.com/antoinekm)! - Add endpoint to leave an organization and update member endpoints to use username instead of userId:
+  - DELETE /organizations/:organizationSlug/members/@me
+  - PUT /organizations/:organizationSlug/members/:username (was :userId)
+  - DELETE /organizations/:organizationSlug/members/:username (was :userId)
+
 ## 0.0.172
 
 ### Patch Changes
