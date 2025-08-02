@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.175
+
+### Patch Changes
+
+- [`25f444b`](https://github.com/tonightpass/tonightpass/commit/25f444bcfffdad19d1d1e81913e9b91bc1428621) Thanks [@antoinekm](https://github.com/antoinekm)! - Use native Stripe.Invoice types instead of custom Invoice type
+
+  Removed the custom Invoice type and updated the Order type to use Stripe.Response<Stripe.Invoice> directly. This ensures proper typing for Stripe's confirmation_secret field and eliminates type conflicts.
+
 ## 0.0.174
 
 ### Patch Changes
