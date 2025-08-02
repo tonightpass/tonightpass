@@ -7,6 +7,7 @@ import {
   Location,
   OrganizationProfile,
 } from "..";
+import { OrganizationBilling } from "./billing";
 import { OrganizationEvent, OrganizationEventEndpoints } from "./events";
 import { OrganizationEventTicket } from "./events/tickets";
 import { OrganizationMember, OrganizationMembersEndpoints } from "./members";
@@ -26,10 +27,6 @@ export type Organization = Base & {
   savedTickets: OrganizationEventTicket[];
   verified: boolean;
   billing: OrganizationBilling;
-};
-
-export type OrganizationBilling = {
-  account: string;
 };
 
 export type OrganizationBillingAccount = Stripe.Account;
