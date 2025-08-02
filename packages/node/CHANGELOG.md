@@ -1,5 +1,18 @@
 # tonightpass
 
+## 0.0.174
+
+### Patch Changes
+
+- [`33a56df`](https://github.com/tonightpass/tonightpass/commit/33a56dfa473a7efca10c4cc6679eb68fe3f1f25d) Thanks [@antoinekm](https://github.com/antoinekm)! - Add Invoice type extension for Stripe Connect compatibility
+
+  Extends the base Invoice type with additional properties needed for TonightPass Stripe Connect integration:
+  - `payment_intent?: string | Stripe.PaymentIntent` - Expanded payment intent reference
+  - `client_secret?: string` - Client secret for frontend payment processing
+  - `confirmation_secret?: string` - String-based confirmation secret for frontend compatibility
+
+  This change improves type safety while maintaining compatibility with the existing payment system that expects `confirmation_secret` as a string rather than Stripe's default object structure.
+
 ## 0.0.173
 
 ### Patch Changes
