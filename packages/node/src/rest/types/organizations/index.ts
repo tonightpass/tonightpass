@@ -30,6 +30,7 @@ export type Organization = Base & {
 
 export type OrganizationBilling = {
   account: string;
+  vatRate: number;
 };
 
 export type OrganizationBillingAccount = Stripe.Account;
