@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.176
+
+### Patch Changes
+
+- [`1c92b58`](https://github.com/tonightpass/tonightpass/commit/1c92b58ba0750f1ca03215c0ffc84d36c076a5f0) Thanks [@antoinekm](https://github.com/antoinekm)! - Add vatRate field to OrganizationBilling type
+
+  This adds a new `vatRate` field to the `OrganizationBilling` type to support organization-specific VAT rates for billing calculations.
+
 ## 0.0.175
 
 ### Patch Changes
