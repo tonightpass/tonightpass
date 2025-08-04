@@ -7,6 +7,7 @@ import {
   Location,
   OrganizationProfile,
 } from "..";
+import { OrganizationAnalyticsEndpoints } from "./analytics";
 import { OrganizationEvent, OrganizationEventEndpoints } from "./events";
 import { OrganizationEventTicket } from "./events/tickets";
 import { OrganizationMember, OrganizationMembersEndpoints } from "./members";
@@ -16,6 +17,7 @@ import { Endpoint } from "../../endpoints";
 export * from "./events";
 export * from "./members";
 export * from "./tokens";
+export * from "./analytics";
 
 export type Organization = Base & {
   slug: string;
@@ -83,4 +85,5 @@ export type OrganizationEndpoints =
   | Endpoint<"GET", "/organizations/:organizationSlug/billing/link", void>
   | Endpoint<"GET", "/organizations/:organizationSlug/billing/dashboard", void>
   | OrganizationEventEndpoints
-  | OrganizationMembersEndpoints;
+  | OrganizationMembersEndpoints
+  | OrganizationAnalyticsEndpoints;
