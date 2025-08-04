@@ -1,5 +1,18 @@
 # tonightpass
 
+## 0.0.177
+
+### Patch Changes
+
+- [`44d502a`](https://github.com/tonightpass/tonightpass/commit/44d502a735be00d6b3796f5c6537ca851d7e907c) Thanks [@antoinekm](https://github.com/antoinekm)! - Add organization analytics endpoints for dashboard MVP
+  - Add OrganizationAnalyticsOverview type with metrics and chart data
+  - Add OrganizationEventAnalytics type with basic event metrics
+  - Add analytics endpoints:
+    - GET /organizations/:organizationSlug/analytics/overview
+    - GET /organizations/:organizationSlug/analytics/events
+  - Add AnalyticsOptions and EventAnalyticsOptions query parameters
+  - Support for period filtering (7d, 30d, 90d, 12m) and custom date ranges
+
 ## 0.0.176
 
 ### Patch Changes
