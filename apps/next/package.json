@@ -1,5 +1,5 @@
 {
-  "name": "next",
+  "name": "@tonightpass/next-example",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,9 +15,9 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0",
+    "@types/node": "22.17.0",
     "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "typescript": "^5"
+    "@types/react-dom": "^19.0.4",
+    "typescript": "^5.0.0"
   }
 }
