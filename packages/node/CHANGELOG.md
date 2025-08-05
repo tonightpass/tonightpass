@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.178
+
+### Patch Changes
+
+- [`0842dfb`](https://github.com/tonightpass/tonightpass/commit/0842dfb5ebb301069c52cd88a6131b65653cc8e0) Thanks [@antoinekm](https://github.com/antoinekm)! - Add status filter parameter to organization events endpoint
+  - Added optional `status` parameter to `/organizations/:organizationSlug/events` endpoint to filter events by their status (Upcoming, Ongoing, Ended)
+  - The parameter accepts either a single `OrganizationEventStatus` value or an array of statuses for multiple status filtering
+
 ## 0.0.177
 
 ### Patch Changes
