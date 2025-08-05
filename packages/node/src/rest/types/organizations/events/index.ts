@@ -34,6 +34,7 @@ export type OrganizationEvent = Base & {
   location: Location;
   tickets: OrganizationEventTicket[];
   styles: OrganizationEventStyle[];
+  status: OrganizationEventStatus;
   viewsCount: number;
   sessionsCount: number;
   totalViewsCount: number;
@@ -76,6 +77,16 @@ export enum OrganizationEventFileType {
   Trailer = "trailer",
 }
 
+export enum OrganizationEventStatus {
+  Upcoming = "upcoming",
+  Ongoing = "ongoing",
+  Ended = "ended",
+}
+
+export type OrganizationEventArrayOptions = ArrayOptions<OrganizationEvent> & {
+  status?: OrganizationEventStatus | OrganizationEventStatus[];
+};
+
 export type OrganizationEventEndpoints =
   | Endpoint<
       "GET",
@@ -109,19 +120,7 @@ export type OrganizationEventEndpoints =
       "GET",
       "/organizations/:organizationSlug/events",
       ArrayResult<OrganizationEvent>,
-      ArrayOptions<OrganizationEvent>
-    >
-  | Endpoint<
-      "GET",
-      "/organizations/:organizationSlug/events/past",
-      ArrayResult<OrganizationEvent>,
-      ArrayOptions<OrganizationEvent>
-    >
-  | Endpoint<
-      "GET",
-      "/organizations/:organizationSlug/events/upcoming",
-      ArrayResult<OrganizationEvent>,
-      ArrayOptions<OrganizationEvent>
+      OrganizationEventArrayOptions
     >
   | Endpoint<
       "GET",
