@@ -109,7 +109,7 @@ importers:
         specifier: 22.17.0
         version: 22.17.0
       '@types/react':
-        specifier: ^19.0.10
+        specifier: ^19.0.0
         version: 19.1.9
       '@types/react-dom':
         specifier: ^19.0.4
@@ -133,16 +133,16 @@ importers:
         specifier: ^5.0.0
         version: 5.0.7(typedoc@0.28.9(typescript@5.9.2))
       typescript:
-        specifier: ^5.7.3
+        specifier: ^5.0.0
         version: 5.9.2
 
   apps/nest:
     dependencies:
       '@nestjs/common':
-        specifier: ^11.0.0
+        specifier: 11.1.5
         version: 11.1.5(class-transformer@0.5.1)(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core':
-        specifier: ^11.0.0
+        specifier: 11.1.5
         version: 11.1.5(@nestjs/common@11.1.5(class-transformer@0.5.1)(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.5)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/platform-express':
         specifier: ^11.0.0
@@ -151,7 +151,7 @@ importers:
         specifier: workspace:^
         version: link:../../packages/nest
       reflect-metadata:
-        specifier: ^0.2.0
+        specifier: ^0.2.1
         version: 0.2.2
       rxjs:
         specifier: ^7.8.1
@@ -173,7 +173,7 @@ importers:
         specifier: ^30.0.0
         version: 30.0.0
       '@types/node':
-        specifier: ^22.0.0
+        specifier: 22.17.0
         version: 22.17.0
       '@types/supertest':
         specifier: ^6.0.0
@@ -182,7 +182,7 @@ importers:
         specifier: ^30.0.0
         version: 30.0.5(@types/node@22.17.0)(ts-node@10.9.2(@swc/core@1.13.3)(@types/node@22.17.0)(typescript@5.9.2))
       prettier:
-        specifier: ^3.0.0
+        specifier: ^3.2.5
         version: 3.6.2
       source-map-support:
         specifier: ^0.5.21
@@ -203,7 +203,7 @@ importers:
         specifier: ^4.2.0
         version: 4.2.0
       typescript:
-        specifier: ^5.1.3
+        specifier: ^5.0.0
         version: 5.9.2
 
   apps/next:
@@ -222,16 +222,16 @@ importers:
         version: 19.1.1(react@19.1.1)
     devDependencies:
       '@types/node':
-        specifier: ^22.0.0
+        specifier: 22.17.0
         version: 22.17.0
       '@types/react':
         specifier: ^19.0.0
         version: 19.1.9
       '@types/react-dom':
-        specifier: ^19.0.0
+        specifier: ^19.0.4
         version: 19.1.7(@types/react@19.1.9)
       typescript:
-        specifier: ^5
+        specifier: ^5.0.0
         version: 5.9.2
 
   packages/nest:
@@ -3062,9 +3062,6 @@ packages:
 
   '@types/node@22.17.0':
     resolution: {integrity: sha512-bbAKTCqX5aNVryi7qXVMi+OkB3w/OyblodicMbvE38blyAz7GxXf6XYhklokijuPwwVg9sDLKRxt0ZHXQwZVfQ==}
-
-  '@types/node@24.2.0':
-    resolution: {integrity: sha512-3xyG3pMCq3oYCNg7/ZP+E1ooTaGB4cG8JWRsqqOYQdbWNY4zbaV0Ennrd7stjiJEFZCaybcIgpTjJWHRfBSIDw==}
 
   '@types/qs@6.9.18':
     resolution: {integrity: sha512-kK7dgTYDyGqS+e2Q4aK9X3D7q234CIZ1Bv0q/7Z5IwRDoADNU81xXJK/YVyLbLTZCoIwUoDoffFeF+p/eIklAA==}
@@ -7509,9 +7506,6 @@ packages:
   undici-types@6.21.0:
     resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
 
-  undici-types@7.10.0:
-    resolution: {integrity: sha512-t5Fy/nfn+14LuOc2KNYg75vZqClpAiqscVvMygNnlsHBFpSXdJaYtXMcdNLpl/Qvc3P2cB3s6lOV51nqsFq4ag==}
-
   unicode-canonical-property-names-ecmascript@2.0.1:
     resolution: {integrity: sha512-dA8WbNeb2a6oQzAQ55YlT5vQAWGV9WXOsi3SskE3bcCdM0P4SDd+24zS/OCacdRq5BkdsRj9q3Pg6YyQoxIGqg==}
     engines: {node: '>=4'}
@@ -10791,11 +10785,6 @@ snapshots:
     dependencies:
       undici-types: 6.21.0
 
-  '@types/node@24.2.0':
-    dependencies:
-      undici-types: 7.10.0
-    optional: true
-
   '@types/qs@6.9.18': {}
 
   '@types/range-parser@1.2.7': {}
@@ -10851,7 +10840,7 @@ snapshots:
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 24.2.0
+      '@types/node': 22.17.0
     optional: true
 
   '@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.9.2))(eslint@8.57.1)(typescript@5.9.2)':
@@ -12747,7 +12736,7 @@ snapshots:
 
   extract-zip@2.0.1:
     dependencies:
-      debug: 4.3.4
+      debug: 4.4.1
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:
@@ -13141,7 +13130,7 @@ snapshots:
     dependencies:
       basic-ftp: 5.0.5
       data-uri-to-buffer: 6.0.2
-      debug: 4.3.4
+      debug: 4.4.1
     transitivePeerDependencies:
       - supports-color
 
@@ -13321,14 +13310,14 @@ snapshots:
   http-proxy-agent@7.0.2:
     dependencies:
       agent-base: 7.1.3
-      debug: 4.3.4
+      debug: 4.4.1
     transitivePeerDependencies:
       - supports-color
 
   https-proxy-agent@7.0.6:
     dependencies:
       agent-base: 7.1.3
-      debug: 4.3.4
+      debug: 4.4.1
     transitivePeerDependencies:
       - supports-color
 
@@ -14928,7 +14917,7 @@ snapshots:
     dependencies:
       '@tootallnate/quickjs-emscripten': 0.23.0
       agent-base: 7.1.3
-      debug: 4.3.4
+      debug: 4.4.1
       get-uri: 6.0.4
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
@@ -15149,7 +15138,7 @@ snapshots:
   proxy-agent@6.4.0:
     dependencies:
       agent-base: 7.1.3
-      debug: 4.3.4
+      debug: 4.4.1
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
       lru-cache: 7.18.3
@@ -15756,7 +15745,7 @@ snapshots:
   socks-proxy-agent@8.0.5:
     dependencies:
       agent-base: 7.1.3
-      debug: 4.3.4
+      debug: 4.4.1
       socks: 2.8.4
     transitivePeerDependencies:
       - supports-color
@@ -16426,9 +16415,6 @@ snapshots:
       through: 2.3.8
 
   undici-types@6.21.0: {}
-
-  undici-types@7.10.0:
-    optional: true
 
   unicode-canonical-property-names-ecmascript@2.0.1: {}
 
