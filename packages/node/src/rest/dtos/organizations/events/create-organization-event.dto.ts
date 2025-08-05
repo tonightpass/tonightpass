@@ -66,6 +66,7 @@ export type CreateOrganizationEventInput = Omit<
   | "styles"
   | "tickets"
   | "organization"
+  | "status"
   | "viewsCount"
   | "sessionsCount"
   | "totalViewsCount"
