@@ -7,6 +7,7 @@ import {
   Client,
   CreateOrganizationEventDto,
   OrganizationEvent,
+  OrganizationEventArrayOptions,
   OrganizationEventFileType,
   UpdateOrganizationEventDto,
 } from "../../../rest";
@@ -17,7 +18,7 @@ export const organizationsEvents = (client: Client) => ({
     client.get("/organizations/events/search", { q: query, limit }),
   getAll: async (
     organizationSlug?: string,
-    options?: ArrayOptions<OrganizationEvent>,
+    options?: OrganizationEventArrayOptions,
   ) => {
     if (organizationSlug) {
       return client.get("/organizations/:organizationSlug/events", {
@@ -37,22 +38,6 @@ export const organizationsEvents = (client: Client) => ({
       radius?: number;
     },
   ) => client.get("/organizations/events/nearby", options),
-  getPast: async (
-    organizationSlug: string,
-    options?: ArrayOptions<OrganizationEvent>,
-  ) =>
-    client.get("/organizations/:organizationSlug/events/past", {
-      organizationSlug,
-      ...options,
-    }),
-  getUpcoming: async (
-    organizationSlug: string,
-    options?: ArrayOptions<OrganizationEvent>,
-  ) =>
-    client.get("/organizations/:organizationSlug/events/upcoming", {
-      organizationSlug,
-      ...options,
-    }),
   get: async (organizationSlug: string, eventSlug: string) =>
     client.get("/organizations/:organizationSlug/events/:eventSlug", {
       organizationSlug,
