@@ -1,5 +1,15 @@
 # tonightpass
 
+## 0.0.179
+
+### Patch Changes
+
+- [`308d691`](https://github.com/tonightpass/tonightpass/commit/308d6911538085d21dc475cd3122e0fa9b0a355c) Thanks [@antoinekm](https://github.com/antoinekm)! - Add currencies support to TonightPass SDK
+  - Added currencies module to TonightPass class
+  - Exposed currencies API endpoints (getRates, convert, convertAmount)
+  - Added proper TypeScript types for currency operations
+  - Fixed missing currencies export in SDK
+
 ## 0.0.178
 
 ### Patch Changes
