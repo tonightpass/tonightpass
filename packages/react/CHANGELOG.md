@@ -1,5 +1,18 @@
 # @tonightpass/react
 
+## 0.0.184
+
+### Patch Changes
+
+- [`cc9039d`](https://github.com/tonightpass/tonightpass/commit/cc9039da00d2454f1f8ce2a979c7ad24b80477a6) Thanks [@antoinekm](https://github.com/antoinekm)! - Add WebSocket support for real-time communication
+  - Add WebSocket client with typed endpoints and auto-reconnection
+  - Add React hook useWebSocket for WebSocket subscriptions with SWR
+  - Rename hook files to kebab-case for consistency
+  - Support all WebSocket paths with strict TypeScript typing
+
+- Updated dependencies [[`cc9039d`](https://github.com/tonightpass/tonightpass/commit/cc9039da00d2454f1f8ce2a979c7ad24b80477a6)]:
+  - tonightpass@0.0.180
+
 ## 0.0.183
 
 ### Patch Changes
