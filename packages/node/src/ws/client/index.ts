@@ -2,11 +2,7 @@ import { pathcat } from "pathcat";
 import WebSocket from "ws";
 
 import { WebSocketPaths, WebSocketOptionsFor } from "../endpoints";
-import {
-  WebSocketConnectOptions,
-  WebSocketClientOptions,
-  ChannelWebSocketEvent,
-} from "../types";
+import { WebSocketClientOptions, ChannelWebSocketEvent } from "../types";
 
 export type WebSocketEventHandler<T> = (event: T) => void;
 
