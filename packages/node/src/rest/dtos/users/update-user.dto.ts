@@ -10,8 +10,6 @@ import {
   IsString,
   Length,
   Matches,
-  MaxLength,
-  MinLength,
   ValidateNested,
 } from "class-validator";
 
@@ -33,8 +31,18 @@ export class UpdateUserDto {
 
   @IsOptional()
   @IsString()
-  @MinLength(8)
-  @MaxLength(128)
+  @Matches(REGEX.PASSWORD_MIN_LENGTH, {
+    message: "Password must be at least 8 characters long.",
+  })
+  @Matches(REGEX.PASSWORD_UPPERCASE, {
+    message: "Password must contain at least one uppercase letter.",
+  })
+  @Matches(REGEX.PASSWORD_LOWERCASE, {
+    message: "Password must contain at least one lowercase letter.",
+  })
+  @Matches(REGEX.PASSWORD, {
+    message: "Password must be secure.",
+  })
   password?: string;
 }
 
