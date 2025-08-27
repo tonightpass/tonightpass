@@ -55,6 +55,11 @@ export enum OrganizationSocialType {
   Website = "website",
 }
 
+export enum OrganizationFileType {
+  Avatar = "avatar",
+  Banner = "banner",
+}
+
 export type OrganizationEndpoints =
   | Endpoint<
       "GET",
@@ -77,6 +82,12 @@ export type OrganizationEndpoints =
       UpdateOrganizationDto
     >
   | Endpoint<"DELETE", "/organizations/:organizationSlug", Organization, null>
+  | Endpoint<
+      "POST",
+      "/organizations/:organizationSlug/files/:organizationFileType",
+      string,
+      FormData
+    >
   | Endpoint<
       "GET",
       "/organizations/:organizationSlug/billing/account",

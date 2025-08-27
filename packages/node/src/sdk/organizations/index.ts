@@ -1,7 +1,12 @@
 import { organizationsBilling } from "./billing";
 import { organizationsEvents } from "./events";
 import { organizationsMembers } from "./members";
-import { CreateOrganizationDto, UpdateOrganizationDto } from "../../rest";
+import {
+  CreateOrganizationDto,
+  UpdateOrganizationDto,
+  OrganizationFileType,
+} from "../../rest";
+import { buildFileFormData } from "../../utils";
 import { sdk } from "../builder";
 
 export const organizations = sdk((client) => ({
@@ -18,6 +23,19 @@ export const organizations = sdk((client) => ({
     client.delete("/organizations/:organizationSlug", null, {
       organizationSlug,
     }),
+  uploadFile: async (
+    organizationSlug: string,
+    organizationFileType: OrganizationFileType,
+    file: File,
+  ) =>
+    client.post(
+      "/organizations/:organizationSlug/files/:organizationFileType",
+      buildFileFormData("file", file),
+      {
+        organizationSlug,
+        organizationFileType,
+      },
+    ),
   billing: organizationsBilling(client),
   events: organizationsEvents(client),
   members: organizationsMembers(client),
