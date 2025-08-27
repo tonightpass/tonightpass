@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.181
+
+### Patch Changes
+
+- [`93ace63`](https://github.com/tonightpass/tonightpass/commit/93ace63d4121918b912c32b156797fd3e2a760c1) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix password validation consistency in UpdateUserDto
+
+  Add missing password complexity validation rules to UpdateUserDto to match CreateUserDto security requirements. Now both DTOs enforce the same password rules: minimum 8 characters, at least one uppercase letter, one lowercase letter, and one number or special character.
+
 ## 0.0.180
 
 ### Patch Changes
