@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.182
+
+### Patch Changes
+
+- [`e0d988e`](https://github.com/tonightpass/tonightpass/commit/e0d988e92c33adebefcac7266eeef6f3e58414c5) Thanks [@antoinekm](https://github.com/antoinekm)! - Add organization file upload support
+  - Add `OrganizationFileType` enum with Avatar and Banner types
+  - Add organization file upload endpoint and SDK method
+
 ## 0.0.181
 
 ### Patch Changes
