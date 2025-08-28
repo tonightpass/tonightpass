@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.184
+
+### Patch Changes
+
+- [`18addee`](https://github.com/tonightpass/tonightpass/commit/18addeefc25e4c2ab39e95c3f9ce3728045c669e) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix CreateUserDto validation to allow temporary avatar URLs during signup
+
 ## 0.0.183
 
 ### Patch Changes
