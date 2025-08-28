@@ -133,5 +133,6 @@ export type UserEndpoints =
     >
   | Endpoint<"PUT", "/users/:userId", User, UpdateUserDto>
   | Endpoint<"POST", "/users/:userId/files/:userFileType", string, FormData>
+  | Endpoint<"POST", "/users/files/:userFileType", string, FormData>
   | UserBookingEndpoints
   | UserNotificationEndpoints;
