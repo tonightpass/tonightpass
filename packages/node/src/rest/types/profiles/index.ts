@@ -15,7 +15,7 @@ export type BaseProfile = {
 
   avatarUrl?: string;
   bannerUrl?: string;
-  
+
   links: string[];
 
   metadata: ProfileMetadata;
