@@ -23,6 +23,10 @@ export const users = sdk((client) => ({
         userFileType,
       },
     ),
+  uploadTempFile: async (userFileType: UserFileType, file: File) =>
+    client.post("/users/files/:userFileType", buildFileFormData("file", file), {
+      userFileType,
+    }),
   bookings: usersBookings(client),
   notifications: usersNotifications(client),
 }));
