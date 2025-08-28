@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.183
+
+### Patch Changes
+
+- [`097d233`](https://github.com/tonightpass/tonightpass/commit/097d2337047b9fb50b7075e61df9f14ad355f202) Thanks [@antoinekm](https://github.com/antoinekm)! - Add temporary file upload support for user avatars during signup
+  - Added `/users/files/:userFileType` endpoint for uploading temporary files
+  - Added `uploadTempFile` method to users SDK for handling temporary avatar uploads
+
 ## 0.0.182
 
 ### Patch Changes
