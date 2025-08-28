@@ -5,13 +5,13 @@ import {
   IsObject,
   IsOptional,
   IsString,
+  IsUrl,
   Length,
   Matches,
 } from "class-validator";
 
 import { UpdateOrganizationMemberDto } from "./members";
 import { REGEX } from "../../../constants";
-import { OrganizationSocialLink } from "../../types";
 
 export class UpdateOrganizationDto {
   @IsOptional()
@@ -60,5 +60,6 @@ export class UpdateOrganizationIdentityDto {
 
   @IsOptional()
   @IsArray()
-  socialLinks?: OrganizationSocialLink[];
+  @IsUrl({}, { each: true })
+  links?: string[];
 }

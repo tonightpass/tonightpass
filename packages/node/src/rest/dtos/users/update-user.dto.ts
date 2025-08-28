@@ -1,5 +1,6 @@
 import { Type, Transform } from "class-transformer";
 import {
+  IsArray,
   IsDate,
   IsEmail,
   IsEnum,
@@ -8,6 +9,7 @@ import {
   IsOptional,
   IsPhoneNumber,
   IsString,
+  IsUrl,
   Length,
   Matches,
   ValidateNested,
@@ -129,4 +131,9 @@ class UpdateUserIdentityDto
   @Transform(({ value }) => (value instanceof Date ? value : new Date(value)))
   @IsDate()
   birthDate?: Date;
+
+  @IsOptional()
+  @IsArray()
+  @IsUrl({}, { each: true })
+  links?: string[];
 }

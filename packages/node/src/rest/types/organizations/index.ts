@@ -37,23 +37,7 @@ export type OrganizationBilling = {
 
 export type OrganizationBillingAccount = Stripe.Account;
 
-export type OrganizationIdentity = OrganizationProfile & {
-  socialLinks: OrganizationSocialLink[];
-};
-
-export type OrganizationSocialLink = {
-  type: OrganizationSocialType;
-  url: string;
-};
-
-export enum OrganizationSocialType {
-  Facebook = "facebook",
-  Twitter = "twitter",
-  Instagram = "instagram",
-  Linkedin = "linkedin",
-  Youtube = "youtube",
-  Website = "website",
-}
+export type OrganizationIdentity = OrganizationProfile;
 
 export enum OrganizationFileType {
   Avatar = "avatar",
