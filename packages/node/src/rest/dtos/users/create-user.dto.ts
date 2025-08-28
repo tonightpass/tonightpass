@@ -1,5 +1,6 @@
 import { Transform, Type } from "class-transformer";
 import {
+  IsArray,
   IsDate,
   IsEmail,
   IsEnum,
@@ -7,6 +8,7 @@ import {
   IsOptional,
   IsPhoneNumber,
   IsString,
+  IsUrl,
   Length,
   Matches,
   ValidateNested,
@@ -95,4 +97,9 @@ export class CreateUserIdentityDto {
   })
   @IsDate()
   birthDate: Date;
+
+  @IsOptional()
+  @IsArray()
+  @IsUrl({}, { each: true })
+  links?: string[];
 }

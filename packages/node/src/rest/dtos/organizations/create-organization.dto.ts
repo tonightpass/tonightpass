@@ -5,12 +5,13 @@ import {
   IsObject,
   IsOptional,
   IsString,
+  IsUrl,
   Length,
   Matches,
 } from "class-validator";
 
 import { CreateOrganizationMemberDto } from "./members/create-organization-member.dto";
-import { type Location, type OrganizationSocialLink } from "../../types";
+import { type Location } from "../../types";
 
 export class CreateOrganizationDto {
   @IsOptional()
@@ -54,5 +55,6 @@ export class CreateOrganizationIdentityDto {
 
   @IsOptional()
   @IsArray()
-  socialLinks?: OrganizationSocialLink[];
+  @IsUrl({}, { each: true })
+  links?: string[];
 }
