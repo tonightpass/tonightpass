@@ -135,5 +135,6 @@ class UpdateUserIdentityDto
   @IsOptional()
   @IsArray()
   @IsUrl({}, { each: true })
+  @Length(0, 5)
   links?: string[];
 }
