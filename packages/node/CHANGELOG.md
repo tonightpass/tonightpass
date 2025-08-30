@@ -1,5 +1,14 @@
 # tonightpass
 
+## 0.0.186
+
+### Patch Changes
+
+- [`0c5502a`](https://github.com/tonightpass/tonightpass/commit/0c5502af120f59d98f77e6fe0c1ee3500141f196) Thanks [@antoinekm](https://github.com/antoinekm)! - Add maximum 5 links validation for user and organization DTOs
+  - Added `@Length(0, 5)` validation to user and organization links fields
+  - Updated validation messages to use proper error handling
+  - Ensures consistent limits across user profiles and organizations
+
 ## 0.0.185
 
 ### Patch Changes
