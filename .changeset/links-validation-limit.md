@@ -1,5 +1,5 @@
 ---
-"@tonightpass/node": patch
+"tonightpass": patch
 ---
 
 Add maximum 5 links validation for user and organization DTOs
