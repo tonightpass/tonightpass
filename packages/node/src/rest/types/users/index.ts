@@ -9,11 +9,13 @@ import {
   UserProfileMetadata,
 } from "..";
 import { UserNotificationEndpoints } from "./notifications";
+import { UserPostEndpoints } from "./posts";
 import { UpdateUserDto } from "../../dtos";
 import { Endpoint } from "../../endpoints";
 
 export * from "./bookings";
 export * from "./notifications";
+export * from "./posts";
 export * from "./tokens";
 
 export type PublicUser = {
@@ -135,4 +137,5 @@ export type UserEndpoints =
   | Endpoint<"POST", "/users/:userId/files/:userFileType", string, FormData>
   | Endpoint<"POST", "/users/files/:userFileType", string, FormData>
   | UserBookingEndpoints
-  | UserNotificationEndpoints;
+  | UserNotificationEndpoints
+  | UserPostEndpoints;

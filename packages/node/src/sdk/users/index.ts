@@ -3,6 +3,9 @@ import { buildFileFormData } from "../../utils";
 import { sdk } from "../builder";
 import { usersBookings } from "./bookings";
 import { usersNotifications } from "./notifications";
+import { usersPosts } from "./posts";
+import { usersPostsComments } from "./posts/comments";
+import { usersPostsReposts } from "./posts/reposts";
 
 export const users = sdk((client) => ({
   search: async (query: string, limit?: number) =>
@@ -29,4 +32,7 @@ export const users = sdk((client) => ({
     }),
   bookings: usersBookings(client),
   notifications: usersNotifications(client),
+  posts: usersPosts(client),
+  postsComments: usersPostsComments(client),
+  postsReposts: usersPostsReposts(client),
 }));
