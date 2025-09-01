@@ -3,10 +3,8 @@ import {
   Currency,
   Language,
   Location,
-  ProfileType,
   UserBookingEndpoints,
   UserProfile,
-  UserProfileMetadata,
 } from "..";
 import { UserNotificationEndpoints } from "./notifications";
 import { UserPostEndpoints } from "./posts";
@@ -17,18 +15,6 @@ export * from "./bookings";
 export * from "./notifications";
 export * from "./posts";
 export * from "./tokens";
-
-export type PublicUser = {
-  identifier: Pick<UserIdentifier, "username">;
-
-  identity: {
-    displayName: string;
-    avatarUrl: string;
-    slug: string;
-    type: ProfileType;
-    metadata: UserProfileMetadata;
-  };
-};
 
 export type User = Base & {
   identifier: UserIdentifier;
@@ -114,12 +100,6 @@ export enum UserFileType {
 }
 
 export type UserEndpoints =
-  | Endpoint<
-      "GET",
-      "/users/search",
-      PublicUser[],
-      { q: string; limit?: number }
-    >
   | Endpoint<"GET", "/users", User[]>
   | Endpoint<"GET", "/users/:userId", User>
   | Endpoint<"GET", "/users/@me", User>

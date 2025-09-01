@@ -8,8 +8,6 @@ import { usersPostsComments } from "./posts/comments";
 import { usersPostsReposts } from "./posts/reposts";
 
 export const users = sdk((client) => ({
-  search: async (query: string, limit?: number) =>
-    client.get("/users/search", { q: query, limit }),
   getAll: async () => client.get("/users"),
   get: async (userId: string) => client.get("/users/:userId", { userId }),
   me: async () => client.get("/users/@me"),
