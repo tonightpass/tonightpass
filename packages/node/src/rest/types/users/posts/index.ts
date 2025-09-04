@@ -37,9 +37,9 @@ export type UserPostEndpoints =
   | Endpoint<"GET", "/users/:username/posts/:postId", UserPost>
   | Endpoint<"POST", "/users/@me/posts", UserPost, CreateUserPostDto>
   | Endpoint<"PUT", "/users/@me/posts/:postId", UserPost, UpdateUserPostDto>
-  | Endpoint<"DELETE", "/users/@me/posts/:postId", void>
-  | Endpoint<"POST", "/users/:username/posts/:postId/views", boolean, null>;
+  | Endpoint<"DELETE", "/users/@me/posts/:postId", void>;
 
 export * from "./comments";
 export * from "./reposts";
 export * from "./media";
+export * from "./views";
