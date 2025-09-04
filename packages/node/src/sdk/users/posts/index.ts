@@ -1,3 +1,4 @@
+import { usersPostsViews } from "./views";
 import { ArrayOptions } from "../../../rest/types";
 import {
   CreateUserPostDto,
@@ -25,9 +26,5 @@ export const usersPosts = sdk((client) => ({
   uploadMedia: async (file: FormData) =>
     client.post("/users/@me/posts/media", file),
 
-  addView: async (username: string, postId: string) =>
-    client.post("/users/:username/posts/:postId/views", null, {
-      username,
-      postId,
-    }),
+  views: usersPostsViews(client),
 }));
