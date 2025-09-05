@@ -1,5 +1,23 @@
 # tonightpass
 
+## 0.0.189
+
+### Patch Changes
+
+- [`d9d6414`](https://github.com/tonightpass/tonightpass/commit/d9d641461dd6b994081e717fc3aac4c6e0b15178) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix UserPostEndpoints to include all sub-resource endpoints (comments, reposts, views, media)
+
+- [`d155466`](https://github.com/tonightpass/tonightpass/commit/d1554664a4b7316532152b72db713eee6cd9116d) Thanks [@antoinekm](https://github.com/antoinekm)! - Add organized views system for user posts following events pattern
+  - Create `src/sdk/users/posts/views/index.ts` with `usersPostsViews` SDK module
+  - Create `src/rest/types/users/posts/views/index.ts` with `UserPostViewEndpoints` types
+  - Refactor user posts SDK to use `views: usersPostsViews(client)` instead of `addView`
+  - Add `UserPostViewEndpoints` to main `UserEndpoints` type union
+  - Export views types from user posts index
+  - Remove views endpoint from `UserPostEndpoints` to separate module
+
+  Now user posts views follow the same organized pattern as events:
+  - Events: `sdk.organizations.events.views.record(orgSlug, eventSlug)`
+  - Posts: `sdk.users.posts.views.record(username, postId)`
+
 ## 0.0.188
 
 ### Patch Changes
