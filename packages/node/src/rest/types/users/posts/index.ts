@@ -1,5 +1,8 @@
 import { Base, ArrayResult, ArrayOptions, UserProfile } from "../..";
-import { UserPostMedia } from "./media";
+import { UserPostCommentEndpoints } from "./comments";
+import { UserPostMedia, UserPostMediaEndpoints } from "./media";
+import { UserPostRepostEndpoints } from "./reposts";
+import { UserPostViewEndpoints } from "./views";
 import {
   CreateUserPostDto,
   UpdateUserPostDto,
@@ -37,7 +40,11 @@ export type UserPostEndpoints =
   | Endpoint<"GET", "/users/:username/posts/:postId", UserPost>
   | Endpoint<"POST", "/users/@me/posts", UserPost, CreateUserPostDto>
   | Endpoint<"PUT", "/users/@me/posts/:postId", UserPost, UpdateUserPostDto>
-  | Endpoint<"DELETE", "/users/@me/posts/:postId", void>;
+  | Endpoint<"DELETE", "/users/@me/posts/:postId", void>
+  | UserPostCommentEndpoints
+  | UserPostRepostEndpoints
+  | UserPostViewEndpoints
+  | UserPostMediaEndpoints;
 
 export * from "./comments";
 export * from "./reposts";
