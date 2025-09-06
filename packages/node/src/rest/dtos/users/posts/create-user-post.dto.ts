@@ -10,7 +10,7 @@ export class CreateUserPostDto {
 
   @IsArray()
   @IsString({ each: true })
-  @Length(0, 10)
+  @Length(1, 10)
   mediaIds: string[];
 
   @IsOptional()
