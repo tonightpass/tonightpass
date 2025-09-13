@@ -5,7 +5,7 @@ import { UserPostVisibility } from "../../../types/users/posts";
 export class UpdateUserPostDto {
   @IsOptional()
   @IsString()
-  @Length(1, 500)
+  @Length(1, 512)
   content?: string;
 
   @IsOptional()

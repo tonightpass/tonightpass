@@ -8,6 +8,7 @@ import {
   IsUrl,
   Length,
   Matches,
+  ArrayMaxSize,
 } from "class-validator";
 
 import { CreateOrganizationMemberDto } from "./members/create-organization-member.dto";
@@ -56,6 +57,6 @@ export class CreateOrganizationIdentityDto {
   @IsOptional()
   @IsArray()
   @IsUrl({}, { each: true })
-  @Length(0, 5)
+  @ArrayMaxSize(5)
   links?: string[];
 }
