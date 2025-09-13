@@ -1,4 +1,13 @@
-import { ArrayMaxSize, ArrayMinSize, IsArray, IsEnum, IsOptional, IsString, Length, Matches } from "class-validator";
+import {
+  ArrayMaxSize,
+  ArrayMinSize,
+  IsArray,
+  IsEnum,
+  IsOptional,
+  IsString,
+  Length,
+  Matches,
+} from "class-validator";
 
 import { UserPostVisibility } from "../../../types/users/posts";
 
