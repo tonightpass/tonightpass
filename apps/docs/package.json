@@ -10,10 +10,10 @@
     "generate-api-docs": "node scripts/generate-api-docs.js"
   },
   "dependencies": {
-    "fumadocs-core": "15.7.2",
+    "fumadocs-core": "15.7.10",
     "fumadocs-mdx": "11.8.0",
-    "fumadocs-ui": "15.7.2",
-    "next": "15.5.0",
+    "fumadocs-ui": "15.7.10",
+    "next": "15.5.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -21,7 +21,7 @@
     "@fumadocs/cli": "^0.2.0",
     "@tailwindcss/postcss": "^4.0.7",
     "@types/mdx": "^2.0.13",
-    "@types/node": "22.17.2",
+    "@types/node": "22.18.1",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.4",
     "postcss": "^8.5.3",
