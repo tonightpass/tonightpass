@@ -8,6 +8,7 @@ import {
   IsUrl,
   Length,
   Matches,
+  ArrayMaxSize,
 } from "class-validator";
 
 import { UpdateOrganizationMemberDto } from "./members";
@@ -61,6 +62,6 @@ export class UpdateOrganizationIdentityDto {
   @IsOptional()
   @IsArray()
   @IsUrl({}, { each: true })
-  @Length(0, 5)
+  @ArrayMaxSize(5)
   links?: string[];
 }

@@ -13,6 +13,7 @@ import {
   Length,
   Matches,
   ValidateNested,
+  ArrayMaxSize,
 } from "class-validator";
 
 import { REGEX } from "../../../constants/regex";
@@ -135,6 +136,6 @@ class UpdateUserIdentityDto
   @IsOptional()
   @IsArray()
   @IsUrl({}, { each: true })
-  @Length(0, 5)
+  @ArrayMaxSize(5)
   links?: string[];
 }
