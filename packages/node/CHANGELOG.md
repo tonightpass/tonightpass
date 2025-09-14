@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.194
+
+### Patch Changes
+
+- [`1bcac3b`](https://github.com/tonightpass/tonightpass/commit/1bcac3b5ebb3240d033fcc509afd01ef073d9d07) Thanks [@antoinekm](https://github.com/antoinekm)! - Add feed types and SDK methods for following and discover feeds with mixed UserPost and OrganizationEvent content
+
 ## 0.0.193
 
 ### Patch Changes
