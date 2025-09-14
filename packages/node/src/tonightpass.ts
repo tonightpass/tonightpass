@@ -4,6 +4,7 @@ import {
   careers,
   channels,
   currencies,
+  feed,
   health,
   notifications,
   orders,
@@ -19,6 +20,7 @@ export class TonightPass {
   public readonly careers;
   public readonly channels;
   public readonly currencies;
+  public readonly feed;
   public readonly health;
   public readonly orders;
   public readonly organizations;
@@ -33,6 +35,7 @@ export class TonightPass {
     this.careers = careers(this.client);
     this.channels = channels(this.client);
     this.currencies = currencies(this.client);
+    this.feed = feed(this.client);
     this.health = health(this.client);
     this.orders = orders(this.client);
     this.organizations = organizations(this.client);
