@@ -1,10 +1,10 @@
 import { usersPostsViews } from "./views";
-import { ArrayOptions } from "../../../rest/types";
 import {
   CreateUserPostDto,
   UpdateUserPostDto,
-  UserPost,
-} from "../../../rest/types/users/posts";
+} from "../../../rest/dtos/users/posts";
+import { ArrayOptions } from "../../../rest/types";
+import { UserPost } from "../../../rest/types/users/posts";
 import { sdk } from "../../builder";
 
 export const usersPosts = sdk((client) => ({
@@ -21,10 +21,10 @@ export const usersPosts = sdk((client) => ({
     client.put("/users/@me/posts/:postId", data, { postId }),
 
   delete: async (postId: string) =>
-    client.delete("/users/@me/posts/:postId", { postId }),
+    client.delete("/users/@me/posts/:postId", undefined, { postId }),
 
   uploadMedia: async (file: FormData) =>
     client.post("/users/@me/posts/media", file),
 
-  views: usersPostsViews(client),
+  views: usersPostsViews,
 }));
