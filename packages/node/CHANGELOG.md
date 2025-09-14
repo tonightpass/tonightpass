@@ -1,5 +1,17 @@
 # tonightpass
 
+## 0.0.193
+
+### Patch Changes
+
+- [`0951efa`](https://github.com/tonightpass/tonightpass/commit/0951efa494c4619d52ce875841680f22cb471c4f) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix TypeScript errors in posts SDK
+  - Fix incorrect imports for CreateUserPostCommentDto and UpdateUserPostCommentDto in comments SDK
+  - Fix incorrect imports for CreateUserPostRepostDto in reposts SDK
+  - Fix incorrect imports for CreateUserPostDto and UpdateUserPostDto in main posts SDK
+  - Fix incorrect URL endpoints in reposts SDK (/repost -> /reposts)
+  - Fix incorrect delete method signatures (missing undefined parameter for request body)
+  - Reorganize imports to follow ESLint rules
+
 ## 0.0.192
 
 ### Patch Changes
