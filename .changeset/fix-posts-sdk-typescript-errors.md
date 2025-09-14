@@ -1,5 +1,5 @@
 ---
-"@tonightpass/node": patch
+"tonightpass": patch
 ---
 
 Fix TypeScript errors in posts SDK
