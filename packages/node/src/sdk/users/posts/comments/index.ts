@@ -1,9 +1,9 @@
-import { ArrayOptions } from "../../../../rest/types";
 import {
   CreateUserPostCommentDto,
   UpdateUserPostCommentDto,
-  UserPostComment,
-} from "../../../../rest/types/users/posts";
+} from "../../../../rest/dtos/users/posts/comments";
+import { ArrayOptions } from "../../../../rest/types";
+import { UserPostComment } from "../../../../rest/types/users/posts/comments";
 import { sdk } from "../../../builder";
 
 export const usersPostsComments = sdk((client) => ({
@@ -32,7 +32,7 @@ export const usersPostsComments = sdk((client) => ({
     }),
 
   delete: async (postId: string, commentId: string) =>
-    client.delete("/users/@me/posts/:postId/comments/:commentId", {
+    client.delete("/users/@me/posts/:postId/comments/:commentId", undefined, {
       postId,
       commentId,
     }),
