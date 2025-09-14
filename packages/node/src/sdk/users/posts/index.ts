@@ -26,5 +26,5 @@ export const usersPosts = sdk((client) => ({
   uploadMedia: async (file: FormData) =>
     client.post("/users/@me/posts/media", file),
 
-  views: usersPostsViews,
+  views: usersPostsViews(client),
 }));
