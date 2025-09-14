@@ -3,6 +3,7 @@ export * from "./careers";
 export * from "./channels";
 export * from "./currencies";
 export * from "./errors";
+export * from "./feed";
 export * from "./health";
 export * from "./locations";
 export * from "./organizations";
