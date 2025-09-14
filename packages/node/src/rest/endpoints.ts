@@ -6,6 +6,7 @@ import {
   ChannelEndpoints,
   ChannelMessageEndpoints,
   CurrenciesEndpoints,
+  FeedEndpoints,
   HealthEndpoints,
   NotificationEndpoints,
   OrderEndpoints,
@@ -33,6 +34,7 @@ export type Endpoints =
   | ChannelEndpoints
   | ChannelMessageEndpoints
   | CurrenciesEndpoints
+  | FeedEndpoints
   | HealthEndpoints
   | OrderEndpoints
   | OrganizationEndpoints
