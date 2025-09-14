@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.195
+
+### Patch Changes
+
+- [`67ea74b`](https://github.com/tonightpass/tonightpass/commit/67ea74b3ae0e69a5e3ffab38ab1aa9f29b6848ac) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix posts views SDK method not being properly initialized with client
+
 ## 0.0.194
 
 ### Patch Changes
