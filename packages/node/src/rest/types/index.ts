@@ -90,14 +90,6 @@ export type ArrayOptions<T> = {
    * Exclude specific fields from the result
   //  */
   // exclude?: readonly AutoPath<T, string>[];
-  /**
-   * Filter options
-   */
-  filters?: ArrayFilterOptions[];
-  /**
-   * Sort options
-   */
-  sort?: ArraySortOptions[];
 } & ArrayPaginationOptions;
 
 export type ArrayResult<T> = {
