@@ -1,5 +1,15 @@
 # tonightpass
 
+## 0.0.196
+
+### Patch Changes
+
+- [`47489cf`](https://github.com/tonightpass/tonightpass/commit/47489cf8de944ac4298fb4fb259be4a569089c3d) Thanks [@antoinekm](https://github.com/antoinekm)! - Add types and styles filtering support to OrganizationEventArrayOptions
+  - Add `types` parameter to filter events by OrganizationEventType
+  - Add `styles` parameter to filter events by style IDs or slugs
+  - Update `/organizations/events` endpoint to use OrganizationEventArrayOptions
+  - Support both single values and arrays for filtering parameters
+
 ## 0.0.195
 
 ### Patch Changes
