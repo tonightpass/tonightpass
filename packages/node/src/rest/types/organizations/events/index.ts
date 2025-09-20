@@ -85,6 +85,8 @@ export enum OrganizationEventStatus {
 
 export type OrganizationEventArrayOptions = ArrayOptions<OrganizationEvent> & {
   status?: OrganizationEventStatus | OrganizationEventStatus[];
+  types?: OrganizationEventType | OrganizationEventType[];
+  styles?: string | string[];
 };
 
 export type OrganizationEventEndpoints =
@@ -98,7 +100,7 @@ export type OrganizationEventEndpoints =
       "GET",
       "/organizations/events",
       ArrayResult<OrganizationEvent>,
-      ArrayOptions<OrganizationEvent>
+      OrganizationEventArrayOptions
     >
   | Endpoint<
       "GET",

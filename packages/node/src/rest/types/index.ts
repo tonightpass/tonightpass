@@ -83,10 +83,6 @@ export type ArrayFilterOptions = {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export type ArrayOptions<T> = {
   /**
-   * Populate relations
-   */
-  // populate?: string[];
-  /**
    * Select only specific fields to display
    */
   // fields?: readonly AutoPath<T, Fields, `${PopulatePath.ALL}`>[];
@@ -94,8 +90,15 @@ export type ArrayOptions<T> = {
    * Exclude specific fields from the result
   //  */
   // exclude?: readonly AutoPath<T, string>[];
+  /**
+   * Filter options
+   */
+  filters?: ArrayFilterOptions[];
+  /**
+   * Sort options
+   */
+  sort?: ArraySortOptions[];
 } & ArrayPaginationOptions;
-// & ArraySortOptions;
 
 export type ArrayResult<T> = {
   items: T[];
