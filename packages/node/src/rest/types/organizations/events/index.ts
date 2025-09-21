@@ -48,7 +48,6 @@ export enum OrganizationEventType {
   Concert = "concert",
   Festival = "festival",
   HouseParty = "house_party",
-  ApartmentParty = "apartment_party",
   FriendsParty = "friends_party",
   Afterwork = "afterwork",
   DancingLunch = "dancing_lunch",
