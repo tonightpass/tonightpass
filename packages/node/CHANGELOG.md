@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.198
+
+### Patch Changes
+
+- [`b823be8`](https://github.com/tonightpass/tonightpass/commit/b823be8d08f2b4b1d82c6aec632cc967a8349508) Thanks [@antoinekm](https://github.com/antoinekm)! - - Remove ApartmentParty from OrganizationEventType enum (not commonly used in English)
+
 ## 0.0.197
 
 ### Patch Changes
