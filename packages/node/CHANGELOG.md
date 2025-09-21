@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.197
+
+### Patch Changes
+
+- [`c2a5839`](https://github.com/tonightpass/tonightpass/commit/c2a583955c814bf28144b09f6e2be0c5fb9c5a3d) Thanks [@antoinekm](https://github.com/antoinekm)! - Add new event types: House Party, Apartment Party, and Friends Party
+  - Add HouseParty, ApartmentParty, and FriendsParty to OrganizationEventType enum
+  - These new types support more intimate and private event categories
+
 ## 0.0.196
 
 ### Patch Changes
