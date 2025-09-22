@@ -51,7 +51,7 @@
     "@nestjs/platform-fastify": "^11.0.0",
     "@nestjs/testing": "^11.0.0",
     "@swc/core": "^1.4.8",
-    "@types/node": "22.18.3",
+    "@types/node": "22.18.6",
     "dotenv": "^17.0.0",
     "node-mailjet": "6.0.9",
     "tslib": "^2.5.0",
