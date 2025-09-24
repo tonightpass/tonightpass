@@ -29,7 +29,10 @@ export class CreateChannelDto {
     message: "Group channels can have at most 50 participants",
   })
   @IsString({ each: true })
-  @Matches(REGEX.USERNAME, { each: true })
+  @Matches(REGEX.USERNAME, { 
+    each: true, 
+    message: "user.username.format" 
+  })
   participantUsernames: string[];
 
   @IsOptional()

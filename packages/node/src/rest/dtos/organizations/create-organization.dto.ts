@@ -45,12 +45,18 @@ export class CreateOrganizationIdentityDto {
 
   @Matches(
     /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/organizations\/[\w-]+\/avatars\//,
+    {
+      message: "organization.avatar.url.invalid",
+    },
   )
   avatarUrl?: string;
 
   @IsOptional()
   @Matches(
     /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/organizations\/[\w-]+\/banners\//,
+    {
+      message: "organization.banner.url.invalid",
+    },
   )
   bannerUrl?: string;
 
