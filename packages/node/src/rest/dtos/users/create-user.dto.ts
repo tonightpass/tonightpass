@@ -60,7 +60,9 @@ class CreateUserIdentifierDto
   @IsString()
   @IsLowercase()
   @Length(3, 48)
-  @Matches(REGEX.USERNAME)
+  @Matches(REGEX.USERNAME, {
+    message: "user.username.format",
+  })
   username: string;
 }
 
@@ -87,6 +89,9 @@ export class CreateUserIdentityDto {
   @IsOptional()
   @Matches(
     /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(users\/[\w-]+\/avatars\/|temp\/users\/avatars\/)/,
+    {
+      message: "user.avatar.url.invalid",
+    },
   )
   avatarUrl?: string;
 

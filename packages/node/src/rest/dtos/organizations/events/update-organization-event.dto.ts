@@ -84,7 +84,9 @@ export class UpdateOrganizationEventDto
   @IsString()
   @IsLowercase()
   @Length(3, 48)
-  @Matches(REGEX.SLUG)
+  @Matches(REGEX.SLUG, {
+    message: "organization.event.slug.format",
+  })
   slug?: string;
 
   @IsOptional()
@@ -104,7 +106,10 @@ export class UpdateOrganizationEventDto
   @IsArray()
   @Matches(
     /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(temp\/events\/flyers\/|organizations\/[\w-]+\/events\/[\w-]+\/flyers\/)/,
-    { each: true },
+    { 
+      each: true,
+      message: "organization.event.flyers.url.invalid"
+    },
   )
   @AtLeastOneMediaOnUpdate()
   flyers?: string[];
@@ -113,7 +118,10 @@ export class UpdateOrganizationEventDto
   @IsArray()
   @Matches(
     /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(temp\/events\/trailers\/|organizations\/[\w-]+\/events\/[\w-]+\/trailers\/)/,
-    { each: true },
+    { 
+      each: true,
+      message: "organization.event.trailers.url.invalid"
+    },
   )
   trailers?: string[];
 

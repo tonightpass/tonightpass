@@ -19,7 +19,9 @@ export class UpdateOrganizationDto {
   @IsString()
   @IsLowercase()
   @Length(3, 48)
-  @Matches(REGEX.USERNAME)
+  @Matches(REGEX.USERNAME, {
+    message: "organization.slug.format",
+  })
   slug?: string;
 
   @IsObject()

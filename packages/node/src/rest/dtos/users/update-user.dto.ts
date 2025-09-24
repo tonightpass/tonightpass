@@ -66,7 +66,9 @@ class UpdateUserIdentifierDto
   @IsString()
   @IsLowercase()
   @Length(3, 48)
-  @Matches(REGEX.USERNAME)
+  @Matches(REGEX.USERNAME, {
+    message: "user.username.format",
+  })
   username?: string;
 }
 
