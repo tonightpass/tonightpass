@@ -111,9 +111,9 @@ export class BaseOrganizationEventDto {
   @ArrayMaxSize(25)
   @Matches(
     /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(temp\/events\/flyers\/|organizations\/[\w-]+\/events\/[\w-]+\/flyers\/)/,
-    { 
+    {
       each: true,
-      message: "organization.event.flyers.url.invalid"
+      message: "organization.event.flyers.url.invalid",
     },
   )
   @AtLeastOneMedia()
@@ -123,9 +123,9 @@ export class BaseOrganizationEventDto {
   @ArrayMaxSize(25)
   @Matches(
     /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(temp\/events\/trailers\/|organizations\/[\w-]+\/events\/[\w-]+\/trailers\/)/,
-    { 
+    {
       each: true,
-      message: "organization.event.trailers.url.invalid"
+      message: "organization.event.trailers.url.invalid",
     },
   )
   trailers: string[];
