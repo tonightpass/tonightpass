@@ -1,5 +1,14 @@
 # tonightpass
 
+## 0.0.200
+
+### Patch Changes
+
+- [`c5e18b7`](https://github.com/tonightpass/tonightpass/commit/c5e18b77eb037cf3e743d61f04253c807fd8e93f) Thanks [@antoinekm](https://github.com/antoinekm)! - Add API key support to TonightPass SDK
+  - Add optional `apiKey` parameter to `ClientOptions`
+  - Automatically inject `X-API-Key` header when API key is provided
+  - Maintain backward compatibility with existing code
+
 ## 0.0.199
 
 ### Patch Changes
