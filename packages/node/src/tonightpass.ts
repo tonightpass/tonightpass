@@ -1,5 +1,6 @@
 import { Client, ClientOptions } from "./rest";
 import {
+  apiKeys,
   auth,
   careers,
   channels,
@@ -16,6 +17,7 @@ import {
 export class TonightPass {
   public readonly client: Client;
 
+  public readonly apiKeys;
   public readonly auth;
   public readonly careers;
   public readonly channels;
@@ -31,6 +33,7 @@ export class TonightPass {
   constructor(options: ClientOptions) {
     this.client = new Client(options);
 
+    this.apiKeys = apiKeys(this.client);
     this.auth = auth(this.client);
     this.careers = careers(this.client);
     this.channels = channels(this.client);
