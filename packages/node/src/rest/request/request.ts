@@ -36,10 +36,22 @@ const instance = axios.create({
   withCredentials: isBrowser,
 });
 
-export interface APIRequestOptions extends Options {}
+export interface APIRequestOptions extends Options {
+  apiKey?: string;
+}
 
-export const request = async <T>(url: string, options?: Options) => {
-  const response = instance<APIResponse<T>>(url, { ...options })
+export const request = async <T>(url: string, options?: APIRequestOptions) => {
+  const { apiKey, ...requestOptions } = options || {};
+
+  const headers = {
+    ...requestOptions.headers,
+    ...(apiKey && { "X-API-Key": apiKey }),
+  };
+
+  const response = instance<APIResponse<T>>(url, {
+    ...requestOptions,
+    headers,
+  })
     .then((response) => response)
     .catch((error: Response<ErroredAPIResponse>) => {
       if (!error.data) {
