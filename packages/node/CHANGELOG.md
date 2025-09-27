@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.201
+
+### Patch Changes
+
+- [`db99f1d`](https://github.com/tonightpass/tonightpass/commit/db99f1d3b8255418e13a5a6af7b36378d0bc1ccb) Thanks [@antoinekm](https://github.com/antoinekm)! - Remove tier field from CreateApiKeyDto and UpdateApiKeyDto for security
+
+  API key tiers will now be managed manually through direct database operations instead of being user-controllable through the API. This prevents users from escalating their API key privileges.
+
 ## 0.0.200
 
 ### Patch Changes
