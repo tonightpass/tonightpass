@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.204
+
+### Patch Changes
+
+- [`292ef9b`](https://github.com/tonightpass/tonightpass/commit/292ef9bc7e969f706a942c900e296a6656d3293f) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix FormData upload handling in HTTP client
+
+  Fixed an issue where FormData uploads were failing due to incorrect Content-Type header management. The transformRequest function now properly handles the Content-Type header by only setting it to "application/json" for non-FormData requests, allowing the browser to automatically set the correct multipart/form-data Content-Type with proper boundaries for file uploads.
+
 ## 0.0.203
 
 ### Patch Changes
