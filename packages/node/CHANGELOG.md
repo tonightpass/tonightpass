@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.205
+
+### Patch Changes
+
+- [`bfae930`](https://github.com/tonightpass/tonightpass/commit/bfae9307d5761e8b6d2d41dc752c9a13aed86f1e) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix FormData Content-Type header handling with normalized headers
+
+  Improved FormData upload handling in the HTTP client by normalizing all header keys to lowercase and properly removing content-type headers. This ensures that FormData requests allow the browser to set the correct multipart/form-data Content-Type with proper boundaries, fixing file upload issues that were causing JSON parsing errors.
+
 ## 0.0.204
 
 ### Patch Changes
