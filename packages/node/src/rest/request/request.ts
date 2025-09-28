@@ -12,14 +12,7 @@ const instance = axios.create({
   responseType: "json",
   transformRequest: [
     function (data, headers) {
-      console.log("transformRequest called with:", {
-        dataType: data?.constructor?.name,
-        isFormData: data instanceof FormData,
-        headers,
-      });
-
       if (data instanceof FormData) {
-        console.log("FormData detected - removing Content-Type header");
         if (headers && typeof headers === "object") {
           const normalizedHeaders = {} as { [key: string]: string };
           for (const [key, value] of Object.entries(
@@ -34,12 +27,9 @@ const instance = axios.create({
             (key) => delete (headers as { [key: string]: string })[key],
           );
           Object.assign(headers, normalizedHeaders);
-          console.log("Content-Type removed and headers normalized");
         }
-        console.log("Final headers for FormData:", headers);
         return data;
       } else {
-        console.log("Regular data - setting Content-Type to application/json");
         if (headers) {
           (
             headers as {
@@ -47,7 +37,6 @@ const instance = axios.create({
             }
           )["Content-Type"] = "application/json";
         }
-        console.log("Final headers for JSON:", headers);
         return JSON.stringify(data);
       }
     },
