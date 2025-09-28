@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.206
+
+### Patch Changes
+
+- [`0cf8d2b`](https://github.com/tonightpass/tonightpass/commit/0cf8d2b85181f9f8acb071e3fb35ef3017472ae0) Thanks [@antoinekm](https://github.com/antoinekm)! - Remove debug console logs from HTTP client
+
+  Cleaned up transformRequest function by removing temporary debug console.log statements that were added during FormData header troubleshooting. The FormData handling functionality remains intact while removing unnecessary logging.
+
 ## 0.0.205
 
 ### Patch Changes
