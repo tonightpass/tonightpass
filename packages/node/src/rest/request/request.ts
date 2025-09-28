@@ -21,16 +21,16 @@ const instance = axios.create({
           delete headers["Content-Type"];
         }
         return data;
+      } else {
+        if (headers) {
+          (
+            headers as {
+              [name: string]: string;
+            }
+          )["Content-Type"] = "application/json";
+        }
+        return JSON.stringify(data);
       }
-
-      if (headers) {
-        (
-          headers as {
-            [name: string]: string;
-          }
-        )["Content-Type"] = "application/json";
-      }
-      return JSON.stringify(data);
     },
   ],
   withCredentials: isBrowser,
