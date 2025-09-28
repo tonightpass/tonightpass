@@ -1,5 +1,12 @@
 # tonightpass
 
+## 0.0.203
+
+### Patch Changes
+
+- [`178b792`](https://github.com/tonightpass/tonightpass/commit/178b7929d33db9dc08f9397ea67365b9e588447d) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix notifications read endpoint body parameter
+  - Change body parameter from `undefined` to `null` in notifications
+
 ## 0.0.202
 
 ### Patch Changes
