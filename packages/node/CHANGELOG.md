@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.202
+
+### Patch Changes
+
+- [`3bafc16`](https://github.com/tonightpass/tonightpass/commit/3bafc1658b91186e603b62bb6e2cdfb2d70a8e40) Thanks [@antoinekm](https://github.com/antoinekm)! - Add automatic mark as read functionality for notifications
+  - Add new PUT endpoint `/users/@me/notifications/read` to mark all user notifications as read
+  - Add `read` method to `usersNotifications` SDK
+
 ## 0.0.201
 
 ### Patch Changes
