@@ -28,7 +28,10 @@ export const auth = sdk((client) => ({
       params?: Record<string, ParamValue>,
     ) => {
       if (isBrowser) {
-        window.location.href = client.url(`/oauth2/${provider}`, params || {});
+        window.location.href = client.url("/oauth2/:provider", {
+          provider,
+          ...params,
+        });
       } else {
         throw new Error(`${provider} OAuth2 is only available in the browser`);
       }
