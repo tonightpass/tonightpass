@@ -7,8 +7,19 @@ import {
 import { Endpoint } from "../../endpoints";
 import { User } from "../users";
 
+export enum OAuth2Provider {
+  Google = "google",
+  Facebook = "facebook",
+  Apple = "apple",
+  Twitter = "twitter",
+}
+
 export type RecoveryResponse = {
   to: string;
+};
+
+export type OAuth2ProviderParams = {
+  provider: OAuth2Provider;
 };
 
 export type AuthEndpoints =
@@ -18,9 +29,6 @@ export type AuthEndpoints =
   | Endpoint<"POST", "/auth/refresh-token", null, null>
   | Endpoint<"POST", "/auth/recovery", RecoveryResponse, RecoveryDto>
   | Endpoint<"POST", "/auth/recovery/reset", null, RecoveryResetDto>
-  | Endpoint<"GET", "/oauth2/google", void>
-  | Endpoint<"GET", "/oauth2/google/callback", void>
-  | Endpoint<"GET", "/oauth2/facebook", void>
-  | Endpoint<"GET", "/oauth2/facebook/callback", void>
-  | Endpoint<"GET", "/oauth2/twitter", void>
-  | Endpoint<"GET", "/oauth2/twitter/callback", void>;
+  | Endpoint<"GET", "/oauth2/:provider", void, OAuth2ProviderParams>
+  | Endpoint<"GET", "/oauth2/:provider/callback", void, OAuth2ProviderParams>
+  | Endpoint<"DELETE", "/oauth2/:provider", void>;
