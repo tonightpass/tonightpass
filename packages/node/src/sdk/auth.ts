@@ -6,6 +6,7 @@ import {
   SignInUserDto,
   RecoveryDto,
   RecoveryResetDto,
+  OAuth2Provider,
 } from "../rest";
 import { isBrowser } from "../utils";
 
@@ -20,32 +21,17 @@ export const auth = sdk((client) => ({
     client.post("/auth/recovery/reset", data),
 
   oauth2: {
-    google: {
-      connect: (params?: Record<string, ParamValue>) => {
-        if (isBrowser) {
-          window.location.href = client.url("/oauth2/google", params || {});
-        } else {
-          throw new Error("Google OAuth2 is only available in the browser");
-        }
-      },
-    },
-    twitter: {
-      connect: (params?: Record<string, ParamValue>) => {
-        if (isBrowser) {
-          window.location.href = client.url("/oauth2/twitter", params || {});
-        } else {
-          throw new Error("Twitter OAuth2 is only available in the browser");
-        }
-      },
-    },
-    facebook: {
-      connect: (params?: Record<string, ParamValue>) => {
-        if (isBrowser) {
-          window.location.href = client.url("/oauth2/facebook", params || {});
-        } else {
-          throw new Error("Facebook OAuth2 is only available in the browser");
-        }
-      },
+    disconnect: async (provider: OAuth2Provider) =>
+      client.delete("/oauth2/:provider", undefined, { provider }),
+    connect: (
+      provider: OAuth2Provider,
+      params?: Record<string, ParamValue>,
+    ) => {
+      if (isBrowser) {
+        window.location.href = client.url(`/oauth2/${provider}`, params || {});
+      } else {
+        throw new Error(`${provider} OAuth2 is only available in the browser`);
+      }
     },
   },
 }));

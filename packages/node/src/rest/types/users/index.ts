@@ -5,6 +5,7 @@ import {
   Location,
   UserBookingEndpoints,
   UserProfile,
+  OAuth2Provider,
 } from "..";
 import { UserNotificationEndpoints } from "./notifications";
 import { UserPostEndpoints } from "./posts";
@@ -24,6 +25,7 @@ export type User = Base & {
   addresses: Location[];
   preferences: UserPreferences;
   connections: UserConnection[];
+  oauthProviders: UserOAuthProvider[];
   isVerified: boolean;
   isOfficial: boolean;
 };
@@ -32,8 +34,6 @@ export type UserIdentifier = {
   email?: string;
   phoneNumber?: string;
   username: string;
-
-  [key: string]: string | undefined;
 };
 
 export type UserIdentity = UserProfile & {
@@ -77,6 +77,16 @@ export type UserConnection = {
   client: UserConnectionClient;
   updatedAt: Date;
   createdAt: Date;
+};
+
+export type UserOAuthProvider = Base & {
+  provider: OAuth2Provider;
+  providerId: string;
+  displayName?: string;
+  username?: string;
+  email?: string;
+  emailVerified: boolean;
+  lastUsedAt?: Date;
 };
 
 export type UserConnectionOS = {
