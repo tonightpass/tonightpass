@@ -21,8 +21,6 @@ export const auth = sdk((client) => ({
     client.post("/auth/recovery/reset", data),
 
   oauth2: {
-    disconnect: async (provider: OAuth2Provider) =>
-      client.delete("/oauth2/:provider", undefined, { provider }),
     connect: (
       provider: OAuth2Provider,
       params?: Record<string, ParamValue>,
@@ -36,5 +34,7 @@ export const auth = sdk((client) => ({
         throw new Error(`${provider} OAuth2 is only available in the browser`);
       }
     },
+    disconnect: async (provider: OAuth2Provider) =>
+      client.delete("/oauth2/:provider", undefined, { provider }),
   },
 }));
