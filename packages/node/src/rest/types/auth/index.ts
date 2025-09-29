@@ -31,4 +31,10 @@ export type AuthEndpoints =
   | Endpoint<"POST", "/auth/recovery/reset", null, RecoveryResetDto>
   | Endpoint<"GET", "/oauth2/:provider", void, OAuth2ProviderParams>
   | Endpoint<"GET", "/oauth2/:provider/callback", void, OAuth2ProviderParams>
-  | Endpoint<"DELETE", "/oauth2/:provider", void>;
+  | Endpoint<"GET", `/oauth2/${OAuth2Provider.Google}`, void>
+  | Endpoint<"GET", `/oauth2/${OAuth2Provider.Google}/callback`, void>
+  | Endpoint<"GET", `/oauth2/${OAuth2Provider.Facebook}`, void>
+  | Endpoint<"GET", `/oauth2/${OAuth2Provider.Facebook}/callback`, void>
+  | Endpoint<"GET", `/oauth2/${OAuth2Provider.Twitter}`, void>
+  | Endpoint<"GET", `/oauth2/${OAuth2Provider.Twitter}/callback`, void>
+  | Endpoint<"DELETE", "/oauth2/:provider", void, OAuth2ProviderParams>;
