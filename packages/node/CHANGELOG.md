@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.208
+
+### Patch Changes
+
+- [`d00776d`](https://github.com/tonightpass/tonightpass/commit/d00776da94e47cfe7fb0acbf8da331187572d673) Thanks [@antoinekm](https://github.com/antoinekm)! - Add parameterized OAuth2 route types alongside existing hardcoded routes for better flexibility in API client implementations
+
 ## 0.0.207
 
 ### Patch Changes
