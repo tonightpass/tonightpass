@@ -1,4 +1,3 @@
-import { esbuildDecorators } from "@anatine/esbuild-decorators";
 import { defineConfig, Options } from "tsup";
 
 const config: Options = {
@@ -11,7 +10,6 @@ const config: Options = {
   minify: true,
   treeshake: true,
   dts: true,
-  esbuildPlugins: [esbuildDecorators()],
 };
 
 export default defineConfig(config);
