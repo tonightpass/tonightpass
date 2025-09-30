@@ -1,5 +1,15 @@
 # tonightpass
 
+## 0.0.209
+
+### Patch Changes
+
+- [`591a33c`](https://github.com/tonightpass/tonightpass/commit/591a33cba93c5f1b4e626914ab89d43dc1d30e90) Thanks [@antoinekm](https://github.com/antoinekm)! - Add in-memory cache support to the REST client
+  - Add `CacheManager` class for managing HTTP request cache
+  - Add `cache` option to `ClientOptions` with configurable TTL and methods
+  - Cache GET requests by default to reduce API calls during build time
+  - Add `clearCache()` and `getCacheStats()` methods to Client
+
 ## 0.0.208
 
 ### Patch Changes
