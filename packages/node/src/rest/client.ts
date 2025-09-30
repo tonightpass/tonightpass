@@ -2,6 +2,7 @@ import { pathcat } from "pathcat";
 import { Options, Response as RedaxiosResponse } from "redaxios";
 
 import { ParamValue, Query } from "..";
+import { CacheManager, CacheOptions } from "./cache";
 import { Endpoints } from "./endpoints";
 import { APIRequestOptions, request } from "./request";
 import { DEFAULT_API_URL } from "../constants";
@@ -76,11 +77,13 @@ export class TonightPassAPIError<T> extends Error {
 export interface ClientOptions {
   readonly baseURL: string;
   readonly apiKey?: string;
+  readonly cache?: CacheOptions;
 }
 
 export class Client {
   private options;
   private apiKey?: string;
+  private cacheManager?: CacheManager;
   public readonly url;
 
   constructor(options: ClientOptions) {
@@ -90,11 +93,29 @@ export class Client {
       const baseURL = this.options.baseURL || DEFAULT_API_URL;
       return pathcat(baseURL, path, params);
     };
+
+    if (options.cache?.enabled) {
+      this.cacheManager = new CacheManager(options.cache);
+    }
   }
 
   setOptions(options: ClientOptions) {
     this.options = options;
     this.apiKey = options.apiKey;
+
+    if (options.cache?.enabled) {
+      this.cacheManager = new CacheManager(options.cache);
+    } else {
+      this.cacheManager = undefined;
+    }
+  }
+
+  clearCache() {
+    this.cacheManager?.clear();
+  }
+
+  getCacheStats() {
+    return this.cacheManager?.stats();
   }
 
   async get<Path extends PathsFor<"GET">>(
@@ -186,6 +207,13 @@ export class Client {
       }
     }
 
+    if (this.cacheManager) {
+      const cached = this.cacheManager.get<T>(method, url);
+      if (cached !== null) {
+        return cached;
+      }
+    }
+
     const response: RedaxiosResponse<APIResponse<T>> = await request<T>(url, {
       method,
       data: body,
@@ -197,6 +225,10 @@ export class Client {
 
     if (!result.success) {
       throw new TonightPassAPIError<T>(response, result);
+    }
+
+    if (this.cacheManager) {
+      this.cacheManager.set(method, url, result.data);
     }
 
     return result.data;
