@@ -91,12 +91,17 @@ export type OrganizationEventArrayOptions = ArrayOptions<OrganizationEvent> & {
   styles?: string | string[];
 };
 
+export type SearchOrganizationEventsOptions =
+  ArrayOptions<OrganizationEvent> & {
+    q: string;
+  };
+
 export type OrganizationEventEndpoints =
   | Endpoint<
       "GET",
       "/organizations/events/search",
-      OrganizationEvent[],
-      { q: string; limit?: number }
+      ArrayResult<OrganizationEvent>,
+      SearchOrganizationEventsOptions
     >
   | Endpoint<
       "GET",

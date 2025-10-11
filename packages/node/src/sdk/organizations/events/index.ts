@@ -14,8 +14,8 @@ import {
 import { buildFileFormData } from "../../../utils";
 
 export const organizationsEvents = (client: Client) => ({
-  search: async (query: string, limit?: number) =>
-    client.get("/organizations/events/search", { q: query, limit }),
+  search: async (query: string, options?: ArrayOptions<OrganizationEvent>) =>
+    client.get("/organizations/events/search", { q: query, ...options }),
   getAll: async (
     organizationSlug?: string,
     options?: OrganizationEventArrayOptions,

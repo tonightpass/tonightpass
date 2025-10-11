@@ -60,7 +60,18 @@ export type OrganizationProfileMetadata = BaseProfileMetadata & {
 
 export type ProfileMetadata = UserProfileMetadata | OrganizationProfileMetadata;
 
+export type SearchProfilesOptions = ArrayOptions<Profile> & {
+  q: string;
+};
+
 export type ProfileEndpoints =
+  | Endpoint<"GET", "/profiles", ArrayResult<Profile>, ArrayOptions<Profile>>
+  | Endpoint<
+      "GET",
+      "/profiles/search",
+      ArrayResult<Profile>,
+      SearchProfilesOptions
+    >
   | Endpoint<"GET", "/profiles/:username", Profile>
   | Endpoint<
       "GET",
