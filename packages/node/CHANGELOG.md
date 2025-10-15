@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.211
+
+### Patch Changes
+
+- [`9330cc8`](https://github.com/tonightpass/tonightpass/commit/9330cc84150bec31f61a0cc11f1fd177fe57da90) Thanks [@antoinekm](https://github.com/antoinekm)! - Add Google One Tap authentication support with new `/auth/google-one-tap` endpoint and `GoogleOneTapDto`
+
 ## 0.0.210
 
 ### Patch Changes
