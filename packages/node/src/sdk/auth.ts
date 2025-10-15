@@ -3,6 +3,7 @@ import { ParamValue } from "pathcat";
 import { sdk } from "./builder";
 import {
   CreateUserDto,
+  GoogleOneTapDto,
   SignInUserDto,
   RecoveryDto,
   RecoveryResetDto,
@@ -19,6 +20,9 @@ export const auth = sdk((client) => ({
   recovery: async (data: RecoveryDto) => client.post("/auth/recovery", data),
   recoveryReset: async (data: RecoveryResetDto) =>
     client.post("/auth/recovery/reset", data),
+
+  googleOneTap: async (data: GoogleOneTapDto) =>
+    client.post("/auth/google-one-tap", data),
 
   oauth2: {
     connect: (
