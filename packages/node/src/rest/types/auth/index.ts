@@ -1,5 +1,6 @@
 import {
   CreateUserDto,
+  GoogleOneTapDto,
   SignInUserDto,
   RecoveryDto,
   RecoveryResetDto,
@@ -25,6 +26,7 @@ export type AuthEndpoints =
   | Endpoint<"POST", "/auth/refresh-token", null, null>
   | Endpoint<"POST", "/auth/recovery", RecoveryResponse, RecoveryDto>
   | Endpoint<"POST", "/auth/recovery/reset", null, RecoveryResetDto>
+  | Endpoint<"POST", "/auth/google-one-tap", User, GoogleOneTapDto>
   | Endpoint<"GET", "/oauth2/:provider", void>
   | Endpoint<"GET", "/oauth2/:provider/callback", void>
   | Endpoint<"GET", `/oauth2/${OAuth2Provider.Google}`, void>
