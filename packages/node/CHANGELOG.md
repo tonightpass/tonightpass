@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.212
+
+### Patch Changes
+
+- [`fb813d7`](https://github.com/tonightpass/tonightpass/commit/fb813d7b78025f778a3b160bc367f815d2fcb047) Thanks [@antoinekm](https://github.com/antoinekm)! - Move Google One Tap authentication to OAuth2 endpoint `/oauth2/google/one-tap` and update SDK to `tnp.auth.oauth2.googleOneTap()`
+
 ## 0.0.211
 
 ### Patch Changes
