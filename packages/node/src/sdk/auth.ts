@@ -21,9 +21,6 @@ export const auth = sdk((client) => ({
   recoveryReset: async (data: RecoveryResetDto) =>
     client.post("/auth/recovery/reset", data),
 
-  googleOneTap: async (data: GoogleOneTapDto) =>
-    client.post("/auth/google-one-tap", data),
-
   oauth2: {
     connect: (
       provider: OAuth2Provider,
@@ -40,5 +37,7 @@ export const auth = sdk((client) => ({
     },
     disconnect: async (provider: OAuth2Provider) =>
       client.delete("/oauth2/:provider", undefined, { provider }),
+    googleOneTap: async (data: GoogleOneTapDto) =>
+      client.post("/oauth2/google/one-tap", data),
   },
 }));
