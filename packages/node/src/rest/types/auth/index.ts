@@ -26,11 +26,16 @@ export type AuthEndpoints =
   | Endpoint<"POST", "/auth/refresh-token", null, null>
   | Endpoint<"POST", "/auth/recovery", RecoveryResponse, RecoveryDto>
   | Endpoint<"POST", "/auth/recovery/reset", null, RecoveryResetDto>
-  | Endpoint<"POST", "/auth/google-one-tap", User, GoogleOneTapDto>
   | Endpoint<"GET", "/oauth2/:provider", void>
   | Endpoint<"GET", "/oauth2/:provider/callback", void>
   | Endpoint<"GET", `/oauth2/${OAuth2Provider.Google}`, void>
   | Endpoint<"GET", `/oauth2/${OAuth2Provider.Google}/callback`, void>
+  | Endpoint<
+      "POST",
+      `/oauth2/${OAuth2Provider.Google}/one-tap`,
+      User,
+      GoogleOneTapDto
+    >
   | Endpoint<"GET", `/oauth2/${OAuth2Provider.Facebook}`, void>
   | Endpoint<"GET", `/oauth2/${OAuth2Provider.Facebook}/callback`, void>
   | Endpoint<"GET", `/oauth2/${OAuth2Provider.Twitter}`, void>
