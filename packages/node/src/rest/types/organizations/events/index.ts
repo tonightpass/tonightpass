@@ -96,12 +96,21 @@ export type SearchOrganizationEventsOptions =
     q: string;
   };
 
+export type OrganizationEventCalendar = {
+  [date: string]: OrganizationEvent[];
+};
+
 export type OrganizationEventEndpoints =
   | Endpoint<
       "GET",
       "/organizations/events/search",
       ArrayResult<OrganizationEvent>,
       SearchOrganizationEventsOptions
+    >
+  | Endpoint<
+      "GET",
+      "/organizations/events/calendar/:year/:month",
+      OrganizationEventCalendar
     >
   | Endpoint<
       "GET",
