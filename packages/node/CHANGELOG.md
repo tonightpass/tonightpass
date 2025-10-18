@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.213
+
+### Patch Changes
+
+- [`b96a343`](https://github.com/tonightpass/tonightpass/commit/b96a34368d4e09ad17fa600607fe11f42286472c) Thanks [@antoinekm](https://github.com/antoinekm)! - Add calendar endpoint for events grouped by date
+
 ## 0.0.212
 
 ### Patch Changes
