@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.214
+
+### Patch Changes
+
+- [`fbd2a2e`](https://github.com/tonightpass/tonightpass/commit/fbd2a2efce4b05ee5c52427d3874226132021610) Thanks [@antoinekm](https://github.com/antoinekm)! - Add TikTok OAuth provider and remove deprecated Apple provider from OAuth2Provider enum
+
 ## 0.0.213
 
 ### Patch Changes
