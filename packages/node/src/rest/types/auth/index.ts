@@ -12,7 +12,6 @@ export enum OAuth2Provider {
   Google = "google",
   Facebook = "facebook",
   Twitter = "twitter",
-  TikTok = "tiktok",
 }
 
 export type RecoveryResponse = {
