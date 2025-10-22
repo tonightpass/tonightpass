@@ -11,8 +11,8 @@ import { User } from "../users";
 export enum OAuth2Provider {
   Google = "google",
   Facebook = "facebook",
-  Apple = "apple",
   Twitter = "twitter",
+  TikTok = "tiktok",
 }
 
 export type RecoveryResponse = {
