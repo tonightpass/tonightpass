@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.215
+
+### Patch Changes
+
+- [`7e11048`](https://github.com/tonightpass/tonightpass/commit/7e1104835c1eb6ee34c060500d83e8accf8f68ce) Thanks [@antoinekm](https://github.com/antoinekm)! - Add AuthMethod type for authentication method tracking (OAuth2Provider | "password" | null)
+
+- [`205b9c3`](https://github.com/tonightpass/tonightpass/commit/205b9c39edd8bc6412c72c856fb96e809848f16a) Thanks [@antoinekm](https://github.com/antoinekm)! - Remove TikTok OAuth provider from OAuth2Provider enum
+
 ## 0.0.214
 
 ### Patch Changes
