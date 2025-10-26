@@ -1,5 +1,14 @@
 # tonightpass
 
+## 0.0.216
+
+### Patch Changes
+
+- [`b0d35af`](https://github.com/tonightpass/tonightpass/commit/b0d35af07f06b538e9aae9c1096419589366f2ad) Thanks [@antoinekm](https://github.com/antoinekm)! - Add ticket usage validation endpoint
+  - Add `PUT /users/bookings/tickets/:ticketId/use` endpoint to mark booking tickets as used
+  - Add `usersBookings.tickets.use()` method in SDK to increment ticket use count
+  - Enable ticket scanning and validation functionality for event organizers
+
 ## 0.0.215
 
 ### Patch Changes
