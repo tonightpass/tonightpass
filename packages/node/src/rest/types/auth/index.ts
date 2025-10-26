@@ -14,6 +14,8 @@ export enum OAuth2Provider {
   Twitter = "twitter",
 }
 
+export type AuthMethod = OAuth2Provider | "password";
+
 export type RecoveryResponse = {
   to: string;
 };
