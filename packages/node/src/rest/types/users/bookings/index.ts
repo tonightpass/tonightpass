@@ -55,4 +55,13 @@ export type UserBookingEndpoints =
         tokenId: string;
         tokenValue: string;
       }
+    >
+  | Endpoint<
+      "PUT",
+      "/users/bookings/tickets/:ticketId/use",
+      UserBookingTicket,
+      {
+        tokenId: string;
+        tokenValue: string;
+      }
     >;
