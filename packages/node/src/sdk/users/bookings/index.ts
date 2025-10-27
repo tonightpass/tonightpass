@@ -1,3 +1,4 @@
+import { usersBookingsTickets } from "./tickets";
 import { sdk } from "../../builder";
 
 export const usersBookings = sdk((client) => ({
@@ -5,15 +6,5 @@ export const usersBookings = sdk((client) => ({
   get: async (bookingId: string) =>
     client.get("/users/bookings/:bookingId", { bookingId }),
   me: async () => client.get("/users/@me/bookings"),
-  tickets: {
-    use: async (ticketId: string, tokenId: string, tokenValue: string) =>
-      client.put(
-        "/users/bookings/tickets/:ticketId/use",
-        {
-          tokenId,
-          tokenValue,
-        },
-        { ticketId },
-      ),
-  },
+  tickets: usersBookingsTickets(client),
 }));

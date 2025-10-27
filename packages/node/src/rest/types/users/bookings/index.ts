@@ -3,21 +3,15 @@ import {
   ArrayResult,
   Base,
   OrganizationEvent,
-  OrganizationEventTicket,
   User,
-  UserToken,
 } from "../..";
+import { UserBookingTicket, UserBookingTicketEndpoints } from "./tickets";
 import { Endpoint } from "../../../endpoints";
 import { Order } from "../../orders";
 
-export type UserBookingWithoutTickets = Omit<UserBooking, "tickets">;
+export * from "./tickets";
 
-export type UserBookingTicket = Base & {
-  booking: UserBookingWithoutTickets;
-  ticket: OrganizationEventTicket;
-  token: UserToken;
-  useCount: number;
-};
+export type UserBookingWithoutTickets = Omit<UserBooking, "tickets">;
 
 export type UserBooking = Base & {
   tickets: UserBookingTicket[];
@@ -47,21 +41,4 @@ export type UserBookingEndpoints =
     >
   | Endpoint<"GET", "/users/bookings/:bookingId", UserBooking>
   | Endpoint<"GET", "/users/@me/bookings/:bookingId", UserBooking>
-  | Endpoint<
-      "GET",
-      "/users/bookings/tickets/:ticketId",
-      UserBookingTicket,
-      {
-        tokenId: string;
-        tokenValue: string;
-      }
-    >
-  | Endpoint<
-      "PUT",
-      "/users/bookings/tickets/:ticketId/use",
-      UserBookingTicket,
-      {
-        tokenId: string;
-        tokenValue: string;
-      }
-    >;
+  | UserBookingTicketEndpoints;
