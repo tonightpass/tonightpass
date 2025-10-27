@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.217
+
+### Patch Changes
+
+- [`e48e006`](https://github.com/tonightpass/tonightpass/commit/e48e0064a3903651161f7f4ba5f3b56834fe1d59) Thanks [@antoinekm](https://github.com/antoinekm)! - Refactor booking tickets into separate files for better code organization. Split ticket types and SDK functions into dedicated files under `users/bookings/tickets/` while maintaining backward compatibility through re-exports.
+
 ## 0.0.216
 
 ### Patch Changes
