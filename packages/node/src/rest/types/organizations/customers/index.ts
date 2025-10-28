@@ -8,6 +8,7 @@ export type OrganizationCustomer = UserProfile & {
   firstName: string;
   lastName: string;
   fullName: string;
+  birthDate: Date;
   metadata: OrganizationCustomerMetadata;
 };
 
