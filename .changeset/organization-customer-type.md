@@ -1,5 +1,5 @@
 ---
-"tonightpass": minor
+"tonightpass": patch
 ---
 
 Add OrganizationCustomer and OrganizationOrder types with SDK endpoints
