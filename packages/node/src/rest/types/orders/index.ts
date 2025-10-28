@@ -1,12 +1,11 @@
 import Stripe from "stripe";
 
-import { ArrayOptions, ArrayResult, Base } from "..";
+import { ArrayOptions, ArrayResult, Base, UserProfile } from "..";
 import { Endpoint } from "../../endpoints";
-import { User } from "../users";
 
 export type Order = Base & {
   invoice: Stripe.Invoice;
-  user: User;
+  user: UserProfile;
 };
 
 export type OrderEndpoints =
