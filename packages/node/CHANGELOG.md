@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.221
+
+### Patch Changes
+
+- [`0f85375`](https://github.com/tonightpass/tonightpass/commit/0f8537573b228b1024365d7f69d5c8d3a9658d13) Thanks [@antoinekm](https://github.com/antoinekm)! - Add birthDate field to OrganizationCustomer type to display customer age
+
 ## 0.0.220
 
 ### Patch Changes
