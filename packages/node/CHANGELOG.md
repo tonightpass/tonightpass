@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.218
+
+### Patch Changes
+
+- [`0c768fd`](https://github.com/tonightpass/tonightpass/commit/0c768fd4c431f242cd0d790a7b78238a4f0ad000) Thanks [@antoinekm](https://github.com/antoinekm)! - Add `UserCustomer` type for organization access to customer information. This new type extends `UserProfile` and includes additional private information (email, phone, firstName, lastName) and customer statistics (bookingsCount, eventsAttendedCount, totalSpent, lastBookingAt) that are useful for event organizers.
+
 ## 0.0.217
 
 ### Patch Changes
