@@ -8,9 +8,11 @@ import {
   OrganizationProfile,
 } from "..";
 import { OrganizationAnalyticsEndpoints } from "./analytics";
+import { OrganizationCustomersEndpoints } from "./customers";
 import { OrganizationEvent, OrganizationEventEndpoints } from "./events";
 import { OrganizationEventTicket } from "./events/tickets";
 import { OrganizationMember, OrganizationMembersEndpoints } from "./members";
+import { OrganizationOrdersEndpoints } from "./orders";
 import { CreateOrganizationDto, UpdateOrganizationDto } from "../../dtos";
 import { Endpoint } from "../../endpoints";
 
@@ -18,6 +20,8 @@ export * from "./events";
 export * from "./members";
 export * from "./tokens";
 export * from "./analytics";
+export * from "./customers";
+export * from "./orders";
 
 export type Organization = Base & {
   slug: string;
@@ -81,4 +85,6 @@ export type OrganizationEndpoints =
   | Endpoint<"GET", "/organizations/:organizationSlug/billing/dashboard", void>
   | OrganizationEventEndpoints
   | OrganizationMembersEndpoints
-  | OrganizationAnalyticsEndpoints;
+  | OrganizationAnalyticsEndpoints
+  | OrganizationCustomersEndpoints
+  | OrganizationOrdersEndpoints;
