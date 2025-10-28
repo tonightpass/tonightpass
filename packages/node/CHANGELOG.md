@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.220
+
+### Patch Changes
+
+- [`44b602f`](https://github.com/tonightpass/tonightpass/commit/44b602f079cdbd23fba35575b7713ca1f81dbfac) Thanks [@antoinekm](https://github.com/antoinekm)! - Change Order user field from User to UserProfile for better security
+  - Changed `Order.user` from `User` to `UserProfile` to only expose public user information
+  - Prepares for future multi-user payment system where users should only see public profiles
+
 ## 0.0.219
 
 ### Patch Changes
