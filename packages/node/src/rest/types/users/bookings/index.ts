@@ -2,8 +2,8 @@ import {
   ArrayOptions,
   ArrayResult,
   Base,
+  OrganizationCustomer,
   OrganizationEvent,
-  User,
 } from "../..";
 import { UserBookingTicket, UserBookingTicketEndpoints } from "./tickets";
 import { Endpoint } from "../../../endpoints";
@@ -16,7 +16,7 @@ export type UserBookingWithoutTickets = Omit<UserBooking, "tickets">;
 export type UserBooking = Base & {
   tickets: UserBookingTicket[];
   order: Order;
-  user: User;
+  customer: OrganizationCustomer;
   event: OrganizationEvent;
 };
 

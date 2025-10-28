@@ -1,6 +1,8 @@
 import { organizationsBilling } from "./billing";
+import { organizationsCustomers } from "./customers";
 import { organizationsEvents } from "./events";
 import { organizationsMembers } from "./members";
+import { organizationsOrders } from "./orders";
 import {
   CreateOrganizationDto,
   UpdateOrganizationDto,
@@ -39,4 +41,6 @@ export const organizations = sdk((client) => ({
   billing: organizationsBilling(client),
   events: organizationsEvents(client),
   members: organizationsMembers(client),
+  customers: organizationsCustomers(client),
+  orders: organizationsOrders(client),
 }));
