@@ -1,5 +1,19 @@
 # tonightpass
 
+## 0.0.223
+
+### Patch Changes
+
+- [`b4a4670`](https://github.com/tonightpass/tonightpass/commit/b4a4670c868d56d27904de3da2af9e4ee4a031b6) Thanks [@antoinekm](https://github.com/antoinekm)! - Breaking: Migrate route patterns to use @ for identifiers and ~ for contextual routes
+  - Changed `/users/:username` to `/users/@:username`
+  - Changed `/organizations/:organizationSlug` to `/organizations/@:organizationSlug`
+  - Changed `/profiles/:username` to `/profiles/@:username`
+  - Changed `/users/@me` to `/users/~me`
+  - Changed `/channels/@me` to `/channels/~me`
+  - Changed `/organizations/:organizationSlug/members/@me` to `/organizations/@:organizationSlug/members/~me`
+
+  This change prevents route collisions between user slugs and static routes (e.g., a user named "events" no longer conflicts with `/organizations/events`). The `@` prefix clearly indicates public identifiers while `~` indicates contextual/self routes.
+
 ## 0.0.222
 
 ### Patch Changes
