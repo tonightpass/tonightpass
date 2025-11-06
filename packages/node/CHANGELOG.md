@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.224
+
+### Patch Changes
+
+- [`2d8f4a9`](https://github.com/tonightpass/tonightpass/commit/2d8f4a93c472b35dd21d5ac29e6266267e9ec5dc) Thanks [@antoinekm](https://github.com/antoinekm)! - Add birthDateLastUpdatedAt field to UserIdentity to track birth date updates and enforce yearly update limit
+
 ## 0.0.223
 
 ### Patch Changes
