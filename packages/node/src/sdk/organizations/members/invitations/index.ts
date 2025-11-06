@@ -6,7 +6,7 @@ import {
 
 export const invitations = (client: Client) => ({
   getLinks: async (organizationSlug: string) =>
-    client.get("/organizations/:organizationSlug/members/invitations/links", {
+    client.get("/organizations/@:organizationSlug/members/invitations/links", {
       organizationSlug,
     }),
   createLink: async (
@@ -14,7 +14,7 @@ export const invitations = (client: Client) => ({
     data: CreateOrganizationMemberInvitationLinkDto = {},
   ) =>
     client.post(
-      "/organizations/:organizationSlug/members/invitations/links",
+      "/organizations/@:organizationSlug/members/invitations/links",
       data,
       {
         organizationSlug,
@@ -25,7 +25,7 @@ export const invitations = (client: Client) => ({
     data: AcceptOrganizationMemberInvitationDto,
   ) =>
     client.post(
-      "/organizations/:organizationSlug/members/invitations/accept",
+      "/organizations/@:organizationSlug/members/invitations/accept",
       data,
       {
         organizationSlug,

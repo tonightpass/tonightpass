@@ -26,7 +26,7 @@ export const organizationsEvents = (client: Client) => ({
     options?: OrganizationEventArrayOptions,
   ) => {
     if (organizationSlug) {
-      return client.get("/organizations/:organizationSlug/events", {
+      return client.get("/organizations/@:organizationSlug/events", {
         organizationSlug,
         ...options,
       });
@@ -44,12 +44,12 @@ export const organizationsEvents = (client: Client) => ({
     },
   ) => client.get("/organizations/events/nearby", options),
   get: async (organizationSlug: string, eventSlug: string) =>
-    client.get("/organizations/:organizationSlug/events/:eventSlug", {
+    client.get("/organizations/@:organizationSlug/events/:eventSlug", {
       organizationSlug,
       eventSlug,
     }),
   create: async (organizationSlug: string, data: CreateOrganizationEventDto) =>
-    client.post("/organizations/:organizationSlug/events", data, {
+    client.post("/organizations/@:organizationSlug/events", data, {
       organizationSlug,
     }),
   update: async (
@@ -57,12 +57,12 @@ export const organizationsEvents = (client: Client) => ({
     eventSlug: string,
     data: UpdateOrganizationEventDto,
   ) =>
-    client.put("/organizations/:organizationSlug/events/:eventSlug", data, {
+    client.put("/organizations/@:organizationSlug/events/:eventSlug", data, {
       organizationSlug,
       eventSlug,
     }),
   delete: async (organizationSlug: string, eventSlug: string) =>
-    client.delete("/organizations/:organizationSlug/events/:eventSlug", null, {
+    client.delete("/organizations/@:organizationSlug/events/:eventSlug", null, {
       organizationSlug,
       eventSlug,
     }),
@@ -79,7 +79,7 @@ export const organizationsEvents = (client: Client) => ({
     file: File,
   ) =>
     client.post(
-      "/organizations/:organizationSlug/events/:eventSlug/files/:eventFileType",
+      "/organizations/@:organizationSlug/events/:eventSlug/files/:eventFileType",
       buildFileFormData("file", file),
       { organizationSlug, eventSlug, eventFileType },
     ),

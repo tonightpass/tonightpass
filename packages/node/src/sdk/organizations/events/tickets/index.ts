@@ -6,13 +6,13 @@ import {
 
 export const organizationsEventsTickets = (client: Client) => ({
   getAll: async (organizationSlug: string, eventSlug: string) =>
-    client.get("/organizations/:organizationSlug/events/:eventSlug/tickets", {
+    client.get("/organizations/@:organizationSlug/events/:eventSlug/tickets", {
       organizationSlug,
       eventSlug,
     }),
   get: async (organizationSlug: string, eventSlug: string, ticketId: string) =>
     client.get(
-      "/organizations/:organizationSlug/events/:eventSlug/tickets/:ticketId",
+      "/organizations/@:organizationSlug/events/:eventSlug/tickets/:ticketId",
       {
         organizationSlug,
         eventSlug,
@@ -25,7 +25,7 @@ export const organizationsEventsTickets = (client: Client) => ({
     data: CreateOrganizationEventTicketDto,
   ) =>
     client.post(
-      "/organizations/:organizationSlug/events/:eventSlug/tickets",
+      "/organizations/@:organizationSlug/events/:eventSlug/tickets",
       data,
       {
         organizationSlug,
@@ -39,7 +39,7 @@ export const organizationsEventsTickets = (client: Client) => ({
     data: UpdateOrganizationEventTicketDto,
   ) =>
     client.put(
-      "/organizations/:organizationSlug/events/:eventSlug/tickets/:ticketId",
+      "/organizations/@:organizationSlug/events/:eventSlug/tickets/:ticketId",
       data,
       {
         organizationSlug,
@@ -53,7 +53,7 @@ export const organizationsEventsTickets = (client: Client) => ({
     ticketId: string,
   ) =>
     client.delete(
-      "/organizations/:organizationSlug/events/:eventSlug/tickets/:ticketId",
+      "/organizations/@:organizationSlug/events/:eventSlug/tickets/:ticketId",
       null,
       {
         organizationSlug,

@@ -9,18 +9,18 @@ export type OrganizationOrder = Omit<Order, "user"> & {
 export type OrganizationOrdersEndpoints =
   | Endpoint<
       "GET",
-      "/organizations/:organizationSlug/orders",
+      "/organizations/@:organizationSlug/orders",
       ArrayResult<OrganizationOrder>,
       ArrayOptions<OrganizationOrder>
     >
   | Endpoint<
       "GET",
-      "/organizations/:organizationSlug/orders/:orderId",
+      "/organizations/@:organizationSlug/orders/:orderId",
       OrganizationOrder
     >
   | Endpoint<
       "GET",
-      "/organizations/:organizationSlug/events/:eventSlug/orders",
+      "/organizations/@:organizationSlug/events/:eventSlug/orders",
       ArrayResult<OrganizationOrder>,
       ArrayOptions<OrganizationOrder>
     >;

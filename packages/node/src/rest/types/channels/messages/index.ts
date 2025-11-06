@@ -62,7 +62,7 @@ export type ChannelMessage = Base & {
 export type ChannelMessageEndpoints =
   | Endpoint<
       "GET",
-      "/channels/@me/:channelId/messages",
+      "/channels/~me/:channelId/messages",
       ArrayResult<ChannelMessage>,
       ArrayOptions<ChannelMessage>
     >
@@ -74,7 +74,7 @@ export type ChannelMessageEndpoints =
     >
   | Endpoint<
       "GET",
-      "/channels/@me/:channelId/messages/:messageId",
+      "/channels/~me/:channelId/messages/:messageId",
       ChannelMessage
     >
   | Endpoint<
@@ -84,7 +84,7 @@ export type ChannelMessageEndpoints =
     >
   | Endpoint<
       "POST",
-      "/channels/@me/:channelId/messages",
+      "/channels/~me/:channelId/messages",
       ChannelMessage,
       CreateChannelMessageDto
     >
@@ -96,7 +96,7 @@ export type ChannelMessageEndpoints =
     >
   | Endpoint<
       "PUT",
-      "/channels/@me/:channelId/messages/:messageId",
+      "/channels/~me/:channelId/messages/:messageId",
       ChannelMessage,
       UpdateChannelMessageDto
     >
@@ -106,7 +106,7 @@ export type ChannelMessageEndpoints =
       ChannelMessage,
       UpdateChannelMessageDto
     >
-  | Endpoint<"DELETE", "/channels/@me/:channelId/messages/:messageId", void>
+  | Endpoint<"DELETE", "/channels/~me/:channelId/messages/:messageId", void>
   | Endpoint<
       "DELETE",
       "/channels/:organizationSlug/:channelId/messages/:messageId",
@@ -114,7 +114,7 @@ export type ChannelMessageEndpoints =
     >
   | Endpoint<
       "POST",
-      "/channels/@me/:channelId/messages/:messageId/reactions",
+      "/channels/~me/:channelId/messages/:messageId/reactions",
       void,
       AddReactionDto
     >
@@ -126,7 +126,7 @@ export type ChannelMessageEndpoints =
     >
   | Endpoint<
       "DELETE",
-      "/channels/@me/:channelId/messages/:messageId/reactions/:emoji",
+      "/channels/~me/:channelId/messages/:messageId/reactions/:emoji",
       void
     >
   | Endpoint<
@@ -136,7 +136,7 @@ export type ChannelMessageEndpoints =
     >
   | Endpoint<
       "POST",
-      "/channels/@me/:channelId/messages/:messageId/read",
+      "/channels/~me/:channelId/messages/:messageId/read",
       void,
       null
     >
@@ -146,7 +146,7 @@ export type ChannelMessageEndpoints =
       void,
       null
     >
-  | Endpoint<"POST", "/channels/@me/:channelId/files", string, FormData>
+  | Endpoint<"POST", "/channels/~me/:channelId/files", string, FormData>
   | Endpoint<
       "POST",
       "/channels/:organizationSlug/:channelId/files",
@@ -155,7 +155,7 @@ export type ChannelMessageEndpoints =
     >
   | Endpoint<
       "POST",
-      "/channels/@me/:channelId/messages/:messageId/report",
+      "/channels/~me/:channelId/messages/:messageId/report",
       void,
       ReportChannelMessageDto
     >

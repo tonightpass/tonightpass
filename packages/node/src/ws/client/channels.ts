@@ -17,7 +17,7 @@ export class ChannelWebSocketClient extends WebSocketClient {
     channelId: string,
     options: WebSocketConnectOptions = {},
   ) {
-    return this.connect("/channels/@me/:channelId/ws", {
+    return this.connect("/channels/~me/:channelId/ws", {
       ...options,
       channelId,
     });
@@ -36,7 +36,7 @@ export class ChannelWebSocketClient extends WebSocketClient {
   }
 
   async connectToUserChannels(options: WebSocketConnectOptions = {}) {
-    return this.connect("/channels/@me/ws", options);
+    return this.connect("/channels/~me/ws", options);
   }
 
   async connectToOrganizationChannels(

@@ -36,16 +36,16 @@ export type UserNotification = UserNotificationFollow;
 export type UserNotificationEndpoints =
   | Endpoint<
       "GET",
-      "/users/@me/notifications",
+      "/users/~me/notifications",
       ArrayResult<UserNotification>,
       ArrayOptions<UserNotification>
     >
   | Endpoint<
       "GET",
-      "/users/@me/notifications/count",
+      "/users/~me/notifications/count",
       number,
       {
         unseen?: boolean;
       }
     >
-  | Endpoint<"PUT", "/users/@me/notifications/read", void>;
+  | Endpoint<"PUT", "/users/~me/notifications/read", void>;

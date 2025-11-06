@@ -37,67 +37,67 @@ export enum OrganizationMemberRole {
 export type OrganizationMembersEndpoints =
   | Endpoint<
       "GET",
-      "/organizations/members/@me",
+      "/organizations/members/~me",
       ArrayResult<OrganizationMember>,
       ArrayOptions<OrganizationMember>
     >
   | Endpoint<
       "GET",
-      "/organizations/:organizationSlug/members",
+      "/organizations/@:organizationSlug/members",
       ArrayResult<OrganizationMember>,
       ArrayOptions<OrganizationMember>
     >
   | Endpoint<
       "POST",
-      "/organizations/:organizationSlug/members",
+      "/organizations/@:organizationSlug/members",
       OrganizationMember,
       CreateOrganizationMemberDto
     >
   | Endpoint<
       "PUT",
-      "/organizations/:organizationSlug/members/:username",
+      "/organizations/@:organizationSlug/members/:username",
       OrganizationMember,
       UpdateOrganizationMemberDto
     >
   | Endpoint<
       "DELETE",
-      "/organizations/:organizationSlug/members/:username",
+      "/organizations/@:organizationSlug/members/:username",
       OrganizationMember[],
       null
     >
   | Endpoint<
       "GET",
-      "/organizations/:organizationSlug/members/invitations/links",
+      "/organizations/@:organizationSlug/members/invitations/links",
       ArrayResult<OrganizationToken>,
       ArrayOptions<OrganizationToken>
     >
   | Endpoint<
       "POST",
-      "/organizations/:organizationSlug/members/invitations/links",
+      "/organizations/@:organizationSlug/members/invitations/links",
       OrganizationToken,
       CreateOrganizationMemberInvitationLinkDto
     >
   | Endpoint<
       "POST",
-      "/organizations/:organizationSlug/members/invitations/accept",
+      "/organizations/@:organizationSlug/members/invitations/accept",
       OrganizationMember,
       AcceptOrganizationMemberInvitationDto
     >
   | Endpoint<
       "PUT",
-      "/organizations/:organizationSlug/members/@me/accept",
+      "/organizations/@:organizationSlug/members/~me/accept",
       OrganizationMember,
       null
     >
   | Endpoint<
       "DELETE",
-      "/organizations/:organizationSlug/members/@me/reject",
+      "/organizations/@:organizationSlug/members/~me/reject",
       null,
       null
     >
   | Endpoint<
       "DELETE",
-      "/organizations/:organizationSlug/members/@me",
+      "/organizations/@:organizationSlug/members/~me",
       null,
       null
     >;

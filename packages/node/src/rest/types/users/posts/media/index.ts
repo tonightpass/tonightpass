@@ -18,7 +18,7 @@ export type UserPostMedia = {
 
 export type UserPostMediaEndpoints = Endpoint<
   "POST",
-  "/users/@me/posts/media",
+  "/users/~me/posts/media",
   string,
   FormData
 >;

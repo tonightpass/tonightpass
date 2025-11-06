@@ -59,13 +59,13 @@ export type EventAnalyticsOptions = AnalyticsOptions & {
 export type OrganizationAnalyticsEndpoints =
   | Endpoint<
       "GET",
-      "/organizations/:organizationSlug/analytics/overview",
+      "/organizations/@:organizationSlug/analytics/overview",
       OrganizationAnalyticsOverview,
       AnalyticsOptions
     >
   | Endpoint<
       "GET",
-      "/organizations/:organizationSlug/analytics/events",
+      "/organizations/@:organizationSlug/analytics/events",
       ArrayResult<OrganizationEventAnalytics>,
       ArrayOptions<OrganizationEventAnalytics> & EventAnalyticsOptions
     >;

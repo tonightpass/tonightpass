@@ -7,7 +7,7 @@ export const organizationsEventsOrders = (client: Client) => ({
     data: CreateOrganizationEventOrderDto,
   ) =>
     client.post(
-      "/organizations/:organizationSlug/events/:eventSlug/orders",
+      "/organizations/@:organizationSlug/events/:eventSlug/orders",
       data,
       {
         organizationSlug,

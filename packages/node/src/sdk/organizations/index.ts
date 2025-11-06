@@ -16,13 +16,13 @@ export const organizations = sdk((client) => ({
     client.get("/organizations/search", { q: query, limit }),
   getAll: async () => client.get("/organizations"),
   get: async (organizationSlug: string) =>
-    client.get("/organizations/:organizationSlug", { organizationSlug }),
+    client.get("/organizations/@:organizationSlug", { organizationSlug }),
   create: async (data: CreateOrganizationDto) =>
     client.post("/organizations", data),
   update: async (organizationSlug: string, data: UpdateOrganizationDto) =>
-    client.put("/organizations/:organizationSlug", data, { organizationSlug }),
+    client.put("/organizations/@:organizationSlug", data, { organizationSlug }),
   delete: async (organizationSlug: string) =>
-    client.delete("/organizations/:organizationSlug", null, {
+    client.delete("/organizations/@:organizationSlug", null, {
       organizationSlug,
     }),
   uploadFile: async (
@@ -31,7 +31,7 @@ export const organizations = sdk((client) => ({
     file: File,
   ) =>
     client.post(
-      "/organizations/:organizationSlug/files/:organizationFileType",
+      "/organizations/@:organizationSlug/files/:organizationFileType",
       buildFileFormData("file", file),
       {
         organizationSlug,

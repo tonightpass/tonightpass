@@ -4,7 +4,7 @@ import { Order } from "../../../orders";
 
 export type OrganizationEventOrderEndpoints = Endpoint<
   "POST",
-  "/organizations/:organizationSlug/events/:eventSlug/orders",
+  "/organizations/@:organizationSlug/events/:eventSlug/orders",
   Order,
   CreateOrganizationEventOrderDto
 >;

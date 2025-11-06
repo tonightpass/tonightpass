@@ -8,6 +8,6 @@ export const profiles = sdk((client) => ({
   search: async (query: string, options?: ArrayOptions<Profile>) =>
     client.get("/profiles/search", { q: query, ...options }),
   get: async (username: string) =>
-    client.get("/profiles/:username", { username }),
+    client.get("/profiles/@:username", { username }),
   relationships: profilesRelationships(client),
 }));

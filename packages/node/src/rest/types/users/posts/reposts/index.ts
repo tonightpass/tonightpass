@@ -17,20 +17,20 @@ export type UserPostRepost = Base & {
 export type UserPostRepostEndpoints =
   | Endpoint<
       "GET",
-      "/users/:username/reposts",
+      "/users/@:username/reposts",
       ArrayResult<UserPostRepost>,
       ArrayOptions<UserPostRepost>
     >
   | Endpoint<
       "GET",
-      "/users/:username/posts/:postId/reposts",
+      "/users/@:username/posts/:postId/reposts",
       ArrayResult<UserPostRepost>,
       ArrayOptions<UserPostRepost>
     >
   | Endpoint<
       "POST",
-      "/users/@me/posts/:postId/reposts",
+      "/users/~me/posts/:postId/reposts",
       UserPostRepost,
       CreateUserPostRepostDto
     >
-  | Endpoint<"DELETE", "/users/@me/posts/:postId/reposts", void>;
+  | Endpoint<"DELETE", "/users/~me/posts/:postId/reposts", void>;

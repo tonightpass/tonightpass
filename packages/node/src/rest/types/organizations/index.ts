@@ -61,28 +61,28 @@ export type OrganizationEndpoints =
       ArrayResult<Organization>,
       ArrayOptions<Organization>
     >
-  | Endpoint<"GET", "/organizations/:organizationSlug", Organization>
+  | Endpoint<"GET", "/organizations/@:organizationSlug", Organization>
   | Endpoint<"POST", "/organizations", Organization, CreateOrganizationDto>
   | Endpoint<
       "PUT",
-      "/organizations/:organizationSlug",
+      "/organizations/@:organizationSlug",
       Organization,
       UpdateOrganizationDto
     >
-  | Endpoint<"DELETE", "/organizations/:organizationSlug", Organization, null>
+  | Endpoint<"DELETE", "/organizations/@:organizationSlug", Organization, null>
   | Endpoint<
       "POST",
-      "/organizations/:organizationSlug/files/:organizationFileType",
+      "/organizations/@:organizationSlug/files/:organizationFileType",
       string,
       FormData
     >
   | Endpoint<
       "GET",
-      "/organizations/:organizationSlug/billing/account",
+      "/organizations/@:organizationSlug/billing/account",
       OrganizationBillingAccount
     >
-  | Endpoint<"GET", "/organizations/:organizationSlug/billing/link", void>
-  | Endpoint<"GET", "/organizations/:organizationSlug/billing/dashboard", void>
+  | Endpoint<"GET", "/organizations/@:organizationSlug/billing/link", void>
+  | Endpoint<"GET", "/organizations/@:organizationSlug/billing/dashboard", void>
   | OrganizationEventEndpoints
   | OrganizationMembersEndpoints
   | OrganizationAnalyticsEndpoints

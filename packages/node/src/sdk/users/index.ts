@@ -9,15 +9,15 @@ import { usersPostsReposts } from "./posts/reposts";
 
 export const users = sdk((client) => ({
   getAll: async () => client.get("/users"),
-  get: async (userId: string) => client.get("/users/:userId", { userId }),
-  me: async () => client.get("/users/@me"),
+  get: async (userId: string) => client.get("/users/@:userId", { userId }),
+  me: async () => client.get("/users/~me"),
   check: async (identifier: string, suggestions?: boolean) =>
     client.get("/users/check/:identifier", { identifier, suggestions }),
   update: async (userId: string, data: UpdateUserDto) =>
-    client.put("/users/:userId", data, { userId }),
+    client.put("/users/@:userId", data, { userId }),
   uploadFile: async (userId: string, userFileType: UserFileType, file: File) =>
     client.post(
-      "/users/:userId/files/:userFileType",
+      "/users/@:userId/files/:userFileType",
       buildFileFormData("file", file),
       {
         userId,

@@ -72,23 +72,23 @@ export type ProfileEndpoints =
       ArrayResult<Profile>,
       SearchProfilesOptions
     >
-  | Endpoint<"GET", "/profiles/:username", Profile>
+  | Endpoint<"GET", "/profiles/@:username", Profile>
   | Endpoint<
       "GET",
-      "/profiles/@me/relationships/suggestions",
+      "/profiles/~me/relationships/suggestions",
       ArrayResult<Profile>,
       ArrayOptions<OrganizationProfile | UserProfile>
     >
   | Endpoint<
       "GET",
-      "/profiles/:username/relationships/followers",
+      "/profiles/@:username/relationships/followers",
       ArrayResult<UserProfile>,
       ArrayOptions<UserProfile>
     >
-  | Endpoint<"POST", "/profiles/:username/relationships/follow", boolean, null>
+  | Endpoint<"POST", "/profiles/@:username/relationships/follow", boolean, null>
   | Endpoint<
       "POST",
-      "/profiles/:username/relationships/unfollow",
+      "/profiles/@:username/relationships/unfollow",
       boolean,
       null
     >;
