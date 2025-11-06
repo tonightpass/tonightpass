@@ -112,8 +112,8 @@ export enum UserFileType {
 
 export type UserEndpoints =
   | Endpoint<"GET", "/users", User[]>
-  | Endpoint<"GET", "/users/:userId", User>
-  | Endpoint<"GET", "/users/@me", User>
+  | Endpoint<"GET", "/users/@:userId", User>
+  | Endpoint<"GET", "/users/~me", User>
   | Endpoint<
       "GET",
       "/users/check/:identifier",
@@ -124,8 +124,8 @@ export type UserEndpoints =
       },
       { identifier: boolean; suggestions?: boolean }
     >
-  | Endpoint<"PUT", "/users/:userId", User, UpdateUserDto>
-  | Endpoint<"POST", "/users/:userId/files/:userFileType", string, FormData>
+  | Endpoint<"PUT", "/users/@:userId", User, UpdateUserDto>
+  | Endpoint<"POST", "/users/@:userId/files/:userFileType", string, FormData>
   | Endpoint<"POST", "/users/files/:userFileType", string, FormData>
   | UserBookingEndpoints
   | UserNotificationEndpoints

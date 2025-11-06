@@ -17,9 +17,9 @@ export type WebSocketEndpoint<
 };
 
 export type WebSocketEndpoints =
-  | WebSocketEndpoint<"/channels/@me/ws", WebSocketConnectOptions>
+  | WebSocketEndpoint<"/channels/~me/ws", WebSocketConnectOptions>
   | WebSocketEndpoint<
-      "/channels/@me/:channelId/ws",
+      "/channels/~me/:channelId/ws",
       WebSocketConnectOptions & { channelId: string }
     >
   | WebSocketEndpoint<

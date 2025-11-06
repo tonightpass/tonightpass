@@ -23,20 +23,20 @@ export type UserPostComment = Base & {
 export type UserPostCommentEndpoints =
   | Endpoint<
       "GET",
-      "/users/:username/posts/:postId/comments",
+      "/users/@:username/posts/:postId/comments",
       ArrayResult<UserPostComment>,
       ArrayOptions<UserPostComment>
     >
   | Endpoint<
       "POST",
-      "/users/@me/posts/:postId/comments",
+      "/users/~me/posts/:postId/comments",
       UserPostComment,
       CreateUserPostCommentDto
     >
   | Endpoint<
       "PUT",
-      "/users/@me/posts/:postId/comments/:commentId",
+      "/users/~me/posts/:postId/comments/:commentId",
       UserPostComment,
       UpdateUserPostCommentDto
     >
-  | Endpoint<"DELETE", "/users/@me/posts/:postId/comments/:commentId", void>;
+  | Endpoint<"DELETE", "/users/~me/posts/:postId/comments/:commentId", void>;

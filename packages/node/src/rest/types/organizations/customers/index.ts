@@ -22,12 +22,12 @@ export type OrganizationCustomerMetadata = UserProfileMetadata & {
 export type OrganizationCustomersEndpoints =
   | Endpoint<
       "GET",
-      "/organizations/:organizationSlug/customers",
+      "/organizations/@:organizationSlug/customers",
       ArrayResult<OrganizationCustomer>,
       ArrayOptions<OrganizationCustomer>
     >
   | Endpoint<
       "GET",
-      "/organizations/:organizationSlug/customers/:username",
+      "/organizations/@:organizationSlug/customers/:username",
       OrganizationCustomer
     >;

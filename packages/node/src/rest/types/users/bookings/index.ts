@@ -29,16 +29,16 @@ export type UserBookingEndpoints =
     >
   | Endpoint<
       "GET",
-      "/users/@me/bookings",
+      "/users/~me/bookings",
       ArrayResult<UserBooking>,
       ArrayOptions<UserBooking>
     >
   | Endpoint<
       "GET",
-      "/users/:userId/bookings",
+      "/users/@:userId/bookings",
       ArrayResult<UserBooking>,
       ArrayOptions<UserBooking>
     >
   | Endpoint<"GET", "/users/bookings/:bookingId", UserBooking>
-  | Endpoint<"GET", "/users/@me/bookings/:bookingId", UserBooking>
+  | Endpoint<"GET", "/users/~me/bookings/:bookingId", UserBooking>
   | UserBookingTicketEndpoints;

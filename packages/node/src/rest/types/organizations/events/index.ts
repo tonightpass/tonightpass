@@ -136,36 +136,36 @@ export type OrganizationEventEndpoints =
     >
   | Endpoint<
       "GET",
-      "/organizations/:organizationSlug/events",
+      "/organizations/@:organizationSlug/events",
       ArrayResult<OrganizationEvent>,
       OrganizationEventArrayOptions
     >
   | Endpoint<
       "GET",
-      "/organizations/:organizationSlug/events/:eventSlug",
+      "/organizations/@:organizationSlug/events/:eventSlug",
       OrganizationEvent
     >
   | Endpoint<
       "POST",
-      "/organizations/:organizationSlug/events",
+      "/organizations/@:organizationSlug/events",
       OrganizationEvent,
       CreateOrganizationEventDto
     >
   | Endpoint<
       "PUT",
-      "/organizations/:organizationSlug/events/:eventSlug",
+      "/organizations/@:organizationSlug/events/:eventSlug",
       OrganizationEvent,
       UpdateOrganizationEventDto
     >
   | Endpoint<
       "DELETE",
-      "/organizations/:organizationSlug/events/:eventSlug",
+      "/organizations/@:organizationSlug/events/:eventSlug",
       OrganizationEvent,
       null
     >
   | Endpoint<
       "POST",
-      "/organizations/:organizationSlug/events/:eventSlug/files/:eventFileType",
+      "/organizations/@:organizationSlug/events/:eventSlug/files/:eventFileType",
       string,
       FormData
     >

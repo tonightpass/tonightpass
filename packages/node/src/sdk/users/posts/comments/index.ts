@@ -12,27 +12,27 @@ export const usersPostsComments = sdk((client) => ({
     postId: string,
     options?: ArrayOptions<UserPostComment>,
   ) =>
-    client.get("/users/:username/posts/:postId/comments", {
+    client.get("/users/@:username/posts/:postId/comments", {
       username,
       postId,
       ...options,
     }),
 
   create: async (postId: string, data: CreateUserPostCommentDto) =>
-    client.post("/users/@me/posts/:postId/comments", data, { postId }),
+    client.post("/users/~me/posts/:postId/comments", data, { postId }),
 
   update: async (
     postId: string,
     commentId: string,
     data: UpdateUserPostCommentDto,
   ) =>
-    client.put("/users/@me/posts/:postId/comments/:commentId", data, {
+    client.put("/users/~me/posts/:postId/comments/:commentId", data, {
       postId,
       commentId,
     }),
 
   delete: async (postId: string, commentId: string) =>
-    client.delete("/users/@me/posts/:postId/comments/:commentId", undefined, {
+    client.delete("/users/~me/posts/:postId/comments/:commentId", undefined, {
       postId,
       commentId,
     }),

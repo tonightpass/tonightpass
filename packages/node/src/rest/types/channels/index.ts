@@ -51,7 +51,7 @@ export type UserChannelCountOptions = {
 export type ChannelEndpoints =
   | Endpoint<
       "GET",
-      "/channels/@me",
+      "/channels/~me",
       ArrayResult<Channel>,
       ArrayOptions<Channel>
     >
@@ -63,32 +63,32 @@ export type ChannelEndpoints =
     >
   | Endpoint<
       "GET",
-      "/users/@me/channels/count",
+      "/users/~me/channels/count",
       number,
       UserChannelCountOptions
     >
   | Endpoint<
       "GET",
-      "/users/:organizationSlug/channels/count",
+      "/users/@:organizationSlug/channels/count",
       number,
       UserChannelCountOptions
     >
-  | Endpoint<"GET", "/channels/@me/:channelId", Channel>
+  | Endpoint<"GET", "/channels/~me/:channelId", Channel>
   | Endpoint<"GET", "/channels/:organizationSlug/:channelId", Channel>
-  | Endpoint<"POST", "/channels/@me", Channel, CreateChannelDto>
+  | Endpoint<"POST", "/channels/~me", Channel, CreateChannelDto>
   | Endpoint<"POST", "/channels/:organizationSlug", Channel, CreateChannelDto>
-  | Endpoint<"PUT", "/channels/@me/:channelId", Channel, UpdateChannelDto>
+  | Endpoint<"PUT", "/channels/~me/:channelId", Channel, UpdateChannelDto>
   | Endpoint<
       "PUT",
       "/channels/:organizationSlug/:channelId",
       Channel,
       UpdateChannelDto
     >
-  | Endpoint<"DELETE", "/channels/@me/:channelId", void>
+  | Endpoint<"DELETE", "/channels/~me/:channelId", void>
   | Endpoint<"DELETE", "/channels/:organizationSlug/:channelId", void>
   | Endpoint<
       "POST",
-      "/channels/@me/:channelId/participants",
+      "/channels/~me/:channelId/participants",
       void,
       AddParticipantDto
     >
@@ -98,7 +98,7 @@ export type ChannelEndpoints =
       void,
       AddParticipantDto
     >
-  | Endpoint<"DELETE", "/channels/@me/:channelId/participants/:username", void>
+  | Endpoint<"DELETE", "/channels/~me/:channelId/participants/:username", void>
   | Endpoint<
       "DELETE",
       "/channels/:organizationSlug/:channelId/participants/:username",
@@ -106,7 +106,7 @@ export type ChannelEndpoints =
     >
   | Endpoint<
       "GET",
-      "/channels/@me/:channelId/members",
+      "/channels/~me/:channelId/members",
       ArrayResult<ChannelMember>,
       ArrayOptions<ChannelMember>
     >

@@ -33,14 +33,14 @@ export type UserPost = Base & {
 export type UserPostEndpoints =
   | Endpoint<
       "GET",
-      "/users/:username/posts",
+      "/users/@:username/posts",
       ArrayResult<UserPost>,
       ArrayOptions<UserPost>
     >
-  | Endpoint<"GET", "/users/:username/posts/:postId", UserPost>
-  | Endpoint<"POST", "/users/@me/posts", UserPost, CreateUserPostDto>
-  | Endpoint<"PUT", "/users/@me/posts/:postId", UserPost, UpdateUserPostDto>
-  | Endpoint<"DELETE", "/users/@me/posts/:postId", void>
+  | Endpoint<"GET", "/users/@:username/posts/:postId", UserPost>
+  | Endpoint<"POST", "/users/~me/posts", UserPost, CreateUserPostDto>
+  | Endpoint<"PUT", "/users/~me/posts/:postId", UserPost, UpdateUserPostDto>
+  | Endpoint<"DELETE", "/users/~me/posts/:postId", void>
   | UserPostCommentEndpoints
   | UserPostRepostEndpoints
   | UserPostViewEndpoints

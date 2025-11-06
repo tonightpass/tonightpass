@@ -3,13 +3,13 @@ import { isBrowser } from "../../../utils";
 
 export const organizationsBilling = (client: Client) => ({
   account: async (organizationSlug: string) =>
-    client.get("/organizations/:organizationSlug/billing/account", {
+    client.get("/organizations/@:organizationSlug/billing/account", {
       organizationSlug,
     }),
   link: (organizationSlug: string) => {
     if (isBrowser) {
       window.location.href = client.url(
-        "/organizations/:organizationSlug/billing/link",
+        "/organizations/@:organizationSlug/billing/link",
         {
           organizationSlug,
         },
@@ -21,7 +21,7 @@ export const organizationsBilling = (client: Client) => ({
   dashboard: (organizationSlug: string) => {
     if (isBrowser) {
       window.location.href = client.url(
-        "/organizations/:organizationSlug/billing/dashboard",
+        "/organizations/@:organizationSlug/billing/dashboard",
         {
           organizationSlug,
         },
