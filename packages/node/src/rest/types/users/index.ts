@@ -43,6 +43,7 @@ export type UserIdentity = UserProfile & {
   fullName: string;
   gender: UserIdentityGender;
   birthDate: Date;
+  birthDateLastUpdatedAt?: Date;
 };
 
 export enum UserRole {
