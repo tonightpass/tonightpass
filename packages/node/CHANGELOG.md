@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.225
+
+### Patch Changes
+
+- [`9fb733c`](https://github.com/tonightpass/tonightpass/commit/9fb733c53cb38e7fb0d9103716ad88c77e066657) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix birthDate transformation in UpdateUserDto to prevent empty object serialization
+
 ## 0.0.224
 
 ### Patch Changes
