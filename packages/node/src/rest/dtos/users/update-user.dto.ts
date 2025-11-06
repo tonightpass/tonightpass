@@ -131,7 +131,11 @@ class UpdateUserIdentityDto
   gender?: UserIdentityGender;
 
   @IsOptional()
-  @Transform(({ value }) => (value instanceof Date ? value : new Date(value)))
+  @Transform(({ value }) => {
+    if (!value) return undefined;
+    const date = new Date(value);
+    return isNaN(date.getTime()) ? value : date;
+  })
   @IsDate()
   birthDate?: Date;
 
