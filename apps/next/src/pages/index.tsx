@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const profile = useAPI(
-    "/profiles/:username",
+    "/profiles/@:username",
     {
       username: "tonightpass",
     },
