@@ -1,5 +1,5 @@
 ---
-"tonightpass": minor
+"tonightpass": patch
 ---
 
 Replace Node.js WebSocket client with browser/React Native compatible version
