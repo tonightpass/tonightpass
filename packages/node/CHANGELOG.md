@@ -1,5 +1,16 @@
 # tonightpass
 
+## 0.0.226
+
+### Patch Changes
+
+- [`ac1c979`](https://github.com/tonightpass/tonightpass/commit/ac1c9791e6964b9248135120bffb37301ba74860) Thanks [@antoinekm](https://github.com/antoinekm)! - Replace Node.js WebSocket client with browser/React Native compatible version
+  - Remove dependency on `ws` package (Node.js only)
+  - Use native WebSocket API for browser and React Native compatibility
+  - Pass authentication token via WebSocket subprotocol (`access_token.*`) instead of custom headers
+  - Change build platform from "node" to "neutral" for universal compatibility
+  - Remove React Native specific build files (single universal build)
+
 ## 0.0.225
 
 ### Patch Changes
