@@ -6,7 +6,7 @@ const config: Options = {
   splitting: true,
   sourcemap: true,
   clean: false,
-  platform: "node",
+  platform: "neutral",
   minify: true,
   treeshake: true,
   dts: true,

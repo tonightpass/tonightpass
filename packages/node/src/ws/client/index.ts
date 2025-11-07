@@ -1,5 +1,4 @@
 import { pathcat } from "pathcat";
-import WebSocket from "ws";
 
 import { WebSocketPaths, WebSocketOptionsFor } from "../endpoints";
 import { WebSocketClientOptions, ChannelWebSocketEvent } from "../types";
@@ -15,7 +14,7 @@ export class WebSocketClient {
   private ws?: WebSocket;
   private options: WebSocketClientOptions;
   private reconnectAttempts = 0;
-  private reconnectTimer?: NodeJS.Timeout;
+  private reconnectTimer?: ReturnType<typeof setTimeout>;
   private eventHandlers: EventHandlerMap = new Map();
   private isConnected = false;
   private isReconnecting = false;
@@ -61,46 +60,48 @@ export class WebSocketClient {
         const url = this.getWebSocketURL(path, options);
         this.log("Connecting to", url);
 
-        const headers: Record<string, string> = {};
-
-        // Type guard to check if options has token property
+        // Pass token via subprotocol if present (cleaner than query params)
+        const protocols: string[] = [];
         if ("token" in options && typeof options.token === "string") {
-          headers.Authorization = `Bearer ${options.token}`;
+          protocols.push(`access_token.${options.token}`);
         }
 
-        this.ws = new WebSocket(url, { headers });
+        this.ws =
+          protocols.length > 0
+            ? new WebSocket(url, protocols)
+            : new WebSocket(url);
 
-        this.ws.on("open", () => {
+        this.ws.onopen = () => {
           this.log("Connected successfully");
           this.isConnected = true;
           this.isReconnecting = false;
           this.reconnectAttempts = 0;
           resolve();
-        });
+        };
 
-        this.ws.on("message", (data) => {
+        this.ws.onmessage = (event) => {
           try {
-            const event = JSON.parse(data.toString());
-            this.handleEvent(event);
+            const data = JSON.parse(event.data);
+            this.handleEvent(data);
           } catch (error) {
             this.log("Error parsing message:", error);
           }
-        });
+        };
 
-        this.ws.on("close", (code) => {
-          this.log("Connection closed", code);
+        this.ws.onclose = (event) => {
+          this.log("Connection closed", event.code);
           this.isConnected = false;
 
           if (this.options.maxReconnectAttempts && !this.isReconnecting) {
             this.handleReconnect(path, options);
           }
-        });
+        };
 
-        this.ws.on("error", (error) => {
+        this.ws.onerror = (error) => {
           this.log("WebSocket error:", error);
           this.isConnected = false;
           reject(error);
-        });
+        };
       } catch (error) {
         reject(error);
       }
