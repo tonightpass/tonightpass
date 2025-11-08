@@ -9,7 +9,6 @@ import {
   RecoveryResetDto,
   OAuth2Provider,
 } from "../rest";
-import { isBrowser } from "../utils";
 
 export const auth = sdk((client) => ({
   signIn: async (data: SignInUserDto) => client.post("/auth/sign-in", data),
@@ -26,14 +25,7 @@ export const auth = sdk((client) => ({
       provider: OAuth2Provider,
       params?: Record<string, ParamValue>,
     ) => {
-      if (isBrowser) {
-        window.location.href = client.url("/oauth2/:provider", {
-          provider,
-          ...params,
-        });
-      } else {
-        throw new Error(`${provider} OAuth2 is only available in the browser`);
-      }
+      return client.url("/oauth2/:provider", { provider, ...params });
     },
     disconnect: async (provider: OAuth2Provider) =>
       client.delete("/oauth2/:provider", undefined, { provider }),
