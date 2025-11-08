@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.228
+
+### Patch Changes
+
+- [`15672ac`](https://github.com/tonightpass/tonightpass/commit/15672ac3cdbd49fed54fa8bb21399addfa01a046) Thanks [@antoinekm](https://github.com/antoinekm)! - Add FileObject type support for file uploads to work with both web and mobile platforms
+
 ## 0.0.227
 
 ### Patch Changes
