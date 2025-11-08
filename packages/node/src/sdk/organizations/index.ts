@@ -8,7 +8,7 @@ import {
   UpdateOrganizationDto,
   OrganizationFileType,
 } from "../../rest";
-import { buildFileFormData } from "../../utils";
+import { buildFileFormData, type FileObject } from "../../utils";
 import { sdk } from "../builder";
 
 export const organizations = sdk((client) => ({
@@ -28,7 +28,7 @@ export const organizations = sdk((client) => ({
   uploadFile: async (
     organizationSlug: string,
     organizationFileType: OrganizationFileType,
-    file: File,
+    file: File | FileObject,
   ) =>
     client.post(
       "/organizations/@:organizationSlug/files/:organizationFileType",

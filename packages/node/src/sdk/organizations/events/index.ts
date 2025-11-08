@@ -11,7 +11,7 @@ import {
   OrganizationEventFileType,
   UpdateOrganizationEventDto,
 } from "../../../rest";
-import { buildFileFormData } from "../../../utils";
+import { buildFileFormData, type FileObject } from "../../../utils";
 
 export const organizationsEvents = (client: Client) => ({
   search: async (query: string, options?: ArrayOptions<OrganizationEvent>) =>
@@ -66,7 +66,10 @@ export const organizationsEvents = (client: Client) => ({
       organizationSlug,
       eventSlug,
     }),
-  uploadFile: async (eventFileType: OrganizationEventFileType, file: File) =>
+  uploadFile: async (
+    eventFileType: OrganizationEventFileType,
+    file: File | FileObject,
+  ) =>
     client.post(
       "/events/files/:eventFileType",
       buildFileFormData("file", file),
@@ -76,7 +79,7 @@ export const organizationsEvents = (client: Client) => ({
     organizationSlug: string,
     eventSlug: string,
     eventFileType: OrganizationEventFileType,
-    file: File,
+    file: File | FileObject,
   ) =>
     client.post(
       "/organizations/@:organizationSlug/events/:eventSlug/files/:eventFileType",
