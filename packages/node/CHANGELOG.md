@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.227
+
+### Patch Changes
+
+- [`8cb97b1`](https://github.com/tonightpass/tonightpass/commit/8cb97b1bc2b018230f832104726be5c421b8b466) Thanks [@antoinekm](https://github.com/antoinekm)! - Change OAuth2 connect method to return URL instead of auto-redirecting for React Native compatibility
+
 ## 0.0.226
 
 ### Patch Changes
