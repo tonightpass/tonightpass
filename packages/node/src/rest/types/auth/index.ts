@@ -20,9 +20,15 @@ export type RecoveryResponse = {
   to: string;
 };
 
+export type AuthResponse = {
+  user: User;
+  accessToken: string;
+  refreshToken: string;
+};
+
 export type AuthEndpoints =
-  | Endpoint<"POST", "/auth/sign-up", User, CreateUserDto>
-  | Endpoint<"POST", "/auth/sign-in", User, SignInUserDto>
+  | Endpoint<"POST", "/auth/sign-up", AuthResponse, CreateUserDto>
+  | Endpoint<"POST", "/auth/sign-in", AuthResponse, SignInUserDto>
   | Endpoint<"POST", "/auth/sign-out", null, null>
   | Endpoint<"POST", "/auth/refresh-token", null, null>
   | Endpoint<"POST", "/auth/recovery", RecoveryResponse, RecoveryDto>
@@ -34,7 +40,7 @@ export type AuthEndpoints =
   | Endpoint<
       "POST",
       `/oauth2/${OAuth2Provider.Google}/one-tap`,
-      User,
+      AuthResponse,
       GoogleOneTapDto
     >
   | Endpoint<"GET", `/oauth2/${OAuth2Provider.Facebook}`, void>
