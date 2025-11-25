@@ -1,5 +1,16 @@
 # tonightpass
 
+## 0.0.230
+
+### Patch Changes
+
+- [`0186224`](https://github.com/tonightpass/tonightpass/commit/01862249aa694abd7986b2b3ec14eb557f09982b) Thanks [@antoinekm](https://github.com/antoinekm)! - Add Bearer token authentication support to SDK
+  - Add `accessToken` option to `ClientOptions`
+  - Add `setAccessToken()` method to `Client` class for dynamic token updates
+  - Automatically include `Authorization: Bearer <token>` header in requests when accessToken is set
+  - Update `/auth/refresh-token` endpoint type to return `AuthResponse` instead of `null`
+  - Remove redundant `setAccessToken` helper from React hooks (use `client.setAccessToken()` directly)
+
 ## 0.0.229
 
 ### Patch Changes
