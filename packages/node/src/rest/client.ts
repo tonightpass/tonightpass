@@ -77,18 +77,21 @@ export class TonightPassAPIError<T> extends Error {
 export interface ClientOptions {
   readonly baseURL: string;
   readonly apiKey?: string;
+  readonly accessToken?: string;
   readonly cache?: CacheOptions;
 }
 
 export class Client {
   private options;
   private apiKey?: string;
+  private accessToken?: string;
   private cacheManager?: CacheManager;
   public readonly url;
 
   constructor(options: ClientOptions) {
     this.options = options;
     this.apiKey = options.apiKey;
+    this.accessToken = options.accessToken;
     this.url = (path: string, params: Record<string, ParamValue>) => {
       const baseURL = this.options.baseURL || DEFAULT_API_URL;
       return pathcat(baseURL, path, params);
@@ -102,12 +105,17 @@ export class Client {
   setOptions(options: ClientOptions) {
     this.options = options;
     this.apiKey = options.apiKey;
+    this.accessToken = options.accessToken;
 
     if (options.cache?.enabled) {
       this.cacheManager = new CacheManager(options.cache);
     } else {
       this.cacheManager = undefined;
     }
+  }
+
+  setAccessToken(accessToken: string | undefined) {
+    this.accessToken = accessToken;
   }
 
   clearCache() {
@@ -218,6 +226,7 @@ export class Client {
       method,
       data: body,
       apiKey: this.apiKey,
+      accessToken: this.accessToken,
       ...options,
     });
 
