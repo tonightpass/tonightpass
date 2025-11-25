@@ -46,14 +46,16 @@ const instance = axios.create({
 
 export interface APIRequestOptions extends Options {
   apiKey?: string;
+  accessToken?: string;
 }
 
 export const request = async <T>(url: string, options?: APIRequestOptions) => {
-  const { apiKey, ...requestOptions } = options || {};
+  const { apiKey, accessToken, ...requestOptions } = options || {};
 
   const headers = {
     ...requestOptions.headers,
     ...(apiKey && { "X-API-Key": apiKey }),
+    ...(accessToken && { Authorization: `Bearer ${accessToken}` }),
   };
 
   const response = instance<APIResponse<T>>(url, {

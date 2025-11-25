@@ -30,7 +30,7 @@ export type AuthEndpoints =
   | Endpoint<"POST", "/auth/sign-up", AuthResponse, CreateUserDto>
   | Endpoint<"POST", "/auth/sign-in", AuthResponse, SignInUserDto>
   | Endpoint<"POST", "/auth/sign-out", null, null>
-  | Endpoint<"POST", "/auth/refresh-token", null, null>
+  | Endpoint<"POST", "/auth/refresh-token", AuthResponse, null>
   | Endpoint<"POST", "/auth/recovery", RecoveryResponse, RecoveryDto>
   | Endpoint<"POST", "/auth/recovery/reset", null, RecoveryResetDto>
   | Endpoint<"GET", "/oauth2/:provider", void>
