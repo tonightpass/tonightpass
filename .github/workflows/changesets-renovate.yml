@@ -1,0 +1,48 @@
+name: Changesets Renovate
+
+on:
+  pull_request_target:
+    paths:
+      - ".github/workflows/changesets-renovate.yml"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - "**/package.json"
+
+jobs:
+  generate-changeset:
+    if: github.actor == 'renovate[bot]' && github.repository == 'tonightpass/tonightpass'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Extract pnpm version
+        id: extract_pnpm_version
+        run: echo "::set-output name=pnpm_version::$(jq -r '.packageManager' package.json | cut -d'@' -f2)"
+
+      - name: Use pnpm
+        uses: pnpm/action-setup@v4.1.0
+        with:
+          version: ${{ steps.extract_pnpm_version.outputs.pnpm_version }}
+
+      - name: Use Node
+        uses: actions/setup-node@v4
+        with:
+          cache: "pnpm"
+
+      - name: Install Dependencies
+        run: pnpm i --no-frozen-lockfile
+
+      - name: Generate Changeset
+        run: pnpm changesets-renovate
