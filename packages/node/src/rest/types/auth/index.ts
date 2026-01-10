@@ -47,4 +47,4 @@ export type AuthEndpoints =
   | Endpoint<"GET", `/oauth2/${OAuth2Provider.Facebook}/callback`, void>
   | Endpoint<"GET", `/oauth2/${OAuth2Provider.Twitter}`, void>
   | Endpoint<"GET", `/oauth2/${OAuth2Provider.Twitter}/callback`, void>
-  | Endpoint<"DELETE", "/oauth2/:provider", void>;
+  | Endpoint<"DELETE", "/oauth2/:provider", void, null>;

@@ -33,4 +33,4 @@ export type UserPostRepostEndpoints =
       UserPostRepost,
       CreateUserPostRepostDto
     >
-  | Endpoint<"DELETE", "/users/~me/posts/:postId/reposts", void>;
+  | Endpoint<"DELETE", "/users/~me/posts/:postId/reposts", void, null>;

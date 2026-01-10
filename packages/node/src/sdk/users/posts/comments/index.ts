@@ -32,7 +32,7 @@ export const usersPostsComments = sdk((client) => ({
     }),
 
   delete: async (postId: string, commentId: string) =>
-    client.delete("/users/~me/posts/:postId/comments/:commentId", undefined, {
+    client.delete("/users/~me/posts/:postId/comments/:commentId", null, {
       postId,
       commentId,
     }),
