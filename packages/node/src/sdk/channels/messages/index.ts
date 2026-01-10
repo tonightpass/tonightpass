@@ -141,10 +141,14 @@ export const channelsMessages = sdk((client) => ({
       },
     ),
   markAsRead: async (channelId: string, messageId: string) =>
-    client.post("/channels/~me/:channelId/messages/:messageId/read", undefined, {
-      channelId,
-      messageId,
-    }),
+    client.post(
+      "/channels/~me/:channelId/messages/:messageId/read",
+      undefined,
+      {
+        channelId,
+        messageId,
+      },
+    ),
   markAsReadByOrganization: async (
     organizationSlug: string,
     channelId: string,

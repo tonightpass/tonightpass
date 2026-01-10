@@ -73,10 +73,14 @@ export const channels = sdk((client) => ({
       channelId,
     }),
   removeParticipant: async (channelId: string, username: string) =>
-    client.delete("/channels/~me/:channelId/participants/:username", undefined, {
-      channelId,
-      username,
-    }),
+    client.delete(
+      "/channels/~me/:channelId/participants/:username",
+      undefined,
+      {
+        channelId,
+        username,
+      },
+    ),
   removeParticipantByOrganization: async (
     organizationSlug: string,
     channelId: string,
