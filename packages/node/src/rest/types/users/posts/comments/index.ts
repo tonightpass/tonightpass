@@ -39,4 +39,9 @@ export type UserPostCommentEndpoints =
       UserPostComment,
       UpdateUserPostCommentDto
     >
-  | Endpoint<"DELETE", "/users/~me/posts/:postId/comments/:commentId", void, null>;
+  | Endpoint<
+      "DELETE",
+      "/users/~me/posts/:postId/comments/:commentId",
+      void,
+      null
+    >;

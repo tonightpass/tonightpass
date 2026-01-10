@@ -98,7 +98,12 @@ export type ChannelEndpoints =
       void,
       AddParticipantDto
     >
-  | Endpoint<"DELETE", "/channels/~me/:channelId/participants/:username", void, null>
+  | Endpoint<
+      "DELETE",
+      "/channels/~me/:channelId/participants/:username",
+      void,
+      null
+    >
   | Endpoint<
       "DELETE",
       "/channels/:organizationSlug/:channelId/participants/:username",

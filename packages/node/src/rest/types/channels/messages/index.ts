@@ -106,7 +106,12 @@ export type ChannelMessageEndpoints =
       ChannelMessage,
       UpdateChannelMessageDto
     >
-  | Endpoint<"DELETE", "/channels/~me/:channelId/messages/:messageId", void, null>
+  | Endpoint<
+      "DELETE",
+      "/channels/~me/:channelId/messages/:messageId",
+      void,
+      null
+    >
   | Endpoint<
       "DELETE",
       "/channels/:organizationSlug/:channelId/messages/:messageId",
