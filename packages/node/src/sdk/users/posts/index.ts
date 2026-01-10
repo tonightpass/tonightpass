@@ -21,7 +21,7 @@ export const usersPosts = sdk((client) => ({
     client.put("/users/~me/posts/:postId", data, { postId }),
 
   delete: async (postId: string) =>
-    client.delete("/users/~me/posts/:postId", null, { postId }),
+    client.delete("/users/~me/posts/:postId", undefined, { postId }),
 
   uploadMedia: async (file: FormData) =>
     client.post("/users/~me/posts/media", file),

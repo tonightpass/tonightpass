@@ -29,8 +29,8 @@ export type AuthResponse = {
 export type AuthEndpoints =
   | Endpoint<"POST", "/auth/sign-up", AuthResponse, CreateUserDto>
   | Endpoint<"POST", "/auth/sign-in", AuthResponse, SignInUserDto>
-  | Endpoint<"POST", "/auth/sign-out", null, null>
-  | Endpoint<"POST", "/auth/refresh-token", AuthResponse, null>
+  | Endpoint<"POST", "/auth/sign-out", null, undefined>
+  | Endpoint<"POST", "/auth/refresh-token", AuthResponse, undefined>
   | Endpoint<"POST", "/auth/recovery", RecoveryResponse, RecoveryDto>
   | Endpoint<"POST", "/auth/recovery/reset", null, RecoveryResetDto>
   | Endpoint<"GET", "/oauth2/:provider", void>
@@ -47,4 +47,4 @@ export type AuthEndpoints =
   | Endpoint<"GET", `/oauth2/${OAuth2Provider.Facebook}/callback`, void>
   | Endpoint<"GET", `/oauth2/${OAuth2Provider.Twitter}`, void>
   | Endpoint<"GET", `/oauth2/${OAuth2Provider.Twitter}/callback`, void>
-  | Endpoint<"DELETE", "/oauth2/:provider", void, null>;
+  | Endpoint<"DELETE", "/oauth2/:provider", void, undefined>;

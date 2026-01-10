@@ -69,7 +69,7 @@ export type OrganizationEndpoints =
       Organization,
       UpdateOrganizationDto
     >
-  | Endpoint<"DELETE", "/organizations/@:organizationSlug", Organization, null>
+  | Endpoint<"DELETE", "/organizations/@:organizationSlug", Organization, undefined>
   | Endpoint<
       "POST",
       "/organizations/@:organizationSlug/files/:organizationFileType",

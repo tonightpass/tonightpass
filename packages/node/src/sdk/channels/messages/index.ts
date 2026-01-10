@@ -75,7 +75,7 @@ export const channelsMessages = sdk((client) => ({
       },
     ),
   delete: async (channelId: string, messageId: string) =>
-    client.delete("/channels/~me/:channelId/messages/:messageId", null, {
+    client.delete("/channels/~me/:channelId/messages/:messageId", undefined, {
       channelId,
       messageId,
     }),
@@ -86,7 +86,7 @@ export const channelsMessages = sdk((client) => ({
   ) =>
     client.delete(
       "/channels/:organizationSlug/:channelId/messages/:messageId",
-      null,
+      undefined,
       {
         organizationSlug,
         channelId,
@@ -117,7 +117,7 @@ export const channelsMessages = sdk((client) => ({
   removeReaction: async (channelId: string, messageId: string, emoji: string) =>
     client.delete(
       "/channels/~me/:channelId/messages/:messageId/reactions/:emoji",
-      null,
+      undefined,
       {
         channelId,
         messageId,
@@ -132,7 +132,7 @@ export const channelsMessages = sdk((client) => ({
   ) =>
     client.delete(
       "/channels/:organizationSlug/:channelId/messages/:messageId/reactions/:emoji",
-      null,
+      undefined,
       {
         organizationSlug,
         channelId,
@@ -141,7 +141,7 @@ export const channelsMessages = sdk((client) => ({
       },
     ),
   markAsRead: async (channelId: string, messageId: string) =>
-    client.post("/channels/~me/:channelId/messages/:messageId/read", null, {
+    client.post("/channels/~me/:channelId/messages/:messageId/read", undefined, {
       channelId,
       messageId,
     }),
@@ -152,7 +152,7 @@ export const channelsMessages = sdk((client) => ({
   ) =>
     client.post(
       "/channels/:organizationSlug/:channelId/messages/:messageId/read",
-      null,
+      undefined,
       {
         organizationSlug,
         channelId,

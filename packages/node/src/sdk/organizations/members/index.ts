@@ -25,25 +25,25 @@ export const organizationsMembers = (client: Client) => ({
       username,
     }),
   delete: async (organizationSlug: string, username: string) =>
-    client.delete("/organizations/@:organizationSlug/members/:username", null, {
+    client.delete("/organizations/@:organizationSlug/members/:username", undefined, {
       organizationSlug,
       username,
     }),
   invitations: invitations(client),
   accept: async (organizationSlug: string) =>
-    client.put("/organizations/@:organizationSlug/members/~me/accept", null, {
+    client.put("/organizations/@:organizationSlug/members/~me/accept", undefined, {
       organizationSlug,
     }),
   reject: async (organizationSlug: string) =>
     client.delete(
       "/organizations/@:organizationSlug/members/~me/reject",
-      null,
+      undefined,
       {
         organizationSlug,
       },
     ),
   leave: async (organizationSlug: string) =>
-    client.delete("/organizations/@:organizationSlug/members/~me", null, {
+    client.delete("/organizations/@:organizationSlug/members/~me", undefined, {
       organizationSlug,
     }),
 });

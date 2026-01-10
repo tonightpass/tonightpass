@@ -48,4 +48,4 @@ export type UserNotificationEndpoints =
         unseen?: boolean;
       }
     >
-  | Endpoint<"PUT", "/users/~me/notifications/read", void, null>;
+  | Endpoint<"PUT", "/users/~me/notifications/read", void, undefined>;

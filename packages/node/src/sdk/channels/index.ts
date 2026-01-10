@@ -55,9 +55,9 @@ export const channels = sdk((client) => ({
       channelId,
     }),
   delete: async (channelId: string) =>
-    client.delete("/channels/~me/:channelId", null, { channelId }),
+    client.delete("/channels/~me/:channelId", undefined, { channelId }),
   deleteByOrganization: async (organizationSlug: string, channelId: string) =>
-    client.delete("/channels/:organizationSlug/:channelId", null, {
+    client.delete("/channels/:organizationSlug/:channelId", undefined, {
       organizationSlug,
       channelId,
     }),
@@ -73,7 +73,7 @@ export const channels = sdk((client) => ({
       channelId,
     }),
   removeParticipant: async (channelId: string, username: string) =>
-    client.delete("/channels/~me/:channelId/participants/:username", null, {
+    client.delete("/channels/~me/:channelId/participants/:username", undefined, {
       channelId,
       username,
     }),
@@ -84,7 +84,7 @@ export const channels = sdk((client) => ({
   ) =>
     client.delete(
       "/channels/:organizationSlug/:channelId/participants/:username",
-      null,
+      undefined,
       {
         organizationSlug,
         channelId,

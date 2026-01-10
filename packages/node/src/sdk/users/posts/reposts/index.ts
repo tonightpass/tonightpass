@@ -24,5 +24,5 @@ export const usersPostsReposts = sdk((client) => ({
     client.post("/users/~me/posts/:postId/reposts", data || {}, { postId }),
 
   delete: async (postId: string) =>
-    client.delete("/users/~me/posts/:postId/reposts", null, { postId }),
+    client.delete("/users/~me/posts/:postId/reposts", undefined, { postId }),
 }));

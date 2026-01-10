@@ -22,7 +22,7 @@ export const organizations = sdk((client) => ({
   update: async (organizationSlug: string, data: UpdateOrganizationDto) =>
     client.put("/organizations/@:organizationSlug", data, { organizationSlug }),
   delete: async (organizationSlug: string) =>
-    client.delete("/organizations/@:organizationSlug", null, {
+    client.delete("/organizations/@:organizationSlug", undefined, {
       organizationSlug,
     }),
   uploadFile: async (

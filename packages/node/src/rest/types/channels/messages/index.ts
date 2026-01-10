@@ -110,13 +110,13 @@ export type ChannelMessageEndpoints =
       "DELETE",
       "/channels/~me/:channelId/messages/:messageId",
       void,
-      null
+      undefined
     >
   | Endpoint<
       "DELETE",
       "/channels/:organizationSlug/:channelId/messages/:messageId",
       void,
-      null
+      undefined
     >
   | Endpoint<
       "POST",
@@ -134,25 +134,25 @@ export type ChannelMessageEndpoints =
       "DELETE",
       "/channels/~me/:channelId/messages/:messageId/reactions/:emoji",
       void,
-      null
+      undefined
     >
   | Endpoint<
       "DELETE",
       "/channels/:organizationSlug/:channelId/messages/:messageId/reactions/:emoji",
       void,
-      null
+      undefined
     >
   | Endpoint<
       "POST",
       "/channels/~me/:channelId/messages/:messageId/read",
       void,
-      null
+      undefined
     >
   | Endpoint<
       "POST",
       "/channels/:organizationSlug/:channelId/messages/:messageId/read",
       void,
-      null
+      undefined
     >
   | Endpoint<"POST", "/channels/~me/:channelId/files", string, FormData>
   | Endpoint<
