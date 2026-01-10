@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.231
+
+### Patch Changes
+
+- [`08659fe`](https://github.com/tonightpass/tonightpass/commit/08659fee1bc1fd002ac35c679a26040d9b516cba) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix PUT and DELETE requests with empty body causing "Body cannot be empty when content-type is set to 'application/json'" error. Changed body from `undefined` to `null` for endpoints that don't require a request body.
+
 ## 0.0.230
 
 ### Patch Changes
