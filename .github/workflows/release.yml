@@ -35,6 +35,9 @@ jobs:
           cache: "pnpm"
           registry-url: "https://registry.npmjs.org"
 
+      - name: Update npm to latest (for OIDC support)
+        run: npm install -g npm@latest
+
       - name: Install Dependencies
         run: pnpm i --no-frozen-lockfile
 
@@ -53,4 +56,4 @@ jobs:
           title: "🔖 release version"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
+          NPM_TOKEN: ""
