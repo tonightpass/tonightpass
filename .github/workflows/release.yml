@@ -11,6 +11,11 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -28,6 +33,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           cache: "pnpm"
+          registry-url: "https://registry.npmjs.org"
 
       - name: Install Dependencies
         run: pnpm i --no-frozen-lockfile
@@ -47,4 +53,4 @@ jobs:
           title: "🔖 release version"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
