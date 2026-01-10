@@ -84,8 +84,8 @@ export type ChannelEndpoints =
       Channel,
       UpdateChannelDto
     >
-  | Endpoint<"DELETE", "/channels/~me/:channelId", void>
-  | Endpoint<"DELETE", "/channels/:organizationSlug/:channelId", void>
+  | Endpoint<"DELETE", "/channels/~me/:channelId", void, null>
+  | Endpoint<"DELETE", "/channels/:organizationSlug/:channelId", void, null>
   | Endpoint<
       "POST",
       "/channels/~me/:channelId/participants",
@@ -98,11 +98,12 @@ export type ChannelEndpoints =
       void,
       AddParticipantDto
     >
-  | Endpoint<"DELETE", "/channels/~me/:channelId/participants/:username", void>
+  | Endpoint<"DELETE", "/channels/~me/:channelId/participants/:username", void, null>
   | Endpoint<
       "DELETE",
       "/channels/:organizationSlug/:channelId/participants/:username",
-      void
+      void,
+      null
     >
   | Endpoint<
       "GET",

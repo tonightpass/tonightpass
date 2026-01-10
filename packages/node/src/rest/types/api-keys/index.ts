@@ -24,4 +24,4 @@ export type ApiKeyEndpoints =
   | Endpoint<"GET", "/api-keys/:apiKeyId", ApiKey>
   | Endpoint<"POST", "/api-keys", ApiKey, CreateApiKeyDto>
   | Endpoint<"PUT", "/api-keys/:apiKeyId", ApiKey, UpdateApiKeyDto>
-  | Endpoint<"DELETE", "/api-keys/:apiKeyId", ApiKey>;
+  | Endpoint<"DELETE", "/api-keys/:apiKeyId", ApiKey, null>;

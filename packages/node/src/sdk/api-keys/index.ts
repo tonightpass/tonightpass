@@ -9,5 +9,5 @@ export const apiKeys = sdk((client) => ({
   update: async (apiKeyId: string, data: UpdateApiKeyDto) =>
     client.put("/api-keys/:apiKeyId", data, { apiKeyId }),
   delete: async (apiKeyId: string) =>
-    client.delete("/api-keys/:apiKeyId", undefined, { apiKeyId }),
+    client.delete("/api-keys/:apiKeyId", null, { apiKeyId }),
 }));

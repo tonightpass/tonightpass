@@ -28,7 +28,7 @@ export const auth = sdk((client) => ({
       return client.url("/oauth2/:provider", { provider, ...params });
     },
     disconnect: async (provider: OAuth2Provider) =>
-      client.delete("/oauth2/:provider", undefined, { provider }),
+      client.delete("/oauth2/:provider", null, { provider }),
     googleOneTap: async (data: GoogleOneTapDto) =>
       client.post("/oauth2/google/one-tap", data),
   },
