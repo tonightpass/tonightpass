@@ -21,7 +21,7 @@
     "@fumadocs/cli": "^0.2.0",
     "@tailwindcss/postcss": "^4.0.7",
     "@types/mdx": "^2.0.13",
-    "@types/node": "22.18.6",
+    "@types/node": "22.19.5",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.4",
     "postcss": "^8.5.3",
