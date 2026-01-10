@@ -20,8 +20,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@nestjs/common": "11.1.6",
-    "@nestjs/core": "11.1.6",
+    "@nestjs/common": "11.1.11",
+    "@nestjs/core": "11.1.11",
     "@nestjs/platform-express": "^11.0.0",
     "@tonightpass/nest": "workspace:^",
     "reflect-metadata": "^0.2.1",
