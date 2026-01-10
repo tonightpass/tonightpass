@@ -62,10 +62,14 @@ export const organizationsEvents = (client: Client) => ({
       eventSlug,
     }),
   delete: async (organizationSlug: string, eventSlug: string) =>
-    client.delete("/organizations/@:organizationSlug/events/:eventSlug", undefined, {
-      organizationSlug,
-      eventSlug,
-    }),
+    client.delete(
+      "/organizations/@:organizationSlug/events/:eventSlug",
+      undefined,
+      {
+        organizationSlug,
+        eventSlug,
+      },
+    ),
   uploadFile: async (
     eventFileType: OrganizationEventFileType,
     file: File | FileObject,

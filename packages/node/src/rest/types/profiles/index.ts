@@ -85,7 +85,12 @@ export type ProfileEndpoints =
       ArrayResult<UserProfile>,
       ArrayOptions<UserProfile>
     >
-  | Endpoint<"POST", "/profiles/@:username/relationships/follow", boolean, undefined>
+  | Endpoint<
+      "POST",
+      "/profiles/@:username/relationships/follow",
+      boolean,
+      undefined
+    >
   | Endpoint<
       "POST",
       "/profiles/@:username/relationships/unfollow",
