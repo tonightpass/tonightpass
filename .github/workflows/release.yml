@@ -36,7 +36,7 @@ jobs:
           registry-url: "https://registry.npmjs.org"
 
       - name: Update npm to latest (for OIDC support)
-        run: npm install -g npm@latest
+        run: sudo npm install -g npm@latest
 
       - name: Install Dependencies
         run: pnpm i --no-frozen-lockfile
