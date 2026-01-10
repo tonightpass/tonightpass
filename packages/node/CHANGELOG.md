@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.232
+
+### Patch Changes
+
+- [`9ca593d`](https://github.com/tonightpass/tonightpass/commit/9ca593d86b2c22863ddee7e733fec94a3833e4eb) Thanks [@antoinekm](https://github.com/antoinekm)! - Replace `null` with `undefined` for empty body parameters in SDK calls and endpoint types to prevent API errors when Content-Type header is set
+
 ## 0.0.231
 
 ### Patch Changes
