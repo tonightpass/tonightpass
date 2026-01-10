@@ -13,8 +13,8 @@ import {
 export const auth = sdk((client) => ({
   signIn: async (data: SignInUserDto) => client.post("/auth/sign-in", data),
   signUp: async (data: CreateUserDto) => client.post("/auth/sign-up", data),
-  signOut: async () => client.post("/auth/sign-out", null),
-  refreshToken: async () => client.post("/auth/refresh-token", null),
+  signOut: async () => client.post("/auth/sign-out", undefined),
+  refreshToken: async () => client.post("/auth/refresh-token", undefined),
 
   recovery: async (data: RecoveryDto) => client.post("/auth/recovery", data),
   recoveryReset: async (data: RecoveryResetDto) =>
@@ -28,7 +28,7 @@ export const auth = sdk((client) => ({
       return client.url("/oauth2/:provider", { provider, ...params });
     },
     disconnect: async (provider: OAuth2Provider) =>
-      client.delete("/oauth2/:provider", null, { provider }),
+      client.delete("/oauth2/:provider", undefined, { provider }),
     googleOneTap: async (data: GoogleOneTapDto) =>
       client.post("/oauth2/google/one-tap", data),
   },

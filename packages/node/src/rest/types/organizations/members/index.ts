@@ -63,7 +63,7 @@ export type OrganizationMembersEndpoints =
       "DELETE",
       "/organizations/@:organizationSlug/members/:username",
       OrganizationMember[],
-      null
+      undefined
     >
   | Endpoint<
       "GET",
@@ -87,17 +87,17 @@ export type OrganizationMembersEndpoints =
       "PUT",
       "/organizations/@:organizationSlug/members/~me/accept",
       OrganizationMember,
-      null
+      undefined
     >
   | Endpoint<
       "DELETE",
       "/organizations/@:organizationSlug/members/~me/reject",
       null,
-      null
+      undefined
     >
   | Endpoint<
       "DELETE",
       "/organizations/@:organizationSlug/members/~me",
       null,
-      null
+      undefined
     >;

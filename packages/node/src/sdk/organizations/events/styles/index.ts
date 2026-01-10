@@ -13,7 +13,7 @@ export const organizationsEventsStyles = (client: Client) => ({
   update: async (styleSlug: string, data: UpdateOrganizationEventStyleDto) =>
     client.put("/organizations/events/styles/:styleSlug", data, { styleSlug }),
   delete: async (styleSlug: string) =>
-    client.delete("/organizations/events/styles/:styleSlug", null, {
+    client.delete("/organizations/events/styles/:styleSlug", undefined, {
       styleSlug,
     }),
 });

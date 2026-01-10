@@ -84,8 +84,8 @@ export type ChannelEndpoints =
       Channel,
       UpdateChannelDto
     >
-  | Endpoint<"DELETE", "/channels/~me/:channelId", void, null>
-  | Endpoint<"DELETE", "/channels/:organizationSlug/:channelId", void, null>
+  | Endpoint<"DELETE", "/channels/~me/:channelId", void, undefined>
+  | Endpoint<"DELETE", "/channels/:organizationSlug/:channelId", void, undefined>
   | Endpoint<
       "POST",
       "/channels/~me/:channelId/participants",
@@ -102,13 +102,13 @@ export type ChannelEndpoints =
       "DELETE",
       "/channels/~me/:channelId/participants/:username",
       void,
-      null
+      undefined
     >
   | Endpoint<
       "DELETE",
       "/channels/:organizationSlug/:channelId/participants/:username",
       void,
-      null
+      undefined
     >
   | Endpoint<
       "GET",
