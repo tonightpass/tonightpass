@@ -5,7 +5,6 @@ import { APIResponse, ErroredAPIResponse } from "../client";
 
 const instance = axios.create({
   headers: {
-    "Content-Type": "application/json",
     Accept: "application/json",
     ...(!isBrowser && { "User-Agent": "tonightpass-api-client" }),
   },
@@ -29,6 +28,9 @@ const instance = axios.create({
           Object.assign(headers, normalizedHeaders);
         }
         return data;
+      } else if (data === undefined || data === null) {
+        // No body, no Content-Type header needed
+        return undefined;
       } else {
         if (headers) {
           (
