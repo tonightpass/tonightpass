@@ -9,5 +9,6 @@ export * from "./health";
 export * from "./orders";
 export * from "./organizations";
 export * from "./profiles";
+export * from "./roadmap";
 export * from "./users";
 export * from "./notifications";

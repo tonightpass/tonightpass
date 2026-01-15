@@ -13,6 +13,7 @@ import {
   OrderEndpoints,
   OrganizationEndpoints,
   ProfileEndpoints,
+  RoadmapEndpoints,
   UserEndpoints,
   WebhookEndpoints,
 } from "./types";
@@ -41,6 +42,7 @@ export type Endpoints =
   | OrderEndpoints
   | OrganizationEndpoints
   | ProfileEndpoints
+  | RoadmapEndpoints
   | UserEndpoints
   | WebhookEndpoints
   | NotificationEndpoints;
