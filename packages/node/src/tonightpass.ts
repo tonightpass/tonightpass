@@ -11,6 +11,7 @@ import {
   orders,
   organizations,
   profiles,
+  roadmap,
   users,
 } from "./sdk";
 
@@ -27,6 +28,7 @@ export class TonightPass {
   public readonly orders;
   public readonly organizations;
   public readonly profiles;
+  public readonly roadmap;
   public readonly users;
   public readonly notifications;
 
@@ -43,6 +45,7 @@ export class TonightPass {
     this.orders = orders(this.client);
     this.organizations = organizations(this.client);
     this.profiles = profiles(this.client);
+    this.roadmap = roadmap(this.client);
     this.users = users(this.client);
     this.notifications = notifications(this.client);
   }

@@ -11,6 +11,7 @@ export * from "./organizations";
 export * from "./users";
 export * from "./orders";
 export * from "./profiles";
+export * from "./roadmap";
 export * from "./webhooks";
 export * from "./notifications";
 
