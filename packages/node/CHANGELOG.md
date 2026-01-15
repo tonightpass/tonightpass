@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.234
+
+### Patch Changes
+
+- [`0e6ce64`](https://github.com/tonightpass/tonightpass/commit/0e6ce642e607af68dcf9bd80a31996559f88770a) Thanks [@antoinekm](https://github.com/antoinekm)! - Add roadmap types and interfaces for feature tracking
+
 ## 0.0.233
 
 ### Patch Changes
