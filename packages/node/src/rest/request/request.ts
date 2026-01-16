@@ -1,7 +1,7 @@
-import axios, { Options, Response } from "redaxios";
+import axios, { type Options, type Response } from "redaxios";
 
 import { isBrowser } from "../../utils";
-import { APIResponse, ErroredAPIResponse } from "../client";
+import type { APIResponse, ErroredAPIResponse } from "../client";
 
 const instance = axios.create({
   headers: {
@@ -10,12 +10,12 @@ const instance = axios.create({
   },
   responseType: "json",
   transformRequest: [
-    function (data, headers) {
+    (data, headers) => {
       if (data instanceof FormData) {
         if (headers && typeof headers === "object") {
           const normalizedHeaders = {} as { [key: string]: string };
           for (const [key, value] of Object.entries(
-            headers as { [key: string]: string },
+            headers as { [key: string]: string }
           )) {
             const lowerKey = key.toLowerCase();
             if (lowerKey !== "content-type") {
@@ -23,24 +23,24 @@ const instance = axios.create({
             }
           }
           Object.keys(headers as { [key: string]: string }).forEach(
-            (key) => delete (headers as { [key: string]: string })[key],
+            (key) => delete (headers as { [key: string]: string })[key]
           );
           Object.assign(headers, normalizedHeaders);
         }
         return data;
-      } else if (data === undefined || data === null) {
+      }
+      if (data === undefined || data === null) {
         // No body, no Content-Type header needed
         return undefined;
-      } else {
-        if (headers) {
-          (
-            headers as {
-              [name: string]: string;
-            }
-          )["Content-Type"] = "application/json";
-        }
-        return JSON.stringify(data);
       }
+      if (headers) {
+        (
+          headers as {
+            [name: string]: string;
+          }
+        )["Content-Type"] = "application/json";
+      }
+      return JSON.stringify(data);
     },
   ],
   withCredentials: isBrowser,

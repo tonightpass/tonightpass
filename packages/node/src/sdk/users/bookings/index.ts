@@ -1,5 +1,5 @@
-import { usersBookingsTickets } from "./tickets";
 import { sdk } from "../../builder";
+import { usersBookingsTickets } from "./tickets";
 
 export const usersBookings = sdk((client) => ({
   getAll: async () => client.get("/users/bookings"),

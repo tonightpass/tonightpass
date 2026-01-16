@@ -1,12 +1,12 @@
-import { ArrayOptions, ArrayResult } from "..";
-import { Endpoint } from "../../endpoints";
+import type { Endpoint } from "../../endpoints";
+import type { ArrayOptions, ArrayResult } from "..";
 
 export enum ProfileType {
   User = "user",
   Organization = "organization",
 }
 
-export type BaseProfile = {
+export interface BaseProfile {
   type: ProfileType;
   slug: string;
 
@@ -21,7 +21,7 @@ export type BaseProfile = {
   metadata: ProfileMetadata;
 
   createdAt: Date;
-};
+}
 
 export type UserProfile = BaseProfile & {
   type: ProfileType.User;
@@ -35,7 +35,7 @@ export type OrganizationProfile = BaseProfile & {
 
 export type Profile = UserProfile | OrganizationProfile;
 
-export type BaseProfileMetadata = {
+export interface BaseProfileMetadata {
   followersCount: number;
 
   isFollower: boolean;
@@ -46,7 +46,7 @@ export type BaseProfileMetadata = {
   canDM: boolean;
 
   isOfficial: boolean;
-};
+}
 
 export type UserProfileMetadata = BaseProfileMetadata & {
   hasPassPlus: boolean;

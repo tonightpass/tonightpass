@@ -1,4 +1,4 @@
-import { Endpoint } from "../../../../endpoints";
+import type { Endpoint } from "../../../../endpoints";
 
 export type UserPostViewEndpoints = Endpoint<
   "POST",

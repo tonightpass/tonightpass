@@ -1,4 +1,4 @@
-import { OrganizationEventStyleType } from "../../../../types";
+import type { OrganizationEventStyleType } from "../../../../types";
 
 export class CreateOrganizationEventStyleDto {
   type: OrganizationEventStyleType;

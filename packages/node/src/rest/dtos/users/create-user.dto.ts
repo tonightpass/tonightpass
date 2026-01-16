@@ -1,5 +1,6 @@
 import { Transform, Type } from "class-transformer";
 import {
+  ArrayMaxSize,
   IsArray,
   IsDate,
   IsEmail,
@@ -12,11 +13,10 @@ import {
   Length,
   Matches,
   ValidateNested,
-  ArrayMaxSize,
 } from "class-validator";
 
 import { REGEX } from "../../../constants";
-import { UserIdentifier, UserIdentityGender } from "../../types";
+import { type UserIdentifier, UserIdentityGender } from "../../types";
 
 export class CreateUserDto {
   @ValidateNested()
@@ -43,9 +43,9 @@ export class CreateUserDto {
   password: string;
 }
 
-class CreateUserIdentifierDto implements Partial<
-  Pick<UserIdentifier, "email" | "phoneNumber" | "username">
-> {
+class CreateUserIdentifierDto
+  implements Partial<Pick<UserIdentifier, "email" | "phoneNumber" | "username">>
+{
   @IsOptional()
   @IsString()
   @IsEmail()
@@ -87,19 +87,18 @@ export class CreateUserIdentityDto {
   gender: UserIdentityGender;
 
   @IsOptional()
-  @Matches(
-    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(users\/[\w-]+\/avatars\/|temp\/users\/avatars\/)/,
-    {
-      message: "user.avatar.url.invalid",
-    },
-  )
+  @Matches(REGEX.USER_AVATAR_URL_CREATE, {
+    message: "user.avatar.url.invalid",
+  })
   avatarUrl?: string;
 
   @IsOptional()
   @Transform(({ value }) => {
-    if (!value) return undefined;
+    if (!value) {
+      return undefined;
+    }
     const date = new Date(value);
-    return isNaN(date.getTime()) ? value : date;
+    return Number.isNaN(date.getTime()) ? value : date;
   })
   @IsDate()
   birthDate: Date;

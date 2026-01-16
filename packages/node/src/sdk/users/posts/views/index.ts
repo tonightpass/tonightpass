@@ -1,4 +1,4 @@
-import { Client } from "../../../../rest";
+import type { Client } from "../../../../rest";
 
 export const usersPostsViews = (client: Client) => ({
   record: async (username: string, postId: string) =>

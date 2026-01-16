@@ -1,15 +1,15 @@
+import type {
+  CreateOrganizationDto,
+  OrganizationFileType,
+  UpdateOrganizationDto,
+} from "../../rest";
+import { buildFileFormData, type FileObject } from "../../utils";
+import { sdk } from "../builder";
 import { organizationsBilling } from "./billing";
 import { organizationsCustomers } from "./customers";
 import { organizationsEvents } from "./events";
 import { organizationsMembers } from "./members";
 import { organizationsOrders } from "./orders";
-import {
-  CreateOrganizationDto,
-  UpdateOrganizationDto,
-  OrganizationFileType,
-} from "../../rest";
-import { buildFileFormData, type FileObject } from "../../utils";
-import { sdk } from "../builder";
 
 export const organizations = sdk((client) => ({
   search: async (query: string, limit?: number) =>
@@ -28,7 +28,7 @@ export const organizations = sdk((client) => ({
   uploadFile: async (
     organizationSlug: string,
     organizationFileType: OrganizationFileType,
-    file: File | FileObject,
+    file: File | FileObject
   ) =>
     client.post(
       "/organizations/@:organizationSlug/files/:organizationFileType",
@@ -36,7 +36,7 @@ export const organizations = sdk((client) => ({
       {
         organizationSlug,
         organizationFileType,
-      },
+      }
     ),
   billing: organizationsBilling(client),
   events: organizationsEvents(client),

@@ -5,13 +5,13 @@ import {
   IsOptional,
   IsString,
   Length,
-  ValidateNested,
   Validate,
+  ValidateNested,
   ValidatorConstraint,
-  ValidatorConstraintInterface,
+  type ValidatorConstraintInterface,
 } from "class-validator";
 
-import { GeoPoint, Location } from "../../types";
+import type { GeoPoint, Location } from "../../types";
 
 @ValidatorConstraint({ name: "coordinatesRange", async: false })
 class CoordinatesRangeConstraint implements ValidatorConstraintInterface {

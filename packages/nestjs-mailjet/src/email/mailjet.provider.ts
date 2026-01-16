@@ -1,10 +1,9 @@
-import { Provider } from "@nestjs/common";
-
-import { MailjetModuleOptions } from "./interfaces";
+import type { Provider } from "@nestjs/common";
 import { MAILJET_MODULE_OPTIONS } from "../constants/mailjet.constants";
+import type { MailjetModuleOptions } from "./interfaces";
 
 export function createMailjetProviders(
-  options: MailjetModuleOptions,
+  options: MailjetModuleOptions
 ): Provider[] {
   return [
     {

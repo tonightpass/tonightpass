@@ -1,4 +1,5 @@
 import {
+  ArrayMaxSize,
   IsArray,
   IsLowercase,
   IsNotEmpty,
@@ -8,11 +9,10 @@ import {
   IsUrl,
   Length,
   Matches,
-  ArrayMaxSize,
 } from "class-validator";
-
-import { CreateOrganizationMemberDto } from "./members/create-organization-member.dto";
-import { type Location } from "../../types";
+import { REGEX } from "../../../constants/regex";
+import type { Location } from "../../types";
+import type { CreateOrganizationMemberDto } from "./members/create-organization-member.dto";
 
 export class CreateOrganizationDto {
   @IsOptional()
@@ -43,21 +43,15 @@ export class CreateOrganizationIdentityDto {
   @IsOptional()
   description?: string;
 
-  @Matches(
-    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/organizations\/[\w-]+\/avatars\//,
-    {
-      message: "organization.avatar.url.invalid",
-    },
-  )
+  @Matches(REGEX.ORGANIZATION_AVATAR_URL, {
+    message: "organization.avatar.url.invalid",
+  })
   avatarUrl?: string;
 
   @IsOptional()
-  @Matches(
-    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/organizations\/[\w-]+\/banners\//,
-    {
-      message: "organization.banner.url.invalid",
-    },
-  )
+  @Matches(REGEX.ORGANIZATION_BANNER_URL, {
+    message: "organization.banner.url.invalid",
+  })
   bannerUrl?: string;
 
   @IsOptional()

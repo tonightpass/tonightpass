@@ -1,6 +1,6 @@
-import { UserBookingWithoutTickets } from "..";
-import { Base, OrganizationEventTicket, UserToken } from "../../..";
-import { Endpoint } from "../../../../endpoints";
+import type { Endpoint } from "../../../../endpoints";
+import type { Base, OrganizationEventTicket, UserToken } from "../../..";
+import type { UserBookingWithoutTickets } from "..";
 
 export type UserBookingTicket = Base & {
   booking: UserBookingWithoutTickets;

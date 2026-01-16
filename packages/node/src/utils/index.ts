@@ -1,16 +1,16 @@
 import { OrganizationMemberRolePower } from "../constants";
-import { OrganizationMemberRole } from "../rest/types/organizations/members";
+import type { OrganizationMemberRole } from "../rest/types/organizations/members";
 
 export const isBrowser = typeof window !== "undefined";
 
 /**
  * File object with uri/name/type structure
  */
-export type FileObject = {
+export interface FileObject {
   uri: string;
   name: string;
   type: string;
-};
+}
 
 /**
  * Build a FormData object from a file or multiple files
@@ -20,7 +20,7 @@ export type FileObject = {
  */
 export function buildFileFormData(
   key: string,
-  files: File | File[] | FileList | FileObject | FileObject[],
+  files: File | File[] | FileList | FileObject | FileObject[]
 ): FormData {
   const formData = new FormData();
 
@@ -57,7 +57,7 @@ export function buildFileFormData(
  */
 export function isMemberRoleAtLeast(
   memberRole: OrganizationMemberRole,
-  minimumRole: OrganizationMemberRole,
+  minimumRole: OrganizationMemberRole
 ): boolean {
   return (
     OrganizationMemberRolePower[memberRole] >=

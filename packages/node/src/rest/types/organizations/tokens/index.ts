@@ -1,5 +1,5 @@
-import { Organization, OrganizationMemberRole } from "..";
-import { Base } from "../..";
+import type { Base } from "../..";
+import type { Organization, OrganizationMemberRole } from "..";
 
 export type OrganizationToken = Omit<Base, "updatedAt"> & {
   type: OrganizationTokenType;

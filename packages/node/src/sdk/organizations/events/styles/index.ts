@@ -1,5 +1,5 @@
-import { Client } from "../../../../rest";
-import {
+import type { Client } from "../../../../rest";
+import type {
   CreateOrganizationEventStyleDto,
   UpdateOrganizationEventStyleDto,
 } from "../../../../rest/dtos/organizations/events/styles";

@@ -1,15 +1,15 @@
-import {
-  ArrayResult,
-  ArrayOptions,
-  UserPost,
-  UserProfile,
-  Base,
-} from "../../..";
-import {
+import type {
   CreateUserPostCommentDto,
   UpdateUserPostCommentDto,
 } from "../../../../dtos/users/posts/comments";
-import { Endpoint } from "../../../../endpoints";
+import type { Endpoint } from "../../../../endpoints";
+import type {
+  ArrayOptions,
+  ArrayResult,
+  Base,
+  UserPost,
+  UserProfile,
+} from "../../..";
 
 export type UserPostComment = Base & {
   post: UserPost;

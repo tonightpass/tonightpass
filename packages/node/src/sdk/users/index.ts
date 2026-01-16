@@ -1,4 +1,4 @@
-import { UpdateUserDto, UserFileType } from "../../rest";
+import type { UpdateUserDto, UserFileType } from "../../rest";
 import { buildFileFormData, type FileObject } from "../../utils";
 import { sdk } from "../builder";
 import { usersBookings } from "./bookings";
@@ -18,7 +18,7 @@ export const users = sdk((client) => ({
   uploadFile: async (
     userId: string,
     userFileType: UserFileType,
-    file: File | FileObject,
+    file: File | FileObject
   ) =>
     client.post(
       "/users/@:userId/files/:userFileType",
@@ -26,7 +26,7 @@ export const users = sdk((client) => ({
       {
         userId,
         userFileType,
-      },
+      }
     ),
   uploadTempFile: async (userFileType: UserFileType, file: File | FileObject) =>
     client.post("/users/files/:userFileType", buildFileFormData("file", file), {

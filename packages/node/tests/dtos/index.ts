@@ -1,17 +1,17 @@
-import assert from "assert";
-import { plainToInstance } from "class-transformer";
-import { validate, ValidationError } from "class-validator";
+import assert from "node:assert/strict";
 import test from "node:test";
+import { plainToInstance } from "class-transformer";
+import { type ValidationError, validate } from "class-validator";
 
 import {
-  CreateUserDto,
   CreateOrganizationEventTicketDto,
+  CreateUserDto,
 } from "../../src/rest/dtos";
 import {
-  UserIdentityGender,
-  OrganizationEventTicketType,
-  OrganizationEventTicketCategory,
   Currency,
+  OrganizationEventTicketCategory,
+  OrganizationEventTicketType,
+  UserIdentityGender,
 } from "../../src/rest/types";
 
 function printValidationErrors(errors: ValidationError[]): string[] {
@@ -25,7 +25,7 @@ function printValidationErrors(errors: ValidationError[]): string[] {
     if (error.children) {
       error.children.forEach((child: ValidationError) => {
         messages = messages.concat(
-          formatError(child, `${prefix}${error.property}.`),
+          formatError(child, `${prefix}${error.property}.`)
         );
       });
     }
@@ -54,7 +54,7 @@ export async function dtoTests() {
 
       const identifierErrors = await validate(dto.identifier);
       const hasEmailError = identifierErrors.some(
-        (error) => error.property === "email" && error.constraints?.isEmail,
+        (error) => error.property === "email" && error.constraints?.isEmail
       );
 
       assert(hasEmailError, "Expected validation error for invalid email");
@@ -80,7 +80,7 @@ export async function dtoTests() {
       });
 
       const hasPasswordError = errors.some(
-        (error) => error.property === "password" && error.constraints?.matches,
+        (error) => error.property === "password" && error.constraints?.matches
       );
 
       assert(hasPasswordError, "Expected validation error for weak password");
@@ -149,7 +149,7 @@ export async function dtoTests() {
 
       const errors = await validate(dto);
       const hasPriceError = printValidationErrors(errors).some(
-        (error) => error.includes("price") && error.includes("min"),
+        (error) => error.includes("price") && error.includes("min")
       );
       assert(hasPriceError, "Expected validation error for negative price");
     });

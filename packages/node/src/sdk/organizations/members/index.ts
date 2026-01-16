@@ -1,9 +1,9 @@
-import { invitations } from "./invitations";
-import { Client } from "../../../rest";
-import {
+import type { Client } from "../../../rest";
+import type {
   CreateOrganizationMemberDto,
   UpdateOrganizationMemberDto,
 } from "../../../rest/dtos";
+import { invitations } from "./invitations";
 
 export const organizationsMembers = (client: Client) => ({
   me: async () => client.get("/organizations/members/~me"),
@@ -18,7 +18,7 @@ export const organizationsMembers = (client: Client) => ({
   update: async (
     organizationSlug: string,
     username: string,
-    data: UpdateOrganizationMemberDto,
+    data: UpdateOrganizationMemberDto
   ) =>
     client.put("/organizations/@:organizationSlug/members/:username", data, {
       organizationSlug,
@@ -31,7 +31,7 @@ export const organizationsMembers = (client: Client) => ({
       {
         organizationSlug,
         username,
-      },
+      }
     ),
   invitations: invitations(client),
   accept: async (organizationSlug: string) =>
@@ -40,7 +40,7 @@ export const organizationsMembers = (client: Client) => ({
       undefined,
       {
         organizationSlug,
-      },
+      }
     ),
   reject: async (organizationSlug: string) =>
     client.delete(
@@ -48,7 +48,7 @@ export const organizationsMembers = (client: Client) => ({
       undefined,
       {
         organizationSlug,
-      },
+      }
     ),
   leave: async (organizationSlug: string) =>
     client.delete("/organizations/@:organizationSlug/members/~me", undefined, {

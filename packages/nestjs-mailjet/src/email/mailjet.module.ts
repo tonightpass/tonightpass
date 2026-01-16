@@ -1,14 +1,13 @@
 import { HttpModule } from "@nestjs/axios";
-import { DynamicModule, Module, Provider } from "@nestjs/common";
-
-import { MailjetModuleOptions } from "./interfaces";
-import {
+import { type DynamicModule, Module, type Provider } from "@nestjs/common";
+import { MAILJET_MODULE_OPTIONS } from "../constants/mailjet.constants";
+import type { MailjetModuleOptions } from "./interfaces";
+import type {
   MailjetModuleAsyncOptions,
   MailjetOptionsFactory,
 } from "./interfaces/mailjet-module-async-options.interface";
 import { createMailjetProviders } from "./mailjet.provider";
 import { MailjetService } from "./mailjet.service";
-import { MAILJET_MODULE_OPTIONS } from "../constants/mailjet.constants";
 
 @Module({
   imports: [HttpModule],
@@ -24,7 +23,7 @@ export class MailjetModule {
   }
 
   static forRootAsync(options: MailjetModuleAsyncOptions): DynamicModule {
-    const providers = [...this.createAsyncProviders(options)];
+    const providers = [...MailjetModule.createAsyncProviders(options)];
 
     return {
       module: MailjetModule,
@@ -34,14 +33,14 @@ export class MailjetModule {
   }
 
   private static createAsyncProviders(
-    options: MailjetModuleAsyncOptions,
+    options: MailjetModuleAsyncOptions
   ): Provider[] {
     if (options.useExisting || options.useFactory) {
-      return [this.createAsyncOptionsProviders(options)];
+      return [MailjetModule.createAsyncOptionsProviders(options)];
     }
 
     return [
-      this.createAsyncOptionsProviders(options),
+      MailjetModule.createAsyncOptionsProviders(options),
       {
         provide: options.useClass,
         useClass: options.useClass,
@@ -50,7 +49,7 @@ export class MailjetModule {
   }
 
   private static createAsyncOptionsProviders(
-    options: MailjetModuleAsyncOptions,
+    options: MailjetModuleAsyncOptions
   ): Provider {
     if (options.useFactory) {
       return {

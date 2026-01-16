@@ -1,10 +1,10 @@
-import {
-  CreateChannelDto,
-  UpdateChannelDto,
+import type {
+  AddParticipantDto,
   ArrayOptions,
   Channel,
   ChannelMember,
-  AddParticipantDto,
+  CreateChannelDto,
+  UpdateChannelDto,
   UserChannelCountOptions,
 } from "../../rest";
 import { sdk } from "../builder";
@@ -15,14 +15,14 @@ export const channels = sdk((client) => ({
     client.get("/channels/~me", options),
   getByOrganization: async (
     organizationSlug: string,
-    options?: ArrayOptions<Channel>,
+    options?: ArrayOptions<Channel>
   ) =>
     client.get("/channels/:organizationSlug", { organizationSlug, ...options }),
   countMe: async (options?: UserChannelCountOptions) =>
     client.get("/users/~me/channels/count", options),
   countByOrganization: async (
     organizationSlug: string,
-    options?: UserChannelCountOptions,
+    options?: UserChannelCountOptions
   ) =>
     client.get("/users/@:organizationSlug/channels/count", {
       organizationSlug,
@@ -32,7 +32,7 @@ export const channels = sdk((client) => ({
     client.get("/channels/~me/:channelId", { channelId }),
   getByOrganizationChannel: async (
     organizationSlug: string,
-    channelId: string,
+    channelId: string
   ) =>
     client.get("/channels/:organizationSlug/:channelId", {
       organizationSlug,
@@ -41,14 +41,14 @@ export const channels = sdk((client) => ({
   create: async (data: CreateChannelDto) => client.post("/channels/~me", data),
   createByOrganization: async (
     organizationSlug: string,
-    data: CreateChannelDto,
+    data: CreateChannelDto
   ) => client.post("/channels/:organizationSlug", data, { organizationSlug }),
   update: async (channelId: string, data: UpdateChannelDto) =>
     client.put("/channels/~me/:channelId", data, { channelId }),
   updateByOrganization: async (
     organizationSlug: string,
     channelId: string,
-    data: UpdateChannelDto,
+    data: UpdateChannelDto
   ) =>
     client.put("/channels/:organizationSlug/:channelId", data, {
       organizationSlug,
@@ -66,7 +66,7 @@ export const channels = sdk((client) => ({
   addParticipantByOrganization: async (
     organizationSlug: string,
     channelId: string,
-    data: AddParticipantDto,
+    data: AddParticipantDto
   ) =>
     client.post("/channels/:organizationSlug/:channelId/participants", data, {
       organizationSlug,
@@ -79,12 +79,12 @@ export const channels = sdk((client) => ({
       {
         channelId,
         username,
-      },
+      }
     ),
   removeParticipantByOrganization: async (
     organizationSlug: string,
     channelId: string,
-    username: string,
+    username: string
   ) =>
     client.delete(
       "/channels/:organizationSlug/:channelId/participants/:username",
@@ -93,17 +93,17 @@ export const channels = sdk((client) => ({
         organizationSlug,
         channelId,
         username,
-      },
+      }
     ),
   getMembers: async (
     channelId: string,
-    options?: ArrayOptions<ChannelMember>,
+    options?: ArrayOptions<ChannelMember>
   ) =>
     client.get("/channels/~me/:channelId/members", { channelId, ...options }),
   getMembersByOrganization: async (
     organizationSlug: string,
     channelId: string,
-    options?: ArrayOptions<ChannelMember>,
+    options?: ArrayOptions<ChannelMember>
   ) =>
     client.get("/channels/:organizationSlug/:channelId/members", {
       organizationSlug,

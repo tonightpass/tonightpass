@@ -1,21 +1,21 @@
-import { WebSocketClient, WebSocketEventHandler } from "./index";
-import {
-  WebSocketConnectOptions,
-  ChannelMessageCreateEvent,
-  ChannelMessageUpdateEvent,
-  ChannelMessageDeleteEvent,
-  ChannelUpdateEvent,
+import type {
   ChannelDeleteEvent,
   ChannelMemberJoinEvent,
   ChannelMemberLeaveEvent,
+  ChannelMessageCreateEvent,
+  ChannelMessageDeleteEvent,
+  ChannelMessageUpdateEvent,
+  ChannelUpdateEvent,
   TypingStartEvent,
   TypingStopEvent,
+  WebSocketConnectOptions,
 } from "../types";
+import { WebSocketClient, type WebSocketEventHandler } from "./index";
 
 export class ChannelWebSocketClient extends WebSocketClient {
   async connectToChannel(
     channelId: string,
-    options: WebSocketConnectOptions = {},
+    options: WebSocketConnectOptions = {}
   ) {
     return this.connect("/channels/~me/:channelId/ws", {
       ...options,
@@ -26,7 +26,7 @@ export class ChannelWebSocketClient extends WebSocketClient {
   async connectToOrganizationChannel(
     organizationSlug: string,
     channelId: string,
-    options: WebSocketConnectOptions = {},
+    options: WebSocketConnectOptions = {}
   ) {
     return this.connect("/channels/:organizationSlug/:channelId/ws", {
       ...options,
@@ -41,7 +41,7 @@ export class ChannelWebSocketClient extends WebSocketClient {
 
   async connectToOrganizationChannels(
     organizationSlug: string,
-    options: WebSocketConnectOptions = {},
+    options: WebSocketConnectOptions = {}
   ) {
     return this.connect("/channels/:organizationSlug/ws", {
       ...options,

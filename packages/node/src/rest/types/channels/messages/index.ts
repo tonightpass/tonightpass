@@ -1,12 +1,12 @@
-import { Channel, ChannelParticipant } from "..";
-import { Base, ArrayResult, ArrayOptions } from "../..";
-import {
-  CreateChannelMessageDto,
-  UpdateChannelMessageDto,
+import type {
   AddReactionDto,
+  CreateChannelMessageDto,
   ReportChannelMessageDto,
+  UpdateChannelMessageDto,
 } from "../../../dtos";
-import { Endpoint } from "../../../endpoints";
+import type { Endpoint } from "../../../endpoints";
+import type { ArrayOptions, ArrayResult, Base } from "../..";
+import type { Channel, ChannelParticipant } from "..";
 
 export enum ChannelMessageReportReason {
   Dislike = "dislike",
@@ -34,15 +34,15 @@ export enum ChannelMessageReportReason {
   Other = "other",
 }
 
-export type ChannelMessageReadByEntry = {
+export interface ChannelMessageReadByEntry {
   participant: ChannelParticipant;
   readAt: Date;
-};
+}
 
-export type ChannelMessageReaction = {
+export interface ChannelMessageReaction {
   emoji: string;
   participants: ChannelParticipant[];
-};
+}
 
 export type ChannelMessage = Base & {
   channel: Channel;

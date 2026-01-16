@@ -1,11 +1,11 @@
-import { Endpoint } from "../../../../endpoints";
+import type { Endpoint } from "../../../../endpoints";
 
 export enum UserPostMediaType {
   Image = "image",
   Video = "video",
 }
 
-export type UserPostMedia = {
+export interface UserPostMedia {
   url: string;
   type: UserPostMediaType;
   width: number;
@@ -14,7 +14,7 @@ export type UserPostMedia = {
   isNSFW: boolean;
   thumbnailUrl?: string;
   duration?: number;
-};
+}
 
 export type UserPostMediaEndpoints = Endpoint<
   "POST",

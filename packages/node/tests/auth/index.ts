@@ -1,8 +1,8 @@
-import assert from "assert";
+import assert from "node:assert/strict";
 import test from "node:test";
 
-import { ErroredAPIResponse } from "../../src";
-import { TonightPass } from "../../src/tonightpass";
+import type { ErroredAPIResponse } from "../../src";
+import type { TonightPass } from "../../src/tonightpass";
 
 export function authTests(tnp: TonightPass) {
   test("It will fail to sign in to 'tonightpass'", async () => {
@@ -12,14 +12,14 @@ export function authTests(tnp: TonightPass) {
         password: "1234",
       });
       assert.fail(
-        "Expected the 'signIn' function to throw an error but it didn't",
+        "Expected the 'signIn' function to throw an error but it didn't"
       );
     } catch (error) {
       const typedError = error as ErroredAPIResponse;
       assert.strictEqual(
         typedError.success,
         false,
-        "Expected error response to indicate failure",
+        "Expected error response to indicate failure"
       );
     }
   });

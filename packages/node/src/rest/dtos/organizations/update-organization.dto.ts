@@ -1,4 +1,5 @@
 import {
+  ArrayMaxSize,
   IsArray,
   IsLowercase,
   IsNotEmpty,
@@ -8,11 +9,9 @@ import {
   IsUrl,
   Length,
   Matches,
-  ArrayMaxSize,
 } from "class-validator";
-
-import { UpdateOrganizationMemberDto } from "./members";
 import { REGEX } from "../../../constants";
+import type { UpdateOrganizationMemberDto } from "./members";
 
 export class UpdateOrganizationDto {
   @IsOptional()
@@ -50,15 +49,11 @@ export class UpdateOrganizationIdentityDto {
   description?: string;
 
   @IsOptional()
-  @Matches(
-    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/organizations\/[\w-]+\/avatars\//,
-  )
+  @Matches(REGEX.ORGANIZATION_AVATAR_URL)
   avatarUrl?: string;
 
   @IsOptional()
-  @Matches(
-    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/organizations\/[\w-]+\/banners\//,
-  )
+  @Matches(REGEX.ORGANIZATION_BANNER_URL)
   bannerUrl?: string;
 
   @IsOptional()

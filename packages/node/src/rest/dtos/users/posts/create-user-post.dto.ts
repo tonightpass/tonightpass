@@ -8,7 +8,7 @@ import {
   Length,
   Matches,
 } from "class-validator";
-
+import { REGEX } from "../../../../constants/regex";
 import { UserPostVisibility } from "../../../types/users/posts";
 
 export class CreateUserPostDto {
@@ -20,10 +20,7 @@ export class CreateUserPostDto {
   @IsArray()
   @ArrayMinSize(1)
   @ArrayMaxSize(10)
-  @Matches(
-    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(temp\/posts\/media\/|users\/[\w-]+\/posts\/[\w-]+\/media\/)/,
-    { each: true },
-  )
+  @Matches(REGEX.USER_POST_MEDIA_URL, { each: true })
   mediaUrls: string[];
 
   @IsOptional()

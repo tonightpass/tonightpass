@@ -1,4 +1,4 @@
-import { Type, Transform } from "class-transformer";
+import { Transform, Type } from "class-transformer";
 import {
   ArrayMaxSize,
   ArrayMinSize,
@@ -13,26 +13,25 @@ import {
   Length,
   Matches,
   MinDate,
-  ValidateNested,
-  ValidatorConstraint,
-  ValidatorConstraintInterface,
-  ValidationArguments,
   registerDecorator,
-  ValidationOptions,
+  ValidateNested,
+  type ValidationArguments,
+  type ValidationOptions,
+  ValidatorConstraint,
+  type ValidatorConstraintInterface,
 } from "class-validator";
-
-import {
-  CreateOrganizationEventTicketDto,
-  CreateOrganizationEventTicketInput,
-} from "./tickets";
 import { REGEX } from "../../../../constants";
 import {
+  type ExcludeBase,
+  type OrganizationEvent,
   OrganizationEventType,
   OrganizationEventVisibilityType,
-  OrganizationEvent,
-  ExcludeBase,
 } from "../../../types";
 import { CreateLocationDto } from "../../locations/create-location.dto";
+import {
+  CreateOrganizationEventTicketDto,
+  type CreateOrganizationEventTicketInput,
+} from "./tickets";
 
 @ValidatorConstraint({ name: "atLeastOneMedia", async: false })
 export class AtLeastOneMediaConstraint implements ValidatorConstraintInterface {
@@ -50,7 +49,7 @@ export class AtLeastOneMediaConstraint implements ValidatorConstraintInterface {
 }
 
 export function AtLeastOneMedia(validationOptions?: ValidationOptions) {
-  return function (object: object, propertyName: string) {
+  return (object: object, propertyName: string) => {
     registerDecorator({
       target: object.constructor,
       propertyName,
@@ -109,25 +108,19 @@ export class BaseOrganizationEventDto {
 
   @IsArray()
   @ArrayMaxSize(25)
-  @Matches(
-    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(temp\/events\/flyers\/|organizations\/[\w-]+\/events\/[\w-]+\/flyers\/)/,
-    {
-      each: true,
-      message: "organization.event.flyers.url.invalid",
-    },
-  )
+  @Matches(REGEX.EVENT_FLYER_URL, {
+    each: true,
+    message: "organization.event.flyers.url.invalid",
+  })
   @AtLeastOneMedia()
   flyers: string[];
 
   @IsArray()
   @ArrayMaxSize(25)
-  @Matches(
-    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(temp\/events\/trailers\/|organizations\/[\w-]+\/events\/[\w-]+\/trailers\/)/,
-    {
-      each: true,
-      message: "organization.event.trailers.url.invalid",
-    },
-  )
+  @Matches(REGEX.EVENT_TRAILER_URL, {
+    each: true,
+    message: "organization.event.trailers.url.invalid",
+  })
   trailers: string[];
 
   @IsObject()

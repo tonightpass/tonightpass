@@ -6,19 +6,19 @@
  * @property {"Point"} type - The type of the geometry, which is always "Point" for a GeoJSON point.
  * @property {[number, number]} coordinates - The coordinates of the point, represented as [longitude, latitude].
  */
-export type GeoPoint = {
+export interface GeoPoint {
   type: "Point";
   coordinates: [number, number];
-};
+}
 
-export type Location = {
+export interface Location {
   name?: string;
   address: string;
   zipCode: string;
   city: string;
   country: string;
   geometry: GeoPoint;
-};
+}
 
 export interface GeoSearchAggregation<T> {
   metadata: { total: number }[];

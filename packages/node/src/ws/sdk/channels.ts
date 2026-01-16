@@ -1,5 +1,5 @@
 import { ChannelWebSocketClient } from "../client/channels";
-import { WebSocketClientOptions } from "../types";
+import type { WebSocketClientOptions } from "../types";
 
 export function channelsWS(options?: Partial<WebSocketClientOptions>) {
   const client = new ChannelWebSocketClient(options);
@@ -11,7 +11,7 @@ export function channelsWS(options?: Partial<WebSocketClientOptions>) {
     connectToOrganization: (
       organizationSlug: string,
       channelId: string,
-      token?: string,
+      token?: string
     ) =>
       client.connectToOrganizationChannel(organizationSlug, channelId, {
         token,

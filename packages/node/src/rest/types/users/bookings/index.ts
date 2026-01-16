@@ -1,13 +1,13 @@
-import {
+import type { Endpoint } from "../../../endpoints";
+import type {
   ArrayOptions,
   ArrayResult,
   Base,
   OrganizationCustomer,
   OrganizationEvent,
 } from "../..";
-import { UserBookingTicket, UserBookingTicketEndpoints } from "./tickets";
-import { Endpoint } from "../../../endpoints";
-import { Order } from "../../orders";
+import type { Order } from "../../orders";
+import type { UserBookingTicket, UserBookingTicketEndpoints } from "./tickets";
 
 export * from "./tickets";
 

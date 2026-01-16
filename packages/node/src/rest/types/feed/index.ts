@@ -1,6 +1,6 @@
-import { ArrayResult, ArrayOptions, OrganizationEvent } from "..";
-import { Endpoint } from "../../endpoints";
-import { UserPost } from "../users/posts";
+import type { Endpoint } from "../../endpoints";
+import type { ArrayOptions, ArrayResult, OrganizationEvent } from "..";
+import type { UserPost } from "../users/posts";
 
 export enum FeedType {
   Following = "following",

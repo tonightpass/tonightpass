@@ -1,4 +1,4 @@
-import { Options } from "redaxios";
+import type { Options } from "redaxios";
 
 export interface CacheEntry<T> {
   data: T;
@@ -12,13 +12,13 @@ export interface CacheOptions {
 }
 
 export class CacheManager {
-  private cache: Map<string, CacheEntry<unknown>> = new Map();
-  private options: Required<CacheOptions>;
+  private readonly cache: Map<string, CacheEntry<unknown>> = new Map();
+  private readonly options: Required<CacheOptions>;
 
   constructor(options: CacheOptions) {
     this.options = {
       enabled: options.enabled,
-      ttl: options.ttl ?? 60000,
+      ttl: options.ttl ?? 60_000,
       methods: options.methods ?? ["GET"],
     };
   }

@@ -1,8 +1,8 @@
-import assert from "assert";
+import assert from "node:assert/strict";
 import test from "node:test";
 
-import { ErroredAPIResponse } from "../../src";
-import { TonightPass } from "../../src/tonightpass";
+import type { ErroredAPIResponse } from "../../src";
+import type { TonightPass } from "../../src/tonightpass";
 
 export function usersTests(tnp: TonightPass) {
   test("It will fail to get user 'me'", async () => {
@@ -14,17 +14,17 @@ export function usersTests(tnp: TonightPass) {
       assert.strictEqual(
         typedError.success,
         false,
-        "Expected error response to indicate failure",
+        "Expected error response to indicate failure"
       );
       assert.strictEqual(
         typeof typedError.message,
         "string",
-        "Expected error message to be a string",
+        "Expected error message to be a string"
       );
       assert.strictEqual(
         typedError.message,
         "Unauthorized",
-        "Expected error message to be 'Unauthorized'",
+        "Expected error message to be 'Unauthorized'"
       );
     }
   });

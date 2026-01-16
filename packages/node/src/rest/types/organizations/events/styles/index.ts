@@ -1,9 +1,9 @@
-import { Base } from "../../..";
-import {
+import type {
   CreateOrganizationEventStyleDto,
   UpdateOrganizationEventStyleDto,
 } from "../../../../dtos/organizations/events/styles";
-import { Endpoint } from "../../../../endpoints";
+import type { Endpoint } from "../../../../endpoints";
+import type { Base } from "../../..";
 
 export type OrganizationEventStyle = Base & {
   type: OrganizationEventStyleType;

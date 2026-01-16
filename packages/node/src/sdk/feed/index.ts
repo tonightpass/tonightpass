@@ -1,4 +1,4 @@
-import { ArrayOptions, FeedPost } from "../../rest";
+import type { ArrayOptions, FeedPost } from "../../rest";
 import { sdk } from "../builder";
 
 export const feed = sdk((client) => ({

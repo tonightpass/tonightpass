@@ -10,6 +10,6 @@ export const usersBookingsTickets = sdk((client) => ({
         tokenId,
         tokenValue,
       },
-      { ticketId },
+      { ticketId }
     ),
 }));

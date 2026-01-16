@@ -1,4 +1,4 @@
-import { Type, Transform } from "class-transformer";
+import { Transform, Type } from "class-transformer";
 import {
   IsArray,
   IsDate,
@@ -10,26 +10,27 @@ import {
   Length,
   Matches,
   MinDate,
-  ValidateNested,
-  ValidatorConstraint,
-  ValidatorConstraintInterface,
-  ValidationArguments,
   registerDecorator,
-  ValidationOptions,
+  ValidateNested,
+  type ValidationArguments,
+  type ValidationOptions,
+  ValidatorConstraint,
+  type ValidatorConstraintInterface,
 } from "class-validator";
-
-import { CreateOrganizationEventInput } from "./create-organization-event.dto";
-import { UpdateOrganizationEventTicketDto } from "./tickets";
 import { REGEX } from "../../../../constants";
 import {
-  DeepPartial,
+  type DeepPartial,
   OrganizationEventType,
   OrganizationEventVisibilityType,
 } from "../../../types";
 import { UpdateLocationDto } from "../../locations/update-location.dto";
+import type { CreateOrganizationEventInput } from "./create-organization-event.dto";
+import { UpdateOrganizationEventTicketDto } from "./tickets";
 
 @ValidatorConstraint({ name: "atLeastOneMediaOnUpdate", async: false })
-export class AtLeastOneMediaOnUpdateConstraint implements ValidatorConstraintInterface {
+export class AtLeastOneMediaOnUpdateConstraint
+  implements ValidatorConstraintInterface
+{
   validate(_value: unknown, args: ValidationArguments) {
     const object = args.object as UpdateOrganizationEventDto;
 
@@ -59,7 +60,7 @@ export class AtLeastOneMediaOnUpdateConstraint implements ValidatorConstraintInt
 }
 
 export function AtLeastOneMediaOnUpdate(validationOptions?: ValidationOptions) {
-  return function (object: object, propertyName: string) {
+  return (object: object, propertyName: string) => {
     registerDecorator({
       target: object.constructor,
       propertyName,
@@ -70,7 +71,9 @@ export function AtLeastOneMediaOnUpdate(validationOptions?: ValidationOptions) {
   };
 }
 
-export class UpdateOrganizationEventDto implements DeepPartial<CreateOrganizationEventInput> {
+export class UpdateOrganizationEventDto
+  implements DeepPartial<CreateOrganizationEventInput>
+{
   @IsOptional()
   @IsString()
   @Length(1, 64)
@@ -100,25 +103,19 @@ export class UpdateOrganizationEventDto implements DeepPartial<CreateOrganizatio
 
   @IsOptional()
   @IsArray()
-  @Matches(
-    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com|cdn\.payload\.tonightpass\.com)\/(temp\/events\/flyers\/|organizations\/[\w-]+\/events\/[\w-]+\/flyers\/|[\w-]+\.\w+$)/,
-    {
-      each: true,
-      message: "organization.event.flyers.url.invalid",
-    },
-  )
+  @Matches(REGEX.EVENT_FLYER_URL_UPDATE, {
+    each: true,
+    message: "organization.event.flyers.url.invalid",
+  })
   @AtLeastOneMediaOnUpdate()
   flyers?: string[];
 
   @IsOptional()
   @IsArray()
-  @Matches(
-    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com|cdn\.payload\.tonightpass\.com)\/(temp\/events\/trailers\/|organizations\/[\w-]+\/events\/[\w-]+\/trailers\/|[\w-]+\.\w+$)/,
-    {
-      each: true,
-      message: "organization.event.trailers.url.invalid",
-    },
-  )
+  @Matches(REGEX.EVENT_TRAILER_URL_UPDATE, {
+    each: true,
+    message: "organization.event.trailers.url.invalid",
+  })
   trailers?: string[];
 
   @IsOptional()

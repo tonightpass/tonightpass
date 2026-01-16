@@ -1,4 +1,4 @@
-import { Client, ClientOptions } from "./rest";
+import { Client, type ClientOptions } from "./rest";
 import {
   apiKeys,
   auth,

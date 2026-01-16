@@ -1,6 +1,6 @@
-import Stripe from "stripe";
+import type Stripe from "stripe";
 
-import { Endpoint } from "../../endpoints";
+import type { Endpoint } from "../../endpoints";
 
 export type WebhookEndpoints = Endpoint<
   "POST",

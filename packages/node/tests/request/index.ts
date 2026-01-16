@@ -1,8 +1,8 @@
-import assert from "assert";
+import assert from "node:assert/strict";
 import test from "node:test";
 
 import { OAuth2Provider } from "../../src";
-import { TonightPass } from "../../src/tonightpass";
+import type { TonightPass } from "../../src/tonightpass";
 
 export function requestTests(tnp: TonightPass) {
   test("GET request without body succeeds", async () => {
@@ -22,12 +22,12 @@ export function requestTests(tnp: TonightPass) {
       assert.notStrictEqual(
         typedError.message,
         "Body cannot be empty when content-type is set to 'application/json'",
-        "Request should not fail due to empty body Content-Type issue",
+        "Request should not fail due to empty body Content-Type issue"
       );
       // Expected to fail with 401 Unauthorized since we're not authenticated
       assert.ok(
         typedError.statusCode === 401 || typedError.statusCode === 403,
-        `Expected auth error (401/403), got: ${typedError.statusCode} - ${typedError.message}`,
+        `Expected auth error (401/403), got: ${typedError.statusCode} - ${typedError.message}`
       );
     }
   });
@@ -47,12 +47,12 @@ export function requestTests(tnp: TonightPass) {
       assert.notStrictEqual(
         typedError.message,
         "Body cannot be empty when content-type is set to 'application/json'",
-        "Request should not fail due to Content-Type issue",
+        "Request should not fail due to Content-Type issue"
       );
       // Should fail with authentication error
       assert.ok(
         typedError.statusCode === 400 || typedError.statusCode === 401,
-        `Expected auth error, got: ${typedError.statusCode}`,
+        `Expected auth error, got: ${typedError.statusCode}`
       );
     }
   });
@@ -67,12 +67,12 @@ export function requestTests(tnp: TonightPass) {
       assert.notStrictEqual(
         typedError.message,
         "Body cannot be empty when content-type is set to 'application/json'",
-        "DELETE request should not fail due to empty body Content-Type issue",
+        "DELETE request should not fail due to empty body Content-Type issue"
       );
       // Expected to fail with 401 Unauthorized since we're not authenticated
       assert.ok(
         typedError.statusCode === 401 || typedError.statusCode === 403,
-        `Expected auth error (401/403), got: ${typedError.statusCode} - ${typedError.message}`,
+        `Expected auth error (401/403), got: ${typedError.statusCode} - ${typedError.message}`
       );
     }
   });

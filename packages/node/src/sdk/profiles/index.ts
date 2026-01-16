@@ -1,6 +1,6 @@
-import { profilesRelationships } from "./relationships";
-import { ArrayOptions, Profile } from "../../rest";
+import type { ArrayOptions, Profile } from "../../rest";
 import { sdk } from "../builder";
+import { profilesRelationships } from "./relationships";
 
 export const profiles = sdk((client) => ({
   getAll: async (options?: ArrayOptions<Profile>) =>

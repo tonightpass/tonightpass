@@ -1,13 +1,13 @@
 import {
+  ArrayMaxSize,
+  ArrayMinSize,
   IsArray,
   IsEnum,
   IsOptional,
   IsString,
   Length,
-  ArrayMinSize,
-  ArrayMaxSize,
-  ValidateIf,
   Matches,
+  ValidateIf,
 } from "class-validator";
 
 import { REGEX } from "../../../constants";

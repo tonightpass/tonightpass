@@ -1,6 +1,6 @@
-import { ArrayResult, Base, UserProfile } from "..";
-import { CreateApiKeyDto, UpdateApiKeyDto } from "../../dtos";
-import { Endpoint } from "../../endpoints";
+import type { CreateApiKeyDto, UpdateApiKeyDto } from "../../dtos";
+import type { Endpoint } from "../../endpoints";
+import type { ArrayResult, Base, UserProfile } from "..";
 
 export enum ApiKeyTier {
   PUBLIC = "public",

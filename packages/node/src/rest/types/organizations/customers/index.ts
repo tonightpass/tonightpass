@@ -1,6 +1,6 @@
-import { ArrayOptions, ArrayResult } from "../..";
-import { Endpoint } from "../../../endpoints";
-import { UserProfile, UserProfileMetadata } from "../../profiles";
+import type { Endpoint } from "../../../endpoints";
+import type { ArrayOptions, ArrayResult } from "../..";
+import type { UserProfile, UserProfileMetadata } from "../../profiles";
 
 export type OrganizationCustomer = UserProfile & {
   email?: string;

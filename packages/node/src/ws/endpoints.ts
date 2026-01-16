@@ -1,5 +1,5 @@
-import { WebSocketConnectOptions } from "./types";
-import { Endpoints } from "../rest/endpoints";
+import type { Endpoints } from "../rest/endpoints";
+import type { WebSocketConnectOptions } from "./types";
 
 type GETEndpoints = Extract<Endpoints, { method: "GET" }>;
 
@@ -8,13 +8,13 @@ type RESTEndpointPaths = GETEndpoints["path"];
 export type WebSocketPath<T extends string> =
   T extends `${RESTEndpointPaths}/ws` ? T : never;
 
-export type WebSocketEndpoint<
+export interface WebSocketEndpoint<
   Path extends string,
   ConnectOptions = undefined,
-> = {
+> {
   path: WebSocketPath<Path>;
   options: ConnectOptions;
-};
+}
 
 export type WebSocketEndpoints =
   | WebSocketEndpoint<"/channels/~me/ws", WebSocketConnectOptions>

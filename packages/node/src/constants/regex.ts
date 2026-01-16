@@ -24,5 +24,38 @@ export const REGEX = {
   PASSWORD_NUMBER_SPECIAL: /^(?=.*[\d\W])/,
   // matches an image url
   IMAGE_URL:
-    /^(https:\/\/|http:\/\/)(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-z]{2,6}([-a-zA-Z0-9@:%_\+.~#?&//=]*)\.(jpg|jpeg|gif|png|bmp|tiff|tga|svg)$/i,
+    /^(https:\/\/|http:\/\/)(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-z]{2,6}([-a-zA-Z0-9@:%_+.~#?&//=]*)\.(jpg|jpeg|gif|png|bmp|tiff|tga|svg)$/i,
+  // matches organization avatar URL
+  ORGANIZATION_AVATAR_URL:
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/organizations\/[\w-]+\/avatars\//,
+  // matches organization banner URL
+  ORGANIZATION_BANNER_URL:
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/organizations\/[\w-]+\/banners\//,
+  // matches event flyer URL (temp or permanent)
+  EVENT_FLYER_URL:
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(temp\/events\/flyers\/|organizations\/[\w-]+\/events\/[\w-]+\/flyers\/)/,
+  // matches event flyer URL for updates (includes payload CDN and file extensions)
+  EVENT_FLYER_URL_UPDATE:
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com|cdn\.payload\.tonightpass\.com)\/(temp\/events\/flyers\/|organizations\/[\w-]+\/events\/[\w-]+\/flyers\/|[\w-]+\.\w+$)/,
+  // matches event trailer URL (temp or permanent)
+  EVENT_TRAILER_URL:
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(temp\/events\/trailers\/|organizations\/[\w-]+\/events\/[\w-]+\/trailers\/)/,
+  // matches event trailer URL for updates (includes payload CDN and file extensions)
+  EVENT_TRAILER_URL_UPDATE:
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com|cdn\.payload\.tonightpass\.com)\/(temp\/events\/trailers\/|organizations\/[\w-]+\/events\/[\w-]+\/trailers\/|[\w-]+\.\w+$)/,
+  // matches user avatar URL (permanent)
+  USER_AVATAR_URL:
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/users\/[\w-]+\/avatars\//,
+  // matches user avatar URL (temp or permanent) - for creation
+  USER_AVATAR_URL_CREATE:
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(users\/[\w-]+\/avatars\/|temp\/users\/avatars\/)/,
+  // matches user banner URL
+  USER_BANNER_URL:
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/users\/[\w-]+\/banners\//,
+  // matches channel message private attachment path
+  CHANNEL_MESSAGE_ATTACHMENT:
+    /^channels\/[\w-]+\/messages\/[\w-]+\/private\/[\w-]+$/,
+  // matches user post media URL (temp or permanent)
+  USER_POST_MEDIA_URL:
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(temp\/posts\/media\/|users\/[\w-]+\/posts\/[\w-]+\/media\/)/,
 };

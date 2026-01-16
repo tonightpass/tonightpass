@@ -1,4 +1,4 @@
-import { CreateApiKeyDto, UpdateApiKeyDto } from "../../rest";
+import type { CreateApiKeyDto, UpdateApiKeyDto } from "../../rest";
 import { sdk } from "../builder";
 
 export const apiKeys = sdk((client) => ({

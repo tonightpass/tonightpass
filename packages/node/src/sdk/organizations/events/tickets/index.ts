@@ -1,4 +1,4 @@
-import {
+import type {
   Client,
   CreateOrganizationEventTicketDto,
   UpdateOrganizationEventTicketDto,
@@ -17,12 +17,12 @@ export const organizationsEventsTickets = (client: Client) => ({
         organizationSlug,
         eventSlug,
         ticketId,
-      },
+      }
     ),
   create: async (
     organizationSlug: string,
     eventSlug: string,
-    data: CreateOrganizationEventTicketDto,
+    data: CreateOrganizationEventTicketDto
   ) =>
     client.post(
       "/organizations/@:organizationSlug/events/:eventSlug/tickets",
@@ -30,13 +30,13 @@ export const organizationsEventsTickets = (client: Client) => ({
       {
         organizationSlug,
         eventSlug,
-      },
+      }
     ),
   update: async (
     organizationSlug: string,
     eventSlug: string,
     ticketId: string,
-    data: UpdateOrganizationEventTicketDto,
+    data: UpdateOrganizationEventTicketDto
   ) =>
     client.put(
       "/organizations/@:organizationSlug/events/:eventSlug/tickets/:ticketId",
@@ -45,12 +45,12 @@ export const organizationsEventsTickets = (client: Client) => ({
         organizationSlug,
         eventSlug,
         ticketId,
-      },
+      }
     ),
   delete: async (
     organizationSlug: string,
     eventSlug: string,
-    ticketId: string,
+    ticketId: string
   ) =>
     client.delete(
       "/organizations/@:organizationSlug/events/:eventSlug/tickets/:ticketId",
@@ -59,6 +59,6 @@ export const organizationsEventsTickets = (client: Client) => ({
         organizationSlug,
         eventSlug,
         ticketId,
-      },
+      }
     ),
 });

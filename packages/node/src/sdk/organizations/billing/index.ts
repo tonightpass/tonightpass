@@ -1,4 +1,4 @@
-import { Client } from "../../../rest";
+import type { Client } from "../../../rest";
 import { isBrowser } from "../../../utils";
 
 export const organizationsBilling = (client: Client) => ({
@@ -12,7 +12,7 @@ export const organizationsBilling = (client: Client) => ({
         "/organizations/@:organizationSlug/billing/link",
         {
           organizationSlug,
-        },
+        }
       );
     } else {
       throw new Error("Billing link is only available in the browser");
@@ -24,7 +24,7 @@ export const organizationsBilling = (client: Client) => ({
         "/organizations/@:organizationSlug/billing/dashboard",
         {
           organizationSlug,
-        },
+        }
       );
     } else {
       throw new Error("Billing dashboard is only available in the browser");
