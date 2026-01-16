@@ -29,9 +29,7 @@ import {
 import { UpdateLocationDto } from "../../locations/update-location.dto";
 
 @ValidatorConstraint({ name: "atLeastOneMediaOnUpdate", async: false })
-export class AtLeastOneMediaOnUpdateConstraint
-  implements ValidatorConstraintInterface
-{
+export class AtLeastOneMediaOnUpdateConstraint implements ValidatorConstraintInterface {
   validate(_value: unknown, args: ValidationArguments) {
     const object = args.object as UpdateOrganizationEventDto;
 
@@ -72,9 +70,7 @@ export function AtLeastOneMediaOnUpdate(validationOptions?: ValidationOptions) {
   };
 }
 
-export class UpdateOrganizationEventDto
-  implements DeepPartial<CreateOrganizationEventInput>
-{
+export class UpdateOrganizationEventDto implements DeepPartial<CreateOrganizationEventInput> {
   @IsOptional()
   @IsString()
   @Length(1, 64)
@@ -105,7 +101,7 @@ export class UpdateOrganizationEventDto
   @IsOptional()
   @IsArray()
   @Matches(
-    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(temp\/events\/flyers\/|organizations\/[\w-]+\/events\/[\w-]+\/flyers\/)/,
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com|cdn\.payload\.tonightpass\.com)\/(temp\/events\/flyers\/|organizations\/[\w-]+\/events\/[\w-]+\/flyers\/|[\w-]+\.\w+$)/,
     {
       each: true,
       message: "organization.event.flyers.url.invalid",
@@ -117,7 +113,7 @@ export class UpdateOrganizationEventDto
   @IsOptional()
   @IsArray()
   @Matches(
-    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/(temp\/events\/trailers\/|organizations\/[\w-]+\/events\/[\w-]+\/trailers\/)/,
+    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com|cdn\.payload\.tonightpass\.com)\/(temp\/events\/trailers\/|organizations\/[\w-]+\/events\/[\w-]+\/trailers\/|[\w-]+\.\w+$)/,
     {
       each: true,
       message: "organization.event.trailers.url.invalid",
