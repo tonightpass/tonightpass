@@ -23,8 +23,9 @@ export type ErrorType<Path extends PathsFor<"GET">> = TonightPassAPIError<
   ResponseType<Path>
 >;
 
-export interface UseAPIConfig<Path extends PathsFor<"GET">>
-  extends SWRConfiguration<ResponseType<Path>, ErrorType<Path>> {
+export interface UseAPIConfig<
+  Path extends PathsFor<"GET">,
+> extends SWRConfiguration<ResponseType<Path>, ErrorType<Path>> {
   requestOptions?: APIRequestOptions;
 }
 

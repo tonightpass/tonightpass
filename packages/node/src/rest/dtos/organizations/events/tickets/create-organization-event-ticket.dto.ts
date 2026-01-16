@@ -25,9 +25,7 @@ export type CreateOrganizationEventTicketInput = Omit<
   price: number;
 };
 
-export class CreateOrganizationEventTicketDto
-  implements CreateOrganizationEventTicketInput
-{
+export class CreateOrganizationEventTicketDto implements CreateOrganizationEventTicketInput {
   @IsString()
   @Length(1, 128)
   name: string;

@@ -49,9 +49,9 @@ export class UpdateUserDto {
   password?: string;
 }
 
-class UpdateUserIdentifierDto
-  implements Partial<Pick<UserIdentifier, "email" | "phoneNumber" | "username">>
-{
+class UpdateUserIdentifierDto implements Partial<
+  Pick<UserIdentifier, "email" | "phoneNumber" | "username">
+> {
   @IsOptional()
   @IsString()
   @IsEmail()
@@ -72,22 +72,19 @@ class UpdateUserIdentifierDto
   username?: string;
 }
 
-class UpdateUserIdentityDto
-  implements
-    Partial<
-      Pick<
-        UserIdentity,
-        | "firstName"
-        | "lastName"
-        | "displayName"
-        | "description"
-        | "avatarUrl"
-        | "bannerUrl"
-        | "gender"
-        | "birthDate"
-      >
-    >
-{
+class UpdateUserIdentityDto implements Partial<
+  Pick<
+    UserIdentity,
+    | "firstName"
+    | "lastName"
+    | "displayName"
+    | "description"
+    | "avatarUrl"
+    | "bannerUrl"
+    | "gender"
+    | "birthDate"
+  >
+> {
   @IsOptional()
   @IsString()
   @Length(2, 32)

@@ -14,9 +14,7 @@ import {
 } from "class-validator";
 
 @ValidatorConstraint({ name: "contentOrAttachments", async: false })
-export class ContentOrAttachmentsConstraint
-  implements ValidatorConstraintInterface
-{
+export class ContentOrAttachmentsConstraint implements ValidatorConstraintInterface {
   validate(_value: unknown, args: ValidationArguments): boolean {
     const object = args.object as CreateChannelMessageDto;
     const hasContent = Boolean(
