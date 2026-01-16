@@ -43,9 +43,9 @@ export class CreateUserDto {
   password: string;
 }
 
-class CreateUserIdentifierDto
-  implements Partial<Pick<UserIdentifier, "email" | "phoneNumber" | "username">>
-{
+class CreateUserIdentifierDto implements Partial<
+  Pick<UserIdentifier, "email" | "phoneNumber" | "username">
+> {
   @IsOptional()
   @IsString()
   @IsEmail()

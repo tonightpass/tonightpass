@@ -6,8 +6,9 @@ import { APIRequestOptions, PathsFor, Query } from "tonightpass";
 
 import { client, ResponseType, ErrorType } from "./use-api";
 
-export interface UseAPIInfiniteConfig<Path extends PathsFor<"GET">>
-  extends SWRInfiniteConfiguration<ResponseType<Path>, ErrorType<Path>> {
+export interface UseAPIInfiniteConfig<
+  Path extends PathsFor<"GET">,
+> extends SWRInfiniteConfiguration<ResponseType<Path>, ErrorType<Path>> {
   requestOptions?: APIRequestOptions;
 }
 

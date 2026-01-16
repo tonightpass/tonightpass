@@ -18,9 +18,7 @@ import {
   OrganizationEventTicketType,
 } from "../../../../types";
 
-export class UpdateOrganizationEventTicketDto
-  implements DeepPartial<CreateOrganizationEventTicketInput>
-{
+export class UpdateOrganizationEventTicketDto implements DeepPartial<CreateOrganizationEventTicketInput> {
   @IsString()
   @Length(1, 128)
   @IsOptional()
