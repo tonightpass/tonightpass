@@ -1,17 +1,17 @@
-import {
+import type { CreateOrganizationMemberDto } from "../../../dtos";
+import type { AcceptOrganizationMemberInvitationDto } from "../../../dtos/organizations/members/accept-organization-member-invitation.dto";
+import type { CreateOrganizationMemberInvitationLinkDto } from "../../../dtos/organizations/members/create-organization-member-invitation-link.dto";
+import type { UpdateOrganizationMemberDto } from "../../../dtos/organizations/members/update-organization-member.dto";
+import type { Endpoint } from "../../../endpoints";
+import type {
   ArrayOptions,
   ArrayResult,
   Base,
   OrganizationProfile,
   UserProfile,
 } from "../..";
-import { CreateOrganizationMemberDto } from "../../../dtos";
-import { AcceptOrganizationMemberInvitationDto } from "../../../dtos/organizations/members/accept-organization-member-invitation.dto";
-import { CreateOrganizationMemberInvitationLinkDto } from "../../../dtos/organizations/members/create-organization-member-invitation-link.dto";
-import { UpdateOrganizationMemberDto } from "../../../dtos/organizations/members/update-organization-member.dto";
-import { Endpoint } from "../../../endpoints";
-import { UserToken } from "../../users/tokens";
-import { OrganizationToken } from "../tokens";
+import type { UserToken } from "../../users/tokens";
+import type { OrganizationToken } from "../tokens";
 
 export type OrganizationMember = Base & {
   organization: OrganizationProfile;

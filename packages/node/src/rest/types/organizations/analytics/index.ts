@@ -1,9 +1,9 @@
-import { ArrayOptions, ArrayResult } from "../..";
-import { Endpoint } from "../../../endpoints";
-import { OrganizationEvent } from "../events";
+import type { Endpoint } from "../../../endpoints";
+import type { ArrayOptions, ArrayResult } from "../..";
+import type { OrganizationEvent } from "../events";
 
 // Analytics Overview Types
-export type OrganizationAnalyticsOverview = {
+export interface OrganizationAnalyticsOverview {
   metrics: {
     totalRevenue: {
       current: number;
@@ -29,10 +29,10 @@ export type OrganizationAnalyticsOverview = {
     ticketsSold: number;
     events: number;
   }[];
-};
+}
 
 // Event Analytics Types
-export type OrganizationEventAnalytics = {
+export interface OrganizationEventAnalytics {
   event: OrganizationEvent;
   metrics: {
     totalViews: number;
@@ -42,14 +42,14 @@ export type OrganizationEventAnalytics = {
     totalOrders: number;
     totalTicketsSold: number;
   };
-};
+}
 
 // Analytics Query Options
-export type AnalyticsOptions = {
+export interface AnalyticsOptions {
   period?: "7d" | "30d" | "90d" | "12m";
   startDate?: string;
   endDate?: string;
-};
+}
 
 export type EventAnalyticsOptions = AnalyticsOptions & {
   status?: "upcoming" | "past" | "all";

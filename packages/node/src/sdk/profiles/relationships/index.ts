@@ -1,4 +1,4 @@
-import {
+import type {
   ArrayOptions,
   OrganizationIdentity,
   UserIdentity,
@@ -15,11 +15,11 @@ export const profilesRelationships = sdk((client) => ({
       username,
     }),
   getSuggestions: async (
-    options: ArrayOptions<UserIdentity | OrganizationIdentity>,
+    options: ArrayOptions<UserIdentity | OrganizationIdentity>
   ) => client.get("/profiles/~me/relationships/suggestions", options),
   getFollowers: async (
     username: string,
-    options: ArrayOptions<UserIdentity | OrganizationIdentity>,
+    options: ArrayOptions<UserIdentity | OrganizationIdentity>
   ) =>
     client.get("/profiles/@:username/relationships/followers", {
       username,

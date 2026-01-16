@@ -1,10 +1,12 @@
 import useSWRSubscription from "swr/subscription";
 import {
-  WebSocketClient,
-  WebSocketPaths,
   DEFAULT_API_URL,
-  WebSocketEndpoints,
+  WebSocketClient,
+  type WebSocketEndpoints,
+  type WebSocketPaths,
 } from "tonightpass";
+
+const WS_PROTOCOL_REGEX = /^http/;
 
 type AnyWebSocketEndpoint = WebSocketEndpoints extends infer T ? T : never;
 
@@ -22,13 +24,13 @@ export interface UseWebSocketOptions {
 export function useWebSocket<Path extends WebSocketPaths>(
   path: Path | null | undefined,
   options?: WebSocketOptionsType<Path>,
-  config?: UseWebSocketOptions,
+  config?: UseWebSocketOptions
 ) {
   const { data, error } = useSWRSubscription(
     path ? [path, options] : null,
     ([wsPath, wsOptions], { next }) => {
       const client = new WebSocketClient({
-        baseURL: DEFAULT_API_URL.replace(/^http/, "ws"),
+        baseURL: DEFAULT_API_URL.replace(WS_PROTOCOL_REGEX, "ws"),
         maxReconnectAttempts: config?.maxReconnectAttempts ?? 3,
         reconnectInterval: config?.reconnectInterval ?? 1000,
       });
@@ -70,7 +72,7 @@ export function useWebSocket<Path extends WebSocketPaths>(
           client.disconnect();
         }
       };
-    },
+    }
   );
 
   return {

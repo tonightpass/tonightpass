@@ -1,5 +1,5 @@
+import type { Currency, CurrencyConversion } from "../rest/types";
 import { sdk } from "./builder";
-import { Currency, CurrencyConversion } from "../rest/types";
 
 export const currencies = sdk((client) => ({
   getRates: () => client.get("/currencies/rates"),

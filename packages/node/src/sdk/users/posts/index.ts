@@ -1,11 +1,11 @@
-import { usersPostsViews } from "./views";
-import {
+import type {
   CreateUserPostDto,
   UpdateUserPostDto,
 } from "../../../rest/dtos/users/posts";
-import { ArrayOptions } from "../../../rest/types";
-import { UserPost } from "../../../rest/types/users/posts";
+import type { ArrayOptions } from "../../../rest/types";
+import type { UserPost } from "../../../rest/types/users/posts";
 import { sdk } from "../../builder";
+import { usersPostsViews } from "./views";
 
 export const usersPosts = sdk((client) => ({
   getByUsername: async (username: string, options?: ArrayOptions<UserPost>) =>

@@ -1,5 +1,5 @@
-import { ArrayOptions, ArrayResult, Base, UserProfile } from "../..";
-import { Endpoint } from "../../../endpoints";
+import type { Endpoint } from "../../../endpoints";
+import type { ArrayOptions, ArrayResult, Base, UserProfile } from "../..";
 
 export enum UserNotificationType {
   Follow = "follow",

@@ -1,23 +1,22 @@
 import useSWRInfinite, {
-  SWRInfiniteConfiguration,
-  SWRInfiniteResponse,
+  type SWRInfiniteConfiguration,
+  type SWRInfiniteResponse,
 } from "swr/infinite";
-import { APIRequestOptions, PathsFor, Query } from "tonightpass";
+import type { APIRequestOptions, PathsFor, Query } from "tonightpass";
 
-import { client, ResponseType, ErrorType } from "./use-api";
+import { client, type ErrorType, type ResponseType } from "./use-api";
 
-export interface UseAPIInfiniteConfig<
-  Path extends PathsFor<"GET">,
-> extends SWRInfiniteConfiguration<ResponseType<Path>, ErrorType<Path>> {
+export interface UseAPIInfiniteConfig<Path extends PathsFor<"GET">>
+  extends SWRInfiniteConfiguration<ResponseType<Path>, ErrorType<Path>> {
   requestOptions?: APIRequestOptions;
 }
 
 export function useAPIInfinite<Path extends PathsFor<"GET">>(
   getKey: (
     pageIndex: number,
-    previousPageData: ResponseType<Path> | null,
+    previousPageData: ResponseType<Path> | null
   ) => [Path, Query<Path> | undefined] | null,
-  config?: UseAPIInfiniteConfig<Path>,
+  config?: UseAPIInfiniteConfig<Path>
 ): SWRInfiniteResponse<ResponseType<Path>, ErrorType<Path>> {
   const { requestOptions, ...swrConfig } = config || {};
 

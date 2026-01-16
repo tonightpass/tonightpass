@@ -1,6 +1,6 @@
-import { Options } from "redaxios";
+import type { Options } from "redaxios";
 
-import {
+import type {
   ApiKeyEndpoints,
   AuthEndpoints,
   CareerEndpoints,
@@ -18,17 +18,17 @@ import {
   WebhookEndpoints,
 } from "./types";
 
-export type Endpoint<
+export interface Endpoint<
   M extends Options["method"],
   Path extends string,
   Res,
   Body = undefined,
-> = {
+> {
   method: M;
   path: Path;
   res: Res;
   body: Body;
-};
+}
 
 export type Endpoints =
   | ApiKeyEndpoints

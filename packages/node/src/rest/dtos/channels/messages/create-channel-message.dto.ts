@@ -1,27 +1,30 @@
 import {
+  ArrayMaxSize,
   IsArray,
+  IsMongoId,
   IsOptional,
   IsString,
   Length,
-  ArrayMaxSize,
-  IsMongoId,
   Matches,
-  ValidateIf,
   Validate,
+  ValidateIf,
+  type ValidationArguments,
   ValidatorConstraint,
-  ValidatorConstraintInterface,
-  ValidationArguments,
+  type ValidatorConstraintInterface,
 } from "class-validator";
+import { REGEX } from "../../../../constants/regex";
 
 @ValidatorConstraint({ name: "contentOrAttachments", async: false })
-export class ContentOrAttachmentsConstraint implements ValidatorConstraintInterface {
+export class ContentOrAttachmentsConstraint
+  implements ValidatorConstraintInterface
+{
   validate(_value: unknown, args: ValidationArguments): boolean {
     const object = args.object as CreateChannelMessageDto;
     const hasContent = Boolean(
-      object.content && object.content.trim().length > 0,
+      object.content && object.content.trim().length > 0
     );
     const hasAttachments = Boolean(
-      object.attachments && object.attachments.length > 0,
+      object.attachments && object.attachments.length > 0
     );
     return hasContent || hasAttachments;
   }
@@ -41,7 +44,7 @@ export class CreateChannelMessageDto {
   @IsOptional()
   @IsArray()
   @ArrayMaxSize(10)
-  @Matches(/^channels\/[\w-]+\/messages\/[\w-]+\/private\/[\w-]+$/, {
+  @Matches(REGEX.CHANNEL_MESSAGE_ATTACHMENT, {
     each: true,
   })
   @Validate(ContentOrAttachmentsConstraint)

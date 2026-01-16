@@ -1,5 +1,5 @@
+import type { RoadmapReaction } from "../rest/types";
 import { sdk } from "./builder";
-import { RoadmapReaction } from "../rest/types";
 
 export const roadmap = sdk((client) => ({
   reactions: {

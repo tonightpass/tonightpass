@@ -1,5 +1,6 @@
-import { Type, Transform } from "class-transformer";
+import { Transform, Type } from "class-transformer";
 import {
+  ArrayMaxSize,
   IsArray,
   IsDate,
   IsEmail,
@@ -13,11 +14,14 @@ import {
   Length,
   Matches,
   ValidateNested,
-  ArrayMaxSize,
 } from "class-validator";
 
 import { REGEX } from "../../../constants/regex";
-import { UserIdentifier, UserIdentity, UserIdentityGender } from "../../types";
+import {
+  type UserIdentifier,
+  type UserIdentity,
+  UserIdentityGender,
+} from "../../types";
 
 export class UpdateUserDto {
   @IsOptional()
@@ -49,9 +53,9 @@ export class UpdateUserDto {
   password?: string;
 }
 
-class UpdateUserIdentifierDto implements Partial<
-  Pick<UserIdentifier, "email" | "phoneNumber" | "username">
-> {
+class UpdateUserIdentifierDto
+  implements Partial<Pick<UserIdentifier, "email" | "phoneNumber" | "username">>
+{
   @IsOptional()
   @IsString()
   @IsEmail()
@@ -72,19 +76,22 @@ class UpdateUserIdentifierDto implements Partial<
   username?: string;
 }
 
-class UpdateUserIdentityDto implements Partial<
-  Pick<
-    UserIdentity,
-    | "firstName"
-    | "lastName"
-    | "displayName"
-    | "description"
-    | "avatarUrl"
-    | "bannerUrl"
-    | "gender"
-    | "birthDate"
-  >
-> {
+class UpdateUserIdentityDto
+  implements
+    Partial<
+      Pick<
+        UserIdentity,
+        | "firstName"
+        | "lastName"
+        | "displayName"
+        | "description"
+        | "avatarUrl"
+        | "bannerUrl"
+        | "gender"
+        | "birthDate"
+      >
+    >
+{
   @IsOptional()
   @IsString()
   @Length(2, 32)
@@ -112,15 +119,11 @@ class UpdateUserIdentityDto implements Partial<
   description?: string;
 
   @IsOptional()
-  @Matches(
-    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/users\/[\w-]+\/avatars\//,
-  )
+  @Matches(REGEX.USER_AVATAR_URL)
   avatarUrl?: string | undefined;
 
   @IsOptional()
-  @Matches(
-    /^https:\/\/(cdn\.staging\.tonightpass\.com|cdn\.tonightpass\.com)\/users\/[\w-]+\/banners\//,
-  )
+  @Matches(REGEX.USER_BANNER_URL)
   bannerUrl?: string | undefined;
 
   @IsOptional()
@@ -129,9 +132,11 @@ class UpdateUserIdentityDto implements Partial<
 
   @IsOptional()
   @Transform(({ value }) => {
-    if (!value) return undefined;
+    if (!value) {
+      return undefined;
+    }
     const date = new Date(value);
-    return isNaN(date.getTime()) ? value : date;
+    return Number.isNaN(date.getTime()) ? value : date;
   })
   @IsDate()
   birthDate?: Date;

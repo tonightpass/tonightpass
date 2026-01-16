@@ -1,10 +1,10 @@
-import { Base, Profile, ArrayResult, ArrayOptions } from "..";
-import {
+import type {
+  AddParticipantDto,
   CreateChannelDto,
   UpdateChannelDto,
-  AddParticipantDto,
 } from "../../dtos";
-import { Endpoint } from "../../endpoints";
+import type { Endpoint } from "../../endpoints";
+import type { ArrayOptions, ArrayResult, Base, Profile } from "..";
 
 export * from "./messages";
 
@@ -37,16 +37,16 @@ export type Channel = Base & {
   unreadCount?: number;
 };
 
-export type ChannelMember = {
+export interface ChannelMember {
   participant: ChannelParticipant;
   joinedAt: Date;
   role?: ChannelMemberRole;
   lastReadAt?: Date;
-};
+}
 
-export type UserChannelCountOptions = {
+export interface UserChannelCountOptions {
   unseen?: boolean;
-};
+}
 
 export type ChannelEndpoints =
   | Endpoint<

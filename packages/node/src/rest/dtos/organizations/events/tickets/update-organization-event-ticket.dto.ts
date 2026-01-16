@@ -9,16 +9,17 @@ import {
   Length,
   Min,
 } from "class-validator";
-
-import { CreateOrganizationEventTicketInput } from "./create-organization-event-ticket.dto";
 import {
   Currency,
-  DeepPartial,
+  type DeepPartial,
   OrganizationEventTicketCategory,
   OrganizationEventTicketType,
 } from "../../../../types";
+import type { CreateOrganizationEventTicketInput } from "./create-organization-event-ticket.dto";
 
-export class UpdateOrganizationEventTicketDto implements DeepPartial<CreateOrganizationEventTicketInput> {
+export class UpdateOrganizationEventTicketDto
+  implements DeepPartial<CreateOrganizationEventTicketInput>
+{
   @IsString()
   @Length(1, 128)
   @IsOptional()

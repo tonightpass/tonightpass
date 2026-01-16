@@ -1,8 +1,4 @@
-import { organizationsEventsOrders } from "./orders";
-import { organizationsEventsStyles } from "./styles";
-import { organizationsEventsTickets } from "./tickets";
-import { organizationsEventsViews } from "./views";
-import {
+import type {
   ArrayOptions,
   Client,
   CreateOrganizationEventDto,
@@ -12,6 +8,10 @@ import {
   UpdateOrganizationEventDto,
 } from "../../../rest";
 import { buildFileFormData, type FileObject } from "../../../utils";
+import { organizationsEventsOrders } from "./orders";
+import { organizationsEventsStyles } from "./styles";
+import { organizationsEventsTickets } from "./tickets";
+import { organizationsEventsViews } from "./views";
 
 export const organizationsEvents = (client: Client) => ({
   search: async (query: string, options?: ArrayOptions<OrganizationEvent>) =>
@@ -23,16 +23,15 @@ export const organizationsEvents = (client: Client) => ({
     }),
   getAll: async (
     organizationSlug?: string,
-    options?: OrganizationEventArrayOptions,
+    options?: OrganizationEventArrayOptions
   ) => {
     if (organizationSlug) {
       return client.get("/organizations/@:organizationSlug/events", {
         organizationSlug,
         ...options,
       });
-    } else {
-      return client.get("/organizations/events", options);
     }
+    return client.get("/organizations/events", options);
   },
   getSuggestions: async (options?: ArrayOptions<OrganizationEvent>) =>
     client.get("/organizations/events/suggestions", options),
@@ -41,7 +40,7 @@ export const organizationsEvents = (client: Client) => ({
       latitude: number;
       longitude: number;
       radius?: number;
-    },
+    }
   ) => client.get("/organizations/events/nearby", options),
   get: async (organizationSlug: string, eventSlug: string) =>
     client.get("/organizations/@:organizationSlug/events/:eventSlug", {
@@ -55,7 +54,7 @@ export const organizationsEvents = (client: Client) => ({
   update: async (
     organizationSlug: string,
     eventSlug: string,
-    data: UpdateOrganizationEventDto,
+    data: UpdateOrganizationEventDto
   ) =>
     client.put("/organizations/@:organizationSlug/events/:eventSlug", data, {
       organizationSlug,
@@ -68,27 +67,27 @@ export const organizationsEvents = (client: Client) => ({
       {
         organizationSlug,
         eventSlug,
-      },
+      }
     ),
   uploadFile: async (
     eventFileType: OrganizationEventFileType,
-    file: File | FileObject,
+    file: File | FileObject
   ) =>
     client.post(
       "/events/files/:eventFileType",
       buildFileFormData("file", file),
-      { eventFileType },
+      { eventFileType }
     ),
   uploadOrganizationFile: async (
     organizationSlug: string,
     eventSlug: string,
     eventFileType: OrganizationEventFileType,
-    file: File | FileObject,
+    file: File | FileObject
   ) =>
     client.post(
       "/organizations/@:organizationSlug/events/:eventSlug/files/:eventFileType",
       buildFileFormData("file", file),
-      { organizationSlug, eventSlug, eventFileType },
+      { organizationSlug, eventSlug, eventFileType }
     ),
   orders: organizationsEventsOrders(client),
   styles: organizationsEventsStyles(client),

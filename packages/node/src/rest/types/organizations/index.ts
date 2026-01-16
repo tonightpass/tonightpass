@@ -1,27 +1,29 @@
 import type Stripe from "stripe";
-
-import {
+import type { CreateOrganizationDto, UpdateOrganizationDto } from "../../dtos";
+import type { Endpoint } from "../../endpoints";
+import type {
   ArrayOptions,
   ArrayResult,
   Base,
   Location,
   OrganizationProfile,
 } from "..";
-import { OrganizationAnalyticsEndpoints } from "./analytics";
-import { OrganizationCustomersEndpoints } from "./customers";
-import { OrganizationEvent, OrganizationEventEndpoints } from "./events";
-import { OrganizationEventTicket } from "./events/tickets";
-import { OrganizationMember, OrganizationMembersEndpoints } from "./members";
-import { OrganizationOrdersEndpoints } from "./orders";
-import { CreateOrganizationDto, UpdateOrganizationDto } from "../../dtos";
-import { Endpoint } from "../../endpoints";
+import type { OrganizationAnalyticsEndpoints } from "./analytics";
+import type { OrganizationCustomersEndpoints } from "./customers";
+import type { OrganizationEvent, OrganizationEventEndpoints } from "./events";
+import type { OrganizationEventTicket } from "./events/tickets";
+import type {
+  OrganizationMember,
+  OrganizationMembersEndpoints,
+} from "./members";
+import type { OrganizationOrdersEndpoints } from "./orders";
 
-export * from "./events";
-export * from "./members";
-export * from "./tokens";
 export * from "./analytics";
 export * from "./customers";
+export * from "./events";
+export * from "./members";
 export * from "./orders";
+export * from "./tokens";
 
 export type Organization = Base & {
   slug: string;
@@ -34,10 +36,10 @@ export type Organization = Base & {
   billing: OrganizationBilling;
 };
 
-export type OrganizationBilling = {
+export interface OrganizationBilling {
   account: string;
   vatRate: number;
-};
+}
 
 export type OrganizationBillingAccount = Stripe.Account;
 

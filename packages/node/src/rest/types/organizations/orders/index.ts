@@ -1,6 +1,6 @@
-import { ArrayOptions, ArrayResult, OrganizationCustomer } from "../..";
-import { Endpoint } from "../../../endpoints";
-import { Order } from "../../orders";
+import type { Endpoint } from "../../../endpoints";
+import type { ArrayOptions, ArrayResult, OrganizationCustomer } from "../..";
+import type { Order } from "../../orders";
 
 export type OrganizationOrder = Omit<Order, "user"> & {
   customer: OrganizationCustomer;

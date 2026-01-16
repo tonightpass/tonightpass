@@ -1,7 +1,7 @@
 import { pathcat } from "pathcat";
 
-import { WebSocketPaths, WebSocketOptionsFor } from "../endpoints";
-import { WebSocketClientOptions, ChannelWebSocketEvent } from "../types";
+import type { WebSocketOptionsFor, WebSocketPaths } from "../endpoints";
+import type { ChannelWebSocketEvent, WebSocketClientOptions } from "../types";
 
 export type WebSocketEventHandler<T> = (event: T) => void;
 
@@ -12,10 +12,10 @@ type EventHandlerMap = Map<
 
 export class WebSocketClient {
   private ws?: WebSocket;
-  private options: WebSocketClientOptions;
+  private readonly options: WebSocketClientOptions;
   private reconnectAttempts = 0;
   private reconnectTimer?: ReturnType<typeof setTimeout>;
-  private eventHandlers: EventHandlerMap = new Map();
+  private readonly eventHandlers: EventHandlerMap = new Map();
   private isConnected = false;
   private isReconnecting = false;
 
@@ -37,7 +37,7 @@ export class WebSocketClient {
 
   private getWebSocketURL<P extends WebSocketPaths>(
     path: P,
-    options: WebSocketOptionsFor<P>,
+    options: WebSocketOptionsFor<P>
   ): string {
     // Extract parameters for pathcat - only string values for path parameters
     const pathParams: Record<string, string> = {};
@@ -53,7 +53,7 @@ export class WebSocketClient {
 
   async connect<P extends WebSocketPaths>(
     path: P,
-    options: WebSocketOptionsFor<P>,
+    options: WebSocketOptionsFor<P>
   ): Promise<void> {
     return new Promise((resolve, reject) => {
       try {
@@ -110,7 +110,7 @@ export class WebSocketClient {
 
   private handleReconnect<P extends WebSocketPaths>(
     path: P,
-    options: WebSocketOptionsFor<P>,
+    options: WebSocketOptionsFor<P>
   ) {
     if (this.reconnectAttempts >= this.options.maxReconnectAttempts!) {
       this.log("Max reconnect attempts reached");
@@ -121,7 +121,7 @@ export class WebSocketClient {
     this.reconnectAttempts++;
 
     this.log(
-      `Attempting to reconnect (${this.reconnectAttempts}/${this.options.maxReconnectAttempts})`,
+      `Attempting to reconnect (${this.reconnectAttempts}/${this.options.maxReconnectAttempts})`
     );
 
     this.reconnectTimer = setTimeout(() => {
@@ -149,7 +149,7 @@ export class WebSocketClient {
 
   on<T extends ChannelWebSocketEvent>(
     eventType: T["type"] | "*",
-    handler: WebSocketEventHandler<T>,
+    handler: WebSocketEventHandler<T>
   ): () => void {
     if (!this.eventHandlers.has(eventType)) {
       this.eventHandlers.set(eventType, new Set());
@@ -157,13 +157,13 @@ export class WebSocketClient {
 
     // Create a type-safe wrapper that accepts any ChannelWebSocketEvent
     const wrappedHandler: WebSocketEventHandler<ChannelWebSocketEvent> = (
-      event,
+      event
     ) => {
       // The event will be properly typed based on the eventType
       handler(event as T);
     };
 
-    this.eventHandlers.get(eventType)!.add(wrappedHandler);
+    this.eventHandlers.get(eventType)?.add(wrappedHandler);
 
     // Return unsubscribe function
     return () => {
@@ -179,7 +179,7 @@ export class WebSocketClient {
 
   off<T extends ChannelWebSocketEvent>(
     eventType: T["type"] | "*",
-    _handler: WebSocketEventHandler<T>,
+    _handler: WebSocketEventHandler<T>
   ): void {
     // Note: This is a simplified version that clears all handlers for the event type
     // For exact handler removal, we'd need to maintain a mapping

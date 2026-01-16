@@ -1,11 +1,10 @@
-import Stripe from "stripe";
-
-import { Base, OrganizationEvent } from "../../..";
-import {
+import type Stripe from "stripe";
+import type {
   CreateOrganizationEventTicketDto,
   UpdateOrganizationEventTicketDto,
 } from "../../../../dtos";
-import { Endpoint } from "../../../../endpoints";
+import type { Endpoint } from "../../../../endpoints";
+import type { Base, OrganizationEvent } from "../../..";
 
 export type OrganizationEventTicket = Base & {
   name: string;

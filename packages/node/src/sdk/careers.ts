@@ -1,4 +1,4 @@
-import { Query } from "pathcat";
+import type { Query } from "pathcat";
 
 import { sdk } from "./builder";
 

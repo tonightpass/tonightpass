@@ -1,25 +1,25 @@
 import { pathcat } from "pathcat";
-import { Options, Response as RedaxiosResponse } from "redaxios";
+import type { Options, Response as RedaxiosResponse } from "redaxios";
 
-import { ParamValue, Query } from "..";
-import { CacheManager, CacheOptions } from "./cache";
-import { Endpoints } from "./endpoints";
-import { APIRequestOptions, request } from "./request";
+import type { ParamValue, Query } from "..";
 import { DEFAULT_API_URL } from "../constants";
+import { CacheManager, type CacheOptions } from "./cache";
+import type { Endpoints } from "./endpoints";
+import { type APIRequestOptions, request } from "./request";
 
-export type SuccessfulAPIResponse<T> = {
+export interface SuccessfulAPIResponse<T> {
   success: true;
   data: T;
-};
+}
 
-export type ErroredAPIResponse = {
+export interface ErroredAPIResponse {
   success: false;
   message: string;
   statusCode: number;
   errors?: {
     [key: string]: string[];
   };
-};
+}
 
 export type APIResponse<T> = SuccessfulAPIResponse<T> | ErroredAPIResponse;
 
@@ -66,7 +66,7 @@ export class TonightPassAPIError<T> extends Error {
 
   constructor(
     public readonly response: RedaxiosResponse<APIResponse<T>>,
-    public readonly data: ErroredAPIResponse,
+    public readonly data: ErroredAPIResponse
   ) {
     super(data.message);
 
@@ -129,14 +129,14 @@ export class Client {
   async get<Path extends PathsFor<"GET">>(
     path: Path,
     query?: Query<Path>,
-    options?: APIRequestOptions,
+    options?: APIRequestOptions
   ) {
     return this.requester<ResponseFor<"GET", Path>>(
       "GET",
       path,
       undefined,
       query,
-      options,
+      options
     );
   }
 
@@ -144,14 +144,14 @@ export class Client {
     path: Path,
     body: Body<"POST", Path>,
     query?: Query<Path>,
-    options?: APIRequestOptions,
+    options?: APIRequestOptions
   ) {
     return this.requester<ResponseFor<"POST", Path>>(
       "POST",
       path,
       body,
       query,
-      options,
+      options
     );
   }
 
@@ -159,14 +159,14 @@ export class Client {
     path: Path,
     body: Body<"PUT", Path>,
     query?: Query<Path>,
-    options?: APIRequestOptions,
+    options?: APIRequestOptions
   ) {
     return this.requester<ResponseFor<"PUT", Path>>(
       "PUT",
       path,
       body,
       query,
-      options,
+      options
     );
   }
 
@@ -174,14 +174,14 @@ export class Client {
     path: Path,
     body: Body<"PATCH", Path>,
     query?: Query<Path>,
-    options?: APIRequestOptions,
+    options?: APIRequestOptions
   ) {
     return this.requester<ResponseFor<"PATCH", Path>>(
       "PATCH",
       path,
       body,
       query,
-      options,
+      options
     );
   }
 
@@ -189,14 +189,14 @@ export class Client {
     path: Path,
     body: Body<"DELETE", Path>,
     query?: Query<Path>,
-    options?: APIRequestOptions,
+    options?: APIRequestOptions
   ) {
     return this.requester<ResponseFor<"DELETE", Path>>(
       "DELETE",
       path,
       body,
       query,
-      options,
+      options
     );
   }
 
@@ -205,14 +205,12 @@ export class Client {
     path: string,
     body: unknown,
     query: Query<string> = {},
-    options: APIRequestOptions = {},
+    options: APIRequestOptions = {}
   ) {
     const url = this.url(path, query);
 
-    if (body !== undefined) {
-      if (method === "GET") {
-        throw new Error("Cannot send a GET request with a body");
-      }
+    if (body !== undefined && method === "GET") {
+      throw new Error("Cannot send a GET request with a body");
     }
 
     if (this.cacheManager) {

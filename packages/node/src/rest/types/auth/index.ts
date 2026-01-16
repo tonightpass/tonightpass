@@ -1,12 +1,12 @@
-import {
+import type {
   CreateUserDto,
   GoogleOneTapDto,
-  SignInUserDto,
   RecoveryDto,
   RecoveryResetDto,
+  SignInUserDto,
 } from "../../dtos";
-import { Endpoint } from "../../endpoints";
-import { User } from "../users";
+import type { Endpoint } from "../../endpoints";
+import type { User } from "../users";
 
 export enum OAuth2Provider {
   Google = "google",
@@ -16,15 +16,15 @@ export enum OAuth2Provider {
 
 export type AuthMethod = OAuth2Provider | "password";
 
-export type RecoveryResponse = {
+export interface RecoveryResponse {
   to: string;
-};
+}
 
-export type AuthResponse = {
+export interface AuthResponse {
   user: User;
   accessToken: string;
   refreshToken: string;
-};
+}
 
 export type AuthEndpoints =
   | Endpoint<"POST", "/auth/sign-up", AuthResponse, CreateUserDto>

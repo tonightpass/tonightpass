@@ -1,14 +1,13 @@
-import { ParamValue } from "pathcat";
-
-import { sdk } from "./builder";
-import {
+import type { ParamValue } from "pathcat";
+import type {
   CreateUserDto,
   GoogleOneTapDto,
-  SignInUserDto,
+  OAuth2Provider,
   RecoveryDto,
   RecoveryResetDto,
-  OAuth2Provider,
+  SignInUserDto,
 } from "../rest";
+import { sdk } from "./builder";
 
 export const auth = sdk((client) => ({
   signIn: async (data: SignInUserDto) => client.post("/auth/sign-in", data),
@@ -23,7 +22,7 @@ export const auth = sdk((client) => ({
   oauth2: {
     connect: (
       provider: OAuth2Provider,
-      params?: Record<string, ParamValue>,
+      params?: Record<string, ParamValue>
     ) => {
       return client.url("/oauth2/:provider", { provider, ...params });
     },

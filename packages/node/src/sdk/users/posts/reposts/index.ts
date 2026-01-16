@@ -1,18 +1,18 @@
-import { CreateUserPostRepostDto } from "../../../../rest/dtos/users/posts/reposts";
-import { ArrayOptions } from "../../../../rest/types";
-import { UserPostRepost } from "../../../../rest/types/users/posts/reposts";
+import type { CreateUserPostRepostDto } from "../../../../rest/dtos/users/posts/reposts";
+import type { ArrayOptions } from "../../../../rest/types";
+import type { UserPostRepost } from "../../../../rest/types/users/posts/reposts";
 import { sdk } from "../../../builder";
 
 export const usersPostsReposts = sdk((client) => ({
   getByUsername: async (
     username: string,
-    options?: ArrayOptions<UserPostRepost>,
+    options?: ArrayOptions<UserPostRepost>
   ) => client.get("/users/@:username/reposts", { username, ...options }),
 
   getByPost: async (
     username: string,
     postId: string,
-    options?: ArrayOptions<UserPostRepost>,
+    options?: ArrayOptions<UserPostRepost>
   ) =>
     client.get("/users/@:username/posts/:postId/reposts", {
       username,

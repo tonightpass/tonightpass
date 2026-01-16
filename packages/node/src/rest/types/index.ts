@@ -7,19 +7,19 @@ export * from "./errors";
 export * from "./feed";
 export * from "./health";
 export * from "./locations";
-export * from "./organizations";
-export * from "./users";
+export * from "./notifications";
 export * from "./orders";
+export * from "./organizations";
 export * from "./profiles";
 export * from "./roadmap";
+export * from "./users";
 export * from "./webhooks";
-export * from "./notifications";
 
-export type Base = {
+export interface Base {
   id: string;
   createdAt: Date;
   updatedAt: Date;
-};
+}
 
 export type ExcludeBase<T> = Omit<T, keyof Base>;
 
@@ -33,7 +33,7 @@ export enum Language {
   EN = "en",
 }
 
-export type ArraySortOptions = {
+export interface ArraySortOptions {
   /**
    * Field to sort
    */
@@ -42,9 +42,9 @@ export type ArraySortOptions = {
    * Order to sort
    */
   order: "asc" | "desc";
-};
+}
 
-export type ArrayPaginationOptions = {
+export interface ArrayPaginationOptions {
   /**
    * Page number
    */
@@ -57,9 +57,9 @@ export type ArrayPaginationOptions = {
    * Offset to start from
    */
   offset?: number;
-};
+}
 
-export type ArrayFilterOptions = {
+export interface ArrayFilterOptions {
   /**
    * Field to filter
    */
@@ -80,10 +80,10 @@ export type ArrayFilterOptions = {
     | "lte" // Less than or equal
     | "in" // In
     | "nin"; // Not in
-};
+}
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export type ArrayOptions<T> = {
+export type ArrayOptions<_T> = {
   /**
    * Select only specific fields to display
    */
@@ -94,9 +94,9 @@ export type ArrayOptions<T> = {
   // exclude?: readonly AutoPath<T, string>[];
 } & ArrayPaginationOptions;
 
-export type ArrayResult<T> = {
+export interface ArrayResult<T> {
   items: T[];
   total: number;
   page: number;
   limit: number;
-};
+}

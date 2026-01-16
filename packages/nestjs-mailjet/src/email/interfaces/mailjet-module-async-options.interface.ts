@@ -1,15 +1,13 @@
-import { ModuleMetadata, Type } from "@nestjs/common";
+import type { ModuleMetadata, Type } from "@nestjs/common";
 
-import { MailjetModuleOptions } from "./mailjet-module-options.interface";
+import type { MailjetModuleOptions } from "./mailjet-module-options.interface";
 
 export interface MailjetOptionsFactory {
   createMailjetOptions(): Promise<MailjetModuleOptions> | MailjetModuleOptions;
 }
 
-export interface MailjetModuleAsyncOptions extends Pick<
-  ModuleMetadata,
-  "imports"
-> {
+export interface MailjetModuleAsyncOptions
+  extends Pick<ModuleMetadata, "imports"> {
   inject?: any[];
   useClass?: Type<MailjetOptionsFactory>;
   useExisting?: Type<MailjetOptionsFactory>;

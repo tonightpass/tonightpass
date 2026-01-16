@@ -1,10 +1,10 @@
-import {
-  CreateChannelMessageDto,
-  UpdateChannelMessageDto,
+import type {
+  AddReactionDto,
   ArrayOptions,
   ChannelMessage,
-  AddReactionDto,
+  CreateChannelMessageDto,
   ReportChannelMessageDto,
+  UpdateChannelMessageDto,
 } from "../../../rest";
 import { sdk } from "../../builder";
 
@@ -17,7 +17,7 @@ export const channelsMessages = sdk((client) => ({
   getAllByOrganization: async (
     organizationSlug: string,
     channelId: string,
-    options?: ArrayOptions<ChannelMessage>,
+    options?: ArrayOptions<ChannelMessage>
   ) =>
     client.get("/channels/:organizationSlug/:channelId/messages", {
       organizationSlug,
@@ -32,7 +32,7 @@ export const channelsMessages = sdk((client) => ({
   getByOrganization: async (
     organizationSlug: string,
     channelId: string,
-    messageId: string,
+    messageId: string
   ) =>
     client.get("/channels/:organizationSlug/:channelId/messages/:messageId", {
       organizationSlug,
@@ -44,7 +44,7 @@ export const channelsMessages = sdk((client) => ({
   createByOrganization: async (
     organizationSlug: string,
     channelId: string,
-    data: CreateChannelMessageDto,
+    data: CreateChannelMessageDto
   ) =>
     client.post("/channels/:organizationSlug/:channelId/messages", data, {
       organizationSlug,
@@ -53,7 +53,7 @@ export const channelsMessages = sdk((client) => ({
   update: async (
     channelId: string,
     messageId: string,
-    data: UpdateChannelMessageDto,
+    data: UpdateChannelMessageDto
   ) =>
     client.put("/channels/~me/:channelId/messages/:messageId", data, {
       channelId,
@@ -63,7 +63,7 @@ export const channelsMessages = sdk((client) => ({
     organizationSlug: string,
     channelId: string,
     messageId: string,
-    data: UpdateChannelMessageDto,
+    data: UpdateChannelMessageDto
   ) =>
     client.put(
       "/channels/:organizationSlug/:channelId/messages/:messageId",
@@ -72,7 +72,7 @@ export const channelsMessages = sdk((client) => ({
         organizationSlug,
         channelId,
         messageId,
-      },
+      }
     ),
   delete: async (channelId: string, messageId: string) =>
     client.delete("/channels/~me/:channelId/messages/:messageId", undefined, {
@@ -82,7 +82,7 @@ export const channelsMessages = sdk((client) => ({
   deleteByOrganization: async (
     organizationSlug: string,
     channelId: string,
-    messageId: string,
+    messageId: string
   ) =>
     client.delete(
       "/channels/:organizationSlug/:channelId/messages/:messageId",
@@ -91,28 +91,28 @@ export const channelsMessages = sdk((client) => ({
         organizationSlug,
         channelId,
         messageId,
-      },
+      }
     ),
   addReaction: async (
     channelId: string,
     messageId: string,
-    data: AddReactionDto,
+    data: AddReactionDto
   ) =>
     client.post(
       "/channels/~me/:channelId/messages/:messageId/reactions",
       data,
-      { channelId, messageId },
+      { channelId, messageId }
     ),
   addReactionByOrganization: async (
     organizationSlug: string,
     channelId: string,
     messageId: string,
-    data: AddReactionDto,
+    data: AddReactionDto
   ) =>
     client.post(
       "/channels/:organizationSlug/:channelId/messages/:messageId/reactions",
       data,
-      { organizationSlug, channelId, messageId },
+      { organizationSlug, channelId, messageId }
     ),
   removeReaction: async (channelId: string, messageId: string, emoji: string) =>
     client.delete(
@@ -122,13 +122,13 @@ export const channelsMessages = sdk((client) => ({
         channelId,
         messageId,
         emoji,
-      },
+      }
     ),
   removeReactionByOrganization: async (
     organizationSlug: string,
     channelId: string,
     messageId: string,
-    emoji: string,
+    emoji: string
   ) =>
     client.delete(
       "/channels/:organizationSlug/:channelId/messages/:messageId/reactions/:emoji",
@@ -138,7 +138,7 @@ export const channelsMessages = sdk((client) => ({
         channelId,
         messageId,
         emoji,
-      },
+      }
     ),
   markAsRead: async (channelId: string, messageId: string) =>
     client.post(
@@ -147,12 +147,12 @@ export const channelsMessages = sdk((client) => ({
       {
         channelId,
         messageId,
-      },
+      }
     ),
   markAsReadByOrganization: async (
     organizationSlug: string,
     channelId: string,
-    messageId: string,
+    messageId: string
   ) =>
     client.post(
       "/channels/:organizationSlug/:channelId/messages/:messageId/read",
@@ -161,14 +161,14 @@ export const channelsMessages = sdk((client) => ({
         organizationSlug,
         channelId,
         messageId,
-      },
+      }
     ),
   uploadFile: async (channelId: string, file: FormData) =>
     client.post("/channels/~me/:channelId/files", file, { channelId }),
   uploadFileByOrganization: async (
     organizationSlug: string,
     channelId: string,
-    file: FormData,
+    file: FormData
   ) =>
     client.post("/channels/:organizationSlug/:channelId/files", file, {
       organizationSlug,
@@ -177,7 +177,7 @@ export const channelsMessages = sdk((client) => ({
   report: async (
     channelId: string,
     messageId: string,
-    data: ReportChannelMessageDto,
+    data: ReportChannelMessageDto
   ) =>
     client.post("/channels/~me/:channelId/messages/:messageId/report", data, {
       channelId,
@@ -187,11 +187,11 @@ export const channelsMessages = sdk((client) => ({
     organizationSlug: string,
     channelId: string,
     messageId: string,
-    data: ReportChannelMessageDto,
+    data: ReportChannelMessageDto
   ) =>
     client.post(
       "/channels/:organizationSlug/:channelId/messages/:messageId/report",
       data,
-      { organizationSlug, channelId, messageId },
+      { organizationSlug, channelId, messageId }
     ),
 }));

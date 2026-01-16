@@ -1,16 +1,16 @@
-import {
+import type { UpdateUserDto } from "../../dtos";
+import type { Endpoint } from "../../endpoints";
+import type {
   Base,
   Currency,
   Language,
   Location,
+  OAuth2Provider,
   UserBookingEndpoints,
   UserProfile,
-  OAuth2Provider,
 } from "..";
-import { UserNotificationEndpoints } from "./notifications";
-import { UserPostEndpoints } from "./posts";
-import { UpdateUserDto } from "../../dtos";
-import { Endpoint } from "../../endpoints";
+import type { UserNotificationEndpoints } from "./notifications";
+import type { UserPostEndpoints } from "./posts";
 
 export * from "./bookings";
 export * from "./customer";
@@ -31,11 +31,11 @@ export type User = Base & {
   isOfficial: boolean;
 };
 
-export type UserIdentifier = {
+export interface UserIdentifier {
   email?: string;
   phoneNumber?: string;
   username: string;
-};
+}
 
 export type UserIdentity = UserProfile & {
   firstName: string;
@@ -58,7 +58,7 @@ export enum UserIdentityGender {
   NonBinary = "non-binary",
 }
 
-export type UserPreferences = {
+export interface UserPreferences {
   language: Language;
   currency: Currency;
   notifications: {
@@ -70,16 +70,16 @@ export type UserPreferences = {
       message: boolean;
     };
   };
-};
+}
 
-export type UserConnection = {
+export interface UserConnection {
   ip: string;
   os: UserConnectionOS;
   device: UserConnectionDevice;
   client: UserConnectionClient;
   updatedAt: Date;
   createdAt: Date;
-};
+}
 
 export type UserOAuthProvider = Base & {
   provider: OAuth2Provider;
@@ -91,20 +91,20 @@ export type UserOAuthProvider = Base & {
   lastUsedAt?: Date;
 };
 
-export type UserConnectionOS = {
+export interface UserConnectionOS {
   name: string;
   version: string;
-};
+}
 
-export type UserConnectionDevice = {
+export interface UserConnectionDevice {
   type: string;
   brand: string;
-};
+}
 
-export type UserConnectionClient = {
+export interface UserConnectionClient {
   name: string;
   version: string;
-};
+}
 
 export enum UserFileType {
   Avatar = "avatar",

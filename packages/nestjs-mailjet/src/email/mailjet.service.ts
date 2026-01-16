@@ -1,9 +1,13 @@
 import { HttpStatus, Inject, Injectable } from "@nestjs/common";
-import { Client, Contact, LibraryResponse, SendEmailV3_1 } from "node-mailjet";
+import {
+  Client,
+  type Contact,
+  type LibraryResponse,
+  type SendEmailV3_1,
+} from "node-mailjet";
 import type { ClientParams } from "node-mailjet/declarations/client/Client";
-
-import type { MailjetModuleOptions } from "./interfaces";
 import { MAILJET_MODULE_OPTIONS } from "../constants/mailjet.constants";
+import type { MailjetModuleOptions } from "./interfaces";
 
 @Injectable()
 export class MailjetService {
@@ -11,7 +15,7 @@ export class MailjetService {
 
   constructor(
     @Inject(MAILJET_MODULE_OPTIONS)
-    options: MailjetModuleOptions,
+    options: MailjetModuleOptions
   ) {
     const clientConfig: ClientParams = {
       apiKey: options.apiKey,
@@ -64,7 +68,7 @@ export class MailjetService {
 
   async subscribeContactToList(
     contactId: string | number,
-    listId: string | number,
+    listId: string | number
   ): Promise<Contact.Contact> {
     const result: LibraryResponse<Contact.PostContactResponse> =
       await this.client
@@ -89,7 +93,7 @@ export class MailjetService {
 
   async unsubscribeContactFromList(
     contactId: string | number,
-    listId: string | number,
+    listId: string | number
   ): Promise<Contact.Contact> {
     const result: LibraryResponse<Contact.PostContactResponse> =
       await this.client
@@ -113,7 +117,7 @@ export class MailjetService {
   }
 
   async sendEmail<TVars>(
-    messages: SendEmailV3_1.Body<undefined, TVars>,
+    messages: SendEmailV3_1.Body<undefined, TVars>
   ): Promise<SendEmailV3_1.ResponseMessage[]> {
     const result: LibraryResponse<SendEmailV3_1.Response> = await this.client
       .post("send", { version: "v3.1" })
@@ -125,7 +129,7 @@ export class MailjetService {
       result.body.Messages[0].Status !== "success"
     ) {
       throw new Error(
-        `Email messages not sent: ${JSON.stringify(result.body.Messages?.[0] || result.body)}`,
+        `Email messages not sent: ${JSON.stringify(result.body.Messages?.[0] || result.body)}`
       );
     }
 

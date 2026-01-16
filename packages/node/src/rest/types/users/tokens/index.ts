@@ -1,5 +1,5 @@
-import { User } from "..";
-import { Base } from "../..";
+import type { Base } from "../..";
+import type { User } from "..";
 
 export type UserToken = Omit<Base, "updatedAt"> & {
   type: UserTokenType;

@@ -1,12 +1,12 @@
-import {
-  ArrayResult,
+import type { CreateUserPostRepostDto } from "../../../../dtos/users/posts/reposts";
+import type { Endpoint } from "../../../../endpoints";
+import type {
   ArrayOptions,
+  ArrayResult,
+  Base,
   UserPost,
   UserProfile,
-  Base,
 } from "../../..";
-import { CreateUserPostRepostDto } from "../../../../dtos/users/posts/reposts";
-import { Endpoint } from "../../../../endpoints";
 
 export type UserPostRepost = Base & {
   originalPost: UserPost;

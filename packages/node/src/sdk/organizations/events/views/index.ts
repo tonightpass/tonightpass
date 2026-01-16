@@ -1,4 +1,4 @@
-import { Client } from "../../../../rest";
+import type { Client } from "../../../../rest";
 
 export const organizationsEventsViews = (client: Client) => ({
   record: async (organizationSlug: string, eventSlug: string) =>
@@ -8,6 +8,6 @@ export const organizationsEventsViews = (client: Client) => ({
       {
         organizationSlug,
         eventSlug,
-      },
+      }
     ),
 });

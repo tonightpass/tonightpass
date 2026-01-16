@@ -1,5 +1,5 @@
-import { Client } from "../../../../rest";
-import {
+import type { Client } from "../../../../rest";
+import type {
   AcceptOrganizationMemberInvitationDto,
   CreateOrganizationMemberInvitationLinkDto,
 } from "../../../../rest/dtos";
@@ -11,24 +11,24 @@ export const invitations = (client: Client) => ({
     }),
   createLink: async (
     organizationSlug: string,
-    data: CreateOrganizationMemberInvitationLinkDto = {},
+    data: CreateOrganizationMemberInvitationLinkDto = {}
   ) =>
     client.post(
       "/organizations/@:organizationSlug/members/invitations/links",
       data,
       {
         organizationSlug,
-      },
+      }
     ),
   accept: async (
     organizationSlug: string,
-    data: AcceptOrganizationMemberInvitationDto,
+    data: AcceptOrganizationMemberInvitationDto
   ) =>
     client.post(
       "/organizations/@:organizationSlug/members/invitations/accept",
       data,
       {
         organizationSlug,
-      },
+      }
     ),
 });

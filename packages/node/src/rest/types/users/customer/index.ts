@@ -1,4 +1,4 @@
-import { UserProfile, UserProfileMetadata } from "../../profiles";
+import type { UserProfile, UserProfileMetadata } from "../../profiles";
 
 export type UserCustomer = UserProfile & {
   email?: string;

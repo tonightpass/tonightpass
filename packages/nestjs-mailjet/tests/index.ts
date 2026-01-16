@@ -1,10 +1,10 @@
+import assert from "node:assert/strict";
+import path from "node:path";
+import test from "node:test";
 import { HttpModule } from "@nestjs/axios";
 import { Test } from "@nestjs/testing";
 import dotenv from "dotenv";
-import { Common, SendEmailV3_1 } from "node-mailjet";
-import assert from "node:assert";
-import path from "node:path";
-import test from "node:test";
+import type { Common, SendEmailV3_1 } from "node-mailjet";
 
 import { MAILJET_MODULE_OPTIONS } from "../src/constants/mailjet.constants";
 import type { MailjetModuleOptions } from "../src/email/interfaces";
@@ -43,7 +43,7 @@ test("MailjetModule", async (t) => {
 
       assert.ok(mailjetService instanceof MailjetService);
       assert.deepStrictEqual(options, config);
-    },
+    }
   );
 
   await t.test(
@@ -62,7 +62,7 @@ test("MailjetModule", async (t) => {
 
       assert.ok(mailjetService instanceof MailjetService);
       assert.deepStrictEqual(options, config);
-    },
+    }
   );
 });
 
@@ -156,7 +156,7 @@ test("MailjetService", async (t) => {
       try {
         await mailjetService.subscribeContactToList(
           "test-contact-id",
-          "test-list-id",
+          "test-list-id"
         );
         // In sandbox mode, this should succeed since no actual API call is made
         assert.ok(true);
@@ -164,7 +164,7 @@ test("MailjetService", async (t) => {
         // In non-sandbox mode, expect error for invalid credentials
         assert.ok(error instanceof Error);
       }
-    },
+    }
   );
 
   await t.test(
@@ -173,7 +173,7 @@ test("MailjetService", async (t) => {
       try {
         await mailjetService.unsubscribeContactFromList(
           "test-contact-id",
-          "test-list-id",
+          "test-list-id"
         );
         // In sandbox mode, this should succeed since no actual API call is made
         assert.ok(true);
@@ -181,6 +181,6 @@ test("MailjetService", async (t) => {
         // In non-sandbox mode, expect error for invalid credentials
         assert.ok(error instanceof Error);
       }
-    },
+    }
   );
 });

@@ -1,8 +1,7 @@
 import { Type } from "class-transformer";
 import { IsOptional, IsString, Length, ValidateNested } from "class-validator";
-
+import type { Location } from "../../types";
 import { GeoPointDto } from "./create-location.dto";
-import { Location } from "../../types";
 
 export class UpdateLocationDto implements Partial<Location> {
   @IsOptional()

@@ -1,5 +1,5 @@
+import type { ArrayOptions, Order } from "../rest";
 import { sdk } from "./builder";
-import { ArrayOptions, Order } from "../rest";
 
 export const orders = sdk((client) => ({
   getAll: async (options?: ArrayOptions<Order>) => {

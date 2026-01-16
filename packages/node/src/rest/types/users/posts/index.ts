@@ -1,13 +1,13 @@
-import { Base, ArrayResult, ArrayOptions, UserProfile } from "../..";
-import { UserPostCommentEndpoints } from "./comments";
-import { UserPostMedia, UserPostMediaEndpoints } from "./media";
-import { UserPostRepostEndpoints } from "./reposts";
-import { UserPostViewEndpoints } from "./views";
-import {
+import type {
   CreateUserPostDto,
   UpdateUserPostDto,
 } from "../../../dtos/users/posts";
-import { Endpoint } from "../../../endpoints";
+import type { Endpoint } from "../../../endpoints";
+import type { ArrayOptions, ArrayResult, Base, UserProfile } from "../..";
+import type { UserPostCommentEndpoints } from "./comments";
+import type { UserPostMedia, UserPostMediaEndpoints } from "./media";
+import type { UserPostRepostEndpoints } from "./reposts";
+import type { UserPostViewEndpoints } from "./views";
 
 export enum UserPostVisibility {
   Public = "public",
@@ -47,6 +47,6 @@ export type UserPostEndpoints =
   | UserPostMediaEndpoints;
 
 export * from "./comments";
-export * from "./reposts";
 export * from "./media";
+export * from "./reposts";
 export * from "./views";

@@ -1,6 +1,9 @@
-import { HealthCheckResult, HealthIndicatorResult } from "@nestjs/terminus";
+import type {
+  HealthCheckResult,
+  HealthIndicatorResult,
+} from "@nestjs/terminus";
 
-import { Endpoint } from "../../endpoints";
+import type { Endpoint } from "../../endpoints";
 
 export interface Health<T extends string = string> extends HealthCheckResult {
   info?: Record<T, HealthIndicatorResult[T]>;

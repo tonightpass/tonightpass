@@ -12,10 +12,10 @@ import {
 
 import {
   Currency,
+  type ExcludeBase,
+  type OrganizationEventTicket,
   OrganizationEventTicketCategory,
   OrganizationEventTicketType,
-  OrganizationEventTicket,
-  ExcludeBase,
 } from "../../../../types";
 
 export type CreateOrganizationEventTicketInput = Omit<
@@ -25,7 +25,9 @@ export type CreateOrganizationEventTicketInput = Omit<
   price: number;
 };
 
-export class CreateOrganizationEventTicketDto implements CreateOrganizationEventTicketInput {
+export class CreateOrganizationEventTicketDto
+  implements CreateOrganizationEventTicketInput
+{
   @IsString()
   @Length(1, 128)
   name: string;

@@ -1,26 +1,29 @@
-import { OrganizationEventTicket, OrganizationEventTicketEndpoints } from "..";
-import { OrganizationEventOrderEndpoints } from "./orders";
-import {
-  OrganizationEventStyle,
-  OrganizationEventStyleEndpoints,
-} from "./styles";
-import {
+import type {
+  CreateOrganizationEventDto,
+  UpdateOrganizationEventDto,
+} from "../../../dtos";
+import type { Endpoint } from "../../../endpoints";
+import type {
   ArrayOptions,
   ArrayResult,
   Base,
   Location,
   OrganizationProfile,
 } from "../..";
-import { OrganizationEventViewEndpoints } from "./views";
-import {
-  CreateOrganizationEventDto,
-  UpdateOrganizationEventDto,
-} from "../../../dtos";
-import { Endpoint } from "../../../endpoints";
+import type {
+  OrganizationEventTicket,
+  OrganizationEventTicketEndpoints,
+} from "..";
+import type { OrganizationEventOrderEndpoints } from "./orders";
+import type {
+  OrganizationEventStyle,
+  OrganizationEventStyleEndpoints,
+} from "./styles";
+import type { OrganizationEventViewEndpoints } from "./views";
 
 export * from "./orders";
-export * from "./tickets";
 export * from "./styles";
+export * from "./tickets";
 
 export type OrganizationEvent = Base & {
   title: string;
@@ -96,9 +99,9 @@ export type SearchOrganizationEventsOptions =
     q: string;
   };
 
-export type OrganizationEventCalendar = {
+export interface OrganizationEventCalendar {
   [date: string]: OrganizationEvent[];
-};
+}
 
 export type OrganizationEventEndpoints =
   | Endpoint<

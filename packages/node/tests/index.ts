@@ -1,15 +1,14 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 
-import assert from "node:assert";
+import assert from "node:assert/strict";
 import test from "node:test";
-
+import { TonightPass } from "../src/tonightpass";
 import { authTests } from "./auth";
 import { careersTests } from "./careers";
 import { dtoTests } from "./dtos";
 import { regexTests } from "./regex";
 import { requestTests } from "./request";
 import { usersTests } from "./users";
-import { TonightPass } from "../src/tonightpass";
 
 const sdkTests = [
   authTests,
@@ -39,7 +38,7 @@ test("The HTTP client correctly forms URLs", () => {
       limit: 20,
       skip: 20,
     }),
-    API_URL + "/path/to/my-resource?limit=20&skip=20",
+    `${API_URL}/path/to/my-resource?limit=20&skip=20`
   );
 
   assert.equal(
@@ -47,7 +46,7 @@ test("The HTTP client correctly forms URLs", () => {
       resource: "my-resource",
       limit: 20,
     }),
-    API_URL + "/path/to/my-resource?limit=20",
+    `${API_URL}/path/to/my-resource?limit=20`
   );
 
   assert.equal(
@@ -56,7 +55,7 @@ test("The HTTP client correctly forms URLs", () => {
       param: "param2",
       limit: 20,
     }),
-    API_URL + "/path/to/my-resource/param2?limit=20",
+    `${API_URL}/path/to/my-resource/param2?limit=20`
   );
 });
 

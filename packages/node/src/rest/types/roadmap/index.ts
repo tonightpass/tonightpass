@@ -1,4 +1,4 @@
-import { Endpoint } from "../../endpoints";
+import type { Endpoint } from "../../endpoints";
 
 export const ROADMAP_REACTIONS = ["👍", "❤️", "🎉", "👀", "🚀"] as const;
 
@@ -13,18 +13,18 @@ export enum RoadmapFeatureStatus {
   Shipped = "shipped",
 }
 
-export type RoadmapFeature = {
+export interface RoadmapFeature {
   id: string;
   title: string;
   description: string;
   status: RoadmapFeatureStatus;
   date?: string;
-};
+}
 
-export type AddRoadmapReactionBody = {
+export interface AddRoadmapReactionBody {
   featureId: string;
   reaction: RoadmapReaction;
-};
+}
 
 export type RoadmapEndpoints =
   | Endpoint<
