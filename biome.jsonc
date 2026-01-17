@@ -19,6 +19,7 @@
         "noDoneCallback": "off",
         "noEnum": "off",
         "noNonNullAssertion": "off",
+        "useImportType": "off",
         "useConsistentTypeDefinitions": {
           "level": "error",
           "options": {
