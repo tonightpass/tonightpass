@@ -39,11 +39,19 @@ export class MailjetModule {
       return [MailjetModule.createAsyncOptionsProviders(options)];
     }
 
+    // At this point, useClass must be defined
+    const useClass = options.useClass;
+    if (!useClass) {
+      throw new Error(
+        "useClass is required when useExisting and useFactory are not provided"
+      );
+    }
+
     return [
       MailjetModule.createAsyncOptionsProviders(options),
       {
-        provide: options.useClass,
-        useClass: options.useClass,
+        provide: useClass,
+        useClass,
       },
     ];
   }
@@ -59,11 +67,18 @@ export class MailjetModule {
       };
     }
 
+    const injectionToken = options.useExisting || options.useClass;
+    if (!injectionToken) {
+      throw new Error(
+        "useExisting or useClass is required when useFactory is not provided"
+      );
+    }
+
     return {
       provide: MAILJET_MODULE_OPTIONS,
       useFactory: async (optionsFactory: MailjetOptionsFactory) =>
         await optionsFactory.createMailjetOptions(),
-      inject: [options.useExisting || options.useClass],
+      inject: [injectionToken],
     };
   }
 }
