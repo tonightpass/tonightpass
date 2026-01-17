@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.235
+
+### Patch Changes
+
+- [`74f4fa2`](https://github.com/tonightpass/tonightpass/commit/74f4fa201330602cc733d8b60d927a29c217789c) Thanks [@antoinekm](https://github.com/antoinekm)! - Add payload CDN domain support for event flyers and trailers URLs
+
 ## 0.0.234
 
 ### Patch Changes
@@ -40,6 +46,7 @@
 ### Patch Changes
 
 - [`dd50392`](https://github.com/tonightpass/tonightpass/commit/dd5039269ac74ae7cad236a3376cd432c8e8ee49) Thanks [@antoinekm](https://github.com/antoinekm)! - Add AuthResponse type for mobile authentication support
+
   - Added new `AuthResponse` type that includes user data and authentication tokens (accessToken and refreshToken)
   - Updated `/auth/sign-in` and `/auth/sign-up` endpoints to return `AuthResponse` instead of `User`
   - Updated Google OAuth one-tap endpoint to return `AuthResponse`
@@ -100,6 +107,7 @@
 ### Patch Changes
 
 - [`b4a4670`](https://github.com/tonightpass/tonightpass/commit/b4a4670c868d56d27904de3da2af9e4ee4a031b6) Thanks [@antoinekm](https://github.com/antoinekm)! - Breaking: Migrate route patterns to use @ for identifiers and ~ for contextual routes
+
   - Changed `/users/:username` to `/users/@:username`
   - Changed `/organizations/:organizationSlug` to `/organizations/@:organizationSlug`
   - Changed `/profiles/:username` to `/profiles/@:username`
@@ -309,6 +317,7 @@
 - [`497717a`](https://github.com/tonightpass/tonightpass/commit/497717a70bfda735ac18d580812ebd8723e1996d) Thanks [@antoinekm](https://github.com/antoinekm)! - Add validation error messages for regex patterns in DTOs
 
   Added translatable error messages for regex validations in DTOs:
+
   - user.username.format for user username validations
   - organization.slug.format for organization slug validations
   - organization.event.slug.format for organization event slug validations
@@ -379,6 +388,7 @@
 ### Patch Changes
 
 - [`1281a2c`](https://github.com/tonightpass/tonightpass/commit/1281a2ccbb21a71e037cac3a063c1ca671deb03b) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix DTO array validation to use proper decorators
+
   - Replace `@Length` with `@ArrayMaxSize` for array size validation in DTOs
   - `mediaUrls` in CreateUserPostDto now uses `@ArrayMinSize(1)` and `@ArrayMaxSize(10)` instead of `@Length(1, 10)`
   - `links` arrays in user and organization DTOs now use `@ArrayMaxSize(5)` instead of `@Length(0, 5)`
@@ -403,6 +413,7 @@
 - [`d9d6414`](https://github.com/tonightpass/tonightpass/commit/d9d641461dd6b994081e717fc3aac4c6e0b15178) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix UserPostEndpoints to include all sub-resource endpoints (comments, reposts, views, media)
 
 - [`d155466`](https://github.com/tonightpass/tonightpass/commit/d1554664a4b7316532152b72db713eee6cd9116d) Thanks [@antoinekm](https://github.com/antoinekm)! - Add organized views system for user posts following events pattern
+
   - Create `src/sdk/users/posts/views/index.ts` with `usersPostsViews` SDK module
   - Create `src/rest/types/users/posts/views/index.ts` with `UserPostViewEndpoints` types
   - Refactor user posts SDK to use `views: usersPostsViews(client)` instead of `addView`
@@ -411,6 +422,7 @@
   - Remove views endpoint from `UserPostEndpoints` to separate module
 
   Now user posts views follow the same organized pattern as events:
+
   - Events: `sdk.organizations.events.views.record(orgSlug, eventSlug)`
   - Posts: `sdk.users.posts.views.record(username, postId)`
 
@@ -421,20 +433,24 @@
 - [`4f991ee`](https://github.com/tonightpass/tonightpass/commit/4f991eed5a6dc1e6b3ff0aa1fbcee8345d5ab473) Thanks [@antoinekm](https://github.com/antoinekm)! - Refactor user posts DTOs organization and validation
 
   **Breaking Changes:**
+
   - Moved all user posts DTOs from `/rest/types/` to `/rest/dtos/` following proper separation of concerns
   - Converted type definitions to class-validator classes for better runtime validation
 
   **New Structure:**
+
   - `CreateUserPostDto`, `UpdateUserPostDto` → `/rest/dtos/users/posts/`
   - `CreateUserPostCommentDto`, `UpdateUserPostCommentDto` → `/rest/dtos/users/posts/comments/`
   - `CreateUserPostRepostDto` → `/rest/dtos/users/posts/reposts/`
 
   **Validation Improvements:**
+
   - Added proper string length limits (posts: 1-500 chars, comments/reposts: 1-280 chars)
   - Added array size validation for media IDs (0-10 items max)
   - Enhanced type safety with class-validator decorators
 
   **Code Organization:**
+
   - Split large type files into focused modules (posts, comments, reposts, media)
   - Improved import paths and module exports
   - Better separation between DTOs (data transfer) and types (domain models)
@@ -466,6 +482,7 @@
 ### Patch Changes
 
 - [`b8e4d4c`](https://github.com/tonightpass/tonightpass/commit/b8e4d4cf7cad42d0da6b890377bdaeef18011827) Thanks [@antoinekm](https://github.com/antoinekm)! - **BREAKING CHANGE**: Refactored social links structure with URL validation
+
   - Removed `OrganizationSocialLink` type and `OrganizationSocialType` enum
   - Removed `socialLinks` property from `OrganizationIdentity`
   - Added `links: string[]` property to `BaseProfile` (available for both Users and Organizations)
@@ -476,6 +493,7 @@
     - `CreateUserIdentityDto`: Added `links?: string[]` with `@IsUrl({}, { each: true })`
 
   Migration guide:
+
   - Replace `organization.identity.socialLinks` with `organization.identity.links`
   - Replace `user.identity.socialLinks` with `user.identity.links`
   - Remove type information from links - detection should be done on frontend based on URL patterns
@@ -576,6 +594,7 @@
 - [`33a56df`](https://github.com/tonightpass/tonightpass/commit/33a56dfa473a7efca10c4cc6679eb68fe3f1f25d) Thanks [@antoinekm](https://github.com/antoinekm)! - Add Invoice type extension for Stripe Connect compatibility
 
   Extends the base Invoice type with additional properties needed for TonightPass Stripe Connect integration:
+
   - `payment_intent?: string | Stripe.PaymentIntent` - Expanded payment intent reference
   - `client_secret?: string` - Client secret for frontend payment processing
   - `confirmation_secret?: string` - String-based confirmation secret for frontend compatibility
@@ -596,6 +615,7 @@
 ### Patch Changes
 
 - [`2053f71`](https://github.com/tonightpass/tonightpass/commit/2053f71a52d51c09b1b63d029c5747f922c4fedd) Thanks [@antoinekm](https://github.com/antoinekm)! - Add organization invitation endpoints and reorganize SDK structure:
+
   - GET /organizations/:organizationSlug/members/invitations/links - list invitation links
   - POST /organizations/:organizationSlug/members/invitations/links - create invitation link
   - POST /organizations/:organizationSlug/members/invitations/accept - accept with token
@@ -603,6 +623,7 @@
   - DELETE /organizations/:organizationSlug/members/@me/reject - reject direct invitation
 
   SDK reorganized with invitations sub-module:
+
   - tnp.organizations.members.invitations.getLinks()
   - tnp.organizations.members.invitations.createLink()
   - tnp.organizations.members.invitations.accept()
@@ -737,6 +758,7 @@
 - [`d3c17fa`](https://github.com/tonightpass/tonightpass/commit/d3c17fa391002b567d1e0c58eebb67befa6786d7) Thanks [@antoinekm](https://github.com/antoinekm)! - Improved type safety by using UserProfile and OrganizationProfile types instead of full User and Organization entities in public-facing API types. This prevents exposure of sensitive data like passwords, internal IDs, and private settings through the type system.
 
   Changes:
+
   - Updated notification types to use UserProfile for follower field
   - Updated organization event types to use OrganizationProfile
   - Updated organization member types to use profile types
@@ -770,12 +792,14 @@
 ### Patch Changes
 
 - [`a32937e`](https://github.com/tonightpass/tonightpass/commit/a32937e1ff15e31d4084a00fe7aab61586e4ecba) Thanks [@antoinekm](https://github.com/antoinekm)! - Add currencies SDK methods
+
   - Add currencies.getRates() method for fetching exchange rates
   - Add currencies.convert() method for currency conversion
   - Add currencies.convertAmount() helper method
   - Enable easy client-side integration with currencies API
 
 - [`a32937e`](https://github.com/tonightpass/tonightpass/commit/a32937e1ff15e31d4084a00fe7aab61586e4ecba) Thanks [@antoinekm](https://github.com/antoinekm)! - Rename currency endpoints to currencies for better consistency
+
   - Rename CurrencyEndpoints to CurrenciesEndpoints
   - Change endpoint paths from /currency/_ to /currencies/_
   - Update directory structure from currency/ to currencies/
