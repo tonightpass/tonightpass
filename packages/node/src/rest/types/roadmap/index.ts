@@ -34,6 +34,12 @@ export type RoadmapEndpoints =
       { featureId: string }
     >
   | Endpoint<
+      "GET",
+      "/roadmap/reactions/stream/:featureId",
+      void,
+      { featureId: string }
+    >
+  | Endpoint<
       "POST",
       "/roadmap/reactions/:featureId",
       RoadmapReactionCounts,
