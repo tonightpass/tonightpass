@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.236
+
+### Patch Changes
+
+- [`5dd5ec0`](https://github.com/tonightpass/tonightpass/commit/5dd5ec0d56c14e2a0f017fcfb7d81513c8afe6fb) Thanks [@antoinekm](https://github.com/antoinekm)! - Add `/roadmap/reactions/stream/:featureId` endpoint type for SSE streaming
+
 ## 0.0.235
 
 ### Patch Changes
