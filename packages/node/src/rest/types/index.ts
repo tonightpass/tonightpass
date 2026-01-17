@@ -15,11 +15,11 @@ export * from "./roadmap";
 export * from "./users";
 export * from "./webhooks";
 
-export interface Base {
+export type Base = {
   id: string;
   createdAt: Date;
   updatedAt: Date;
-}
+};
 
 export type ExcludeBase<T> = Omit<T, keyof Base>;
 
@@ -33,7 +33,7 @@ export enum Language {
   EN = "en",
 }
 
-export interface ArraySortOptions {
+export type ArraySortOptions = {
   /**
    * Field to sort
    */
@@ -42,9 +42,9 @@ export interface ArraySortOptions {
    * Order to sort
    */
   order: "asc" | "desc";
-}
+};
 
-export interface ArrayPaginationOptions {
+export type ArrayPaginationOptions = {
   /**
    * Page number
    */
@@ -57,9 +57,9 @@ export interface ArrayPaginationOptions {
    * Offset to start from
    */
   offset?: number;
-}
+};
 
-export interface ArrayFilterOptions {
+export type ArrayFilterOptions = {
   /**
    * Field to filter
    */
@@ -80,7 +80,7 @@ export interface ArrayFilterOptions {
     | "lte" // Less than or equal
     | "in" // In
     | "nin"; // Not in
-}
+};
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export type ArrayOptions<_T> = {
@@ -94,9 +94,9 @@ export type ArrayOptions<_T> = {
   // exclude?: readonly AutoPath<T, string>[];
 } & ArrayPaginationOptions;
 
-export interface ArrayResult<T> {
+export type ArrayResult<T> = {
   items: T[];
   total: number;
   page: number;
   limit: number;
-}
+};

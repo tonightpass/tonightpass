@@ -1,3 +1,3 @@
-export interface CreateApiKeyDto {
+export type CreateApiKeyDto = {
   name: string;
-}
+};

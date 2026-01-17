@@ -18,17 +18,17 @@ import type {
   WebhookEndpoints,
 } from "./types";
 
-export interface Endpoint<
+export type Endpoint<
   M extends Options["method"],
   Path extends string,
   Res,
   Body = undefined,
-> {
+> = {
   method: M;
   path: Path;
   res: Res;
   body: Body;
-}
+};
 
 export type Endpoints =
   | ApiKeyEndpoints

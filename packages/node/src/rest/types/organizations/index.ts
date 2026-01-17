@@ -36,10 +36,10 @@ export type Organization = Base & {
   billing: OrganizationBilling;
 };
 
-export interface OrganizationBilling {
+export type OrganizationBilling = {
   account: string;
   vatRate: number;
-}
+};
 
 export type OrganizationBillingAccount = Stripe.Account;
 

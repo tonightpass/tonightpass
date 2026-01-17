@@ -32,26 +32,26 @@ export enum Currency {
   BYN = "BYN",
 }
 
-export interface ExchangeRates {
+export type ExchangeRates = {
   base: Currency.EUR;
   rates: Record<Currency, number>;
   updatedAt: Date;
-}
+};
 
-export interface CurrencyConversion {
+export type CurrencyConversion = {
   from: Currency;
   to: Currency;
   amount: number;
-}
+};
 
-export interface CurrencyConversionResult {
+export type CurrencyConversionResult = {
   originalAmount: number;
   originalCurrency: Currency;
   convertedAmount: number;
   targetCurrency: Currency;
   exchangeRate: number;
   convertedAt: Date;
-}
+};
 
 export type CurrenciesEndpoints =
   | Endpoint<"GET", "/currencies/rates", ExchangeRates>

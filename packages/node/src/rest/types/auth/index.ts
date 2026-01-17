@@ -16,15 +16,15 @@ export enum OAuth2Provider {
 
 export type AuthMethod = OAuth2Provider | "password";
 
-export interface RecoveryResponse {
+export type RecoveryResponse = {
   to: string;
-}
+};
 
-export interface AuthResponse {
+export type AuthResponse = {
   user: User;
   accessToken: string;
   refreshToken: string;
-}
+};
 
 export type AuthEndpoints =
   | Endpoint<"POST", "/auth/sign-up", AuthResponse, CreateUserDto>

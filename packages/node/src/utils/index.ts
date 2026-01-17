@@ -6,11 +6,11 @@ export const isBrowser = typeof window !== "undefined";
 /**
  * File object with uri/name/type structure
  */
-export interface FileObject {
+export type FileObject = {
   uri: string;
   name: string;
   type: string;
-}
+};
 
 /**
  * Build a FormData object from a file or multiple files

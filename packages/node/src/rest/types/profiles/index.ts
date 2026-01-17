@@ -6,7 +6,7 @@ export enum ProfileType {
   Organization = "organization",
 }
 
-export interface BaseProfile {
+export type BaseProfile = {
   type: ProfileType;
   slug: string;
 
@@ -21,7 +21,7 @@ export interface BaseProfile {
   metadata: ProfileMetadata;
 
   createdAt: Date;
-}
+};
 
 export type UserProfile = BaseProfile & {
   type: ProfileType.User;
@@ -35,7 +35,7 @@ export type OrganizationProfile = BaseProfile & {
 
 export type Profile = UserProfile | OrganizationProfile;
 
-export interface BaseProfileMetadata {
+export type BaseProfileMetadata = {
   followersCount: number;
 
   isFollower: boolean;
@@ -46,7 +46,7 @@ export interface BaseProfileMetadata {
   canDM: boolean;
 
   isOfficial: boolean;
-}
+};
 
 export type UserProfileMetadata = BaseProfileMetadata & {
   hasPassPlus: boolean;

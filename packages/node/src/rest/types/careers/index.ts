@@ -1,14 +1,14 @@
 import type { Endpoint } from "../../endpoints";
 
-export interface CareersOffice {
+export type CareersOffice = {
   id: number | null;
   isDefault: boolean | null;
   name: string | null;
   city: string | null;
   countryIso: string | null;
-}
+};
 
-export interface CareersJob {
+export type CareersJob = {
   id: number;
   createdAt: string;
   lastUpdatedAt: string;
@@ -22,21 +22,21 @@ export interface CareersJob {
   description?: string;
   categoryId?: number;
   employmentTypeId?: number;
-}
+};
 
-export interface CareersCategory {
+export type CareersCategory = {
   slug: string;
   name: string;
   subCategories?: (CareersCategory & {
     id: number;
   })[];
-}
+};
 
-export interface CareersEmploymentType {
+export type CareersEmploymentType = {
   id: number;
   name: string;
   slug: string;
-}
+};
 
 export type CareerEndpoints =
   | Endpoint<
