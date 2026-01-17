@@ -18,7 +18,13 @@
         "useConsistentMemberAccessibility": "off",
         "noDoneCallback": "off",
         "noEnum": "off",
-        "noNonNullAssertion": "off"
+        "noNonNullAssertion": "off",
+        "useConsistentTypeDefinitions": {
+          "level": "error",
+          "options": {
+            "style": "type"
+          }
+        }
       },
       "performance": {
         "noBarrelFile": "off",
