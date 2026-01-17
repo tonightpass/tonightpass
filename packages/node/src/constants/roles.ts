@@ -1,4 +1,5 @@
-import { OrganizationMemberRole, UserRole } from "../rest";
+import { OrganizationMemberRole } from "../rest/types/organizations/members";
+import { UserRole } from "../rest/types/users";
 
 export const OrganizationMemberRolePower: {
   [key in OrganizationMemberRole]: number;
