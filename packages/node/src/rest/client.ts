@@ -7,19 +7,19 @@ import { CacheManager, type CacheOptions } from "./cache";
 import type { Endpoints } from "./endpoints";
 import { type APIRequestOptions, request } from "./request";
 
-export interface SuccessfulAPIResponse<T> {
+export type SuccessfulAPIResponse<T> = {
   success: true;
   data: T;
-}
+};
 
-export interface ErroredAPIResponse {
+export type ErroredAPIResponse = {
   success: false;
   message: string;
   statusCode: number;
   errors?: {
     [key: string]: string[];
   };
-}
+};
 
 export type APIResponse<T> = SuccessfulAPIResponse<T> | ErroredAPIResponse;
 
@@ -74,12 +74,12 @@ export class TonightPassAPIError<T> extends Error {
   }
 }
 
-export interface ClientOptions {
+export type ClientOptions = {
   readonly baseURL: string;
   readonly apiKey?: string;
   readonly accessToken?: string;
   readonly cache?: CacheOptions;
-}
+};
 
 export class Client {
   private options;

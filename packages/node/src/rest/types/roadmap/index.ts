@@ -13,18 +13,18 @@ export enum RoadmapFeatureStatus {
   Shipped = "shipped",
 }
 
-export interface RoadmapFeature {
+export type RoadmapFeature = {
   id: string;
   title: string;
   description: string;
   status: RoadmapFeatureStatus;
   date?: string;
-}
+};
 
-export interface AddRoadmapReactionBody {
+export type AddRoadmapReactionBody = {
   featureId: string;
   reaction: RoadmapReaction;
-}
+};
 
 export type RoadmapEndpoints =
   | Endpoint<

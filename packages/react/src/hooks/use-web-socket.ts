@@ -16,10 +16,10 @@ export type WebSocketOptionsType<Path extends WebSocketPaths> = ForceAccept<
   Extract<AnyWebSocketEndpoint, { path: Path }>["options"]
 >;
 
-export interface UseWebSocketOptions {
+export type UseWebSocketOptions = {
   maxReconnectAttempts?: number;
   reconnectInterval?: number;
-}
+};
 
 export function useWebSocket<Path extends WebSocketPaths>(
   path: Path | null | undefined,

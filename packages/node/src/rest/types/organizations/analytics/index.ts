@@ -3,7 +3,7 @@ import type { ArrayOptions, ArrayResult } from "../..";
 import type { OrganizationEvent } from "../events";
 
 // Analytics Overview Types
-export interface OrganizationAnalyticsOverview {
+export type OrganizationAnalyticsOverview = {
   metrics: {
     totalRevenue: {
       current: number;
@@ -29,10 +29,10 @@ export interface OrganizationAnalyticsOverview {
     ticketsSold: number;
     events: number;
   }[];
-}
+};
 
 // Event Analytics Types
-export interface OrganizationEventAnalytics {
+export type OrganizationEventAnalytics = {
   event: OrganizationEvent;
   metrics: {
     totalViews: number;
@@ -42,14 +42,14 @@ export interface OrganizationEventAnalytics {
     totalOrders: number;
     totalTicketsSold: number;
   };
-}
+};
 
 // Analytics Query Options
-export interface AnalyticsOptions {
+export type AnalyticsOptions = {
   period?: "7d" | "30d" | "90d" | "12m";
   startDate?: string;
   endDate?: string;
-}
+};
 
 export type EventAnalyticsOptions = AnalyticsOptions & {
   status?: "upcoming" | "past" | "all";

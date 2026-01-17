@@ -1,15 +1,15 @@
 import type { Options } from "redaxios";
 
-export interface CacheEntry<T> {
+export type CacheEntry<T> = {
   data: T;
   timestamp: number;
-}
+};
 
-export interface CacheOptions {
+export type CacheOptions = {
   enabled: boolean;
   ttl?: number;
   methods?: Options["method"][];
-}
+};
 
 export class CacheManager {
   private readonly cache: Map<string, CacheEntry<unknown>> = new Map();

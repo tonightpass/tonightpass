@@ -1,19 +1,19 @@
 export * from "./channels";
 
-export interface WebSocketEvent<T = unknown> {
+export type WebSocketEvent<T = unknown> = {
   type: string;
   data: T;
-}
+};
 
-export interface WebSocketConnectOptions {
+export type WebSocketConnectOptions = {
   token?: string;
   channelId?: string;
   organizationSlug?: string;
-}
+};
 
-export interface WebSocketClientOptions {
+export type WebSocketClientOptions = {
   baseURL: string;
   reconnectInterval?: number;
   maxReconnectAttempts?: number;
   debug?: boolean;
-}
+};

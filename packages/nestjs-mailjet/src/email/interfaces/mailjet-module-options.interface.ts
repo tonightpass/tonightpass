@@ -1,4 +1,4 @@
-export interface MailjetModuleOptions {
+export type MailjetModuleOptions = {
   /**
    *  public Mailjet API key
    */
@@ -14,4 +14,4 @@ export interface MailjetModuleOptions {
    * Default value: false
    */
   sandboxMode?: boolean;
-}
+};

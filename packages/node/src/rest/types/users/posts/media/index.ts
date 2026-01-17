@@ -5,7 +5,7 @@ export enum UserPostMediaType {
   Video = "video",
 }
 
-export interface UserPostMedia {
+export type UserPostMedia = {
   url: string;
   type: UserPostMediaType;
   width: number;
@@ -14,7 +14,7 @@ export interface UserPostMedia {
   isNSFW: boolean;
   thumbnailUrl?: string;
   duration?: number;
-}
+};
 
 export type UserPostMediaEndpoints = Endpoint<
   "POST",

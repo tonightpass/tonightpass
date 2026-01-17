@@ -34,15 +34,15 @@ export enum ChannelMessageReportReason {
   Other = "other",
 }
 
-export interface ChannelMessageReadByEntry {
+export type ChannelMessageReadByEntry = {
   participant: ChannelParticipant;
   readAt: Date;
-}
+};
 
-export interface ChannelMessageReaction {
+export type ChannelMessageReaction = {
   emoji: string;
   participants: ChannelParticipant[];
-}
+};
 
 export type ChannelMessage = Base & {
   channel: Channel;

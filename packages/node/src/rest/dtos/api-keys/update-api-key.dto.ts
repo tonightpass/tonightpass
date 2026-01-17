@@ -1,4 +1,4 @@
-export interface UpdateApiKeyDto {
+export type UpdateApiKeyDto = {
   name?: string;
   isActive?: boolean;
-}
+};

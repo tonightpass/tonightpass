@@ -37,16 +37,16 @@ export type Channel = Base & {
   unreadCount?: number;
 };
 
-export interface ChannelMember {
+export type ChannelMember = {
   participant: ChannelParticipant;
   joinedAt: Date;
   role?: ChannelMemberRole;
   lastReadAt?: Date;
-}
+};
 
-export interface UserChannelCountOptions {
+export type UserChannelCountOptions = {
   unseen?: boolean;
-}
+};
 
 export type ChannelEndpoints =
   | Endpoint<

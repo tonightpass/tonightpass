@@ -8,13 +8,13 @@ type RESTEndpointPaths = GETEndpoints["path"];
 export type WebSocketPath<T extends string> =
   T extends `${RESTEndpointPaths}/ws` ? T : never;
 
-export interface WebSocketEndpoint<
+export type WebSocketEndpoint<
   Path extends string,
   ConnectOptions = undefined,
-> {
+> = {
   path: WebSocketPath<Path>;
   options: ConnectOptions;
-}
+};
 
 export type WebSocketEndpoints =
   | WebSocketEndpoint<"/channels/~me/ws", WebSocketConnectOptions>

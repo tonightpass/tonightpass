@@ -99,9 +99,9 @@ export type SearchOrganizationEventsOptions =
     q: string;
   };
 
-export interface OrganizationEventCalendar {
+export type OrganizationEventCalendar = {
   [date: string]: OrganizationEvent[];
-}
+};
 
 export type OrganizationEventEndpoints =
   | Endpoint<

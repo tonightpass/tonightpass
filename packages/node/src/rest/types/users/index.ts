@@ -31,11 +31,11 @@ export type User = Base & {
   isOfficial: boolean;
 };
 
-export interface UserIdentifier {
+export type UserIdentifier = {
   email?: string;
   phoneNumber?: string;
   username: string;
-}
+};
 
 export type UserIdentity = UserProfile & {
   firstName: string;
@@ -58,7 +58,7 @@ export enum UserIdentityGender {
   NonBinary = "non-binary",
 }
 
-export interface UserPreferences {
+export type UserPreferences = {
   language: Language;
   currency: Currency;
   notifications: {
@@ -70,16 +70,16 @@ export interface UserPreferences {
       message: boolean;
     };
   };
-}
+};
 
-export interface UserConnection {
+export type UserConnection = {
   ip: string;
   os: UserConnectionOS;
   device: UserConnectionDevice;
   client: UserConnectionClient;
   updatedAt: Date;
   createdAt: Date;
-}
+};
 
 export type UserOAuthProvider = Base & {
   provider: OAuth2Provider;
@@ -91,20 +91,20 @@ export type UserOAuthProvider = Base & {
   lastUsedAt?: Date;
 };
 
-export interface UserConnectionOS {
+export type UserConnectionOS = {
   name: string;
   version: string;
-}
+};
 
-export interface UserConnectionDevice {
+export type UserConnectionDevice = {
   type: string;
   brand: string;
-}
+};
 
-export interface UserConnectionClient {
+export type UserConnectionClient = {
   name: string;
   version: string;
-}
+};
 
 export enum UserFileType {
   Avatar = "avatar",
