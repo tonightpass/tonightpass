@@ -85,13 +85,11 @@ export type ArrayFilterOptions = {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export type ArrayOptions<_T> = {
   /**
-   * Select only specific fields to display
+   * Select only specific fields to return (e.g. ["slug", "organization.slug", "updatedAt"])
+   * When provided, only the specified fields will be included in the response.
+   * Supports dot notation for nested relations (e.g. "organization.slug").
    */
-  // fields?: readonly AutoPath<T, Fields, `${PopulatePath.ALL}`>[];
-  /**
-   * Exclude specific fields from the result
-  //  */
-  // exclude?: readonly AutoPath<T, string>[];
+  select?: string[];
 } & ArrayPaginationOptions;
 
 export type ArrayResult<T> = {
