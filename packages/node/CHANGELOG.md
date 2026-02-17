@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.237
+
+### Patch Changes
+
+- [`3a935ef`](https://github.com/tonightpass/tonightpass/commit/3a935ef68c7874511a6a1bec2737ee11d99144bd) Thanks [@antoinekm](https://github.com/antoinekm)! - Add `select` field to `ArrayOptions` type for field selection in array queries, replacing the previous commented-out `fields`/`exclude` approach. Supports dot notation for nested relations.
+
 ## 0.0.236
 
 ### Patch Changes
