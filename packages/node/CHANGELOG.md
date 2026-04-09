@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.238
+
+### Patch Changes
+
+- [`4e995c7`](https://github.com/tonightpass/tonightpass/commit/4e995c7d24ed208ca77695470de5d94895f09dca) Thanks [@antoinekm](https://github.com/antoinekm)! - Add `flow` property to `AuthResponse` indicating whether the authentication call resulted in a brand new account (`"signup"`) or an existing user signing back in (`"signin"`). New `AuthFlow` type is exported. Useful for analytics on OAuth providers (notably Google One Tap) where the same endpoint transparently handles both signup and signin and the client could not previously distinguish them.
+
 ## 0.0.237
 
 ### Patch Changes
