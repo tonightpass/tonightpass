@@ -1,7 +1,8 @@
-import { Type } from "class-transformer";
+import { Transform, Type } from "class-transformer";
 import { IsOptional, IsString, Length, ValidateNested } from "class-validator";
 import type { Location } from "../../types";
 import { GeoPointDto } from "./create-location.dto";
+import { normalizeAddress } from "./normalize-address";
 
 export class UpdateLocationDto implements Partial<Location> {
   @IsOptional()
@@ -10,6 +11,13 @@ export class UpdateLocationDto implements Partial<Location> {
   name?: string;
 
   @IsOptional()
+  @Transform(({ value, obj }) =>
+    normalizeAddress(value, {
+      zipCode: obj.zipCode,
+      city: obj.city,
+      country: obj.country,
+    })
+  )
   @IsString()
   @Length(1, 256)
   address?: string;
