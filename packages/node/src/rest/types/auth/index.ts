@@ -16,6 +16,11 @@ export enum OAuth2Provider {
 
 export type AuthMethod = OAuth2Provider | "password";
 
+export enum AuthFlow {
+  SignUp = "signup",
+  SignIn = "signin",
+}
+
 export type RecoveryResponse = {
   to: string;
 };
@@ -24,6 +29,7 @@ export type AuthResponse = {
   user: User;
   accessToken: string;
   refreshToken: string;
+  flow: AuthFlow;
 };
 
 export type AuthEndpoints =
