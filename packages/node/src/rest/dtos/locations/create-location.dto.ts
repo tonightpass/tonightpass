@@ -1,4 +1,4 @@
-import { Type } from "class-transformer";
+import { Transform, Type } from "class-transformer";
 import {
   IsArray,
   IsNotEmpty,
@@ -12,6 +12,7 @@ import {
 } from "class-validator";
 
 import type { GeoPoint, Location } from "../../types";
+import { normalizeAddress } from "./normalize-address";
 
 @ValidatorConstraint({ name: "coordinatesRange", async: false })
 class CoordinatesRangeConstraint implements ValidatorConstraintInterface {
@@ -51,6 +52,13 @@ export class CreateLocationDto implements Location {
   @Length(1, 128)
   name?: string;
 
+  @Transform(({ value, obj }) =>
+    normalizeAddress(value, {
+      zipCode: obj.zipCode,
+      city: obj.city,
+      country: obj.country,
+    })
+  )
   @IsString()
   @IsNotEmpty()
   @Length(1, 256)
