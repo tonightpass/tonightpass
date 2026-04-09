@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.239
+
+### Patch Changes
+
+- [`7c448c2`](https://github.com/tonightpass/tonightpass/commit/7c448c23353b6ee3a466ac2e46220f31c0cf12b0) Thanks [@antoinekm](https://github.com/antoinekm)! - Add `normalizeAddress` helper and apply it as a `class-transformer` `@Transform` on `CreateLocationDto.address` and `UpdateLocationDto.address`. This strips trailing `zipCode`, `city`, and `country` segments that some clients (notably Mapbox Search Box for POIs) bake into the address string, preventing duplicated formatted addresses from being persisted.
+
 ## 0.0.238
 
 ### Patch Changes
