@@ -6,6 +6,7 @@ import type {
   RecoveryDto,
   RecoveryResetDto,
   SignInUserDto,
+  VerifyEmailConfirmDto,
 } from "../rest";
 import { sdk } from "./builder";
 
@@ -18,6 +19,12 @@ export const auth = sdk((client) => ({
   recovery: async (data: RecoveryDto) => client.post("/auth/recovery", data),
   recoveryReset: async (data: RecoveryResetDto) =>
     client.post("/auth/recovery/reset", data),
+
+  verifyEmail: {
+    send: async () => client.post("/auth/verify/email/send", undefined),
+    confirm: async (data: VerifyEmailConfirmDto) =>
+      client.post("/auth/verify/email/confirm", data),
+  },
 
   oauth2: {
     connect: (

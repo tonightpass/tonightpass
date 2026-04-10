@@ -4,6 +4,7 @@ import type {
   RecoveryDto,
   RecoveryResetDto,
   SignInUserDto,
+  VerifyEmailConfirmDto,
 } from "../../dtos";
 import type { Endpoint } from "../../endpoints";
 import type { User } from "../users";
@@ -22,6 +23,10 @@ export enum AuthFlow {
 }
 
 export type RecoveryResponse = {
+  to: string;
+};
+
+export type VerifyEmailResponse = {
   to: string;
 };
 
@@ -53,4 +58,6 @@ export type AuthEndpoints =
   | Endpoint<"GET", `/oauth2/${OAuth2Provider.Facebook}/callback`, void>
   | Endpoint<"GET", `/oauth2/${OAuth2Provider.Twitter}`, void>
   | Endpoint<"GET", `/oauth2/${OAuth2Provider.Twitter}/callback`, void>
-  | Endpoint<"DELETE", "/oauth2/:provider", void, undefined>;
+  | Endpoint<"DELETE", "/oauth2/:provider", void, undefined>
+  | Endpoint<"POST", "/auth/verify/email/send", VerifyEmailResponse, undefined>
+  | Endpoint<"POST", "/auth/verify/email/confirm", null, VerifyEmailConfirmDto>;

@@ -33,7 +33,9 @@ export type User = Base & {
 
 export type UserIdentifier = {
   email?: string;
+  emailVerified?: boolean;
   phoneNumber?: string;
+  phoneNumberVerified?: boolean;
   username: string;
 };
 
