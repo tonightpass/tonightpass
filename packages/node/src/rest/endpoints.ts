@@ -12,6 +12,7 @@ import type {
   NotificationEndpoints,
   OrderEndpoints,
   OrganizationEndpoints,
+  PlaceEndpoints,
   ProfileEndpoints,
   RoadmapEndpoints,
   UserEndpoints,
@@ -41,6 +42,7 @@ export type Endpoints =
   | HealthEndpoints
   | OrderEndpoints
   | OrganizationEndpoints
+  | PlaceEndpoints
   | ProfileEndpoints
   | RoadmapEndpoints
   | UserEndpoints
