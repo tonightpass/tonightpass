@@ -2,6 +2,7 @@ export * from "./api-keys";
 export * from "./auth";
 export * from "./careers";
 export * from "./channels";
+export * from "./places";
 export * from "./currencies";
 export * from "./errors";
 export * from "./feed";
