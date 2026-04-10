@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.240
+
+### Patch Changes
+
+- [`f3737a7`](https://github.com/tonightpass/tonightpass/commit/f3737a7758f1057df8150b0fafccc239b51215d1) Thanks [@antoinekm](https://github.com/antoinekm)! - Add email verification support: `emailVerified` and `phoneNumberVerified` fields on `UserIdentifier`, `VerifyEmailConfirmDto`, `VerifyEmailResponse` type, and `auth.verifyEmail.send()` / `auth.verifyEmail.confirm()` SDK methods.
+
 ## 0.0.239
 
 ### Patch Changes
