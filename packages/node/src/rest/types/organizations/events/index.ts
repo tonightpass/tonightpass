@@ -24,6 +24,7 @@ import type { OrganizationEventViewEndpoints } from "./views";
 export * from "./orders";
 export * from "./styles";
 export * from "./tickets";
+export * from "./views";
 
 export type OrganizationEvent = Base & {
   title: string;
@@ -42,6 +43,7 @@ export type OrganizationEvent = Base & {
   sessionsCount: number;
   totalViewsCount: number;
   averageViewsPerSessionCount: number;
+  hypeCount: number;
   startAt: Date;
   endAt: Date;
 };
