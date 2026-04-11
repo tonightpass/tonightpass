@@ -28,4 +28,8 @@ declare module "@nestjs/common" {
   >(
     path: Path
   ) => MethodDecorator;
+
+  export const Sse: <Path extends tonightpass.SSEEndpoints>(
+    path: Path
+  ) => MethodDecorator;
 }

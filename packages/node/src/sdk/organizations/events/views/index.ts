@@ -1,4 +1,4 @@
-import type { Client } from "../../../../rest";
+import type { Client, OrganizationEventViewOptions } from "../../../../rest";
 
 export const organizationsEventsViews = (client: Client) => ({
   record: async (organizationSlug: string, eventSlug: string) =>
@@ -10,4 +10,6 @@ export const organizationsEventsViews = (client: Client) => ({
         eventSlug,
       }
     ),
+  getStreamUrl: (options: OrganizationEventViewOptions) =>
+    client.url("/organizations/events/views/stream", options),
 });
