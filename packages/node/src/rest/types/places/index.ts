@@ -1,5 +1,5 @@
 import type { Endpoint } from "../../endpoints";
-import type { ArrayOptions, ArrayResult, Base } from "..";
+import type { ArrayOptions, ArrayResult, Base, ExcludeBase } from "..";
 
 export type Place = Base & {
   geonameId: number;
@@ -23,7 +23,11 @@ export type SearchPlacesOptions = ArrayOptions<Place> & {
 
 export type PlaceEndpoints =
   | Endpoint<"GET", "/places", ArrayResult<Place>, ArrayOptions<Place>>
-  | Endpoint<"GET", "/places/:countrySlug/:citySlug", Place>
+  | Endpoint<
+      "GET",
+      "/places/:countrySlug/:citySlug",
+      Place | ExcludeBase<Place>
+    >
   | Endpoint<
       "GET",
       "/places/search",
