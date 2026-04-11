@@ -92,6 +92,8 @@ export type OrganizationEventArrayOptions = ArrayOptions<OrganizationEvent> & {
   status?: OrganizationEventStatus | OrganizationEventStatus[];
   types?: OrganizationEventType | OrganizationEventType[];
   styles?: string | string[];
+  city?: string;
+  country?: string;
 };
 
 export type SearchOrganizationEventsOptions =
