@@ -31,6 +31,13 @@ export type Endpoint<
   body: Body;
 };
 
+export type SSEEndpoints =
+  Extract<Endpoints, { method: "GET" }> extends infer E
+    ? E extends { res: ReadableStream<infer _>; path: infer P }
+      ? P
+      : never
+    : never;
+
 export type Endpoints =
   | ApiKeyEndpoints
   | AuthEndpoints
