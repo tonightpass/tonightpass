@@ -35,9 +35,4 @@ export type PlaceEndpoints =
       "/places/:countrySlug/:citySlug",
       Place | ExcludeBase<Place>
     >
-  | Endpoint<
-      "GET",
-      "/places/search",
-      ArrayResult<Place>,
-      SearchPlacesOptions
-    >;
+  | Endpoint<"GET", "/places/search", ArrayResult<Place>, SearchPlacesOptions>;

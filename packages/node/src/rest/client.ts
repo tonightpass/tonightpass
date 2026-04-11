@@ -1,7 +1,7 @@
 import { pathcat } from "pathcat";
 import type { Options, Response as RedaxiosResponse } from "redaxios";
 
-import type { ParamValue, Query } from "..";
+import type { Query } from "..";
 import { DEFAULT_API_URL } from "../constants";
 import { CacheManager, type CacheOptions } from "./cache";
 import type { Endpoints } from "./endpoints";
@@ -92,7 +92,7 @@ export class Client {
     this.options = options;
     this.apiKey = options.apiKey;
     this.accessToken = options.accessToken;
-    this.url = (path: string, params: Record<string, ParamValue>) => {
+    this.url = (path: string, params: Query<string>) => {
       const baseURL = this.options.baseURL || DEFAULT_API_URL;
       return pathcat(baseURL, path, params);
     };
