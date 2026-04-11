@@ -13,6 +13,7 @@ export type Place = Base & {
   longitude: number;
   population: number;
   timezone: string;
+  isCapital: boolean;
   citySlug: string;
   countrySlug: string;
 };
@@ -23,6 +24,12 @@ export type SearchPlacesOptions = ArrayOptions<Place> & {
 
 export type PlaceEndpoints =
   | Endpoint<"GET", "/places", ArrayResult<Place>, ArrayOptions<Place>>
+  | Endpoint<
+      "GET",
+      "/places/:countrySlug",
+      ArrayResult<Place>,
+      ArrayOptions<Place>
+    >
   | Endpoint<
       "GET",
       "/places/:countrySlug/:citySlug",

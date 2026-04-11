@@ -10,6 +10,7 @@ import {
   notifications,
   orders,
   organizations,
+  places,
   profiles,
   roadmap,
   users,
@@ -27,6 +28,7 @@ export class TonightPass {
   public readonly health;
   public readonly orders;
   public readonly organizations;
+  public readonly places;
   public readonly profiles;
   public readonly roadmap;
   public readonly users;
@@ -44,6 +46,7 @@ export class TonightPass {
     this.health = health(this.client);
     this.orders = orders(this.client);
     this.organizations = organizations(this.client);
+    this.places = places(this.client);
     this.profiles = profiles(this.client);
     this.roadmap = roadmap(this.client);
     this.users = users(this.client);
