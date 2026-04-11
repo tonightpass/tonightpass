@@ -71,6 +71,7 @@ export type CreateOrganizationEventInput = Omit<
   | "sessionsCount"
   | "totalViewsCount"
   | "averageViewsPerSessionCount"
+  | "hypeCount"
 > & {
   slug?: string;
   styles: string[];
