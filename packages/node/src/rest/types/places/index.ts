@@ -1,7 +1,26 @@
 import type { Endpoint } from "../../endpoints";
 import type { ArrayOptions, ArrayResult, Base, ExcludeBase } from "..";
 
-export type Place = Base & {
+export type PlaceCountry = Base & {
+  geonameId: number;
+  name: string;
+  code: string;
+  isoAlpha3: string;
+  slug: string;
+  continent: string;
+  continentName: string;
+  capital: string;
+  population: number;
+  areaInSqKm: number;
+  languages: string;
+  currencyCode: string;
+  north: number;
+  south: number;
+  east: number;
+  west: number;
+};
+
+export type PlaceCity = Base & {
   geonameId: number;
   name: string;
   asciiName: string;
@@ -18,21 +37,33 @@ export type Place = Base & {
   countrySlug: string;
 };
 
-export type SearchPlacesOptions = ArrayOptions<Place> & {
+export type SearchPlacesOptions = ArrayOptions<PlaceCity> & {
   q: string;
 };
 
 export type PlaceEndpoints =
-  | Endpoint<"GET", "/places", ArrayResult<Place>, ArrayOptions<Place>>
+  | Endpoint<"GET", "/places/countries", ArrayResult<PlaceCountry>>
+  | Endpoint<"GET", "/places/countries/:countrySlug", PlaceCountry>
   | Endpoint<
       "GET",
-      "/places/:countrySlug",
-      ArrayResult<Place>,
-      ArrayOptions<Place>
+      "/places/countries/:countrySlug/cities",
+      ArrayResult<PlaceCity>,
+      ArrayOptions<PlaceCity>
     >
   | Endpoint<
       "GET",
-      "/places/:countrySlug/:citySlug",
-      Place | ExcludeBase<Place>
+      "/places/countries/:countrySlug/cities/:citySlug",
+      PlaceCity | ExcludeBase<PlaceCity>
     >
-  | Endpoint<"GET", "/places/search", ArrayResult<Place>, SearchPlacesOptions>;
+  | Endpoint<
+      "GET",
+      "/places/cities",
+      ArrayResult<PlaceCity>,
+      ArrayOptions<PlaceCity>
+    >
+  | Endpoint<
+      "GET",
+      "/places/cities/search",
+      ArrayResult<PlaceCity>,
+      SearchPlacesOptions
+    >;
