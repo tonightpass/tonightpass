@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.241
+
+### Patch Changes
+
+- [`b7411f1`](https://github.com/tonightpass/tonightpass/commit/b7411f1302c17d5b2e596a0a37ad1d5e038235fd) Thanks [@antoinekm](https://github.com/antoinekm)! - Add SSE support for live event view counts: `OrganizationEventViewResult` type, `getStreamUrl` SDK method, `useAPISubscription` React hook, and `@Sse` type augmentation for NestJS
+
+- [`8763a85`](https://github.com/tonightpass/tonightpass/commit/8763a856d9eef159a1ed3ba3d3f4b3fec84f2f61) Thanks [@antoinekm](https://github.com/antoinekm)! - Add `Place` type and `PlaceEndpoints` for the places/cities API (`GET /places`, `GET /places/:countrySlug/:citySlug`, `GET /places/search`), and SDK client `places.getAll()`, `places.get()`, `places.search()`.
+
 ## 0.0.240
 
 ### Patch Changes
