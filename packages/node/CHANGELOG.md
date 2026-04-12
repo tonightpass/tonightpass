@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.242
+
+### Patch Changes
+
+- [`b5448b8`](https://github.com/tonightpass/tonightpass/commit/b5448b83d7776f5f4872240170962889824c42f8) Thanks [@antoinekm](https://github.com/antoinekm)! - Restructure places API: split `Place` into `PlaceCountry` and `PlaceCity`, add country endpoints (`/places/countries`, `/places/countries/:countrySlug`), nest city endpoints under countries (`/places/countries/:countrySlug/cities`), add global city endpoints (`/places/cities`, `/places/cities/search`)
+
 ## 0.0.241
 
 ### Patch Changes
