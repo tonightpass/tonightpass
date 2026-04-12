@@ -42,7 +42,12 @@ export type SearchPlacesOptions = ArrayOptions<PlaceCity> & {
 };
 
 export type PlaceEndpoints =
-  | Endpoint<"GET", "/places/countries", ArrayResult<PlaceCountry>, ArrayOptions<PlaceCountry>>
+  | Endpoint<
+      "GET",
+      "/places/countries",
+      ArrayResult<PlaceCountry>,
+      ArrayOptions<PlaceCountry>
+    >
   | Endpoint<"GET", "/places/countries/:countrySlug", PlaceCountry>
   | Endpoint<
       "GET",

@@ -8,10 +8,7 @@ export const places = sdk((client) => ({
     get: async (countrySlug: string) =>
       client.get("/places/countries/:countrySlug", { countrySlug }),
     cities: {
-      getAll: async (
-        countrySlug: string,
-        options?: ArrayOptions<PlaceCity>,
-      ) =>
+      getAll: async (countrySlug: string, options?: ArrayOptions<PlaceCity>) =>
         client.get("/places/countries/:countrySlug/cities", {
           countrySlug,
           ...options,
