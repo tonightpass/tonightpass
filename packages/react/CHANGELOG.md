@@ -1,5 +1,14 @@
 # @tonightpass/react
 
+## 0.0.245
+
+### Patch Changes
+
+- [`b7411f1`](https://github.com/tonightpass/tonightpass/commit/b7411f1302c17d5b2e596a0a37ad1d5e038235fd) Thanks [@antoinekm](https://github.com/antoinekm)! - Add SSE support for live event view counts: `OrganizationEventViewResult` type, `getStreamUrl` SDK method, `useAPISubscription` React hook, and `@Sse` type augmentation for NestJS
+
+- Updated dependencies [[`b7411f1`](https://github.com/tonightpass/tonightpass/commit/b7411f1302c17d5b2e596a0a37ad1d5e038235fd), [`8763a85`](https://github.com/tonightpass/tonightpass/commit/8763a856d9eef159a1ed3ba3d3f4b3fec84f2f61)]:
+  - tonightpass@0.0.241
+
 ## 0.0.244
 
 ### Patch Changes
