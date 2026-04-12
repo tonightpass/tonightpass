@@ -1,9 +1,10 @@
-import type { ArrayOptions, PlaceCity } from "../rest";
+import type { ArrayOptions, PlaceCity, PlaceCountry } from "../rest";
 import { sdk } from "./builder";
 
 export const places = sdk((client) => ({
   countries: {
-    getAll: async () => client.get("/places/countries"),
+    getAll: async (options?: ArrayOptions<PlaceCountry>) =>
+      client.get("/places/countries", options),
     get: async (countrySlug: string) =>
       client.get("/places/countries/:countrySlug", { countrySlug }),
     cities: {
