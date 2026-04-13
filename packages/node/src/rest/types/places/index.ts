@@ -1,5 +1,11 @@
 import type { Endpoint } from "../../endpoints";
-import type { ArrayOptions, ArrayResult, Base, ExcludeBase } from "..";
+import type {
+  ArrayOptions,
+  ArrayResult,
+  Base,
+  Distance,
+  ExcludeBase,
+} from "..";
 
 export type PlaceCountry = Base & {
   geonameId: number;
@@ -41,6 +47,10 @@ export type SearchPlacesOptions = ArrayOptions<PlaceCity> & {
   q: string;
 };
 
+export type NearbyCitiesOptions = ArrayOptions<PlaceCity> & {
+  radius?: number;
+};
+
 export type PlaceEndpoints =
   | Endpoint<
       "GET",
@@ -59,6 +69,12 @@ export type PlaceEndpoints =
       "GET",
       "/places/countries/:countrySlug/cities/:citySlug",
       PlaceCity | ExcludeBase<PlaceCity>
+    >
+  | Endpoint<
+      "GET",
+      "/places/countries/:countrySlug/cities/:citySlug/nearby",
+      ArrayResult<Distance<PlaceCity>>,
+      NearbyCitiesOptions
     >
   | Endpoint<
       "GET",
