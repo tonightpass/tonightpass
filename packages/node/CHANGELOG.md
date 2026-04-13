@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.243
+
+### Patch Changes
+
+- [`77afdad`](https://github.com/tonightpass/tonightpass/commit/77afdad5cf86065ff0705b147fb6a23a9f41e904) Thanks [@antoinekm](https://github.com/antoinekm)! - Add nearby cities endpoint and SDK method. New endpoint `GET /places/countries/:countrySlug/cities/:citySlug/nearby` returns cities sorted by distance using haversine calculation. New SDK method `tnp.places.countries.cities.nearby(country, city, options)` with configurable radius and limit. Added `NearbyCitiesOptions` type.
+
 ## 0.0.242
 
 ### Patch Changes
