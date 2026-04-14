@@ -4,16 +4,21 @@ import type { ArrayResult, Base, UserProfile } from "..";
 
 export enum ApiKeyTier {
   PUBLIC = "public",
-  BUILD = "build",
-  PREMIUM = "premium",
   INTERNAL = "internal",
+}
+
+export enum ApiKeyType {
+  User = "user",
+  App = "app",
 }
 
 export type ApiKey = Base & {
   key: string;
   name: string;
+  type: ApiKeyType;
   tier: ApiKeyTier;
   rateLimit: number;
+  allowedOrigins: string[];
   user: UserProfile;
   lastUsedAt?: Date;
   isActive: boolean;
