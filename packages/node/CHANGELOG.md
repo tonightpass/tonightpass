@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.244
+
+### Patch Changes
+
+- [`8feb1fd`](https://github.com/tonightpass/tonightpass/commit/8feb1fd579145918a49ca9262f6ec8f713f90f14) Thanks [@antoinekm](https://github.com/antoinekm)! - Add class-validator decorators to API key DTOs (CreateApiKeyDto, UpdateApiKeyDto) for proper server-side validation
+
 ## 0.0.243
 
 ### Patch Changes
