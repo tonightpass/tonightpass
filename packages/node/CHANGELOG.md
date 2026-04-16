@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.245
+
+### Patch Changes
+
+- [`ee46a62`](https://github.com/tonightpass/tonightpass/commit/ee46a621c65123ea11839ec75a71ed2a038dd4f1) Thanks [@antoinekm](https://github.com/antoinekm)! - Add `/health/memory` endpoint types and SDK method for load testing memory diagnostics
+
 ## 0.0.244
 
 ### Patch Changes
