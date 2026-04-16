@@ -5,4 +5,5 @@ export const health = sdk((client) => ({
   database: async () => client.get("/health/database"),
   api: async () => client.get("/health/api"),
   app: async () => client.get("/health/app"),
+  memory: async () => client.get("/health/memory"),
 }));
