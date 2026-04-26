@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.246
+
+### Patch Changes
+
+- [`8948990`](https://github.com/tonightpass/tonightpass/commit/8948990c712b19572f9dc3572a98efc71462ce86) Thanks [@antoinekm](https://github.com/antoinekm)! - Add pluggable cache store system with `CacheStore` interface, allowing custom implementations (Redis, etc.) via `cache.store` option. Default `MemoryCacheStore` now enforces a max size (default 1000 entries) with FIFO eviction to prevent unbounded memory growth.
+
 ## 0.0.245
 
 ### Patch Changes
