@@ -118,11 +118,11 @@ export class Client {
     this.accessToken = accessToken;
   }
 
-  clearCache() {
-    this.cacheManager?.clear();
+  async clearCache() {
+    await this.cacheManager?.clear();
   }
 
-  getCacheStats() {
+  async getCacheStats() {
     return this.cacheManager?.stats();
   }
 
@@ -214,7 +214,7 @@ export class Client {
     }
 
     if (this.cacheManager) {
-      const cached = this.cacheManager.get<T>(method, url);
+      const cached = await this.cacheManager.get<T>(method, url);
       if (cached !== null) {
         return cached;
       }
@@ -235,7 +235,7 @@ export class Client {
     }
 
     if (this.cacheManager) {
-      this.cacheManager.set(method, url, result.data);
+      await this.cacheManager.set(method, url, result.data);
     }
 
     return result.data;
