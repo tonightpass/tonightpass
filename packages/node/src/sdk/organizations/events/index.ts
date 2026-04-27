@@ -5,6 +5,7 @@ import type {
   OrganizationEvent,
   OrganizationEventArrayOptions,
   OrganizationEventFileType,
+  OrganizationEventNearbyOptions,
   UpdateOrganizationEventDto,
 } from "../../../rest";
 import { buildFileFormData, type FileObject } from "../../../utils";
@@ -35,13 +36,8 @@ export const organizationsEvents = (client: Client) => ({
   },
   getSuggestions: async (options?: ArrayOptions<OrganizationEvent>) =>
     client.get("/organizations/events/suggestions", options),
-  getNearby: async (
-    options: ArrayOptions<OrganizationEvent> & {
-      latitude: number;
-      longitude: number;
-      radius?: number;
-    }
-  ) => client.get("/organizations/events/nearby", options),
+  getNearby: async (options: OrganizationEventNearbyOptions) =>
+    client.get("/organizations/events/nearby", options),
   get: async (organizationSlug: string, eventSlug: string) =>
     client.get("/organizations/@:organizationSlug/events/:eventSlug", {
       organizationSlug,
@@ -88,6 +84,12 @@ export const organizationsEvents = (client: Client) => ({
       "/organizations/@:organizationSlug/events/:eventSlug/files/:eventFileType",
       buildFileFormData("file", file),
       { organizationSlug, eventSlug, eventFileType }
+    ),
+  request: async (organizationSlug: string, eventSlug: string) =>
+    client.post(
+      "/organizations/@:organizationSlug/events/:eventSlug/request",
+      undefined,
+      { organizationSlug, eventSlug }
     ),
   orders: organizationsEventsOrders(client),
   styles: organizationsEventsStyles(client),

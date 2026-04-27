@@ -90,6 +90,35 @@ export enum OrganizationEventStatus {
   Ended = "ended",
 }
 
+export type ExternalOffer = {
+  name: string;
+  description?: string;
+  price: number;
+  currency: string;
+  available: boolean;
+};
+
+export type ExternalContact = {
+  type: "phone" | "email" | "website";
+  value: string;
+};
+
+export type ExternalSource = {
+  organizerName: string;
+  contacts: ExternalContact[];
+  offers: ExternalOffer[];
+};
+
+export type OrganizationEventRequestResponse = {
+  contacts: ExternalContact[];
+};
+
+export type OrganizationEventNearbyOptions = ArrayOptions<OrganizationEvent> & {
+  latitude: number;
+  longitude: number;
+  radius?: number;
+};
+
 export type OrganizationEventArrayOptions = ArrayOptions<OrganizationEvent> & {
   status?: OrganizationEventStatus | OrganizationEventStatus[];
   types?: OrganizationEventType | OrganizationEventType[];
@@ -135,11 +164,7 @@ export type OrganizationEventEndpoints =
       "GET",
       "/organizations/events/nearby",
       ArrayResult<OrganizationEvent>,
-      ArrayOptions<OrganizationEvent> & {
-        latitude: number;
-        longitude: number;
-        radius?: number;
-      }
+      OrganizationEventNearbyOptions
     >
   | Endpoint<
       "GET",
@@ -177,6 +202,11 @@ export type OrganizationEventEndpoints =
       FormData
     >
   | Endpoint<"POST", "/events/files/:eventFileType", string, FormData>
+  | Endpoint<
+      "POST",
+      "/organizations/@:organizationSlug/events/:eventSlug/request",
+      OrganizationEventRequestResponse
+    >
   | OrganizationEventOrderEndpoints
   | OrganizationEventStyleEndpoints
   | OrganizationEventTicketEndpoints
