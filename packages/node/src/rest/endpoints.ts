@@ -14,6 +14,7 @@ import type {
   OrganizationEndpoints,
   PlaceEndpoints,
   ProfileEndpoints,
+  ProxyEndpoints,
   RoadmapEndpoints,
   UserEndpoints,
   WebhookEndpoints,
@@ -51,6 +52,7 @@ export type Endpoints =
   | OrganizationEndpoints
   | PlaceEndpoints
   | ProfileEndpoints
+  | ProxyEndpoints
   | RoadmapEndpoints
   | UserEndpoints
   | WebhookEndpoints

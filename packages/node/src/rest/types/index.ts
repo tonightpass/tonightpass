@@ -12,6 +12,7 @@ export * from "./orders";
 export * from "./organizations";
 export * from "./places";
 export * from "./profiles";
+export * from "./proxy";
 export * from "./roadmap";
 export * from "./users";
 export * from "./webhooks";
