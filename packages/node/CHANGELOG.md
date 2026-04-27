@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.247
+
+### Patch Changes
+
+- [`8f7d0b0`](https://github.com/tonightpass/tonightpass/commit/8f7d0b0b5086c93dc85f539391cf5444c1460596) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix ExternalOffer and ExternalSource types to match API response
+
 ## 0.0.246
 
 ### Patch Changes
