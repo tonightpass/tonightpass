@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.248
+
+### Patch Changes
+
+- [`d43a8a2`](https://github.com/tonightpass/tonightpass/commit/d43a8a21cd8e4a7a9ad4af89c8fd8c960453131c) Thanks [@antoinekm](https://github.com/antoinekm)! - Use package name and version for User-Agent header instead of hardcoded string
+
 ## 0.0.247
 
 ### Patch Changes
