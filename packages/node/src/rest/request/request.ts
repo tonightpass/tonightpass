@@ -1,12 +1,15 @@
 import axios, { type Options, type Response } from "redaxios";
 
+import packageJson from "../../../package.json";
 import { isBrowser } from "../../utils";
 import type { APIResponse, ErroredAPIResponse } from "../client";
 
 const instance = axios.create({
   headers: {
     Accept: "application/json",
-    ...(!isBrowser && { "User-Agent": "tonightpass-api-client" }),
+    ...(!isBrowser && {
+      "User-Agent": `${packageJson.name}/${packageJson.version}`,
+    }),
   },
   responseType: "json",
   transformRequest: [
