@@ -92,6 +92,16 @@ export type ArrayOptions<_T> = {
    * Supports dot notation for nested relations (e.g. "organization.slug").
    */
   select?: string[];
+  /**
+   * Sort results by field and direction.
+   * Format: "field:asc" or "field:desc"
+   * Supports multiple sort criteria: ["field1:asc", "field2:desc"]
+   *
+   * @example
+   * sort: "startAt:asc"
+   * sort: ["viewsCount:desc", "createdAt:desc"]
+   */
+  sort?: string | string[];
 } & ArrayPaginationOptions;
 
 export type ArrayResult<T> = {
