@@ -44,6 +44,7 @@ export type OrganizationEvent = Base & {
   totalViewsCount: number;
   averageViewsPerSessionCount: number;
   hypeCount: number;
+  minPrice: number;
   startAt: Date;
   endAt: Date;
 };
