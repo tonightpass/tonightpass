@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.249
+
+### Patch Changes
+
+- [`f537697`](https://github.com/tonightpass/tonightpass/commit/f5376975c15a3d8c9662faf4a4e42700440cf0a1) Thanks [@antoinekm](https://github.com/antoinekm)! - Add `sort` parameter to `ArrayOptions` for Strapi-style sorting (`field:asc`, `field:desc`) and add `minPrice` field to `OrganizationEvent` type
+
 ## 0.0.248
 
 ### Patch Changes
