@@ -12,4 +12,5 @@ export * from "./organizations";
 export * from "./places";
 export * from "./profiles";
 export * from "./roadmap";
+export * from "./sitemaps";
 export * from "./users";

@@ -16,6 +16,7 @@ import type {
   ProfileEndpoints,
   ProxyEndpoints,
   RoadmapEndpoints,
+  SitemapEndpoints,
   UserEndpoints,
   WebhookEndpoints,
 } from "./types";
@@ -54,6 +55,7 @@ export type Endpoints =
   | ProfileEndpoints
   | ProxyEndpoints
   | RoadmapEndpoints
+  | SitemapEndpoints
   | UserEndpoints
   | WebhookEndpoints
   | NotificationEndpoints;
