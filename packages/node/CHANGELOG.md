@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.250
+
+### Patch Changes
+
+- [`ae6a157`](https://github.com/tonightpass/tonightpass/commit/ae6a15788737b865a663fb94400e847d89be943c) Thanks [@antoinekm](https://github.com/antoinekm)! - Add sitemaps counts endpoint type and SDK method (`tnp.sitemaps.getCounts()`)
+
 ## 0.0.249
 
 ### Patch Changes
