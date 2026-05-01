@@ -13,6 +13,7 @@ import {
   places,
   profiles,
   roadmap,
+  sitemaps,
   users,
 } from "./sdk";
 
@@ -31,6 +32,7 @@ export class TonightPass {
   public readonly places;
   public readonly profiles;
   public readonly roadmap;
+  public readonly sitemaps;
   public readonly users;
   public readonly notifications;
 
@@ -49,6 +51,7 @@ export class TonightPass {
     this.places = places(this.client);
     this.profiles = profiles(this.client);
     this.roadmap = roadmap(this.client);
+    this.sitemaps = sitemaps(this.client);
     this.users = users(this.client);
     this.notifications = notifications(this.client);
   }
