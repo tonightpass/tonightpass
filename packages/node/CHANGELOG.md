@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.251
+
+### Patch Changes
+
+- [`c8cc0f8`](https://github.com/tonightpass/tonightpass/commit/c8cc0f83a2b5b449a3dacb0170fc98484315e9e0) Thanks [@antoinekm](https://github.com/antoinekm)! - Add post views SSE stream endpoint type (`/users/posts/views/stream`)
+
 ## 0.0.250
 
 ### Patch Changes
