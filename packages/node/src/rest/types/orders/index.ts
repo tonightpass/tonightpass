@@ -1,7 +1,7 @@
 import type Stripe from "stripe";
 import type { Endpoint } from "../../endpoints";
-import { Currency } from "../currencies";
 import type { ArrayOptions, ArrayResult, Base, UserProfile } from "..";
+import { Currency } from "../currencies";
 
 export type OrderItem = {
   ticketId: string;

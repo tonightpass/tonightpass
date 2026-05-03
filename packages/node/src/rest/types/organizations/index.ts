@@ -1,5 +1,4 @@
 import type Stripe from "stripe";
-import { Currency } from "../currencies";
 import type { CreateOrganizationDto, UpdateOrganizationDto } from "../../dtos";
 import type { Endpoint } from "../../endpoints";
 import type {
@@ -9,6 +8,7 @@ import type {
   Location,
   OrganizationProfile,
 } from "..";
+import { Currency } from "../currencies";
 import type { OrganizationAnalyticsEndpoints } from "./analytics";
 import type { OrganizationCustomersEndpoints } from "./customers";
 import type { OrganizationEvent, OrganizationEventEndpoints } from "./events";
