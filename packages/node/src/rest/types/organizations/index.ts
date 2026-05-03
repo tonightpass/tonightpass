@@ -1,4 +1,5 @@
 import type Stripe from "stripe";
+import { Currency } from "../currencies";
 import type { CreateOrganizationDto, UpdateOrganizationDto } from "../../dtos";
 import type { Endpoint } from "../../endpoints";
 import type {
@@ -43,14 +44,22 @@ export type OrganizationBilling = {
 
 export type OrganizationBillingAccount = Stripe.Account;
 
+export enum OrganizationPayoutStatus {
+  Paid = "paid",
+  Pending = "pending",
+  InTransit = "in_transit",
+  Failed = "failed",
+  Canceled = "canceled",
+}
+
 export type OrganizationBillingBalance = {
-  balance: { amount: number; currency: string }[];
-  pending: { amount: number; currency: string }[];
+  balance: { amount: number; currency: Currency }[];
+  pending: { amount: number; currency: Currency }[];
   payouts: {
     id: string;
     amount: number;
-    currency: string;
-    status: string;
+    currency: Currency;
+    status: OrganizationPayoutStatus;
     arrival_date: number;
   }[];
 };
@@ -58,7 +67,8 @@ export type OrganizationBillingBalance = {
 export type OrganizationBillingPendingRevenue = {
   amount: number;
   count: number;
-};
+  currency: Currency;
+}[];
 
 export type OrganizationIdentity = OrganizationProfile;
 
