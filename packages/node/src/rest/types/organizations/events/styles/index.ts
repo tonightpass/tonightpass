@@ -3,7 +3,7 @@ import type {
   UpdateOrganizationEventStyleDto,
 } from "../../../../dtos/organizations/events/styles";
 import type { Endpoint } from "../../../../endpoints";
-import type { Base } from "../../..";
+import type { ArrayOptions, ArrayResult, Base } from "../../..";
 
 export type OrganizationEventStyle = Base & {
   type: OrganizationEventStyleType;
@@ -21,7 +21,12 @@ export enum OrganizationEventStyleType {
 }
 
 export type OrganizationEventStyleEndpoints =
-  | Endpoint<"GET", "/organizations/events/styles", OrganizationEventStyle[]>
+  | Endpoint<
+      "GET",
+      "/organizations/events/styles",
+      ArrayResult<OrganizationEventStyle>,
+      ArrayOptions<OrganizationEventStyle>
+    >
   | Endpoint<
       "GET",
       "/organizations/events/styles/:styleSlug",
@@ -42,6 +47,5 @@ export type OrganizationEventStyleEndpoints =
   | Endpoint<
       "DELETE",
       "/organizations/events/styles/:styleSlug",
-      OrganizationEventStyle[],
-      null
+      OrganizationEventStyle
     >;

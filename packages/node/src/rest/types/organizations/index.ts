@@ -43,6 +43,23 @@ export type OrganizationBilling = {
 
 export type OrganizationBillingAccount = Stripe.Account;
 
+export type OrganizationBillingBalance = {
+  balance: { amount: number; currency: string }[];
+  pending: { amount: number; currency: string }[];
+  payouts: {
+    id: string;
+    amount: number;
+    currency: string;
+    status: string;
+    arrival_date: number;
+  }[];
+};
+
+export type OrganizationBillingPendingRevenue = {
+  amount: number;
+  count: number;
+};
+
 export type OrganizationIdentity = OrganizationProfile;
 
 export enum OrganizationFileType {
@@ -89,6 +106,16 @@ export type OrganizationEndpoints =
       OrganizationBillingAccount
     >
   | Endpoint<"GET", "/organizations/@:organizationSlug/billing/link", void>
+  | Endpoint<
+      "GET",
+      "/organizations/@:organizationSlug/billing/balance",
+      OrganizationBillingBalance
+    >
+  | Endpoint<
+      "GET",
+      "/organizations/@:organizationSlug/billing/pending",
+      OrganizationBillingPendingRevenue
+    >
   | Endpoint<"GET", "/organizations/@:organizationSlug/billing/dashboard", void>
   | OrganizationEventEndpoints
   | OrganizationMembersEndpoints

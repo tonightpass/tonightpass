@@ -1,4 +1,5 @@
 import type { Endpoint } from "../../endpoints";
+import type { ArrayOptions, ArrayResult } from "..";
 
 export type CareersOffice = {
   id: number | null;
@@ -8,17 +9,34 @@ export type CareersOffice = {
   countryIso: string | null;
 };
 
+export enum CareersJobStatus {
+  All = "ALL",
+  Online = "ONLINE",
+  Archived = "ARCHIVED",
+}
+
+export enum CareersWorkplaceType {
+  Onsite = "ONSITE",
+  Remote = "REMOTE",
+  Hybrid = "HYBRID",
+}
+
+export enum CareersRemoteType {
+  Anywhere = "ANYWHERE",
+  Country = "COUNTRY",
+}
+
 export type CareersJob = {
   id: number;
   createdAt: string;
   lastUpdatedAt: string;
   externalId: null | string;
   title: string;
-  status: "ALL" | "ONLINE" | "ARCHIVED";
+  status: CareersJobStatus;
   remote: boolean;
   office: CareersOffice;
-  workplaceType: "ONSITE" | "REMOTE" | "HYBRID";
-  remoteType?: "ANYWHERE" | "COUNTRY";
+  workplaceType: CareersWorkplaceType;
+  remoteType?: CareersRemoteType;
   description?: string;
   categoryId?: number;
   employmentTypeId?: number;
@@ -38,50 +56,55 @@ export type CareersEmploymentType = {
   slug: string;
 };
 
+export type CareersJobsOptions = ArrayOptions<CareersJob> & {
+  createdAtGte?: string;
+  createdAtLt?: string;
+  updatedAtGte?: string;
+  updatedAtLt?: string;
+  status?: CareersJobStatus;
+  content?: boolean;
+  titleLike?: string;
+  countryCode?: string;
+  externalId?: string;
+};
+
+export type CareersOfficesOptions = ArrayOptions<CareersOffice> & {
+  countryCode?: string;
+  cityNameLike?: string;
+};
+
+export type CareersCategoriesOptions = ArrayOptions<CareersCategory> & {
+  language?: string;
+};
+
+export type CareersEmploymentTypesOptions =
+  ArrayOptions<CareersEmploymentType> & {
+    language?: string;
+  };
+
 export type CareerEndpoints =
   | Endpoint<
       "GET",
       "/careers/categories",
-      CareersCategory[],
-      {
-        language?: string;
-      }
+      ArrayResult<CareersCategory>,
+      CareersCategoriesOptions
     >
   | Endpoint<
       "GET",
       "/careers/employmentTypes",
-      CareersEmploymentType[],
-      {
-        language?: string;
-      }
+      ArrayResult<CareersEmploymentType>,
+      CareersEmploymentTypesOptions
     >
   | Endpoint<
       "GET",
       "/careers/jobs",
-      CareersJob[],
-      {
-        page?: number;
-        pageSize?: number;
-        createdAtGte: string;
-        createdAtLt?: string;
-        updatedAtGte?: string;
-        updatedAtLt?: string;
-        status?: "ALL" | "ONLINE" | "ARCHIVED";
-        content?: boolean;
-        titleLike?: string;
-        countryCode?: string;
-        externalId?: string;
-      }
+      ArrayResult<CareersJob>,
+      CareersJobsOptions
     >
   | Endpoint<"GET", "/careers/jobs/:jobId", CareersJob, { jobId: number }>
   | Endpoint<
       "GET",
       "/careers/offices",
-      CareersOffice[],
-      {
-        page?: number;
-        pageSize?: number;
-        countryCode?: string;
-        cityNameLike?: string;
-      }
+      ArrayResult<CareersOffice>,
+      CareersOfficesOptions
     >;

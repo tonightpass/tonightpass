@@ -5,24 +5,25 @@ import type { TonightPass } from "../../src/tonightpass";
 
 export function careersTests(tnp: TonightPass) {
   test("It gets all careers categories", async () => {
-    const careersCategories = await tnp.careers.categories.getAll();
-    assert.ok(
-      Array.isArray(careersCategories) &&
-        careersCategories.length > 0 &&
-        careersCategories[0].slug
-    );
+    const result = await tnp.careers.categories.getAll();
+    assert.ok(result.items);
+    assert.ok(Array.isArray(result.items));
+    assert.ok(result.items.length > 0);
+    assert.ok(result.items[0].slug);
+    assert.ok(typeof result.total === "number");
   });
 
   test("It gets all careers jobs", async () => {
-    const careersJobs = await tnp.careers.jobs.getAll();
-    assert.ok(Array.isArray(careersJobs));
+    const result = await tnp.careers.jobs.getAll();
+    assert.ok(result.items);
+    assert.ok(Array.isArray(result.items));
+    assert.ok(typeof result.total === "number");
   });
 
   test("It gets all careers offices", async () => {
-    const careersOffices = await tnp.careers.offices.getAll({
-      page: 1,
-      pageSize: 10,
-    });
-    assert.ok(Array.isArray(careersOffices));
+    const result = await tnp.careers.offices.getAll();
+    assert.ok(result.items);
+    assert.ok(Array.isArray(result.items));
+    assert.ok(typeof result.total === "number");
   });
 }
