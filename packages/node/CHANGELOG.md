@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.252
+
+### Patch Changes
+
+- [`5c67031`](https://github.com/tonightpass/tonightpass/commit/5c6703174ab8f136faa1caea7af4574d41920323) Thanks [@antoinekm](https://github.com/antoinekm)! - Replace Invoice-based payments with PaymentIntent destination charges for Stripe Connect. Add OrderItem, OrderTransferStatus types. Convert careers and event styles endpoints to ArrayResult format with select/pagination support. Add CareersJobStatus, CareersWorkplaceType, CareersRemoteType enums. Add billing balance and pending revenue endpoints.
+
 ## 0.0.251
 
 ### Patch Changes
