@@ -1,3 +1,5 @@
+import type { Query } from "pathcat";
+
 import type { Client } from "../../../../rest";
 import type {
   CreateOrganizationEventStyleDto,
@@ -5,7 +7,8 @@ import type {
 } from "../../../../rest/dtos/organizations/events/styles";
 
 export const organizationsEventsStyles = (client: Client) => ({
-  getAll: async () => client.get("/organizations/events/styles"),
+  getAll: async (query?: Query<"/organizations/events/styles">) =>
+    client.get("/organizations/events/styles", query),
   get: async (styleSlug: string) =>
     client.get("/organizations/events/styles/:styleSlug", { styleSlug }),
   create: async (data: CreateOrganizationEventStyleDto) =>
