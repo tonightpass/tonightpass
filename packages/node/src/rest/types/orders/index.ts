@@ -1,5 +1,6 @@
 import type Stripe from "stripe";
 import type { Endpoint } from "../../endpoints";
+import { Currency } from "../currencies";
 import type { ArrayOptions, ArrayResult, Base, UserProfile } from "..";
 
 export type OrderItem = {
@@ -19,7 +20,7 @@ export enum OrderTransferStatus {
 export type Order = Base & {
   paymentIntent: Stripe.PaymentIntent;
   items: OrderItem[];
-  currency: string;
+  currency: Currency;
   subtotal: number;
   fee: number;
   total: number;
