@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.253
+
+### Patch Changes
+
+- [`d2899c7`](https://github.com/tonightpass/tonightpass/commit/d2899c7bff24950168886712cfb55c91b7a7742c) Thanks [@antoinekm](https://github.com/antoinekm)! - Replace Invoice-based payments with PaymentIntent destination charges. Add Order types (OrderItem, OrderTransferStatus, Currency). Convert careers, event styles endpoints to ArrayResult with select/pagination. Add CareersJobStatus, CareersWorkplaceType, CareersRemoteType, OrganizationPayoutStatus enums. Add billing balance/pending endpoints. Use Currency enum instead of string across Order and billing types.
+
 ## 0.0.252
 
 ### Patch Changes
