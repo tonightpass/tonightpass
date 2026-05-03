@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { TonightPass } from "../src/tonightpass";
 import { authTests } from "./auth";
-// import { careersTests } from "./careers";
+import { careersTests } from "./careers";
 import { dtoTests } from "./dtos";
 import { regexTests } from "./regex";
 import { requestTests } from "./request";
@@ -12,7 +12,7 @@ import { usersTests } from "./users";
 
 const sdkTests = [
   authTests,
-  // careersTests,
+  careersTests,
   dtoTests,
   regexTests,
   requestTests,
