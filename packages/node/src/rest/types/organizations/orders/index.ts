@@ -1,6 +1,7 @@
 import type { Endpoint } from "../../../endpoints";
 import type { ArrayOptions, ArrayResult, OrganizationCustomer } from "../..";
 import type { Order } from "../../orders";
+import type { UserBooking } from "../../users/bookings";
 
 export type OrganizationOrder = Omit<Order, "user"> & {
   customer: OrganizationCustomer;
@@ -23,4 +24,16 @@ export type OrganizationOrdersEndpoints =
       "/organizations/@:organizationSlug/events/:eventSlug/orders",
       ArrayResult<OrganizationOrder>,
       ArrayOptions<OrganizationOrder>
+    >
+  | Endpoint<
+      "GET",
+      "/organizations/@:organizationSlug/events/:eventSlug/bookings",
+      ArrayResult<UserBooking>,
+      ArrayOptions<UserBooking>
+    >
+  | Endpoint<
+      "GET",
+      "/organizations/@:organizationSlug/events/:eventSlug/participants",
+      ArrayResult<OrganizationCustomer>,
+      ArrayOptions<OrganizationCustomer>
     >;
