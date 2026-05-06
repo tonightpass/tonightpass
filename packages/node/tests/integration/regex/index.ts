@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { REGEX } from "../../src";
+import { REGEX } from "../../../src";
 
 export function regexTests() {
   test("EMAIL regex", () => {

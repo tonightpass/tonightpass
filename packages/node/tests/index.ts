@@ -3,21 +3,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { TonightPass } from "../src/tonightpass";
-import { authTests } from "./auth";
-import { careersTests } from "./careers";
-import { dtoTests } from "./dtos";
-import { regexTests } from "./regex";
-import { requestTests } from "./request";
-import { usersTests } from "./users";
-
-const sdkTests = [
-  authTests,
-  careersTests,
-  dtoTests,
-  regexTests,
-  requestTests,
-  usersTests,
-];
+import { runIntegrationTests } from "./integration";
+import { unitTests } from "./unit";
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
@@ -63,6 +50,8 @@ test("The HTTP client can make a request", async () => {
   await assert.doesNotReject(() => tnp.client.get("/health/api"));
 });
 
-for (const sdkTest of sdkTests) {
-  sdkTest(tnp);
-}
+// Unit tests (no SDK client needed)
+unitTests();
+
+// Integration tests (need SDK client)
+runIntegrationTests(tnp);

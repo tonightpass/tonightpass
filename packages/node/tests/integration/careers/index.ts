@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import type { TonightPass } from "../../src/tonightpass";
+import type { TonightPass } from "../../../src/tonightpass";
 
 export function careersTests(tnp: TonightPass) {
   test("It gets all careers categories", async () => {

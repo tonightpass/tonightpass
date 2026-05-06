@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import type { ErroredAPIResponse } from "../../src";
-import type { TonightPass } from "../../src/tonightpass";
+import type { ErroredAPIResponse } from "../../../src";
+import type { TonightPass } from "../../../src/tonightpass";
 
 export function usersTests(tnp: TonightPass) {
   test("It will fail to get user 'me'", async () => {

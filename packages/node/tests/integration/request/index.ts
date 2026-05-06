@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { OAuth2Provider } from "../../src";
-import type { TonightPass } from "../../src/tonightpass";
+import { OAuth2Provider } from "../../../src";
+import type { TonightPass } from "../../../src/tonightpass";
 
 export function requestTests(tnp: TonightPass) {
   test("GET request without body succeeds", async () => {
