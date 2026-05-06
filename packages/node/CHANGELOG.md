@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.254
+
+### Patch Changes
+
+- [`b2157de`](https://github.com/tonightpass/tonightpass/commit/b2157dea034f3136bcd7336fed8bcd29d2c5e125) Thanks [@antoinekm](https://github.com/antoinekm)! - Add promo code system: OrganizationEventPromoCode types, DTOs, SDK methods, OrderDiscount type, promoCode field on CreateOrganizationEventOrderDto
+
 ## 0.0.253
 
 ### Patch Changes
