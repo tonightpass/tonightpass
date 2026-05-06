@@ -1,18 +1,32 @@
+import type { Query } from "pathcat";
+
 import { sdk } from "../../builder";
 
 export const organizationsOrders = sdk((client) => ({
-  getAll: async (organizationSlug: string) =>
-    client.get("/organizations/@:organizationSlug/orders", {
-      organizationSlug,
-    }),
-  get: async (organizationSlug: string, orderId: string) =>
-    client.get("/organizations/@:organizationSlug/orders/:orderId", {
-      organizationSlug,
-      orderId,
-    }),
-  getAllByEvent: async (organizationSlug: string, eventSlug: string) =>
-    client.get("/organizations/@:organizationSlug/events/:eventSlug/orders", {
-      organizationSlug,
-      eventSlug,
-    }),
+  getAll: async (query?: Query<"/organizations/@:organizationSlug/orders">) =>
+    client.get("/organizations/@:organizationSlug/orders", query),
+  get: async (
+    query: Query<"/organizations/@:organizationSlug/orders/:orderId">
+  ) => client.get("/organizations/@:organizationSlug/orders/:orderId", query),
+  getAllByEvent: async (
+    query?: Query<"/organizations/@:organizationSlug/events/:eventSlug/orders">
+  ) =>
+    client.get(
+      "/organizations/@:organizationSlug/events/:eventSlug/orders",
+      query
+    ),
+  getBookingsByEvent: async (
+    query?: Query<"/organizations/@:organizationSlug/events/:eventSlug/bookings">
+  ) =>
+    client.get(
+      "/organizations/@:organizationSlug/events/:eventSlug/bookings",
+      query
+    ),
+  getParticipantsByEvent: async (
+    query?: Query<"/organizations/@:organizationSlug/events/:eventSlug/participants">
+  ) =>
+    client.get(
+      "/organizations/@:organizationSlug/events/:eventSlug/participants",
+      query
+    ),
 }));
