@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import type { ErroredAPIResponse } from "../../src";
-import type { TonightPass } from "../../src/tonightpass";
+import type { ErroredAPIResponse } from "../../../src";
+import type { TonightPass } from "../../../src/tonightpass";
 
 export function authTests(tnp: TonightPass) {
   test("It will fail to sign in to 'tonightpass'", async () => {

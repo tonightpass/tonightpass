@@ -6,13 +6,13 @@ import { type ValidationError, validate } from "class-validator";
 import {
   CreateOrganizationEventTicketDto,
   CreateUserDto,
-} from "../../src/rest/dtos";
+} from "../../../src/rest/dtos";
 import {
   Currency,
   OrganizationEventTicketCategory,
   OrganizationEventTicketType,
   UserIdentityGender,
-} from "../../src/rest/types";
+} from "../../../src/rest/types";
 
 function printValidationErrors(errors: ValidationError[]): string[] {
   const formatError = (error: ValidationError, prefix = ""): string[] => {
