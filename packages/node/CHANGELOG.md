@@ -1,5 +1,14 @@
 # tonightpass
 
+## 0.0.255
+
+### Patch Changes
+
+- [`d600079`](https://github.com/tonightpass/tonightpass/commit/d600079ebc5ac3f864b1d6bb629121e77f08c85e) Thanks [@antoinekm](https://github.com/antoinekm)! - - Add bookings and participants endpoints to OrganizationOrdersEndpoints
+  - Add getBookingsByEvent and getParticipantsByEvent SDK methods
+  - Migrate SDK order methods to Query<> pattern (from positional args)
+  - Add optional id field to UpdateOrganizationEventTicketDto for sync by ID
+
 ## 0.0.254
 
 ### Patch Changes
