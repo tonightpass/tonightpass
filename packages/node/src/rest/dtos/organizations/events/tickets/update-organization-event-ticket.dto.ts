@@ -21,6 +21,10 @@ export class UpdateOrganizationEventTicketDto
   implements DeepPartial<CreateOrganizationEventTicketInput>
 {
   @IsString()
+  @IsOptional()
+  id?: string;
+
+  @IsString()
   @Length(1, 128)
   @IsOptional()
   name?: string;
