@@ -15,6 +15,7 @@ import type {
   OrganizationEventTicketEndpoints,
 } from "..";
 import type { OrganizationEventOrderEndpoints } from "./orders";
+import type { OrganizationEventPromoCodeEndpoints } from "./promo-codes";
 import type {
   OrganizationEventStyle,
   OrganizationEventStyleEndpoints,
@@ -22,6 +23,7 @@ import type {
 import type { OrganizationEventViewEndpoints } from "./views";
 
 export * from "./orders";
+export * from "./promo-codes";
 export * from "./styles";
 export * from "./tickets";
 export * from "./views";
@@ -209,6 +211,7 @@ export type OrganizationEventEndpoints =
       OrganizationEventRequestResponse
     >
   | OrganizationEventOrderEndpoints
+  | OrganizationEventPromoCodeEndpoints
   | OrganizationEventStyleEndpoints
   | OrganizationEventTicketEndpoints
   | OrganizationEventViewEndpoints;

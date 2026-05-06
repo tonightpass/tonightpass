@@ -10,6 +10,7 @@ import type {
 } from "../../../rest";
 import { buildFileFormData, type FileObject } from "../../../utils";
 import { organizationsEventsOrders } from "./orders";
+import { organizationsEventsPromoCodes } from "./promo-codes";
 import { organizationsEventsStyles } from "./styles";
 import { organizationsEventsTickets } from "./tickets";
 import { organizationsEventsViews } from "./views";
@@ -92,6 +93,7 @@ export const organizationsEvents = (client: Client) => ({
       { organizationSlug, eventSlug }
     ),
   orders: organizationsEventsOrders(client),
+  promoCodes: organizationsEventsPromoCodes(client),
   styles: organizationsEventsStyles(client),
   tickets: organizationsEventsTickets(client),
   views: organizationsEventsViews(client),
