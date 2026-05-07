@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.256
+
+### Patch Changes
+
+- [`f79f3f6`](https://github.com/tonightpass/tonightpass/commit/f79f3f6ac27426e51a277487e9091302db82842f) Thanks [@antoinekm](https://github.com/antoinekm)! - Add CSV export endpoint types for orders, bookings, and participants
+
 ## 0.0.255
 
 ### Patch Changes
