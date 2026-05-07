@@ -36,4 +36,19 @@ export type OrganizationOrdersEndpoints =
       "/organizations/@:organizationSlug/events/:eventSlug/participants",
       ArrayResult<OrganizationCustomer>,
       ArrayOptions<OrganizationCustomer>
+    >
+  | Endpoint<
+      "GET",
+      "/organizations/@:organizationSlug/events/:eventSlug/orders/export",
+      string
+    >
+  | Endpoint<
+      "GET",
+      "/organizations/@:organizationSlug/events/:eventSlug/bookings/export",
+      string
+    >
+  | Endpoint<
+      "GET",
+      "/organizations/@:organizationSlug/events/:eventSlug/participants/export",
+      string
     >;
