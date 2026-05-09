@@ -6,6 +6,6 @@ export const roadmap = sdk((client) => ({
     get: async (featureId: string) =>
       client.get("/roadmap/reactions/:featureId", { featureId }),
     add: async (featureId: string, reaction: RoadmapReaction) =>
-      client.post("/roadmap/reactions/:featureId", { featureId, reaction }),
+      client.post("/roadmap/reactions/:featureId", { reaction }, { featureId }),
   },
 }));
