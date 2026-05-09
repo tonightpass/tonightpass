@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.259
+
+### Patch Changes
+
+- [`b7cd7e8`](https://github.com/tonightpass/tonightpass/commit/b7cd7e847b1e28820ea70fd36a9cd71aedf05272) Thanks [@antoinekm](https://github.com/antoinekm)! - Add `WeatherForecast` type and `/weather/forecast` endpoint for displaying weather conditions on event pages.
+
 ## 0.0.258
 
 ### Patch Changes
