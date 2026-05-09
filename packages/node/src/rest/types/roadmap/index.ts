@@ -22,7 +22,6 @@ export type RoadmapFeature = {
 };
 
 export type AddRoadmapReactionBody = {
-  featureId: string;
   reaction: RoadmapReaction;
 };
 
