@@ -18,6 +18,7 @@ import type {
   RoadmapEndpoints,
   SitemapEndpoints,
   UserEndpoints,
+  WeatherEndpoints,
   WebhookEndpoints,
 } from "./types";
 
@@ -57,5 +58,6 @@ export type Endpoints =
   | RoadmapEndpoints
   | SitemapEndpoints
   | UserEndpoints
+  | WeatherEndpoints
   | WebhookEndpoints
   | NotificationEndpoints;

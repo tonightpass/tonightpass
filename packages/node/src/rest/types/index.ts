@@ -16,6 +16,7 @@ export * from "./proxy";
 export * from "./roadmap";
 export * from "./sitemaps";
 export * from "./users";
+export * from "./weather";
 export * from "./webhooks";
 
 export type Base = {
