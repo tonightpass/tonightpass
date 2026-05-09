@@ -68,7 +68,7 @@ export function billingFeesTests() {
   test("calculateTicketFee - should use custom TonightPass fees", () => {
     const fee = calculateTicketFee(1000, true, DEFAULT_STRIPE_FEES, {
       percentage: 30.0,
-      minimumCommission: 2.0,
+      minimumCommission: 200,
     });
     assert.strictEqual(fee, 200);
   });
@@ -84,7 +84,7 @@ export function billingFeesTests() {
   test("calculateTicketFee - should handle zero percentage TonightPass fee", () => {
     const fee = calculateTicketFee(1000, true, DEFAULT_STRIPE_FEES, {
       percentage: 0,
-      minimumCommission: 0.95,
+      minimumCommission: 95,
     });
     assert.strictEqual(fee, 95);
   });
@@ -92,7 +92,7 @@ export function billingFeesTests() {
   test("calculateTicketFee - should handle 100% TonightPass percentage", () => {
     const fee = calculateTicketFee(1000, true, DEFAULT_STRIPE_FEES, {
       percentage: 100,
-      minimumCommission: 0.95,
+      minimumCommission: 95,
     });
     assert.strictEqual(fee, 95);
   });

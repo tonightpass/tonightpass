@@ -11,7 +11,6 @@ import {
 } from "class-validator";
 
 import {
-  Currency,
   type ExcludeBase,
   type OrganizationEventTicket,
   OrganizationEventTicketCategory,
@@ -52,9 +51,6 @@ export class CreateOrganizationEventTicketDto
 
   @IsEnum(OrganizationEventTicketCategory)
   category: OrganizationEventTicketCategory;
-
-  @IsEnum(Currency)
-  currency: Currency;
 
   @IsBoolean()
   isVisible: boolean;

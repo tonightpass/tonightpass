@@ -10,7 +10,6 @@ import {
   Min,
 } from "class-validator";
 import {
-  Currency,
   type DeepPartial,
   OrganizationEventTicketCategory,
   OrganizationEventTicketType,
@@ -53,10 +52,6 @@ export class UpdateOrganizationEventTicketDto
   @IsEnum(OrganizationEventTicketCategory)
   @IsOptional()
   category?: OrganizationEventTicketCategory;
-
-  @IsEnum(Currency)
-  @IsOptional()
-  currency?: Currency;
 
   @IsBoolean()
   @IsOptional()
