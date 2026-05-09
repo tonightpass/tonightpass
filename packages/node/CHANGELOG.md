@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.258
+
+### Patch Changes
+
+- [`3e34c38`](https://github.com/tonightpass/tonightpass/commit/3e34c382024cd53c549de3acc4259814d808e40f) Thanks [@antoinekm](https://github.com/antoinekm)! - Fix `Client.setOptions()` to update `baseURL`. Make `Client.baseURL` mutable so it can be reconfigured after instantiation.
+
+- [`48c0ca6`](https://github.com/tonightpass/tonightpass/commit/48c0ca62666cd4cf01ecdcc8b6948ca849de8a3e) Thanks [@antoinekm](https://github.com/antoinekm)! - Move currency from ticket level to event level. Added 135 Stripe-supported currencies to the Currency enum with zero-decimal and minimum charge amounts. `applyMinimumChargeableAmount()` now accepts a currency parameter. Removed `currency` from ticket DTOs.
+
 ## 0.0.257
 
 ### Patch Changes
