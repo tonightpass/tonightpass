@@ -17,7 +17,7 @@ export function requestTests(tnp: TonightPass) {
       await tnp.auth.signOut();
       // If it succeeds (unlikely without auth), that's fine
     } catch (error) {
-      const typedError = error as { message?: string; statusCode?: number };
+      const typedError = error as { message: string; status: number };
       // Should NOT be the Content-Type body error
       assert.notStrictEqual(
         typedError.message,
@@ -26,8 +26,8 @@ export function requestTests(tnp: TonightPass) {
       );
       // Expected to fail with 401 Unauthorized since we're not authenticated
       assert.ok(
-        typedError.statusCode === 401 || typedError.statusCode === 403,
-        `Expected auth error (401/403), got: ${typedError.statusCode} - ${typedError.message}`
+        typedError.status === 401 || typedError.status === 403,
+        `Expected auth error (401/403), got: ${typedError.status} - ${typedError.message}`
       );
     }
   });
@@ -42,7 +42,7 @@ export function requestTests(tnp: TonightPass) {
       });
       assert.fail("Expected signIn to fail with invalid credentials");
     } catch (error) {
-      const typedError = error as { message?: string; statusCode?: number };
+      const typedError = error as { message: string; status: number };
       // Should NOT be a body serialization error
       assert.notStrictEqual(
         typedError.message,
@@ -51,8 +51,8 @@ export function requestTests(tnp: TonightPass) {
       );
       // Should fail with authentication error
       assert.ok(
-        typedError.statusCode === 400 || typedError.statusCode === 401,
-        `Expected auth error, got: ${typedError.statusCode}`
+        typedError.status === 400 || typedError.status === 401,
+        `Expected auth error, got: ${typedError.status}`
       );
     }
   });
@@ -62,7 +62,7 @@ export function requestTests(tnp: TonightPass) {
     try {
       await tnp.auth.oauth2.disconnect(OAuth2Provider.Google);
     } catch (error) {
-      const typedError = error as { message?: string; statusCode?: number };
+      const typedError = error as { message: string; status: number };
       // Should NOT be the Content-Type body error
       assert.notStrictEqual(
         typedError.message,
@@ -71,8 +71,8 @@ export function requestTests(tnp: TonightPass) {
       );
       // Expected to fail with 401 Unauthorized since we're not authenticated
       assert.ok(
-        typedError.statusCode === 401 || typedError.statusCode === 403,
-        `Expected auth error (401/403), got: ${typedError.statusCode} - ${typedError.message}`
+        typedError.status === 401 || typedError.status === 403,
+        `Expected auth error (401/403), got: ${typedError.status} - ${typedError.message}`
       );
     }
   });

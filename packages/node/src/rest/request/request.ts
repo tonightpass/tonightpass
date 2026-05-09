@@ -2,7 +2,11 @@ import axios, { type Options, type Response } from "redaxios";
 
 import packageJson from "../../../package.json";
 import { isBrowser } from "../../utils";
-import type { APIResponse, ErroredAPIResponse } from "../client";
+import {
+  type APIResponse,
+  type ErroredAPIResponse,
+  TonightPassAPIError,
+} from "../client";
 
 const instance = axios.create({
   headers: {
@@ -71,8 +75,12 @@ export const request = async <T>(url: string, options?: APIRequestOptions) => {
     .catch((error: Response<ErroredAPIResponse>) => {
       if (!error.data) {
         console.error(error);
+        throw error;
       }
-      throw error.data;
+      throw new TonightPassAPIError(
+        error as unknown as Response<APIResponse<T>>,
+        error.data
+      );
     });
 
   return response;
