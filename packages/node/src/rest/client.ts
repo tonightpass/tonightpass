@@ -82,19 +82,18 @@ export type ClientOptions = {
 };
 
 export class Client {
-  private options;
   private apiKey?: string;
   private accessToken?: string;
   private cacheManager?: CacheManager;
+  public readonly baseURL: string;
   public readonly url;
 
   constructor(options: ClientOptions) {
-    this.options = options;
+    this.baseURL = options.baseURL || DEFAULT_API_URL;
     this.apiKey = options.apiKey;
     this.accessToken = options.accessToken;
     this.url = (path: string, params: Query<string>) => {
-      const baseURL = this.options.baseURL || DEFAULT_API_URL;
-      return pathcat(baseURL, path, params);
+      return pathcat(this.baseURL, path, params);
     };
 
     if (options.cache?.enabled) {
@@ -103,7 +102,6 @@ export class Client {
   }
 
   setOptions(options: ClientOptions) {
-    this.options = options;
     this.apiKey = options.apiKey;
     this.accessToken = options.accessToken;
 
