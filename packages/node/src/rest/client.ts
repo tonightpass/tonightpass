@@ -85,7 +85,7 @@ export class Client {
   private apiKey?: string;
   private accessToken?: string;
   private cacheManager?: CacheManager;
-  public readonly baseURL: string;
+  public baseURL: string;
   public readonly url;
 
   constructor(options: ClientOptions) {
@@ -102,6 +102,9 @@ export class Client {
   }
 
   setOptions(options: ClientOptions) {
+    if (options.baseURL) {
+      this.baseURL = options.baseURL;
+    }
     this.apiKey = options.apiKey;
     this.accessToken = options.accessToken;
 
