@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import type { ErroredAPIResponse } from "../../../src";
+import { TonightPassAPIError } from "../../../src";
 import type { TonightPass } from "../../../src/tonightpass";
 
 export function authTests(tnp: TonightPass) {
@@ -15,11 +15,9 @@ export function authTests(tnp: TonightPass) {
         "Expected the 'signIn' function to throw an error but it didn't"
       );
     } catch (error) {
-      const typedError = error as ErroredAPIResponse;
-      assert.strictEqual(
-        typedError.success,
-        false,
-        "Expected error response to indicate failure"
+      assert.ok(
+        error instanceof TonightPassAPIError,
+        "Expected error to be a TonightPassAPIError"
       );
     }
   });
