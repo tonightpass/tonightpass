@@ -7,6 +7,7 @@ import type {
   ArrayOptions,
   ArrayResult,
   Base,
+  Currency,
   Location,
   OrganizationProfile,
 } from "../..";
@@ -35,6 +36,7 @@ export type OrganizationEvent = Base & {
   organization: OrganizationProfile;
   type: OrganizationEventType;
   visibility: OrganizationEventVisibilityType;
+  currency: Currency;
   flyers: string[];
   trailers: string[];
   location: Location;
@@ -97,7 +99,6 @@ export type ExternalOffer = {
   name: string;
   description?: string;
   price: number;
-  currency: string;
   available: boolean;
 };
 

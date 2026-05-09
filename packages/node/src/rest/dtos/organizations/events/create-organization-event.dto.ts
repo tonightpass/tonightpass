@@ -22,6 +22,7 @@ import {
 } from "class-validator";
 import { REGEX } from "../../../../constants";
 import {
+  Currency,
   type ExcludeBase,
   type OrganizationEvent,
   OrganizationEventType,
@@ -107,6 +108,10 @@ export class BaseOrganizationEventDto {
   @IsEnum(OrganizationEventVisibilityType)
   @IsNotEmpty()
   visibility: OrganizationEventVisibilityType;
+
+  @IsEnum(Currency)
+  @IsNotEmpty()
+  currency: Currency;
 
   @IsArray()
   @ArrayMaxSize(25)
