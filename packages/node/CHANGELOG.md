@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.257
+
+### Patch Changes
+
+- [`deafaed`](https://github.com/tonightpass/tonightpass/commit/deafaed9b4a4b0c601735a3fe86aee3b6b7a8aad) Thanks [@antoinekm](https://github.com/antoinekm)! - Consistent error handling: API errors now always throw `TonightPassAPIError` with `.status` and `.message`. Added `client.baseURL` public property. Fixed roadmap reactions sending featureId in body instead of path params. Removed unused `featureId` from `AddRoadmapReactionBody` type.
+
 ## 0.0.256
 
 ### Patch Changes
