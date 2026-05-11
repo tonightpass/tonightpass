@@ -43,6 +43,7 @@ export class GeoPointDto implements GeoPoint {
 
   constructor() {
     this.type = "Point";
+    this.coordinates = [0, 0];
   }
 }
 
