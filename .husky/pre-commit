@@ -19,8 +19,16 @@ PARTIALLY_STAGED=$(git diff --name-only)
 
 # Stash unstaged changes to preserve working directory
 # --keep-index keeps staged changes in working tree
+# Detect whether a stash was actually created (git stash push exits 0 even
+# when there is nothing to stash, so we compare the stash list size).
+STASH_COUNT_BEFORE=$(git stash list | wc -l)
 git stash push --quiet --keep-index --message "pre-commit-stash" || true
-STASHED=$?
+STASH_COUNT_AFTER=$(git stash list | wc -l)
+if [ "$STASH_COUNT_AFTER" -gt "$STASH_COUNT_BEFORE" ]; then
+  STASHED=0
+else
+  STASHED=1
+fi
 
 # Run formatter on the staged files
 pnpm dlx ultracite fix
