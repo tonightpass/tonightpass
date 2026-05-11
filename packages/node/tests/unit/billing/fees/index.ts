@@ -8,6 +8,7 @@ import {
   DEFAULT_TONIGHTPASS_FEES,
 } from "../../../../src";
 import { billingFeesCurrencyTests } from "./currency";
+import { orderTotalTests } from "./order-total";
 
 export function feesTests() {
   test("calculateTicketFee - should calculate correct fee for europe transaction with fees included", () => {
@@ -107,4 +108,5 @@ export function feesTests() {
   });
 
   billingFeesCurrencyTests();
+  orderTotalTests();
 }

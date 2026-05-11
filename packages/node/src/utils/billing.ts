@@ -171,6 +171,58 @@ export function calculateTicketFeeWithCurrency(
   );
 }
 
+export type CartTicket = {
+  unitAmount: number;
+  isFeesIncluded: boolean;
+  quantity: number;
+};
+
+export type OrderTotals = {
+  subtotal: number;
+  fees: number;
+  includedFees: number;
+  total: number;
+};
+
+/**
+ * Calculate order totals from a cart of tickets.
+ * Shared between frontend and backend to ensure consistent calculations.
+ *
+ * @param tickets - Array of tickets in the cart with unitAmount (smallest unit), isFeesIncluded, and quantity
+ * @param convertedMinimumCommission - MINIMUM_COMMISSION converted to the event's currency (defaults to EUR 95 cents)
+ * @returns Subtotal, fees, included fees, and total in smallest currency unit
+ */
+export function calculateOrderTotal(
+  tickets: CartTicket[],
+  convertedMinimumCommission: number = MINIMUM_COMMISSION
+): OrderTotals {
+  let subtotal = 0;
+  let fees = 0;
+  let includedFees = 0;
+
+  for (const ticket of tickets) {
+    const ticketFee = Math.round(
+      calculateTicketFeeWithCurrency(
+        ticket.unitAmount,
+        ticket.isFeesIncluded,
+        convertedMinimumCommission
+      )
+    );
+
+    subtotal += ticket.unitAmount * ticket.quantity;
+    fees += ticketFee * ticket.quantity;
+    if (ticket.isFeesIncluded) {
+      includedFees += ticketFee * ticket.quantity;
+    }
+  }
+
+  // includedFees cannot exceed subtotal (org can't absorb more than the ticket price)
+  const cappedIncludedFees = Math.min(includedFees, subtotal);
+  const total = subtotal + fees - cappedIncludedFees;
+
+  return { subtotal, fees, includedFees: cappedIncludedFees, total };
+}
+
 /**
  * Applies the minimum chargeable amount rule after a discount.
  * - If total is 0 → stays 0 (free order)
