@@ -17,12 +17,14 @@ import type {
   OrganizationMember,
   OrganizationMembersEndpoints,
 } from "./members";
+import type { OrganizationNotificationEndpoints } from "./notifications";
 import type { OrganizationOrdersEndpoints } from "./orders";
 
 export * from "./analytics";
 export * from "./customers";
 export * from "./events";
 export * from "./members";
+export * from "./notifications";
 export * from "./orders";
 export * from "./tokens";
 
@@ -131,4 +133,5 @@ export type OrganizationEndpoints =
   | OrganizationMembersEndpoints
   | OrganizationAnalyticsEndpoints
   | OrganizationCustomersEndpoints
+  | OrganizationNotificationEndpoints
   | OrganizationOrdersEndpoints;
