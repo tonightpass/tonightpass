@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.260
+
+### Patch Changes
+
+- [`624a968`](https://github.com/tonightpass/tonightpass/commit/624a968d4e9f10a1be5e3039f4ecbcfcb03333d0) Thanks [@antoinekm](https://github.com/antoinekm)! - Add `calculateTicketFeeWithCurrency` for currency-aware fee calculation with converted minimum commission. Add organization notification types and endpoints. Initialize `GeoPointDto.coordinates` to `[0, 0]` by default.
+
 ## 0.0.259
 
 ### Patch Changes
