@@ -1,7 +1,7 @@
-import { billingFeesTests } from "./fees";
+import { feesTests } from "./fees";
 import { promoCodeTests } from "./promo-codes";
 
 export function billingTests() {
-  billingFeesTests();
+  feesTests();
   promoCodeTests();
 }

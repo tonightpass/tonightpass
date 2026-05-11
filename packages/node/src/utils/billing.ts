@@ -142,6 +142,36 @@ export function calculateTicketFee(
 }
 
 /**
+ * Calculate the platform fee for a ticket with currency-aware minimum commission.
+ * Wraps `calculateTicketFee` with a converted minimum commission.
+ *
+ * @param ticketPrice - Ticket price in smallest unit (cents, yen, etc.)
+ * @param isFeesIncluded - Whether fees are included in the ticket price
+ * @param convertedMinimumCommission - MINIMUM_COMMISSION converted to the event's currency
+ * @param stripeFees - Stripe fee configuration
+ * @param params - Billing parameters (locality)
+ * @returns Fee amount in smallest currency unit
+ */
+export function calculateTicketFeeWithCurrency(
+  ticketPrice: number,
+  isFeesIncluded: boolean,
+  convertedMinimumCommission: number,
+  stripeFees: StripeFees = DEFAULT_STRIPE_FEES,
+  params: BillingParameters = DEFAULT_BILLING_PARAMETERS
+): number {
+  return calculateTicketFee(
+    ticketPrice,
+    isFeesIncluded,
+    stripeFees,
+    {
+      ...DEFAULT_TONIGHTPASS_FEES,
+      minimumCommission: convertedMinimumCommission,
+    },
+    params
+  );
+}
+
+/**
  * Applies the minimum chargeable amount rule after a discount.
  * - If total is 0 → stays 0 (free order)
  * - If total > 0 but below the minimum → rounds up to minimum

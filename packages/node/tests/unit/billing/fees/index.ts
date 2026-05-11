@@ -6,9 +6,10 @@ import {
   calculateTicketFee,
   DEFAULT_STRIPE_FEES,
   DEFAULT_TONIGHTPASS_FEES,
-} from "../../../src";
+} from "../../../../src";
+import { billingFeesCurrencyTests } from "./currency";
 
-export function billingFeesTests() {
+export function feesTests() {
   test("calculateTicketFee - should calculate correct fee for europe transaction with fees included", () => {
     const ticketPrice = 1000;
     const fee = calculateTicketFee(ticketPrice, true);
@@ -104,4 +105,6 @@ export function billingFeesTests() {
     });
     assert.ok(Math.abs(fee - 40.125) < 0.0001, `Expected ~40.125, got ${fee}`);
   });
+
+  billingFeesCurrencyTests();
 }
