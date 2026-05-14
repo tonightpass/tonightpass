@@ -43,8 +43,13 @@ export type PlaceCity = Base & {
   countrySlug: string;
 };
 
+export type ListPlaceCountriesOptions = ArrayOptions<PlaceCountry> & {
+  code?: string;
+};
+
 export type SearchPlacesOptions = ArrayOptions<PlaceCity> & {
   q: string;
+  countryCode?: string;
 };
 
 export type NearbyCitiesOptions = ArrayOptions<PlaceCity> & {
@@ -56,7 +61,7 @@ export type PlaceEndpoints =
       "GET",
       "/places/countries",
       ArrayResult<PlaceCountry>,
-      ArrayOptions<PlaceCountry>
+      ListPlaceCountriesOptions
     >
   | Endpoint<"GET", "/places/countries/:countrySlug", PlaceCountry>
   | Endpoint<
