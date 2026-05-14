@@ -8,6 +8,7 @@ import type {
   ArrayResult,
   Base,
   Currency,
+  EventArtistRef,
   Location,
   OrganizationProfile,
 } from "../..";
@@ -42,6 +43,7 @@ export type OrganizationEvent = Base & {
   location: Location;
   tickets: OrganizationEventTicket[];
   styles: OrganizationEventStyle[];
+  artists: EventArtistRef[];
   status: OrganizationEventStatus;
   viewsCount: number;
   sessionsCount: number;

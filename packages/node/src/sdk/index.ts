@@ -1,4 +1,5 @@
 export * from "./api-keys";
+export * from "./artists";
 export * from "./auth";
 export * from "./builder";
 export * from "./careers";

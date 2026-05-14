@@ -1,4 +1,5 @@
 export * from "./create-organization-event.dto";
+export * from "./event-artist.dto";
 export * from "./orders";
 export * from "./promo-codes";
 export * from "./styles";
