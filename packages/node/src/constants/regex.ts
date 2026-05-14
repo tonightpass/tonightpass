@@ -1,6 +1,17 @@
 export const REGEX = {
-  // matches a valid email address
+  // matches a valid email address (anchored, for validation)
   EMAIL: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i,
+  // non-anchored, global variants for detecting patterns inside free text
+  INLINE: {
+    // matches an email address anywhere inside free text
+    EMAIL: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/gi,
+    // matches an HTTP(S) URL anywhere inside free text
+    URL: /(https?:\/\/[^\s<>"'`[\](){}|\\^]+)/gi,
+    // matches an @username mention (Tonight Pass user) anywhere inside free text
+    USER_MENTION: /@([a-zA-Z0-9_.-]+)/g,
+    // matches a +permalink mention (SoundCloud-backed artist) anywhere inside free text
+    ARTIST_MENTION: /\+([a-zA-Z0-9_.-]+)/g,
+  },
   // matches a name with only letters, numbers, spaces
   NAME: /^[a-zA-ZÀ-ÿ0-9-\s]+$/,
   // matches a slug with only lowercase letters, numbers, dots and underscores
