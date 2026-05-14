@@ -29,6 +29,7 @@ import {
   OrganizationEventVisibilityType,
 } from "../../../types";
 import { CreateLocationDto } from "../../locations/create-location.dto";
+import { EventArtistDto } from "./event-artist.dto";
 import {
   CreateOrganizationEventTicketDto,
   type CreateOrganizationEventTicketInput,
@@ -66,6 +67,7 @@ export type CreateOrganizationEventInput = Omit<
   | "slug"
   | "styles"
   | "tickets"
+  | "artists"
   | "organization"
   | "status"
   | "viewsCount"
@@ -78,6 +80,7 @@ export type CreateOrganizationEventInput = Omit<
   slug?: string;
   styles: string[];
   tickets: CreateOrganizationEventTicketInput[];
+  artists?: EventArtistDto[];
 };
 
 // Base class for event details (without tickets)
@@ -140,6 +143,13 @@ export class BaseOrganizationEventDto {
   @IsString({ each: true })
   @ArrayMinSize(1)
   styles: string[]; // Array of style IDs
+
+  @IsOptional()
+  @IsArray()
+  @ArrayMaxSize(50)
+  @ValidateNested({ each: true })
+  @Type(() => EventArtistDto)
+  artists?: EventArtistDto[];
 
   @Transform(({ value }) => (value instanceof Date ? value : new Date(value)))
   @IsDate()

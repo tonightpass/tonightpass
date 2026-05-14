@@ -1,5 +1,6 @@
 import { Transform, Type } from "class-transformer";
 import {
+  ArrayMaxSize,
   IsArray,
   IsDate,
   IsEnum,
@@ -25,6 +26,7 @@ import {
 } from "../../../types";
 import { UpdateLocationDto } from "../../locations/update-location.dto";
 import type { CreateOrganizationEventInput } from "./create-organization-event.dto";
+import { EventArtistDto } from "./event-artist.dto";
 import { UpdateOrganizationEventTicketDto } from "./tickets";
 
 @ValidatorConstraint({ name: "atLeastOneMediaOnUpdate", async: false })
@@ -134,6 +136,13 @@ export class UpdateOrganizationEventDto
   @IsArray()
   @IsString({ each: true })
   styles?: string[];
+
+  @IsOptional()
+  @IsArray()
+  @ArrayMaxSize(50)
+  @ValidateNested({ each: true })
+  @Type(() => EventArtistDto)
+  artists?: EventArtistDto[];
 
   @IsOptional()
   @Transform(({ value }) => (value instanceof Date ? value : new Date(value)))

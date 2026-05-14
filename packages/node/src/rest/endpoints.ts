@@ -2,6 +2,7 @@ import type { Options } from "redaxios";
 
 import type {
   ApiKeyEndpoints,
+  ArtistEndpoints,
   AuthEndpoints,
   CareerEndpoints,
   ChannelEndpoints,
@@ -43,6 +44,7 @@ export type SSEEndpoints =
 
 export type Endpoints =
   | ApiKeyEndpoints
+  | ArtistEndpoints
   | AuthEndpoints
   | CareerEndpoints
   | ChannelEndpoints
