@@ -3,6 +3,8 @@ import type { Query } from "pathcat";
 import { sdk } from "./builder";
 
 export const artists = sdk((client) => ({
+  top: async (query?: Query<"/artists/top">) =>
+    client.get("/artists/top", query),
   search: async (query: Query<"/artists/search">) =>
     client.get("/artists/search", query),
   get: async (query: Query<"/artists/:idOrPermalink">) =>
