@@ -81,7 +81,10 @@ export type ListArtistEventsOptions = ArrayOptions<OrganizationEvent> & {
   upcoming?: boolean;
 };
 
+export type ListTopArtistsOptions = ArrayOptions<Artist>;
+
 export type ArtistEndpoints =
+  | Endpoint<"GET", "/artists/top", ArrayResult<Artist>, ListTopArtistsOptions>
   | Endpoint<
       "GET",
       "/artists/search",
