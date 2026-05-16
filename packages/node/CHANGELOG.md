@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.262
+
+### Patch Changes
+
+- [`fde61f9`](https://github.com/tonightpass/tonightpass/commit/fde61f944fa9934a3a99443ea1d61e43383b54c3) Thanks [@antoinekm](https://github.com/antoinekm)! - Add `artists.top()` SDK method backed by a new `GET /artists/top` endpoint that returns the artists with the most Tonight Pass followers, sorted by follower count desc. Accepts a `limit` query param (default 12, max 50). Each item is an `Artist` with `tonightpass.followersCount` populated from the live DB aggregation.
+
+  New type `ListTopArtistsOptions = ArrayOptions<Artist>` exposed alongside the endpoint.
+
 ## 0.0.261
 
 ### Patch Changes
