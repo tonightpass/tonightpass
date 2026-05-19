@@ -6,7 +6,7 @@ export type UserPostViewOptions = {
 
 export type UserPostViewResult = {
   postId: string;
-  viewsCount: number;
+  visitsCount: number;
 };
 
 export type UserPostViewEndpoints =

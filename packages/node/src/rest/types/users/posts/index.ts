@@ -24,6 +24,8 @@ export type UserPost = Base & {
     reposts: number;
     comments: number;
     views: number;
+    visits: number;
+    visitors: number;
   };
   isReposted?: boolean;
   isEdited: boolean;

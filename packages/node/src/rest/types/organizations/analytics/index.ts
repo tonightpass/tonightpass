@@ -35,9 +35,9 @@ export type OrganizationAnalyticsOverview = {
 export type OrganizationEventAnalytics = {
   event: OrganizationEvent;
   metrics: {
-    totalViews: number;
-    uniqueViews: number;
-    sessionsCount: number;
+    views: number;
+    visits: number;
+    visitors: number;
     totalRevenue: number;
     totalOrders: number;
     totalTicketsSold: number;

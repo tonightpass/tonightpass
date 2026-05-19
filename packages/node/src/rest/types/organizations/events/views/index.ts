@@ -6,7 +6,7 @@ export type OrganizationEventViewOptions = {
 
 export type OrganizationEventViewResult = {
   eventId: string;
-  viewsCount: number;
+  visitsCount: number;
 };
 
 export type OrganizationEventViewEndpoints =
