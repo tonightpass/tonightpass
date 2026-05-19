@@ -46,9 +46,13 @@ export type OrganizationEvent = Base & {
   artists: EventArtistRef[];
   status: OrganizationEventStatus;
   viewsCount: number;
-  sessionsCount: number;
-  totalViewsCount: number;
-  averageViewsPerSessionCount: number;
+  visitsCount: number;
+  visitorsCount: number;
+  bouncesCount: number;
+  totalDurationSeconds: number;
+  averageViewsPerVisitorCount: number;
+  bounceRate: number;
+  averageVisitDurationSeconds: number;
   hypeCount: number;
   minPrice: number;
   startAt: Date;

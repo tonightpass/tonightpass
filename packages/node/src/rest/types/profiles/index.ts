@@ -55,6 +55,8 @@ export type UserProfileMetadata = BaseProfileMetadata & {
 export type OrganizationProfileMetadata = BaseProfileMetadata & {
   eventsCount: number;
   viewsCount: number;
+  visitsCount: number;
+  visitorsCount: number;
   membersCount: number;
 };
 
