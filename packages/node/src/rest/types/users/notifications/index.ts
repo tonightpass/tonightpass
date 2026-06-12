@@ -1,8 +1,13 @@
 import type { Endpoint } from "../../../endpoints";
 import type { ArrayOptions, ArrayResult, Base, UserProfile } from "../..";
+import type { OrderRefundStatus } from "../../orders";
+import type { OrganizationEvent } from "../../organizations/events";
 
 export enum UserNotificationType {
   Follow = "follow",
+  OrganizationEventCancelled = "organization_event_cancelled",
+  OrganizationEventPostponed = "organization_event_postponed",
+  OrganizationEventRescheduled = "organization_event_rescheduled",
   // Ideas :
   // BookingConfirmation = "booking_confirmation",
   // EventReminder = "event_reminder",
@@ -22,7 +27,7 @@ export enum UserNotificationType {
 }
 
 export type UserNotificationBase = Base & {
-  type: UserNotificationType.Follow;
+  type: UserNotificationType;
   isSeen: boolean;
 };
 
@@ -31,7 +36,36 @@ export type UserNotificationFollow = UserNotificationBase & {
   follower: UserProfile;
 };
 
-export type UserNotification = UserNotificationFollow;
+export type UserNotificationOrganizationEventCancelled =
+  UserNotificationBase & {
+    type: UserNotificationType.OrganizationEventCancelled;
+    event: OrganizationEvent;
+    reason?: string;
+    refundAmount?: number;
+    refundStatus?: OrderRefundStatus;
+  };
+
+export type UserNotificationOrganizationEventPostponed =
+  UserNotificationBase & {
+    type: UserNotificationType.OrganizationEventPostponed;
+    event: OrganizationEvent;
+    reason?: string;
+  };
+
+export type UserNotificationOrganizationEventRescheduled =
+  UserNotificationBase & {
+    type: UserNotificationType.OrganizationEventRescheduled;
+    event: OrganizationEvent;
+    reason?: string;
+    previousStartAt: Date;
+    previousEndAt: Date;
+  };
+
+export type UserNotification =
+  | UserNotificationFollow
+  | UserNotificationOrganizationEventCancelled
+  | UserNotificationOrganizationEventPostponed
+  | UserNotificationOrganizationEventRescheduled;
 
 export type UserNotificationEndpoints =
   | Endpoint<
