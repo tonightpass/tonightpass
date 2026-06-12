@@ -16,6 +16,14 @@ export enum OrderTransferStatus {
   Completed = "completed",
   Pending = "pending",
   Transferred = "transferred",
+  Cancelled = "cancelled",
+}
+
+export enum OrderRefundStatus {
+  Pending = "pending",
+  Succeeded = "succeeded",
+  Failed = "failed",
+  RequiresAction = "requires_action",
 }
 
 export type OrderDiscount = {
@@ -34,6 +42,13 @@ export type Order = Base & {
   fee: number;
   total: number;
   transferStatus: OrderTransferStatus;
+  transferReversed?: boolean;
+  refundId?: string;
+  refundedAt?: Date;
+  refundAmount?: number;
+  refundedFeeAmount?: number;
+  refundStatus?: OrderRefundStatus;
+  refundFailureReason?: string;
   user: UserProfile;
 };
 

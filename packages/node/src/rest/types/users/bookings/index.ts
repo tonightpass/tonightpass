@@ -18,6 +18,8 @@ export type UserBooking = Base & {
   order: Order;
   customer: OrganizationCustomer;
   event: OrganizationEvent;
+  cancelledAt?: Date;
+  cancellationReason?: string;
 };
 
 export type UserBookingEndpoints =

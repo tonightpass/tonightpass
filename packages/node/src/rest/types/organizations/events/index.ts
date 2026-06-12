@@ -1,5 +1,8 @@
 import type {
+  CancelOrganizationEventDto,
   CreateOrganizationEventDto,
+  PostponeOrganizationEventDto,
+  RescheduleOrganizationEventDto,
   UpdateOrganizationEventDto,
 } from "../../../dtos";
 import type { Endpoint } from "../../../endpoints";
@@ -26,6 +29,7 @@ import type { OrganizationEventViewEndpoints } from "./views";
 
 export * from "./orders";
 export * from "./promo-codes";
+export * from "./status";
 export * from "./styles";
 export * from "./tickets";
 export * from "./views";
@@ -45,6 +49,16 @@ export type OrganizationEvent = Base & {
   styles: OrganizationEventStyle[];
   artists: EventArtistRef[];
   status: OrganizationEventStatus;
+  lifecycleStatus?: OrganizationEventLifecycleStatus;
+  cancelledAt?: Date;
+  cancelledReason?: string;
+  cancelledBy?: OrganizationEventCancelledBy;
+  postponedAt?: Date;
+  postponedReason?: string;
+  rescheduledFromAt?: Date;
+  rescheduledFromEndAt?: Date;
+  rescheduledAt?: Date;
+  rescheduledReason?: string;
   viewsCount: number;
   visitsCount: number;
   visitorsCount: number;
@@ -99,6 +113,21 @@ export enum OrganizationEventStatus {
   Upcoming = "upcoming",
   Ongoing = "ongoing",
   Ended = "ended",
+  Cancelled = "cancelled",
+  Postponed = "postponed",
+  Rescheduled = "rescheduled",
+}
+
+export enum OrganizationEventLifecycleStatus {
+  Cancelled = "cancelled",
+  Postponed = "postponed",
+  Rescheduled = "rescheduled",
+}
+
+export enum OrganizationEventCancelledBy {
+  Organizer = "organizer",
+  Support = "support",
+  ExternalSource = "external_source",
 }
 
 export type ExternalOffer = {
@@ -216,6 +245,30 @@ export type OrganizationEventEndpoints =
       "POST",
       "/organizations/@:organizationSlug/events/:eventSlug/request",
       OrganizationEventRequestResponse
+    >
+  | Endpoint<
+      "POST",
+      "/organizations/@:organizationSlug/events/:eventSlug/cancel",
+      OrganizationEvent,
+      CancelOrganizationEventDto
+    >
+  | Endpoint<
+      "POST",
+      "/organizations/@:organizationSlug/events/:eventSlug/postpone",
+      OrganizationEvent,
+      PostponeOrganizationEventDto
+    >
+  | Endpoint<
+      "POST",
+      "/organizations/@:organizationSlug/events/:eventSlug/reschedule",
+      OrganizationEvent,
+      RescheduleOrganizationEventDto
+    >
+  | Endpoint<
+      "POST",
+      "/organizations/@:organizationSlug/events/:eventSlug/reactivate",
+      OrganizationEvent,
+      undefined
     >
   | OrganizationEventOrderEndpoints
   | OrganizationEventPromoCodeEndpoints
