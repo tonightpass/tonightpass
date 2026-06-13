@@ -38,6 +38,79 @@ export function fromSmallestUnit(amount: number, currency: Currency): number {
   return amount / 100;
 }
 
+const currencySymbolCache = new Map<Currency, string>();
+
+/**
+ * Resolve the narrow currency symbol for a currency code. Falls back to the
+ * ISO code itself when the Intl runtime does not know the currency.
+ * Examples: `getCurrencySymbol(Currency.EUR)` → `"€"`, `Currency.JPY` → `"¥"`.
+ */
+export function getCurrencySymbol(currency: Currency): string {
+  const cached = currencySymbolCache.get(currency);
+  if (cached) {
+    return cached;
+  }
+  try {
+    const symbol = new Intl.NumberFormat("en", {
+      style: "currency",
+      currency,
+      currencyDisplay: "narrowSymbol",
+    })
+      .formatToParts(0)
+      .find((p) => p.type === "currency")?.value;
+    const result =
+      symbol && symbol.toUpperCase() !== currency ? symbol : currency;
+    currencySymbolCache.set(currency, result);
+    return result;
+  } catch {
+    currencySymbolCache.set(currency, currency);
+    return currency;
+  }
+}
+
+/**
+ * Format a currency code with its symbol: `"USD ($)"`, `"EUR (€)"`, `"JPY (¥)"`.
+ * Falls back to just the ISO code when the runtime resolves the symbol to the
+ * same code (e.g. `"AWG"`).
+ */
+export function formatCurrencyLabel(currency: Currency): string {
+  const symbol = getCurrencySymbol(currency);
+  return symbol !== currency ? `${currency} (${symbol})` : currency;
+}
+
+export type FormatPriceOptions = {
+  /** Returned when `amount` is `null` / `undefined`. Default: `"--.-- <symbol>"`. */
+  emptyPlaceholder?: string;
+  /** Returned when `amount === 0`. Default: `"Free"`. */
+  freeLabel?: string;
+};
+
+/**
+ * Format a price expressed in the smallest currency unit as a `"<amount> <symbol>"`
+ * string. Honours zero-decimal currencies (JPY, KRW, …) — they render without
+ * decimals. Examples:
+ *   `formatPrice(258800, Currency.EUR)` → `"2588.00 €"`
+ *   `formatPrice(500, Currency.JPY)`    → `"500 ¥"`
+ *   `formatPrice(null, Currency.EUR)`   → `"--.-- €"`
+ *   `formatPrice(0, Currency.EUR)`      → `"Free"`
+ */
+export function formatPrice(
+  amount: number | null | undefined,
+  currency: Currency,
+  options?: FormatPriceOptions
+): string {
+  const symbol = getCurrencySymbol(currency);
+  if (amount === null || amount === undefined) {
+    return options?.emptyPlaceholder ?? `--.-- ${symbol}`;
+  }
+  if (amount === 0) {
+    return options?.freeLabel ?? "Free";
+  }
+  const major = fromSmallestUnit(amount, currency);
+  const fractionDigits = isZeroDecimalCurrency(currency) ? 0 : 2;
+  return `${major.toFixed(fractionDigits)} ${symbol}`;
+}
+
 export type StripeFees = {
   transactionFee: number; // in cents
   europeRate: number; // percentage
