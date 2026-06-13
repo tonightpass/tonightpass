@@ -12,13 +12,7 @@ import {
   IsString,
   Length,
   Matches,
-  MinDate,
-  registerDecorator,
   ValidateNested,
-  type ValidationArguments,
-  type ValidationOptions,
-  ValidatorConstraint,
-  type ValidatorConstraintInterface,
 } from "class-validator";
 import { REGEX } from "../../../../constants";
 import {
@@ -29,38 +23,13 @@ import {
   OrganizationEventVisibilityType,
 } from "../../../types";
 import { CreateLocationDto } from "../../locations/create-location.dto";
+import { AtLeastOneMedia } from "../../validators/at-least-one-media";
+import { IsAfterNow } from "../../validators/is-after-now";
 import { EventArtistDto } from "./event-artist.dto";
 import {
   CreateOrganizationEventTicketDto,
   type CreateOrganizationEventTicketInput,
 } from "./tickets";
-
-@ValidatorConstraint({ name: "atLeastOneMedia", async: false })
-export class AtLeastOneMediaConstraint implements ValidatorConstraintInterface {
-  validate(_value: unknown, args: ValidationArguments) {
-    const object = args.object as BaseOrganizationEventDto;
-    const flyers = object.flyers || [];
-    const trailers = object.trailers || [];
-
-    return flyers.length > 0 || trailers.length > 0;
-  }
-
-  defaultMessage() {
-    return "At least one flyer or trailer must be provided";
-  }
-}
-
-export function AtLeastOneMedia(validationOptions?: ValidationOptions) {
-  return (object: object, propertyName: string) => {
-    registerDecorator({
-      target: object.constructor,
-      propertyName,
-      options: validationOptions,
-      constraints: [],
-      validator: AtLeastOneMediaConstraint,
-    });
-  };
-}
 
 export type CreateOrganizationEventInput = Omit<
   ExcludeBase<OrganizationEvent>,
@@ -158,13 +127,13 @@ export class BaseOrganizationEventDto {
   @Transform(({ value }) => (value instanceof Date ? value : new Date(value)))
   @IsDate()
   @IsNotEmpty()
-  @MinDate(new Date())
+  @IsAfterNow()
   startAt: Date;
 
   @Transform(({ value }) => (value instanceof Date ? value : new Date(value)))
   @IsDate()
   @IsNotEmpty()
-  @MinDate(new Date())
+  @IsAfterNow()
   endAt: Date;
 }
 

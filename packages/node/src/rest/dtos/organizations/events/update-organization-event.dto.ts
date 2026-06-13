@@ -10,13 +10,7 @@ import {
   IsString,
   Length,
   Matches,
-  MinDate,
-  registerDecorator,
   ValidateNested,
-  type ValidationArguments,
-  type ValidationOptions,
-  ValidatorConstraint,
-  type ValidatorConstraintInterface,
 } from "class-validator";
 import { REGEX } from "../../../../constants";
 import {
@@ -25,53 +19,11 @@ import {
   OrganizationEventVisibilityType,
 } from "../../../types";
 import { UpdateLocationDto } from "../../locations/update-location.dto";
+import { AtLeastOneMediaOnUpdate } from "../../validators/at-least-one-media";
+import { IsAfterNow } from "../../validators/is-after-now";
 import type { CreateOrganizationEventInput } from "./create-organization-event.dto";
 import { EventArtistDto } from "./event-artist.dto";
 import { UpdateOrganizationEventTicketDto } from "./tickets";
-
-@ValidatorConstraint({ name: "atLeastOneMediaOnUpdate", async: false })
-export class AtLeastOneMediaOnUpdateConstraint
-  implements ValidatorConstraintInterface
-{
-  validate(_value: unknown, args: ValidationArguments) {
-    const object = args.object as UpdateOrganizationEventDto;
-
-    // If both flyers and trailers are provided in the update
-    if (object.flyers !== undefined && object.trailers !== undefined) {
-      // At least one must have content
-      return object.flyers.length > 0 || object.trailers.length > 0;
-    }
-
-    // If only flyers is provided, it must not be empty
-    if (object.flyers !== undefined && object.trailers === undefined) {
-      return object.flyers.length > 0;
-    }
-
-    // If only trailers is provided, it must not be empty
-    if (object.trailers !== undefined && object.flyers === undefined) {
-      return object.trailers.length > 0;
-    }
-
-    // If neither is provided, that's fine (no update to media)
-    return true;
-  }
-
-  defaultMessage() {
-    return "Cannot remove all media from event. At least one flyer or trailer must remain";
-  }
-}
-
-export function AtLeastOneMediaOnUpdate(validationOptions?: ValidationOptions) {
-  return (object: object, propertyName: string) => {
-    registerDecorator({
-      target: object.constructor,
-      propertyName,
-      options: validationOptions,
-      constraints: [],
-      validator: AtLeastOneMediaOnUpdateConstraint,
-    });
-  };
-}
 
 export class UpdateOrganizationEventDto
   implements DeepPartial<CreateOrganizationEventInput>
@@ -147,12 +99,12 @@ export class UpdateOrganizationEventDto
   @IsOptional()
   @Transform(({ value }) => (value instanceof Date ? value : new Date(value)))
   @IsDate()
-  @MinDate(new Date())
+  @IsAfterNow()
   startAt?: Date;
 
   @IsOptional()
   @Transform(({ value }) => (value instanceof Date ? value : new Date(value)))
   @IsDate()
-  @MinDate(new Date())
+  @IsAfterNow()
   endAt?: Date;
 }

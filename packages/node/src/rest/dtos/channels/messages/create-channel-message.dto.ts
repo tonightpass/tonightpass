@@ -8,31 +8,9 @@ import {
   Matches,
   Validate,
   ValidateIf,
-  type ValidationArguments,
-  ValidatorConstraint,
-  type ValidatorConstraintInterface,
 } from "class-validator";
 import { REGEX } from "../../../../constants/regex";
-
-@ValidatorConstraint({ name: "contentOrAttachments", async: false })
-export class ContentOrAttachmentsConstraint
-  implements ValidatorConstraintInterface
-{
-  validate(_value: unknown, args: ValidationArguments): boolean {
-    const object = args.object as CreateChannelMessageDto;
-    const hasContent = Boolean(
-      object.content && object.content.trim().length > 0
-    );
-    const hasAttachments = Boolean(
-      object.attachments && object.attachments.length > 0
-    );
-    return hasContent || hasAttachments;
-  }
-
-  defaultMessage(_args: ValidationArguments): string {
-    return "Either content or attachments must be provided";
-  }
-}
+import { ContentOrAttachmentsConstraint } from "../../validators/content-or-attachments";
 
 export class CreateChannelMessageDto {
   @IsOptional()
