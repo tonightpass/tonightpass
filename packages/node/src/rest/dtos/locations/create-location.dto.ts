@@ -7,29 +7,11 @@ import {
   Length,
   Validate,
   ValidateNested,
-  ValidatorConstraint,
-  type ValidatorConstraintInterface,
 } from "class-validator";
 
 import type { GeoPoint, Location } from "../../types";
+import { CoordinatesRangeConstraint } from "../validators/coordinates-range";
 import { normalizeAddress } from "./normalize-address";
-
-@ValidatorConstraint({ name: "coordinatesRange", async: false })
-class CoordinatesRangeConstraint implements ValidatorConstraintInterface {
-  validate(coordinates: [number, number]) {
-    if (!Array.isArray(coordinates) || coordinates.length !== 2) {
-      return false;
-    }
-    const [longitude, latitude] = coordinates;
-    return (
-      latitude >= -90 && latitude <= 90 && longitude >= -180 && longitude <= 180
-    );
-  }
-
-  defaultMessage() {
-    return "Coordinates must be within valid geographic ranges";
-  }
-}
 
 export class GeoPointDto implements GeoPoint {
   @IsString()

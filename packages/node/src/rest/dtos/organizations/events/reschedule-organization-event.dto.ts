@@ -5,18 +5,18 @@ import {
   IsOptional,
   IsString,
   Length,
-  MinDate,
 } from "class-validator";
+import { IsAfterNow } from "../../validators/is-after-now";
 
 export class RescheduleOrganizationEventDto {
   @Transform(({ value }) => (value instanceof Date ? value : new Date(value)))
   @IsDate()
-  @MinDate(new Date())
+  @IsAfterNow()
   startAt!: Date;
 
   @Transform(({ value }) => (value instanceof Date ? value : new Date(value)))
   @IsDate()
-  @MinDate(new Date())
+  @IsAfterNow()
   endAt!: Date;
 
   @IsOptional()
