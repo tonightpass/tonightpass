@@ -49,6 +49,9 @@ export type Order = Base & {
   refundedFeeAmount?: number;
   refundStatus?: OrderRefundStatus;
   refundFailureReason?: string;
+  /** Number of times the refund cron has attempted this order. Defaults to 0. */
+  refundRetryCount?: number;
+  refundLastAttemptAt?: Date;
   user: UserProfile;
 };
 
