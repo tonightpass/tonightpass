@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.265
+
+### Patch Changes
+
+- [`3322634`](https://github.com/tonightpass/tonightpass/commit/3322634cbdbce56df425b1412f91391f1bf41cf9) Thanks [@antoinekm](https://github.com/antoinekm)! - Add `isPayoutsEnabled` to the `OrganizationBilling` type. Reflects whether the organization's Stripe Connect account can actually receive funds (transfers capability active), so order routing can defer transfers until onboarding completes instead of failing on un-activated accounts.
+
 ## 0.0.264
 
 ### Patch Changes
