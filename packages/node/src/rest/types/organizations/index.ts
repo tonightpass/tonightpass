@@ -41,6 +41,7 @@ export type Organization = Base & {
 
 export type OrganizationBilling = {
   account: string;
+  isPayoutsEnabled: boolean;
   vatRate: number;
 };
 
