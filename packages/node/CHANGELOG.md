@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.0.266
+
+### Patch Changes
+
+- [`de88b3f`](https://github.com/tonightpass/tonightpass/commit/de88b3f7a371b9abdc929f35cae29a22656a9016) Thanks [@antoinekm](https://github.com/antoinekm)! - Register the `GET /orders/:orderId/invoice` endpoint (PDF payment receipt download) in `OrderEndpoints`.
+
 ## 0.0.265
 
 ### Patch Changes
