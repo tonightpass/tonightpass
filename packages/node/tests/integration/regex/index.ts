@@ -263,7 +263,7 @@ const ASSERTIONS: Record<string, (regex: RegExp) => void> = {
     assert.equal(m1?.[1], "orionmood");
     r.lastIndex = 0;
     const m2 = r.exec("contact test@example.fr");
-    // The mention regex will match the @example.fr part of an email — by design,
+    // The mention regex will match the @example.fr part of an email, by design;
     // disambiguation is handled at the parser level (emails are preferred).
     assert.equal(m2?.[1], "example.fr");
   },
