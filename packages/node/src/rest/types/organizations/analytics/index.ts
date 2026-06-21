@@ -2,33 +2,32 @@ import type { Endpoint } from "../../../endpoints";
 import type { ArrayOptions, ArrayResult } from "../..";
 import type { OrganizationEvent } from "../events";
 
-// Analytics Overview Types
+// A metric compared across two periods. `percentageChange` is null when the
+// previous period was empty but the current one is not (growth from zero,
+// rendered as an infinite increase).
+export type AnalyticsMetric = {
+  current: number;
+  previous: number;
+  percentageChange: number | null;
+};
+
+// Shared fields of a daily analytics chart point. Each overview appends its own
+// trailing series (`events` for the organization, `views` for a single event).
+export type AnalyticsChartPoint = {
+  date: string;
+  revenues: number;
+  orders: number;
+  ticketsSold: number;
+};
+
 export type OrganizationAnalyticsOverview = {
   metrics: {
-    totalRevenue: {
-      current: number;
-      previous: number;
-      percentageChange: number;
-    };
-    totalOrders: {
-      current: number;
-      previous: number;
-      percentageChange: number;
-    };
-    totalTicketsSold: {
-      current: number;
-      previous: number;
-      percentageChange: number;
-    };
+    totalRevenue: AnalyticsMetric;
+    totalOrders: AnalyticsMetric;
+    totalTicketsSold: AnalyticsMetric;
     activeEvents: number;
   };
-  chartData: {
-    date: string;
-    revenues: number;
-    orders: number;
-    ticketsSold: number;
-    events: number;
-  }[];
+  chartData: (AnalyticsChartPoint & { events: number })[];
 };
 
 // Event Analytics Types
@@ -42,6 +41,18 @@ export type OrganizationEventAnalytics = {
     totalOrders: number;
     totalTicketsSold: number;
   };
+};
+
+// Per-event analytics overview: same metric/chart shape as the org overview,
+// scoped to a single event (4th metric is views instead of active events).
+export type OrganizationEventAnalyticsOverview = {
+  metrics: {
+    totalRevenue: AnalyticsMetric;
+    totalOrders: AnalyticsMetric;
+    totalTicketsSold: AnalyticsMetric;
+    views: AnalyticsMetric;
+  };
+  chartData: (AnalyticsChartPoint & { views: number })[];
 };
 
 // Analytics Query Options
@@ -68,4 +79,10 @@ export type OrganizationAnalyticsEndpoints =
       "/organizations/@:organizationSlug/analytics/events",
       ArrayResult<OrganizationEventAnalytics>,
       ArrayOptions<OrganizationEventAnalytics> & EventAnalyticsOptions
+    >
+  | Endpoint<
+      "GET",
+      "/organizations/@:organizationSlug/events/:eventSlug/analytics/overview",
+      OrganizationEventAnalyticsOverview,
+      AnalyticsOptions
     >;
