@@ -1,5 +1,13 @@
 # tonightpass
 
+## 0.0.267
+
+### Patch Changes
+
+- [`495a186`](https://github.com/tonightpass/tonightpass/commit/495a1866553b81978f60d105e58b37bedace3a22) Thanks [@antoinekm](https://github.com/antoinekm)! - Add per-event analytics overview endpoint `GET /organizations/@:organizationSlug/events/:eventSlug/analytics/overview` returning `OrganizationEventAnalyticsOverview` (revenue, orders, tickets sold and views metrics with period comparison, plus a daily chart series).
+
+  Factor the shared analytics shapes into `AnalyticsMetric` (`{ current, previous, percentageChange }`) and `AnalyticsChartPoint` (`{ date, revenues, orders, ticketsSold }`), reused by both the organization and event overviews. `OrganizationAnalyticsOverview` metric `percentageChange` is now `number | null` to match the API (null represents growth from an empty previous period).
+
 ## 0.0.266
 
 ### Patch Changes
