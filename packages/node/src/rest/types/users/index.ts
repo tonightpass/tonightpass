@@ -1,4 +1,4 @@
-import type { UpdateUserDto } from "../../dtos";
+import type { DeleteUserDto, UpdateUserDto } from "../../dtos";
 import type { Endpoint } from "../../endpoints";
 import type {
   Base,
@@ -29,6 +29,8 @@ export type User = Base & {
   oauthProviders: UserOAuthProvider[];
   isVerified: boolean;
   isOfficial: boolean;
+  /** Set while a self-service deletion is pending its grace period. */
+  deletionRequestedAt?: Date | null;
 };
 
 export type UserIdentifier = {
@@ -38,6 +40,34 @@ export type UserIdentifier = {
   phoneNumberVerified?: boolean;
   username: string;
 };
+
+/**
+ * Returned when a user requests deletion of their account. The account enters
+ * a grace period and is only anonymized once `scheduledAt` is reached.
+ */
+export type UserDeletionResponse = {
+  requestedAt: Date;
+  scheduledAt: Date;
+};
+
+/**
+ * Reason a deletion request was rejected. Each blocker lists what the user must
+ * resolve before the account can be deleted.
+ */
+export enum UserDeletionBlockerType {
+  OrganizationMembership = "organization_membership",
+  UpcomingBooking = "upcoming_booking",
+  PendingRefundOrTransfer = "pending_refund_or_transfer",
+}
+
+/** Why the user is deleting their account (collected for retention analytics). */
+export enum UserDeletionReason {
+  NotUsing = "not_using",
+  TooManyEmails = "too_many_emails",
+  PrivacyConcerns = "privacy_concerns",
+  FoundAlternative = "found_alternative",
+  Other = "other",
+}
 
 export type UserIdentity = UserProfile & {
   firstName: string;
@@ -128,6 +158,8 @@ export type UserEndpoints =
       { identifier: boolean; suggestions?: boolean }
     >
   | Endpoint<"PUT", "/users/@:userId", User, UpdateUserDto>
+  | Endpoint<"DELETE", "/users/~me", UserDeletionResponse, DeleteUserDto>
+  | Endpoint<"POST", "/users/~me/restore", User>
   | Endpoint<"POST", "/users/@:userId/files/:userFileType", string, FormData>
   | Endpoint<"POST", "/users/files/:userFileType", string, FormData>
   | UserBookingEndpoints

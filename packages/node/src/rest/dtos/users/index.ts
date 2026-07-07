@@ -1,4 +1,5 @@
 export * from "./create-user.dto";
+export * from "./delete-user.dto";
 export * from "./google-one-tap.dto";
 export * from "./posts";
 export * from "./recovery.dto";

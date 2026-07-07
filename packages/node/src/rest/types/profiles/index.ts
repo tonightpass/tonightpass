@@ -50,6 +50,8 @@ export type BaseProfileMetadata = {
 
 export type UserProfileMetadata = BaseProfileMetadata & {
   hasPassPlus: boolean;
+  /** True once the account has been anonymized; used to noindex the profile. */
+  isAnonymized: boolean;
 };
 
 export type OrganizationProfileMetadata = BaseProfileMetadata & {

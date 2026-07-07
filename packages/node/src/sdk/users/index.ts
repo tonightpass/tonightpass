@@ -1,4 +1,4 @@
-import type { UpdateUserDto, UserFileType } from "../../rest";
+import type { DeleteUserDto, UpdateUserDto, UserFileType } from "../../rest";
 import { buildFileFormData, type FileObject } from "../../utils";
 import { sdk } from "../builder";
 import { usersBookings } from "./bookings";
@@ -15,6 +15,9 @@ export const users = sdk((client) => ({
     client.get("/users/check/:identifier", { identifier, suggestions }),
   update: async (userId: string, data: UpdateUserDto) =>
     client.put("/users/@:userId", data, { userId }),
+  requestDeletion: async (data: DeleteUserDto) =>
+    client.delete("/users/~me", data),
+  restore: async () => client.post("/users/~me/restore", undefined),
   uploadFile: async (
     userId: string,
     userFileType: UserFileType,
