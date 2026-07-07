@@ -1,5 +1,11 @@
 # tonightpass
 
+## 0.1.0
+
+### Minor Changes
+
+- [`89a5527`](https://github.com/tonightpass/tonightpass/commit/89a5527cd60398530ced54810970040a23b0bb49) Thanks [@antoinekm](https://github.com/antoinekm)! - Add self-service account deletion endpoints: `DELETE /users/~me` requests deletion (starts a 30-day grace period, requires a `DeleteUserDto` with a reason and optional comment) and `POST /users/~me/restore` cancels a pending deletion. Adds `UserDeletionResponse`, `UserDeletionBlockerType`, `UserDeletionReason`, and `DeleteUserDto`. Exposes `UserProfileMetadata.isAnonymized` so anonymized profiles can be noindexed.
+
 ## 0.0.267
 
 ### Patch Changes
