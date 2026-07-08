@@ -1,5 +1,11 @@
 # @tonightpass/nest
 
+## 0.1.0
+
+### Minor Changes
+
+- [`e5b732e`](https://github.com/tonightpass/tonightpass/commit/e5b732e89da77a9a510b451aaaaf5ebc1ce17d8a) Thanks [@antoinekm](https://github.com/antoinekm)! - Align `@tonightpass/react` and `@tonightpass/nest` to the `0.1.x` line alongside `tonightpass`, so the whole ecosystem shares the same minor going forward.
+
 ## 0.0.254
 
 ### Patch Changes
