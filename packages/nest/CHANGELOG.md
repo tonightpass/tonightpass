@@ -1,5 +1,11 @@
 # @tonightpass/nest
 
+## 0.0.254
+
+### Patch Changes
+
+- [`833e788`](https://github.com/tonightpass/tonightpass/commit/833e788b9cb34f2be6b14707fa2e7037fb2f7d17) Thanks [@antoinekm](https://github.com/antoinekm)! - Re-publish `@tonightpass/react` and `@tonightpass/nest` after `0.0.272` / `0.0.253` were removed from the npm registry by an erroneous unpublish. No code changes; this restores registry/repository consistency.
+
 ## 0.0.253
 
 ### Patch Changes
