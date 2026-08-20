@@ -24,7 +24,7 @@ export type HealthMemory = {
 };
 
 export type HealthEndpoints =
-  | Endpoint<"GET", "/health", Health<"database" | "app" | "api" | "database">>
+  | Endpoint<"GET", "/health", Health<"database" | "app" | "api">>
   | Endpoint<"GET", "/health/database", Health<"database">>
   | Endpoint<"GET", "/health/api", Health<"api">>
   | Endpoint<"GET", "/health/app", Health<"app">>
