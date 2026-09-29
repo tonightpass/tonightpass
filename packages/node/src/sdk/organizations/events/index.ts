@@ -1,6 +1,7 @@
 import type {
   ArrayOptions,
   Client,
+  ConfirmOrganizationEventClaimDto,
   CreateOrganizationEventDto,
   OrganizationEvent,
   OrganizationEventArrayOptions,
@@ -92,6 +93,26 @@ export const organizationsEvents = (client: Client) => ({
       undefined,
       { organizationSlug, eventSlug }
     ),
+  claim: {
+    /** Sends a 6 digit code to the email address scraped with the event. */
+    request: async (organizationSlug: string, eventSlug: string) =>
+      client.post(
+        "/organizations/@:organizationSlug/events/:eventSlug/claim",
+        undefined,
+        { organizationSlug, eventSlug }
+      ),
+    /** Verifies the code and moves the event to the caller's organization. */
+    confirm: async (
+      organizationSlug: string,
+      eventSlug: string,
+      data: ConfirmOrganizationEventClaimDto
+    ) =>
+      client.post(
+        "/organizations/@:organizationSlug/events/:eventSlug/claim/confirm",
+        data,
+        { organizationSlug, eventSlug }
+      ),
+  },
   orders: organizationsEventsOrders(client),
   promoCodes: organizationsEventsPromoCodes(client),
   styles: organizationsEventsStyles(client),

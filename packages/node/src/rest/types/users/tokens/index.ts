@@ -16,4 +16,5 @@ export enum UserTokenType {
   PasswordRecovery = "password_recovery",
   EmailValidation = "email_validation",
   PhoneValidation = "phone_validation",
+  EventClaim = "event_claim",
 }

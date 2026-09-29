@@ -1,5 +1,6 @@
 import type {
   CancelOrganizationEventDto,
+  ConfirmOrganizationEventClaimDto,
   CreateOrganizationEventDto,
   PostponeOrganizationEventDto,
   RescheduleOrganizationEventDto,
@@ -71,6 +72,12 @@ export type OrganizationEvent = Base & {
   minPrice: number;
   startAt: Date;
   endAt: Date;
+  /**
+   * Present on events imported from another platform. The API has been sending
+   * it for a while and both the website and the api read it; it was simply
+   * never declared here.
+   */
+  externalSource?: ExternalSource;
 };
 
 export enum OrganizationEventType {
@@ -150,6 +157,15 @@ export type ExternalSource = {
 
 export type OrganizationEventRequestResponse = {
   contacts: ExternalContact[];
+};
+
+/**
+ * Where the claim code was sent, masked so the caller can tell the organiser
+ * which inbox to open without the address being readable by whoever asked.
+ */
+export type OrganizationEventClaimRequestResponse = {
+  maskedEmail: string;
+  expiresAt: Date;
 };
 
 export type OrganizationEventNearbyOptions = ArrayOptions<OrganizationEvent> & {
@@ -245,6 +261,17 @@ export type OrganizationEventEndpoints =
       "POST",
       "/organizations/@:organizationSlug/events/:eventSlug/request",
       OrganizationEventRequestResponse
+    >
+  | Endpoint<
+      "POST",
+      "/organizations/@:organizationSlug/events/:eventSlug/claim",
+      OrganizationEventClaimRequestResponse
+    >
+  | Endpoint<
+      "POST",
+      "/organizations/@:organizationSlug/events/:eventSlug/claim/confirm",
+      OrganizationEvent,
+      ConfirmOrganizationEventClaimDto
     >
   | Endpoint<
       "POST",
