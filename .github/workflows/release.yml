@@ -11,6 +11,14 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env:
+      # changesets commits the version bump, which fires the pre-commit hook,
+      # which runs the whole test suite again inside the job. A single red test
+      # then blocks the commit and no release PR is ever opened, which is why
+      # nothing reached npm after 2026-07-07. The workflow already runs lint,
+      # build and tests as its own steps, so the hook adds nothing here.
+      HUSKY: 0
+
     permissions:
       contents: write
       pull-requests: write
