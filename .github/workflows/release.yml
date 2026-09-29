@@ -43,8 +43,13 @@ jobs:
           cache: "pnpm"
           registry-url: "https://registry.npmjs.org"
 
-      - name: Update npm to latest (for OIDC support)
-        run: sudo npm install -g npm@latest
+      # npm 11 is required for OIDC trusted publishing, and npm 12 must be
+      # avoided: it rejects unknown cli flags with EUNKNOWNCONFIG, and pnpm
+      # forwards its own --git-checks flag when it hands the publish over to
+      # npm. The last successful release ran on 2026-07-07, npm 12.0.0 shipped
+      # on 2026-07-08, and nothing has been published since. Pin the major.
+      - name: Update npm (for OIDC support)
+        run: sudo npm install -g "npm@^11"
 
       - name: Install Dependencies
         run: pnpm i --no-frozen-lockfile
