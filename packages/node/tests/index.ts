@@ -12,7 +12,9 @@ globalThis.TSUP_IS_NODE = true;
 
 const API_URL =
   process.env.TEST_TONIGHTPASS_API_BASE_URL ??
-  "https://api.staging.tonightpass.com";
+  // Staging moved from api.staging to api-staging and the old host stopped
+  // resolving, which failed every run that reaches the network since then.
+  "https://api-staging.tonightpass.com";
 
 const tnp = new TonightPass({
   baseURL: API_URL,
