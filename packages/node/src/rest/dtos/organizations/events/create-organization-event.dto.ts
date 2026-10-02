@@ -23,7 +23,6 @@ import {
   OrganizationEventVisibilityType,
 } from "../../../types";
 import { CreateLocationDto } from "../../locations/create-location.dto";
-import { AtLeastOneMedia } from "../../validators/at-least-one-media";
 import { IsAfterNow } from "../../validators/is-after-now";
 import { EventArtistDto } from "./event-artist.dto";
 import {
@@ -95,7 +94,6 @@ export class BaseOrganizationEventDto {
     each: true,
     message: "organization.event.flyers.url.invalid",
   })
-  @AtLeastOneMedia()
   flyers: string[];
 
   @IsArray()

@@ -19,7 +19,6 @@ import {
   OrganizationEventVisibilityType,
 } from "../../../types";
 import { UpdateLocationDto } from "../../locations/update-location.dto";
-import { AtLeastOneMediaOnUpdate } from "../../validators/at-least-one-media";
 import { IsAfterNow } from "../../validators/is-after-now";
 import type { CreateOrganizationEventInput } from "./create-organization-event.dto";
 import { EventArtistDto } from "./event-artist.dto";
@@ -61,7 +60,6 @@ export class UpdateOrganizationEventDto
     each: true,
     message: "organization.event.flyers.url.invalid",
   })
-  @AtLeastOneMediaOnUpdate()
   flyers?: string[];
 
   @IsOptional()
