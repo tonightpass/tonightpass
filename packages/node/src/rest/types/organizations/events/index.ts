@@ -20,6 +20,7 @@ import type {
   OrganizationEventTicket,
   OrganizationEventTicketEndpoints,
 } from "..";
+import type { OrganizationEventInterestEndpoints } from "./interests";
 import type { OrganizationEventOrderEndpoints } from "./orders";
 import type { OrganizationEventPromoCodeEndpoints } from "./promo-codes";
 import type {
@@ -28,6 +29,7 @@ import type {
 } from "./styles";
 import type { OrganizationEventViewEndpoints } from "./views";
 
+export * from "./interests";
 export * from "./orders";
 export * from "./promo-codes";
 export * from "./status";
@@ -61,6 +63,7 @@ export type OrganizationEvent = Base & {
   rescheduledAt?: Date;
   rescheduledReason?: string;
   viewsCount: number;
+  interestsCount: number;
   visitsCount: number;
   visitorsCount: number;
   bouncesCount: number;
@@ -301,4 +304,5 @@ export type OrganizationEventEndpoints =
   | OrganizationEventPromoCodeEndpoints
   | OrganizationEventStyleEndpoints
   | OrganizationEventTicketEndpoints
+  | OrganizationEventInterestEndpoints
   | OrganizationEventViewEndpoints;

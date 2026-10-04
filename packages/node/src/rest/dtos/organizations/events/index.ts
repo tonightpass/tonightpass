@@ -1,6 +1,7 @@
 export * from "./cancel-organization-event.dto";
 export * from "./confirm-organization-event-claim.dto";
 export * from "./create-organization-event.dto";
+export * from "./create-organization-event-interest.dto";
 export * from "./event-artist.dto";
 export * from "./orders";
 export * from "./postpone-organization-event.dto";

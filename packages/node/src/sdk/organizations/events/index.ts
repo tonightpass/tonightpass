@@ -10,6 +10,7 @@ import type {
   UpdateOrganizationEventDto,
 } from "../../../rest";
 import { buildFileFormData, type FileObject } from "../../../utils";
+import { organizationsEventsInterests } from "./interests";
 import { organizationsEventsOrders } from "./orders";
 import { organizationsEventsPromoCodes } from "./promo-codes";
 import { organizationsEventsStyles } from "./styles";
@@ -117,5 +118,6 @@ export const organizationsEvents = (client: Client) => ({
   promoCodes: organizationsEventsPromoCodes(client),
   styles: organizationsEventsStyles(client),
   tickets: organizationsEventsTickets(client),
+  interests: organizationsEventsInterests(client),
   views: organizationsEventsViews(client),
 });
