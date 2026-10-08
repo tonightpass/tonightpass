@@ -12,9 +12,17 @@ export type CreateOrganizationEventInterestInput = {
   email?: string;
 };
 
-export type OrganizationEventInterestEndpoints = Endpoint<
-  "POST",
-  "/organizations/@:organizationSlug/events/:eventSlug/interests",
-  OrganizationEventInterest,
-  CreateOrganizationEventInterestInput
->;
+export type OrganizationEventInterestEndpoints =
+  | Endpoint<
+      "POST",
+      "/organizations/@:organizationSlug/events/:eventSlug/interests",
+      OrganizationEventInterest,
+      CreateOrganizationEventInterestInput
+    >
+  /** Taking it back. Answers the same shape, with `created` always false. */
+  | Endpoint<
+      "DELETE",
+      "/organizations/@:organizationSlug/events/:eventSlug/interests",
+      OrganizationEventInterest,
+      undefined
+    >;

@@ -17,4 +17,15 @@ export const organizationsEventsInterests = (client: Client) => ({
         eventSlug,
       }
     ),
+
+  /** Undoes `record` for the same person, by account or by session cookie. */
+  remove: async (organizationSlug: string, eventSlug: string) =>
+    client.delete(
+      "/organizations/@:organizationSlug/events/:eventSlug/interests",
+      undefined,
+      {
+        organizationSlug,
+        eventSlug,
+      }
+    ),
 });
