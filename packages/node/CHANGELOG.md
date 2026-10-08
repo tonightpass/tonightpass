@@ -1,5 +1,16 @@
 # tonightpass
 
+## 0.3.0
+
+### Minor Changes
+
+- [`64b3f59`](https://github.com/tonightpass/tonightpass/commit/64b3f5951d9a189bd90a4ceb252483469b72a798) Thanks [@antoinekm](https://github.com/antoinekm)! - Add removing an event interest
+
+  The heart in the feed could only ever be pressed, never unpressed, because
+  the only route was a POST that records. A DELETE on the same path takes it
+  back, matched on the account when there is one and on the session cookie
+  otherwise, exactly as recording does.
+
 ## 0.2.2
 
 ### Patch Changes
