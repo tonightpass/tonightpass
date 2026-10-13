@@ -1,5 +1,16 @@
 # tonightpass
 
+## 0.4.0
+
+### Minor Changes
+
+- [`6a5152a`](https://github.com/tonightpass/tonightpass/commit/6a5152a8d00f59ad2c1ace9f7d6c1722c0d30c83) Thanks [@antoinekm](https://github.com/antoinekm)! - Add `organizations.billing.session`, which returns the short lived secret
+  Stripe's embedded components need.
+
+  It exists so an organizer can finish onboarding without leaving the dashboard.
+  The `link` method next to it answers a redirect to connect.stripe.com instead,
+  and is kept as a fallback.
+
 ## 0.3.0
 
 ### Minor Changes
