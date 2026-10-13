@@ -18,6 +18,14 @@ export const organizationsBilling = (client: Client) => ({
       throw new Error("Billing link is only available in the browser");
     }
   },
+  /**
+   * Secret for Stripe's embedded onboarding, so the organizer never leaves the
+   * dashboard. `link` below does the opposite and is kept as a fallback.
+   */
+  session: async (organizationSlug: string) =>
+    client.get("/organizations/@:organizationSlug/billing/session", {
+      organizationSlug,
+    }),
   balance: async (organizationSlug: string) =>
     client.get("/organizations/@:organizationSlug/billing/balance", {
       organizationSlug,

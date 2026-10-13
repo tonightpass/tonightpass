@@ -73,6 +73,17 @@ export type OrganizationBillingPendingRevenue = {
   currency: Currency;
 }[];
 
+/**
+ * Short lived secret that lets Stripe's embedded components render inside the
+ * dashboard, instead of sending the organizer to connect.stripe.com.
+ *
+ * Stripe expires it within the hour, so it is fetched when the screen needs it
+ * rather than stored.
+ */
+export type OrganizationBillingSession = {
+  clientSecret: string;
+};
+
 export type OrganizationIdentity = OrganizationProfile;
 
 export enum OrganizationFileType {
@@ -128,6 +139,11 @@ export type OrganizationEndpoints =
       "GET",
       "/organizations/@:organizationSlug/billing/pending",
       OrganizationBillingPendingRevenue
+    >
+  | Endpoint<
+      "GET",
+      "/organizations/@:organizationSlug/billing/session",
+      OrganizationBillingSession
     >
   | Endpoint<"GET", "/organizations/@:organizationSlug/billing/dashboard", void>
   | OrganizationEventEndpoints
